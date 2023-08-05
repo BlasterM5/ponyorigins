@@ -1,0 +1,16 @@
+{
+    "name": "Minotaur",
+    "description": "An anthropomorphic creature with the strength and features of a bull and the body shape of a human.",
+    "powers": [
+        "ponyorigins:common/diets/herbivore",
+        "ponyorigins:common/diets/direct_eat",
+        "ponyorigins:minotaur/hooves",
+        "ponyorigins:minotaur/punch",
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:anvil"
+    },
+    "impact": 0
+}

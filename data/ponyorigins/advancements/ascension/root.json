@@ -1,0 +1,18 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:enchanted_book"
+        },
+        "title": "Make Your Mark",
+        "description": "Be the first non-alicorn to do this",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "ponyorigins:root",
+    "criteria": {
+        "choice": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

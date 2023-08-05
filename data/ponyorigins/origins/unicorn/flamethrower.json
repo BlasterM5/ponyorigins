@@ -1,0 +1,17 @@
+{
+    "name": "Flamethrower",
+    "description": "Some ponies want to watch the world burn.",
+    "powers": [
+        "ponyorigins:talents/flamethrower"
+    ],
+    "icon": {
+        "item": "minecraft:blaze_powder"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Solis Irae",
+    "description": "Call upon the wrath of the sun, and launch a ball of explosive plasma at your enemies!",
+    "powers": [
+        "ponyorigins:alicorn/fireblast"
+    ],
+    "icon": {
+        "item": "minecraft:fire_charge"
+    },
+    "impact": 0
+}

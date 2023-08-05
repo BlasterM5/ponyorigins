@@ -1,0 +1,16 @@
+{
+    "name": "Goat",
+    "description": "A mundane denizen of Equestria. Goats have no special abilities, but have no major flaws either. They also eat nearly everything.",
+    "powers": [
+        "ponyorigins:common/diets/direct_eat",
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:goat_horn"
+    },
+    "order": 2,
+    "impact": 0
+}

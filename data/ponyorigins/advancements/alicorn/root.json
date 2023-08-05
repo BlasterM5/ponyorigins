@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:nether_star"
+        },
+        "title": "Alicorn",
+        "description": "The path to Ascension",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:root",
+    "criteria": {
+        "info": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

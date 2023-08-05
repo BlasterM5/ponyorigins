@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:saddle"
+        },
+        "title": "Taxi",
+        "description": "Get a ride on another flying player",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:special/flight",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

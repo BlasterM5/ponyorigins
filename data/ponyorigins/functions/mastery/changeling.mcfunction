@@ -1,0 +1,3 @@
+execute if entity @s[advancements={ponyorigins:changeling/love=true}] run tellraw @s "Harmony has bestowed upon you the chance to learn a new talent."
+execute if entity @s[advancements={ponyorigins:changeling/love=true}] run give @s origins:orb_of_origin{display:{Name:'[{"text":"Harmonic Resonator","italic":false}]',Lore:['[{"text":"Talent Resonance","italic":true,"color":"cyan"}]']},Targets: [{Layer:"ponyorigins:primary_talent"},{Layer:"ponyorigins:secondary_talent"}]}
+scoreboard players set @s po.chdorb 2

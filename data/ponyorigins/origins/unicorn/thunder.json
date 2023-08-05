@@ -1,0 +1,17 @@
+{
+    "name": "Thunder",
+    "description": "Charge the ground, or your target, to attract lightning!",
+    "powers": [
+        "ponyorigins:talents/thunder"
+    ],
+    "icon": {
+        "item": "minecraft:lightning_rod"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

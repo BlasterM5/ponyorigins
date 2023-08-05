@@ -1,0 +1,333 @@
+{
+    "name": "Summon Fireworks",
+    "description": "Hold your secondary power to launch fireworks anywhere!",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to launch"
+            ],
+            "sprite": "minecraft:textures/item/firework_rocket.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "launch": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/energy_level",
+            "comparison": ">=",
+            "compare_to": 5
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;16711680]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;16776960]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;65280]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;65535]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;255]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;16711935]}]}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1b,Trail:1b,Colors:[I;16777215]}]}}}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;16711680]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;16776960]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;65280]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;65535]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;255]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;16711935]}]}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1b,Trail:1b,Colors:[I;16777215]}]}}}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;16711680]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;16776960]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;65280]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;65535]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;255]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;16711935]}]}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:3,Flicker:1b,Trail:1b,Colors:[I;16777215]}]}}}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;16711680]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;16776960]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;65280]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;65535]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;255]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;16711935]}]}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;16777215]}]}}}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;16711680]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;16776960]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;65280]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;65535]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;255]}]}}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;16711935]}]}}}"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute rotated as @s run summon firework_rocket ~ ~2 ~1 {LifeTime:3,Motion:[0d,5d,0d],shotAtAngle:1b,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Flicker:1b,Trail:1b,Colors:[I;16777215]}]}}}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -5,
+                    "operation": "add"
+                }
+            ]
+        },
+        "cooldown": 8,
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
+    }
+}

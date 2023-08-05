@@ -1,0 +1,116 @@
+{
+    "name": "Hooves",
+    "description": "Your feet are hooved. Kick enemies further away when attacking unarmed.",
+    "type": "origins:multiple",
+    "knockback": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.25,
+            "client": true,
+            "server": true
+        },
+        "cooldown": 10
+    },
+    "slipperier_ice": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "feet",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:icey_ad_astra"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:icey_minecraft"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:icey_btpack"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "set_base",
+            "value": 0.98
+        }
+    },
+    "slippery_wet_blocks": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_rain"
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_ad_astra"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_ae2"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_alloy_forgery"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_create"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_createdeco"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_minecraft"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_mythicmetals"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_btpack"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "c:glass_block"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "set_base",
+            "value": 0.98
+        }
+    }
+}

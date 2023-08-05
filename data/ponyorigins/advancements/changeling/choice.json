@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:wither_rose"
+        },
+        "title": "Hungry for Love",
+        "description": "Become a Changeling",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false
+    },
+    "parent": "ponyorigins:root",
+    "criteria": {
+        "choice": {
+            "trigger": "origins:chose_origin",
+            "conditions": {
+                "origin": "ponyorigins:races/changeling"
+            }
+        }
+    }
+}

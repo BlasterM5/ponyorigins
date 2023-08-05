@@ -1,0 +1,76 @@
+{
+    "name": "Fight Training",
+    "description": "An expert in melee combat, you hit harder and take less damage, for a little more work.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+25 percent Attack Damage",
+            "sprite": "minecraft:textures/item/iron_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+25 percent Damage Resistance",
+            "sprite": "minecraft:textures/item/iron_chestplate.png"
+        }
+    ],
+    "hidden": true,
+    "type": "origins:multiple",
+    "offense": {
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 2
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "defense": {
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 2
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "stamina_offense": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_offense"
+        },
+        "type": "origins:self_action_on_hit",
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.05
+        },
+        "cooldown": 1
+    },
+    "stamina_defense": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_defense"
+        },
+        "type": "origins:self_action_when_hit",
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.05
+        },
+        "cooldown": 1
+    }
+}

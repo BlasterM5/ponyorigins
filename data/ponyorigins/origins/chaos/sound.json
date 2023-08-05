@@ -1,0 +1,11 @@
+{
+    "name": "Sound Effect",
+    "description": "Use your energy to vibrate the air and make a sound!",
+    "powers": [
+        "ponyorigins:chaos/talents/sound"
+    ],
+    "icon": {
+        "item": "minecraft:goat_horn"
+    },
+    "impact": 0
+}

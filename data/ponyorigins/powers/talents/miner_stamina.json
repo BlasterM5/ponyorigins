@@ -1,0 +1,45 @@
+{
+    "name": "Miner Training",
+    "description": "Exceptionally enthusiastic at mining, you work harder and mine a little faster.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Using Tools: +25 percent Block Break Speed",
+            "sprite": "minecraft:textures/item/iron_pickaxe.png"
+        }
+    ],
+    "hidden": true,
+    "type": "origins:multiple",
+    "effectiveness": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:using_effective_tool"
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "stamina_use": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_effectiveness"
+        },
+        "type": "origins:action_on_block_break",
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.0025
+        },
+        "only_when_harvested": false
+    }
+}

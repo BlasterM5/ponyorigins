@@ -1,0 +1,17 @@
+{
+    "name": "Kinetic Burst",
+    "description": "Telekinesis is painful when you punch with it.",
+    "powers": [
+        "ponyorigins:talents/laser"
+    ],
+    "icon": {
+        "item": "minecraft:tnt"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:talents/laser_alicorn"
+        }
+    ],
+    "impact": 0
+}

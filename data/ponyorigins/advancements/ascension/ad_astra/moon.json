@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "ad_astra:moon_globe"
+        },
+        "title": "Straight to the Moon",
+        "description": "And you did it the hard way",
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:ascension/root",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Manespace",
+    "description": "A pony's mane is a cavernous space, where entire closets' worth of items have been lost to the void inside.",
+    "powers": [
+        "ponyorigins:talents/manespace"
+    ],
+    "icon": {
+        "item": "minecraft:ender_chest"
+    },
+    "impact": 0
+}

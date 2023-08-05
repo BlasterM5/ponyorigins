@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:apple"
+        },
+        "title": "Earthbound",
+        "description": "Become an Earth Pony",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false
+    },
+    "parent": "ponyorigins:root",
+    "criteria": {
+        "choice": {
+            "trigger": "origins:chose_origin",
+            "conditions": {
+                "origin": "ponyorigins:races/earth_pony"
+            }
+        }
+    }
+}

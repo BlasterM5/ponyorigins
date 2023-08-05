@@ -1,0 +1,20 @@
+{
+    "name": "Cold Immunity",
+    "description": "The cold doesn't bother you anyway.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Freeze damage Immunity",
+            "sprite": "minecraft:textures/item/leather.png"
+        }
+    ],
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "minecraft:freeze"
+    },
+    "modifier": {
+        "operation": "set_total",
+        "value": 0
+    }
+}

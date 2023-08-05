@@ -1,0 +1,15 @@
+{
+    "name": "Fireproof",
+    "description": "Your body is immune to fire damage.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Fireproof",
+            "sprite": "minecraft:textures/particle/flame.png"
+        }
+    ],
+    "type": "origins:invulnerability",
+    "damage_condition": {
+        "type": "origins:fire"
+    }
+}

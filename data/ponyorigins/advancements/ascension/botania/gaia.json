@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "botania:gaia_head"
+        },
+        "title": "Gaia Gone",
+        "description": "Defeat the Gaia Guardian",
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:ascension/root",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

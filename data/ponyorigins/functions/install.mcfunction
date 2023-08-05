@@ -1,0 +1,13 @@
+function ponyorigins:init/epwalk
+function ponyorigins:init/epsprint
+function ponyorigins:init/epcrouch
+function ponyorigins:init/eptravel
+function ponyorigins:init/eptrader
+function ponyorigins:init/ppflight
+function ponyorigins:init/chaos
+function ponyorigins:init/eporb
+function ponyorigins:init/pporb
+function ponyorigins:init/uporb
+function ponyorigins:init/chdorb
+function ponyorigins:init/aliorb
+function ponyorigins:init/globalflags

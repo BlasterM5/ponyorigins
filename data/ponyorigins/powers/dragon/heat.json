@@ -1,0 +1,420 @@
+{
+    "name": "Fire Within",
+    "description": "Your body's internal flame must stay lit, lest you suffer from sluggishness. Warm climates will recharge your heat faster, whereas extreme cold climates will siphon it away. Certain foods will help replenish your fire.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+2.5 Heat/sec, -0.75 Hunger/sec. Hunger below 6 stops charging",
+            "sprite": "minecraft:textures/particle/flame.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eating Gemstones: +10 Heat",
+            "sprite": "minecraft:textures/item/diamond.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eating Blaze Rods: +50 Heat",
+            "sprite": "minecraft:textures/item/blaze_rod.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "level": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 7
+        }
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "<",
+            "compare_to": 100
+        },
+        "type": "origins:action_over_time",
+        "interval": 8,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:food_level",
+                                "comparison": ">=",
+                                "compare_to": 6
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:exhaust",
+                                "amount": 0.25
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:lava",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:lava",
+                                    "comparison": ">=",
+                                    "compare_to": 0.75
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 4,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:lava",
+                                    "comparison": ">=",
+                                    "compare_to": 0.5
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 3,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:lava",
+                                    "comparison": ">=",
+                                    "compare_to": 0.25
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 2,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_level",
+                                    "comparison": ">=",
+                                    "compare_to": 0
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:on_fire"
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": 2,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:powder_snow"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": -4,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:extinguish"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_rain"
+                            },
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "minecraft:water",
+                                "comparison": "<",
+                                "compare_to": 0.5
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<",
+                                    "compare_to": -0.3
+                                }
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": -2,
+                                "operation": "add"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<",
+                                    "compare_to": 0.1
+                                }
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">",
+                                    "compare_to": 1.5
+                                }
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": ">=",
+                        "compare_to": 0.5
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd_timer",
+                                "comparison": "==",
+                                "compare_to": 21
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd_timer",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_level",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_cd_timer",
+                                    "comparison": "==",
+                                    "compare_to": 20
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_level",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd_timer",
+                                "comparison": "<",
+                                "compare_to": 21
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd_timer",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "cd_timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 21,
+        "start_value": 21
+    },
+    "slow_when_cold": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "no_sprint_when_cold": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:prevent_sprinting"
+    },
+    "freeze_extinguish": {
+        "type": "origins:action_when_damage_taken",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "minecraft:freeze"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_level",
+                    "change": -4,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:extinguish"
+                }
+            ]
+        },
+        "cooldown": 1
+    }
+}

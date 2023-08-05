@@ -1,0 +1,69 @@
+{
+    "order": 0,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": true
+            },
+            "origins": [
+                "ponyorigins:races/human",
+                "ponyorigins:races/goat",
+                "ponyorigins:races/earth_pony",
+                "ponyorigins:races/unicorn",
+                "ponyorigins:races/pegasus",
+                "ponyorigins:races/thestral",
+                "ponyorigins:races/umbrum",
+                "ponyorigins:races/zebra",
+                "ponyorigins:races/yak",
+                "ponyorigins:races/seapony",
+                "ponyorigins:races/hippogriff",
+                "ponyorigins:races/kirin",
+                "ponyorigins:races/griffon",
+                "ponyorigins:races/dragon",
+                "ponyorigins:races/changeling",
+                "ponyorigins:races/orinthian",
+                "ponyorigins:races/abyssinian",
+                "ponyorigins:races/minotaur",
+                "ponyorigins:races/diamond_dog"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "ponyorigins:changeling/love"
+            },
+            "origins": [
+                "ponyorigins:races/changedling"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "ponyorigins:alicorn/ascension"
+            },
+            "origins": [
+                "ponyorigins:races/alicorn"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "ponyorigins:ascension/chaos"
+            },
+            "origins": [
+                "ponyorigins:races/chaos"
+            ]
+        }
+    ],
+    "enabled": true,
+    "replace": true,
+    "loading_priority": 0,
+    "name": "Species",
+    "gui_title": {
+        "choose_origin": "Choose your Species wisely. Each one has exclusive abilities.",
+        "view_origin": "Your Species"
+    },
+    "missing_name": "",
+    "missing_description": ""
+}

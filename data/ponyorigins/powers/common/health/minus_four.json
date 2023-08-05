@@ -1,0 +1,21 @@
+{
+    "name": "Fragilty",
+    "description": "Your body is frail, with only 8 hearts.",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "minecraft:textures/particle/damage.png"
+        },
+        {
+            "type": "origins:sprite",
+            "sprite": "minecraft:textures/particle/damage.png"
+        }
+    ],
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -4
+    },
+    "update_health": true
+}

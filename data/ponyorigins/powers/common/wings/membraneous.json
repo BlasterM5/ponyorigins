@@ -1,0 +1,27 @@
+{
+    "name": "Membraneous Wings",
+    "description": "Your wings are folds of skin, stretched out like sails. They can't get waterlogged, but take longer to heal from injuries.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Waterproof",
+            "sprite": "minecraft:textures/particle/splash_0.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Cobweb clearing rate +100 percent",
+            "sprite": "minecraft:textures/block/cobweb.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Burn heal rate -100 percent",
+            "sprite": "minecraft:textures/particle/flame.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Minumum health threshold +2",
+            "sprite": "minecraft:textures/particle/damage.png"
+        }
+    ],
+    "type": "origins:simple"
+}

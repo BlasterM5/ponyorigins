@@ -1,0 +1,22 @@
+{
+    "name": "Alicorn",
+    "description": "The apex pony race, a legendary combination of all three pony races, able to perform extraordinary feats of power.",
+    "powers": [
+        "ponyorigins:common/diets/herbivore",
+        "ponyorigins:common/diets/direct_eat",
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/telekinesis",
+        "ponyorigins:common/pony",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/health/plus_two",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:nether_star"
+    },
+    "order": 17,
+    "impact": 0
+}

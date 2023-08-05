@@ -1,0 +1,20 @@
+{
+    "name": "Yak",
+    "description": "Hardy creatures from Yakyakistan, yaks pride themselves on their unrelenting strength.",
+    "powers": [
+        "ponyorigins:common/diets/herbivore",
+        "ponyorigins:common/diets/direct_eat",
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/cold_immunity",
+        "ponyorigins:yak/yak_smash",
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:oak_wood"
+    },
+    "order": 7,
+    "impact": 0
+}

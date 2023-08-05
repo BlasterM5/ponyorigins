@@ -1,0 +1,87 @@
+{
+    "name": "Hooves",
+    "description": "Your feet are hooved.",
+    "type": "origins:multiple",
+    "slippery_wet_blocks": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_rain"
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_ad_astra"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_ae2"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_alloy_forgery"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_create"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_createdeco"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_minecraft"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:slick_mythicmetals"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "set_base",
+            "value": 0.98
+        }
+    },
+    "slippery_blocks": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "feet",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:icey_ad_astra"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:icey_minecraft"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "set_base",
+            "value": 0.98
+        }
+    }
+}

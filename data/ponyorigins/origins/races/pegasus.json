@@ -1,0 +1,27 @@
+{
+    "name": "Pegasus",
+    "description": "The winged pony race, born to fly.",
+    "powers": [
+        "ponyorigins:common/diets/herbivore",
+        "ponyorigins:common/diets/direct_eat",
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/pony",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:feather"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:races/alicorn"
+        }
+    ],
+    "order": 4,
+    "impact": 0
+}

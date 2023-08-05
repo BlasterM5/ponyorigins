@@ -1,0 +1,43 @@
+{
+    "name": "Move the Heavens",
+    "description": "Hold your secondary power to advance the day cycle rapidly.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Hold [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to advance time"
+            ],
+            "sprite": "minecraft:textures/item/clock_45.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:resource",
+        "resource": "ponyorigins:common/energy_level",
+        "comparison": ">",
+        "compare_to": 0
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "time add 100"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "ponyorigins:common/energy_level",
+                "change": -1,
+                "operation": "add"
+            }
+        ]
+    },
+    "key": {
+        "key": "key.origins.secondary_active",
+        "continuous": true
+    }
+}

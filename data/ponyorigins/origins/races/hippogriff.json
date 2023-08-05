@@ -1,0 +1,19 @@
+{
+    "name": "Hippogriff",
+    "description": "Front end of an osprey, back end of a pony, a friendlier predator of the skies.",
+    "powers": [
+        "ponyorigins:common/diets/pescavore",
+        "ponyorigins:common/diets/direct_eat",
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/talons",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/wings/waterproof",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:cod"
+    },
+    "order": 11,
+    "impact": 0
+}

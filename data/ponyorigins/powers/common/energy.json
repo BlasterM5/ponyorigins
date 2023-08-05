@@ -1,0 +1,647 @@
+{
+    "name": "Thaumphatic System",
+    "description": "A special organ system in your body trades calories for thaumatic energy, channeling it throughout your body to give you access to special abilities.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+5 Energy/sec, -1.25 Hunger/sec. Hunger below 6 stops charging",
+            "sprite": "minecraft:textures/item/light.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "level": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 19,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_supercharge",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        }
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_level",
+                    "comparison": "<",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_supercharge",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:food_level",
+                                "comparison": ">=",
+                                "compare_to": 6
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:alicorn/celestial"
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:exhaust",
+                                            "amount": 0.25
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_level",
+                                            "change": 1,
+                                            "operation": "add"
+                                        }
+                                    ]
+                                },
+                                "else_action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_celestial_cd",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd_timer",
+                                "comparison": "==",
+                                "compare_to": 41
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd_timer",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_level",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_cd_timer",
+                                    "comparison": "==",
+                                    "compare_to": 40
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:races/unicorn"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:unicorn/energy"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_up_energy_achievement",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd_timer",
+                                "comparison": "<",
+                                "compare_to": 41
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd_timer",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "cd_timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 41,
+        "start_value": 41
+    },
+    "celestial_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:exhaust",
+                    "amount": 0.5
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_level",
+                    "change": 1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_celestial_cd",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "supercharge": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 2,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_supercharge",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "sc_recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_level",
+                        "comparison": "<",
+                        "compare_to": 50
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -50,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 50,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_level",
+                        "comparison": "<",
+                        "compare_to": 75
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -25,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 25,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_level",
+                        "comparison": "<",
+                        "compare_to": 90
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -10,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 10,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_level",
+                        "comparison": "<",
+                        "compare_to": 95
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -5,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 5,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_level",
+                        "comparison": "<",
+                        "compare_to": 100
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "sc_activate": {
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_supercharge",
+                    "change": 1000,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:item.trident.return",
+                    "volume": 1,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:special/gapple"
+                    },
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "advancement grant @s until ponyorigins:special/gapple"
+                    }
+                },
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:firework",
+                    "count": 64,
+                    "speed": 1,
+                    "force": true,
+                    "spread": {
+                        "x": 0.1,
+                        "y": 0.1,
+                        "z": 0.1
+                    }
+                }
+            ]
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:enchanted_golden_apple"
+            }
+        }
+    },
+    "sc_tick": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_supercharge",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:speed",
+                        "duration": 100,
+                        "amplifier": 1,
+                        "show_particles": true,
+                        "show_icon": true
+                    }
+                },
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:electric_spark",
+                    "count": 8,
+                    "speed": 1,
+                    "force": true,
+                    "spread": {
+                        "x": 0.1,
+                        "y": 0.1,
+                        "z": 0.1
+                    },
+                    "offset_y": -0.5
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle electric_spark ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:clear_effect",
+                    "effect": "minecraft:speed"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 1200,
+                        "amplifier": 0,
+                        "show_particles": true,
+                        "show_icon": true
+                    }
+                }
+            ]
+        }
+    },
+    "sc_particles": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 8,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_color_tick",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 1 0 0 1 1 1 0 ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_color_tick",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 1 1 0 1 0 1 0 ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_color_tick",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/particle dust_color_transition 0 1 0 1 0 1 1 ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_color_tick",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0 1 1 1 0 0 1 ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_color_tick",
+                                "comparison": "==",
+                                "compare_to": 4
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0 0 1 1 1 0 1 ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_color_tick",
+                                "comparison": "==",
+                                "compare_to": 5
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 1 0 1 1 1 0 0 ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_sc_color_tick",
+                    "change": 1,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "up_energy_achievement": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10000,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:unicorn/energy"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/unicorn"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "advancement grant @s only ponyorigins:unicorn/energy"
+            }
+        }
+    },
+    "sc_color_tick": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_sc_color_tick",
+            "change": 0,
+            "operation": "set"
+        }
+    }
+}

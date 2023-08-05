@@ -1,0 +1,171 @@
+{
+    "name": "Telekinetic Flight",
+    "description": "Jump while in the air to fly around using your telekinesis. Not as efficient or as fast as having wings, but better than no flight at all.\n\nPress your [primary/secondary] power to manually disable/enable this ability to use flight equipment instead.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Primary Talent: Jump while in the air to fly. Press [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to toggle"
+            ],
+            "sprite": "minecraft:textures/item/feather.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Secondary Talent: Jump while in the air to fly. Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to toggle"
+            ],
+            "sprite": "minecraft:textures/item/feather.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "active": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.null"
+        },
+        "retain_state": true
+    },
+    "trigger_primary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/levitate"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:toggle",
+            "power": "*:*_active"
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "trigger_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/levitate"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:toggle",
+            "power": "*:*_active"
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "creative": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "origins:creative_flight"
+    },
+    "exhaustion": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:creative_flying"
+            },
+            "if_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:sprinting"
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -2,
+                    "operation": "add"
+                },
+                "else_action": {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -1,
+                    "operation": "add"
+                }
+            }
+        }
+    },
+    "slower_than_wings": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:sneaking"
+                }
+            ]
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.8
+        }
+    }
+}

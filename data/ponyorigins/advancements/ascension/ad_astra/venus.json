@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "ad_astra:venus_globe"
+        },
+        "title": "Dragon's Paradise",
+        "description": "Venus is one hot planet",
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:ascension/root",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

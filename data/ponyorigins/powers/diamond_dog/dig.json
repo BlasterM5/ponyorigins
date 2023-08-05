@@ -1,0 +1,96 @@
+{
+    "name": "Dig",
+    "description": "These claws are made for digging. Dig through materials faster and deal extra damage when unarmed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "When Unarmed: +400 percent Attack Damage",
+            "sprite": "minecraft:textures/item/iron_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "When Unarmed and breaking natural terrain: +300 percent Block Break Speed",
+            "sprite": "minecraft:textures/item/iron_pickaxe.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "melee": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 4
+        }
+    },
+    "dig": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_break_speed",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:dirt"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:sand"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:terracotta"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:diggable_minecraft"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "c:dirt"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "c:stone"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "c:cobblestone"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "c:sand"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "c:gravel"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 3
+        }
+    }
+}

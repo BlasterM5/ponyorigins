@@ -1,0 +1,11 @@
+{
+    "name": "Tamer",
+    "description": "The animals are receptive to your word...",
+    "powers": [
+        "ponyorigins:talents/tamer"
+    ],
+    "icon": {
+        "item": "minecraft:egg"
+    },
+    "impact": 0
+}

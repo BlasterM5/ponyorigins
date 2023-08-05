@@ -1,0 +1,615 @@
+{
+    "name": "Teleport",
+    "description": "Hold your [primary/secondary] power to charge up a teleport in the direction you are looking. Requires aiming for something solid.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Primary Talent: Hold [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to charge"
+            ],
+            "sprite": "minecraft:textures/item/ender_pearl.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Secondary Talent: Hold [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to charge"
+            ],
+            "sprite": "minecraft:textures/item/ender_pearl.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "teleport": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_antilag",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "==",
+                        "compare_to": 100
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 100,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -100,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 90
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 90,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -90,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 80
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 80,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -80,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 70
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 70,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -70,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 60
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 60,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -60,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 50
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 50,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -50,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 40
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 40,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -40,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 30
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 30,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -30,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 20
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 20,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -20,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 10,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -10,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                }
+            ]
+        }
+    },
+    "antilag": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
+    },
+    "antilag_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_antilag",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_antilag",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 6,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_buffer",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "buffer_return": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_buffer",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                ]
+            }
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_antilag",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "cd_timer": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "active": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_antilag",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">",
+                "compare_to": 5
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -5,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 5,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:raycast",
+                        "distance": 1,
+                        "block": false,
+                        "entity": false,
+                        "shape_type": "outline",
+                        "fluid_handling": "any",
+                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force",
+                        "command_step": 1
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:raycast",
+                        "distance": 1,
+                        "block": false,
+                        "entity": false,
+                        "shape_type": "outline",
+                        "fluid_handling": "none",
+                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force",
+                        "command_step": 1
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 0.1,
+                        "pitch": 1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 2,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "trigger_primary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/teleport"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_antilag",
+            "change": 5,
+            "operation": "add"
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
+    },
+    "trigger_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/teleport"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_antilag",
+            "change": 5,
+            "operation": "add"
+        },
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
+    }
+}

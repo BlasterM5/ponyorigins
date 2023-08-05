@@ -1,0 +1,11 @@
+{
+    "name": "Miner",
+    "description": "Rock! And! Stone!",
+    "powers": [
+        "ponyorigins:alicorn/miner"
+    ],
+    "icon": {
+        "item": "minecraft:diamond_pickaxe"
+    },
+    "impact": 0
+}

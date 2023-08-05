@@ -1,0 +1,17 @@
+{
+    "name": "Teleporter",
+    "description": "Convince the universe you should be there, and not here.",
+    "powers": [
+        "ponyorigins:talents/teleport"
+    ],
+    "icon": {
+        "item": "minecraft:ender_pearl"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

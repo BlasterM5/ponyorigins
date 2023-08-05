@@ -1,0 +1,500 @@
+{
+    "order": 2,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "ponyorigins:races/alicorn"
+            },
+            "origins": [
+                "ponyorigins:talents/defender_alicorn",
+                "ponyorigins:talents/miner_alicorn",
+                "ponyorigins:talents/barrier_alicorn",
+                "ponyorigins:talents/fireball_alicorn",
+                "ponyorigins:talents/laser_alicorn",
+                "ponyorigins:talents/celestial_alicorn"
+            ]
+        },
+        {
+            "condition": {
+                "inverted": true,
+                "type": "origins:origin",
+                "origin": "ponyorigins:talents/blank"
+            },
+            "origins": [
+                "ponyorigins:talents/other"
+            ]
+        },
+        {
+            "condition": {
+                "inverted": true,
+                "type": "origins:power",
+                "power": "ponyorigins:common/energy"
+            },
+            "origins": [
+                "ponyorigins:talents/defender_stamina",
+                "ponyorigins:talents/ranger"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/diamond_dog"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/miner_stamina"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/defender"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/defender"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/ranger"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/ranger"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/miner"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/miner"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/quadruped"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/runner"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/runner"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "ponyorigins:races/changeling"
+            },
+            "origins": [
+                "ponyorigins:talents/barrier"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/pony"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/tamer"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/tamer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/pony"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/manespace"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/manespace"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/flight"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talents/levitate"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/umbrum"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/levitate"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/flora"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/flora"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/teleport"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/teleport"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/fireball"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/fireball"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/flamethrower"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/flamethrower"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/thunder"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/thunder"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/ice_beam"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/ice_beam"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/barrier"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/barrier"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/laser"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/laser"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/flight"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/pony"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/rocketeer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "ponyorigins:races/hippogriff"
+            },
+            "origins": [
+                "ponyorigins:talents/waterborn"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/pony"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/other"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/blank"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "ponyorigins:races/chaos"
+            },
+            "origins": [
+                "ponyorigins:chaos/fireworks",
+                "ponyorigins:chaos/sound"
+            ]
+        }
+    ],
+    "enabled": true,
+    "loading_priority": 2,
+    "name": "Secondary Talent",
+    "gui_title": {
+        "choose_origin": "Choose your Secondary Talent",
+        "view_origin": "Secondary Talent"
+    },
+    "missing_name": "",
+    "missing_description": ""
+}

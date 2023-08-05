@@ -1,0 +1,17 @@
+{
+    "name": "Endurance",
+    "description": "Your body is trained for long distance running, using less endurance than normal.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "-25 percent Exhaustion",
+            "sprite": "minecraft:textures/item/leather_boots.png"
+        }
+    ],
+    "hidden": true,
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": -0.25
+    }
+}

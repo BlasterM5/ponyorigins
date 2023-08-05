@@ -1,0 +1,18 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:writable_book"
+        },
+        "title": "Tell Your Tale",
+        "description": "Little things that can have a big impact",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "ponyorigins:root",
+    "criteria": {
+        "visible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

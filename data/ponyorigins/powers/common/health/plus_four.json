@@ -1,0 +1,21 @@
+{
+    "name": "Heavy",
+    "description": "Your body is much heavier than average for your size, dense with strong bones and muscles, giving you 12 hearts.",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "minecraft:textures/particle/heart.png"
+        },
+        {
+            "type": "origins:sprite",
+            "sprite": "minecraft:textures/particle/heart.png"
+        }
+    ],
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4
+    },
+    "update_health": true
+}

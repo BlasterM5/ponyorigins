@@ -1,0 +1,181 @@
+{
+    "name": "Quadruped",
+    "description": "Run faster on all fours, but holding items with your forelegs will slow you down. Four legs require more stamina than two.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "No held items: Movement Speed +25 percent",
+            "sprite": "minecraft:textures/item/leather_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "One held item: Movement Speed normal",
+            "sprite": "minecraft:textures/item/iron_hoe.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Two held items: Movement Speed -25 percent",
+            "sprite": "minecraft:textures/item/flint_and_steel.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+25 percent Exhaustion",
+            "sprite": "minecraft:textures/item/wheat.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "slowertwoheld": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/telekinesis"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "sloweroneheld": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/telekinesis"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:creative_flying"
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/telekinesis"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:creative_flying"
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0
+        }
+    },
+    "normalspeed": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/telekinesis"
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "faster_exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    }
+}

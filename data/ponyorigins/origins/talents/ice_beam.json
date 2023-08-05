@@ -1,0 +1,11 @@
+{
+    "name": "Frost Beam",
+    "description": "Freeze your target with a beam of frequency-tuned energy.",
+    "powers": [
+        "ponyorigins:talents/ice_beam"
+    ],
+    "icon": {
+        "item": "minecraft:snow_block"
+    },
+    "impact": 0
+}

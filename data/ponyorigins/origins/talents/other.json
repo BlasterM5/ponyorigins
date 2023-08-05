@@ -1,0 +1,8 @@
+{
+    "name": "Conceptual",
+    "description": "Your talent is too unique to be constrained into a game mechanic.",
+    "icon": {
+        "item": "minecraft:diamond"
+    },
+    "impact": 0
+}

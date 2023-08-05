@@ -1,0 +1,39 @@
+{
+    "order": 1,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "ponyorigins:races/unicorn"
+            },
+            "origins": [
+                "ponyorigins:unicorn/other",
+                "ponyorigins:unicorn/defender",
+                "ponyorigins:unicorn/ranger",
+                "ponyorigins:unicorn/miner",
+                "ponyorigins:unicorn/runner",
+                "ponyorigins:unicorn/barrier",
+                "ponyorigins:unicorn/tamer",
+                "ponyorigins:unicorn/manespace",
+                "ponyorigins:unicorn/levitate",
+                "ponyorigins:unicorn/flora",
+                "ponyorigins:unicorn/teleport",
+                "ponyorigins:unicorn/fireball",
+                "ponyorigins:unicorn/flamethrower",
+                "ponyorigins:unicorn/thunder",
+                "ponyorigins:unicorn/ice_beam",
+                "ponyorigins:unicorn/laser",
+                "ponyorigins:unicorn/blank"
+            ]
+        }
+    ],
+    "enabled": true,
+    "loading_priority": 1,
+    "name": "Primary Talent",
+    "gui_title": {
+        "choose_origin": "Choose your Primary Talent",
+        "view_origin": "Primary Talent"
+    },
+    "missing_name": "",
+    "missing_description": ""
+}

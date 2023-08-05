@@ -1,0 +1,183 @@
+{
+    "name": "Shadow Walk",
+    "description": "Press your primary power to become an intangible shadow, and haunt your quarrel through walls and other solid objects, immune to harm!\n\nWarning: Fails in bright light!",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Press [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to toggle. Jump while in the air to fly"
+            ],
+            "sprite": "minecraft:textures/mob_effect/darkness.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Disabled when above light level 0.55",
+            "sprite": "minecraft:textures/mob_effect/darkness.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "flight": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:creative_flight"
+    },
+    "trigger": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:brightness",
+                    "comparison": "<",
+                    "compare_to": 0.56
+                }
+            ]
+        },
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "retain_state": false
+    },
+    "drain": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:sprinting"
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -2,
+                        "operation": "add"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:movement_blocking"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -2,
+                        "operation": "add"
+                    }
+                }
+            ]
+        },
+        "rising_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.enderman.teleport",
+            "volume": 1,
+            "pitch": 1
+        },
+        "falling_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.enderman.teleport",
+            "volume": 1,
+            "pitch": 1
+        }
+    },
+    "phantom": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:phasing",
+        "block_condition": {
+            "type": "origins:constant",
+            "value": true
+        },
+        "render_type": "blindness",
+        "view_distance": 10,
+        "phase_down_condition": {
+            "type": "origins:sneaking"
+        }
+    },
+    "flight_speed": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "render": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:model_color",
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0
+    },
+    "no_phasing_damage": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "no_phasing_attacks": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "no_mining": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
+        },
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

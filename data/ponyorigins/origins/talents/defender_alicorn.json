@@ -1,0 +1,11 @@
+{
+    "name": "Magna Ungula",
+    "description": "Channel your energy inward to hit harder and last longer in a melee fight! Strike with your bare hoof to launch your enemies away!",
+    "powers": [
+        "ponyorigins:alicorn/mightyhoof"
+    ],
+    "icon": {
+        "item": "minecraft:diamond_sword"
+    },
+    "impact": 0
+}

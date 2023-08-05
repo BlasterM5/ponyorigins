@@ -1,0 +1,14 @@
+{
+    "name": "Blank Flank",
+    "description": "You do not need a special ability.",
+    "icon": {
+        "item": "minecraft:paper"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

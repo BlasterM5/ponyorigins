@@ -1,0 +1,28 @@
+{
+    "name": "Changeling",
+    "description": "Insectoid creature that infiltrates pony society and feeds on the love of others to survive.",
+    "powers": [
+        "ponyorigins:common/diets/emotivore",
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/telekinesis",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/wings/insectoid",
+        "ponyorigins:common/nightvision",
+        "ponyorigins:common/health/minus_four",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:wither_rose"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:changeling/love",
+            "origin": "ponyorigins:races/changedling"
+        }
+    ],
+    "order": 15,
+    "impact": 0
+}

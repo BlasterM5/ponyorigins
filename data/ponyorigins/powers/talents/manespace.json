@@ -1,0 +1,101 @@
+{
+    "name": "Manespace Storage",
+    "description": "Press your [primary/secondary] power to reach into your mane, and access your Ender Chest inventory.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Primary Talent: Press [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to open"
+            ],
+            "sprite": "minecraft:textures/item/bundle_filled.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Secondary Talent: Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to open"
+            ],
+            "sprite": "minecraft:textures/item/bundle_filled.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "manespace_primary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/manespace"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -25,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:ender_chest"
+                }
+            ]
+        },
+        "cooldown": 20,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "manespace_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/manespace"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -25,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:ender_chest"
+                }
+            ]
+        },
+        "cooldown": 20,
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    }
+}

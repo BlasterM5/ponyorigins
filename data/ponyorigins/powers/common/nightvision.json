@@ -1,0 +1,280 @@
+{
+    "name": "Night Vision",
+    "description": "Automatically see extra well in the dark.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "You might not even notice it working",
+            "sprite": "minecraft:textures/mob_effect/night_vision.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "intensity": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0
+    },
+    "check_brightness": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.3
+                            },
+                            {
+                                "type": "origins:status_effect",
+                                "effect": "minecraft:blindness",
+                                "min_amplifier": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.3
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.27
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 2,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.24
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 3,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.21
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 4,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.18
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 5,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.15
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 6,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.12
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 7,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.09
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 8,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.06
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 9,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:brightness",
+                        "comparison": "<=",
+                        "compare_to": 0.03
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_intensity",
+                        "change": 10,
+                        "operation": "set"
+                    }
+                }
+            ]
+        }
+    },
+    "nv1": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:night_vision",
+        "strength": 0.1
+    },
+    "nv2": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "type": "origins:night_vision",
+        "strength": 0.2
+    },
+    "nv3": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 3
+        },
+        "type": "origins:night_vision",
+        "strength": 0.3
+    },
+    "nv4": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 4
+        },
+        "type": "origins:night_vision",
+        "strength": 0.4
+    },
+    "nv5": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 5
+        },
+        "type": "origins:night_vision",
+        "strength": 0.5
+    },
+    "nv6": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 6
+        },
+        "type": "origins:night_vision",
+        "strength": 0.6
+    },
+    "nv7": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 7
+        },
+        "type": "origins:night_vision",
+        "strength": 0.7
+    },
+    "nv8": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 8
+        },
+        "type": "origins:night_vision",
+        "strength": 0.8
+    },
+    "nv9": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 9
+        },
+        "type": "origins:night_vision",
+        "strength": 0.9
+    },
+    "nv10": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_intensity",
+            "comparison": "==",
+            "compare_to": 10
+        },
+        "type": "origins:night_vision",
+        "strength": 1
+    }
+}

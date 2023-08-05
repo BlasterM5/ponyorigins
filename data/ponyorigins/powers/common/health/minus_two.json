@@ -1,0 +1,17 @@
+{
+    "name": "Light",
+    "description": "Your body is lighter than average for your size, giving you only 9 hearts.",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "minecraft:textures/particle/damage.png"
+        }
+    ],
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -2
+    },
+    "update_health": true
+}

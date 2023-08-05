@@ -1,0 +1,425 @@
+{
+    "name": "Barrier",
+    "description": "Press your [primary/secondary] power to activate your barrier to become invulnerable to damage. Your barrier will deplete your energy reserves as you take hits.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Primary Talent: Press [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to toggle"
+            ],
+            "sprite": "minecraft:textures/particle/bubble.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Secondary Talent: Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to toggle"
+            ],
+            "sprite": "minecraft:textures/particle/bubble.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "shield": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_active"
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:amount",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:name",
+                    "name": "drown"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:from_falling"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "self_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_hit_cd",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "change": -20,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_hit_cd",
+                                "change": 0,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.amethyst_block.break",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": "minecraft:firework",
+                                "count": 8,
+                                "speed": 1,
+                                "force": true,
+                                "spread": {
+                                    "x": 0.1,
+                                    "y": 0.1,
+                                    "z": 0.1
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": "<=",
+                        "compare_to": 20
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.glass.break",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": "minecraft:firework",
+                                "count": 128,
+                                "speed": 1,
+                                "force": true,
+                                "spread": {
+                                    "x": 0.1,
+                                    "y": 0.1,
+                                    "z": 0.1
+                                }
+                            },
+                            {
+                                "type": "origins:toggle",
+                                "power": "*:*_active"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "passive_drain": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "origins:action_over_time",
+        "interval": 8,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "comparison": "<=",
+                                "compare_to": 20
+                            },
+                            {
+                                "type": "origins:power_active",
+                                "power": "*:*_active"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:toggle",
+                                "power": "*:*_active"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.glass.break",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:on_fire"
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -4,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:water_breathing",
+                        "duration": 10,
+                        "amplifier": 0,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": false
+                    }
+                }
+            ]
+        }
+    },
+    "active": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.null"
+        },
+        "retain_state": false
+    },
+    "speed_limited": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "sprint_limited": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "origins:prevent_sprinting"
+    },
+    "barrier_fire_immunity": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:fire"
+        }
+    },
+    "hit_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
+    "hit_cd_timer": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_hit_cd",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_hit_cd",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "trigger_primary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/barrier"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:power_active",
+                "power": "*:*_active"
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:toggle",
+                        "power": "*:*_active"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.glass.break",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 40
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:toggle",
+                            "power": "*:*_active"
+                        },
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.enderman.teleport",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    ]
+                }
+            }
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "trigger_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/barrier"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:power_active",
+                "power": "*:*_active"
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:toggle",
+                        "power": "*:*_active"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.glass.break",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 40
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:toggle",
+                            "power": "*:*_active"
+                        },
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.enderman.teleport",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    ]
+                }
+            }
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    }
+}

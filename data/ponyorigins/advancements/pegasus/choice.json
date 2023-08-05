@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:feather"
+        },
+        "title": "Skyward",
+        "description": "Become a Pegasus",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false
+    },
+    "parent": "ponyorigins:root",
+    "criteria": {
+        "choice": {
+            "trigger": "origins:chose_origin",
+            "conditions": {
+                "origin": "ponyorigins:races/pegasus"
+            }
+        }
+    }
+}

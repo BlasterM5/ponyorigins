@@ -1,0 +1,110 @@
+{
+    "display": {
+        "icon": {
+            "item": "ad_astra:tier_4_rocket"
+        },
+        "title": "Faster Than Light",
+        "description": "Lights flashing by, worlds unknown",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "parent": "ponyorigins:special/flight",
+    "rewards": {
+        "experience": 1000
+    },
+    "criteria": {
+        "nether": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "minecraft:nether",
+                "player": {}
+            }
+        },
+        "the_end": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "minecraft:the_end",
+                "player": {}
+            }
+        },
+        "earth_orbit": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:earth_orbit",
+                "player": {}
+            }
+        },
+        "moon": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:moon",
+                "player": {}
+            }
+        },
+        "moon_orbit": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:moon_orbit",
+                "player": {}
+            }
+        },
+        "mars": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:mars",
+                "player": {}
+            }
+        },
+        "mars_orbit": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:mars_orbit",
+                "player": {}
+            }
+        },
+        "venus": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:venus",
+                "player": {}
+            }
+        },
+        "venus_orbit": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:venus_orbit",
+                "player": {}
+            }
+        },
+        "mercury": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:mercury",
+                "player": {}
+            }
+        },
+        "mercury_orbit": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:mercury_orbit",
+                "player": {}
+            }
+        },
+        "glacio": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:glacio",
+                "player": {}
+            }
+        },
+        "glacio_orbit": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "ad_astra:glacio_orbit",
+                "player": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "name": "Waterborn",
+    "description": "Born of the sea, you breathe water and swim like a fish.\nIn addition, you are wearing a shard of the Pearl of Transformation, which automatically converts you between land and sea creature as you enter and leave the water.\n\nYour spawn point is in the ocean.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Water Breathing",
+            "sprite": "minecraft:textures/mob_effect/water_breathing.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Water Vision",
+            "sprite": "minecraft:textures/mob_effect/night_vision.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+150 percent swim speed",
+            "sprite": "minecraft:textures/item/cod.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+200 percent block break speed while underwater",
+            "sprite": "minecraft:textures/item/iron_pickaxe.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Transform when entering / leaving water",
+            "sprite": "minecraft:textures/item/heart_of_the_sea.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Default Spawn underwater in Ocean Biome",
+            "sprite": "minecraft:textures/misc/underwater.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "water_breathing": {
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:water_breathing",
+                "duration": 21,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            }
+        }
+    },
+    "swimming_boost": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 1.5
+        }
+    },
+    "underwater_mining_boost": {
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        },
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 2
+        }
+    },
+    "ocean_spawn": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:ocean",
+        "spawn_strategy": "default",
+        "dimension_distance_multiplier": 1
+    },
+    "night_vision": {
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        },
+        "type": "origins:night_vision",
+        "strength": 0.5
+    }
+}

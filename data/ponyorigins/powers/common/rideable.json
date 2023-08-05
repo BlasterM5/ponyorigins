@@ -1,0 +1,56 @@
+{
+    "name": "Rideable",
+    "description": "Other creatures can ride on your back.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "When Ridden: +25 percent Exhaustion",
+            "sprite": "minecraft:textures/item/saddle.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "ride": {
+        "condition": {
+            "type": "origins:passenger",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_on_being_used",
+        "bientity_action": {
+            "type": "origins:mount"
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:both",
+                    "condition": {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:player"
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:sneaking"
+                    }
+                }
+            ]
+        },
+        "action_result": "success",
+        "priority": 0
+    },
+    "stamina": {
+        "condition": {
+            "type": "origins:passenger",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    }
+}

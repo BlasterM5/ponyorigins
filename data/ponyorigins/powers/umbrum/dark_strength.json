@@ -1,0 +1,75 @@
+{
+    "name": "Shadow Strength",
+    "description": "Darkness is strength.\nLight is danger.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Below light level 0.3: Attack Strength +25 percent",
+            "sprite": "minecraft:textures/item/netherite_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Below light level 0.3: Damage Resistance +25 percent",
+            "sprite": "minecraft:textures/item/netherite_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Above light level 0.56: Attack Strength -25 percent",
+            "sprite": "minecraft:textures/item/wooden_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Above light level 0.56: Damage Resistance -25 percent",
+            "sprite": "minecraft:textures/item/leather_chestplate.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "dark_defense": {
+        "condition": {
+            "type": "origins:brightness",
+            "comparison": "<=",
+            "compare_to": 0.3
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "dark_offense": {
+        "condition": {
+            "type": "origins:brightness",
+            "comparison": "<=",
+            "compare_to": 0.3
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "light_offense": {
+        "condition": {
+            "type": "origins:brightness",
+            "comparison": ">",
+            "compare_to": 0.56
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "light_defense": {
+        "condition": {
+            "type": "origins:brightness",
+            "comparison": ">",
+            "compare_to": 0.56
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    }
+}

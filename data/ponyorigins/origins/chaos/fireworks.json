@@ -1,0 +1,11 @@
+{
+    "name": "Fireworks",
+    "description": "Launch fireworks from your horn using only your energy reserves!",
+    "powers": [
+        "ponyorigins:chaos/talents/fireworks"
+    ],
+    "icon": {
+        "item": "minecraft:firework_rocket"
+    },
+    "impact": 0
+}

@@ -1,0 +1,61 @@
+{
+    "name": "Archery Expert",
+    "description": "Your ranged attacks do a little more damage.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Ranged Attack Damage +25 percent",
+            "sprite": "minecraft:textures/item/arrow.png"
+        }
+    ],
+    "hidden": true,
+    "type": "origins:multiple",
+    "modifier": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:modify_projectile_damage",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "stamina": {
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 2
+        },
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.05
+        },
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "item": "minecraft:bow"
+                        },
+                        {
+                            "item": "minecraft:crossbow"
+                        },
+                        {
+                            "item": "minecraft:fire_charge"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

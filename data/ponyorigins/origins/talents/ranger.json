@@ -1,0 +1,11 @@
+{
+    "name": "Ranger",
+    "description": "An exceptional shot.",
+    "powers": [
+        "ponyorigins:talents/bow"
+    ],
+    "icon": {
+        "item": "minecraft:crossbow"
+    },
+    "impact": 0
+}

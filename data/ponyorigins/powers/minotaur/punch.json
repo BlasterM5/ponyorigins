@@ -1,0 +1,62 @@
+{
+    "name": "Strong Arms",
+    "description": "You naturally punch harder, doing a little more damage, breaking through blocks barehanded faster, and knocking enemies back.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Unarmed: Attack Strength +100 percent",
+            "sprite": "minecraft:textures/item/stone_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Unarmed: Block Break Speed +100 percent",
+            "sprite": "minecraft:textures/item/stone_pickaxe.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "knockback": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.15,
+            "client": true,
+            "server": true
+        },
+        "cooldown": 10
+    },
+    "puch_harder": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 1
+        }
+    },
+    "block_breaker": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 1
+        }
+    }
+}

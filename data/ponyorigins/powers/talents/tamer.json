@@ -1,0 +1,83 @@
+{
+    "name": "Friend of the Animals",
+    "description": "Tame any tameable creature by right-clicking them with an empty hoof.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Press [",
+                {
+                    "keybind": "key.use"
+                },
+                "] on a tameable creature"
+            ],
+            "sprite": "minecraft:textures/particle/heart.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "taming": {
+        "type": "origins:action_on_entity_use",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:tame"
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -25,
+                        "operation": "add"
+                    }
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": ">",
+                        "compare_to": 25
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:tamed"
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:entity_group",
+                        "group": "undead"
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:entity_group",
+                        "group": "illager"
+                    }
+                }
+            ]
+        },
+        "item_condition": {
+            "type": "origins:empty"
+        },
+        "hands": [
+            "main_hand"
+        ],
+        "action_result": "success",
+        "priority": 0
+    }
+}

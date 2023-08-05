@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "ad_astra:tier_4_rocket"
+        },
+        "title": "The Grand Tour",
+        "description": "Visit every world, dimension, and orbit",
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:ascension/root",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

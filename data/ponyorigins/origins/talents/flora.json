@@ -1,0 +1,11 @@
+{
+    "name": "Flora",
+    "description": "Concentrate harder on a plant to make it grow.",
+    "powers": [
+        "ponyorigins:talents/flora"
+    ],
+    "icon": {
+        "item": "minecraft:wheat"
+    },
+    "impact": 0
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Runner",
+    "description": "Extra endurance to go the distance.",
+    "powers": [
+        "ponyorigins:talents/endurance"
+    ],
+    "icon": {
+        "item": "minecraft:leather_boots"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

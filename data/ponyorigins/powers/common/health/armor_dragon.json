@@ -1,0 +1,20 @@
+{
+    "name": "Armored",
+    "description": "Your body is covered in dragonscale, which offers protection from hits.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "50 percent damage reduction unless armor piercing",
+            "sprite": "minecraft:textures/item/diamond_chestplate.png"
+        }
+    ],
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "inverted": true,
+        "type": "origins:bypasses_armor"
+    },
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": -0.5
+    }
+}

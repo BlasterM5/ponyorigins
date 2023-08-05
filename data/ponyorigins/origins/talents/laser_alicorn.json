@@ -1,0 +1,11 @@
+{
+    "name": "Motu Explosio",
+    "description": "An alicorn's strongest attack, the release of raw energy, concentrated on a single point.",
+    "powers": [
+        "ponyorigins:alicorn/laser"
+    ],
+    "icon": {
+        "item": "minecraft:tnt"
+    },
+    "impact": 0
+}

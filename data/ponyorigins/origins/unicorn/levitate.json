@@ -1,0 +1,17 @@
+{
+    "name": "Levitation",
+    "description": "The key is to push the ground away.",
+    "powers": [
+        "ponyorigins:talents/levitate"
+    ],
+    "icon": {
+        "item": "minecraft:feather"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Shooting Star",
+    "description": "Channel your magic into a rocketing attack that will blast apart whatever you hit! Warning: Dangerous!",
+    "powers": [
+        "ponyorigins:pegasus/rocket"
+    ],
+    "icon": {
+        "item": "minecraft:firework_rocket"
+    },
+    "impact": 0
+}

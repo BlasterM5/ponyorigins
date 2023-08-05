@@ -1,0 +1,21 @@
+{
+    "name": "Changedling",
+    "description": "A changeling's evolved form, caused by purging the tainted love taken from others and sharing the pure love received by others.",
+    "powers": [
+        "ponyorigins:common/quadruped",
+        "ponyorigins:common/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/telekinesis",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/wings/insectoid",
+        "ponyorigins:common/nightvision",
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:poppy"
+    },
+    "order": 16,
+    "impact": 0
+}

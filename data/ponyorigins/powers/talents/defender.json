@@ -1,0 +1,160 @@
+{
+    "name": "Fighting Specialist",
+    "description": "By focusing some of your energy inward, you are able to hit harder and take less damage.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+25 percent Attack Damage",
+            "sprite": "minecraft:textures/item/golden_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+25 percent Damage Resistance",
+            "sprite": "minecraft:textures/item/golden_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Consumes Energy",
+            "sprite": "minecraft:textures/item/light.png"
+        }
+    ],
+    "hidden": true,
+    "type": "origins:multiple",
+    "offense": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_buffer",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "defense": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_buffer",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 5,
+        "min_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 5,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "recharge_buffer": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 5,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "energy_offense": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_offense"
+        },
+        "type": "origins:self_action_on_hit",
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_buffer",
+            "change": -1,
+            "operation": "add"
+        },
+        "cooldown": 1
+    },
+    "energy_defense": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_defense"
+        },
+        "type": "origins:self_action_when_hit",
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_buffer",
+            "change": -1,
+            "operation": "add"
+        },
+        "cooldown": 1
+    }
+}

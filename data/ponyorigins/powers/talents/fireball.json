@@ -1,0 +1,143 @@
+{
+    "name": "Fireball",
+    "description": "Press your [primary/secondary] power to launch a Fireball in the direction you're looking.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Primary Talent: Press [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to shoot"
+            ],
+            "sprite": "minecraft:textures/particle/flame.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Secondary Talent: Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to shoot"
+            ],
+            "sprite": "minecraft:textures/particle/flame.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "fire_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/fireball"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 15
+                }
+            ]
+        },
+        "type": "origins:fire_projectile",
+        "entity_type": "minecraft:small_fireball",
+        "cooldown": 10,
+        "count": 1,
+        "interval": 0,
+        "start_delay": 0,
+        "speed": 1.5,
+        "divergence": 0,
+        "sound": "minecraft:entity.blaze.shoot",
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "fire_primary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/fireball"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 15
+                }
+            ]
+        },
+        "type": "origins:fire_projectile",
+        "entity_type": "minecraft:small_fireball",
+        "cooldown": 10,
+        "count": 1,
+        "interval": 0,
+        "start_delay": 0,
+        "speed": 1.5,
+        "divergence": 0,
+        "sound": "minecraft:entity.blaze.shoot",
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "energy_drain_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/fireball"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 15
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "ponyorigins:common/energy_level",
+            "change": -15,
+            "operation": "add"
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "energy_drain_primary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/fireball"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 15
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "ponyorigins:common/energy_level",
+            "change": -15,
+            "operation": "add"
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    }
+}

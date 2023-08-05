@@ -1,0 +1,11 @@
+{
+    "name": "Waterborn",
+    "description": "Born of the sea...",
+    "powers": [
+        "ponyorigins:common/waterborn"
+    ],
+    "icon": {
+        "item": "minecraft:tropical_fish"
+    },
+    "impact": 0
+}

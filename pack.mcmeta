@@ -1,0 +1,11 @@
+{
+    "pack": {
+        "name": "Pony Origins",
+        "id": "ponyorigins",
+        "pack_format": 10,
+        "authors": [
+            "Blaster M"
+        ],
+        "description": "Origins Replacement Mod, designed to compliment Mine Little Pony."
+    }
+}

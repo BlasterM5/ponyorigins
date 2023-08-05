@@ -1,0 +1,15 @@
+{
+    "name": "Diamond Dog",
+    "description": "A species of subterranean canines, diamond dogs are adept at digging underground.",
+    "powers": [
+        "ponyorigins:common/diets/carnivore",
+        "ponyorigins:common/nightvision",
+        "ponyorigins:diamond_dog/dig",
+        "ponyorigins:talents/miner_stamina",
+        "ponyorigins:common/orb_cd"
+    ],
+    "icon": {
+        "item": "minecraft:emerald"
+    },
+    "impact": 0
+}

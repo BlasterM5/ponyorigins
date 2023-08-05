@@ -1,0 +1,241 @@
+{
+    "name": "Telekinesis",
+    "description": "Your telekinesis levitates the items you are holding, freeing your forelegs for movement and allowing you to reach further.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+3 Reach with held item",
+            "sprite": "minecraft:textures/particle/glow.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Requires Energy",
+            "sprite": "minecraft:textures/item/light.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "stat": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "inverted": true,
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "inverted": true,
+                                "type": "origins:empty"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:attribute",
+        "modifiers": [
+            {
+                "attribute": "reach-entity-attributes:reach",
+                "operation": "addition",
+                "value": 3
+            },
+            {
+                "attribute": "reach-entity-attributes:attack_range",
+                "operation": "addition",
+                "value": 3
+            }
+        ],
+        "update_health": true
+    },
+    "up_tk_achievement_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/unicorn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:unicorn/tk_mastery"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "inverted": true,
+                                "type": "origins:empty"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "inverted": true,
+                                "type": "origins:empty"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "outline",
+                        "fluid_handling": "any",
+                        "bientity_condition": {
+                            "type": "origins:distance",
+                            "comparison": ">",
+                            "compare_to": 4
+                        },
+                        "bientity_action": {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_up_tk_distance_flag",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 6,
+                        "block": false,
+                        "entity": true,
+                        "shape_type": "outline",
+                        "fluid_handling": "any",
+                        "bientity_condition": {
+                            "type": "origins:distance",
+                            "comparison": ">",
+                            "compare_to": 3
+                        },
+                        "bientity_action": {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_up_tk_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "up_tk_distance_flag": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
+    },
+    "up_tk_distance_flag_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_up_tk_distance_flag",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_up_tk_distance_flag",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "up_tk_level": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/unicorn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:unicorn/tk_mastery"
+                }
+            ]
+        },
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "advancement grant @s only ponyorigins:unicorn/tk_mastery"
+        }
+    },
+    "up_tk_block_break": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/unicorn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:unicorn/tk_mastery"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_up_tk_distance_flag",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_on_block_break",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_up_tk_level",
+            "change": 1,
+            "operation": "add"
+        },
+        "only_when_harvested": true
+    }
+}

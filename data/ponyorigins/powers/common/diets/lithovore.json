@@ -1,0 +1,46 @@
+{
+    "name": "Lithovore",
+    "description": "Your digestive system is designed to eat gemstones. Normal food turns to ash in your digestive system, greatly reducing its nutrition, and preventing any effects, good or bad. Eat gemstones the same as normal food.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Eat gemstones directly",
+            "sprite": "minecraft:textures/item/diamond.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Nether Star equates to Golden Apple",
+            "sprite": "minecraft:textures/item/nether_star.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eating Food: Saturation -75 percent and no effects",
+            "sprite": "minecraft:textures/item/charcoal.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "less_food_gain": {
+        "type": "origins:modify_food",
+        "food_modifier": {
+            "operation": "multiply_total",
+            "value": -0.75
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total",
+            "value": -0.75
+        },
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "inverted": true,
+                "type": "origins:advancement",
+                "advancement": "ponyorigins:special/voracious"
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "advancement grant @s until ponyorigins:special/voracious"
+            }
+        },
+        "prevent_effects": true
+    }
+}

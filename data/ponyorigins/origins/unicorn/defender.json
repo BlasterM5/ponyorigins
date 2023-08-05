@@ -1,0 +1,17 @@
+{
+    "name": "Defender",
+    "description": "Channel your energy inward to hit harder and last longer in a melee fight.",
+    "powers": [
+        "ponyorigins:talents/defender"
+    ],
+    "icon": {
+        "item": "minecraft:golden_sword"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "origins:empty"
+        }
+    ],
+    "impact": 0
+}

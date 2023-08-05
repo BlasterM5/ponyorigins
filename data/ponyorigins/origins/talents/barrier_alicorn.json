@@ -1,0 +1,11 @@
+{
+    "name": "Magicae Obice",
+    "description": "Manifest an impervious barrier of protection around you, as long as your energy reserves hold out.",
+    "powers": [
+        "ponyorigins:alicorn/barrier"
+    ],
+    "icon": {
+        "item": "minecraft:shield"
+    },
+    "impact": 0
+}

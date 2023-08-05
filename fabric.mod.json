@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "environment": "*",
+    "depends": {
+        "fabric-api-base": "*",
+        "fabric": "*",
+        "minecraft": ">=1.19.0 <=1.19.3",
+        "origins": ">=1.7.0"
+    },
+    "name": "Pony Origins",
+    "id": "ponyorigins",
+    "version": "1.0.0-a27",
+    "description": "Origins Replacement Mod, designed to compliment Mine Little Pony.",
+    "license": "Unknown",
+    "pack_format": 10,
+    "icon": "pack.png",
+    "authors": [
+        "Blaster M"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Miner",
+    "description": "Rock and Stone!",
+    "powers": [
+        "ponyorigins:talents/miner"
+    ],
+    "icon": {
+        "item": "minecraft:golden_pickaxe"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:talents/miner_alicorn"
+        }
+    ],
+    "impact": 0
+}

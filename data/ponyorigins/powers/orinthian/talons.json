@@ -1,0 +1,28 @@
+{
+    "name": "Talons",
+    "description": "You deal extra attack damage when unarmed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Unarmed: Attack Strength +400 percent",
+            "sprite": "minecraft:textures/item/iron_sword.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            }
+        ]
+    },
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": 4
+    }
+}

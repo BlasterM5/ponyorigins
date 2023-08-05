@@ -1,0 +1,126 @@
+{
+    "name": "Energetic Mining",
+    "description": "Channeling your energy reserves, you mine a little faster with the right tools.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Using Tools: +25 percent Block Break Speed",
+            "sprite": "minecraft:textures/item/golden_pickaxe.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Consumes Energy",
+            "sprite": "minecraft:textures/item/light.png"
+        }
+    ],
+    "hidden": true,
+    "type": "origins:multiple",
+    "effectiveness": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:using_effective_tool"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 100,
+        "min_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 100,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "recharge_buffer": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 100,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "energy_use": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_effectiveness"
+        },
+        "type": "origins:action_on_block_break",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_buffer",
+            "change": -1,
+            "operation": "add"
+        },
+        "only_when_harvested": false
+    }
+}

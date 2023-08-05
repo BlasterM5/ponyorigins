@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "ad_astra:mercury_globe"
+        },
+        "title": "Hottest Destination",
+        "description": "Maybe even too hot, to be honest",
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "ponyorigins:ascension/root",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}
