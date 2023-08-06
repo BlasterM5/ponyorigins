@@ -7,25 +7,25 @@ This is a datapack mod, which replaces the origins in Origins with origins desig
 ## Installation
 
 Install Fabric (preferably using your favorite modloader)
-
+ 
 Install Origins (and dependencies)
-
+ 
 Install Mine Little Pony
-
+ 
 Optional: Install HDSkins
-
+ 
 Optional: Install Custom FoV (NOT Custom FOV, pay attention to the capitalization)
-
+ 
 Install Pony Origins (insert jar into mods folder)
-
+ 
 Start Minecraft
-
+ 
 Go into Options, Controls, Key Binds, and assign a key to Origins, "Active Power (Secondary)" (recommend 'h')
-
+ 
 Optional: Set your player skin using Mine Little Pony or HDSkins
-
+ 
 Optional: Go into Options, Accessibility, and set your FoV Effects to None, or "Vanilla Only" if you're using Custom FoV
-
+ 
 Start Playing
 
 ## Uninstallation
