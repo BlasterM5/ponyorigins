@@ -15,24 +15,6 @@
         }
     ],
     "type": "origins:multiple",
-    "no_sprint_eating": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_edible"
-                }
-            ]
-        },
-        "type": "origins:prevent_sprinting"
-    },
     "eat_loop": {
         "condition": {
             "type": "origins:resource",
@@ -224,7 +206,7 @@
                                                                                 "show_icon": true
                                                                             },
                                                                             {
-                                                                                "effect": "minecraft:regenaration",
+                                                                                "effect": "minecraft:regeneration",
                                                                                 "duration": 100,
                                                                                 "amplifier": 1,
                                                                                 "show_particles": true,
@@ -625,6 +607,24 @@
             "operation": "multiply_base_additive",
             "value": -0.75
         }
+    },
+    "no_sprint_eating": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_antilag",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_edible"
+                }
+            ]
+        },
+        "type": "origins:prevent_sprinting"
     },
     "antilag": {
         "type": "origins:resource",
