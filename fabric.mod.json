@@ -9,12 +9,15 @@
     },
     "name": "Pony Origins",
     "id": "ponyorigins",
-    "version": "1.0.0-a28",
+    "version": "1.0.0-a29",
     "description": "Origins Replacement Mod, designed to compliment Mine Little Pony.",
-    "license": "The Unlicense",
+    "license": "unlicense",
     "pack_format": 10,
     "icon": "pack.png",
     "authors": [
         "BlasterM5"
-    ]
+    ],
+    "contact": {
+        "repo": "https://github.com/BlasterM5/ponyorigins"
+    }
 }

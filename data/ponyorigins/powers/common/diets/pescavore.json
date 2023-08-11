@@ -24,6 +24,92 @@
         }
     ],
     "type": "origins:multiple",
+    "raw_fish_safe": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "minecraft:fishes"
+                        },
+                        {
+                            "tag": "c:raw_fishes"
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:pufferfish"
+                    }
+                }
+            ]
+        },
+        "food_modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "prevent_effects": true
+    },
+    "seafood_delight": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": [
+                {
+                    "tag": "ponyorigins:fishes_btpack"
+                },
+                {
+                    "tag": "c:cooked_fishes"
+                }
+            ]
+        },
+        "food_modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    },
+    "not_seafood": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "inverted": true,
+            "type": "origins:ingredient",
+            "ingredient": [
+                {
+                    "tag": "minecraft:fishes"
+                },
+                {
+                    "tag": "ponyorigins:fishes_btpack"
+                },
+                {
+                    "tag": "c:raw_fishes"
+                },
+                {
+                    "tag": "c:cooked_fishes"
+                }
+            ]
+        },
+        "food_modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        }
+    },
     "diet_risk": {
         "type": "origins:modify_food",
         "item_condition": {
@@ -79,7 +165,6 @@
                     "type": "origins:food"
                 },
                 {
-                    "inverted": true,
                     "type": "origins:or",
                     "conditions": [
                         {
@@ -412,62 +497,5 @@
             ]
         },
         "action_result": "success"
-    },
-    "seafood_delight": {
-        "type": "origins:modify_food",
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": [
-                {
-                    "tag": "minecraft:fishes"
-                },
-                {
-                    "tag": "ponyorigins:fishes_btpack"
-                },
-                {
-                    "tag": "c:raw_fishes"
-                },
-                {
-                    "tag": "c:cooked_fishes"
-                }
-            ]
-        },
-        "food_modifier": {
-            "operation": "multiply_total",
-            "value": 0.5
-        },
-        "saturation_modifier": {
-            "operation": "multiply_total",
-            "value": 0.5
-        }
-    },
-    "not_seafood": {
-        "type": "origins:modify_food",
-        "item_condition": {
-            "inverted": true,
-            "type": "origins:ingredient",
-            "ingredient": [
-                {
-                    "tag": "minecraft:fishes"
-                },
-                {
-                    "tag": "ponyorigins:fishes_btpack"
-                },
-                {
-                    "tag": "c:raw_fishes"
-                },
-                {
-                    "tag": "c:cooked_fishes"
-                }
-            ]
-        },
-        "food_modifier": {
-            "operation": "multiply_total",
-            "value": -0.5
-        },
-        "saturation_modifier": {
-            "operation": "multiply_total",
-            "value": -0.5
-        }
     }
 }
