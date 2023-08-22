@@ -20,37 +20,8 @@
         },
         "type": "origins:modify_slipperiness",
         "block_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_ad_astra"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_ae2"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_alloy_forgery"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_create"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_createdeco"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_minecraft"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:slick_mythicmetals"
-                }
-            ]
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:slick"
         },
         "modifier": {
             "operation": "set_base",
@@ -67,17 +38,8 @@
         },
         "type": "origins:modify_slipperiness",
         "block_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:icey_ad_astra"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:icey_minecraft"
-                }
-            ]
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:icey"
         },
         "modifier": {
             "operation": "set_base",

@@ -1,0 +1,84 @@
+{
+    "values": [
+        {
+            "id": "varietyaquatic:lionfish_cooked",
+            "required": false
+        },
+        {
+            "id": "sandwichable:cooked_salmon_filet",
+            "required": false
+        },
+        {
+            "id": "sandwichable:cooked_cod_filet",
+            "required": false
+        },
+        {
+            "id": "naturalist:cooked_bass",
+            "required": false
+        },
+        {
+            "id": "naturalist:cooked_catfish",
+            "required": false
+        },
+        {
+            "id": "gofish:smoked_cloudy_crab",
+            "required": false
+        },
+        {
+            "id": "gofish:steamed_bass",
+            "required": false
+        },
+        {
+            "id": "gofish:aquatic_astral_stew",
+            "required": false
+        },
+        {
+            "id": "gofish:endfish_and_chorus",
+            "required": false
+        },
+        {
+            "id": "gofish:baked_endfish",
+            "required": false
+        },
+        {
+            "id": "gofish:grilled_blackstone_deluxe",
+            "required": false
+        },
+        {
+            "id": "gofish:grilled_blackstone_trout",
+            "required": false
+        },
+        {
+            "id": "gofish:baked_carrot_carp",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:grilled_salmon",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:squid_ink_pasta",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:baked_cod_stew",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:fish_stew",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:cooked_crab",
+            "required": false
+        },
+        {
+            "id": "minecraft:cooked_cod",
+            "required": false
+        },
+        {
+            "id": "minecraft:cooked_salmon",
+            "required": false
+        }
+    ]
+}

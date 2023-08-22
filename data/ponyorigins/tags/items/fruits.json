@@ -1,0 +1,56 @@
+{
+    "values": [
+        {
+            "id": "#nourish:fruit",
+            "required": false
+        },
+        {
+            "id": "#c:fruit",
+            "required": false
+        },
+        {
+            "id": "bwplus:dragonfruit",
+            "required": false
+        },
+        {
+            "id": "create:chocolate_glazed_berries",
+            "required": false
+        },
+        {
+            "id": "create:honeyed_apple",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:tomato",
+            "required": false
+        },
+        {
+            "id": "minecraft:glow_berries",
+            "required": false
+        },
+        {
+            "id": "minecraft:sweet_berries",
+            "required": false
+        },
+        {
+            "id": "minecraft:glistering_melon_slice",
+            "required": false
+        },
+        {
+            "id": "minecraft:melon_slice",
+            "required": false
+        },
+        {
+            "id": "minecraft:enchanted_golden_apple",
+            "required": false
+        },
+        {
+            "id": "minecraft:golden_apple",
+            "required": false
+        },
+        {
+            "id": "minecraft:apple",
+            "required": false
+        }
+    ]
+}

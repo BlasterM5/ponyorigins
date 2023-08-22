@@ -29,33 +29,6 @@
                             "type": "origins:ingredient",
                             "ingredient": [
                                 {
-                                    "tag": "ponyorigins:meats_additionadditions"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_brewinandchewin"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_culturaldelights"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_expandeddelight"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_farmersdelight"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_farmersrespite"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_minecraft"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_nethersdelight"
-                                },
-                                {
-                                    "tag": "ponyorigins:meats_btpack"
-                                },
-                                {
                                     "tag": "c:raw_meat"
                                 },
                                 {
@@ -225,7 +198,7 @@
         "type": "origins:action_on_block_use",
         "block_condition": {
             "type": "origins:in_tag",
-            "tag": "ponyorigins:meat_btpack"
+            "tag": "ponyorigins:meat_blocks"
         },
         "entity_action": {
             "type": "origins:if_else_list",

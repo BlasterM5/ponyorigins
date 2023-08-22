@@ -61,12 +61,24 @@
                                                     "type": "origins:or",
                                                     "conditions": [
                                                         {
-                                                            "type": "origins:power_active",
-                                                            "power": "*:*_hv_mainhand_food"
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "mainhand",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:plants"
+                                                                }
+                                                            }
                                                         },
                                                         {
-                                                            "type": "origins:power_active",
-                                                            "power": "*:*_hv_offhand_food"
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "offhand",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:plants"
+                                                                }
+                                                            }
                                                         }
                                                     ]
                                                 }
@@ -85,8 +97,14 @@
                                                     "actions": [
                                                         {
                                                             "condition": {
-                                                                "type": "origins:power_active",
-                                                                "power": "*:*_hv_mainhand_food"
+                                                                "type": "origins:equipped_item",
+                                                                "equipment_slot": "mainhand",
+                                                                "item_condition": {
+                                                                    "type": "origins:ingredient",
+                                                                    "ingredient": {
+                                                                        "tag": "ponyorigins:plants"
+                                                                    }
+                                                                }
                                                             },
                                                             "action": {
                                                                 "type": "origins:equipped_item_action",
@@ -99,8 +117,14 @@
                                                         },
                                                         {
                                                             "condition": {
-                                                                "type": "origins:power_active",
-                                                                "power": "*:*_hv_offhand_food"
+                                                                "type": "origins:equipped_item",
+                                                                "equipment_slot": "offhand",
+                                                                "item_condition": {
+                                                                    "type": "origins:ingredient",
+                                                                    "ingredient": {
+                                                                        "tag": "ponyorigins:plants"
+                                                                    }
+                                                                }
                                                             },
                                                             "action": {
                                                                 "type": "origins:equipped_item_action",
@@ -128,12 +152,24 @@
                                                     "type": "origins:or",
                                                     "conditions": [
                                                         {
-                                                            "type": "origins:power_active",
-                                                            "power": "*:*_lv_mainhand_food"
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "mainhand",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:gems"
+                                                                }
+                                                            }
                                                         },
                                                         {
-                                                            "type": "origins:power_active",
-                                                            "power": "*:*_lv_offhand_food"
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "offhand",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:gems"
+                                                                }
+                                                            }
                                                         }
                                                     ]
                                                 }
@@ -175,8 +211,14 @@
                                                                         "conditions": [
                                                                             {
                                                                                 "inverted": true,
-                                                                                "type": "origins:power_active",
-                                                                                "power": "*:*_lv_mainhand_food"
+                                                                                "type": "origins:equipped_item",
+                                                                                "equipment_slot": "mainhand",
+                                                                                "item_condition": {
+                                                                                    "type": "origins:ingredient",
+                                                                                    "ingredient": {
+                                                                                        "tag": "ponyorigins:gems"
+                                                                                    }
+                                                                                }
                                                                             },
                                                                             {
                                                                                 "type": "origins:equipped_item",
@@ -248,8 +290,14 @@
                                                                         "conditions": [
                                                                             {
                                                                                 "inverted": true,
-                                                                                "type": "origins:power_active",
-                                                                                "power": "*:*_lv_mainhand_food"
+                                                                                "type": "origins:equipped_item",
+                                                                                "equipment_slot": "mainhand",
+                                                                                "item_condition": {
+                                                                                    "type": "origins:ingredient",
+                                                                                    "ingredient": {
+                                                                                        "tag": "ponyorigins:gems"
+                                                                                    }
+                                                                                }
                                                                             },
                                                                             {
                                                                                 "type": "origins:equipped_item",
@@ -291,8 +339,14 @@
                                                                         "conditions": [
                                                                             {
                                                                                 "inverted": true,
-                                                                                "type": "origins:power_active",
-                                                                                "power": "*:*_lv_mainhand_food"
+                                                                                "type": "origins:equipped_item",
+                                                                                "equipment_slot": "mainhand",
+                                                                                "item_condition": {
+                                                                                    "type": "origins:ingredient",
+                                                                                    "ingredient": {
+                                                                                        "tag": "ponyorigins:gems"
+                                                                                    }
+                                                                                }
                                                                             },
                                                                             {
                                                                                 "type": "origins:equipped_item",
@@ -355,8 +409,14 @@
                                                                         "conditions": [
                                                                             {
                                                                                 "inverted": true,
-                                                                                "type": "origins:power_active",
-                                                                                "power": "*:*_lv_mainhand_food"
+                                                                                "type": "origins:equipped_item",
+                                                                                "equipment_slot": "mainhand",
+                                                                                "item_condition": {
+                                                                                    "type": "origins:ingredient",
+                                                                                    "ingredient": {
+                                                                                        "tag": "ponyorigins:gems"
+                                                                                    }
+                                                                                }
                                                                             },
                                                                             {
                                                                                 "type": "origins:equipped_item",
@@ -390,8 +450,14 @@
                                                     "actions": [
                                                         {
                                                             "condition": {
-                                                                "type": "origins:power_active",
-                                                                "power": "*:*_lv_mainhand_food"
+                                                                "type": "origins:equipped_item",
+                                                                "equipment_slot": "mainhand",
+                                                                "item_condition": {
+                                                                    "type": "origins:ingredient",
+                                                                    "ingredient": {
+                                                                        "tag": "ponyorigins:gems"
+                                                                    }
+                                                                }
                                                             },
                                                             "action": {
                                                                 "type": "origins:equipped_item_action",
@@ -404,8 +470,14 @@
                                                         },
                                                         {
                                                             "condition": {
-                                                                "type": "origins:power_active",
-                                                                "power": "*:*_lv_offhand_food"
+                                                                "type": "origins:equipped_item",
+                                                                "equipment_slot": "offhand",
+                                                                "item_condition": {
+                                                                    "type": "origins:ingredient",
+                                                                    "ingredient": {
+                                                                        "tag": "ponyorigins:gems"
+                                                                    }
+                                                                }
                                                             },
                                                             "action": {
                                                                 "type": "origins:equipped_item_action",
@@ -433,12 +505,24 @@
                                                     "type": "origins:or",
                                                     "conditions": [
                                                         {
-                                                            "type": "origins:power_active",
-                                                            "power": "*:*_pv_mainhand_food"
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "mainhand",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:seafood"
+                                                                }
+                                                            }
                                                         },
                                                         {
-                                                            "type": "origins:power_active",
-                                                            "power": "*:*_pv_offhand_food"
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "offhand",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:seafood"
+                                                                }
+                                                            }
                                                         }
                                                     ]
                                                 }
@@ -457,8 +541,14 @@
                                                     "actions": [
                                                         {
                                                             "condition": {
-                                                                "type": "origins:power_active",
-                                                                "power": "*:*_pv_mainhand_food"
+                                                                "type": "origins:equipped_item",
+                                                                "equipment_slot": "mainhand",
+                                                                "item_condition": {
+                                                                    "type": "origins:ingredient",
+                                                                    "ingredient": {
+                                                                        "tag": "ponyorigins:seafood"
+                                                                    }
+                                                                }
                                                             },
                                                             "action": {
                                                                 "type": "origins:equipped_item_action",
@@ -471,8 +561,14 @@
                                                         },
                                                         {
                                                             "condition": {
-                                                                "type": "origins:power_active",
-                                                                "power": "*:*_pv_offhand_food"
+                                                                "type": "origins:equipped_item",
+                                                                "equipment_slot": "offhand",
+                                                                "item_condition": {
+                                                                    "type": "origins:ingredient",
+                                                                    "ingredient": {
+                                                                        "tag": "ponyorigins:seafood"
+                                                                    }
+                                                                }
                                                             },
                                                             "action": {
                                                                 "type": "origins:equipped_item_action",
@@ -630,7 +726,13 @@
         "type": "origins:resource",
         "min": 0,
         "max": 5,
-        "start_value": 0
+        "start_value": 0,
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_eat_timer",
+            "change": 0,
+            "operation": "set"
+        }
     },
     "eat_timer": {
         "type": "origins:resource",
@@ -749,6 +851,27 @@
                     "resource": "*:*_cd",
                     "comparison": "==",
                     "compare_to": 0
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:food"
+                            }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:food"
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -764,198 +887,6 @@
             "key": "key.use",
             "continuous": true
         }
-    },
-    "hv_mainhand_food": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": [
-                    {
-                        "tag": "ponyorigins:plants_minecraft"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_btpack"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_culturaldelights"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_expandeddelight"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_farmersdelight"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_farmersrespite"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_mcwfences"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_minecraft"
-                    },
-                    {
-                        "tag": "minecraft:flowers"
-                    },
-                    {
-                        "tag": "minecraft:leaves"
-                    },
-                    {
-                        "tag": "createaddition:plants"
-                    },
-                    {
-                        "tag": "c:crops"
-                    }
-                ]
-            }
-        },
-        "type": "origins:simple"
-    },
-    "hv_offhand_food": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": [
-                    {
-                        "tag": "ponyorigins:plants_minecraft"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_btpack"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_culturaldelights"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_expandeddelight"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_farmersdelight"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_farmersrespite"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_mcwfences"
-                    },
-                    {
-                        "tag": "ponyorigins:plants_minecraft"
-                    },
-                    {
-                        "tag": "minecraft:flowers"
-                    },
-                    {
-                        "tag": "minecraft:leaves"
-                    },
-                    {
-                        "tag": "createaddition:plants"
-                    },
-                    {
-                        "tag": "c:crops"
-                    }
-                ]
-            }
-        },
-        "type": "origins:simple"
-    },
-    "lv_offhand_food": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": [
-                    {
-                        "tag": "ponyorigins:gems_minecraft"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_ae2"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_btpack"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_create"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_mythicmetals"
-                    },
-                    {
-                        "tag": "c:gems"
-                    }
-                ]
-            }
-        },
-        "type": "origins:simple"
-    },
-    "lv_mainhand_food": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": [
-                    {
-                        "tag": "ponyorigins:gems_minecraft"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_ae2"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_btpack"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_create"
-                    },
-                    {
-                        "tag": "ponyorigins:gems_mythicmetals"
-                    },
-                    {
-                        "tag": "c:gems"
-                    }
-                ]
-            }
-        },
-        "type": "origins:simple"
-    },
-    "pv_offhand_food": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": [
-                    {
-                        "item": "minecraft:kelp"
-                    },
-                    {
-                        "item": "gofish:seaweed"
-                    }
-                ]
-            }
-        },
-        "type": "origins:simple"
-    },
-    "pv_mainhand_food": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": [
-                    {
-                        "item": "minecraft:kelp"
-                    },
-                    {
-                        "item": "gofish:seaweed"
-                    }
-                ]
-            }
-        },
-        "type": "origins:simple"
     },
     "edible": {
         "condition": {
@@ -981,12 +912,24 @@
                             "type": "origins:or",
                             "conditions": [
                                 {
-                                    "type": "origins:power_active",
-                                    "power": "*:*_hv_mainhand_food"
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "ponyorigins:plants"
+                                        }
+                                    }
                                 },
                                 {
-                                    "type": "origins:power_active",
-                                    "power": "*:*_hv_offhand_food"
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "ponyorigins:plants"
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -1003,12 +946,24 @@
                             "type": "origins:or",
                             "conditions": [
                                 {
-                                    "type": "origins:power_active",
-                                    "power": "*:*_lv_mainhand_food"
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "ponyorigins:gems"
+                                        }
+                                    }
                                 },
                                 {
-                                    "type": "origins:power_active",
-                                    "power": "*:*_lv_offhand_food"
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "ponyorigins:gems"
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -1025,12 +980,24 @@
                             "type": "origins:or",
                             "conditions": [
                                 {
-                                    "type": "origins:power_active",
-                                    "power": "*:*_pv_mainhand_food"
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "ponyorigins:seafood"
+                                        }
+                                    }
                                 },
                                 {
-                                    "type": "origins:power_active",
-                                    "power": "*:*_pv_offhand_food"
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "ponyorigins:seafood"
+                                        }
+                                    }
                                 }
                             ]
                         }

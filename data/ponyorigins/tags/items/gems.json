@@ -1,0 +1,240 @@
+{
+    "values": [
+        {
+            "id": "betternether:nether_ruby",
+            "required": false
+        },
+        {
+            "id": "besmirchment:lich_gem",
+            "required": false
+        },
+        {
+            "id": "betterend:ender_shard",
+            "required": false
+        },
+        {
+            "id": "betterend:crystal_shards",
+            "required": false
+        },
+        {
+            "id": "betterend:amber_gem",
+            "required": false
+        },
+        {
+            "id": "betterend:eternal_crystal",
+            "required": false
+        },
+        {
+            "id": "betterend:smaragdant_crystal_shard",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:illunite_cluster",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:illunite_shard",
+            "required": false
+        },
+        {
+            "id": "botania:mana_pearl",
+            "required": false
+        },
+        {
+            "id": "botania:mana_diamond",
+            "required": false
+        },
+        {
+            "id": "botania:dragonstone",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_dark",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_mana",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_blaze",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_lavender",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_red",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_elven",
+            "required": false
+        },
+        {
+            "id": "botania:quartz_sunny",
+            "required": false
+        },
+        {
+            "id": "enderscape:nebulite",
+            "required": false
+        },
+        {
+            "id": "enderscape:nebulite_shards",
+            "required": false
+        },
+        {
+            "id": "enderscape:shadow_quartz",
+            "required": false
+        },
+        {
+            "id": "galosphere:allurite_shard",
+            "required": false
+        },
+        {
+            "id": "galosphere:lumiere_shard",
+            "required": false
+        },
+        {
+            "id": "lilwings:butternite",
+            "required": false
+        },
+        {
+            "id": "powah:crystal_blazing",
+            "required": false
+        },
+        {
+            "id": "powah:crystal_niotic",
+            "required": false
+        },
+        {
+            "id": "powah:crystal_spirited",
+            "required": false
+        },
+        {
+            "id": "powah:crystal_nitro",
+            "required": false
+        },
+        {
+            "id": "spectrum:topaz_shard",
+            "required": false
+        },
+        {
+            "id": "spectrum:citrine_shard",
+            "required": false
+        },
+        {
+            "id": "spectrum:glass_ampoule",
+            "required": false
+        },
+        {
+            "id": "spectrum:ferocious_glass_ampoule",
+            "required": false
+        },
+        {
+            "id": "spectrum:fractal_glass_ampoule",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_certus_quartz",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_fluix",
+            "required": false
+        },
+        {
+            "id": "techreborn:peridot_gem",
+            "required": false
+        },
+        {
+            "id": "techreborn:ruby_gem",
+            "required": false
+        },
+        {
+            "id": "techreborn:sapphire_gem",
+            "required": false
+        },
+        {
+            "id": "techreborn:synthetic_redstone_crystal",
+            "required": false
+        },
+        {
+            "id": "techreborn:energy_crystal",
+            "required": false
+        },
+        {
+            "id": "techreborn:lapotron_crystal",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_pearl",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:morkite",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:starrite",
+            "required": false
+        },
+        {
+            "id": "create:rose_quartz",
+            "required": false
+        },
+        {
+            "id": "ae2:fluix_pearl",
+            "required": false
+        },
+        {
+            "id": "ae2:fluix_crystal",
+            "required": false
+        },
+        {
+            "id": "ae2:charged_certus_quartz_crystal",
+            "required": false
+        },
+        {
+            "id": "ae2:certus_quartz_crystal",
+            "required": false
+        },
+        {
+            "id": "minecraft:heart_of_the_sea",
+            "required": false
+        },
+        {
+            "id": "minecraft:blaze_rod",
+            "required": false
+        },
+        {
+            "id": "minecraft:echo_shard",
+            "required": false
+        },
+        {
+            "id": "minecraft:prismarine_shard",
+            "required": false
+        },
+        {
+            "id": "minecraft:nether_star",
+            "required": false
+        },
+        {
+            "id": "minecraft:amethyst_shard",
+            "required": false
+        },
+        {
+            "id": "minecraft:quartz",
+            "required": false
+        },
+        {
+            "id": "minecraft:emerald",
+            "required": false
+        },
+        {
+            "id": "minecraft:diamond",
+            "required": false
+        }
+    ]
+}

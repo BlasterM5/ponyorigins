@@ -1,0 +1,44 @@
+{
+    "values": [
+        {
+            "id": "ad_astra:polished_permafrost_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_permafrost_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_permafrost",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_glacio_stone_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_glacio_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_glacio_stone",
+            "required": false
+        },
+        {
+            "id": "betterend:dense_snow",
+            "required": false
+        },
+        {
+            "id": "minecraft:honey_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:slime_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:snow_block",
+            "required": false
+        }
+    ]
+}

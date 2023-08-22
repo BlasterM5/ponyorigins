@@ -1,0 +1,80 @@
+{
+    "values": [
+        {
+            "id": "farmersdelight:salmon_roll",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:cod_roll",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:raw_crab",
+            "required": false
+        },
+        {
+            "id": "gofish:chorus_cod",
+            "required": false
+        },
+        {
+            "id": "gofish:dragonfish",
+            "required": false
+        },
+        {
+            "id": "gofish:omega_floater",
+            "required": false
+        },
+        {
+            "id": "gofish:portal_puffer",
+            "required": false
+        },
+        {
+            "id": "gofish:blizzard_bass",
+            "required": false
+        },
+        {
+            "id": "naturalist:catfish",
+            "required": false
+        },
+        {
+            "id": "naturalist:bass",
+            "required": false
+        },
+        {
+            "id": "sandwichable:cod_filet",
+            "required": false
+        },
+        {
+            "id": "sandwichable:salmon_filet",
+            "required": false
+        },
+        {
+            "id": "varietyaquatic:raw_betta",
+            "required": false
+        },
+        {
+            "id": "varietyaquatic:raw_tetra",
+            "required": false
+        },
+        {
+            "id": "varietyaquatic:raw_piranha",
+            "required": false
+        },
+        {
+            "id": "minecraft:pufferfish",
+            "required": false
+        },
+        {
+            "id": "minecraft:tropical_fish",
+            "required": false
+        },
+        {
+            "id": "minecraft:salmon",
+            "required": false
+        },
+        {
+            "id": "minecraft:cod",
+            "required": false
+        }
+    ]
+}

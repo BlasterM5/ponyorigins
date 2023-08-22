@@ -1,0 +1,16 @@
+{
+    "values": [
+        {
+            "id": "ad_astra:oil",
+            "required": false
+        },
+        {
+            "id": "createaddition:seed_oil",
+            "required": false
+        },
+        {
+            "id": "techreborn:oil",
+            "required": false
+        }
+    ]
+}

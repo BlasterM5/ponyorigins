@@ -1,6 +1,6 @@
 {
     "name": "Emotivore",
-    "description": "Ever shall you hunger, for food can not satisfy you, only the love of other creatures. More effective on sentient creatures and tamed creatures.\n\nUse a living creature with an empty hoof to steal their love and feed.",
+    "description": "Ever shall you hunger, for food can not satisfy you, only the love of living creatures. More effective on sentient creatures and tamed creatures.\n\nUse a living creature with an empty hoof to steal their love and feed.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -603,14 +603,7 @@
         "type": "origins:prevent_block_use",
         "block_condition": {
             "type": "origins:in_tag",
-            "tag": "ponyorigins:food_minecraft"
-        }
-    },
-    "no_eating_blocks_bt": {
-        "type": "origins:prevent_block_use",
-        "block_condition": {
-            "type": "origins:in_tag",
-            "tag": "ponyorigins:food_btpack"
+            "tag": "ponyorigins:food_blocks"
         }
     },
     "useless_food": {

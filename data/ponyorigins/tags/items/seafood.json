@@ -1,0 +1,20 @@
+{
+    "values": [
+        {
+            "id": "gofish:seaweed",
+            "required": false
+        },
+        {
+            "id": "minecraft:seagrass",
+            "required": false
+        },
+        {
+            "id": "minecraft:kelp",
+            "required": false
+        },
+        {
+            "id": "minecraft:sea_pickle",
+            "required": false
+        }
+    ]
+}

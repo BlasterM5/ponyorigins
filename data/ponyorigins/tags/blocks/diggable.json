@@ -1,35 +1,39 @@
 {
     "values": [
         {
-            "id": "ad_astra:earth_orbit",
+            "id": "#c:gravel",
             "required": false
         },
         {
-            "id": "ad_astra:moon",
+            "id": "#c:sandstone",
             "required": false
         },
         {
-            "id": "ad_astra:moon_orbit",
+            "id": "#c:sand",
             "required": false
         },
         {
-            "id": "ad_astra:mars_orbit",
+            "id": "#c:cobblestone",
             "required": false
         },
         {
-            "id": "ad_astra:venus_orbit",
+            "id": "#c:stone",
             "required": false
         },
         {
-            "id": "ad_astra:mercury",
+            "id": "#c:dirt",
             "required": false
         },
         {
-            "id": "ad_astra:mercury_orbit",
+            "id": "#minecraft:dirt",
             "required": false
         },
         {
-            "id": "ad_astra:glacio_orbit",
+            "id": "#minecraft:stone_crafting_materials",
+            "required": false
+        },
+        {
+            "id": "#minecraft:sand",
             "required": false
         }
     ]

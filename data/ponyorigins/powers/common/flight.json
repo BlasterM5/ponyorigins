@@ -75,13 +75,68 @@
         },
         "type": "origins:creative_flight"
     },
-    "exhaustion": {
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "start_value": 0
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_buffer",
+            "comparison": "<=",
+            "compare_to": 20
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:power",
+                "power": "ponyorigins:common/energy"
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 20,
+                        "operation": "add"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:exhaust",
+                        "amount": 0.1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 20,
+                        "operation": "add"
+                    }
+                ]
+            }
+        }
+    },
+    "exhaust": {
         "condition": {
             "type": "origins:power_active",
             "power": "*:*_active"
         },
         "type": "origins:action_over_time",
-        "interval": 8,
+        "interval": 3,
         "entity_action": {
             "type": "origins:if_else",
             "condition": {
@@ -90,40 +145,19 @@
             "if_action": {
                 "type": "origins:if_else",
                 "condition": {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/energy"
+                    "type": "origins:sprinting"
                 },
                 "if_action": {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:sprinting"
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -2,
-                        "operation": "add"
-                    },
-                    "else_action": {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -1,
-                        "operation": "add"
-                    }
+                    "type": "origins:change_resource",
+                    "resource": "*:*_buffer",
+                    "change": -2,
+                    "operation": "add"
                 },
                 "else_action": {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:sprinting"
-                    },
-                    "if_action": {
-                        "type": "origins:exhaust",
-                        "amount": 0.5
-                    },
-                    "else_action": {
-                        "type": "origins:exhaust",
-                        "amount": 0.25
-                    }
+                    "type": "origins:change_resource",
+                    "resource": "*:*_buffer",
+                    "change": -1,
+                    "operation": "add"
                 }
             }
         }
@@ -217,35 +251,6 @@
             }
         }
     },
-    "oil_check": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:in_block",
-                    "block_condition": {
-                        "type": "origins:block",
-                        "block": "ad_astra:oil"
-                    }
-                },
-                {
-                    "type": "origins:in_block",
-                    "block_condition": {
-                        "type": "origins:block",
-                        "block": "createaddition:seed_oil"
-                    }
-                },
-                {
-                    "type": "origins:in_block",
-                    "block_condition": {
-                        "type": "origins:block",
-                        "block": "techreborn:oil"
-                    }
-                }
-            ]
-        },
-        "type": "origins:simple"
-    },
     "hazard_detector": {
         "condition": {
             "type": "origins:or",
@@ -267,8 +272,14 @@
                     "type": "origins:in_rain"
                 },
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_oil_check"
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "ponyorigins:oil"
+                        }
+                    }
                 }
             ]
         },
@@ -280,16 +291,46 @@
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "type": "origins:in_block",
-                        "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:cobweb"
-                        }
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:block",
+                                    "block": "minecraft:cobweb"
+                                }
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_oil_cd",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
                     },
                     "if_action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_web_cd",
                         "change": 30,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:oil"
+                            }
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_oil_cd",
+                        "change": 100,
                         "operation": "add"
                     }
                 },
@@ -349,6 +390,17 @@
                                         "power": "ponyorigins:common/wings/membraneous"
                                     }
                                 ]
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:fluid",
+                                    "fluid_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:oil"
+                                    }
+                                }
                             }
                         ]
                     },
@@ -356,19 +408,6 @@
                         "type": "origins:change_resource",
                         "resource": "*:*_wet_cd",
                         "change": 10,
-                        "operation": "add"
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:power_active",
-                        "power": "*:*_oil_check"
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_oil_cd",
-                        "change": 100,
                         "operation": "add"
                     }
                 }
@@ -515,8 +554,14 @@
                             },
                             {
                                 "inverted": true,
-                                "type": "origins:power_active",
-                                "power": "*:*_oil_check"
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:fluid",
+                                    "fluid_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:oil"
+                                    }
+                                }
                             }
                         ]
                     },
@@ -588,8 +633,14 @@
                                 },
                                 {
                                     "inverted": true,
-                                    "type": "origins:power_active",
-                                    "power": "*:*_oil_check"
+                                    "type": "origins:in_block",
+                                    "block_condition": {
+                                        "type": "origins:fluid",
+                                        "fluid_condition": {
+                                            "type": "origins:in_tag",
+                                            "tag": "ponyorigins:oil"
+                                        }
+                                    }
                                 }
                             ]
                         },

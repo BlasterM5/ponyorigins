@@ -48,45 +48,8 @@
         },
         "type": "origins:modify_break_speed",
         "block_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:dirt"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:sand"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:terracotta"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:diggable_minecraft"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "c:dirt"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "c:stone"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "c:cobblestone"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "c:sand"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "c:gravel"
-                }
-            ]
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:diggable"
         },
         "modifier": {
             "operation": "multiply_base_additive",
