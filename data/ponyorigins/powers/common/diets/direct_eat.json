@@ -726,13 +726,7 @@
         "type": "origins:resource",
         "min": 0,
         "max": 5,
-        "start_value": 0,
-        "min_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_eat_timer",
-            "change": 0,
-            "operation": "set"
-        }
+        "start_value": 0
     },
     "eat_timer": {
         "type": "origins:resource",
@@ -1046,6 +1040,33 @@
                     }
                 ]
             }
+        }
+    },
+    "eat_cancel_decay": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_antilag",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_eat_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_eat_timer",
+            "change": -1,
+            "operation": "add"
         }
     }
 }
