@@ -141,6 +141,13 @@
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/shock_ray"
+                            }
+                        },
+                        {
+                            "weight": 4,
+                            "element": {
+                                "type": "origins:execute_command",
                                 "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/laser"
                             }
                         },
