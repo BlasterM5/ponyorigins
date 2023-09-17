@@ -43,19 +43,13 @@
             "conditions": [
                 {
                     "type": "origins:ingredient",
-                    "ingredient": [
-                        {
-                            "item": "minecraft:bow"
-                        },
-                        {
-                            "item": "minecraft:crossbow"
-                        },
-                        {
-                            "item": "minecraft:fire_charge"
-                        }
-                    ]
+                    "ingredient": {
+                        "tag": "ponyorigins:ranged_weapons"
+                    }
                 }
             ]
-        }
+        },
+        "trigger": "finish",
+        "priority": 0
     }
 }

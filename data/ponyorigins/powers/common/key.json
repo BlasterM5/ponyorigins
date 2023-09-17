@@ -1,0 +1,100 @@
+{
+    "name": "Key Anti-Lag",
+    "description": "A simple power to determine if a key is held down or not, with an anti-lag delay",
+    "hidden": true,
+    "type": "origins:multiple",
+    "antilag_decay": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_primary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_primary_active",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_primary_active",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_secondary_active",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_secondary_active",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                }
+            ]
+        }
+    },
+    "primary_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "secondary_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "key_primary": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_primary_active",
+            "change": 2,
+            "operation": "set"
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
+    },
+    "key_secondary": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_secondary_active",
+            "change": 2,
+            "operation": "set"
+        },
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
+    }
+}

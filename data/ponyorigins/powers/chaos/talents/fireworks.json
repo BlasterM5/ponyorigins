@@ -319,7 +319,7 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "ponyorigins:common/energy_level",
-                    "change": -5,
+                    "change": -10,
                     "operation": "add"
                 }
             ]

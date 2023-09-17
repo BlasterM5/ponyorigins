@@ -1,0 +1,516 @@
+{
+    "values": [
+        {
+            "id": "bewitchment:silver_block",
+            "required": false
+        },
+        {
+            "id": "galosphere:silver_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:aluminum_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:annealed_copper_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:antimony_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:battery_alloy_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:bronze_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:chromium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:cupronickel_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:electrum_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:invar_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:iridium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:lead_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:mozanite_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:neodymium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:nickel_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:platinum_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:tungsten_block",
+            "required": false
+        },
+        {
+            "id": "powah:energized_steel_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "minecraft:iron_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:copper_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:gold_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:redstone_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:banglum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:bronze_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:carmot_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:celestium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:durasteel_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:kyber_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:manganese_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:metallurgium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:morkite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:midas_gold_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:mythril_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:orichalcum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:osmium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:palladium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:platinum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:prometheum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:quadrillum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:runite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:silver_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:star_platinum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:starrite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:steel_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:stormyx_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:tin_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:unobtainium_block",
+            "required": false
+        },
+        {
+            "id": "createdeco:cast_iron_block",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_block",
+            "required": false
+        }
+    ]
+}

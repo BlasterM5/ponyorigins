@@ -6,7 +6,8 @@
         "ponyorigins:common/nightvision",
         "ponyorigins:diamond_dog/dig",
         "ponyorigins:talents/miner_stamina",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:emerald"

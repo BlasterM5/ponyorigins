@@ -438,7 +438,9 @@
             "ingredient": {
                 "item": "minecraft:enchanted_golden_apple"
             }
-        }
+        },
+        "trigger": "finish",
+        "priority": 0
     },
     "sc_tick": {
         "condition": {
@@ -483,7 +485,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "particle electric_spark ~ ~ ~-0.25 0.2 0.2 0.2 1 8 force"
+                    "command": "particle electric_spark ~ ~0.5 ~-0.25 0.2 0.2 0.2 1 8 force"
                 }
             ]
         },

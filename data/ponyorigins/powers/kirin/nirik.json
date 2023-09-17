@@ -157,9 +157,6 @@
             "if_action": {
                 "type": "origins:toggle",
                 "power": "*:*_active"
-            },
-            "else_action": {
-                "type": "origins:nothing"
             }
         },
         "cooldown": 20,
@@ -190,32 +187,35 @@
                 }
             ]
         },
-        "type": "origins:fire_projectile",
-        "entity_type": "minecraft:small_fireball",
-        "cooldown": 10,
-        "count": 1,
-        "interval": 0,
-        "start_delay": 0,
-        "speed": 1.5,
-        "divergence": 1,
-        "sound": "minecraft:entity.blaze.shoot",
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:fire_projectile",
+                    "entity_type": "minecraft:small_fireball",
+                    "count": 1,
+                    "speed": 1.5,
+                    "divergence": 1,
+                    "projectile_action": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.blaze.shoot",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_rage",
+                    "change": -5,
+                    "operation": "add"
+                }
+            ]
+        },
+        "cooldown": 4,
         "key": {
             "key": "key.attack"
         }
-    },
-    "fireball_drain": {
-        "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_fireball"
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_rage",
-            "change": -5,
-            "operation": "add"
-        },
-        "cooldown": 10
     },
     "rage": {
         "type": "origins:resource",
@@ -259,8 +259,8 @@
                     {
                         "type": "origins:fluid_height",
                         "fluid": "minecraft:water",
-                        "comparison": "==",
-                        "compare_to": 0
+                        "comparison": "<",
+                        "compare_to": 0.3
                     }
                 ]
             },
@@ -301,13 +301,13 @@
                 {
                     "type": "origins:fluid_height",
                     "fluid": "minecraft:water",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "comparison": "<",
+                    "compare_to": 0.3
                 }
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 4,
+        "interval": 8,
         "entity_action": {
             "type": "origins:and",
             "actions": [
@@ -479,7 +479,7 @@
     "set_fires": {
         "type": "origins:resource",
         "min": 0,
-        "max": 10,
+        "max": 5,
         "start_value": 0,
         "max_action": {
             "type": "origins:and",

@@ -26,116 +26,139 @@
         }
     ],
     "type": "origins:multiple",
-    "water_bubbles_primary": {
+    "flamethrower": {
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 4
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:unicorn/flamethrower"
+                    "resource": "*:*_charged",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },
-        "type": "origins:active_self",
+        "type": "origins:action_over_time",
+        "interval": 2,
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:raycast",
-                    "distance": 3,
-                    "block": false,
-                    "entity": false,
-                    "shape_type": "visual",
-                    "fluid_handling": "none",
-                    "command_along_ray": "particle minecraft:bubble_column_up ~ ~ ~ 0 0 0 1 8 force",
-                    "command_step": 1
+                    "type": "origins:if_else",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:water"
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 10,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "bientity_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 2,
+                                        "damage_type": "on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 4
+                                    },
+                                    {
+                                        "type": "origins:block_action_at",
+                                        "block_action": {
+                                            "type": "origins:add_block",
+                                            "block": "minecraft:fire"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "block_action": {
+                            "type": "origins:add_block",
+                            "block": "minecraft:fire"
+                        },
+                        "before_action": {
+                            "type": "origins:play_sound",
+                            "sound": "block.fire.ambient",
+                            "volume": 0.5,
+                            "pitch": 0.5
+                        },
+                        "command_along_ray": "particle minecraft:flame ^ ^0.5 ^ 0 0 0 1 0 force",
+                        "command_step": 1
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:raycast",
+                                "distance": 3,
+                                "block": false,
+                                "entity": false,
+                                "shape_type": "visual",
+                                "fluid_handling": "none",
+                                "command_along_ray": "particle minecraft:bubble_column_up ^ ^0.5 ^ 0 0 0 1 8 force",
+                                "command_step": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.bubble_column.upwards_inside",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        ]
+                    }
                 },
                 {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:block.bubble_column.upwards_inside",
-                    "volume": 1,
-                    "pitch": 1
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "change": -4,
-                    "operation": "add"
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "power": "*:*_trigger"
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": -1,
+                        "operation": "add"
+                    }
                 }
             ]
-        },
-        "cooldown": 5,
-        "key": {
-            "key": "key.origins.primary_active"
-        }
-    },
-    "water_bubbles_secondary": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 4
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talents/flamethrower"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:raycast",
-                    "distance": 3,
-                    "block": false,
-                    "entity": false,
-                    "shape_type": "visual",
-                    "fluid_handling": "none",
-                    "command_along_ray": "particle minecraft:bubble_column_up ~ ~ ~ 0 0 0 1 8 force",
-                    "command_step": 1
-                },
-                {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:block.bubble_column.upwards_inside",
-                    "volume": 1,
-                    "pitch": 1
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "change": -4,
-                    "operation": "add"
-                }
-            ]
-        },
-        "cooldown": 5,
-        "key": {
-            "key": "key.origins.secondary_active"
         }
     },
     "buffer": {
         "type": "origins:resource",
         "min": 0,
-        "max": 20,
+        "max": 10,
         "start_value": 0,
         "hud_render": {
             "should_render": true,
@@ -183,304 +206,7 @@
             "operation": "add"
         }
     },
-    "trigger_primary": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:unicorn/flamethrower"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "ponyorigins:common/energy_level",
-                "comparison": ">",
-                "compare_to": 3
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:resource",
-                            "resource": "*:*_buffer",
-                            "comparison": "<",
-                            "compare_to": 20
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/energy_level",
-                                    "change": -4,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": 4,
-                                    "operation": "add"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:raycast",
-                        "distance": 1,
-                        "block": false,
-                        "entity": false,
-                        "shape_type": "outline",
-                        "fluid_handling": "any",
-                        "miss_action": {
-                            "type": "origins:execute_command",
-                            "command": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-                        },
-                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_antilag",
-                        "change": 5,
-                        "operation": "set"
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:raycast",
-                        "distance": 1,
-                        "block": false,
-                        "entity": false,
-                        "shape_type": "outline",
-                        "fluid_handling": "none",
-                        "miss_action": {
-                            "type": "origins:execute_command",
-                            "command": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-                        },
-                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force",
-                        "command_step": 1
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.extinguish",
-                        "volume": 0.1,
-                        "pitch": 1
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd",
-                        "change": 1,
-                        "operation": "set"
-                    }
-                ]
-            }
-        },
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
-    },
-    "trigger_secondary": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talents/flamethrower"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "ponyorigins:common/energy_level",
-                "comparison": ">",
-                "compare_to": 3
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:resource",
-                            "resource": "*:*_buffer",
-                            "comparison": "<",
-                            "compare_to": 20
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/energy_level",
-                                    "change": -4,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": 4,
-                                    "operation": "add"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:raycast",
-                        "distance": 1,
-                        "block": false,
-                        "entity": false,
-                        "shape_type": "outline",
-                        "fluid_handling": "any",
-                        "miss_action": {
-                            "type": "origins:execute_command",
-                            "command": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-                        },
-                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_antilag",
-                        "change": 5,
-                        "operation": "set"
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:raycast",
-                        "distance": 1,
-                        "block": false,
-                        "entity": false,
-                        "shape_type": "outline",
-                        "fluid_handling": "none",
-                        "miss_action": {
-                            "type": "origins:execute_command",
-                            "command": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-                        },
-                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force",
-                        "command_step": 1
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.extinguish",
-                        "volume": 0.1,
-                        "pitch": 1
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd",
-                        "change": 1,
-                        "operation": "set"
-                    }
-                ]
-            }
-        },
-        "key": {
-            "key": "key.origins.secondary_active",
-            "continuous": true
-        }
-    },
-    "antilag": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
-    },
-    "antilag_decay": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag",
-            "change": -1,
-            "operation": "add"
-        }
-    },
     "buffer_return": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_buffer",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_antilag",
-                "comparison": "==",
-                "compare_to": 0
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_buffer",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": 1,
-                        "operation": "add"
-                    }
-                ]
-            }
-        }
-    },
-    "flamethrower": {
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -488,112 +214,73 @@
                     "type": "origins:resource",
                     "resource": "*:*_buffer",
                     "comparison": ">",
-                    "compare_to": 3
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:resource",
-                    "resource": "*:*_charged",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
                     "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
                 }
             ]
         },
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:raycast",
-            "distance": 10,
-            "block": true,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "any",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:damage",
-                            "amount": 2,
-                            "source": {
-                                "name": "onFire.player",
-                                "fire": true
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_buffer",
+                                "comparison": "<",
+                                "compare_to": 5
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_charged",
+                                "comparison": "==",
+                                "compare_to": 0
                             }
-                        },
-                        {
-                            "type": "origins:set_on_fire",
-                            "duration": 4
-                        },
-                        {
-                            "type": "origins:block_action_at",
-                            "block_action": {
-                                "type": "origins:add_block",
-                                "block": "minecraft:fire"
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_buffer",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "change": 1,
+                                "operation": "add"
                             }
-                        }
-                    ]
-                }
-            },
-            "block_action": {
-                "type": "origins:add_block",
-                "block": "minecraft:fire"
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
+                        ]
+                    },
+                    "else_action": {
                         "type": "origins:if_else",
                         "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/energy_level",
-                                    "comparison": ">",
-                                    "compare_to": 3
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_antilag",
-                                    "comparison": "==",
-                                    "compare_to": 5
-                                }
-                            ]
+                            "type": "origins:resource",
+                            "resource": "*:*_buffer",
+                            "comparison": ">=",
+                            "compare_to": 5
                         },
                         "if_action": {
                             "type": "origins:change_resource",
-                            "resource": "ponyorigins:common/energy_level",
-                            "change": -4,
-                            "operation": "add"
-                        },
-                        "else_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_buffer",
-                            "change": -4,
-                            "operation": "add"
+                            "resource": "*:*_charged",
+                            "change": 1,
+                            "operation": "set"
                         }
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.ambient",
-                        "volume": 0.5,
-                        "pitch": 0.5
                     }
-                ]
-            },
-            "command_along_ray": "particle minecraft:flame ~ ~ ~ 0 0 0 1 0 force",
-            "command_step": 1
+                }
+            ]
         }
     },
     "charged": {
@@ -601,5 +288,212 @@
         "min": 0,
         "max": 1,
         "start_value": 0
+    },
+    "charge": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "<",
+                        "compare_to": 10
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": "==",
+                    "compare_to": 10
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_charged",
+                    "change": 1,
+                    "operation": "set"
+                }
+            }
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_charged",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 0.1,
+                        "pitch": 1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "trigger": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:unicorn/flamethrower"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/key_primary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:talents/flamethrower"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/key_secondary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:simple"
+    },
+    "spark": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_charged",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "<",
+                        "compare_to": 5
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "inverted": true,
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                },
+                "if_action": {
+                    "type": "origins:execute_command",
+                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:flame ~ ~ ~ 0 0.1 0 1 0 force"
+                },
+                "else_action": {
+                    "type": "origins:execute_command",
+                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:bubble_column_up ~ ~ ~ 0 0.1 0 1 0 force"
+                }
+            }
+        }
     }
 }

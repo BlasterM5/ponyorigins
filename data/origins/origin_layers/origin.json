@@ -1,5 +1,5 @@
 {
-    "order": 0,
+    "order": 1,
     "origins": [
         {
             "condition": {
@@ -58,12 +58,5 @@
     ],
     "enabled": true,
     "replace": true,
-    "loading_priority": 0,
-    "name": "Species",
-    "gui_title": {
-        "choose_origin": "Choose your Species wisely. Each one has exclusive abilities.",
-        "view_origin": "Your Species"
-    },
-    "missing_name": "",
-    "missing_description": ""
+    "loading_priority": 0
 }

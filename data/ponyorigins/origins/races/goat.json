@@ -6,7 +6,8 @@
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:goat_horn"

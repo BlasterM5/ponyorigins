@@ -42,12 +42,13 @@
                 },
                 {
                     "inverted": true,
-                    "type": "origins:name",
-                    "name": "drown"
+                    "type": "origins:in_tag",
+                    "tag": "is_drowning"
                 },
                 {
                     "inverted": true,
-                    "type": "origins:from_falling"
+                    "type": "origins:in_tag",
+                    "tag": "is_fall"
                 }
             ]
         },
@@ -187,7 +188,7 @@
                         },
                         {
                             "type": "origins:play_sound",
-                            "sound": "minecraft:entity.enderman.teleport",
+                            "sound": "minecraft:entity.illusioner.mirror_move",
                             "volume": 1,
                             "pitch": 1
                         }
@@ -252,7 +253,8 @@
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "type": "origins:on_fire"
+                        "type": "origins:in_tag",
+                        "tag": "is_fire"
                     },
                     "if_action": {
                         "type": "origins:change_resource",
@@ -309,7 +311,8 @@
         },
         "type": "origins:invulnerability",
         "damage_condition": {
-            "type": "origins:fire"
+            "type": "origins:in_tag",
+            "tag": "is_fire"
         }
     },
     "hit_cd": {

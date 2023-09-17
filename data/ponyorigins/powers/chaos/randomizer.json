@@ -200,6 +200,14 @@
                         {
                             "weight": 1,
                             "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/diets/carnivore",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
                                 "type": "origins:nothing"
                             }
                         }
@@ -398,15 +406,6 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "ponyorigins:umbrum/dark_strength",
-                        "source": "ponyorigins:races/chaos"
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "origins:slow_falling",
                         "source": "ponyorigins:races/chaos"
                     }
                 },

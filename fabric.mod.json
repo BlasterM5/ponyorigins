@@ -4,15 +4,15 @@
     "depends": {
         "fabric-api-base": "*",
         "fabric": "*",
-        "minecraft": ">=1.19.0 <=1.19.3",
-        "origins": ">=1.7.0"
+        "minecraft": "1.20.x",
+        "origins": ">=1.10.0"
     },
     "name": "Pony Origins",
     "id": "ponyorigins",
-    "version": "1.0.0-a31",
+    "version": "1.1.0-a32",
     "description": "Origins Replacement Mod, designed to compliment Mine Little Pony.",
     "license": "unlicense",
-    "pack_format": 10,
+    "pack_format": 15,
     "icon": "pack.png",
     "authors": [
         "BlasterM5"

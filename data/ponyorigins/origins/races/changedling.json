@@ -11,7 +11,8 @@
         "ponyorigins:common/wings/insectoid",
         "ponyorigins:common/nightvision",
         "ponyorigins:common/health/minus_two",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:poppy"

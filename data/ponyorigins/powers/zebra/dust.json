@@ -59,19 +59,14 @@
         }
     ],
     "type": "origins:multiple",
-    "frost_breath": {
+    "blower": {
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava"
+                    "type": "origins:air",
+                    "comparison": ">",
+                    "compare_to": 30
                 },
                 {
                     "type": "origins:or",
@@ -82,7 +77,7 @@
                             "item_condition": {
                                 "type": "origins:ingredient",
                                 "ingredient": {
-                                    "item": "minecraft:snowball"
+                                    "tag": "ponyorigins:zebra_dusts"
                                 }
                             }
                         },
@@ -92,704 +87,28 @@
                             "item_condition": {
                                 "type": "origins:ingredient",
                                 "ingredient": {
-                                    "item": "minecraft:snowball"
+                                    "tag": "ponyorigins:zebra_dusts"
                                 }
                             }
                         }
                     ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "tag": "ponyorigins:enclosed_helmets"
+                        }
+                    }
                 },
                 {
                     "type": "origins:resource",
                     "resource": "ponyorigins:common/energy_level",
                     "comparison": ">",
                     "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:raycast",
-            "distance": 5,
-            "block": true,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "any",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:damage",
-                            "amount": 2,
-                            "source": {
-                                "name": "freeze.player"
-                            }
-                        },
-                        {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:slowness",
-                                "duration": 100,
-                                "amplifier": 1,
-                                "show_particles": false,
-                                "show_icon": true
-                            }
-                        },
-                        {
-                            "type": "origins:extinguish"
-                        }
-                    ]
-                }
-            },
-            "block_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:water"
-                                },
-                                "action": {
-                                    "type": "origins:set_block",
-                                    "block": "minecraft:ice"
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:lava"
-                                },
-                                "action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "type": "origins:set_block",
-                                            "block": "minecraft:obsidian"
-                                        },
-                                        {
-                                            "type": "origins:execute_command",
-                                            "command": "playsound block.fire.extinguish"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:movement_blocking"
-                                },
-                                "action": {
-                                    "type": "origins:add_block",
-                                    "block": "minecraft:snow"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.extinguish",
-                        "volume": 0.25,
-                        "pitch": 0.5
-                    },
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:snowball"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "mainhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:snowball"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "offhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0 0 1 0 force",
-            "command_step": 1
-        },
-        "cooldown": 2,
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
-    },
-    "static_breath": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava"
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:redstone"
-                                }
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:redstone"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:raycast",
-            "distance": 5,
-            "block": true,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "any",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:damage",
-                            "amount": 2,
-                            "source": {
-                                "name": "lightningBolt.player"
-                            }
-                        },
-                        {
-                            "type": "origins:if_else",
-                            "condition": {
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/energy"
-                            },
-                            "if_action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 20,
-                                    "amplifier": 1,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "else_action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 20,
-                                    "amplifier": 3,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            }
-                        }
-                    ]
-                }
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.extinguish",
-                        "volume": 0.25,
-                        "pitch": 0.5
-                    },
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:redstone"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "mainhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:redstone"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "offhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0 0 0 1 0 force",
-            "command_step": 1
-        },
-        "cooldown": 2,
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
-    },
-    "marking_dust": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:glowstone_dust"
-                                }
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:glowstone_dust"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:raycast",
-            "distance": 5,
-            "block": true,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "any",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:apply_effect",
-                    "effect": {
-                        "effect": "minecraft:glowing",
-                        "duration": 1200,
-                        "amplifier": 0,
-                        "is_ambient": true,
-                        "show_particles": false,
-                        "show_icon": true
-                    }
-                }
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:glowstone_dust"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "mainhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:glowstone_dust"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "offhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.extinguish",
-                        "volume": 0.25,
-                        "pitch": 0.5
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -1,
-                        "operation": "add"
-                    }
-                ]
-            },
-            "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0 0 1 0 force",
-            "command_step": 1
-        },
-        "cooldown": 2,
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
-    },
-    "flame_dust": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:blaze_powder"
-                                }
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:blaze_powder"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:raycast",
-            "distance": 5,
-            "block": true,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "any",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:damage",
-                            "amount": 2,
-                            "source": {
-                                "name": "onFire.player",
-                                "fire": true
-                            }
-                        },
-                        {
-                            "type": "origins:set_on_fire",
-                            "duration": 4
-                        },
-                        {
-                            "type": "origins:block_action_at",
-                            "block_action": {
-                                "type": "origins:add_block",
-                                "block": "minecraft:fire"
-                            }
-                        }
-                    ]
-                }
-            },
-            "block_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:add_block",
-                        "block": "minecraft:fire"
-                    },
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:snow"
-                                },
-                                "action": {
-                                    "type": "origins:set_block",
-                                    "block": "minecraft:blue_ice"
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:packed_ice"
-                                },
-                                "action": {
-                                    "type": "origins:set_block",
-                                    "block": "minecraft:blue_ice"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:blaze_powder"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "mainhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "item": "minecraft:blaze_powder"
-                                        }
-                                    }
-                                },
-                                "action": {
-                                    "type": "origins:equipped_item_action",
-                                    "equipment_slot": "offhand",
-                                    "action": {
-                                        "type": "origins:consume",
-                                        "amount": 1
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.ambient",
-                        "volume": 0.5,
-                        "pitch": 0.5
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -1,
-                        "operation": "add"
-                    }
-                ]
-            },
-            "command_along_ray": "particle minecraft:flame ~ ~ ~ 0 0 0 1 0 force",
-            "command_step": 1
-        },
-        "cooldown": 2,
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
-    },
-    "bonemeal_dust": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:bone_meal"
-                                }
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "minecraft:bone_meal"
-                                }
-                            }
-                        }
-                    ]
                 },
                 {
                     "inverted": true,
@@ -808,86 +127,671 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:raycast",
-                    "distance": 5,
-                    "block": true,
-                    "entity": true,
-                    "shape_type": "outline",
-                    "fluid_handling": "any",
-                    "bientity_action": {
-                        "type": "origins:target_action",
-                        "action": {
-                            "type": "origins:block_action_at",
-                            "block_action": {
-                                "type": "origins:bonemeal",
-                                "effects": true
-                            }
-                        }
-                    },
-                    "block_action": {
-                        "type": "origins:bonemeal",
-                        "effects": true
-                    },
-                    "before_action": {
-                        "type": "origins:and",
-                        "actions": [
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
                             {
-                                "type": "origins:if_else_list",
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:blaze_powder"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:blaze_powder"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "bientity_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
                                 "actions": [
                                     {
-                                        "condition": {
-                                            "type": "origins:equipped_item",
-                                            "equipment_slot": "mainhand",
-                                            "item_condition": {
-                                                "type": "origins:ingredient",
-                                                "ingredient": {
-                                                    "item": "minecraft:bone_meal"
-                                                }
+                                        "type": "origins:damage",
+                                        "amount": 2,
+                                        "damage_type": "on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 4
+                                    },
+                                    {
+                                        "type": "origins:block_action_at",
+                                        "block_action": {
+                                            "type": "origins:add_block",
+                                            "block": "minecraft:fire"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "block_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:add_block",
+                                    "block": "minecraft:fire"
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:block",
+                                                "block": "minecraft:snow"
+                                            },
+                                            "action": {
+                                                "type": "origins:set_block",
+                                                "block": "minecraft:blue_ice"
                                             }
                                         },
-                                        "action": {
-                                            "type": "origins:equipped_item_action",
-                                            "equipment_slot": "mainhand",
+                                        {
+                                            "condition": {
+                                                "type": "origins:block",
+                                                "block": "minecraft:packed_ice"
+                                            },
                                             "action": {
-                                                "type": "origins:consume",
-                                                "amount": 1
+                                                "type": "origins:set_block",
+                                                "block": "minecraft:blue_ice"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "before_action": {
+                            "type": "origins:play_sound",
+                            "sound": "block.fire.ambient",
+                            "volume": 0.5,
+                            "pitch": 0.5
+                        },
+                        "command_along_ray": "particle minecraft:flame ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_step": 1
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:snowball"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:snowball"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "bientity_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 2,
+                                        "damage_type": "freeze"
+                                    },
+                                    {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "minecraft:slowness",
+                                            "duration": 100,
+                                            "amplifier": 1,
+                                            "show_particles": false,
+                                            "show_icon": true
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:extinguish"
+                                    }
+                                ]
+                            }
+                        },
+                        "block_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:block",
+                                                "block": "minecraft:water"
+                                            },
+                                            "action": {
+                                                "type": "origins:set_block",
+                                                "block": "minecraft:ice"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:block",
+                                                "block": "minecraft:lava"
+                                            },
+                                            "action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:set_block",
+                                                        "block": "minecraft:obsidian"
+                                                    },
+                                                    {
+                                                        "type": "origins:execute_command",
+                                                        "command": "playsound block.fire.extinguish block @a"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:movement_blocking"
+                                            },
+                                            "action": {
+                                                "type": "origins:add_block",
+                                                "block": "minecraft:snow"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "before_action": {
+                            "type": "origins:play_sound",
+                            "sound": "block.fire.extinguish",
+                            "volume": 0.25,
+                            "pitch": 0.5
+                        },
+                        "command_along_ray": "particle minecraft:instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_step": 1
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:redstone"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:redstone"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "bientity_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "inverted": true,
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:equipped_item",
+                                                    "equipment_slot": "head",
+                                                    "item_condition": {
+                                                        "type": "origins:ingredient",
+                                                        "ingredient": {
+                                                            "tag": "ponyorigins:conductive_armor"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:equipped_item",
+                                                    "equipment_slot": "chest",
+                                                    "item_condition": {
+                                                        "type": "origins:ingredient",
+                                                        "ingredient": {
+                                                            "tag": "ponyorigins:conductive_armor"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:equipped_item",
+                                                    "equipment_slot": "legs",
+                                                    "item_condition": {
+                                                        "type": "origins:ingredient",
+                                                        "ingredient": {
+                                                            "tag": "ponyorigins:conductive_armor"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:equipped_item",
+                                                    "equipment_slot": "feet",
+                                                    "item_condition": {
+                                                        "type": "origins:ingredient",
+                                                        "ingredient": {
+                                                            "tag": "ponyorigins:conductive_armor"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:on_block",
+                                                    "block_condition": {
+                                                        "type": "origins:movement_blocking"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "if_action": {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/energy"
+                                            },
+                                            "if_action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:apply_effect",
+                                                        "effect": {
+                                                            "effect": "minecraft:slowness",
+                                                            "duration": 20,
+                                                            "amplifier": 4,
+                                                            "show_particles": false,
+                                                            "show_icon": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "origins:damage",
+                                                        "amount": 1,
+                                                        "damage_type": "lightning_bolt"
+                                                    }
+                                                ]
+                                            },
+                                            "else_action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:apply_effect",
+                                                        "effect": {
+                                                            "effect": "minecraft:slowness",
+                                                            "duration": 20,
+                                                            "amplifier": 10,
+                                                            "show_particles": false,
+                                                            "show_icon": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "origins:damage",
+                                                        "amount": 2,
+                                                        "damage_type": "lightning_bolt"
+                                                    }
+                                                ]
                                             }
                                         }
                                     },
                                     {
-                                        "condition": {
-                                            "type": "origins:equipped_item",
-                                            "equipment_slot": "offhand",
-                                            "item_condition": {
-                                                "type": "origins:ingredient",
-                                                "ingredient": {
-                                                    "item": "minecraft:bone_meal"
-                                                }
-                                            }
+                                        "type": "origins:spawn_particles",
+                                        "particle": "electric_spark",
+                                        "count": 16,
+                                        "speed": 1,
+                                        "force": true,
+                                        "spread": {
+                                            "x": 0.1,
+                                            "y": 0.1,
+                                            "z": 0.1
                                         },
-                                        "action": {
-                                            "type": "origins:equipped_item_action",
-                                            "equipment_slot": "offhand",
-                                            "action": {
-                                                "type": "origins:consume",
-                                                "amount": 1
+                                        "offset_y": 0.5
+                                    },
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:fluid_height",
+                                                    "fluid": "minecraft:water",
+                                                    "comparison": ">",
+                                                    "compare_to": 0
+                                                },
+                                                {
+                                                    "type": "origins:in_rain"
+                                                },
+                                                {
+                                                    "type": "origins:on_block",
+                                                    "block_condition": {
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:conductors"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "if_action": {
+                                            "type": "origins:area_of_effect",
+                                            "radius": 4,
+                                            "include_target": true,
+                                            "bientity_condition": {
+                                                "type": "origins:target_condition",
+                                                "condition": {
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:fluid_height",
+                                                            "fluid": "minecraft:water",
+                                                            "comparison": ">",
+                                                            "compare_to": 0
+                                                        },
+                                                        {
+                                                            "type": "origins:in_rain"
+                                                        },
+                                                        {
+                                                            "type": "origins:on_block",
+                                                            "block_condition": {
+                                                                "type": "origins:in_tag",
+                                                                "tag": "ponyorigins:conductors"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "bientity_action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:if_else",
+                                                        "condition": {
+                                                            "type": "origins:target_condition",
+                                                            "condition": {
+                                                                "inverted": true,
+                                                                "type": "origins:and",
+                                                                "conditions": [
+                                                                    {
+                                                                        "type": "origins:equipped_item",
+                                                                        "equipment_slot": "head",
+                                                                        "item_condition": {
+                                                                            "type": "origins:ingredient",
+                                                                            "ingredient": {
+                                                                                "tag": "ponyorigins:conductive_armor"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:equipped_item",
+                                                                        "equipment_slot": "chest",
+                                                                        "item_condition": {
+                                                                            "type": "origins:ingredient",
+                                                                            "ingredient": {
+                                                                                "tag": "ponyorigins:conductive_armor"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:equipped_item",
+                                                                        "equipment_slot": "legs",
+                                                                        "item_condition": {
+                                                                            "type": "origins:ingredient",
+                                                                            "ingredient": {
+                                                                                "tag": "ponyorigins:conductive_armor"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:equipped_item",
+                                                                        "equipment_slot": "feet",
+                                                                        "item_condition": {
+                                                                            "type": "origins:ingredient",
+                                                                            "ingredient": {
+                                                                                "tag": "ponyorigins:conductive_armor"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:on_block",
+                                                                        "block_condition": {
+                                                                            "type": "origins:movement_blocking"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        "if_action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "origins:target_condition",
+                                                                "condition": {
+                                                                    "type": "origins:power",
+                                                                    "power": "ponyorigins:common/energy"
+                                                                }
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:target_action",
+                                                                "action": {
+                                                                    "type": "origins:and",
+                                                                    "actions": [
+                                                                        {
+                                                                            "type": "origins:apply_effect",
+                                                                            "effect": {
+                                                                                "effect": "minecraft:slowness",
+                                                                                "duration": 20,
+                                                                                "amplifier": 4,
+                                                                                "show_particles": false,
+                                                                                "show_icon": true
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:damage",
+                                                                            "amount": 1,
+                                                                            "damage_type": "lightning_bolt"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:target_action",
+                                                                "action": {
+                                                                    "type": "origins:and",
+                                                                    "actions": [
+                                                                        {
+                                                                            "type": "origins:apply_effect",
+                                                                            "effect": {
+                                                                                "effect": "minecraft:slowness",
+                                                                                "duration": 20,
+                                                                                "amplifier": 10,
+                                                                                "show_particles": false,
+                                                                                "show_icon": true
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:damage",
+                                                                            "amount": 2,
+                                                                            "damage_type": "lightning_bolt"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "origins:target_action",
+                                                        "action": {
+                                                            "type": "origins:spawn_particles",
+                                                            "particle": "electric_spark",
+                                                            "count": 16,
+                                                            "speed": 1,
+                                                            "spread": {
+                                                                "x": 0.1,
+                                                                "y": 0.1,
+                                                                "z": 0.1
+                                                            },
+                                                            "offset_y": 0.5
+                                                        }
+                                                    }
+                                                ]
                                             }
                                         }
                                     }
                                 ]
+                            }
+                        },
+                        "before_action": {
+                            "type": "origins:play_sound",
+                            "sound": "block.fire.extinguish",
+                            "volume": 0.25,
+                            "pitch": 0.5
+                        },
+                        "command_along_ray": "particle minecraft:electric_spark ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_step": 1
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:glowstone_dust"
+                                    }
+                                }
                             },
                             {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/energy_level",
-                                "change": -1,
-                                "operation": "add"
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:glowstone_dust"
+                                    }
+                                }
                             }
                         ]
                     },
-                    "hit_action": {
-                        "type": "origins:area_of_effect",
-                        "radius": 5,
-                        "include_target": true,
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "bientity_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:glowing",
+                                    "duration": 1200,
+                                    "amplifier": 0,
+                                    "is_ambient": true,
+                                    "show_particles": false,
+                                    "show_icon": true
+                                }
+                            }
+                        },
+                        "before_action": {
+                            "type": "origins:play_sound",
+                            "sound": "block.fire.extinguish",
+                            "volume": 0.25,
+                            "pitch": 0.5
+                        },
+                        "command_along_ray": "particle minecraft:instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_step": 1
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:bone_meal"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:bone_meal"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "outline",
+                        "fluid_handling": "any",
                         "bientity_action": {
                             "type": "origins:target_action",
                             "action": {
@@ -897,12 +801,106 @@
                                     "effects": true
                                 }
                             }
+                        },
+                        "block_action": {
+                            "type": "origins:bonemeal",
+                            "effects": true
+                        },
+                        "before_action": {
+                            "type": "origins:play_sound",
+                            "sound": "block.fire.extinguish",
+                            "volume": 0.25,
+                            "pitch": 0.5
+                        },
+                        "hit_action": {
+                            "type": "origins:area_of_effect",
+                            "radius": 5,
+                            "include_target": true,
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:block_action_at",
+                                    "block_action": {
+                                        "type": "origins:bonemeal",
+                                        "effects": true
+                                    }
+                                }
+                            }
+                        },
+                        "command_along_ray": "particle minecraft:instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force"
+                    }
+                },
+                {
+                    "type": "origins:gain_air",
+                    "value": -10
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "tag": "ponyorigins:zebra_dusts"
+                            }
                         }
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "tag": "ponyorigins:zebra_dusts"
+                            }
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "offhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        ]
                     }
                 }
             ]
         },
-        "cooldown": 4,
+        "cooldown": 2,
         "key": {
             "key": "key.origins.primary_active",
             "continuous": true

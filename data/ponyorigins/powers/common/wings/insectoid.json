@@ -21,11 +21,6 @@
             "type": "origins:tooltip",
             "text": "Burn heal rate -100 percent",
             "sprite": "minecraft:textures/particle/flame.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": "Minumum health threshold +2",
-            "sprite": "minecraft:textures/particle/damage.png"
         }
     ],
     "type": "origins:simple"

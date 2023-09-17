@@ -14,30 +14,32 @@
             "sprite": "minecraft:textures/item/clock_45.png"
         }
     ],
-    "condition": {
-        "type": "origins:resource",
-        "resource": "ponyorigins:common/energy_level",
-        "comparison": ">",
-        "compare_to": 0
-    },
-    "type": "origins:active_self",
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:execute_command",
-                "command": "time add 100"
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "ponyorigins:common/energy_level",
-                "change": -1,
-                "operation": "add"
-            }
-        ]
-    },
-    "key": {
-        "key": "key.origins.secondary_active",
-        "continuous": true
+    "type": "origins:multiple",
+    "time_advance": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "time add 100"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": -1,
+                    "operation": "add"
+                }
+            ]
+        },
+        "cooldown": 1,
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
     }
 }

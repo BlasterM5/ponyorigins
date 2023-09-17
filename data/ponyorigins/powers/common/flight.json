@@ -68,7 +68,7 @@
         },
         "retain_state": true
     },
-    "creative": {
+    "creative_flight": {
         "condition": {
             "type": "origins:power_active",
             "power": "*:*_active"
@@ -606,10 +606,7 @@
                                         {
                                             "type": "origins:damage",
                                             "amount": 2,
-                                            "source": {
-                                                "name": "onFire",
-                                                "fire": true
-                                            }
+                                            "damage_type": "is_fire"
                                         }
                                     ]
                                 }
@@ -685,10 +682,7 @@
                                             {
                                                 "type": "origins:damage",
                                                 "amount": 2,
-                                                "source": {
-                                                    "name": "onFire",
-                                                    "fire": true
-                                                }
+                                                "damage_type": "is_fire"
                                             }
                                         ]
                                     }

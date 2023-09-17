@@ -1,5 +1,5 @@
 {
-    "order": 2,
+    "order": 3,
     "origins": [
         {
             "condition": {
@@ -17,9 +17,14 @@
         },
         {
             "condition": {
-                "inverted": true,
-                "type": "origins:origin",
-                "origin": "ponyorigins:talents/blank"
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/blank"
+                    }
+                ]
             },
             "origins": [
                 "ponyorigins:talents/other"
@@ -316,6 +321,34 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/firecracker"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/firecracker"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
                         "origin": "ponyorigins:unicorn/flamethrower"
                     }
                 ]
@@ -344,12 +377,12 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/thunder"
+                        "origin": "ponyorigins:unicorn/ice_beam"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talents/thunder"
+                "ponyorigins:talents/ice_beam"
             ]
         },
         {
@@ -372,12 +405,40 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/ice_beam"
+                        "origin": "ponyorigins:unicorn/shock_ray"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talents/ice_beam"
+                "ponyorigins:talents/shock_ray"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/thunder"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/thunder"
             ]
         },
         {

@@ -13,7 +13,8 @@
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/membraneous",
         "ponyorigins:common/health/armor_dragon",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:blaze_powder"

@@ -10,7 +10,8 @@
         "ponyorigins:common/nightvision",
         "ponyorigins:umbrum/dark_strength",
         "ponyorigins:umbrum/shadow",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:amethyst_shard"

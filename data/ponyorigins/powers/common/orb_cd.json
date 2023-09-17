@@ -275,7 +275,9 @@
             "ingredient": {
                 "item": "origins:orb_of_origin"
             }
-        }
+        },
+        "trigger": "finish",
+        "priority": 0
     },
     "cd_bypass": {
         "type": "origins:action_on_callback",

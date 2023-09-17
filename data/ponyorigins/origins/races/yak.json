@@ -10,7 +10,8 @@
         "ponyorigins:common/cold_immunity",
         "ponyorigins:yak/yak_smash",
         "ponyorigins:common/health/plus_four",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:oak_wood"

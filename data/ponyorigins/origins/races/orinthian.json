@@ -6,7 +6,8 @@
         "ponyorigins:orinthian/talons",
         "origins:slow_falling",
         "ponyorigins:common/health/minus_two",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:wheat_seeds"

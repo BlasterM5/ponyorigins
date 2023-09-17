@@ -9,7 +9,8 @@
         "origins:velvet_paws",
         "origins:scare_creepers",
         "ponyorigins:common/health/minus_two",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:tropical_fish"

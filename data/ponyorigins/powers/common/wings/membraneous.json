@@ -19,7 +19,7 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Minumum health threshold +2",
+            "text": "Minimum health threshold +2",
             "sprite": "minecraft:textures/particle/damage.png"
         }
     ],

@@ -10,7 +10,8 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/pony",
         "ponyorigins:common/telekinesis",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:diamond"

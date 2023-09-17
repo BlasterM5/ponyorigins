@@ -11,7 +11,8 @@
         "ponyorigins:common/pony",
         "ponyorigins:zebra/dust",
         "ponyorigins:common/health/plus_four",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:vine"

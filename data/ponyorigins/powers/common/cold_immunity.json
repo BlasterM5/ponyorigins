@@ -10,8 +10,8 @@
     ],
     "type": "origins:modify_damage_taken",
     "damage_condition": {
-        "type": "origins:name",
-        "name": "minecraft:freeze"
+        "type": "origins:in_tag",
+        "tag": "is_freezing"
     },
     "modifier": {
         "operation": "set_total",

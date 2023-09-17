@@ -11,7 +11,8 @@
     "type": "origins:modify_damage_taken",
     "damage_condition": {
         "inverted": true,
-        "type": "origins:bypasses_armor"
+        "type": "origins:in_tag",
+        "tag": "bypasses_armor"
     },
     "modifier": {
         "operation": "multiply_base_additive",

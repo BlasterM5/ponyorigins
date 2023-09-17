@@ -11,7 +11,8 @@
         "ponyorigins:common/telekinesis",
         "ponyorigins:kirin/nirik",
         "ponyorigins:common/health/armor_kirin",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:flint_and_steel"

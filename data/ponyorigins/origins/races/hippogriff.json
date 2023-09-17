@@ -9,7 +9,8 @@
         "ponyorigins:common/rideable",
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/waterproof",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:cod"

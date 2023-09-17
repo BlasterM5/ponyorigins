@@ -588,7 +588,7 @@
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "playsound minecraft:entity.player.burp player @a ~ ~ ~"
+                                "command": "playsound minecraft:entity.player.burp player @a"
                             },
                             {
                                 "type": "origins:change_resource",
@@ -756,7 +756,7 @@
                     },
                     "if_action": {
                         "type": "origins:execute_command",
-                        "command": "execute rotated as @s run particle item minecraft:wheat ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                        "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                     },
                     "else_action": {
                         "type": "origins:if_else",
@@ -766,7 +766,7 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute rotated as @s run particle item minecraft:kelp ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                            "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:kelp ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                         },
                         "else_action": {
                             "type": "origins:if_else",
@@ -776,11 +776,11 @@
                             },
                             "if_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute rotated as @s run particle item minecraft:diamond_block ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:diamond_block ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                             },
                             "else_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute rotated as @s run particle item minecraft:wheat ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                             }
                         }
                     }

@@ -42,7 +42,7 @@
                     "condition": {
                         "type": "origins:resource",
                         "resource": "ponyorigins:common/energy_level",
-                        "comparison": ">",
+                        "comparison": ">=",
                         "compare_to": 25
                     }
                 },

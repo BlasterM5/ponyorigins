@@ -10,7 +10,8 @@
         "ponyorigins:common/rideable",
         "ponyorigins:common/pony",
         "ponyorigins:common/energy",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/key"
     ],
     "icon": {
         "item": "minecraft:heart_of_the_sea"

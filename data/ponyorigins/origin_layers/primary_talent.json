@@ -1,5 +1,5 @@
 {
-    "order": 1,
+    "order": 2,
     "origins": [
         {
             "condition": {
@@ -19,10 +19,12 @@
                 "ponyorigins:unicorn/flora",
                 "ponyorigins:unicorn/teleport",
                 "ponyorigins:unicorn/fireball",
+                "ponyorigins:unicorn/firecracker",
                 "ponyorigins:unicorn/flamethrower",
-                "ponyorigins:unicorn/thunder",
                 "ponyorigins:unicorn/ice_beam",
+                "ponyorigins:unicorn/shock_ray",
                 "ponyorigins:unicorn/laser",
+                "ponyorigins:unicorn/thunder",
                 "ponyorigins:unicorn/blank"
             ]
         }

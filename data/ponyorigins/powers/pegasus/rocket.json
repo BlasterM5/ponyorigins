@@ -37,100 +37,48 @@
             "operation": "add"
         }
     },
-    "trigger": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:lava",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "ponyorigins:common/energy_level",
-                "comparison": ">",
-                "compare_to": 1
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_antilag",
-                        "change": 5,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:resource",
-                            "resource": "*:*_sound_triggered",
-                            "comparison": "==",
-                            "compare_to": 0
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:play_sound",
-                                    "sound": "entity.firework_rocket.launch",
-                                    "volume": 1,
-                                    "pitch": 1
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_sound_triggered",
-                                    "change": 1,
-                                    "operation": "add"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        "key": {
-            "key": "key.origins.secondary_active",
-            "continuous": true
-        }
-    },
     "antilag": {
         "type": "origins:resource",
         "min": 0,
         "max": 5,
         "start_value": 0
     },
+    "sound_triggered": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "sound_reset": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sound_triggered",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_sound_triggered",
+            "change": 0,
+            "operation": "set"
+        }
+    },
     "active": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
         },
         "type": "origins:action_over_time",
         "interval": 1,
@@ -155,96 +103,75 @@
                         "type": "origins:add_velocity",
                         "x": 0,
                         "y": 0,
-                        "z": 2,
+                        "z": 4,
                         "space": "local",
                         "client": true,
                         "server": true,
                         "set": true
                     },
                     {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_antilag",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
                         "type": "origins:spawn_particles",
                         "particle": "instant_effect",
-                        "count": 8,
+                        "count": 16,
                         "speed": 1,
                         "force": true,
                         "spread": {
                             "x": 0.2,
                             "y": 0.2,
                             "z": 0.2
+                        },
+                        "offset_y": 0.5
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_sound_triggered",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.firework_rocket.launch",
+                                    "volume": 1,
+                                    "pitch": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_sound_triggered",
+                                    "change": 1,
+                                    "operation": "set"
+                                }
+                            ]
                         }
                     }
                 ]
-            },
-            "else_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_antilag",
-                "change": -1,
-                "operation": "add"
             }
-        }
-    },
-    "sound_triggered": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "sound_reset": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_sound_triggered",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_sound_triggered",
-            "change": 0,
-            "operation": "set"
         }
     },
     "flight": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
         },
         "type": "origins:elytra_flight",
         "render_elytra": false
     },
     "crash_damage": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
         },
         "type": "origins:modify_damage_taken",
         "damage_condition": {
             "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:from_falling"
+                    "type": "origins:in_tag",
+                    "tag": "is_fall"
                 },
                 {
                     "type": "origins:name",
@@ -257,12 +184,10 @@
             "value": -0.99
         }
     },
-    "crash": {
+    "crash_damage_detection": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
         },
         "type": "origins:self_action_when_hit",
         "damage_condition": {
@@ -273,11 +198,79 @@
                     "name": "flyIntoWall"
                 },
                 {
-                    "type": "origins:from_falling"
+                    "type": "origins:in_tag",
+                    "tag": "is_fall"
                 }
             ]
         },
         "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_explode",
+            "change": 1,
+            "operation": "set"
+        },
+        "cooldown": 1
+    },
+    "crash_detection": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 1.5,
+                    "block": true,
+                    "entity": true,
+                    "shape_type": "outline",
+                    "fluid_handling": "any",
+                    "hit_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_explode",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:on_block"
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_explode",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                }
+            ]
+        }
+    },
+    "explode_logic": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_explode",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_explode",
+            "change": 0,
+            "operation": "set"
+        },
+        "rising_action": {
             "type": "origins:and",
             "actions": [
                 {
@@ -287,15 +280,19 @@
                     "damage_self": false
                 },
                 {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_cd",
-                    "change": 1,
-                    "operation": "add"
+                    "type": "origins:area_of_effect",
+                    "radius": 6,
+                    "include_target": true,
+                    "bientity_action": {
+                        "type": "origins:damage",
+                        "amount": 16,
+                        "damage_type": "player_explosion"
+                    }
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_antilag",
-                    "change": 0,
+                    "resource": "*:*_cd",
+                    "change": 1,
                     "operation": "set"
                 },
                 {
@@ -336,113 +333,91 @@
                     ]
                 },
                 {
-                    "type": "origins:damage",
-                    "amount": 16,
-                    "source": {
-                        "name": "explosion"
-                    }
-                }
-            ]
-        },
-        "cooldown": 1
-    },
-    "crash_detection": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
+                    "type": "origins:play_sound",
+                    "sound": "entity.generic.explode",
+                    "volume": 1,
+                    "pitch": 1
+                },
                 {
-                    "type": "origins:raycast",
-                    "distance": 0.5,
-                    "block": true,
-                    "entity": true,
-                    "shape_type": "collider",
-                    "fluid_handling": "any",
-                    "bientity_action": {
-                        "type": "origins:actor_action",
-                        "action": {
-                            "type": "origins:explode",
-                            "power": 8,
-                            "destruction_type": "break",
-                            "damage_self": false
-                        }
-                    },
-                    "block_action": {
-                        "type": "origins:explode",
-                        "power": 8,
-                        "destruction_type": "break",
-                        "damage_self": true
-                    },
-                    "hit_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_cd",
-                                "change": 1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_antilag",
-                                "change": 0,
-                                "operation": "set"
-                            },
-                            {
-                                "type": "origins:apply_effect",
-                                "effects": [
-                                    {
-                                        "effect": "minecraft:nausea",
-                                        "duration": 200,
-                                        "amplifier": 0,
-                                        "is_ambient": true,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    },
-                                    {
-                                        "effect": "minecraft:slowness",
-                                        "duration": 200,
-                                        "amplifier": 1,
-                                        "is_ambient": true,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    },
-                                    {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 400,
-                                        "amplifier": 1,
-                                        "is_ambient": true,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    },
-                                    {
-                                        "effect": "minecraft:mining_fatigue",
-                                        "duration": 400,
-                                        "amplifier": 1,
-                                        "is_ambient": true,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "origins:damage",
-                                "amount": 16,
-                                "source": {
-                                    "name": "explosion"
-                                }
-                            }
-                        ]
-                    }
+                    "type": "origins:change_resource",
+                    "resource": "*:*_explode",
+                    "change": 0,
+                    "operation": "set"
                 }
             ]
         }
+    },
+    "explode": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "trigger": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:on_block",
+                                    "block_condition": {
+                                        "type": "origins:movement_blocking"
+                                    }
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_sound_triggered",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_sound_triggered",
+                            "comparison": "==",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:simple"
     }
 }

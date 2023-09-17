@@ -28,10 +28,19 @@
     "type": "origins:multiple",
     "teleport": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "<",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 1,
@@ -381,28 +390,6 @@
             ]
         }
     },
-    "antilag": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
-    },
-    "antilag_decay": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag",
-            "change": -1,
-            "operation": "add"
-        }
-    },
     "buffer": {
         "type": "origins:resource",
         "min": 0,
@@ -422,50 +409,46 @@
     },
     "buffer_return": {
         "condition": {
-            "inverted": true,
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_buffer",
-                "comparison": ">",
-                "compare_to": 0
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_buffer",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": 1,
-                        "operation": "add"
-                    }
-                ]
-            }
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_buffer",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "change": 1,
+                    "operation": "add"
+                }
+            ]
         }
     },
     "cd": {
         "type": "origins:resource",
         "min": 0,
         "max": 2,
-        "start_value": 0,
-        "max_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag",
-            "change": 0,
-            "operation": "set"
-        }
+        "start_value": 0
     },
     "cd_timer": {
         "condition": {
@@ -483,12 +466,21 @@
             "operation": "add"
         }
     },
-    "active": {
+    "charge": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_antilag",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 1,
@@ -497,7 +489,7 @@
             "condition": {
                 "type": "origins:resource",
                 "resource": "ponyorigins:common/energy_level",
-                "comparison": ">",
+                "comparison": ">=",
                 "compare_to": 5
             },
             "if_action": {
@@ -514,35 +506,41 @@
                         "resource": "*:*_buffer",
                         "change": 5,
                         "operation": "add"
+                    }
+                ]
+            }
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
-                        "type": "origins:raycast",
-                        "distance": 1,
-                        "block": false,
-                        "entity": false,
-                        "shape_type": "outline",
-                        "fluid_handling": "any",
-                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force",
-                        "command_step": 1
+                        "type": "origins:resource",
+                        "resource": "*:*_cd",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">",
+                        "compare_to": 0
                     }
                 ]
             },
-            "else_action": {
+            "if_action": {
                 "type": "origins:and",
                 "actions": [
                     {
-                        "type": "origins:raycast",
-                        "distance": 1,
-                        "block": false,
-                        "entity": false,
-                        "shape_type": "outline",
-                        "fluid_handling": "none",
-                        "command_along_ray": "particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force",
-                        "command_step": 1
-                    },
-                    {
                         "type": "origins:play_sound",
-                        "sound": "block.fire.extinguish",
+                        "sound": "minecraft:block.fire.extinguish",
                         "volume": 0.1,
                         "pitch": 1
                     },
@@ -556,60 +554,67 @@
             }
         }
     },
-    "trigger_primary": {
+    "trigger": {
         "condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:unicorn/teleport"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/key_primary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
                 },
                 {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:unicorn/teleport"
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:talents/teleport"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/key_secondary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
                 }
             ]
         },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag",
-            "change": 5,
-            "operation": "add"
-        },
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
+        "type": "origins:simple"
     },
-    "trigger_secondary": {
+    "spark": {
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talents/teleport"
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         },
-        "type": "origins:active_self",
+        "type": "origins:action_over_time",
+        "interval": 1,
         "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag",
-            "change": 5,
-            "operation": "add"
-        },
-        "key": {
-            "key": "key.origins.secondary_active",
-            "continuous": true
+            "type": "origins:execute_command",
+            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
         }
     }
 }
