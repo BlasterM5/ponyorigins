@@ -66,10 +66,10 @@ Flight: Some races have flight as an option. Pony races require energy to fly, w
         over time as long as they aren't still caught in them. Flight also comes with the ability to fall slowly by default, but only if it is possible to fly at
         that moment. Disabling flight with its hotkey will also disable slow falling.
 
-Unicorn Talents: Most talents available to Unicorns use a "charge to fire" system, where by hold down the ability's key, the player will see a charging meter above
-                 the Energy bar. When it reaches full, the ability will fire. If cancelled, the ability will return the unspent, charged Energy.
+Unicorn Talents: Most talents available to Unicorns use a "charge to fire" system, where by holding down the ability's key, the player will see a charging meter above
+                 the Energy bar. When it reaches full, the ability will fire once the button is released. If cancelled, the ability will return the unspent, charged Energy.
 
-Anti-Lag: All abilities that require holding down a key use an anti-lag system, which "holds down" the key in the system for 5 additional ticks, or 1/4 second.
+Anti-Lag: All abilities that require holding down a key use an anti-lag system, which "holds down" the key in the system for 2 additional ticks, or 1/10 second, or 5 ticks / 1/4 second for the eating power.
           This was implemented due to limitations in the way Minecraft servers and Origins handle button presses - sometimes, the button is not registered as 
           "pressed" on occasional ticks despite it clearly being held down, which can cause issues with "cancel" logic, such as an ability that never completes if 
           it regularly resets itself on a false "release".
