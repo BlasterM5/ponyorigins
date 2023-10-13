@@ -511,6 +511,22 @@
         {
             "id": "ad_astra:steel_block",
             "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_slab",
+            "required": false
+        },
+        {
+            "id": "diamold:diamold_block",
+            "required": false
         }
     ]
 }

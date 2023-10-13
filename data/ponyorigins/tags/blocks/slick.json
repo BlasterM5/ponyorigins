@@ -1421,6 +1421,18 @@
             "required": false
         },
         {
+            "id": "ad_astra:steel_plating",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_slab",
+            "required": false
+        },
+        {
             "id": "ad_astra:desh_block",
             "required": false
         },

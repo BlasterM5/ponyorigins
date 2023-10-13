@@ -9,7 +9,7 @@
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent": "ponyorigins:earth_pony/flora",
+    "parent": "ponyorigins:earth_pony/travel",
     "rewards": {
         "experience": 300
     },

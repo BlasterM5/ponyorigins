@@ -12,6 +12,7 @@
                 "ponyorigins:talents/barrier_alicorn",
                 "ponyorigins:talents/fireball_alicorn",
                 "ponyorigins:talents/laser_alicorn",
+                "ponyorigins:talents/teleport_alicorn",
                 "ponyorigins:talents/celestial_alicorn"
             ]
         },
@@ -521,18 +522,8 @@
         },
         {
             "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/pony"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/other"
-                    }
-                ]
+                "type": "origins:power",
+                "power": "ponyorigins:common/pony"
             },
             "origins": [
                 "ponyorigins:talents/blank"
@@ -553,7 +544,7 @@
     "loading_priority": 2,
     "name": "Secondary Talent",
     "gui_title": {
-        "choose_origin": "Choose your Secondary Talent",
+        "choose_origin": "Choose your Secondary (Cutie Mark) Talent",
         "view_origin": "Secondary Talent"
     },
     "missing_name": "",

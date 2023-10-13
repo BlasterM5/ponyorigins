@@ -39,6 +39,12 @@
                 {
                     "type": "origins:power_active",
                     "power": "*:*_trigger"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_weather",
+                    "comparison": ">=",
+                    "compare_to": 0
                 }
             ]
         },
@@ -53,7 +59,10 @@
                         "type": "origins:and",
                         "conditions": [
                             {
-                                "type": "origins:exposed_to_sky"
+                                "type": "origins:resource",
+                                "resource": "*:*_weather",
+                                "comparison": "==",
+                                "compare_to": 0
                             },
                             {
                                 "type": "origins:resource",
@@ -67,35 +76,16 @@
                         "type": "origins:and",
                         "conditions": [
                             {
-                                "type": "origins:or",
-                                "conditions": [
-                                    {
-                                        "type": "origins:biome",
-                                        "condition": {
-                                            "type": "origins:precipitation",
-                                            "precipitation": "none"
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:biome",
-                                        "condition": {
-                                            "type": "origins:precipitation",
-                                            "precipitation": "snow"
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "origins:in_rain"
+                                "type": "origins:resource",
+                                "resource": "*:*_weather",
+                                "comparison": "==",
+                                "compare_to": 1
                             },
                             {
                                 "type": "origins:resource",
                                 "resource": "*:*_buffer",
-                                "comparison": "==",
+                                "comparison": ">=",
                                 "compare_to": 40
-                            },
-                            {
-                                "type": "origins:exposed_to_sky"
                             }
                         ]
                     },
@@ -103,23 +93,16 @@
                         "type": "origins:and",
                         "conditions": [
                             {
-                                "type": "origins:biome",
-                                "condition": {
-                                    "type": "origins:precipitation",
-                                    "precipitation": "rain"
-                                }
-                            },
-                            {
-                                "type": "origins:in_rain"
+                                "type": "origins:resource",
+                                "resource": "*:*_weather",
+                                "comparison": "==",
+                                "compare_to": 2
                             },
                             {
                                 "type": "origins:resource",
                                 "resource": "*:*_buffer",
-                                "comparison": "==",
-                                "compare_to": 40
-                            },
-                            {
-                                "type": "origins:exposed_to_sky"
+                                "comparison": ">=",
+                                "compare_to": 20
                             }
                         ]
                     }
@@ -168,17 +151,63 @@
                             ]
                         },
                         "hit_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_buffer",
-                            "change": 0,
-                            "operation": "set"
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:resource",
+                                                "resource": "*:*_weather",
+                                                "comparison": "==",
+                                                "compare_to": 2
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_buffer",
+                                                "change": -20,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:resource",
+                                                "resource": "*:*_weather",
+                                                "comparison": "==",
+                                                "compare_to": 1
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_buffer",
+                                                "change": -40,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:resource",
+                                                "resource": "*:*_weather",
+                                                "comparison": "==",
+                                                "compare_to": 0
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_buffer",
+                                                "change": -80,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 1,
+                                    "operation": "set"
+                                }
+                            ]
                         }
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd",
-                        "change": 1,
-                        "operation": "set"
                     }
                 ]
             }
@@ -205,6 +234,12 @@
         "type": "origins:resource",
         "min": 0,
         "max": 1,
+        "start_value": 0
+    },
+    "weather": {
+        "type": "origins:resource",
+        "min": -1,
+        "max": 2,
         "start_value": 0
     },
     "cd_timer": {
@@ -426,6 +461,120 @@
         "entity_action": {
             "type": "origins:execute_command",
             "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+        }
+    },
+    "weather_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:exposed_to_sky"
+                    },
+                    {
+                        "type": "origins:biome",
+                        "biome": "ad_astra:orbit"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_weather",
+                "change": -1,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:predicate",
+                                    "predicate": "ponyorigins:weather/is_dry_thunder"
+                                },
+                                {
+                                    "type": "origins:predicate",
+                                    "predicate": "ponyorigins:weather/is_lightning"
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_weather",
+                            "change": 2,
+                            "operation": "set"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:predicate",
+                                    "predicate": "ponyorigins:weather/is_rain"
+                                },
+                                {
+                                    "type": "origins:biome",
+                                    "condition": {
+                                        "type": "origins:high_humidity"
+                                    }
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_weather",
+                            "change": 1,
+                            "operation": "set"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:predicate",
+                                    "predicate": "o:weather/is_rain"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:predicate",
+                                    "predicate": "o:weather/is_dry_thunder"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:predicate",
+                                    "predicate": "o:weather/is_thunderstorm"
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_weather",
+                            "change": 0,
+                            "operation": "set"
+                        }
+                    }
+                ]
+            }
         }
     }
 }

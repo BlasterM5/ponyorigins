@@ -1,0 +1,24 @@
+{
+    "values": [
+        {
+            "id": "minecraft:beetroot",
+            "required": false
+        },
+        {
+            "id": "minecraft:nether_wart",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:rice_panicle",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:tomatoes",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:lemongrass_leaf_crop",
+            "required": false
+        }
+    ]
+}

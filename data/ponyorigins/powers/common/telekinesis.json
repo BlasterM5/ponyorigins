@@ -64,26 +64,25 @@
     },
     "up_tk_level": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:races/unicorn"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:advancement",
-                    "advancement": "ponyorigins:unicorn/tk_mastery"
-                }
-            ]
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:unicorn/tk_mastery"
         },
         "type": "origins:resource",
         "min": 0,
         "max": 1000,
         "start_value": 0,
         "max_action": {
-            "type": "origins:execute_command",
-            "command": "advancement grant @s only ponyorigins:unicorn/tk_mastery"
+            "type": "origins:if_else",
+            "condition": {
+                "inverted": true,
+                "type": "origins:advancement",
+                "advancement": "ponyorigins:unicorn/tk_mastery"
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "advancement grant @s only ponyorigins:unicorn/tk_mastery"
+            }
         }
     },
     "up_tk_block_break": {
@@ -91,16 +90,13 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:races/unicorn"
-                },
-                {
                     "inverted": true,
                     "type": "origins:advancement",
                     "advancement": "ponyorigins:unicorn/tk_mastery"
                 },
                 {
-                    "type": "origins:using_effective_tool"
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/unicorn"
                 }
             ]
         },

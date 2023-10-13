@@ -17,6 +17,22 @@
             "required": false
         },
         {
+            "id": "minecraft:chainmail_helmet",
+            "required": false
+        },
+        {
+            "id": "minecraft:chainmail_chestplate",
+            "required": false
+        },
+        {
+            "id": "minecraft:chainmail_leggings",
+            "required": false
+        },
+        {
+            "id": "minecraft:chainmail_boots",
+            "required": false
+        },
+        {
             "id": "minecraft:golden_helmet",
             "required": false
         },
@@ -30,6 +46,494 @@
         },
         {
             "id": "minecraft:golden_boots",
+            "required": false
+        },
+        {
+            "id": "exlinecopperequipment:copper_helmet",
+            "required": false
+        },
+        {
+            "id": "exlinecopperequipment:copper_chestplate",
+            "required": false
+        },
+        {
+            "id": "exlinecopperequipment:copper_leggings",
+            "required": false
+        },
+        {
+            "id": "exlinecopperequipment:copper_boots",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:copper_helmet",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:copper_chestplate",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:copper_leggings",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:copper_boots",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:redstone_helmet",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:redstone_chestplate",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:redstone_leggings",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:redstone_boots",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:reinforced_iron_helmet",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:reinforced_iron_chestplate",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:reinforced_iron_leggings",
+            "required": false
+        },
+        {
+            "id": "plentyofarmors:reinforced_iron_boots",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:copper_helmet",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:copper_chestplate",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:copper_leggings",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:copper_boots",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:exposed_copper_helmet",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:exposed_copper_chestplate",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:exposed_copper_leggings",
+            "required": false
+        },
+        {
+            "id": "purecoppertools:exposed_copper_boots",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:plated_iron_helmet",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:plated_iron_chestplate",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:plated_iron_leggings",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:plated_iron_boots",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:wise_iron_helmet",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:wise_iron_chestplate",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:wise_iron_leggings",
+            "required": false
+        },
+        {
+            "id": "awesomearmaments:wise_iron_boots",
+            "required": false
+        },
+        {
+            "id": "diamold:diamold_helmet",
+            "required": false
+        },
+        {
+            "id": "diamold:diamold_chestplate",
+            "required": false
+        },
+        {
+            "id": "diamold:diamold_leggings",
+            "required": false
+        },
+        {
+            "id": "diamold:diamold_boots",
+            "required": false
+        },
+        {
+            "id": "diamold:diamold_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:bronze_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:bronze_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:bronze_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:bronze_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:copper_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:copper_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:copper_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:copper_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:durasteel_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:durasteel_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:durasteel_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:durasteel_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:midas_gold_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:midas_gold_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:midas_gold_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:midas_gold_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:osmium_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:osmium_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:osmium_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:osmium_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:palladium_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:palladium_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:palladium_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:palladium_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:silver_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:silver_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:silver_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:silver_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:star_platinum_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:star_platinum_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:star_platinum_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:star_platinum_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:steel_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:steel_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:steel_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:steel_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:banglum_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:banglum_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:banglum_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:banglum_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:carmot_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:carmot_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:carmot_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:carmot_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:celestium_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:celestium_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:celestium_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:celestium_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:kyber_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:kyber_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:kyber_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:kyber_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:metallurgium_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:metallurgium_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:metallurgium_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:metallurgium_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:mythril_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:mythril_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:mythril_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:mythril_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:orichalcum_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:orichalcum_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:orichalcum_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:orichalcum_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:prometheum_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:prometheum_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:prometheum_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:prometheum_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:runite_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:runite_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:runite_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:runite_boots",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:stormyx_helmet",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:stormyx_chestplate",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:stormyx_leggings",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:stormyx_boots",
             "required": false
         }
     ]

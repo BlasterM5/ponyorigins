@@ -89,6 +89,29 @@
                                             "resource": "*:*_level",
                                             "change": 1,
                                             "operation": "add"
+                                        },
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:origin",
+                                                        "origin": "ponyorigins:races/unicorn"
+                                                    },
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:unicorn/energy"
+                                                    }
+                                                ]
+                                            },
+                                            "if_action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_up_energy_achievement",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
                                         }
                                     ]
                                 },
@@ -147,38 +170,10 @@
                             ]
                         },
                         "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_level",
-                                    "change": 1,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:origin",
-                                                "origin": "ponyorigins:races/unicorn"
-                                            },
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:advancement",
-                                                "advancement": "ponyorigins:unicorn/energy"
-                                            }
-                                        ]
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "*:*_up_energy_achievement",
-                                        "change": 1,
-                                        "operation": "add"
-                                    }
-                                }
-                            ]
+                            "type": "origins:change_resource",
+                            "resource": "*:*_level",
+                            "change": 1,
+                            "operation": "add"
                         },
                         "else_action": {
                             "type": "origins:if_else",
@@ -608,6 +603,20 @@
         }
     },
     "up_energy_achievement": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/unicorn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:unicorn/energy"
+                }
+            ]
+        },
         "type": "origins:resource",
         "min": 0,
         "max": 10000,
