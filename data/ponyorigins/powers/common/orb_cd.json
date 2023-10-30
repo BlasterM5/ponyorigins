@@ -475,6 +475,58 @@
                         "conditions": [
                             {
                                 "type": "origins:command",
+                                "command": "execute if entity @s[advancements={farmersdelight:main/plant_all_crops=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={farmersdelight:main/master_chef=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/farmersdelight/farmersmastery"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $farmersmastery po.globalflags matches 1 run function ponyorigins:ascension/farmersdelight/farmersmastery"
+                    }
+                }
+            ]
+        }
+    },
+    "special_ad_astra_advancements": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/alicorn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:ascension/root"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
                                 "command": "execute if entity @s[advancements={ad_astra:moon=true}]",
                                 "comparison": "==",
                                 "compare_to": 1
@@ -639,8 +691,10 @@
                         "type": "origins:and",
                         "conditions": [
                             {
-                                "type": "origins:advancement",
-                                "advancement": "ponyorigins:special/interstellar"
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ponyorigins:special/interstellar=true}]",
+                                "comparison": ">=",
+                                "compare_to": 1
                             },
                             {
                                 "inverted": true,
@@ -652,34 +706,6 @@
                     "action": {
                         "type": "origins:execute_command",
                         "command": "execute unless score $grand_tour po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/grand_tour"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:command",
-                                "command": "execute if entity @s[advancements={farmersdelight:main/plant_all_crops=true}]",
-                                "comparison": "==",
-                                "compare_to": 1
-                            },
-                            {
-                                "type": "origins:command",
-                                "command": "execute if entity @s[advancements={farmersdelight:main/master_chef=true}]",
-                                "comparison": "==",
-                                "compare_to": 1
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:advancement",
-                                "advancement": "ponyorigins:ascension/farmersdelight/farmersmastery"
-                            }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "execute unless score $farmersmastery po.globalflags matches 1 run function ponyorigins:ascension/farmersdelight/farmersmastery"
                     }
                 }
             ]

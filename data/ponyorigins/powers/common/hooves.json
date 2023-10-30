@@ -4,11 +4,20 @@
     "type": "origins:multiple",
     "knockback": {
         "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:empty"
-            }
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/quadruped"
+                }
+            ]
         },
         "type": "origins:action_on_hit",
         "bientity_action": {

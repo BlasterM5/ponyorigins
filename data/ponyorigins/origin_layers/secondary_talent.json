@@ -21,12 +21,21 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/blank"
+                        "origin": "ponyorigins:races/alicorn"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:special/rejected"
                     }
                 ]
             },
+            "origins": [
+                "ponyorigins:talents/harmony_alicorn"
+            ]
+        },
+        {
             "origins": [
                 "ponyorigins:talents/other"
             ]

@@ -27,7 +27,13 @@
         "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/resource_bar.png",
-            "bar_index": 7
+            "bar_index": 7,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_sc_triggered",
+                "comparison": "==",
+                "compare_to": 0
+            }
         }
     },
     "recharge": {
@@ -56,6 +62,12 @@
                                 "type": "origins:resource",
                                 "resource": "*:*_level",
                                 "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_triggered",
+                                "comparison": "==",
                                 "compare_to": 0
                             }
                         ]
@@ -416,5 +428,296 @@
             ]
         },
         "cooldown": 1
+    },
+    "supercharge": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 3,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_supercharge",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "sc_triggered": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "sc_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_supercharge",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle flame ~ ~0.5 ~-0.25 0.2 0.2 0.2 0.05 8 force"
+                }
+            ]
+        }
+    },
+    "sc_recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_level",
+                                        "comparison": "<=",
+                                        "compare_to": 50
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_supercharge",
+                                        "comparison": ">=",
+                                        "compare_to": 50
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_supercharge",
+                                        "change": -50,
+                                        "operation": "add"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_level",
+                                        "change": 50,
+                                        "operation": "add"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_level",
+                                        "comparison": "<=",
+                                        "compare_to": 75
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_supercharge",
+                                        "comparison": ">=",
+                                        "compare_to": 25
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_supercharge",
+                                        "change": -25,
+                                        "operation": "add"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_level",
+                                        "change": 25,
+                                        "operation": "add"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_level",
+                                        "comparison": "<=",
+                                        "compare_to": 90
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_supercharge",
+                                        "comparison": ">=",
+                                        "compare_to": 10
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_supercharge",
+                                        "change": -10,
+                                        "operation": "add"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_level",
+                                        "change": 10,
+                                        "operation": "add"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_level",
+                                        "comparison": "<=",
+                                        "compare_to": 99
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_supercharge",
+                                        "comparison": ">=",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_supercharge",
+                                        "change": -1,
+                                        "operation": "add"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_level",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_sc_triggered",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_obsidian_slag",
+                        "change": 40,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 800,
+                            "amplifier": 4,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            }
+        }
+    },
+    "obsidian_slag_decay": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_obsidian_slag",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_obsidian_slag",
+            "change": -1,
+            "operation": "add"
+        },
+        "falling_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_sc_triggered",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:obsidian\",Count:1}}"
+                }
+            ]
+        }
+    },
+    "obsidian_slag": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "start_value": 0
     }
 }

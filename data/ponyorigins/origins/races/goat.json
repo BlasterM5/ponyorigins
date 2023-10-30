@@ -2,6 +2,7 @@
     "name": "Goat",
     "description": "A mundane denizen of Equestria. Goats have no special abilities, but have no major flaws either. They also eat nearly everything.",
     "powers": [
+        "ponyorigins:common/diets/goat",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",

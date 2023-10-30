@@ -112,6 +112,10 @@
                     }
                 ]
             },
+            "block_action": {
+                "type": "apugli:destroy",
+                "drop_block": true
+            },
             "before_action": {
                 "type": "origins:and",
                 "actions": [

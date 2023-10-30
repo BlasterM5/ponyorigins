@@ -3,7 +3,6 @@
     "description": "Front end of an osprey, back end of a pony, a friendlier predator of the skies.",
     "powers": [
         "ponyorigins:common/diets/pescavore",
-        "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",
         "ponyorigins:common/rideable",
@@ -15,6 +14,6 @@
     "icon": {
         "item": "minecraft:cod"
     },
-    "order": 11,
+    "order": 13,
     "impact": 0
 }

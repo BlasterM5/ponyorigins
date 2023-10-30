@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:wither_rose"
+        },
+        "title": "Rejection of Harmony",
+        "description": "Harmony will no longer protect you",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "parent": "ponyorigins:special/root",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:lava_bucket"
+        },
+        "title": "Forbidden Sauce",
+        "description": "Taste the hottest sauce!",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "parent": "ponyorigins:special/food",
+    "criteria": {
+        "placeholder": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

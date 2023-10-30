@@ -50,6 +50,115 @@
         }
     ],
     "type": "origins:multiple",
+    "block_hit_sound": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0.5,
+                            "offset_y": 0,
+                            "offset_z": 0
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": -0.5,
+                            "offset_y": 0,
+                            "offset_z": 0
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0,
+                            "offset_y": 0.5,
+                            "offset_z": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_block_wing_hit",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:creative_flying"
+                                    },
+                                    {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:fall_flying"
+                                            },
+                                            {
+                                                "type": "origins:equipped_item",
+                                                "equipment_slot": "chest",
+                                                "item_condition": {
+                                                    "inverted": true,
+                                                    "type": "origins:ingredient",
+                                                    "ingredient": {
+                                                        "item": "minecraft:elytra"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:gamemode",
+                                "gamemode": "creative"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.player.big_fall",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_block_wing_hit",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "block_wing_hit": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
     "active": {
         "condition": {
             "type": "origins:and",
@@ -910,52 +1019,6 @@
             ]
         }
     },
-    "block_hit_sound": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:creative_flying"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:gamemode",
-                    "gamemode": "creative"
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": 0.5,
-                            "offset_y": 0,
-                            "offset_z": 0
-                        },
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": -0.5,
-                            "offset_y": 0,
-                            "offset_z": 0
-                        },
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": 0,
-                            "offset_y": 0.5,
-                            "offset_z": 0
-                        }
-                    ]
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "rising_action": {
-            "type": "origins:play_sound",
-            "sound": "entity.player.big_fall",
-            "volume": 1,
-            "pitch": 1
-        }
-    },
     "hazard_check": {
         "condition": {
             "type": "origins:or",
@@ -1041,22 +1104,10 @@
                     "fluid": "minecraft:water"
                 },
                 {
-                    "type": "origins:block_collision",
-                    "offset_x": 0.5,
-                    "offset_y": 0,
-                    "offset_z": 0
-                },
-                {
-                    "type": "origins:block_collision",
-                    "offset_x": -0.5,
-                    "offset_y": 0,
-                    "offset_z": 0
-                },
-                {
-                    "type": "origins:block_collision",
-                    "offset_x": 0,
-                    "offset_y": 0.5,
-                    "offset_z": 0
+                    "type": "origins:resource",
+                    "resource": "*:*_block_wing_hit",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:and",
@@ -1134,6 +1185,21 @@
                             "type": "origins:food_level",
                             "comparison": "<=",
                             "compare_to": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:races/dragon"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                            "comparison": ">",
+                            "compare_to": 0
                         }
                     ]
                 }

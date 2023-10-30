@@ -1,0 +1,12 @@
+{
+    "values": [
+        {
+            "id": "minecraft:water_bucket",
+            "required": false
+        },
+        {
+            "id": "minecraft:lava_bucket",
+            "required": false
+        }
+    ]
+}

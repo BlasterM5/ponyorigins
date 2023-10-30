@@ -424,5 +424,14 @@
         "key": {
             "key": "key.origins.secondary_active"
         }
+    },
+    "barrier_visual": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "apugli:energy_swirl",
+        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "speed": 0.001
     }
 }

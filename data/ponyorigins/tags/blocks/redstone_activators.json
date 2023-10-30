@@ -1,0 +1,12 @@
+{
+    "values": [
+        {
+            "id": "minecraft:lever",
+            "required": false
+        },
+        {
+            "id": "#buttons",
+            "required": false
+        }
+    ]
+}

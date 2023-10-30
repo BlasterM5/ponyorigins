@@ -15,7 +15,7 @@
         }
     ],
     "type": "origins:multiple",
-    "flamethrower": {
+    "fire": {
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -34,6 +34,12 @@
                     "inverted": true,
                     "type": "origins:submerged_in",
                     "fluid": "minecraft:lava"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         },
@@ -52,7 +58,13 @@
                     {
                         "type": "origins:air",
                         "comparison": ">",
-                        "compare_to": 30
+                        "compare_to": 60
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             },
@@ -225,6 +237,12 @@
                             {
                                 "type": "origins:gain_air",
                                 "value": -30
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd",
+                                "change": 2,
+                                "operation": "add"
                             }
                         ]
                     },
@@ -250,6 +268,12 @@
                             {
                                 "type": "origins:gain_air",
                                 "value": -30
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd",
+                                "change": 2,
+                                "operation": "add"
                             }
                         ]
                     }
@@ -260,6 +284,28 @@
         "key": {
             "key": "key.origins.secondary_active",
             "continuous": true
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "cd_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
         }
     }
 }

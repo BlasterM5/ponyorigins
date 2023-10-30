@@ -1,0 +1,504 @@
+{
+    "name": "Friend of All Creatures",
+    "description": "Tame any tameable creature with an empty hoof.\n\nAll mobs will ignore you.\n\nYOU CANNOT HARM ANOTHER LIVING CREATURE",
+    "type": "origins:multiple",
+    "tame": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:action_on_entity_use",
+        "bientity_action": {
+            "type": "origins:tame"
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "inverted": true,
+                "type": "origins:tamed"
+            }
+        },
+        "action_result": "success",
+        "priority": 0
+    },
+    "pacifist_melee": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "target_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.bat.hurt",
+            "volume": 0.1,
+            "pitch": 1
+        }
+    },
+    "pacifist_ranged": {
+        "type": "origins:modify_projectile_damage",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "target_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.bat.hurt",
+            "volume": 0.1,
+            "pitch": 1
+        }
+    },
+    "barrier_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0
+    },
+    "barrier_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_barrier_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_barrier_cd",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "barrier_render": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_barrier_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "apugli:energy_swirl",
+        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "speed": "0.001"
+    },
+    "defense": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:special/rejected"
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.5
+        },
+        "self_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_barrier_cd",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_barrier_cd",
+                        "change": 10,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.amethyst_block.break",
+                        "volume": 1,
+                        "pitch": 1
+                    },
+                    {
+                        "type": "origins:spawn_particles",
+                        "particle": "minecraft:firework",
+                        "count": 8,
+                        "speed": 1,
+                        "force": true,
+                        "spread": {
+                            "x": 0.1,
+                            "y": 0.1,
+                            "z": 0.1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rejection": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:special/rejected"
+        },
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "advancement grant @s until ponyorigins:special/rejected"
+        },
+        "cooldown": 1
+    },
+    "pacified_mobs": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:special/rejected"
+        },
+        "type": "apugli:mobs_ignore"
+    },
+    "anti_item_kill_check": {
+        "condition": {
+            "type": "apugli:entity_in_radius",
+            "radius": 9,
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:danger_items"
+            }
+        }
+    },
+    "anti_redstone_trap_kill_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 15,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "ponyorigins:danger_blocks"
+                    },
+                    "radius": 15,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:prevent_block_use",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:redstone_activators"
+        }
+    },
+    "anti_redstone_trap_kill_check_tripwire_plates": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 15,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "ponyorigins:danger_blocks"
+                    },
+                    "radius": 15,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:block_in_radius",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "pressure_plates"
+                            },
+                            "radius": 2,
+                            "shape": "cube",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:block_in_radius",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:tripwire"
+                            },
+                            "radius": 2,
+                            "shape": "cube",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "anti_sand_torch_trap_kill_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 15,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "sand"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:gravel"
+                            }
+                        ]
+                    },
+                    "radius": 8,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:modify_break_speed",
+        "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:torch"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:exposed_to_sky"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 40
+        }
+    },
+    "anti_sand_torch_trap_kill_water_bucket__check_": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 15,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "sand"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:gravel"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:torch"
+                            }
+                        ]
+                    },
+                    "radius": 8,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:fluid_buckets"
+            }
+        }
+    },
+    "anti_bed_bombing": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 9,
+                    "compare_to": ">",
+                    "comparison": "0"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "minecraft:nether"
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "minecraft:the_end"
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:prevent_block_use",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "beds"
+        }
+    },
+    "anti_redstone_trap_kill_check_": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 15,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "ponyorigins:danger_blocks"
+                    },
+                    "radius": 15,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:danger_items"
+            }
+        }
+    },
+    "anti_fire_kill_danger_block_use": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 15,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "ponyorigins:danger_blocks"
+                    },
+                    "radius": 15,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:flint_and_steel"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:flint_and_steel"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:prevent_block_use"
+    },
+    "anti_fire_kill_use": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apugli:entity_in_radius",
+                    "radius": 9,
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:flint_and_steel"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:flint_and_steel"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:prevent_block_use"
+    }
+}

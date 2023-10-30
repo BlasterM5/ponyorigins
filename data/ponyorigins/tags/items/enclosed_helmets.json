@@ -11,6 +11,10 @@
         {
             "id": "ad_astra:jet_suit_helmet",
             "required": false
+        },
+        {
+            "id": "minecraft:pumpkin",
+            "required": false
         }
     ]
 }
