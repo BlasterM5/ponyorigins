@@ -60,7 +60,7 @@ Energy: All pony races, and many non-pony races, will have an Energy bar. This f
         of carrying items in "hand".
 
 Flight: Some races have flight as an option. Pony races require energy to fly, where others will drain stamina instead. In order to fly, they need a half block
-        clearance between them, any obstructions on either side of them, and above them. If they fly too close to a wall or ceiling, their wings will hit the
+        clearance between them and any obstructions on either side and above them. If they fly too close to a wall or ceiling, their wings will hit the
         obstruction and they will lose the ability to fly, until they maintain that clearance again. Additionally, many hazards and injuries prevent flight, such as
         getting their wings waterlogged or soaked in oil, being set on fire, getting caught in cobwebs, and being too low on health. These hazards will clear
         over time as long as they aren't still caught in them. Flight also comes with the ability to fall slowly by default, but only if it is possible to fly at
