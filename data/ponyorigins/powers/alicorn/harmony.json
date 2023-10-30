@@ -357,8 +357,8 @@
                 {
                     "type": "apugli:entity_in_radius",
                     "radius": 9,
-                    "compare_to": ">",
-                    "comparison": "0"
+                    "comparison": ">",
+                    "compare_to": 0
                 },
                 {
                     "type": "origins:or",

@@ -531,21 +531,21 @@
         },
         {
             "condition": {
-                "type": "origins:power",
-                "power": "ponyorigins:common/pony"
-            },
-            "origins": [
-                "ponyorigins:talents/blank"
-            ]
-        },
-        {
-            "condition": {
                 "type": "origins:origin",
                 "origin": "ponyorigins:races/chaos"
             },
             "origins": [
                 "ponyorigins:chaos/fireworks",
                 "ponyorigins:chaos/sound"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:power",
+                "power": "ponyorigins:common/pony"
+            },
+            "origins": [
+                "ponyorigins:talents/blank"
             ]
         }
     ],
