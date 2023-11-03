@@ -43,9 +43,18 @@
                     "compare_to": 1
                 },
                 {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_trigger"
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:power_active",
+                            "power": "*:*_trigger"
+                        },
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:chaos/chaos"
+                        }
+                    ]
                 }
             ]
         },

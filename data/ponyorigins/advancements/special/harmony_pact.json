@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:rose"
+        },
+        "title": "Harmony Pact",
+        "description": "Your Promise to Harmony You Will Harm No Creature",
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent": "ponyorigins:special/root",
+    "criteria": {
+        "power": {
+            "trigger": "origins:chose_origin",
+            "conditions": {
+                "origin": "ponyorigins:talents/harmony_alicorn"
+            }
+        }
+    }
+}

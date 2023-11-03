@@ -5,7 +5,7 @@
             "required": false
         },
         {
-            "id": "minecraft:dispensor",
+            "id": "minecraft:dispenser",
             "required": false
         },
         {

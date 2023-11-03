@@ -17,7 +17,7 @@
     },
     "check_brightness": {
         "type": "origins:action_over_time",
-        "interval": 2,
+        "interval": 1,
         "entity_action": {
             "type": "origins:if_else_list",
             "actions": [

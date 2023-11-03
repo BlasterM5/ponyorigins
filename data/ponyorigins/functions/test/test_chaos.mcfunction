@@ -1,1 +1,1 @@
-advancement grant @s until ponyorigins:ascension/chaos
+advancement grant @s until minecraft:nether/all_effects

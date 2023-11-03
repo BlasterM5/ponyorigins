@@ -5,6 +5,7 @@ function ponyorigins:init/eptravel
 function ponyorigins:init/eptrader
 function ponyorigins:init/ppflight
 function ponyorigins:init/chaos
+function ponyorigins:init/chaosorb
 function ponyorigins:init/eporb
 function ponyorigins:init/pporb
 function ponyorigins:init/uporb

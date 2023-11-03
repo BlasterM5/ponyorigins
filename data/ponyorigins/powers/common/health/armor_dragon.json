@@ -8,14 +8,41 @@
             "sprite": "minecraft:textures/item/diamond_chestplate.png"
         }
     ],
-    "type": "origins:modify_damage_taken",
-    "damage_condition": {
-        "inverted": true,
-        "type": "origins:in_tag",
-        "tag": "bypasses_armor"
+    "type": "origins:multiple",
+    "damage_reduction": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "bypasses_armor"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.shulker.hurt_closed",
+            "volume": 1,
+            "pitch": 1
+        }
     },
-    "modifier": {
-        "operation": "multiply_base_additive",
-        "value": -0.5
+    "sound_muter": {
+        "type": "apugli:custom_hurt_sound",
+        "muted": true,
+        "volume": 0
+    },
+    "ap_damage_noise": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "bypasses_armor"
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.player.hurt",
+            "volume": 1,
+            "pitch": 1
+        }
     }
 }

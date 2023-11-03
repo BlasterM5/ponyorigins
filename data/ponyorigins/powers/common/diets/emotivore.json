@@ -570,7 +570,7 @@
                 }
             ]
         },
-        "action_result": "success",
+        "action_result": "consume",
         "priority": 0
     },
     "cd_res": {
@@ -910,7 +910,7 @@
                 ]
             }
         },
-        "action_result": "success",
+        "action_result": "consume",
         "priority": 0
     }
 }

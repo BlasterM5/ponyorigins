@@ -1,6 +1,6 @@
 {
     "name": "Amicus Omnium",
-    "description": "You have made a pact with Harmony. In exchange for being at peace with every mob in the world, you are UNABLE to HARM any living creature.\n\nWARNING: Harmony will reject you should you cause the death of another creature! This will be remembered!",
+    "description": "READ BEFORE YOU CHOOSE\n\nYou have made a pact with Harmony. In exchange for being at peace with every mob in the world, you are UNABLE to HARM any living creature.\n\nWARNING: Harmony will reject you should you cause the death of another creature, or change your talent! This will be remembered!",
     "powers": [
         "ponyorigins:alicorn/harmony"
     ],

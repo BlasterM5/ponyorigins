@@ -21,8 +21,8 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:races/alicorn"
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:alicorn/ascension"
                     },
                     {
                         "inverted": true,

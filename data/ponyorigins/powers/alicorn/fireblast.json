@@ -20,10 +20,19 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/key_secondary_active",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/key_secondary_active",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:chaos/chaos"
+                        }
+                    ]
                 },
                 {
                     "type": "origins:resource",

@@ -223,42 +223,46 @@
         },
         "type": "origins:action_on_block_use",
         "block_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:plants"
-                },
-                {
-                    "type": "origins:block",
-                    "block": "minecraft:grass_block"
-                }
-            ]
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:plants"
         },
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_eat_timer",
-                    "change": 1,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_sound_timer",
-                    "change": 1,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_antilag",
-                    "change": 5,
-                    "operation": "set"
+                    "type": "origins:raycast",
+                    "distance": 1,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "outline",
+                    "fluid_handling": "any",
+                    "hit_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_eat_timer",
+                                "change": 1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_sound_timer",
+                                "change": 1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_antilag",
+                                "change": 5,
+                                "operation": "set"
+                            }
+                        ]
+                    }
                 }
             ]
         },
-        "action_result": "success"
+        "action_result": "consume_partial"
     },
     "antilag_decay": {
         "condition": {
@@ -275,99 +279,6 @@
             "change": -1,
             "operation": "add"
         }
-    },
-    "eating_complete_grass": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_eat_timer",
-                    "comparison": "==",
-                    "compare_to": 30
-                },
-                {
-                    "type": "origins:food_level",
-                    "comparison": "<",
-                    "compare_to": 20
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        "type": "origins:action_on_block_use",
-        "block_condition": {
-            "type": "origins:block",
-            "block": "minecraft:grass_block"
-        },
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_eat_timer",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_sound_timer",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_antilag",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_cd",
-                    "change": 1,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:feed",
-                    "food": 1,
-                    "saturation": 0
-                },
-                {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:entity.player.burp",
-                    "volume": 1,
-                    "pitch": 1
-                }
-            ]
-        },
-        "block_action": {
-            "type": "origins:set_block",
-            "block": "minecraft:dirt"
-        },
-        "action_result": "success"
     },
     "eating_complete_plants": {
         "condition": {
@@ -448,6 +359,6 @@
             "type": "apugli:destroy",
             "drop_block": false
         },
-        "action_result": "success"
+        "action_result": "consume"
     }
 }

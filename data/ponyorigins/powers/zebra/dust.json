@@ -64,9 +64,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:air",
-                    "comparison": ">",
-                    "compare_to": 30
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
                 },
                 {
                     "type": "origins:or",
@@ -119,6 +120,11 @@
                     "inverted": true,
                     "type": "origins:submerged_in",
                     "fluid": "minecraft:lava"
+                },
+                {
+                    "type": "origins:air",
+                    "comparison": ">",
+                    "compare_to": 30
                 }
             ]
         },
@@ -897,6 +903,20 @@
                             }
                         ]
                     }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:air",
+                        "comparison": "<=",
+                        "compare_to": 30
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 2,
+                        "operation": "set"
+                    }
                 }
             ]
         },
@@ -904,6 +924,28 @@
         "key": {
             "key": "key.origins.primary_active",
             "continuous": true
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "cd_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
         }
     }
 }
