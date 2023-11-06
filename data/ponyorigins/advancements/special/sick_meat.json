@@ -7,7 +7,7 @@
         "description": "Too much meat in your diet!",
         "frame": "challenge",
         "show_toast": true,
-        "announce_to_chat": true,
+        "announce_to_chat": false,
         "hidden": true
     },
     "parent": "ponyorigins:special/food",

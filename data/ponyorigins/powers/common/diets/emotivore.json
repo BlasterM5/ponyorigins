@@ -43,7 +43,6 @@
                     "compare_to": 2
                 },
                 {
-                    "inverted": true,
                     "type": "origins:sneaking"
                 }
             ]
@@ -571,7 +570,7 @@
             ]
         },
         "action_result": "consume",
-        "priority": 0
+        "priority": 1
     },
     "cd_res": {
         "condition": {
@@ -911,6 +910,6 @@
             }
         },
         "action_result": "consume",
-        "priority": 0
+        "priority": 1
     }
 }

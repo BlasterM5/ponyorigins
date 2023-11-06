@@ -7,7 +7,8 @@
         "description": "Your Promise to Harmony You Will Harm No Creature",
         "frame": "goal",
         "show_toast": true,
-        "announce_to_chat": true
+        "announce_to_chat": true,
+        "hidden": true
     },
     "parent": "ponyorigins:special/root",
     "criteria": {
