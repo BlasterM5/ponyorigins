@@ -41,9 +41,6 @@
                     "resource": "*:*_cd_res",
                     "comparison": "==",
                     "compare_to": 2
-                },
-                {
-                    "type": "origins:sneaking"
                 }
             ]
         },
