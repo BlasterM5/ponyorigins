@@ -310,8 +310,18 @@
     "diet_risk_blocks": {
         "type": "origins:action_on_block_use",
         "block_condition": {
-            "type": "origins:in_tag",
-            "tag": "ponyorigins:meat_blocks"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:meat_blocks"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:seafood_blocks"
+                }
+            ]
         },
         "entity_action": {
             "type": "origins:if_else_list",

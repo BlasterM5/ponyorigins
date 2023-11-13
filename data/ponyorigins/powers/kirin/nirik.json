@@ -179,11 +179,10 @@
                     "compare_to": 2
                 },
                 {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },

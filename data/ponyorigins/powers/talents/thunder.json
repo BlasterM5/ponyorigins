@@ -109,107 +109,102 @@
                 ]
             },
             "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:raycast",
-                        "distance": 40,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "any",
-                        "bientity_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:target_action",
-                                    "action": {
-                                        "type": "origins:execute_command",
-                                        "command": "summon lightning_bolt ~ ~ ~"
-                                    }
-                                },
-                                {
-                                    "type": "origins:target_action",
-                                    "action": {
-                                        "type": "origins:execute_command",
-                                        "command": "particle electric_spark ~ ~0.5 ~ 0.1 0.1 0.1 1 16 force"
-                                    }
-                                }
-                            ]
+                "type": "origins:raycast",
+                "distance": 40,
+                "block": true,
+                "entity": true,
+                "shape_type": "collider",
+                "fluid_handling": "any",
+                "bientity_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "summon lightning_bolt ~ ~ ~"
+                            }
                         },
-                        "block_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "summon lightning_bolt ~ ~ ~"
-                                },
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "particle electric_spark ~ ~0.5 ~ 0.1 0.1 0.1 1 16 force"
-                                }
-                            ]
-                        },
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:if_else_list",
-                                    "actions": [
-                                        {
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_weather",
-                                                "comparison": "==",
-                                                "compare_to": 2
-                                            },
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_buffer",
-                                                "change": -20,
-                                                "operation": "add"
-                                            }
-                                        },
-                                        {
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_weather",
-                                                "comparison": "==",
-                                                "compare_to": 1
-                                            },
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_buffer",
-                                                "change": -40,
-                                                "operation": "add"
-                                            }
-                                        },
-                                        {
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_weather",
-                                                "comparison": "==",
-                                                "compare_to": 0
-                                            },
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_buffer",
-                                                "change": -80,
-                                                "operation": "add"
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 1,
-                                    "operation": "set"
-                                }
-                            ]
+                        {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle electric_spark ~ ~0.5 ~ 0.1 0.1 0.1 1 16 force"
+                            }
                         }
-                    }
-                ]
+                    ]
+                },
+                "block_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon lightning_bolt ~ ~ ~"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "particle electric_spark ~ ~0.5 ~ 0.1 0.1 0.1 1 16 force"
+                        }
+                    ]
+                },
+                "hit_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_weather",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    },
+                                    "action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_buffer",
+                                        "change": -20,
+                                        "operation": "add"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_weather",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    },
+                                    "action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_buffer",
+                                        "change": -40,
+                                        "operation": "add"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_weather",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_buffer",
+                                        "change": -80,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_cd",
+                            "change": 1,
+                            "operation": "set"
+                        }
+                    ]
+                }
             }
         }
     },
@@ -413,7 +408,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_primary_active",
+                            "resource": "ponyorigins:common/00_key_primary_active",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -428,7 +423,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_secondary_active",
+                            "resource": "ponyorigins:common/00_key_secondary_active",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -465,15 +460,10 @@
     },
     "weather_check": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_buffer",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "*:*_buffer",
+            "comparison": ">",
+            "compare_to": 0
         },
         "type": "origins:action_over_time",
         "interval": 1,

@@ -2,6 +2,8 @@
     "name": "Umbrum",
     "description": "Unicorn-like shadow wraiths that stalk the dark corners of the world.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",
@@ -9,9 +11,7 @@
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/nightvision",
         "ponyorigins:umbrum/dark_strength",
-        "ponyorigins:umbrum/shadow",
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "ponyorigins:umbrum/shadow"
     ],
     "icon": {
         "item": "minecraft:amethyst_shard"

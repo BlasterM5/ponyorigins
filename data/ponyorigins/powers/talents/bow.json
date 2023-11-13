@@ -12,14 +12,9 @@
     "type": "origins:multiple",
     "modifier": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": ">",
-                    "compare_to": 2
-                }
-            ]
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 2
         },
         "type": "origins:modify_projectile_damage",
         "modifier": {
@@ -39,15 +34,10 @@
             "amount": 0.05
         },
         "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "ponyorigins:ranged_weapons"
-                    }
-                }
-            ]
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:ranged_weapons"
+            }
         },
         "trigger": "finish",
         "priority": 0

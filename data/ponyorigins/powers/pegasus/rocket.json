@@ -213,13 +213,8 @@
     },
     "crash_detection": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_trigger"
-                }
-            ]
+            "type": "origins:power_active",
+            "power": "*:*_trigger"
         },
         "type": "origins:action_over_time",
         "interval": 1,
@@ -359,7 +354,7 @@
             "conditions": [
                 {
                     "type": "origins:resource",
-                    "resource": "ponyorigins:common/key_secondary_active",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
                     "comparison": ">",
                     "compare_to": 0
                 },

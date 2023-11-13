@@ -2,8 +2,8 @@
     "name": "Human",
     "description": "A regular human. Your ordinary Minecraft experience awaits.",
     "powers": [
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd"
     ],
     "icon": {
         "item": "minecraft:grass"

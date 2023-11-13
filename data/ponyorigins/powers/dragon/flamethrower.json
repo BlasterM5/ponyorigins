@@ -199,14 +199,9 @@
             "else_action": {
                 "type": "origins:if_else",
                 "condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:air",
-                            "comparison": ">",
-                            "compare_to": 30
-                        }
-                    ]
+                    "type": "origins:air",
+                    "comparison": ">",
+                    "compare_to": 30
                 },
                 "if_action": {
                     "type": "origins:if_else",

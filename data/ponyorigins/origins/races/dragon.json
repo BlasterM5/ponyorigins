@@ -2,6 +2,8 @@
     "name": "Dragon",
     "description": "Hatched in lava, born of fire, dragons are an unstoppable force in the world.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/lithovore",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",
@@ -11,9 +13,7 @@
         "ponyorigins:dragon/fireproof",
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/membraneous",
-        "ponyorigins:common/health/armor_dragon",
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "ponyorigins:common/health/armor_dragon"
     ],
     "icon": {
         "item": "minecraft:blaze_powder"

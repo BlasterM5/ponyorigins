@@ -41,6 +41,9 @@
                                 },
                                 {
                                     "tag": "minecraft:fishes"
+                                },
+                                {
+                                    "tag": "origins:meat"
                                 }
                             ]
                         }
@@ -83,6 +86,9 @@
                                 },
                                 {
                                     "tag": "minecraft:fishes"
+                                },
+                                {
+                                    "tag": "origins:meat"
                                 }
                             ]
                         }
@@ -125,6 +131,9 @@
                                 },
                                 {
                                     "tag": "minecraft:fishes"
+                                },
+                                {
+                                    "tag": "origins:meat"
                                 }
                             ]
                         }

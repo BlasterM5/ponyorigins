@@ -244,35 +244,30 @@
                 "compare_to": 0
             },
             "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:resource",
-                            "resource": "*:*_buffer",
-                            "comparison": "<",
-                            "compare_to": 15
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": "<",
+                    "compare_to": 15
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "change": -1,
+                            "operation": "add"
                         },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/energy_level",
-                                    "change": -1,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": 1,
-                                    "operation": "add"
-                                }
-                            ]
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_buffer",
+                            "change": 1,
+                            "operation": "add"
                         }
-                    }
-                ]
+                    ]
+                }
             }
         },
         "falling_action": {
@@ -326,7 +321,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_primary_active",
+                            "resource": "ponyorigins:common/00_key_primary_active",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -341,7 +336,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_secondary_active",
+                            "resource": "ponyorigins:common/00_key_secondary_active",
                             "comparison": ">",
                             "compare_to": 0
                         }

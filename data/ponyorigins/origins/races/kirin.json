@@ -2,6 +2,8 @@
     "name": "Kirin",
     "description": "Half unicorn, half dragon, the pony race from the East with a heart of fire.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
@@ -10,9 +12,7 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:kirin/nirik",
-        "ponyorigins:common/health/armor_kirin",
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "ponyorigins:common/health/armor_kirin"
     ],
     "icon": {
         "item": "minecraft:flint_and_steel"

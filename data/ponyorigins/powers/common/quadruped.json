@@ -29,20 +29,16 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "inverted": true,
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 0
                 },
                 {
-                    "inverted": true,
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "offhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_offhand",
+                    "comparison": "==",
+                    "compare_to": 0
                 },
                 {
                     "inverted": true,
@@ -71,19 +67,16 @@
                     "type": "origins:and",
                     "conditions": [
                         {
-                            "inverted": true,
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 0
                         },
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         },
                         {
                             "inverted": true,
@@ -101,19 +94,16 @@
                     "type": "origins:and",
                     "conditions": [
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         },
                         {
-                            "inverted": true,
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 0
                         },
                         {
                             "inverted": true,
@@ -143,18 +133,16 @@
                     "type": "origins:and",
                     "conditions": [
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         },
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         }
                     ]
                 },

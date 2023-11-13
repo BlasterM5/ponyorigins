@@ -2,6 +2,8 @@
     "name": "Zebra",
     "description": "A culturally distinct race from the land of Zebrica. Similar to an earth pony, and yet, quite different.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
@@ -10,9 +12,7 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/pony",
         "ponyorigins:zebra/dust",
-        "ponyorigins:common/health/plus_four",
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "ponyorigins:common/health/plus_four"
     ],
     "icon": {
         "item": "minecraft:vine"

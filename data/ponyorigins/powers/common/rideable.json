@@ -11,14 +11,9 @@
     "type": "origins:multiple",
     "ride": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:passenger",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
+            "type": "origins:passenger",
+            "comparison": "==",
+            "compare_to": 0
         },
         "type": "origins:action_on_being_used",
         "bientity_action": {

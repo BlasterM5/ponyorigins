@@ -1,0 +1,193 @@
+{
+    "name": "00 Common Checks",
+    "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key.",
+    "hidden": true,
+    "type": "origins:multiple",
+    "key_secondary_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "key_primary": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_key_primary_active",
+            "change": 2,
+            "operation": "set"
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
+    },
+    "key_secondary": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_key_secondary_active",
+            "change": 2,
+            "operation": "set"
+        },
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
+    },
+    "key_antilag_decay": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_key_primary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_key_primary_active",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_key_primary_active",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_key_secondary_active",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_key_secondary_active",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                }
+            ]
+        }
+    },
+    "key_primary_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "empty_mainhand": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
+    "empty_offhand": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
+    "empty_feet": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
+    "empty_equipped_checks": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_empty_mainhand",
+                        "change": 1,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_empty_mainhand",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_empty_offhand",
+                        "change": 1,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_empty_offhand",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "feet",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_empty_feet",
+                        "change": 1,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_empty_feet",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                }
+            ]
+        }
+    }
+}

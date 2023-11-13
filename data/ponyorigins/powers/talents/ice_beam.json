@@ -80,55 +80,45 @@
                 }
             },
             "block_action": {
-                "type": "origins:and",
+                "type": "origins:if_else_list",
                 "actions": [
                     {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:water"
+                        "condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:water"
+                        },
+                        "action": {
+                            "type": "origins:set_block",
+                            "block": "minecraft:ice"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:lava"
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:set_block",
+                                    "block": "minecraft:obsidian"
                                 },
-                                "action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "type": "origins:set_block",
-                                            "block": "minecraft:ice"
-                                        }
-                                    ]
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "playsound block.fire.extinguish block @a"
                                 }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:lava"
-                                },
-                                "action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "type": "origins:set_block",
-                                            "block": "minecraft:obsidian"
-                                        },
-                                        {
-                                            "type": "origins:execute_command",
-                                            "command": "playsound block.fire.extinguish block @a"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:movement_blocking"
-                                },
-                                "action": {
-                                    "type": "origins:add_block",
-                                    "block": "minecraft:snow"
-                                }
-                            }
-                        ]
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:movement_blocking"
+                        },
+                        "action": {
+                            "type": "origins:add_block",
+                            "block": "minecraft:snow"
+                        }
                     }
                 ]
             },
@@ -413,7 +403,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_primary_active",
+                            "resource": "ponyorigins:common/00_key_primary_active",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -428,7 +418,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_secondary_active",
+                            "resource": "ponyorigins:common/00_key_secondary_active",
                             "comparison": ">",
                             "compare_to": 0
                         }

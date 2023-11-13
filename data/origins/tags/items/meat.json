@@ -85,10 +85,6 @@
             "required": false
         },
         {
-            "id": "farmersdelight:stuffed_pumpkin",
-            "required": false
-        },
-        {
             "id": "farmersdelight:roast_chicken",
             "required": false
         },
@@ -177,10 +173,6 @@
             "required": false
         },
         {
-            "id": "farmersdelight:egg_sandwich",
-            "required": false
-        },
-        {
             "id": "farmersdelight:barbecue_stick",
             "required": false
         },
@@ -209,7 +201,7 @@
             "required": false
         },
         {
-            "id": "farmersdelight:fried_egg",
+            "id": "farmersdelight:cabbage_rolls",
             "required": false
         },
         {
@@ -401,10 +393,6 @@
             "required": false
         },
         {
-            "id": "naturalist:cooked_egg",
-            "required": false
-        },
-        {
             "id": "hexcasting:sub_sandwich",
             "required": false
         },
@@ -518,10 +506,6 @@
         },
         {
             "id": "brewinandchewin:ham_and_cheese_sandwich",
-            "required": false
-        },
-        {
-            "id": "additionaladditions:fried_egg",
             "required": false
         },
         {

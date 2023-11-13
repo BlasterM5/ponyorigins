@@ -17,15 +17,10 @@
     "type": "origins:multiple",
     "slow_movement": {
         "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/energy_level",
+            "comparison": "==",
+            "compare_to": 0
         },
         "type": "origins:modify_attribute",
         "attribute": "minecraft:generic.movement_speed",
@@ -204,18 +199,16 @@
                     "type": "origins:and",
                     "conditions": [
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         },
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         }
                     ]
                 }
@@ -227,40 +220,35 @@
             "tag": "ponyorigins:plants"
         },
         "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:raycast",
-                    "distance": 1,
-                    "block": true,
-                    "entity": false,
-                    "shape_type": "outline",
-                    "fluid_handling": "any",
-                    "hit_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_eat_timer",
-                                "change": 1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_sound_timer",
-                                "change": 1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_antilag",
-                                "change": 5,
-                                "operation": "set"
-                            }
-                        ]
+            "type": "origins:raycast",
+            "distance": 1,
+            "block": true,
+            "entity": false,
+            "shape_type": "outline",
+            "fluid_handling": "any",
+            "hit_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_eat_timer",
+                        "change": 1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_sound_timer",
+                        "change": 1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_antilag",
+                        "change": 5,
+                        "operation": "set"
                     }
-                }
-            ]
+                ]
+            }
         },
         "action_result": "consume_partial"
     },
@@ -305,18 +293,16 @@
                     "type": "origins:and",
                     "conditions": [
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         },
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
                         }
                     ]
                 }

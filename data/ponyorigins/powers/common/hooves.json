@@ -7,11 +7,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:power",
@@ -30,11 +29,10 @@
     },
     "slipperier_ice": {
         "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "feet",
-            "item_condition": {
-                "type": "origins:empty"
-            }
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/00_empty_feet",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_slipperiness",
         "block_condition": {
@@ -54,11 +52,10 @@
                     "type": "origins:in_rain"
                 },
                 {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "feet",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },

@@ -28,20 +28,16 @@
                     "type": "origins:or",
                     "conditions": [
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "inverted": true,
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 0
                         },
                         {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "inverted": true,
-                                "type": "origins:empty"
-                            }
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 0
                         }
                     ]
                 }

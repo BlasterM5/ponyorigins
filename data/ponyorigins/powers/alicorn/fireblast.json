@@ -24,7 +24,7 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/key_secondary_active",
+                            "resource": "ponyorigins:common/00_key_secondary_active",
                             "comparison": "==",
                             "compare_to": 0
                         },
@@ -161,7 +161,7 @@
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "ponyorigins:common/key_secondary_active",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
                     "comparison": "==",
                     "compare_to": 0
                 }
@@ -220,7 +220,7 @@
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "ponyorigins:common/key_secondary_active",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
                     "comparison": ">",
                     "compare_to": 0
                 }

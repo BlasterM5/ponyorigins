@@ -2,14 +2,14 @@
     "name": "Griffon",
     "description": "Front end of an eagle, back end of a lion, a fearsome predator of the skies.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/carnivore",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",
         "ponyorigins:common/rideable",
         "ponyorigins:common/flight",
-        "origins:scare_creepers",
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "origins:scare_creepers"
     ],
     "icon": {
         "item": "minecraft:salmon"

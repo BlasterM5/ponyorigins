@@ -2,15 +2,15 @@
     "name": "Abyssinian",
     "description": "Anthropomorphic cats from the deserts of Abyssinia.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/carnivore",
         "ponyorigins:common/nightvision",
         "origins:fall_immunity",
         "origins:sprint_jump",
         "origins:velvet_paws",
         "origins:scare_creepers",
-        "ponyorigins:common/health/minus_two",
-        "ponyorigins:common/orb_cd",
-        "ponyorigins:common/key"
+        "ponyorigins:common/health/minus_two"
     ],
     "icon": {
         "item": "minecraft:tropical_fish"
