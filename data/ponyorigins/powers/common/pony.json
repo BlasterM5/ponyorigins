@@ -445,15 +445,15 @@
                 "conditions": [
                     {
                         "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/energy"
+                        "advancement": "ponyorigins:pegasus/mastery"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/tk_mastery"
+                        "advancement": "ponyorigins:unicorn/mastery"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/protection"
+                        "advancement": "ponyorigins:earth_pony/mastery"
                     }
                 ]
             },

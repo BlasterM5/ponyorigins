@@ -26,7 +26,7 @@
                         {
                             "type": "origins:brightness",
                             "comparison": ">",
-                            "compare_to": 0.3
+                            "compare_to": 0.2
                         },
                         {
                             "type": "origins:resource",
@@ -56,7 +56,7 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.03
+                                "compare_to": 0.02
                             },
                             {
                                 "type": "origins:resource",
@@ -80,12 +80,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.06
+                                "compare_to": 0.04
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.03
+                                "compare_to": 0.02
                             }
                         ]
                     },
@@ -127,12 +127,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.09
+                                "compare_to": 0.06
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.06
+                                "compare_to": 0.04
                             }
                         ]
                     },
@@ -174,12 +174,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.12
+                                "compare_to": 0.08
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.09
+                                "compare_to": 0.06
                             }
                         ]
                     },
@@ -221,12 +221,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.15
+                                "compare_to": 0.1
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.12
+                                "compare_to": 0.08
                             }
                         ]
                     },
@@ -268,12 +268,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.18
+                                "compare_to": 0.12
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.15
+                                "compare_to": 0.1
                             }
                         ]
                     },
@@ -315,12 +315,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.21
+                                "compare_to": 0.14
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.18
+                                "compare_to": 0.12
                             }
                         ]
                     },
@@ -362,12 +362,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.24
+                                "compare_to": 0.16
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.21
+                                "compare_to": 0.14
                             }
                         ]
                     },
@@ -409,12 +409,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.27
+                                "compare_to": 0.18
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.24
+                                "compare_to": 0.16
                             }
                         ]
                     },
@@ -456,12 +456,12 @@
                             {
                                 "type": "origins:brightness",
                                 "comparison": "<=",
-                                "compare_to": 0.3
+                                "compare_to": 0.2
                             },
                             {
                                 "type": "origins:brightness",
                                 "comparison": ">",
-                                "compare_to": 0.27
+                                "compare_to": 0.18
                             }
                         ]
                     },
@@ -500,7 +500,7 @@
                     "condition": {
                         "type": "origins:brightness",
                         "comparison": ">",
-                        "compare_to": 0.3
+                        "compare_to": 0.2
                     },
                     "action": {
                         "type": "origins:change_resource",
@@ -526,7 +526,7 @@
             "compare_to": 1
         },
         "type": "origins:night_vision",
-        "strength": 0.05
+        "strength": 0.02
     },
     "nv2": {
         "condition": {
@@ -536,7 +536,7 @@
             "compare_to": 2
         },
         "type": "origins:night_vision",
-        "strength": 0.1
+        "strength": 0.04
     },
     "nv3": {
         "condition": {
@@ -546,7 +546,7 @@
             "compare_to": 3
         },
         "type": "origins:night_vision",
-        "strength": 0.15
+        "strength": 0.06
     },
     "nv4": {
         "condition": {
@@ -556,7 +556,7 @@
             "compare_to": 4
         },
         "type": "origins:night_vision",
-        "strength": 0.2
+        "strength": 0.08
     },
     "nv5": {
         "condition": {
@@ -566,7 +566,7 @@
             "compare_to": 5
         },
         "type": "origins:night_vision",
-        "strength": 0.25
+        "strength": 0.1
     },
     "nv6": {
         "condition": {
@@ -576,7 +576,7 @@
             "compare_to": 6
         },
         "type": "origins:night_vision",
-        "strength": 0.3
+        "strength": 0.12
     },
     "nv7": {
         "condition": {
@@ -586,7 +586,7 @@
             "compare_to": 7
         },
         "type": "origins:night_vision",
-        "strength": 0.35
+        "strength": 0.14
     },
     "nv8": {
         "condition": {
@@ -596,7 +596,7 @@
             "compare_to": 8
         },
         "type": "origins:night_vision",
-        "strength": 0.4
+        "strength": 0.16
     },
     "nv9": {
         "condition": {
@@ -606,7 +606,7 @@
             "compare_to": 9
         },
         "type": "origins:night_vision",
-        "strength": 0.45
+        "strength": 0.18
     },
     "nv10": {
         "condition": {
@@ -616,6 +616,6 @@
             "compare_to": 10
         },
         "type": "origins:night_vision",
-        "strength": 0.5
+        "strength": 0.2
     }
 }
