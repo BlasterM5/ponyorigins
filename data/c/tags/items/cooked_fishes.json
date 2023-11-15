@@ -79,6 +79,26 @@
         {
             "id": "minecraft:cooked_salmon",
             "required": false
+        },
+        {
+            "id": "casualness_delight:fish_and_chips",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:stargazy_pie_slice",
+            "required": false
+        },
+        {
+            "id": "#fabric:cooked_fishes",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:kinilaw",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:bangsilog",
+            "required": false
         }
     ]
 }

@@ -75,6 +75,10 @@
         {
             "id": "minecraft:cod",
             "required": false
+        },
+        {
+            "id": "#fabric:raw_fishes",
+            "required": false
         }
     ]
 }

@@ -23,6 +23,54 @@
         {
             "id": "minecraft:cake",
             "required": false
+        },
+        {
+            "id": "casualness_delight:quiche_lorraine",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:stargazy_pie",
+            "required": false
+        },
+        {
+            "id": "ends_delight:chorus_fruit_pie",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_leg_with_sauce_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:steamed_dragon_egg_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_meat_stew_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:grilled_shulker_block",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:ube_cake",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:leche_flan_feast",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:lumpia_feast",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:halo_halo_feast",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:milk_tea_ube_feast",
+            "required": false
         }
     ]
 }

@@ -511,6 +511,146 @@
         {
             "id": "artifacts:everlasting_beef",
             "required": false
+        },
+        {
+            "id": "casualness_delight:fish_and_chips",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:beef_noodles",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:quiche_lorraine_slice",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:phantom_dumplings",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:phantom_puff",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:spicy_strips",
+            "required": false
+        },
+        {
+            "id": "#c:shulker_meat",
+            "required": false
+        },
+        {
+            "id": "#c:roasted_shulker_meat",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_leg",
+            "required": false
+        },
+        {
+            "id": "ends_delight:smoked_dragon_leg",
+            "required": false
+        },
+        {
+            "id": "#c:raw_dragon_meat",
+            "required": false
+        },
+        {
+            "id": "#c:roasted_dragon_meat",
+            "required": false
+        },
+        {
+            "id": "#c:raw_ender_mite_meat",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dried_endermite_meat",
+            "required": false
+        },
+        {
+            "id": "ends_delight:ender_congee",
+            "required": false
+        },
+        {
+            "id": "ends_delight:stir_fried_shulker_meat",
+            "required": false
+        },
+        {
+            "id": "ends_delight:roasted_dragon_steak",
+            "required": false
+        },
+        {
+            "id": "ends_delight:end_barbecue_stick",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_leg_with_sauce",
+            "required": false
+        },
+        {
+            "id": "ends_delight:steamed_dragon_egg",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_meat_stew",
+            "required": false
+        },
+        {
+            "id": "ends_delight:grilled_shulker",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:lumpia",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:tocino",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:chicken_inasal",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:chicken_inasal_rice",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:tosilog",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:bulalo",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:arroz_caldo",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:mechado",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:sisig",
+            "required": false
+        },
+        {
+            "id": "#c:raw_meat",
+            "required": false
+        },
+        {
+            "id": "#c:cooked_meat",
+            "required": false
+        },
+        {
+            "id": "#c:raw_fishes",
+            "required": false
+        },
+        {
+            "id": "#c:cooked_fishes",
+            "required": false
         }
     ]
 }

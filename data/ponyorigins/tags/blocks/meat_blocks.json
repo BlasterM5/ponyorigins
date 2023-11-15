@@ -15,6 +15,38 @@
         {
             "id": "farmersdelight:rice_roll_medley_block",
             "required": false
+        },
+        {
+            "id": "casualness_delight:quiche_lorraine",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:stargazy_pie",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_leg_with_sauce_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:steamed_dragon_egg_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_leg_with_sauce_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:dragon_meat_stew_block",
+            "required": false
+        },
+        {
+            "id": "ends_delight:grilled_shulker_block",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:lumpia_feast",
+            "required": false
         }
     ]
 }
