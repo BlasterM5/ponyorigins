@@ -376,11 +376,25 @@
     "other_food_unsatisfier": {
         "type": "origins:modify_food",
         "item_condition": {
-            "inverted": true,
-            "type": "origins:ingredient",
-            "ingredient": [
+            "type": "origins:and",
+            "conditions": [
                 {
-                    "tag": "ponyorigins:fruits"
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "ponyorigins:fruits"
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "ponyorigins:fruit_meals"
+                        }
+                    ]
                 }
             ]
         },

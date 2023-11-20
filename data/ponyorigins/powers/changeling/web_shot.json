@@ -1,0 +1,186 @@
+{
+    "name": "Web Shot",
+    "description": "By eating food, you can create sticky silk, and spit it at your target to slow them down.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to shot web"
+            ],
+            "sprite": "minecraft:textures/block/cobweb.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eating food fills your silk",
+            "sprite": "minecraft:textures/item/bread.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "silk": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 5
+        }
+    },
+    "food": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 0
+    },
+    "silk_maker": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_food",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_food",
+                    "change": -2,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_silk",
+                    "change": 1,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "shot_web": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_silk",
+                    "comparison": ">=",
+                    "compare_to": 25
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 20,
+            "block": true,
+            "entity": true,
+            "shape_type": "outline",
+            "fluid_handling": "none",
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/flight"
+                            }
+                        },
+                        "if_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/flight_web_cd",
+                                "change": 30,
+                                "operation": "add"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:movement_blocking"
+                                },
+                                "radius": 1,
+                                "shape": "sphere",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            "if_action": {
+                                "type": "origins:block_action_at",
+                                "block_action": {
+                                    "type": "origins:add_block",
+                                    "block": "minecraft:cobweb"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:slowness",
+                                "duration": 100,
+                                "amplifier": 3,
+                                "is_ambient": true,
+                                "show_particles": false,
+                                "show_icon": true
+                            }
+                        }
+                    }
+                ]
+            },
+            "block_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:movement_blocking"
+                },
+                "if_action": {
+                    "type": "origins:add_block",
+                    "block": "minecraft:cobweb"
+                }
+            },
+            "hit_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_silk",
+                        "change": -25,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "entity.llama.spit",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            },
+            "command_along_ray": "particle item cobweb ~ ~0.5 ~ 0.1 0.1 0.1 0.1 8 force",
+            "command_along_ray_only_on_hit": true
+        }
+    }
+}

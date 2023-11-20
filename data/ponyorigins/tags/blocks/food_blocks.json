@@ -1,27 +1,11 @@
 {
     "values": [
         {
-            "id": "farmersdelight:stuffed_pumpkin_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:roast_chicken_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:honey_glazed_ham_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:shepherds_pie_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:rice_roll_medley_block",
-            "required": false
-        },
-        {
             "id": "minecraft:cake",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:cheese_wheel",
             "required": false
         },
         {
@@ -37,22 +21,6 @@
             "required": false
         },
         {
-            "id": "ends_delight:dragon_leg_with_sauce_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:steamed_dragon_egg_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:dragon_meat_stew_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:grilled_shulker_block",
-            "required": false
-        },
-        {
             "id": "ubesdelight:ube_cake",
             "required": false
         },
@@ -61,15 +29,47 @@
             "required": false
         },
         {
-            "id": "ubesdelight:lumpia_feast",
+            "id": "bakery:strawberry_cake",
             "required": false
         },
         {
-            "id": "ubesdelight:halo_halo_feast",
+            "id": "bakery:sweetberry_cake",
             "required": false
         },
         {
-            "id": "ubesdelight:milk_tea_ube_feast",
+            "id": "bakery:chocolate_cake",
+            "required": false
+        },
+        {
+            "id": "bakery:pudding",
+            "required": false
+        },
+        {
+            "id": "bakery:bundt_cake",
+            "required": false
+        },
+        {
+            "id": "bakery:linzer_tart",
+            "required": false
+        },
+        {
+            "id": "bakery:apple_pie",
+            "required": false
+        },
+        {
+            "id": "bakery:glowberry_tart",
+            "required": false
+        },
+        {
+            "id": "bakery:chocolate_tart",
+            "required": false
+        },
+        {
+            "id": "candlelight:chocolate_box",
+            "required": false
+        },
+        {
+            "id": "meadow:roasted_ham",
             "required": false
         }
     ]

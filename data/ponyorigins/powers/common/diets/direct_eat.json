@@ -18,8 +18,8 @@
     "slow_movement": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:common/energy_level",
-            "comparison": "==",
+            "resource": "*:*_antilag",
+            "comparison": ">",
             "compare_to": 0
         },
         "type": "origins:modify_attribute",
@@ -31,19 +31,10 @@
     },
     "no_sprint_eating": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_edible"
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "*:*_antilag",
+            "comparison": ">",
+            "compare_to": 0
         },
         "type": "origins:prevent_sprinting"
     },

@@ -1,22 +1,6 @@
 {
     "values": [
         {
-            "id": "farmersdelight:roast_chicken_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:honey_glazed_ham_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:shepherds_pie_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:rice_roll_medley_block",
-            "required": false
-        },
-        {
             "id": "casualness_delight:quiche_lorraine",
             "required": false
         },
@@ -25,27 +9,7 @@
             "required": false
         },
         {
-            "id": "ends_delight:dragon_leg_with_sauce_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:steamed_dragon_egg_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:dragon_leg_with_sauce_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:dragon_meat_stew_block",
-            "required": false
-        },
-        {
-            "id": "ends_delight:grilled_shulker_block",
-            "required": false
-        },
-        {
-            "id": "ubesdelight:lumpia_feast",
+            "id": "meadow:roasted_ham",
             "required": false
         }
     ]

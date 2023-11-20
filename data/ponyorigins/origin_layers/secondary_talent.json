@@ -457,6 +457,24 @@
         },
         {
             "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changedling"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/web_shot"
+            ]
+        },
+        {
+            "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {

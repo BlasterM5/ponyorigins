@@ -168,6 +168,28 @@
             "value": 0
         }
     },
+    "no_block_interaction": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:prevent_block_use",
+        "block_condition": {
+            "type": "origins:constant",
+            "value": true
+        }
+    },
+    "no_entity_interaction": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:prevent_entity_use"
+    },
     "deactivate": {
         "condition": {
             "type": "origins:and",
@@ -264,5 +286,28 @@
             "compare_to": 1
         },
         "type": "apugli:mobs_ignore"
+    },
+    "shadow_particles": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:spawn_particles",
+            "particle": "minecraft:ash",
+            "count": 16,
+            "speed": 0.1,
+            "force": true,
+            "spread": {
+                "x": 0.1,
+                "y": 0.1,
+                "z": 0.1
+            },
+            "offset_y": 0.5
+        }
     }
 }

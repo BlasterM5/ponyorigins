@@ -47,6 +47,34 @@
         {
             "id": "minecraft:magma_block",
             "required": false
+        },
+        {
+            "id": "minecraft:trapped_chest",
+            "required": false
+        },
+        {
+            "id": "#charm:chests/trapped",
+            "required": false
+        },
+        {
+            "id": "#supplementaries:trapped_presents",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_juniper_chest",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_cypress_chest",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_elder_chest",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_dragons_blood_chest",
+            "required": false
         }
     ]
 }

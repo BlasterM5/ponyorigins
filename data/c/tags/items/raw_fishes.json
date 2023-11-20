@@ -79,6 +79,142 @@
         {
             "id": "#fabric:raw_fishes",
             "required": false
+        },
+        {
+            "id": "wildlife:raw_clam",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_mantaray",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_stingray",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_anglerfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_koi",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_rainbow_trout",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_catfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_prawn",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_shrimp",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_bettafish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_goldfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_bluegill",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:small_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:tentacle",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:crab_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:lionfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:mahi_mahi",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:yellowfin_tuna",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:opah",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:rockfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:blue_spotted_stingray",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:moray_eel",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:needlefish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:piranha",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:anglerfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:barreleye",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:blue_tang",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:clownfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:unicorn_fish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cowfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:triggerfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:tiger_barb",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:oscar",
+            "required": false
         }
     ]
 }

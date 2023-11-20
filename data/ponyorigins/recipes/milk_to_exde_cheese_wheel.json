@@ -3,6 +3,15 @@
     "ingredients": [
         {
             "item": "minecraft:milk_bucket"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:apple"
         }
     ],
     "result": {

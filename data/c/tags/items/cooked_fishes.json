@@ -99,6 +99,78 @@
         {
             "id": "ubesdelight:bangsilog",
             "required": false
+        },
+        {
+            "id": "wildlife:cooked_clam",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_mantaray",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_stingray",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_anglerfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_koi",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_rainbow_trout",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_catfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_prawn",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_shrimp",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_bettafish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_goldfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_bluegill",
+            "required": false
+        },
+        {
+            "id": "#c:cooked_beef",
+            "required": false
+        },
+        {
+            "id": "candlelight:salmon_wine",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_small_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_tentacle",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_crab_meat",
+            "required": false
         }
     ]
 }

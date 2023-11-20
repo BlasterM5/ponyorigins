@@ -17,31 +17,7 @@
             "required": false
         },
         {
-            "id": "create:chocolate_glazed_berries",
-            "required": false
-        },
-        {
-            "id": "create:honeyed_apple",
-            "required": false
-        },
-        {
             "id": "farmersdelight:tomato",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:fruit_salad",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:mixed_salad",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:apple_pie_slice",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:sweet_berry_cheesecake_slice",
             "required": false
         },
         {
@@ -57,19 +33,7 @@
             "required": false
         },
         {
-            "id": "farmersdelight:sweet_berry_cookie",
-            "required": false
-        },
-        {
             "id": "farmersdelight:melon_popsicle",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:glow_berry_custard",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:horse_feed",
             "required": false
         },
         {
@@ -98,6 +62,26 @@
         },
         {
             "id": "minecraft:apple",
+            "required": false
+        },
+        {
+            "id": "bakery:strawberry",
+            "required": false
+        },
+        {
+            "id": "bewitchment:witchberry",
+            "required": false
+        },
+        {
+            "id": "candlelight:tomato",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:tomato_sauce",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:fruit_salad",
             "required": false
         }
     ]

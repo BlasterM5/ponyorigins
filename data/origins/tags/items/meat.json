@@ -651,6 +651,302 @@
         {
             "id": "#c:cooked_fishes",
             "required": false
+        },
+        {
+            "id": "wildlife:raw_clam",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_clam",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_mantaray",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_mantaray",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_stingray",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_stingray",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_anglerfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_anglerfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_koi",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_koi",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_rainbow_trout",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_rainbow_trout",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_catfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_catfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_prawn",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_prawn",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_shrimp",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_shrimp",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_bettafish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_bettafish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_goldfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_goldfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_bluegill",
+            "required": false
+        },
+        {
+            "id": "wildlife:cooked_bluegill",
+            "required": false
+        },
+        {
+            "id": "bakery:sandwich",
+            "required": false
+        },
+        {
+            "id": "#forge:food/meat",
+            "required": false
+        },
+        {
+            "id": "#c:raw_beef",
+            "required": false
+        },
+        {
+            "id": "#c:cooked_beef",
+            "required": false
+        },
+        {
+            "id": "candlelight:bolognese",
+            "required": false
+        },
+        {
+            "id": "candlelight:chicken_teryiaki",
+            "required": false
+        },
+        {
+            "id": "candlelight:lettuce_salad",
+            "required": false
+        },
+        {
+            "id": "candlelight:chicken_alfredo",
+            "required": false
+        },
+        {
+            "id": "candlelight:lettuce_beef",
+            "required": false
+        },
+        {
+            "id": "candlelight:salmon_wine",
+            "required": false
+        },
+        {
+            "id": "candlelight:pork_ribs",
+            "required": false
+        },
+        {
+            "id": "#c:raw_pork",
+            "required": false
+        },
+        {
+            "id": "#c:cooked_pork",
+            "required": false
+        },
+        {
+            "id": "#c:raw_chicken",
+            "required": false
+        },
+        {
+            "id": "#c:cooked_chicken",
+            "required": false
+        },
+        {
+            "id": "candlelight:pasta_bolognese",
+            "required": false
+        },
+        {
+            "id": "candlelight:lasagne",
+            "required": false
+        },
+        {
+            "id": "candlelight:roastbeef_carrots",
+            "required": false
+        },
+        {
+            "id": "candlelight:beef_wellington",
+            "required": false
+        },
+        {
+            "id": "candlelight:pizza_slice",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:small_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_small_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:tentacle",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_tentacle",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:crab_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cooked_crab_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:lionfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:mahi_mahi",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:yellowfin_tuna",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:opah",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:rockfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:blue_spotted_stingray",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:moray_eel",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:needlefish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:piranha",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:anglerfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:barreleye",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:blue_tang",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:clownfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:unicorn_fish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cowfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:triggerfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:tiger_barb",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:oscar",
+            "required": false
+        },
+        {
+            "id": "meadow:raw_bear_meat",
+            "required": false
+        },
+        {
+            "id": "meadow:cooked_bear_meat",
+            "required": false
+        },
+        {
+            "id": "meadow:roasted_ham",
+            "required": false
+        },
+        {
+            "id": "meadow:ham_cheese",
+            "required": false
         }
     ]
 }

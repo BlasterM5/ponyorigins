@@ -5,6 +5,14 @@
             "required": false
         },
         {
+            "id": "#c:grass_variants",
+            "required": false
+        },
+        {
+            "id": "#c:grass",
+            "required": false
+        },
+        {
             "id": "#minecraft:leaves",
             "required": false
         },

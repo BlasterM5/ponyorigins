@@ -159,28 +159,12 @@
         "max": 1,
         "start_value": 0
     },
-    "active": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_hazard_check"
-                }
-            ]
-        },
-        "type": "origins:toggle",
-        "active_by_default": true,
-        "key": {
-            "key": "key.origins.primary_active"
-        },
-        "retain_state": true
-    },
     "creative_flight": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:creative_flight"
     },
@@ -241,8 +225,10 @@
     },
     "exhaust": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
         "interval": 3,
@@ -365,11 +351,14 @@
             "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:in_block",
+                    "type": "origins:block_collision",
                     "block_condition": {
                         "type": "origins:block",
                         "block": "minecraft:cobweb"
-                    }
+                    },
+                    "offset_x": 0,
+                    "offset_y": 0,
+                    "offset_z": 0
                 },
                 {
                     "type": "origins:fluid_height",
@@ -403,11 +392,14 @@
                         "type": "origins:and",
                         "conditions": [
                             {
-                                "type": "origins:in_block",
+                                "type": "origins:block_collision",
                                 "block_condition": {
                                     "type": "origins:block",
                                     "block": "minecraft:cobweb"
-                                }
+                                },
+                                "offset_x": 0,
+                                "offset_y": 0,
+                                "offset_z": 0
                             },
                             {
                                 "type": "origins:resource",
@@ -873,11 +865,18 @@
                             },
                             {
                                 "inverted": true,
-                                "type": "origins:in_block",
+                                "type": "origins:using_item"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:block_collision",
                                 "block_condition": {
                                     "type": "origins:block",
                                     "block": "minecraft:cobweb"
-                                }
+                                },
+                                "offset_x": 0,
+                                "offset_y": 0,
+                                "offset_z": 0
                             }
                         ]
                     },
@@ -919,9 +918,20 @@
                                     "equipment_slot": "mainhand",
                                     "item_condition": {
                                         "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "minecraft:tools"
-                                        }
+                                        "ingredient": [
+                                            {
+                                                "tag": "minecraft:tools"
+                                            },
+                                            {
+                                                "tag": "c:tools"
+                                            },
+                                            {
+                                                "tag": "minecraft:swords"
+                                            },
+                                            {
+                                                "tag": "c:swords"
+                                            }
+                                        ]
                                     }
                                 },
                                 "if_action": {
@@ -962,9 +972,20 @@
                                     "equipment_slot": "offhand",
                                     "item_condition": {
                                         "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "minecraft:tools"
-                                        }
+                                        "ingredient": [
+                                            {
+                                                "tag": "minecraft:tools"
+                                            },
+                                            {
+                                                "tag": "c:tools"
+                                            },
+                                            {
+                                                "tag": "minecraft:swords"
+                                            },
+                                            {
+                                                "tag": "c:swords"
+                                            }
+                                        ]
                                     }
                                 },
                                 "if_action": {
@@ -1019,194 +1040,6 @@
             ]
         }
     },
-    "hazard_check": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_web_cd",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_wet_cd",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_oil_cd",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_burn_cd",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/wings/membraneous"
-                        },
-                        {
-                            "type": "origins:health",
-                            "comparison": "<",
-                            "compare_to": 6
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:health",
-                    "comparison": "<",
-                    "compare_to": 4
-                },
-                {
-                    "type": "origins:status_effect",
-                    "effect": "minecraft:nausea"
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:fluid_height",
-                            "fluid": "minecraft:lava",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "inverted": true,
-                            "type": "origins:power",
-                            "power": "ponyorigins:dragon/fireproof"
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:gamemode",
-                    "gamemode": "creative"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:pegasus/rocket_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:swimming"
-                },
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_block_wing_hit",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/wings/insectoid"
-                        },
-                        {
-                            "type": "origins:in_rain"
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:earth_orbit"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:moon"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:moon_orbit"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:mars_orbit"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:venus_orbit"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:mercury"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:mercury_orbit"
-                        },
-                        {
-                            "type": "origins:dimension",
-                            "dimension": "ad_astra:glacio_orbit"
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/energy"
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/energy_level",
-                            "comparison": "==",
-                            "compare_to": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/energy"
-                        },
-                        {
-                            "type": "origins:food_level",
-                            "comparison": "<=",
-                            "compare_to": 4
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:origin",
-                            "origin": "ponyorigins:races/dragon"
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:dragon/heat_obsidian_slag",
-                            "comparison": ">",
-                            "compare_to": 0
-                        }
-                    ]
-                }
-            ]
-        },
-        "type": "origins:simple"
-    },
     "slower_bugs": {
         "condition": {
             "type": "origins:and",
@@ -1231,9 +1064,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_hazard_check"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:fall_flying"
@@ -1259,9 +1093,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_hazard_check"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:fall_flying"
@@ -1284,5 +1119,230 @@
             "type": "origins:set_fall_distance",
             "fall_distance": 0
         }
+    },
+    "activator": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_web_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_wet_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_oil_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_burn_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/wings/membraneous"
+                                },
+                                {
+                                    "type": "origins:health",
+                                    "comparison": "<",
+                                    "compare_to": 6
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:health",
+                            "comparison": "<",
+                            "compare_to": 4
+                        },
+                        {
+                            "type": "origins:status_effect",
+                            "effect": "minecraft:nausea"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:lava",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:dragon/fireproof"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:gamemode",
+                            "gamemode": "creative"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:pegasus/rocket_antilag",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:swimming"
+                        },
+                        {
+                            "type": "origins:submerged_in",
+                            "fluid": "minecraft:water"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_block_wing_hit",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/wings/insectoid"
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:earth_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:moon"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:moon_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:mars_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:venus_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:mercury"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:mercury_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:glacio_orbit"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/energy"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/energy"
+                                },
+                                {
+                                    "type": "origins:food_level",
+                                    "comparison": "<=",
+                                    "compare_to": 4
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:races/dragon"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_active",
+            "change": 1,
+            "operation": "set"
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_active",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "retain_state": true
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
     }
 }
