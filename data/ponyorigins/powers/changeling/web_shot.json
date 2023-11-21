@@ -64,6 +64,88 @@
             ]
         }
     },
+    "split_nutrition": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_silk",
+                    "comparison": "<",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_food",
+                    "comparison": "<=",
+                    "compare_to": 100
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/changeling"
+                }
+            ]
+        },
+        "type": "origins:modify_food",
+        "food_modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.5
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.5
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_food",
+            "change": 50,
+            "operation": "add"
+        },
+        "always_edible": true
+    },
+    "food_full": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "==",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_silk",
+                    "comparison": "<",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_food",
+                    "comparison": "<=",
+                    "compare_to": 100
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/changeling"
+                }
+            ]
+        },
+        "type": "origins:modify_food",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_food",
+            "change": 100,
+            "operation": "add"
+        },
+        "always_edible": true
+    },
     "shot_web": {
         "condition": {
             "type": "origins:and",
@@ -85,102 +167,34 @@
         "type": "origins:action_over_time",
         "interval": 10,
         "entity_action": {
-            "type": "origins:raycast",
-            "distance": 20,
-            "block": true,
-            "entity": true,
-            "shape_type": "outline",
-            "fluid_handling": "none",
-            "bientity_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:target_condition",
-                            "condition": {
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/flight"
-                            }
-                        },
-                        "if_action": {
-                            "type": "origins:target_action",
-                            "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight_web_cd",
-                                "change": 30,
-                                "operation": "add"
-                            }
-                        }
-                    },
-                    {
-                        "type": "origins:target_action",
-                        "action": {
-                            "type": "origins:if_else",
-                            "condition": {
-                                "type": "origins:block_in_radius",
-                                "block_condition": {
-                                    "type": "origins:movement_blocking"
-                                },
-                                "radius": 1,
-                                "shape": "sphere",
-                                "comparison": ">=",
-                                "compare_to": 1
-                            },
-                            "if_action": {
-                                "type": "origins:block_action_at",
-                                "block_action": {
-                                    "type": "origins:add_block",
-                                    "block": "minecraft:cobweb"
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "type": "origins:target_action",
-                        "action": {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:slowness",
-                                "duration": 100,
-                                "amplifier": 3,
-                                "is_ambient": true,
-                                "show_particles": false,
-                                "show_icon": true
-                            }
-                        }
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:fire_projectile",
+                    "entity_type": "minecraft:armor_stand",
+                    "count": 1,
+                    "speed": 2,
+                    "divergence": 1,
+                    "tag": "{Invisible:1b,NoBasePlate:1b,Small:1b,DisabledSlots:4144959,CustomName:'[{\"text\":\"Web Shot\"}]',Silent:1b,ArmorDropChances:[f,f,f],ArmorItems:[{},{},{id:cobweb,Count:1}]}",
+                    "projectile_action": {
+                        "type": "origins:grant_power",
+                        "power": "ponyorigins:projectiles/cobweb",
+                        "source": "ponyorigins:projectiles/web_shot"
                     }
-                ]
-            },
-            "block_action": {
-                "type": "origins:if_else",
-                "condition": {
-                    "type": "origins:movement_blocking"
                 },
-                "if_action": {
-                    "type": "origins:add_block",
-                    "block": "minecraft:cobweb"
+                {
+                    "type": "origins:play_sound",
+                    "sound": "entity.llama.spit",
+                    "volume": 1,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_silk",
+                    "change": -25,
+                    "operation": "add"
                 }
-            },
-            "hit_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_silk",
-                        "change": -25,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "entity.llama.spit",
-                        "volume": 1,
-                        "pitch": 1
-                    }
-                ]
-            },
-            "command_along_ray": "particle item cobweb ~ ~0.5 ~ 0.1 0.1 0.1 0.1 8 force",
-            "command_along_ray_only_on_hit": true
+            ]
         }
     }
 }
