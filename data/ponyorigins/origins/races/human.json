@@ -6,7 +6,7 @@
         "ponyorigins:common/orb_cd"
     ],
     "icon": {
-        "item": "minecraft:grass"
+        "item": "minecraft:grass_block"
     },
     "order": 1,
     "impact": 0

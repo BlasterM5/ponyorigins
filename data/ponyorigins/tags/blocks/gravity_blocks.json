@@ -1,0 +1,16 @@
+{
+    "values": [
+        {
+            "id": "#sand",
+            "required": false
+        },
+        {
+            "id": "minecraft:gravel",
+            "required": false
+        },
+        {
+            "id": "#concrete_powders",
+            "required": false
+        }
+    ]
+}

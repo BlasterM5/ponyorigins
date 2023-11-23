@@ -51,69 +51,6 @@
             "actions": [
                 {
                     "condition": {
-                        "inverted": true,
-                        "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
-                    },
-                    "action": {
-                        "type": "origins:chance",
-                        "chance": 0.5,
-                        "action": {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:hunger",
-                                "duration": 500,
-                                "amplifier": 0,
-                                "show_particles": false,
-                                "show_icon": true
-                            }
-                        },
-                        "fail_action": {
-                            "type": "origins:chance",
-                            "chance": 0.2,
-                            "action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 1000,
-                                    "amplifier": 0,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "fail_action": {
-                                "type": "origins:chance",
-                                "chance": 0.2,
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 1000,
-                                        "amplifier": 0,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    }
-                                },
-                                "fail_action": {
-                                    "type": "origins:chance",
-                                    "chance": 0.2,
-                                    "action": {
-                                        "type": "origins:apply_effect",
-                                        "effect": {
-                                            "effect": "minecraft:mining_fatigue",
-                                            "duration": 1000,
-                                            "amplifier": 0,
-                                            "show_particles": false,
-                                            "show_icon": true
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "condition": {
                         "type": "origins:status_effect",
                         "effect": "minecraft:hunger"
                     },
@@ -182,6 +119,69 @@
                                             "effect": "minecraft:mining_fatigue",
                                             "duration": 1000,
                                             "amplifier": 1,
+                                            "show_particles": false,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:status_effect",
+                        "effect": "minecraft:hunger"
+                    },
+                    "action": {
+                        "type": "origins:chance",
+                        "chance": 0.5,
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:hunger",
+                                "duration": 500,
+                                "amplifier": 0,
+                                "show_particles": false,
+                                "show_icon": true
+                            }
+                        },
+                        "fail_action": {
+                            "type": "origins:chance",
+                            "chance": 0.2,
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:slowness",
+                                    "duration": 1000,
+                                    "amplifier": 0,
+                                    "show_particles": false,
+                                    "show_icon": true
+                                }
+                            },
+                            "fail_action": {
+                                "type": "origins:chance",
+                                "chance": 0.2,
+                                "action": {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:weakness",
+                                        "duration": 1000,
+                                        "amplifier": 0,
+                                        "show_particles": false,
+                                        "show_icon": true
+                                    }
+                                },
+                                "fail_action": {
+                                    "type": "origins:chance",
+                                    "chance": 0.2,
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "minecraft:mining_fatigue",
+                                            "duration": 1000,
+                                            "amplifier": 0,
                                             "show_particles": false,
                                             "show_icon": true
                                         }
@@ -205,69 +205,6 @@
             "actions": [
                 {
                     "condition": {
-                        "inverted": true,
-                        "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
-                    },
-                    "action": {
-                        "type": "origins:chance",
-                        "chance": 0.5,
-                        "action": {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:hunger",
-                                "duration": 500,
-                                "amplifier": 0,
-                                "show_particles": false,
-                                "show_icon": true
-                            }
-                        },
-                        "fail_action": {
-                            "type": "origins:chance",
-                            "chance": 0.2,
-                            "action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 1000,
-                                    "amplifier": 0,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "fail_action": {
-                                "type": "origins:chance",
-                                "chance": 0.2,
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 1000,
-                                        "amplifier": 0,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    }
-                                },
-                                "fail_action": {
-                                    "type": "origins:chance",
-                                    "chance": 0.2,
-                                    "action": {
-                                        "type": "origins:apply_effect",
-                                        "effect": {
-                                            "effect": "minecraft:mining_fatigue",
-                                            "duration": 1000,
-                                            "amplifier": 0,
-                                            "show_particles": false,
-                                            "show_icon": true
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "condition": {
                         "type": "origins:status_effect",
                         "effect": "minecraft:hunger"
                     },
@@ -336,6 +273,69 @@
                                             "effect": "minecraft:mining_fatigue",
                                             "duration": 1000,
                                             "amplifier": 1,
+                                            "show_particles": false,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:status_effect",
+                        "effect": "minecraft:hunger"
+                    },
+                    "action": {
+                        "type": "origins:chance",
+                        "chance": 0.5,
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:hunger",
+                                "duration": 500,
+                                "amplifier": 0,
+                                "show_particles": false,
+                                "show_icon": true
+                            }
+                        },
+                        "fail_action": {
+                            "type": "origins:chance",
+                            "chance": 0.2,
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:slowness",
+                                    "duration": 1000,
+                                    "amplifier": 0,
+                                    "show_particles": false,
+                                    "show_icon": true
+                                }
+                            },
+                            "fail_action": {
+                                "type": "origins:chance",
+                                "chance": 0.2,
+                                "action": {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:weakness",
+                                        "duration": 1000,
+                                        "amplifier": 0,
+                                        "show_particles": false,
+                                        "show_icon": true
+                                    }
+                                },
+                                "fail_action": {
+                                    "type": "origins:chance",
+                                    "chance": 0.2,
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "minecraft:mining_fatigue",
+                                            "duration": 1000,
+                                            "amplifier": 0,
                                             "show_particles": false,
                                             "show_icon": true
                                         }
