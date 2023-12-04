@@ -83,6 +83,30 @@
         {
             "id": "farmersdelight:fruit_salad",
             "required": false
+        },
+        {
+            "id": "frightsdelight:soul_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:wither_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:apple_slime",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_slimeapple",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_soul_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_wither_berry",
+            "required": false
         }
     ]
 }

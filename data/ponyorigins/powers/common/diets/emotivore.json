@@ -1363,5 +1363,9 @@
         },
         "action_result": "consume",
         "priority": 1
+    },
+    "no_nourishment": {
+        "type": "origins:effect_immunity",
+        "effect": "farmersdelight:nourishment"
     }
 }

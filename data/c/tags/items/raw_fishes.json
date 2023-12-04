@@ -215,6 +215,46 @@
         {
             "id": "hybrid-aquatic:oscar",
             "required": false
+        },
+        {
+            "id": "oceansdelight:tentacles",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:cut_tentacles",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:tentacle_on_a_stick",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:guardian_tail",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:elder_guardian_slab",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:elder_guardian_slice",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:elder_guardian_roll",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:fugu_slice",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:fugu_roll",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:stuffed_cod",
+            "required": false
         }
     ]
 }

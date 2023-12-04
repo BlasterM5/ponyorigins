@@ -361,6 +361,9 @@
             "ingredient": [
                 {
                     "tag": "ponyorigins:fruits"
+                },
+                {
+                    "tag": "c:juices"
                 }
             ]
         },
@@ -376,25 +379,16 @@
     "other_food_unsatisfier": {
         "type": "origins:modify_food",
         "item_condition": {
-            "type": "origins:and",
-            "conditions": [
+            "type": "origins:ingredient",
+            "ingredient": [
                 {
-                    "inverted": true,
-                    "type": "origins:ingredient",
-                    "ingredient": [
-                        {
-                            "tag": "ponyorigins:fruits"
-                        }
-                    ]
+                    "tag": "ponyorigins:fruits"
                 },
                 {
-                    "inverted": true,
-                    "type": "origins:ingredient",
-                    "ingredient": [
-                        {
-                            "tag": "ponyorigins:fruit_meals"
-                        }
-                    ]
+                    "tag": "ponyorigins:fruit_meals"
+                },
+                {
+                    "tag": "c:juices"
                 }
             ]
         },

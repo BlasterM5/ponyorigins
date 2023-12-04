@@ -15,6 +15,18 @@
         {
             "id": "minecraft:sea_pickle",
             "required": false
+        },
+        {
+            "id": "oceansdelight:braised_sea_pickle",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:honey_fried_kelp",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:seagrass_salad",
+            "required": false
         }
     ]
 }

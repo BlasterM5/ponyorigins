@@ -149,10 +149,6 @@
             "required": false
         },
         {
-            "id": "#c:cooked_beef",
-            "required": false
-        },
-        {
             "id": "candlelight:salmon_wine",
             "required": false
         },
@@ -170,6 +166,34 @@
         },
         {
             "id": "hybrid-aquatic:cooked_crab_meat",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:squid_rings",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:baked_tentacle_on_a_stick",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:bowl_of_guardian_soup",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:cooked_guardian_tail",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:cooked_elder_guardian_slice",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:cabbage_wrapped_elder_guardian",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:cooked_stuffed_cod",
             "required": false
         }
     ]

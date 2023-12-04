@@ -34,52 +34,19 @@
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:if_else_list",
+            "type": "origins:and",
             "actions": [
                 {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": "==",
-                        "compare_to": 100
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 1000,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -100,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
+                    "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
                         "resource": "*:*_buffer",
                         "comparison": ">=",
-                        "compare_to": 90
+                        "compare_to": 10
                     },
-                    "action": {
+                    "if_action": {
                         "type": "origins:raycast",
-                        "distance": 900,
+                        "distance": 40,
                         "block": true,
                         "entity": true,
                         "shape_type": "collider",
@@ -90,7 +57,7 @@
                                 {
                                     "type": "origins:change_resource",
                                     "resource": "*:*_buffer",
-                                    "change": -90,
+                                    "change": -10,
                                     "operation": "add"
                                 },
                                 {
@@ -105,219 +72,16 @@
                     }
                 },
                 {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": ">=",
-                        "compare_to": 80
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 800,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -80,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": ">=",
-                        "compare_to": 70
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 700,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -70,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": ">=",
-                        "compare_to": 60
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 600,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -60,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": ">=",
-                        "compare_to": 50
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 500,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -50,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": ">=",
-                        "compare_to": 40
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 400,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -40,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_buffer",
-                        "comparison": ">=",
-                        "compare_to": 30
-                    },
-                    "action": {
-                        "type": "origins:raycast",
-                        "distance": 300,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "hit_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_buffer",
-                                    "change": -30,
-                                    "operation": "add"
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 2,
-                                    "operation": "set"
-                                }
-                            ]
-                        },
-                        "command_at_hit": "function ponyorigins:teleport"
-                    }
-                },
-                {
+                    "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
                         "resource": "*:*_buffer",
                         "comparison": ">=",
                         "compare_to": 20
                     },
-                    "action": {
+                    "if_action": {
                         "type": "origins:raycast",
-                        "distance": 200,
+                        "distance": 80,
                         "block": true,
                         "entity": true,
                         "shape_type": "collider",
@@ -343,15 +107,16 @@
                     }
                 },
                 {
+                    "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
                         "resource": "*:*_buffer",
                         "comparison": ">=",
-                        "compare_to": 10
+                        "compare_to": 30
                     },
-                    "action": {
+                    "if_action": {
                         "type": "origins:raycast",
-                        "distance": 100,
+                        "distance": 120,
                         "block": true,
                         "entity": true,
                         "shape_type": "collider",
@@ -362,7 +127,252 @@
                                 {
                                     "type": "origins:change_resource",
                                     "resource": "*:*_buffer",
-                                    "change": -10,
+                                    "change": -30,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 40
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 160,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -40,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 50
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 200,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -50,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 60
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 240,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -60,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 70
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 280,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -70,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 80
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 320,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -80,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">=",
+                        "compare_to": 90
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 360,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -90,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "command_at_hit": "function ponyorigins:teleport"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "==",
+                        "compare_to": 100
+                    },
+                    "if_action": {
+                        "type": "origins:raycast",
+                        "distance": 400,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "hit_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -100,
                                     "operation": "add"
                                 },
                                 {

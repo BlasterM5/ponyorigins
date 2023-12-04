@@ -947,6 +947,34 @@
         {
             "id": "meadow:ham_cheese",
             "required": false
+        },
+        {
+            "id": "frightsdelight:undead_kebab",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:monster_mash",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:soup_rotten_flesh",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:soup_spider_eye",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:cookie_flesh",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:cookie_spidereye",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_spidereye",
+            "required": false
         }
     ]
 }

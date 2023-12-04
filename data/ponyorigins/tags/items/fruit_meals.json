@@ -131,6 +131,10 @@
         {
             "id": "bakery:jam_roll",
             "required": false
+        },
+        {
+            "id": "frightsdelight:cookie_soul_berry",
+            "required": false
         }
     ]
 }
