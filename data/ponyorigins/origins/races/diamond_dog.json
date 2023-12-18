@@ -7,7 +7,8 @@
         "ponyorigins:common/diets/carnivore",
         "ponyorigins:common/nightvision",
         "ponyorigins:diamond_dog/dig",
-        "ponyorigins:talents/miner_stamina"
+        "ponyorigins:talents/miner_stamina",
+        "ponyorigins:common/sounds/dog"
     ],
     "icon": {
         "item": "minecraft:emerald"

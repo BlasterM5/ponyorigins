@@ -451,6 +451,91 @@
                         "power": "origins:sprint_jump",
                         "source": "ponyorigins:races/chaos"
                     }
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/avian",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/cat",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/changeling",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/cow",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/dog",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/dragon",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/goat",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/pony",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/seapony",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sounds/spectre",
+                                "source": "ponyorigins:races/chaos"
+                            }
+                        }
+                    ]
                 }
             ]
         },

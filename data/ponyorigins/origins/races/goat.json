@@ -8,7 +8,8 @@
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
-        "ponyorigins:common/rideable"
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/sounds/goat"
     ],
     "icon": {
         "item": "minecraft:goat_horn"

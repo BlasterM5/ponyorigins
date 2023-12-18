@@ -13,7 +13,8 @@
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/insectoid",
         "ponyorigins:common/nightvision",
-        "ponyorigins:common/health/minus_four"
+        "ponyorigins:common/health/minus_four",
+        "ponyorigins:common/sounds/changeling"
     ],
     "icon": {
         "item": "minecraft:wither_rose"

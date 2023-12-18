@@ -13,7 +13,8 @@
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/membraneous",
         "ponyorigins:common/nightvision",
-        "ponyorigins:common/health/minus_two"
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:coal"

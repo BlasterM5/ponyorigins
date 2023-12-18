@@ -1,0 +1,16 @@
+{
+    "name": "Spectre Sounds",
+    "description": "Spectre races have phantom sounds",
+    "hidden": true,
+    "type": "origins:multiple",
+    "hurt": {
+        "type": "apugli:custom_hurt_sound",
+        "sound": "entity.phantom.hurt",
+        "volume": 0.5
+    },
+    "death": {
+        "type": "apugli:custom_death_sound",
+        "sound": "entity.phantom.death",
+        "volume": 0.5
+    }
+}

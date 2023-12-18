@@ -13,7 +13,8 @@
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/pony",
         "ponyorigins:common/flight",
-        "ponyorigins:common/health/plus_two"
+        "ponyorigins:common/health/plus_two",
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:nether_star"

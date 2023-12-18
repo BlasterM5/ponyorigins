@@ -10,7 +10,8 @@
         "origins:sprint_jump",
         "origins:velvet_paws",
         "origins:scare_creepers",
-        "ponyorigins:common/health/minus_two"
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/sounds/cat"
     ],
     "icon": {
         "item": "minecraft:tropical_fish"

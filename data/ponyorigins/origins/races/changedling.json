@@ -12,7 +12,8 @@
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/insectoid",
         "ponyorigins:common/nightvision",
-        "ponyorigins:common/health/minus_two"
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/sounds/changeling"
     ],
     "icon": {
         "item": "minecraft:poppy"

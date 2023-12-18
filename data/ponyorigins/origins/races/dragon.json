@@ -13,7 +13,8 @@
         "ponyorigins:dragon/fireproof",
         "ponyorigins:common/flight",
         "ponyorigins:common/wings/membraneous",
-        "ponyorigins:common/health/armor_dragon"
+        "ponyorigins:common/health/armor_dragon",
+        "ponyorigins:common/sounds/dragon"
     ],
     "icon": {
         "item": "minecraft:blaze_powder"

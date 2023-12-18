@@ -9,7 +9,8 @@
         "ponyorigins:common/talons",
         "ponyorigins:common/rideable",
         "ponyorigins:common/flight",
-        "origins:scare_creepers"
+        "origins:scare_creepers",
+        "ponyorigins:common/sounds/avian"
     ],
     "icon": {
         "item": "minecraft:salmon"

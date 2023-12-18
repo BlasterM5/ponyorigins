@@ -10,7 +10,8 @@
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",
         "ponyorigins:common/pony",
-        "ponyorigins:common/energy"
+        "ponyorigins:common/energy",
+        "ponyorigins:common/sounds/seapony"
     ],
     "icon": {
         "item": "minecraft:heart_of_the_sea"

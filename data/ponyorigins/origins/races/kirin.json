@@ -12,7 +12,8 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:kirin/nirik",
-        "ponyorigins:common/health/armor_kirin"
+        "ponyorigins:common/health/armor_kirin",
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:flint_and_steel"

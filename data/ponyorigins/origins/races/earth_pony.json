@@ -12,7 +12,8 @@
         "ponyorigins:common/energy",
         "ponyorigins:earth_pony/flora",
         "ponyorigins:common/pony",
-        "ponyorigins:common/health/plus_four"
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:apple"

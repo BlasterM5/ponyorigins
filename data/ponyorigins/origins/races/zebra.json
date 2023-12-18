@@ -12,7 +12,8 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/pony",
         "ponyorigins:zebra/dust",
-        "ponyorigins:common/health/plus_four"
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:vine"

@@ -11,7 +11,8 @@
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/nightvision",
         "ponyorigins:umbrum/dark_strength",
-        "ponyorigins:umbrum/shadow"
+        "ponyorigins:umbrum/shadow",
+        "ponyorigins:common/sounds/spectre"
     ],
     "icon": {
         "item": "minecraft:amethyst_shard"

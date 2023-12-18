@@ -165,7 +165,21 @@
         "type": "origins:modify_air_speed",
         "modifier": {
             "operation": "multiply_base_additive",
-            "value": -0.8
+            "value": -0.6
         }
+    },
+    "slower_than_wings_horizontal": {
+        "condition": {
+            "type": "origins:creative_flying"
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.6
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
     }
 }
