@@ -379,6 +379,7 @@
     "other_food_unsatisfier": {
         "type": "origins:modify_food",
         "item_condition": {
+            "inverted": true,
             "type": "origins:ingredient",
             "ingredient": [
                 {

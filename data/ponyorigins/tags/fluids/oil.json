@@ -5,6 +5,10 @@
             "required": false
         },
         {
+            "id": "ad_astra:fuel",
+            "required": false
+        },
+        {
             "id": "createaddition:seed_oil",
             "required": false
         },

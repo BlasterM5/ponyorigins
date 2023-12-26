@@ -269,18 +269,13 @@
                     "fluid": "minecraft:water",
                     "comparison": ">",
                     "compare_to": 0
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/wings/insectoid"
                 }
             ]
         },
         "type": "origins:modify_air_speed",
         "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.5
+            "operation": "multiply_total",
+            "value": 0.5
         }
     },
     "wet_cd": {
@@ -327,6 +322,18 @@
                 "comparison": ">",
                 "compare_to": 0
             }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_burned",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_burned",
+            "change": 1,
+            "operation": "set"
         }
     },
     "web_cd": {
@@ -344,6 +351,18 @@
                 "comparison": ">",
                 "compare_to": 0
             }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_webbed",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_webbed",
+            "change": 1,
+            "operation": "set"
         }
     },
     "oil_cd": {
@@ -375,403 +394,22 @@
             "operation": "set"
         }
     },
-    "hazard_detector": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:block_collision",
-                    "block_condition": {
-                        "type": "origins:block",
-                        "block": "minecraft:cobweb"
-                    },
-                    "offset_x": 0,
-                    "offset_y": 0,
-                    "offset_z": 0
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
-                    "comparison": ">",
-                    "compare_to": 0.3
-                },
-                {
-                    "type": "origins:in_rain"
-                },
-                {
-                    "type": "origins:in_block",
-                    "block_condition": {
-                        "type": "origins:fluid",
-                        "fluid_condition": {
-                            "type": "origins:in_tag",
-                            "tag": "ponyorigins:oil"
-                        }
-                    }
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:block_collision",
-                                "block_condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:cobweb"
-                                },
-                                "offset_x": 0,
-                                "offset_y": 0,
-                                "offset_z": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_oil_cd",
-                                "comparison": "==",
-                                "compare_to": 0
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_web_cd",
-                        "change": 30,
-                        "operation": "add"
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:in_block",
-                        "block_condition": {
-                            "type": "origins:fluid",
-                            "fluid_condition": {
-                                "type": "origins:in_tag",
-                                "tag": "ponyorigins:oil"
-                            }
-                        }
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_oil_cd",
-                        "change": 1,
-                        "operation": "add"
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:or",
-                                "conditions": [
-                                    {
-                                        "type": "origins:fluid_height",
-                                        "fluid": "minecraft:water",
-                                        "comparison": ">",
-                                        "compare_to": 0.25
-                                    },
-                                    {
-                                        "type": "origins:in_rain"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "origins:and",
-                                "conditions": [
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:power",
-                                        "power": "ponyorigins:common/wings/waterproof"
-                                    },
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:power",
-                                        "power": "ponyorigins:common/wings/membraneous"
-                                    }
-                                ]
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:in_block",
-                                "block_condition": {
-                                    "type": "origins:fluid",
-                                    "fluid_condition": {
-                                        "type": "origins:in_tag",
-                                        "tag": "ponyorigins:oil"
-                                    }
-                                }
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:submerged_in",
-                                "fluid": "minecraft:water"
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/wings/insectoid"
-                                },
-                                "if_action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
-                                    "change": 1,
-                                    "operation": "add"
-                                }
-                            },
-                            {
-                                "type": "origins:if_else_list",
-                                "actions": [
-                                    {
-                                        "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:resource",
-                                                    "resource": "*:*_wet_cd",
-                                                    "comparison": "<=",
-                                                    "compare_to": 10
-                                                },
-                                                {
-                                                    "type": "origins:fluid_height",
-                                                    "fluid": "minecraft:water",
-                                                    "comparison": ">",
-                                                    "compare_to": 0.75
-                                                }
-                                            ]
-                                        },
-                                        "action": {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_wet_cd",
-                                            "change": 1,
-                                            "operation": "add"
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:resource",
-                                                    "resource": "*:*_wet_cd",
-                                                    "comparison": "<=",
-                                                    "compare_to": 20
-                                                },
-                                                {
-                                                    "type": "origins:fluid_height",
-                                                    "fluid": "minecraft:water",
-                                                    "comparison": ">",
-                                                    "compare_to": 0.5
-                                                }
-                                            ]
-                                        },
-                                        "action": {
-                                            "type": "origins:if_else",
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wet_tick",
-                                                "comparison": ">=",
-                                                "compare_to": 1
-                                            },
-                                            "if_action": {
-                                                "type": "origins:and",
-                                                "actions": [
-                                                    {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "*:*_wet_tick",
-                                                        "change": 0,
-                                                        "operation": "set"
-                                                    },
-                                                    {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "*:*_wet_cd",
-                                                        "change": 1,
-                                                        "operation": "add"
-                                                    }
-                                                ]
-                                            },
-                                            "else_action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_wet_tick",
-                                                "change": 1,
-                                                "operation": "add"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:resource",
-                                                    "resource": "*:*_wet_cd",
-                                                    "comparison": "<=",
-                                                    "compare_to": 40
-                                                },
-                                                {
-                                                    "type": "origins:fluid_height",
-                                                    "fluid": "minecraft:water",
-                                                    "comparison": ">",
-                                                    "compare_to": 0.25
-                                                }
-                                            ]
-                                        },
-                                        "action": {
-                                            "type": "origins:if_else",
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wet_tick",
-                                                "comparison": ">=",
-                                                "compare_to": 3
-                                            },
-                                            "if_action": {
-                                                "type": "origins:and",
-                                                "actions": [
-                                                    {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "*:*_wet_tick",
-                                                        "change": 0,
-                                                        "operation": "set"
-                                                    },
-                                                    {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "*:*_wet_cd",
-                                                        "change": 1,
-                                                        "operation": "add"
-                                                    }
-                                                ]
-                                            },
-                                            "else_action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_wet_tick",
-                                                "change": 1,
-                                                "operation": "add"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_wet_cd",
-                                            "comparison": "<=",
-                                            "compare_to": 80
-                                        },
-                                        "action": {
-                                            "type": "origins:if_else",
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wet_tick",
-                                                "comparison": ">=",
-                                                "compare_to": 7
-                                            },
-                                            "if_action": {
-                                                "type": "origins:and",
-                                                "actions": [
-                                                    {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "*:*_wet_tick",
-                                                        "change": 0,
-                                                        "operation": "set"
-                                                    },
-                                                    {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "*:*_wet_cd",
-                                                        "change": 1,
-                                                        "operation": "add"
-                                                    }
-                                                ]
-                                            },
-                                            "else_action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_wet_tick",
-                                                "change": 1,
-                                                "operation": "add"
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:submerged_in",
-                                "fluid": "minecraft:water"
-                            },
-                            {
-                                "type": "origins:and",
-                                "conditions": [
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:power",
-                                        "power": "ponyorigins:common/wings/waterproof"
-                                    },
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:power",
-                                        "power": "ponyorigins:common/wings/membraneous"
-                                    }
-                                ]
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:in_block",
-                                "block_condition": {
-                                    "type": "origins:fluid",
-                                    "fluid_condition": {
-                                        "type": "origins:in_tag",
-                                        "tag": "ponyorigins:oil"
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/wings/insectoid"
-                        },
-                        "if_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_wet_cd",
-                            "change": 8,
-                            "operation": "add"
-                        },
-                        "else_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_wet_cd",
-                            "change": 2,
-                            "operation": "add"
-                        }
-                    }
-                }
-            ]
-        }
-    },
     "burn_detector": {
         "condition": {
-            "inverted": true,
-            "type": "origins:power",
-            "power": "ponyorigins:dragon/fireproof"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:dragon/fireproof"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:action_when_damage_taken",
         "damage_condition": {
@@ -780,7 +418,7 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_burn_cd",
-            "change": 60,
+            "change": 20,
             "operation": "add"
         },
         "cooldown": 10
@@ -803,11 +441,23 @@
                             "resource": "*:*_oil_cd",
                             "comparison": ">",
                             "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_ice_cd",
+                            "comparison": ">",
+                            "compare_to": 0
                         }
                     ]
                 },
                 {
                     "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         },
@@ -822,10 +472,21 @@
                         "type": "origins:sprinting"
                     },
                     "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_wet_cd",
-                        "change": -1,
-                        "operation": "add"
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_wet_cd",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        ]
                     }
                 },
                 {
@@ -834,17 +495,37 @@
                         "type": "origins:moving"
                     },
                     "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_wet_cd",
-                        "change": -1,
-                        "operation": "add"
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_wet_cd",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        ]
                     }
                 },
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/wings/insectoid"
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/insectoid"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/membraneous"
+                            }
+                        ]
                     },
                     "if_action": {
                         "type": "origins:and",
@@ -860,6 +541,12 @@
                                 "resource": "*:*_oil_cd",
                                 "change": -1,
                                 "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": -1,
+                                "operation": "add"
                             }
                         ]
                     }
@@ -869,30 +556,47 @@
     },
     "hazard_heal": {
         "condition": {
-            "type": "origins:or",
+            "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "*:*_wet_cd",
-                    "comparison": ">",
-                    "compare_to": 0
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_wet_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_web_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_oil_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_ice_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_burn_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_web_cd",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_burn_cd",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_oil_cd",
-                    "comparison": ">",
+                    "resource": "*:*_frozen",
+                    "comparison": "==",
                     "compare_to": 0
                 }
             ]
@@ -997,6 +701,12 @@
                                         "tag": "ponyorigins:oil"
                                     }
                                 }
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
                             }
                         ]
                     },
@@ -1022,28 +732,6 @@
                                     "resource": "*:*_oil_cd",
                                     "change": -3,
                                     "operation": "add"
-                                }
-                            },
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:on_fire"
-                                },
-                                "if_action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_oil_cd",
-                                            "change": -30,
-                                            "operation": "add"
-                                        },
-                                        {
-                                            "type": "origins:damage",
-                                            "amount": 2,
-                                            "damage_type": "is_fire"
-                                        }
-                                    ]
                                 }
                             },
                             {
@@ -1073,6 +761,12 @@
                                             "tag": "ponyorigins:oil"
                                         }
                                     }
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wearing_wing_protectors",
+                                    "comparison": "==",
+                                    "compare_to": 0
                                 }
                             ]
                         },
@@ -1150,6 +844,12 @@
                             {
                                 "inverted": true,
                                 "type": "origins:in_rain"
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
                             }
                         ]
                     },
@@ -1211,6 +911,12 @@
                                 "offset_x": 0,
                                 "offset_y": 0,
                                 "offset_z": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
                             }
                         ]
                     },
@@ -1370,6 +1076,81 @@
                             }
                         ]
                     }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ice_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_frozen",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wet_cd",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "minecraft:water",
+                                "comparison": "<=",
+                                "compare_to": 0.25
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:exposed_to_sky"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:predicate",
+                                                "predicate": "ponyorigins:weather/is_rain"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:exposed_to_sky"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": -5,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "function ponyorigins:snow_shed"
+                            }
+                        ]
+                    }
                 }
             ]
         }
@@ -1384,6 +1165,10 @@
                 {
                     "type": "origins:power",
                     "power": "ponyorigins:common/wings/insectoid"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:sneaking"
                 }
             ]
         },
@@ -1454,80 +1239,197 @@
             "fall_distance": 0
         }
     },
-    "activator": {
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "retain_state": true
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
+    "waterlogged": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "oilbogged": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "wet_tick": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "start_value": 0
+    },
+    "oil_fire_damage": {
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
-                    "inverted": true,
+                    "type": "origins:resource",
+                    "resource": "*:*_oil_cd",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:on_fire"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_oil_cd",
+                    "change": -30,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:damage",
+                    "amount": 2,
+                    "damage_type": "is_fire"
+                }
+            ]
+        }
+    },
+    "slower_in_water_horizontal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "slower_bugs_horizontal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/wings/insectoid"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "burned": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "webbed": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "frozen": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "ice_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 8,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_ice_cd",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_frozen",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_frozen",
+                    "change": 1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "entity.player.hurt_freeze",
+                    "volume": 1,
+                    "pitch": 1
+                }
+            ]
+        }
+    },
+    "wet_detector": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
                     "type": "origins:or",
                     "conditions": [
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:*_web_cd",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:*_waterlogged",
-                            "comparison": "==",
-                            "compare_to": 1
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:*_oilbogged",
-                            "comparison": "==",
-                            "compare_to": 1
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:*_burn_cd",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/wings/membraneous"
-                                },
-                                {
-                                    "type": "origins:health",
-                                    "comparison": "<",
-                                    "compare_to": 6
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:health",
-                            "comparison": "<",
-                            "compare_to": 4
-                        },
-                        {
-                            "type": "origins:status_effect",
-                            "effect": "minecraft:nausea"
-                        },
-                        {
-                            "type": "origins:fluid_height",
-                            "fluid": "minecraft:lava",
-                            "comparison": ">=",
-                            "compare_to": 0.3
-                        },
-                        {
-                            "type": "origins:gamemode",
-                            "gamemode": "creative"
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:pegasus/rocket_antilag",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "type": "origins:swimming"
-                        },
                         {
                             "type": "origins:fluid_height",
                             "fluid": "minecraft:water",
@@ -1535,18 +1437,851 @@
                             "compare_to": 0.25
                         },
                         {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "inverted": true,
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/waterproof"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/membraneous"
+                            }
+                        ]
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:oil"
+                            }
+                        }
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:water"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/wings/insectoid"
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_wet_cd",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_wet_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 10
+                                        },
+                                        {
+                                            "type": "origins:fluid_height",
+                                            "fluid": "minecraft:water",
+                                            "comparison": ">",
+                                            "compare_to": 0.75
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_wet_cd",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_wet_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 20
+                                        },
+                                        {
+                                            "type": "origins:fluid_height",
+                                            "fluid": "minecraft:water",
+                                            "comparison": ">",
+                                            "compare_to": 0.5
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wet_tick",
+                                        "comparison": ">=",
+                                        "compare_to": 1
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_wet_tick",
+                                                "change": 0,
+                                                "operation": "set"
+                                            },
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_wet_cd",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        ]
+                                    },
+                                    "else_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_tick",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_wet_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 40
+                                        },
+                                        {
+                                            "type": "origins:fluid_height",
+                                            "fluid": "minecraft:water",
+                                            "comparison": ">",
+                                            "compare_to": 0.25
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wet_tick",
+                                        "comparison": ">=",
+                                        "compare_to": 3
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_wet_tick",
+                                                "change": 0,
+                                                "operation": "set"
+                                            },
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_wet_cd",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        ]
+                                    },
+                                    "else_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_tick",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wet_cd",
+                                    "comparison": "<=",
+                                    "compare_to": 80
+                                },
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wet_tick",
+                                        "comparison": ">=",
+                                        "compare_to": 7
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_wet_tick",
+                                                "change": 0,
+                                                "operation": "set"
+                                            },
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_wet_cd",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        ]
+                                    },
+                                    "else_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_tick",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:submerged_in",
+                            "fluid": "minecraft:water"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/wings/waterproof"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/wings/membraneous"
+                                }
+                            ]
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:in_block",
+                            "block_condition": {
+                                "type": "origins:fluid",
+                                "fluid_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:oil"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/wings/insectoid"
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_wet_cd",
+                        "change": 8,
+                        "operation": "add"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_wet_cd",
+                        "change": 2,
+                        "operation": "add"
+                    }
+                }
+            }
+        }
+    },
+    "oil_detector": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "ponyorigins:oil"
+                        }
+                    }
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:fluid",
+                    "fluid_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "ponyorigins:oil"
+                    }
+                }
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_oil_cd",
+                "change": 1,
+                "operation": "add"
+            }
+        }
+    },
+    "web_detector": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:block_collision",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:cobweb"
+                    },
+                    "offset_x": 0,
+                    "offset_y": 0,
+                    "offset_z": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:block_collision",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:cobweb"
+                        },
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "offset_z": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_oil_cd",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_web_cd",
+                "change": 1,
+                "operation": "add"
+            }
+        }
+    },
+    "wearing_wing_protectors": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "wing_protector_check": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "chest",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "ponyorigins:wing_protectors"
+                }
+            }
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_wearing_wing_protectors",
+            "change": 1,
+            "operation": "set"
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_wearing_wing_protectors",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "slower_with_wing_protectors": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "slower_wing_protectors": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    },
+    "ice_detector": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:biome",
+                                    "condition": {
+                                        "type": "origins:temperature",
+                                        "comparison": "<=",
+                                        "compare_to": 0
+                                    }
+                                },
+                                {
+                                    "type": "origins:predicate",
+                                    "predicate": "ponyorigins:weather/is_rain"
+                                },
+                                {
+                                    "type": "origins:exposed_to_sky"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:in_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:powder_snow"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:oil"
+                            }
+                        }
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:water"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_oil_cd",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_ice_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 10
+                                        },
+                                        {
+                                            "type": "origins:in_block",
+                                            "block_condition": {
+                                                "type": "origins:block",
+                                                "block": "minecraft:powder_snow"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_ice_cd",
+                                    "comparison": "<=",
+                                    "compare_to": 20
+                                },
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_ice_tick",
+                                        "comparison": ">=",
+                                        "compare_to": 1
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_ice_tick",
+                                                "change": 0,
+                                                "operation": "set"
+                                            },
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_ice_cd",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        ]
+                                    },
+                                    "else_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_ice_tick",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_ice_cd",
+                                    "comparison": "<=",
+                                    "compare_to": 40
+                                },
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_ice_tick",
+                                        "comparison": ">=",
+                                        "compare_to": 3
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_ice_tick",
+                                                "change": 0,
+                                                "operation": "set"
+                                            },
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_ice_cd",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        ]
+                                    },
+                                    "else_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_ice_tick",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:power",
+                                                            "power": "ponyorigins:common/wings/membraneous"
+                                                        },
+                                                        {
+                                                            "type": "origins:power",
+                                                            "power": "ponyorigins:common/wings/insectoid"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_ice_cd",
+                                                    "comparison": "<=",
+                                                    "compare_to": 100
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_ice_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 80
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_ice_tick",
+                                        "comparison": ">=",
+                                        "compare_to": 7
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_ice_tick",
+                                                "change": 0,
+                                                "operation": "set"
+                                            },
+                                            {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_ice_cd",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        ]
+                                    },
+                                    "else_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_ice_tick",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "activator": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_waterlogged",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_burned",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_webbed",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_frozen",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_oilbogged",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/wings/membraneous"
+                                        },
+                                        {
+                                            "type": "origins:health",
+                                            "comparison": ">=",
+                                            "compare_to": 6
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/wings/membraneous"
+                                        },
+                                        {
+                                            "type": "origins:health",
+                                            "comparison": ">=",
+                                            "compare_to": 4
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:status_effect",
+                            "effect": "minecraft:nausea"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:gamemode",
+                            "gamemode": "creative"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:pegasus/rocket_antilag",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:swimming"
+                        },
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": "<=",
+                            "compare_to": 0.25
+                        },
+                        {
                             "type": "origins:fluid_height",
                             "fluid": "minecraft:lava",
-                            "comparison": ">",
-                            "compare_to": 0
+                            "comparison": "<=",
+                            "compare_to": 0.1
                         },
                         {
                             "type": "origins:resource",
                             "resource": "*:*_block_wing_hit",
                             "comparison": "==",
-                            "compare_to": 1
+                            "compare_to": 0
                         },
                         {
+                            "inverted": true,
                             "type": "origins:or",
                             "conditions": [
                                 {
@@ -1584,36 +2319,42 @@
                             ]
                         },
                         {
-                            "type": "origins:and",
+                            "type": "origins:or",
                             "conditions": [
                                 {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/energy"
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/energy"
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/energy_level",
+                                            "comparison": ">",
+                                            "compare_to": 0
+                                        }
+                                    ]
                                 },
                                 {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/energy_level",
-                                    "comparison": "==",
-                                    "compare_to": 0
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/energy"
+                                        },
+                                        {
+                                            "type": "origins:food_level",
+                                            "comparison": ">",
+                                            "compare_to": 4
+                                        }
+                                    ]
                                 }
                             ]
                         },
                         {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "inverted": true,
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/energy"
-                                },
-                                {
-                                    "type": "origins:food_level",
-                                    "comparison": "<=",
-                                    "compare_to": 4
-                                }
-                            ]
-                        },
-                        {
+                            "inverted": true,
                             "type": "origins:and",
                             "conditions": [
                                 {
@@ -1651,143 +2392,787 @@
             "operation": "set"
         }
     },
-    "toggle": {
-        "type": "origins:toggle",
-        "active_by_default": true,
-        "key": {
-            "key": "key.origins.primary_active"
-        },
-        "retain_state": true
-    },
-    "active": {
+    "ice_tick": {
         "type": "origins:resource",
         "min": 0,
-        "max": 1,
-        "start_value": 1
-    },
-    "waterlogged": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
+        "max": 10,
         "start_value": 0
     },
-    "oilbogged": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "wet_tick": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 7,
-        "start_value": 0
-    },
-    "slower_in_water_bug": {
+    "freeze_melt_steam": {
         "condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:creative_flying"
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
+                    "type": "origins:resource",
+                    "resource": "*:*_wet_cd",
                     "comparison": ">",
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/wings/insectoid"
+                    "type": "origins:resource",
+                    "resource": "*:*_ice_cd",
+                    "comparison": ">",
+                    "compare_to": 0
                 }
             ]
         },
-        "type": "origins:modify_air_speed",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.25
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ice_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:light_level",
+                                    "light_type": "block",
+                                    "comparison": ">=",
+                                    "compare_to": 12
+                                },
+                                "radius": 2,
+                                "shape": "sphere",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<=",
+                                    "compare_to": 0
+                                }
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:exposed_to_sky"
+                                    },
+                                    {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:exposed_to_sky"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:predicate",
+                                                "predicate": "ponyorigins:weather/is_rain"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_ice_tick",
+                            "comparison": ">=",
+                            "compare_to": 4
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_tick",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/membraneous"
+                                            },
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/waterproof"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_cd",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_ice_tick",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_ice_cd",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:biome",
+                                        "condition": {
+                                            "type": "origins:temperature",
+                                            "comparison": ">=",
+                                            "compare_to": 0.25
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:biome",
+                                        "condition": {
+                                            "type": "origins:temperature",
+                                            "comparison": "<=",
+                                            "compare_to": 0.5
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_ice_cd",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wearing_wing_protectors",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_ice_tick",
+                            "comparison": ">=",
+                            "compare_to": 4
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_tick",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/membraneous"
+                                            },
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/waterproof"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_cd",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_ice_tick",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ice_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<",
+                                    "compare_to": 0.25
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_ice_tick",
+                            "comparison": ">=",
+                            "compare_to": 8
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_tick",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/membraneous"
+                                            },
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/waterproof"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_cd",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_ice_tick",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ice_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">",
+                                    "compare_to": 0.5
+                                }
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<=",
+                                    "compare_to": 1
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_ice_tick",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_tick",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/membraneous"
+                                            },
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/wings/waterproof"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_wet_cd",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_ice_tick",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ice_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">",
+                                    "compare_to": 1
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/wings/membraneous"
+                                        },
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/wings/waterproof"
+                                        }
+                                    ]
+                                },
+                                "if_action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_wet_cd",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wet_cd",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_ice_cd",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "minecraft:nether"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": 0,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_wet_cd",
+                                "change": 0,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.5,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": "smoke",
+                                "count": 1,
+                                "speed": 1,
+                                "spread": {
+                                    "x": 0.1,
+                                    "y": 0.1,
+                                    "z": 0.1
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wet_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<=",
+                                    "compare_to": 0
+                                }
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">",
+                                    "compare_to": -0.25
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_freeze_tick",
+                            "comparison": ">=",
+                            "compare_to": 2
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_freeze_tick",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_wet_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_freeze_tick",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wet_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<=",
+                                    "compare_to": -0.25
+                                }
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">",
+                                    "compare_to": -0.5
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_freeze_tick",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_freeze_tick",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_wet_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ice_cd",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_freeze_tick",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wet_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<=",
+                                    "compare_to": -0.5
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_wet_cd",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_ice_cd",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     },
-    "slower_in_water_horizontal": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:creative_flying"
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/wings/insectoid"
-                }
-            ]
-        },
-        "type": "origins:modify_velocity",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.5
-        },
-        "axes": [
-            "x",
-            "z"
-        ]
+    "freeze_tick": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
     },
-    "slower_in_water_bug_horizontal": {
+    "frostbite": {
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:creative_flying"
+                    "type": "origins:resource",
+                    "resource": "*:*_frozen",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/wings/insectoid"
+                    "type": "origins:resource",
+                    "resource": "*:*_ice_cd",
+                    "comparison": "<",
+                    "compare_to": 100
                 }
             ]
         },
-        "type": "origins:modify_velocity",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.25
-        },
-        "axes": [
-            "x",
-            "z"
-        ]
-    },
-    "slower_bugs_horizontal": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:creative_flying"
-                },
-                {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/wings/insectoid"
-                }
-            ]
-        },
-        "type": "origins:modify_velocity",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.5
-        },
-        "axes": [
-            "x",
-            "z"
-        ]
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/wings/insectoid"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/wings/membraneous"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:damage",
+                "amount": 1,
+                "damage_type": "freeze"
+            },
+            "else_action": {
+                "type": "origins:damage",
+                "amount": 0.5,
+                "damage_type": "freeze"
+            }
+        }
     }
 }
