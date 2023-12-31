@@ -213,7 +213,7 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight"
+                        "power": "ponyorigins:common/flight/main"
                     },
                     {
                         "inverted": true,
@@ -530,7 +530,7 @@
                 "conditions": [
                     {
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight"
+                        "power": "ponyorigins:common/flight/main"
                     },
                     {
                         "type": "origins:power",

@@ -1,0 +1,681 @@
+{
+    "name": "Flight",
+    "description": "Jump in the air to spread your wings and take flight! Be careful not to damage them or get them caught in things, or you may be grounded for a while.\n\nManually disable/enable with your primary power to fly with equipment.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Jump while in the air to fly. Press [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "] to toggle"
+            ],
+            "sprite": "minecraft:textures/item/feather.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Water disables flight",
+            "sprite": "minecraft:textures/particle/splash_0.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Spiderwebs disable flight",
+            "sprite": "minecraft:textures/block/cobweb.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Oil disables flight",
+            "sprite": "minecraft:textures/particle/splash_0.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Burned wings disable flight",
+            "sprite": "minecraft:textures/particle/flame.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Severe injuries (below 4 health) disable flight",
+            "sprite": "minecraft:textures/particle/damage.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Requires a half block clearance on either side and above to spread your wings",
+            "sprite": "minecraft:textures/item/feather.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Fall slowly and land gracefully unless exhausted",
+            "sprite": "minecraft:textures/item/feather.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "block_wing_hit": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "reset_hazards_on_respawn": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_frozen",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_waterlogged",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_oilbogged",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_burned",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_webbed",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "wing_type": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 0
+    },
+    "creative_flight": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:creative_flight"
+    },
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "start_value": 0
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_buffer",
+            "comparison": "<=",
+            "compare_to": 20
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:power",
+                "power": "ponyorigins:common/energy"
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 20,
+                        "operation": "add"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:exhaust",
+                        "amount": 0.1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 20,
+                        "operation": "add"
+                    }
+                ]
+            }
+        }
+    },
+    "exhaust": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:creative_flying"
+            },
+            "if_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:sprinting"
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_buffer",
+                    "change": -2,
+                    "operation": "add"
+                },
+                "else_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_buffer",
+                    "change": -1,
+                    "operation": "add"
+                }
+            }
+        }
+    },
+    "slower_in_water": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    },
+    "slower_bugs": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/flight/hazards_wing_type",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:sneaking"
+                }
+            ]
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "slow_falling_speed": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:elytra_flight_possible",
+                    "check_state": true,
+                    "check_abilities": false
+                }
+            ]
+        },
+        "type": "origins:modify_falling",
+        "velocity": 0.01,
+        "take_fall_damage": true
+    },
+    "slow_falling_distance": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:elytra_flight_possible",
+                    "check_state": true,
+                    "check_abilities": false
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:set_fall_distance",
+            "fall_distance": 0
+        }
+    },
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "retain_state": true
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
+    "waterlogged": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "oilbogged": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "slower_in_water_horizontal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "slower_bugs_horizontal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/flight/hazards_wing_type",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "burned": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "webbed": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "frozen": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "slower_with_wing_protectors": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/flight/hazards_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "slower_wing_protectors": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/flight/hazards_wearing_wing_protectors",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    },
+    "activator": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_waterlogged",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_burned",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_webbed",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_frozen",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_oilbogged",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_wing_type",
+                                            "comparison": "==",
+                                            "compare_to": 3
+                                        },
+                                        {
+                                            "type": "origins:health",
+                                            "comparison": "<",
+                                            "compare_to": 6
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_wing_type",
+                                            "comparison": "!=",
+                                            "compare_to": 3
+                                        },
+                                        {
+                                            "type": "origins:health",
+                                            "comparison": "<",
+                                            "compare_to": 4
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:status_effect",
+                            "effect": "minecraft:nausea"
+                        },
+                        {
+                            "type": "origins:gamemode",
+                            "gamemode": "creative"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:pegasus/rocket_antilag",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:swimming"
+                        },
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.25
+                        },
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:lava",
+                            "comparison": ">",
+                            "compare_to": 0.1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_block_wing_hit",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:earth_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:moon"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:moon_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:mars_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:venus_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:mercury"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:mercury_orbit"
+                                },
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "ad_astra:glacio_orbit"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/energy"
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/energy_level",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_buffer",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/energy"
+                                        },
+                                        {
+                                            "type": "origins:food_level",
+                                            "comparison": "<=",
+                                            "compare_to": 4
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_buffer",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:races/dragon"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_active",
+            "change": 1,
+            "operation": "set"
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_active",
+            "change": 0,
+            "operation": "set"
+        }
+    }
+}

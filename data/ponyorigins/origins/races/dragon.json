@@ -11,7 +11,8 @@
         "ponyorigins:dragon/heat",
         "ponyorigins:dragon/flamethrower",
         "ponyorigins:dragon/fireproof",
-        "ponyorigins:common/flight",
+        "ponyorigins:common/flight/main",
+        "ponyorigins:common/flight/hazards",
         "ponyorigins:common/wings/membraneous",
         "ponyorigins:common/health/armor_dragon",
         "ponyorigins:common/sounds/dragon"

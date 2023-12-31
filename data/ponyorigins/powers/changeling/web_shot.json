@@ -179,7 +179,7 @@
                     "projectile_action": {
                         "type": "origins:grant_power",
                         "power": "ponyorigins:projectiles/cobweb",
-                        "source": "ponyorigins:projectiles/web_shot"
+                        "source": "ponyorigins:changeling/web_shot"
                     }
                 },
                 {

@@ -12,7 +12,8 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/pony",
-        "ponyorigins:common/flight",
+        "ponyorigins:common/flight/main",
+        "ponyorigins:common/flight/hazards",
         "ponyorigins:common/health/plus_two",
         "ponyorigins:common/sounds/pony"
     ],

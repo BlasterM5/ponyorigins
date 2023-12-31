@@ -8,7 +8,8 @@
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",
         "ponyorigins:common/rideable",
-        "ponyorigins:common/flight",
+        "ponyorigins:common/flight/main",
+        "ponyorigins:common/flight/hazards",
         "ponyorigins:common/wings/waterproof",
         "ponyorigins:common/sounds/avian"
     ],

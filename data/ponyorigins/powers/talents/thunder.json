@@ -501,7 +501,7 @@
                                 },
                                 {
                                     "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_lightning"
+                                    "predicate": "ponyorigins:weather/is_thunderstorm"
                                 }
                             ]
                         },
@@ -542,17 +542,17 @@
                                 {
                                     "inverted": true,
                                     "type": "origins:predicate",
-                                    "predicate": "o:weather/is_rain"
+                                    "predicate": "ponyorigins:weather/is_rain"
                                 },
                                 {
                                     "inverted": true,
                                     "type": "origins:predicate",
-                                    "predicate": "o:weather/is_dry_thunder"
+                                    "predicate": "ponyorigins:weather/is_dry_thunder"
                                 },
                                 {
                                     "inverted": true,
                                     "type": "origins:predicate",
-                                    "predicate": "o:weather/is_thunderstorm"
+                                    "predicate": "ponyorigins:weather/is_thunderstorm"
                                 }
                             ]
                         },

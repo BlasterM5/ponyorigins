@@ -17,7 +17,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:arm_timer",
+                        "resource": "*:*_arm_timer",
                         "comparison": ">",
                         "compare_to": 0
                     },
@@ -73,9 +73,9 @@
                                                         "type": "origins:and",
                                                         "conditions": [
                                                             {
+                                                                "inverted": true,
                                                                 "type": "origins:in_tag",
-                                                                "tag": "minecraft:doors",
-                                                                "inverted": true
+                                                                "tag": "minecraft:doors"
                                                             },
                                                             {
                                                                 "inverted": true,
@@ -124,14 +124,14 @@
                                                     "type": "origins:target_condition",
                                                     "condition": {
                                                         "type": "origins:power",
-                                                        "power": "ponyorigins:common/flight"
+                                                        "power": "ponyorigins:common/flight/main"
                                                     }
                                                 },
                                                 "if_action": {
                                                     "type": "origins:target_action",
                                                     "action": {
                                                         "type": "origins:change_resource",
-                                                        "resource": "ponyorigins:common/flight_web_cd",
+                                                        "resource": "ponyorigins:common/flight/hazards_web_cd",
                                                         "change": 30,
                                                         "operation": "add"
                                                     }

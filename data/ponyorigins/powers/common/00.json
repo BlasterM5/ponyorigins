@@ -189,5 +189,43 @@
                 }
             ]
         }
+    },
+    "heat_source_check": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:block_in_radius",
+                "block_condition": {
+                    "type": "origins:light_level",
+                    "light_type": "block",
+                    "comparison": ">=",
+                    "compare_to": 12
+                },
+                "radius": 2,
+                "shape": "sphere",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_heat_source",
+                "change": 1,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_heat_source",
+                "change": 0,
+                "operation": "set"
+            }
+        }
+    },
+    "heat_source": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     }
 }

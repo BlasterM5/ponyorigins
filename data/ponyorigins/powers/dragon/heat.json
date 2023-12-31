@@ -245,6 +245,33 @@
                     "actions": [
                         {
                             "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:biome",
+                                        "condition": {
+                                            "type": "origins:temperature",
+                                            "comparison": ">",
+                                            "compare_to": 1.5
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "ponyorigins:common/00_heat_source",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        },
+                        {
+                            "condition": {
                                 "type": "origins:biome",
                                 "condition": {
                                     "type": "origins:temperature",
@@ -272,22 +299,6 @@
                                 "type": "origins:change_resource",
                                 "resource": "*:*_level",
                                 "change": -1,
-                                "operation": "add"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:biome",
-                                "condition": {
-                                    "type": "origins:temperature",
-                                    "comparison": ">",
-                                    "compare_to": 1.5
-                                }
-                            },
-                            "action": {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_level",
-                                "change": 1,
                                 "operation": "add"
                             }
                         }

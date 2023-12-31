@@ -17,7 +17,7 @@
                                 "actions": [
                                     {
                                         "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/biped",
+                                        "power": "ponyorigins:chaos/biped",
                                         "source": "ponyorigins:races/chaos"
                                     },
                                     {
@@ -27,7 +27,7 @@
                                                 "weight": 1,
                                                 "element": {
                                                     "type": "origins:grant_power",
-                                                    "power": "ponyorigins:minotaur/hooves",
+                                                    "power": "ponyorigins:common/hooves",
                                                     "source": "ponyorigins:races/chaos"
                                                 }
                                             },
@@ -70,7 +70,7 @@
                                                 "weight": 1,
                                                 "element": {
                                                     "type": "origins:grant_power",
-                                                    "power": "ponyorigins:orinthian/talons",
+                                                    "power": "ponyorigins:common/talons",
                                                     "source": "ponyorigins:races/chaos"
                                                 }
                                             },
@@ -291,7 +291,12 @@
                                 "actions": [
                                     {
                                         "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/flight",
+                                        "power": "ponyorigins:common/flight/main",
+                                        "source": "ponyorigins:races/chaos"
+                                    },
+                                    {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/flight/hazards",
                                         "source": "ponyorigins:races/chaos"
                                     },
                                     {

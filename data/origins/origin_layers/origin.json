@@ -1,5 +1,4 @@
 {
-    "order": 1,
     "origins": [
         {
             "condition": {
@@ -57,6 +56,5 @@
         }
     ],
     "enabled": true,
-    "replace": true,
-    "loading_priority": 0
+    "replace": true
 }
