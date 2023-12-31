@@ -56,45 +56,6 @@
         "max": 1,
         "start_value": 0
     },
-    "reset_hazards_on_respawn": {
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
-        "entity_action_respawned": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_frozen",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_waterlogged",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_oilbogged",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_burned",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_webbed",
-                    "change": 0,
-                    "operation": "set"
-                }
-            ]
-        }
-    },
     "wing_type": {
         "type": "origins:resource",
         "min": 0,
@@ -674,6 +635,109 @@
         "falling_action": {
             "type": "origins:change_resource",
             "resource": "*:*_active",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "block_wing_hit_detection": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0.5,
+                            "offset_y": 0,
+                            "offset_z": 0
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": -0.5,
+                            "offset_y": 0,
+                            "offset_z": 0
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0,
+                            "offset_y": 0.5,
+                            "offset_z": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_block_wing_hit",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:creative_flying"
+                                    },
+                                    {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:fall_flying"
+                                            },
+                                            {
+                                                "type": "origins:equipped_item",
+                                                "equipment_slot": "chest",
+                                                "item_condition": {
+                                                    "inverted": true,
+                                                    "type": "origins:ingredient",
+                                                    "ingredient": {
+                                                        "item": "minecraft:elytra"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:gamemode",
+                                "gamemode": "creative"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.player.big_fall",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_block_wing_hit",
             "change": 0,
             "operation": "set"
         }
