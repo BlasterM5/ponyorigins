@@ -2,6 +2,7 @@
     "name": "Flight Hazards",
     "description": "",
     "badges": [],
+    "hidden": true,
     "type": "origins:multiple",
     "set_wing_type": {
         "type": "origins:action_over_time",
