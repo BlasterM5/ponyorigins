@@ -50,8 +50,16 @@
                     }
                 },
                 "block_action": {
-                    "type": "origins:bonemeal",
-                    "effects": true
+                    "type": "origins:if_else",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:in_tag",
+                        "tag": "minecraft:flowers"
+                    },
+                    "if_action": {
+                        "type": "origins:bonemeal",
+                        "effects": true
+                    }
                 },
                 "hit_action": {
                     "type": "origins:area_of_effect",

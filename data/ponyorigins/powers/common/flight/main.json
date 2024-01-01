@@ -56,20 +56,114 @@
         "max": 1,
         "start_value": 0
     },
+    "block_wing_hit_detection": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0.5,
+                            "offset_y": 0,
+                            "offset_z": 0
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": -0.5,
+                            "offset_y": 0,
+                            "offset_z": 0
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0,
+                            "offset_y": 0.5,
+                            "offset_z": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_block_wing_hit",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:creative_flying"
+                                    },
+                                    {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:fall_flying"
+                                            },
+                                            {
+                                                "type": "origins:equipped_item",
+                                                "equipment_slot": "chest",
+                                                "item_condition": {
+                                                    "inverted": true,
+                                                    "type": "origins:ingredient",
+                                                    "ingredient": {
+                                                        "item": "minecraft:elytra"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:gamemode",
+                                "gamemode": "creative"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.player.big_fall",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_block_wing_hit",
+            "change": 0,
+            "operation": "set"
+        }
+    },
     "wing_type": {
         "type": "origins:resource",
         "min": 0,
         "max": 3,
         "start_value": 0
-    },
-    "creative_flight": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_active",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "origins:creative_flight"
     },
     "buffer": {
         "type": "origins:resource",
@@ -407,6 +501,162 @@
             "value": 0.5
         }
     },
+    "wet_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 1,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_wet_cd",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_waterlogged",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_waterlogged",
+            "change": 1,
+            "operation": "set"
+        }
+    },
+    "burn_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 60,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_burn_cd",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_burned",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_burned",
+            "change": 1,
+            "operation": "set"
+        }
+    },
+    "web_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 5,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_web_cd",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_webbed",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_webbed",
+            "change": 1,
+            "operation": "set"
+        }
+    },
+    "oil_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 16,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_oil_cd",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_oilbogged",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_oilbogged",
+            "change": 1,
+            "operation": "set"
+        }
+    },
+    "ice_cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 8,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_ice_cd",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_frozen",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_frozen",
+                    "change": 1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "entity.player.hurt_freeze",
+                    "volume": 1,
+                    "pitch": 1
+                }
+            ]
+        }
+    },
     "activator": {
         "condition": {
             "type": "origins:and",
@@ -514,6 +764,16 @@
                             "fluid": "minecraft:lava",
                             "comparison": ">",
                             "compare_to": 0.1
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:cobweb"
+                            },
+                            "offset_x": 0,
+                            "offset_y": 0,
+                            "offset_z": 0
                         },
                         {
                             "type": "origins:resource",
@@ -639,107 +899,13 @@
             "operation": "set"
         }
     },
-    "block_wing_hit_detection": {
+    "creative_flight": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:creative_flying"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:gamemode",
-                    "gamemode": "creative"
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": 0.5,
-                            "offset_y": 0,
-                            "offset_z": 0
-                        },
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": -0.5,
-                            "offset_y": 0,
-                            "offset_z": 0
-                        },
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": 0,
-                            "offset_y": 0.5,
-                            "offset_z": 0
-                        }
-                    ]
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "rising_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_block_wing_hit",
-                    "change": 1,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:or",
-                                "conditions": [
-                                    {
-                                        "type": "origins:creative_flying"
-                                    },
-                                    {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:fall_flying"
-                                            },
-                                            {
-                                                "type": "origins:equipped_item",
-                                                "equipment_slot": "chest",
-                                                "item_condition": {
-                                                    "inverted": true,
-                                                    "type": "origins:ingredient",
-                                                    "ingredient": {
-                                                        "item": "minecraft:elytra"
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:gamemode",
-                                "gamemode": "creative"
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.player.big_fall",
-                        "volume": 1,
-                        "pitch": 1
-                    }
-                }
-            ]
-        },
-        "falling_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_block_wing_hit",
-            "change": 0,
-            "operation": "set"
-        }
+        "type": "origins:creative_flight"
     }
 }

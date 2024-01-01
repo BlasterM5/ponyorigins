@@ -18,49 +18,150 @@
     "taming": {
         "type": "origins:action_on_entity_use",
         "bientity_action": {
-            "type": "origins:and",
+            "type": "origins:if_else_list",
             "actions": [
                 {
-                    "type": "origins:tame"
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:tameable"
+                                }
+                            },
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:tamed"
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:tame"
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "change": -25,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
+                    }
                 },
                 {
-                    "type": "origins:actor_action",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:tameable_rides"
+                                }
+                            },
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tame:1b}"
+                                }
+                            }
+                        ]
+                    },
                     "action": {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -25,
-                        "operation": "add"
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "data modify entity @s Tame set value 1b"
+                                }
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "change": -25,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:tameable_trust"
+                                }
+                            },
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:command",
+                                    "command": "tag @s list",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "data modify entity @s Trusted append from entity @p UUID"
+                                }
+                            },
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "tag @s add po.tamed"
+                                }
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "change": -25,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
                     }
                 }
             ]
         },
         "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "comparison": ">=",
-                        "compare_to": 25
-                    }
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:target_condition",
-                    "condition": {
-                        "type": "origins:tamed"
-                    }
-                },
-                {
-                    "type": "origins:target_condition",
-                    "condition": {
-                        "type": "origins:in_tag",
-                        "tag": "ponyorigins:tameable"
-                    }
-                }
-            ]
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">=",
+                "compare_to": 25
+            }
         },
         "item_condition": {
             "type": "origins:empty"

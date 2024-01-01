@@ -113,158 +113,96 @@
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_wet_cd",
+                    "resource": "ponyorigins:common/flight/main_wet_cd",
                     "change": 0,
                     "operation": "set"
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_oil_cd",
+                    "resource": "ponyorigins:common/flight/main_oil_cd",
                     "change": 0,
                     "operation": "set"
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_ice_cd",
+                    "resource": "ponyorigins:common/flight/main_ice_cd",
                     "change": 0,
                     "operation": "set"
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_web_cd",
+                    "resource": "ponyorigins:common/flight/main_web_cd",
                     "change": 0,
                     "operation": "set"
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_burn_cd",
+                    "resource": "ponyorigins:common/flight/main_burn_cd",
                     "change": 0,
                     "operation": "set"
                 }
             ]
         }
     },
+    "slower_in_webs": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:block_collision",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "cobweb"
+                    },
+                    "offset_x": 0,
+                    "offset_y": 0,
+                    "offset_z": 0
+                }
+            ]
+        },
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.95
+        }
+    },
+    "slower_in_webs_horizontal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:block_collision",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "cobweb"
+                    },
+                    "offset_x": 0,
+                    "offset_y": 0,
+                    "offset_z": 0
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.95
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
     "wing_type": {
         "type": "origins:resource",
         "min": 0,
         "max": 3,
         "start_value": 0
-    },
-    "wet_cd": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 100,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/resource_bar.png",
-            "bar_index": 1,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_wet_cd",
-                "comparison": ">",
-                "compare_to": 0
-            }
-        },
-        "min_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_waterlogged",
-            "change": 0,
-            "operation": "set"
-        },
-        "max_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_waterlogged",
-            "change": 1,
-            "operation": "set"
-        }
-    },
-    "burn_cd": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 60,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/resource_bar.png",
-            "bar_index": 0,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_burn_cd",
-                "comparison": ">",
-                "compare_to": 0
-            }
-        },
-        "min_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_burned",
-            "change": 0,
-            "operation": "set"
-        },
-        "max_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_burned",
-            "change": 1,
-            "operation": "set"
-        }
-    },
-    "web_cd": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 30,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/resource_bar.png",
-            "bar_index": 5,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_web_cd",
-                "comparison": ">",
-                "compare_to": 0
-            }
-        },
-        "min_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_webbed",
-            "change": 0,
-            "operation": "set"
-        },
-        "max_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_webbed",
-            "change": 1,
-            "operation": "set"
-        }
-    },
-    "oil_cd": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 120,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
-            "bar_index": 16,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_oil_cd",
-                "comparison": ">",
-                "compare_to": 0
-            }
-        },
-        "min_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_oilbogged",
-            "change": 0,
-            "operation": "set"
-        },
-        "max_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_oilbogged",
-            "change": 1,
-            "operation": "set"
-        }
     },
     "burn_detector": {
         "condition": {
@@ -279,7 +217,7 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_burn_cd",
+            "resource": "ponyorigins:common/flight/main_burn_cd",
             "change": 20,
             "operation": "add"
         },
@@ -294,19 +232,19 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_wet_cd",
+                            "resource": "ponyorigins:common/flight/main_wet_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_oil_cd",
+                            "resource": "ponyorigins:common/flight/main_oil_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_ice_cd",
+                            "resource": "ponyorigins:common/flight/main_ice_cd",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -338,13 +276,13 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": -1,
                                 "operation": "add"
                             }
@@ -361,13 +299,13 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": -1,
                                 "operation": "add"
                             }
@@ -387,19 +325,19 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_oil_cd",
+                                "resource": "ponyorigins:common/flight/main_oil_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": -1,
                                 "operation": "add"
                             }
@@ -418,31 +356,31 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_wet_cd",
+                            "resource": "ponyorigins:common/flight/main_wet_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_web_cd",
+                            "resource": "ponyorigins:common/flight/main_web_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_oil_cd",
+                            "resource": "ponyorigins:common/flight/main_oil_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_ice_cd",
+                            "resource": "ponyorigins:common/flight/main_ice_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "*:*_burn_cd",
+                            "resource": "ponyorigins:common/flight/main_burn_cd",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -474,7 +412,7 @@
                             },
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_burn_cd",
+                                "resource": "ponyorigins:common/flight/main_burn_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -486,7 +424,7 @@
                     },
                     "if_action": {
                         "type": "origins:change_resource",
-                        "resource": "*:*_burn_cd",
+                        "resource": "ponyorigins:common/flight/main_burn_cd",
                         "change": -1,
                         "operation": "add"
                     },
@@ -497,7 +435,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:resource",
-                                    "resource": "*:*_burn_cd",
+                                    "resource": "ponyorigins:common/flight/main_burn_cd",
                                     "comparison": ">",
                                     "compare_to": 0
                                 },
@@ -509,7 +447,7 @@
                         },
                         "if_action": {
                             "type": "origins:change_resource",
-                            "resource": "*:*_burn_cd",
+                            "resource": "ponyorigins:common/flight/main_burn_cd",
                             "change": -2,
                             "operation": "add"
                         }
@@ -528,7 +466,7 @@
                             },
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_oil_cd",
+                                "resource": "ponyorigins:common/flight/main_oil_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -564,20 +502,20 @@
                                 },
                                 "if_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_oil_cd",
+                                    "resource": "ponyorigins:common/flight/main_oil_cd",
                                     "change": -6,
                                     "operation": "add"
                                 },
                                 "else_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_oil_cd",
+                                    "resource": "ponyorigins:common/flight/main_oil_cd",
                                     "change": -3,
                                     "operation": "add"
                                 }
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "particle block honey_block ~ ~0.25 ~ 0.1 0.1 0.1 1 8 normal"
+                                "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
                             }
                         ]
                     },
@@ -588,7 +526,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:resource",
-                                    "resource": "*:*_oil_cd",
+                                    "resource": "ponyorigins:common/flight/main_oil_cd",
                                     "comparison": ">",
                                     "compare_to": 0
                                 },
@@ -624,13 +562,13 @@
                                     },
                                     "if_action": {
                                         "type": "origins:change_resource",
-                                        "resource": "*:*_oil_cd",
+                                        "resource": "ponyorigins:common/flight/main_oil_cd",
                                         "change": -2,
                                         "operation": "add"
                                     },
                                     "else_action": {
                                         "type": "origins:change_resource",
-                                        "resource": "*:*_oil_cd",
+                                        "resource": "ponyorigins:common/flight/main_oil_cd",
                                         "change": -1,
                                         "operation": "add"
                                     }
@@ -645,7 +583,7 @@
                                         "actions": [
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_oil_cd",
+                                                "resource": "ponyorigins:common/flight/main_oil_cd",
                                                 "change": -10,
                                                 "operation": "add"
                                             },
@@ -659,7 +597,7 @@
                                 },
                                 {
                                     "type": "origins:execute_command",
-                                    "command": "particle block honey_block ~ ~0.25 ~ 0.1 0.1 0.1 1 8 normal"
+                                    "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
                                 }
                             ]
                         }
@@ -678,7 +616,7 @@
                             },
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -707,20 +645,20 @@
                                 },
                                 "if_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "change": -6,
                                     "operation": "add"
                                 },
                                 "else_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "change": -3,
                                     "operation": "add"
                                 }
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "function ponyorigins:splash"
+                                "command": "function ponyorigins:shed/water"
                             }
                         ]
                     }
@@ -732,13 +670,25 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_web_cd",
+                                "resource": "ponyorigins:common/flight/main_web_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
                             {
                                 "inverted": true,
                                 "type": "origins:moving"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:creative_flying"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:fall_flying"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:swimming"
                             },
                             {
                                 "inverted": true,
@@ -768,7 +718,7 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_web_cd",
+                                "resource": "ponyorigins:common/flight/main_web_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
@@ -782,7 +732,7 @@
                                 },
                                 "if_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_web_cd",
+                                    "resource": "ponyorigins:common/flight/main_web_cd",
                                     "change": -1,
                                     "operation": "add"
                                 }
@@ -815,7 +765,7 @@
                                     "actions": [
                                         {
                                             "type": "origins:change_resource",
-                                            "resource": "*:*_web_cd",
+                                            "resource": "ponyorigins:common/flight/main_web_cd",
                                             "change": -2,
                                             "operation": "add"
                                         },
@@ -824,19 +774,8 @@
                                             "hand": "MAIN_HAND"
                                         },
                                         {
-                                            "type": "origins:spawn_particles",
-                                            "particle": {
-                                                "type": "minecraft:item",
-                                                "params": "minecraft:cobweb"
-                                            },
-                                            "count": 16,
-                                            "speed": 0.5,
-                                            "force": true,
-                                            "spread": {
-                                                "x": 0.1,
-                                                "y": 0.1,
-                                                "z": 0.1
-                                            }
+                                            "type": "origins:execute_command",
+                                            "command": "execute anchored feet run particle item cobweb ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
                                         }
                                     ]
                                 }
@@ -869,7 +808,7 @@
                                     "actions": [
                                         {
                                             "type": "origins:change_resource",
-                                            "resource": "*:*_web_cd",
+                                            "resource": "ponyorigins:common/flight/main_web_cd",
                                             "change": -2,
                                             "operation": "add"
                                         },
@@ -878,37 +817,15 @@
                                             "hand": "OFF_HAND"
                                         },
                                         {
-                                            "type": "origins:spawn_particles",
-                                            "particle": {
-                                                "type": "minecraft:item",
-                                                "params": "minecraft:cobweb"
-                                            },
-                                            "count": 16,
-                                            "speed": 0.5,
-                                            "force": true,
-                                            "spread": {
-                                                "x": 0.1,
-                                                "y": 0.1,
-                                                "z": 0.1
-                                            }
+                                            "type": "origins:execute_command",
+                                            "command": "execute anchored feet run particle item cobweb ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
                                         }
                                     ]
                                 }
                             },
                             {
-                                "type": "origins:spawn_particles",
-                                "particle": {
-                                    "type": "minecraft:item",
-                                    "params": "minecraft:cobweb"
-                                },
-                                "count": 8,
-                                "speed": 0.5,
-                                "force": true,
-                                "spread": {
-                                    "x": 0.1,
-                                    "y": 0.1,
-                                    "z": 0.1
-                                }
+                                "type": "origins:execute_command",
+                                "command": "execute anchored feet run particle item cobweb ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
                             }
                         ]
                     }
@@ -920,7 +837,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -932,7 +849,7 @@
                             },
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "comparison": "==",
                                 "compare_to": 0
                             },
@@ -977,13 +894,13 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": -5,
                                 "operation": "add"
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "function ponyorigins:snow_shed"
+                                "command": "execute anchored feet run particle minecraft:snowflake ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
                             }
                         ]
                     }
@@ -1003,7 +920,7 @@
             "conditions": [
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_oil_cd",
+                    "resource": "ponyorigins:common/flight/main_oil_cd",
                     "comparison": ">",
                     "compare_to": 0
                 },
@@ -1025,7 +942,7 @@
             "actions": [
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_oil_cd",
+                    "resource": "ponyorigins:common/flight/main_oil_cd",
                     "change": -30,
                     "operation": "add"
                 },
@@ -1033,46 +950,6 @@
                     "type": "origins:damage",
                     "amount": 2,
                     "damage_type": "is_fire"
-                }
-            ]
-        }
-    },
-    "ice_cd": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 100,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-            "bar_index": 8,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_ice_cd",
-                "comparison": ">",
-                "compare_to": 0
-            }
-        },
-        "min_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_frozen",
-            "change": 0,
-            "operation": "set"
-        },
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:common/flight/main_frozen",
-                    "change": 1,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:play_sound",
-                    "sound": "entity.player.hurt_freeze",
-                    "volume": 1,
-                    "pitch": 1
                 }
             ]
         }
@@ -1158,7 +1035,7 @@
                         },
                         "if_action": {
                             "type": "origins:change_resource",
-                            "resource": "*:*_wet_cd",
+                            "resource": "ponyorigins:common/flight/main_wet_cd",
                             "change": 1,
                             "operation": "add"
                         }
@@ -1172,7 +1049,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_wet_cd",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
                                             "comparison": "<=",
                                             "compare_to": 10
                                         },
@@ -1186,7 +1063,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "change": 1,
                                     "operation": "add"
                                 }
@@ -1197,7 +1074,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_wet_cd",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
                                             "comparison": "<=",
                                             "compare_to": 20
                                         },
@@ -1228,7 +1105,7 @@
                                             },
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_wet_cd",
+                                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                                 "change": 1,
                                                 "operation": "add"
                                             }
@@ -1248,7 +1125,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_wet_cd",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
                                             "comparison": "<=",
                                             "compare_to": 40
                                         },
@@ -1279,7 +1156,7 @@
                                             },
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_wet_cd",
+                                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                                 "change": 1,
                                                 "operation": "add"
                                             }
@@ -1296,7 +1173,7 @@
                             {
                                 "condition": {
                                     "type": "origins:resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "comparison": "<=",
                                     "compare_to": 80
                                 },
@@ -1319,7 +1196,7 @@
                                             },
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_wet_cd",
+                                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                                 "change": 1,
                                                 "operation": "add"
                                             }
@@ -1386,13 +1263,13 @@
                     },
                     "if_action": {
                         "type": "origins:change_resource",
-                        "resource": "*:*_wet_cd",
+                        "resource": "ponyorigins:common/flight/main_wet_cd",
                         "change": 8,
                         "operation": "add"
                     },
                     "else_action": {
                         "type": "origins:change_resource",
-                        "resource": "*:*_wet_cd",
+                        "resource": "ponyorigins:common/flight/main_wet_cd",
                         "change": 2,
                         "operation": "add"
                     }
@@ -1438,7 +1315,7 @@
             },
             "if_action": {
                 "type": "origins:change_resource",
-                "resource": "*:*_oil_cd",
+                "resource": "ponyorigins:common/flight/main_oil_cd",
                 "change": 1,
                 "operation": "add"
             }
@@ -1485,7 +1362,7 @@
                     },
                     {
                         "type": "origins:resource",
-                        "resource": "*:*_oil_cd",
+                        "resource": "ponyorigins:common/flight/main_oil_cd",
                         "comparison": "==",
                         "compare_to": 0
                     }
@@ -1493,7 +1370,7 @@
             },
             "if_action": {
                 "type": "origins:change_resource",
-                "resource": "*:*_web_cd",
+                "resource": "ponyorigins:common/flight/main_web_cd",
                 "change": 1,
                 "operation": "add"
             }
@@ -1606,7 +1483,7 @@
                     },
                     {
                         "type": "origins:resource",
-                        "resource": "*:*_oil_cd",
+                        "resource": "ponyorigins:common/flight/main_oil_cd",
                         "comparison": "==",
                         "compare_to": 0
                     }
@@ -1624,7 +1501,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_ice_cd",
+                                            "resource": "ponyorigins:common/flight/main_ice_cd",
                                             "comparison": "<=",
                                             "compare_to": 10
                                         },
@@ -1639,7 +1516,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": 1,
                                     "operation": "add"
                                 }
@@ -1647,7 +1524,7 @@
                             {
                                 "condition": {
                                     "type": "origins:resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "comparison": "<=",
                                     "compare_to": 20
                                 },
@@ -1670,7 +1547,7 @@
                                             },
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_ice_cd",
+                                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                                 "change": 1,
                                                 "operation": "add"
                                             }
@@ -1687,7 +1564,7 @@
                             {
                                 "condition": {
                                     "type": "origins:resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "comparison": "<=",
                                     "compare_to": 40
                                 },
@@ -1710,7 +1587,7 @@
                                             },
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_ice_cd",
+                                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                                 "change": 1,
                                                 "operation": "add"
                                             }
@@ -1739,15 +1616,15 @@
                                                 },
                                                 {
                                                     "type": "origins:resource",
-                                                    "resource": "*:*_ice_cd",
-                                                    "comparison": "<=",
+                                                    "resource": "ponyorigins:common/flight/main_ice_cd",
+                                                    "comparison": "<",
                                                     "compare_to": 100
                                                 }
                                             ]
                                         },
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_ice_cd",
+                                            "resource": "ponyorigins:common/flight/main_ice_cd",
                                             "comparison": "<=",
                                             "compare_to": 80
                                         }
@@ -1772,7 +1649,7 @@
                                             },
                                             {
                                                 "type": "origins:change_resource",
-                                                "resource": "*:*_ice_cd",
+                                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                                 "change": 1,
                                                 "operation": "add"
                                             }
@@ -1804,13 +1681,13 @@
             "conditions": [
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_wet_cd",
+                    "resource": "ponyorigins:common/flight/main_wet_cd",
                     "comparison": ">",
                     "compare_to": 0
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_ice_cd",
+                    "resource": "ponyorigins:common/flight/main_ice_cd",
                     "comparison": ">",
                     "compare_to": 0
                 }
@@ -1827,7 +1704,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -1894,7 +1771,7 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": -1,
                                     "operation": "add"
                                 },
@@ -1920,7 +1797,7 @@
                                     },
                                     "if_action": {
                                         "type": "origins:change_resource",
-                                        "resource": "*:*_wet_cd",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
                                         "change": 1,
                                         "operation": "add"
                                     }
@@ -1944,7 +1821,7 @@
                                 "conditions": [
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_ice_cd",
+                                        "resource": "ponyorigins:common/flight/main_ice_cd",
                                         "comparison": ">",
                                         "compare_to": 0
                                     },
@@ -1971,7 +1848,7 @@
                                 "conditions": [
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_ice_cd",
+                                        "resource": "ponyorigins:common/flight/main_ice_cd",
                                         "comparison": ">",
                                         "compare_to": 0
                                     },
@@ -2004,7 +1881,7 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": -1,
                                     "operation": "add"
                                 },
@@ -2030,7 +1907,7 @@
                                     },
                                     "if_action": {
                                         "type": "origins:change_resource",
-                                        "resource": "*:*_wet_cd",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
                                         "change": 1,
                                         "operation": "add"
                                     }
@@ -2051,7 +1928,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -2092,7 +1969,7 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": -1,
                                     "operation": "add"
                                 },
@@ -2118,7 +1995,7 @@
                                     },
                                     "if_action": {
                                         "type": "origins:change_resource",
-                                        "resource": "*:*_wet_cd",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
                                         "change": 1,
                                         "operation": "add"
                                     }
@@ -2139,7 +2016,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -2180,7 +2057,7 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": -1,
                                     "operation": "add"
                                 },
@@ -2206,7 +2083,7 @@
                                     },
                                     "if_action": {
                                         "type": "origins:change_resource",
-                                        "resource": "*:*_wet_cd",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
                                         "change": 1,
                                         "operation": "add"
                                     }
@@ -2227,7 +2104,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -2246,7 +2123,7 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
@@ -2272,7 +2149,7 @@
                                 },
                                 "if_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "change": 1,
                                     "operation": "add"
                                 }
@@ -2289,13 +2166,13 @@
                                 "conditions": [
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_wet_cd",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
                                         "comparison": ">",
                                         "compare_to": 0
                                     },
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_ice_cd",
+                                        "resource": "ponyorigins:common/flight/main_ice_cd",
                                         "comparison": ">",
                                         "compare_to": 0
                                     }
@@ -2312,13 +2189,13 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": 0,
                                 "operation": "set"
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "change": 0,
                                 "operation": "set"
                             },
@@ -2348,7 +2225,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -2395,13 +2272,13 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "change": -1,
                                     "operation": "add"
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": 1,
                                     "operation": "add"
                                 }
@@ -2421,7 +2298,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -2468,13 +2345,13 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_wet_cd",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
                                     "change": -1,
                                     "operation": "add"
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_ice_cd",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
                                     "change": 1,
                                     "operation": "add"
                                 }
@@ -2494,7 +2371,7 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
@@ -2519,13 +2396,13 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_wet_cd",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
                                 "change": -1,
                                 "operation": "add"
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_ice_cd",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
                                 "change": 1,
                                 "operation": "add"
                             }
@@ -2547,7 +2424,7 @@
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_ice_cd",
+                    "resource": "ponyorigins:common/flight/main_ice_cd",
                     "comparison": "<",
                     "compare_to": 100
                 }

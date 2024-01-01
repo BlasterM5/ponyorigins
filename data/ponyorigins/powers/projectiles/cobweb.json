@@ -131,7 +131,7 @@
                                                     "type": "origins:target_action",
                                                     "action": {
                                                         "type": "origins:change_resource",
-                                                        "resource": "ponyorigins:common/flight/hazards_web_cd",
+                                                        "resource": "ponyorigins:common/flight/main_web_cd",
                                                         "change": 30,
                                                         "operation": "add"
                                                     }
