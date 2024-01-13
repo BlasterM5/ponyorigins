@@ -23,6 +23,10 @@
         {
             "id": "minecraft:zombie_horse",
             "required": false
+        },
+        {
+            "id": "livingthings:elephant",
+            "required": false
         }
     ]
 }

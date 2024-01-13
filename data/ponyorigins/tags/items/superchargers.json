@@ -1,0 +1,36 @@
+{
+    "values": [
+        {
+            "id": "minecraft:enchanted_golden_apple",
+            "required": true
+        },
+        {
+            "id": "diamond_apples:enchanted_diamond_apple",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_icecream",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_iceblock",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_donut",
+            "required": false
+        },
+        {
+            "id": "simplemango:enchanted_golden_mango",
+            "required": false
+        },
+        {
+            "id": "spectrum:enchanted_golden_carrot",
+            "required": false
+        },
+        {
+            "id": "usefulfood:magicapplejuice",
+            "required": false
+        }
+    ]
+}

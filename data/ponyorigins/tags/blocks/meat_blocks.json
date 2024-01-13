@@ -11,6 +11,26 @@
         {
             "id": "meadow:roasted_ham",
             "required": false
+        },
+        {
+            "id": "placeable_food:pizza_pepperoni",
+            "required": false
+        },
+        {
+            "id": "placeable_food:pizza_deluxe",
+            "required": false
+        },
+        {
+            "id": "placeable_food:hs",
+            "required": false
+        },
+        {
+            "id": "placeable_food:sandwich_mix",
+            "required": false
+        },
+        {
+            "id": "placeable_food:big_hamburger",
+            "required": false
         }
     ]
 }

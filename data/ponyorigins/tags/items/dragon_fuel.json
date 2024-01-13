@@ -1,43 +1,39 @@
 {
     "values": [
         {
-            "id": "minecraft:cat",
+            "id": "#minecraft:coals",
             "required": false
         },
         {
-            "id": "minecraft:llama",
+            "id": "#c:coals",
             "required": false
         },
         {
-            "id": "minecraft:parrot",
+            "id": "minecraft:blaze_powder",
             "required": false
         },
         {
-            "id": "minecraft:trader_llama",
+            "id": "enchanted-eats:lava_soup",
             "required": false
         },
         {
-            "id": "minecraft:wolf",
+            "id": "enchanted-eats:lava_soup",
             "required": false
         },
         {
-            "id": "mobcatalog:stonemaw",
+            "id": "enchanted-eats:netherwart_noodles",
             "required": false
         },
         {
-            "id": "livingthings:owl",
+            "id": "foodtxf:glass_of_lava",
             "required": false
         },
         {
-            "id": "livingthings:monkey",
+            "id": "#ponyorigins:nether_fishes",
             "required": false
         },
         {
-            "id": "livingthings:baby_ender_dragon",
-            "required": false
-        },
-        {
-            "id": "friendsandfoes:glare",
+            "id": "spectrum:pure_coal",
             "required": false
         }
     ]

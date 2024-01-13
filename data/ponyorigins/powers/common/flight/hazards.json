@@ -7,35 +7,9 @@
     "set_wing_type": {
         "type": "origins:action_over_time",
         "interval": 20,
-        "rising_action": {
+        "entity_action": {
             "type": "origins:if_else_list",
             "actions": [
-                {
-                    "condition": {
-                        "inverted": true,
-                        "type": "origins:or",
-                        "conditions": [
-                            {
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/wings/waterproof"
-                            },
-                            {
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/wings/insectoid"
-                            },
-                            {
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/wings/membraneous"
-                            }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_wing_type",
-                        "change": 0,
-                        "operation": "set"
-                    }
-                },
                 {
                     "condition": {
                         "type": "origins:power",
@@ -69,6 +43,34 @@
                         "type": "origins:change_resource",
                         "resource": "*:*_wing_type",
                         "change": 3,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "inverted": true,
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/waterproof"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/insectoid"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/wings/membraneous"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_wing_type",
+                        "change": 0,
                         "operation": "set"
                     }
                 }
@@ -640,8 +642,8 @@
                                 "condition": {
                                     "type": "origins:resource",
                                     "resource": "*:*_wing_type",
-                                    "comparison": "==",
-                                    "compare_to": 2
+                                    "comparison": ">",
+                                    "compare_to": 0
                                 },
                                 "if_action": {
                                     "type": "origins:change_resource",
@@ -988,23 +990,6 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_wing_type",
-                                "comparison": "!=",
-                                "compare_to": 1
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_wing_type",
-                                "comparison": "!=",
-                                "compare_to": 3
-                            }
-                        ]
-                    },
-                    {
                         "inverted": true,
                         "type": "origins:in_block",
                         "block_condition": {
@@ -1062,10 +1047,45 @@
                                     ]
                                 },
                                 "action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/flight/main_wet_cd",
-                                    "change": 1,
-                                    "operation": "add"
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:resource",
+                                                "resource": "*:*_wing_type",
+                                                "comparison": "==",
+                                                "compare_to": 0
+                                            },
+                                            {
+                                                "type": "origins:resource",
+                                                "resource": "*:*_wing_type",
+                                                "comparison": "==",
+                                                "compare_to": 2
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                        "change": 1,
+                                        "operation": "add"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 40
+                                        },
+                                        "if_action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
+                                            "change": 1,
+                                            "operation": "add"
+                                        }
+                                    }
                                 }
                             },
                             {
@@ -1104,10 +1124,45 @@
                                                 "operation": "set"
                                             },
                                             {
-                                                "type": "origins:change_resource",
-                                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                                "change": 1,
-                                                "operation": "add"
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_wing_type",
+                                                            "comparison": "==",
+                                                            "compare_to": 0
+                                                        },
+                                                        {
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_wing_type",
+                                                            "comparison": "==",
+                                                            "compare_to": 2
+                                                        }
+                                                    ]
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                    "change": 1,
+                                                    "operation": "add"
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "type": "origins:resource",
+                                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                        "comparison": "<=",
+                                                        "compare_to": 40
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:change_resource",
+                                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                        "change": 1,
+                                                        "operation": "add"
+                                                    }
+                                                }
                                             }
                                         ]
                                     },
@@ -1155,10 +1210,45 @@
                                                 "operation": "set"
                                             },
                                             {
-                                                "type": "origins:change_resource",
-                                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                                "change": 1,
-                                                "operation": "add"
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_wing_type",
+                                                            "comparison": "==",
+                                                            "compare_to": 0
+                                                        },
+                                                        {
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_wing_type",
+                                                            "comparison": "==",
+                                                            "compare_to": 2
+                                                        }
+                                                    ]
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                    "change": 1,
+                                                    "operation": "add"
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "type": "origins:resource",
+                                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                        "comparison": "<=",
+                                                        "compare_to": 40
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:change_resource",
+                                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                        "change": 1,
+                                                        "operation": "add"
+                                                    }
+                                                }
                                             }
                                         ]
                                     },
@@ -1172,10 +1262,32 @@
                             },
                             {
                                 "condition": {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/flight/main_wet_cd",
-                                    "comparison": "<=",
-                                    "compare_to": 80
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
+                                            "comparison": "<=",
+                                            "compare_to": 80
+                                        },
+                                        {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_wing_type",
+                                                    "comparison": "==",
+                                                    "compare_to": 0
+                                                },
+                                                {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_wing_type",
+                                                    "comparison": "==",
+                                                    "compare_to": 2
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 "action": {
                                     "type": "origins:if_else",
@@ -1224,23 +1336,6 @@
                             "fluid": "minecraft:water"
                         },
                         {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_wing_type",
-                                    "comparison": "!=",
-                                    "compare_to": 1
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_wing_type",
-                                    "comparison": "!=",
-                                    "compare_to": 3
-                                }
-                            ]
-                        },
-                        {
                             "inverted": true,
                             "type": "origins:in_block",
                             "block_condition": {
@@ -1268,10 +1363,34 @@
                         "operation": "add"
                     },
                     "else_action": {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/flight/main_wet_cd",
-                        "change": 2,
-                        "operation": "add"
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_wing_type",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "ponyorigins:common/flight/main_wet_cd",
+                            "change": 2,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
+                                "comparison": "<=",
+                                "compare_to": 80
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
+                                "change": 2,
+                                "operation": "add"
+                            }
+                        }
                     }
                 }
             }
@@ -1776,31 +1895,10 @@
                                     "operation": "add"
                                 },
                                 {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "inverted": true,
-                                        "type": "origins:or",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 1
-                                            },
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 3
-                                            }
-                                        ]
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "ponyorigins:common/flight/main_wet_cd",
-                                        "change": 1,
-                                        "operation": "add"
-                                    }
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                    "change": 1,
+                                    "operation": "add"
                                 }
                             ]
                         },
@@ -1886,31 +1984,10 @@
                                     "operation": "add"
                                 },
                                 {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "inverted": true,
-                                        "type": "origins:or",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 1
-                                            },
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 3
-                                            }
-                                        ]
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "ponyorigins:common/flight/main_wet_cd",
-                                        "change": 1,
-                                        "operation": "add"
-                                    }
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                    "change": 1,
+                                    "operation": "add"
                                 }
                             ]
                         },
@@ -1974,31 +2051,10 @@
                                     "operation": "add"
                                 },
                                 {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "inverted": true,
-                                        "type": "origins:or",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 1
-                                            },
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 3
-                                            }
-                                        ]
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "ponyorigins:common/flight/main_wet_cd",
-                                        "change": 1,
-                                        "operation": "add"
-                                    }
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                    "change": 1,
+                                    "operation": "add"
                                 }
                             ]
                         },
@@ -2062,31 +2118,10 @@
                                     "operation": "add"
                                 },
                                 {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "inverted": true,
-                                        "type": "origins:or",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 1
-                                            },
-                                            {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_wing_type",
-                                                "comparison": "==",
-                                                "compare_to": 3
-                                            }
-                                        ]
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "ponyorigins:common/flight/main_wet_cd",
-                                        "change": 1,
-                                        "operation": "add"
-                                    }
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                    "change": 1,
+                                    "operation": "add"
                                 }
                             ]
                         },
@@ -2128,31 +2163,10 @@
                                 "operation": "add"
                             },
                             {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:or",
-                                    "conditions": [
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_wing_type",
-                                            "comparison": "==",
-                                            "compare_to": 1
-                                        },
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_wing_type",
-                                            "comparison": "==",
-                                            "compare_to": 3
-                                        }
-                                    ]
-                                },
-                                "if_action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/flight/main_wet_cd",
-                                    "change": 1,
-                                    "operation": "add"
-                                }
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
+                                "change": 1,
+                                "operation": "add"
                             }
                         ]
                     }

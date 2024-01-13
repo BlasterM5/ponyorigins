@@ -1,6 +1,6 @@
 {
     "name": "Strong Arms",
-    "description": "You naturally punch harder, doing a little more damage, breaking through blocks barehanded faster, and knocking enemies back.",
+    "description": "You naturally punch harder, doing a little more damage, breaking through blocks barehanded faster, and knocking enemies back.\n\nCharge up a windup punch to smash your target with a powerful, block-breaking hit.",
     "badges": [
         {
             "type": "origins:tooltip",

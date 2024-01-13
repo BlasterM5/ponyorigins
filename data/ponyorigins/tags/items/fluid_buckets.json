@@ -19,6 +19,10 @@
         {
             "id": "ad_astra:cryo_fuel_bucket",
             "required": false
+        },
+        {
+            "id": "oretastic:oil_bucket",
+            "required": false
         }
     ]
 }

@@ -1,0 +1,52 @@
+{
+    "values": [
+        {
+            "id": "minecraft:barrier",
+            "required": true
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:obsidianfish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:searing_cod",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:bonefish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:wither_bonefish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:blazefish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:magmacubefish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:glowdine",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:soulsucker",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:fortress_grouper",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:eyeball_fish",
+            "required": false
+        }
+    ]
+}

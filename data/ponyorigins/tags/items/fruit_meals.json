@@ -135,6 +135,946 @@
         {
             "id": "frightsdelight:cookie_soul_berry",
             "required": false
+        },
+        {
+            "id": "spectrum:bodacious_berry_bar",
+            "required": false
+        },
+        {
+            "id": "foodtxf:glass_of_mixed_juice",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berry_juice",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberry_juice",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberry_juice",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berry_juice",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berry_juice",
+            "required": false
+        },
+        {
+            "id": "actual_cherries:cherry_pie",
+            "required": false
+        },
+        {
+            "id": "beachparty:sweetberry_sundae",
+            "required": false
+        },
+        {
+            "id": "beachparty:sweetberry_milkshake",
+            "required": false
+        },
+        {
+            "id": "beachparty:coconut_milkshake",
+            "required": false
+        },
+        {
+            "id": "beachparty:coconut_sundae",
+            "required": false
+        },
+        {
+            "id": "beachparty:icecream_coconut",
+            "required": false
+        },
+        {
+            "id": "beachparty:icecream_melon",
+            "required": false
+        },
+        {
+            "id": "beachparty:icecream_sweetberries",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:snack_salad",
+            "required": false
+        },
+        {
+            "id": "breakfast:jam_toast",
+            "required": false
+        },
+        {
+            "id": "breakfast:jam_sandwich",
+            "required": false
+        },
+        {
+            "id": "cactusforage:cactus_berry_fruitcake",
+            "required": false
+        },
+        {
+            "id": "cactusforage:cactus_berry_muffin",
+            "required": false
+        },
+        {
+            "id": "cactusforage:mojave_pastry",
+            "required": false
+        },
+        {
+            "id": "cactusforage:prickly_pear_pastry",
+            "required": false
+        },
+        {
+            "id": "cactusforage:strawberry_hedgehog_muffin",
+            "required": false
+        },
+        {
+            "id": "cactusforage:prickly_pear_sweetroll",
+            "required": false
+        },
+        {
+            "id": "cactusforage:hedgehog_pie",
+            "required": false
+        },
+        {
+            "id": "cactusforage:prickly_pear_pie",
+            "required": false
+        },
+        {
+            "id": "cakedelight:eggs_with_tomato",
+            "required": false
+        },
+        {
+            "id": "cakedelight:tomato_egg_noodle_soup",
+            "required": false
+        },
+        {
+            "id": "cakedelight:tomatoes_with_tomatoes",
+            "required": false
+        },
+        {
+            "id": "cell:smoked_apple",
+            "required": false
+        },
+        {
+            "id": "cell:cheese_pizza",
+            "required": false
+        },
+        {
+            "id": "clutter:baked_thornbloom_pear",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:apple_ice_cream",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:melon_ice_cream",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:pumpkin_ice_cream",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:sweet_berry_ice_cream",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:glow_berry_ice_cream",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:baked_apple",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:apple_pie",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:sweet_berry_pie",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:glow_berry_pie",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:glow_berry_bread",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:sweet_berry_bread",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:candied_apple",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:candied_melon_slice",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:sweet_berry_candy",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:sweet_berry_candy",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:glow_ramen",
+            "required": false
+        },
+        {
+            "id": "culinaire:apple_pie",
+            "required": false
+        },
+        {
+            "id": "culinaire:sweet_berry_pie",
+            "required": false
+        },
+        {
+            "id": "culinaire:salad",
+            "required": false
+        },
+        {
+            "id": "diamond_apples:diamond_apple",
+            "required": false
+        },
+        {
+            "id": "diamond_apples:enchanted_diamond_apple",
+            "required": false
+        },
+        {
+            "id": "#vinery:wine",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_apple",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_gold_apple",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_apricot",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_banana",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_cherries",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_coconut",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_cranberry",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_date",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_fig",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_gogi",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_mango",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_papaya",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:raisins",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_tomato",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:dried_watermelon",
+            "required": false
+        },
+        {
+            "id": "enhancermod:glow_salad",
+            "required": false
+        },
+        {
+            "id": "fab:baked_apple",
+            "required": false
+        },
+        {
+            "id": "fab:baked_pumpkin",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:tomato_sauce",
+            "required": false
+        },
+        {
+            "id": "foodplusid:apple_pie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:sweet_berries_pie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:glow_berries_pie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:pumpkin_soup",
+            "required": false
+        },
+        {
+            "id": "foodtxf:golden_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "foodtxf:glistering_pumpkin_slice",
+            "required": false
+        },
+        {
+            "id": "foodtxf:mixed_salad",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_chorus_fruit",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_glow_berries",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_pumpkin_pie",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "izzydonuts:berrymuffin",
+            "required": false
+        },
+        {
+            "id": "jam_mod:sugaredstrawberrys",
+            "required": false
+        },
+        {
+            "id": "jam_mod:strawberrytoast",
+            "required": false
+        },
+        {
+            "id": "jam_mod:sandwich",
+            "required": false
+        },
+        {
+            "id": "more_food:sweet_berry_icecream",
+            "required": false
+        },
+        {
+            "id": "more_food:glow_berry_icecream",
+            "required": false
+        },
+        {
+            "id": "more_food:golden_apple_icecream",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_icecream",
+            "required": false
+        },
+        {
+            "id": "more_food:sweet_berry_donut",
+            "required": false
+        },
+        {
+            "id": "more_food:glow_berry_donut",
+            "required": false
+        },
+        {
+            "id": "more_food:golden_apple_donut",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_donut",
+            "required": false
+        },
+        {
+            "id": "more_food:sweet_berry_icing",
+            "required": false
+        },
+        {
+            "id": "more_food:glow_berry_icing",
+            "required": false
+        },
+        {
+            "id": "more_food:golden_apple_icing",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_icing",
+            "required": false
+        },
+        {
+            "id": "more_food:sweet_berry_iceblock",
+            "required": false
+        },
+        {
+            "id": "more_food:glow_berry_iceblock",
+            "required": false
+        },
+        {
+            "id": "more_food:golden_apple_iceblock",
+            "required": false
+        },
+        {
+            "id": "more_food:enchanted_golden_apple_iceblock",
+            "required": false
+        },
+        {
+            "id": "more_food:toffee_apple",
+            "required": false
+        },
+        {
+            "id": "more_food:fairy_floss",
+            "required": false
+        },
+        {
+            "id": "more_food:cooked_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "more_food:sweet_berry_paste",
+            "required": false
+        },
+        {
+            "id": "more_food:gummy_bear",
+            "required": false
+        },
+        {
+            "id": "more_food:gummy_worm",
+            "required": false
+        },
+        {
+            "id": "more_food:sour_gummy_worm",
+            "required": false
+        },
+        {
+            "id": "morefood:netherite_apple",
+            "required": false
+        },
+        {
+            "id": "morefood:veganburger",
+            "required": false
+        },
+        {
+            "id": "morefood:jelly_sandwich",
+            "required": false
+        },
+        {
+            "id": "morefood:jam",
+            "required": false
+        },
+        {
+            "id": "morefood:banana_ice_cream",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_ice_cream",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_donut",
+            "required": false
+        },
+        {
+            "id": "morefood:apple_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:lemon_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:plum_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:berry_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:apple_raspberry_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_jelly",
+            "required": false
+        },
+        {
+            "id": "morefood:orange_jelly",
+            "required": false
+        },
+        {
+            "id": "morefood:ice_cream_bowl",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_milkshake",
+            "required": false
+        },
+        {
+            "id": "morefood:banana_milkshake",
+            "required": false
+        },
+        {
+            "id": "morefood:cider",
+            "required": false
+        },
+        {
+            "id": "morefood:red_wine",
+            "required": false
+        },
+        {
+            "id": "morefood:white_wine",
+            "required": false
+        },
+        {
+            "id": "morefood:blueberry_syrup",
+            "required": false
+        },
+        {
+            "id": "morefood:breadsticks_with_glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:breadsticks_with_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:chocolate_banana_muffin",
+            "required": false
+        },
+        {
+            "id": "morefood:crackers_with_glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:crackers_with_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:cut_bread_with_glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:cut_bread_with_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:dried_cranberries",
+            "required": false
+        },
+        {
+            "id": "morefood:dried_raisens",
+            "required": false
+        },
+        {
+            "id": "morefood:glowberry_jelly_sandwich",
+            "required": false
+        },
+        {
+            "id": "morefood:peanut_butter_jelly_sandwich",
+            "required": false
+        },
+        {
+            "id": "morefood:glowberry_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:guacamole",
+            "required": false
+        },
+        {
+            "id": "morefood:dark_chocolate_covered_apple",
+            "required": false
+        },
+        {
+            "id": "morefood:milk_chocolate_covered_apple",
+            "required": false
+        },
+        {
+            "id": "morefood:white_chocolate_covered_apple",
+            "required": false
+        },
+        {
+            "id": "morefood:raspberry_syrup",
+            "required": false
+        },
+        {
+            "id": "morefood:trail_mix",
+            "required": false
+        },
+        {
+            "id": "naturalist:glow_goop",
+            "required": false
+        },
+        {
+            "id": "nexivitysmod:odium_apple",
+            "required": false
+        },
+        {
+            "id": "nutritious-feast:apple_pie",
+            "required": false
+        },
+        {
+            "id": "nutritious-feast:sweet_berry_pie",
+            "required": false
+        },
+        {
+            "id": "nutritious-feast:glow_berry_pie",
+            "required": false
+        },
+        {
+            "id": "nutritious-feast:chorus_pie",
+            "required": false
+        },
+        {
+            "id": "pearfection:pear_tart",
+            "required": false
+        },
+        {
+            "id": "pizzas:pizza_slice",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berries_cooked",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berries_cocoa_covered",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berries_honey_dipped",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berry_biscuit",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berry_muffin",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berry_tart",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berry_jam",
+            "required": false
+        },
+        {
+            "id": "pureberries:sweet_berry_jam_sandwich",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberries_cooked",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberries_cocoa_covered",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberries_honey_dipped",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberry_biscuit",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberry_muffin",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberry_tart",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberry_jam",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberry_jam_sandwich",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberries_cooked",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberries_cocoa_covered",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberries_honey_dipped",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberry_biscuit",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberry_muffin",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberry_tart",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberry_jam",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberry_jam_sandwich",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berries_cooked",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berries_cocoa_covered",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berries_honey_dipped",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berry_biscuit",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berry_muffin",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berry_tart",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berry_jam",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berry_jam_sandwich",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berries_cooked",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berries_cocoa_covered",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berries_honey_dipped",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berry_biscuit",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berry_muffin",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berry_tart",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berry_jam",
+            "required": false
+        },
+        {
+            "id": "pureberries:glow_berry_jam_sandwich",
+            "required": false
+        },
+        {
+            "id": "simplemango:golden_mango",
+            "required": false
+        },
+        {
+            "id": "simplemango:enchanted_golden_mango",
+            "required": false
+        },
+        {
+            "id": "the_food_update:sweetberry_jam",
+            "required": false
+        },
+        {
+            "id": "the_food_update:toast_with_sweetberry_jam",
+            "required": false
+        },
+        {
+            "id": "the_food_update:toast_with_glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "the_food_update:glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "travel_friendly_food:strawberry_muffin",
+            "required": false
+        },
+        {
+            "id": "travel_friendly_food:strawberry_muffin",
+            "required": false
+        },
+        {
+            "id": "tropicana:pineapple_slice",
+            "required": false
+        },
+        {
+            "id": "tropicana:pineapple_heart",
+            "required": false
+        },
+        {
+            "id": "tropicana:pina_colada",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:apple_pie",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:berry_pie",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:blackberry_pie",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:blueberry_pie",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:cherry_pie",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:berry_ice_cream",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:neapolitan_ice_cream",
+            "required": false
+        },
+        {
+            "id": "usefulfood:caramelapple",
+            "required": false
+        },
+        {
+            "id": "usefulfood:pumpkinbread",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejambiscuit",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejambiscuit",
+            "required": false
+        },
+        {
+            "id": "usefulfood:magicicecream",
+            "required": false
+        },
+        {
+            "id": "usefulfood:magicapplejuice",
+            "required": false
+        },
+        {
+            "id": "usefulfood:magicfruitsalad",
+            "required": false
+        },
+        {
+            "id": "usefulfood:appleicecream",
+            "required": false
+        },
+        {
+            "id": "usefulfood:meloncream",
+            "required": false
+        },
+        {
+            "id": "usefulfood:chocolateapple",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejelly",
+            "required": false
+        },
+        {
+            "id": "usefulfood:melonjelly",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejampancake",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejamtoast",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejam",
+            "required": false
+        },
+        {
+            "id": "usefulfood:melonjampancake",
+            "required": false
+        },
+        {
+            "id": "usefulfood:melonjamtoast",
+            "required": false
+        },
+        {
+            "id": "usefulfood:melonjam",
+            "required": false
         }
     ]
 }

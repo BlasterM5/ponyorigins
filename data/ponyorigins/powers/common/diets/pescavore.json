@@ -14,8 +14,13 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Eating Food: Saturation -50 percent",
+            "text": "Eating Non-Seafood: Saturation -50 percent",
             "sprite": "minecraft:textures/item/bread.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eating off-diet accumulates malnutrition risks",
+            "sprite": "minecraft:textures/item/bone.png"
         },
         {
             "type": "origins:tooltip",
@@ -44,7 +49,7 @@
                     "inverted": true,
                     "type": "origins:ingredient",
                     "ingredient": {
-                        "item": "minecraft:pufferfish"
+                        "tag": "ponyorigins:pufferfishes"
                     }
                 }
             ]
@@ -56,6 +61,12 @@
         "saturation_modifier": {
             "operation": "multiply_total",
             "value": 0.5
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_nutrition",
+            "change": 1,
+            "operation": "add"
         },
         "prevent_effects": true
     },
@@ -76,6 +87,12 @@
         "saturation_modifier": {
             "operation": "multiply_total",
             "value": 0.5
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_nutrition",
+            "change": 1,
+            "operation": "add"
         }
     },
     "not_seafood": {
@@ -102,209 +119,12 @@
         "saturation_modifier": {
             "operation": "multiply_total",
             "value": -0.5
-        }
-    },
-    "diet_risk": {
-        "type": "origins:modify_food",
-        "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:meat"
-                        },
-                        {
-                            "type": "origins:ingredient",
-                            "ingredient": [
-                                {
-                                    "tag": "c:raw_meat"
-                                },
-                                {
-                                    "tag": "c:cooked_meat"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:food"
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:ingredient",
-                            "ingredient": [
-                                {
-                                    "tag": "minecraft:fishes"
-                                },
-                                {
-                                    "tag": "c:raw_fishes"
-                                },
-                                {
-                                    "tag": "c:cooked_fishes"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:pufferfish"
-                            }
-                        }
-                    ]
-                }
-            ]
         },
         "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
-                {
-                    "condition": {
-                        "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
-                    },
-                    "action": {
-                        "type": "origins:chance",
-                        "chance": 0.5,
-                        "action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:poison",
-                                        "duration": 500,
-                                        "amplifier": 0,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    }
-                                },
-                                {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "inverted": true,
-                                        "type": "origins:advancement",
-                                        "advancement": "ponyorigins:special/sick_meat"
-                                    },
-                                    "if_action": {
-                                        "type": "origins:execute_command",
-                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
-                                    }
-                                }
-                            ]
-                        },
-                        "fail_action": {
-                            "type": "origins:chance",
-                            "chance": 0.2,
-                            "action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 1000,
-                                    "amplifier": 1,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "fail_action": {
-                                "type": "origins:chance",
-                                "chance": 0.2,
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 1000,
-                                        "amplifier": 1,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    }
-                                },
-                                "fail_action": {
-                                    "type": "origins:chance",
-                                    "chance": 0.2,
-                                    "action": {
-                                        "type": "origins:apply_effect",
-                                        "effect": {
-                                            "effect": "minecraft:mining_fatigue",
-                                            "duration": 1000,
-                                            "amplifier": 1,
-                                            "show_particles": false,
-                                            "show_icon": true
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "condition": {
-                        "inverted": true,
-                        "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
-                    },
-                    "action": {
-                        "type": "origins:chance",
-                        "chance": 0.5,
-                        "action": {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:hunger",
-                                "duration": 500,
-                                "amplifier": 0,
-                                "show_particles": false,
-                                "show_icon": true
-                            }
-                        },
-                        "fail_action": {
-                            "type": "origins:chance",
-                            "chance": 0.2,
-                            "action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 1000,
-                                    "amplifier": 0,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "fail_action": {
-                                "type": "origins:chance",
-                                "chance": 0.2,
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 1000,
-                                        "amplifier": 0,
-                                        "show_particles": false,
-                                        "show_icon": true
-                                    }
-                                },
-                                "fail_action": {
-                                    "type": "origins:chance",
-                                    "chance": 0.2,
-                                    "action": {
-                                        "type": "origins:apply_effect",
-                                        "effect": {
-                                            "effect": "minecraft:mining_fatigue",
-                                            "duration": 1000,
-                                            "amplifier": 0,
-                                            "show_particles": false,
-                                            "show_icon": true
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            ]
+            "type": "origins:change_resource",
+            "resource": "*:*_nutrition",
+            "change": -1,
+            "operation": "add"
         }
     },
     "diet_risk_blocks": {
@@ -362,46 +182,111 @@
                             ]
                         },
                         "fail_action": {
-                            "type": "origins:chance",
-                            "chance": 0.2,
-                            "action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 1000,
-                                    "amplifier": 1,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "fail_action": {
-                                "type": "origins:chance",
-                                "chance": 0.2,
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 1000,
-                                        "amplifier": 1,
-                                        "show_particles": false,
-                                        "show_icon": true
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:slowness",
+                                                        "duration": 1000,
+                                                        "amplifier": 1,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:special/sick_meat"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     }
                                 },
-                                "fail_action": {
-                                    "type": "origins:chance",
-                                    "chance": 0.2,
-                                    "action": {
-                                        "type": "origins:apply_effect",
-                                        "effect": {
-                                            "effect": "minecraft:mining_fatigue",
-                                            "duration": 1000,
-                                            "amplifier": 1,
-                                            "show_particles": false,
-                                            "show_icon": true
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:weakness",
+                                                        "duration": 1000,
+                                                        "amplifier": 1,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:special/sick_meat"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:mining_fatigue",
+                                                        "duration": 1000,
+                                                        "amplifier": 1,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:special/sick_meat"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 }
-                            }
+                            ]
                         }
                     }
                 },
@@ -425,46 +310,60 @@
                             }
                         },
                         "fail_action": {
-                            "type": "origins:chance",
-                            "chance": 0.2,
-                            "action": {
-                                "type": "origins:apply_effect",
-                                "effect": {
-                                    "effect": "minecraft:slowness",
-                                    "duration": 1000,
-                                    "amplifier": 0,
-                                    "show_particles": false,
-                                    "show_icon": true
-                                }
-                            },
-                            "fail_action": {
-                                "type": "origins:chance",
-                                "chance": 0.2,
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 1000,
-                                        "amplifier": 0,
-                                        "show_particles": false,
-                                        "show_icon": true
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:slowness",
+                                                "duration": 1000,
+                                                "amplifier": 0,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        }
                                     }
                                 },
-                                "fail_action": {
-                                    "type": "origins:chance",
-                                    "chance": 0.2,
-                                    "action": {
-                                        "type": "origins:apply_effect",
-                                        "effect": {
-                                            "effect": "minecraft:mining_fatigue",
-                                            "duration": 1000,
-                                            "amplifier": 0,
-                                            "show_particles": false,
-                                            "show_icon": true
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:weakness",
+                                                "duration": 1000,
+                                                "amplifier": 0,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:mining_fatigue",
+                                                "duration": 1000,
+                                                "amplifier": 0,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
                                         }
                                     }
                                 }
-                            }
+                            ]
                         }
                     }
                 }
@@ -485,5 +384,569 @@
             "saturation": 0.5,
             "meat": false
         }
+    },
+    "land_meat_risk": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:meat"
+                        },
+                        {
+                            "type": "origins:ingredient",
+                            "ingredient": [
+                                {
+                                    "tag": "c:raw_meat"
+                                },
+                                {
+                                    "tag": "c:cooked_meat"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:food"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "minecraft:fishes"
+                        },
+                        {
+                            "tag": "c:raw_fishes"
+                        },
+                        {
+                            "tag": "c:cooked_fishes"
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:status_effect",
+                        "effect": "minecraft:hunger"
+                    },
+                    "action": {
+                        "type": "origins:chance",
+                        "chance": 0.5,
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:poison",
+                                        "duration": 500,
+                                        "amplifier": 0,
+                                        "show_particles": false,
+                                        "show_icon": true
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:advancement",
+                                        "advancement": "ponyorigins:special/sick_meat"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                    }
+                                }
+                            ]
+                        },
+                        "fail_action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:slowness",
+                                                        "duration": 1000,
+                                                        "amplifier": 1,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:special/sick_meat"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:weakness",
+                                                        "duration": 1000,
+                                                        "amplifier": 1,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:special/sick_meat"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:mining_fatigue",
+                                                        "duration": 1000,
+                                                        "amplifier": 1,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "inverted": true,
+                                                        "type": "origins:advancement",
+                                                        "advancement": "ponyorigins:special/sick_meat"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "advancement grant @s until ponyorigins:special/sick_meat"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:status_effect",
+                        "effect": "minecraft:hunger"
+                    },
+                    "action": {
+                        "type": "origins:chance",
+                        "chance": 0.5,
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:hunger",
+                                "duration": 500,
+                                "amplifier": 0,
+                                "show_particles": false,
+                                "show_icon": true
+                            }
+                        },
+                        "fail_action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:slowness",
+                                                "duration": 1000,
+                                                "amplifier": 0,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:weakness",
+                                                "duration": 1000,
+                                                "amplifier": 0,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:chance",
+                                        "chance": 0.2,
+                                        "action": {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:mining_fatigue",
+                                                "duration": 1000,
+                                                "amplifier": 0,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "off_diet_risk": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "minecraft:fishes"
+                        },
+                        {
+                            "tag": "c:raw_fishes"
+                        },
+                        {
+                            "tag": "c:cooked_fishes"
+                        },
+                        {
+                            "tag": "c:seafood"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:food"
+                }
+            ]
+        },
+        "food_modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_nutrition",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_nutrition",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:chance",
+                                "chance": 0.25,
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:blindness",
+                                                "duration": 1000,
+                                                "amplifier": 5,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "inverted": true,
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:special/sick_plants"
+                                            },
+                                            "if_action": {
+                                                "type": "origins:execute_command",
+                                                "command": "advancement grant @s until ponyorigins:special/sick_plants"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "fail_action": {
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:chance",
+                                                "chance": 0.1,
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effect": {
+                                                                "effect": "minecraft:slowness",
+                                                                "duration": 1000,
+                                                                "amplifier": 1,
+                                                                "show_particles": false,
+                                                                "show_icon": true
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "inverted": true,
+                                                                "type": "origins:advancement",
+                                                                "advancement": "ponyorigins:special/sick_plants"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "advancement grant @s until ponyorigins:special/sick_plants"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:chance",
+                                                "chance": 0.1,
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effect": {
+                                                                "effect": "minecraft:weakness",
+                                                                "duration": 1000,
+                                                                "amplifier": 1,
+                                                                "show_particles": false,
+                                                                "show_icon": true
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "inverted": true,
+                                                                "type": "origins:advancement",
+                                                                "advancement": "ponyorigins:special/sick_plants"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "advancement grant @s until ponyorigins:special/sick_plants"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:chance",
+                                                "chance": 0.1,
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effect": {
+                                                                "effect": "minecraft:mining_fatigue",
+                                                                "duration": 1000,
+                                                                "amplifier": 1,
+                                                                "show_particles": false,
+                                                                "show_icon": true
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "inverted": true,
+                                                                "type": "origins:advancement",
+                                                                "advancement": "ponyorigins:special/sick_plants"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "advancement grant @s until ponyorigins:special/sick_plants"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:status_effect",
+                                        "effect": "minecraft:hunger"
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nutrition",
+                                        "comparison": "<",
+                                        "compare_to": 4
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:chance",
+                                "chance": 0.25,
+                                "action": {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:hunger",
+                                        "duration": 500,
+                                        "amplifier": 0,
+                                        "show_particles": false,
+                                        "show_icon": true
+                                    }
+                                },
+                                "fail_action": {
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:chance",
+                                                "chance": 0.1,
+                                                "action": {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:slowness",
+                                                        "duration": 1000,
+                                                        "amplifier": 0,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:chance",
+                                                "chance": 0.1,
+                                                "action": {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:weakness",
+                                                        "duration": 1000,
+                                                        "amplifier": 0,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:chance",
+                                                "chance": 0.1,
+                                                "action": {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:mining_fatigue",
+                                                        "duration": 1000,
+                                                        "amplifier": 0,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "nutrition": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 8,
+        "start_value": 8
     }
 }

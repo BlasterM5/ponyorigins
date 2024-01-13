@@ -195,6 +195,238 @@
         {
             "id": "oceansdelight:cooked_stuffed_cod",
             "required": false
+        },
+        {
+            "id": "spectrum:crawfish_cocktail",
+            "required": false
+        },
+        {
+            "id": "spectrum:fishcake",
+            "required": false
+        },
+        {
+            "id": "spectrum:kimchi",
+            "required": false
+        },
+        {
+            "id": "spectrum:bagnun",
+            "required": false
+        },
+        {
+            "id": "bca:cooked_axolotl",
+            "required": false
+        },
+        {
+            "id": "bca:boiled_axolotl",
+            "required": false
+        },
+        {
+            "id": "beachparty:cooked_mussel_meat",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:filet_o_fish",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:sushi",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:salmon_cakes",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:fish_soup",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:cod_surprise",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:seafoam_pudding",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_turtle_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_axolotl_tail",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:fried_squid_tentacle",
+            "required": false
+        },
+        {
+            "id": "enhancermod:seafood_dinner",
+            "required": false
+        },
+        {
+            "id": "fab:salt_and_pepper_squid",
+            "required": false
+        },
+        {
+            "id": "foodplusid:fish_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:salmon_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:salmon_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:fish_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodtxf:cooked_pufferfish",
+            "required": false
+        },
+        {
+            "id": "foodtxf:cooked_tropical_fish",
+            "required": false
+        },
+        {
+            "id": "foodtxf:cooked_fish_on_stick",
+            "required": false
+        },
+        {
+            "id": "foodtxf:golden_fish",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_cod",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_salmon",
+            "required": false
+        },
+        {
+            "id": "more_food:fish_and_chips",
+            "required": false
+        },
+        {
+            "id": "morefood:fried_squid",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:cooked_lava_pufferfish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:cooked_obsidianfish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:cooked_magmacubefish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:cooked_glowdine_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:cooked_soulsucker_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_lava_pufferfish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_obsidianfish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_searing_cod",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_blazefish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_magmacubefish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_glowdine",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:grilled_soulsucker",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_lava_pufferfish_stew",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_obsidianfish_stew",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_searing_cod_stew",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_blazefish_stew",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_magmacubefish_stew",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_glowdine_stew",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:baked_soulsucker_stew",
+            "required": false
+        },
+        {
+            "id": "squidcraft:cooked_shredded_squid",
+            "required": false
+        },
+        {
+            "id": "travel_friendly_food:fishand_chips",
+            "required": false
+        },
+        {
+            "id": "travel_friendly_food:sushirolls",
+            "required": false
+        },
+        {
+            "id": "usefulfood:sushi",
+            "required": false
+        },
+        {
+            "id": "usefulfood:fishsandwich",
+            "required": false
+        },
+        {
+            "id": "usefulfood:squidsandwich",
+            "required": false
+        },
+        {
+            "id": "usefulfood:cookedsquidtentacle",
+            "required": false
+        },
+        {
+            "id": "usefulfood:fishnchips",
+            "required": false
+        },
+        {
+            "id": "usefulfood:fishsoup",
+            "required": false
         }
     ]
 }

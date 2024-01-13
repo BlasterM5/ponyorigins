@@ -14,6 +14,7 @@
         "ponyorigins:common/flight/main",
         "ponyorigins:common/flight/hazards",
         "ponyorigins:common/wings/membraneous",
+        "ponyorigins:common/nightvision",
         "ponyorigins:common/health/armor_dragon",
         "ponyorigins:common/sounds/dragon"
     ],

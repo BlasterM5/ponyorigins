@@ -1,6 +1,6 @@
 {
     "name": "Shooting Star",
-    "description": "Channel your magic into a rocketing attack that will blast apart whatever you hit! Warning: Dangerous!",
+    "description": "Channel your energy into a rocketing attack that will blast apart whatever you hit! Warning: Dangerous!",
     "powers": [
         "ponyorigins:pegasus/rocket"
     ],

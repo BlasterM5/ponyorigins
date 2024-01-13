@@ -255,6 +255,138 @@
         {
             "id": "oceansdelight:stuffed_cod",
             "required": false
+        },
+        {
+            "id": "spectrum:faded_koi",
+            "required": false
+        },
+        {
+            "id": "bca:axolotl",
+            "required": false
+        },
+        {
+            "id": "beachparty:raw_mussel_meat",
+            "required": false
+        },
+        {
+            "id": "beachparty:raw_mussel_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_turtle_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:axolotl_tail",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:squid_tentacle",
+            "required": false
+        },
+        {
+            "id": "fab:squid",
+            "required": false
+        },
+        {
+            "id": "fab:battered_squid",
+            "required": false
+        },
+        {
+            "id": "foodtxf:clean_pufferfish",
+            "required": false
+        },
+        {
+            "id": "foodtxf:fish_on_stick",
+            "required": false
+        },
+        {
+            "id": "more_food:temaki",
+            "required": false
+        },
+        {
+            "id": "morefood:sushi",
+            "required": false
+        },
+        {
+            "id": "morefood:sashimi",
+            "required": false
+        },
+        {
+            "id": "morefood:raw_squid",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:obsidianfish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:searing_cod_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:blazefish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:magmacubefish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:glowdine_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:soulsucker_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:obsidianfish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:searing_cod_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:blazefish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:magmacubefish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:glowdine_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:soulsucker_roll",
+            "required": false
+        },
+        {
+            "id": "squidcraft:shredded_squid",
+            "required": false
+        },
+        {
+            "id": "simplekelpies:goldfin_cod",
+            "required": false
+        },
+        {
+            "id": "usefulfood:squidrtentacle",
+            "required": false
+        },
+        {
+            "id": "usefulfood:squidsushi",
+            "required": false
         }
     ]
 }

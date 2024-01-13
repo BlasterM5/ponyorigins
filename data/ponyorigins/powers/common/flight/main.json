@@ -159,12 +159,6 @@
             "operation": "set"
         }
     },
-    "wing_type": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 3,
-        "start_value": 0
-    },
     "buffer": {
         "type": "origins:resource",
         "min": 0,
@@ -360,14 +354,6 @@
             "type": "origins:set_fall_distance",
             "fall_distance": 0
         }
-    },
-    "toggle": {
-        "type": "origins:toggle",
-        "active_by_default": true,
-        "key": {
-            "key": "key.origins.primary_active"
-        },
-        "retain_state": true
     },
     "active": {
         "type": "origins:resource",
@@ -657,14 +643,18 @@
             ]
         }
     },
+    "trigger": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "retain_state": true
+    },
     "activator": {
         "condition": {
             "type": "origins:and",
             "conditions": [
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_toggle"
-                },
                 {
                     "inverted": true,
                     "type": "origins:or",
@@ -707,7 +697,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_wing_type",
+                                            "resource": "ponyorigins:common/flight/hazards_wing_type",
                                             "comparison": "==",
                                             "compare_to": 3
                                         },
@@ -723,7 +713,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:resource",
-                                            "resource": "*:*_wing_type",
+                                            "resource": "ponyorigins:common/flight/hazards_wing_type",
                                             "comparison": "!=",
                                             "compare_to": 3
                                         },
@@ -881,11 +871,15 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
                 }
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 10,
+        "interval": 1,
         "rising_action": {
             "type": "origins:change_resource",
             "resource": "*:*_active",

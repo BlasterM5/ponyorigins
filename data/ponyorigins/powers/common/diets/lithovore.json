@@ -322,7 +322,7 @@
             "type": "origins:food"
         }
     },
-    "edible_solid_fuel": {
+    "edible_dragon_fuel": {
         "condition": {
             "type": "origins:resource",
             "resource": "ponyorigins:dragon/heat_sc_triggered",
@@ -333,7 +333,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "tag": "ponyorigins:solid_fuel"
+                "tag": "ponyorigins:dragon_fuel"
             }
         },
         "food_component": {

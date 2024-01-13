@@ -89,7 +89,7 @@
                             "actions": [
                                 {
                                     "type": "origins:damage",
-                                    "amount": 2,
+                                    "amount": 4,
                                     "damage_type": "on_fire"
                                 },
                                 {

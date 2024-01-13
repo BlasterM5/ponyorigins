@@ -535,6 +535,70 @@
         {
             "id": "mythicmetals:stormyx_boots",
             "required": false
+        },
+        {
+            "id": "cell:copper_armor_helmet",
+            "required": false
+        },
+        {
+            "id": "cell:copper_armor_chestplate",
+            "required": false
+        },
+        {
+            "id": "cell:copper_armor_leggings",
+            "required": false
+        },
+        {
+            "id": "cell:copper_armor_boots",
+            "required": false
+        },
+        {
+            "id": "clutter:silver_helmet",
+            "required": false
+        },
+        {
+            "id": "clutter:silver_chestplate",
+            "required": false
+        },
+        {
+            "id": "clutter:silver_leggings",
+            "required": false
+        },
+        {
+            "id": "clutter:silver_boots",
+            "required": false
+        },
+        {
+            "id": "oretastic:titanium_helmet",
+            "required": false
+        },
+        {
+            "id": "oretastic:titanium_chestplate",
+            "required": false
+        },
+        {
+            "id": "oretastic:titanium_leggings",
+            "required": false
+        },
+        {
+            "id": "oretastic:titanium_boots",
+            "required": false
+        },
+        {
+            "id": "oretastic:steel_chestplate",
+            "required": false
+        },
+        {
+            "id": "oretastic:steel_helmet",
+            "required": false
+        },
+        {
+            "id": "oretastic:steel_leggings",
+            "required": false
+        },
+        {
+            "id": "oretastic:steel_boots",
+            "required": false
         }
     ]
 }

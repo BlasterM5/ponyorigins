@@ -527,6 +527,10 @@
         {
             "id": "diamold:diamold_block",
             "required": false
+        },
+        {
+            "id": "clutter:silver_block",
+            "required": false
         }
     ]
 }

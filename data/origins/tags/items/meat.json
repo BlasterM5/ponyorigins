@@ -825,10 +825,6 @@
             "required": false
         },
         {
-            "id": "candlelight:pizza_slice",
-            "required": false
-        },
-        {
             "id": "hybrid-aquatic:fish_meat",
             "required": false
         },
@@ -974,6 +970,842 @@
         },
         {
             "id": "frightsdelight:punch_spidereye",
+            "required": false
+        },
+        {
+            "id": "spectrum:monster_trifle",
+            "required": false
+        },
+        {
+            "id": "spectrum:crawfish_cocktail",
+            "required": false
+        },
+        {
+            "id": "spectrum:hare_roast",
+            "required": false
+        },
+        {
+            "id": "spectrum:meatloaf",
+            "required": false
+        },
+        {
+            "id": "spectrum:meatloaf_sandwich",
+            "required": false
+        },
+        {
+            "id": "spectrum:rabbit_cream_pie",
+            "required": false
+        },
+        {
+            "id": "spectrum:monster_truffle",
+            "required": false
+        },
+        {
+            "id": "spectrum:triple_meat_pot_stew",
+            "required": false
+        },
+        {
+            "id": "spectrum:chauve_souris_au_vin",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:beef_patty",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:cooked_beef_patty",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:cooked_bacon",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:raw_bacon",
+            "required": false
+        },
+        {
+            "id": "#bettermcdonaldsmod:burgers",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:mcwrap",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:chicken_mcnuggets",
+            "required": false
+        },
+        {
+            "id": "bettermcdonaldsmod:happy_meal",
+            "required": false
+        },
+        {
+            "id": "cakedelight:stewed_beef_with_tomato",
+            "required": false
+        },
+        {
+            "id": "candlelight:chicken_teriyaki",
+            "required": false
+        },
+        {
+            "id": "candlelight:fricasse",
+            "required": false
+        },
+        {
+            "id": "cheese:cheese_steak",
+            "required": false
+        },
+        {
+            "id": "cheese:cheesy_dino_nugget",
+            "required": false
+        },
+        {
+            "id": "cheese:dino_nugget",
+            "required": false
+        },
+        {
+            "id": "chococraft:chocobo_drumstick_cooked",
+            "required": false
+        },
+        {
+            "id": "clutter:raw_venison_ribs",
+            "required": false
+        },
+        {
+            "id": "clutter:cooked_venison_ribs",
+            "required": false
+        },
+        {
+            "id": "clutter:cooked_venison",
+            "required": false
+        },
+        {
+            "id": "clutter:raw_venison",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:shepherds_pie",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:cooked_spider_eye",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:monster_meatballs",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:monster_manicotti",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:bacon",
+            "required": false
+        },
+        {
+            "id": "craftycuisine:cooked_bacon",
+            "required": false
+        },
+        {
+            "id": "crockpot:crock_pot",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_equine_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_equine_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_camel_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_camel_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_bear_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_bear_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:fried_bee_wing",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:bee_wing",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_strider_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_strider_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_cat_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_cat_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_sniffer_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_sniffer_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:parrot",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_parrot",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:bat_wing",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:fried_bat_wing",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:frog_leg",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:fried_frog_leg",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_wolf_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:cooked_wolf_meat",
+            "required": false
+        },
+        {
+            "id": "enchanted-eats:blaze_skewers",
+            "required": false
+        },
+        {
+            "id": "enchanted-eats:rabbit_stew",
+            "required": false
+        },
+        {
+            "id": "enhancermod:rabbit_stew",
+            "required": false
+        },
+        {
+            "id": "enhancermod:beetroot_soup",
+            "required": false
+        },
+        {
+            "id": "fab:raw_nuggets",
+            "required": false
+        },
+        {
+            "id": "fab:battered_nuggets",
+            "required": false
+        },
+        {
+            "id": "fab:cooked_nuggets",
+            "required": false
+        },
+        {
+            "id": "fab:raw_bacon",
+            "required": false
+        },
+        {
+            "id": "fab:chicken_strips",
+            "required": false
+        },
+        {
+            "id": "fab:beef_strips",
+            "required": false
+        },
+        {
+            "id": "fab:lamb_strips",
+            "required": false
+        },
+        {
+            "id": "fab:rabbit_strips",
+            "required": false
+        },
+        {
+            "id": "fab:salted_bacon_strips",
+            "required": false
+        },
+        {
+            "id": "fab:salted_chicken_strips",
+            "required": false
+        },
+        {
+            "id": "fab:salted_beef_strips",
+            "required": false
+        },
+        {
+            "id": "fab:salted_lamb_strips",
+            "required": false
+        },
+        {
+            "id": "fab:salted_rabbit_strips",
+            "required": false
+        },
+        {
+            "id": "fab:salted_zombie_flesh",
+            "required": false
+        },
+        {
+            "id": "fab:bacon_jerky",
+            "required": false
+        },
+        {
+            "id": "fab:chicken_jerky",
+            "required": false
+        },
+        {
+            "id": "fab:beef_jerky",
+            "required": false
+        },
+        {
+            "id": "fab:lamb_jerky",
+            "required": false
+        },
+        {
+            "id": "fab:rabbit_jerky",
+            "required": false
+        },
+        {
+            "id": "fab:zombie_jerky",
+            "required": false
+        },
+        {
+            "id": "fab:cooked_bacon",
+            "required": false
+        },
+        {
+            "id": "fab:cooked_beef_strips",
+            "required": false
+        },
+        {
+            "id": "fab:bacon_and_eggs",
+            "required": false
+        },
+        {
+            "id": "fab:blt_sandwich",
+            "required": false
+        },
+        {
+            "id": "fab:steak_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:beef_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:pork_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:chicken_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:mutton_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:rabbit_salad",
+            "required": false
+        },
+        {
+            "id": "foodplusid:beef_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:pork_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:mutton_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:chicken_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:rabbit_sandwich",
+            "required": false
+        },
+        {
+            "id": "foodplusid:meat_pie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:baked_flesh",
+            "required": false
+        },
+        {
+            "id": "foodplusid:awful_stew",
+            "required": false
+        },
+        {
+            "id": "foodplusid:raw_frog_leg",
+            "required": false
+        },
+        {
+            "id": "foodplusid:cooked_frog_leg",
+            "required": false
+        },
+        {
+            "id": "foodplusid:raw_stride",
+            "required": false
+        },
+        {
+            "id": "foodplusid:cooked_stride",
+            "required": false
+        },
+        {
+            "id": "foodplusid:raw_sniffer_meat",
+            "required": false
+        },
+        {
+            "id": "foodplusid:cooked_sniffer_meat",
+            "required": false
+        },
+        {
+            "id": "foodplusid:hot_stuff",
+            "required": false
+        },
+        {
+            "id": "foodplusid:bat_wing",
+            "required": false
+        },
+        {
+            "id": "foodplusid:cooked_bat_wing",
+            "required": false
+        },
+        {
+            "id": "foodtxf:player_flesh",
+            "required": false
+        },
+        {
+            "id": "foodtxf:cooked_player_flesh",
+            "required": false
+        },
+        {
+            "id": "foodtxf:golden_beef",
+            "required": false
+        },
+        {
+            "id": "foodtxf:golden_porkchop",
+            "required": false
+        },
+        {
+            "id": "foodtxf:golden_player_flesh",
+            "required": false
+        },
+        {
+            "id": "foodtxf:raw_meat_empanada",
+            "required": false
+        },
+        {
+            "id": "foodtxf:meat_empanada",
+            "required": false
+        },
+        {
+            "id": "froglegs:frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:cooked_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:cold_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:cooked_cold_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:golden_cold_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:temperate_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:cooked_temperate_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:golden_temperate_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:warm_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:cooked_warm_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:golden_warm_frog_leg",
+            "required": false
+        },
+        {
+            "id": "froglegs:temperate_frog_leg_stew",
+            "required": false
+        },
+        {
+            "id": "froglegs:warm_frog_leg_stew",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_beef",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_chicken",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_mutton",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_porkchop",
+            "required": false
+        },
+        {
+            "id": "goldendelicacies:golden_cooked_rabbit",
+            "required": false
+        },
+        {
+            "id": "horsemeat:raw_horse_meat",
+            "required": false
+        },
+        {
+            "id": "horsemeat:cooked_horse_meat",
+            "required": false
+        },
+        {
+            "id": "horsemeat:raw_llama_meat",
+            "required": false
+        },
+        {
+            "id": "horsemeat:cooked_llama_meat",
+            "required": false
+        },
+        {
+            "id": "horsemeat:horse_burger",
+            "required": false
+        },
+        {
+            "id": "more_food:omelette",
+            "required": false
+        },
+        {
+            "id": "more_food:spachetti_bolognese",
+            "required": false
+        },
+        {
+            "id": "more_food:taco",
+            "required": false
+        },
+        {
+            "id": "#more_food:sausages",
+            "required": false
+        },
+        {
+            "id": "more_food:pepperoni",
+            "required": false
+        },
+        {
+            "id": "more_food:shepherds_pie",
+            "required": false
+        },
+        {
+            "id": "more_food:sausage_roll",
+            "required": false
+        },
+        {
+            "id": "more_food:raw_bacon",
+            "required": false
+        },
+        {
+            "id": "more_food:bacon",
+            "required": false
+        },
+        {
+            "id": "more_food:bacon_and_eggs",
+            "required": false
+        },
+        {
+            "id": "more_food:meatball",
+            "required": false
+        },
+        {
+            "id": "morefood:hamburger",
+            "required": false
+        },
+        {
+            "id": "morefood:hamburger_patty",
+            "required": false
+        },
+        {
+            "id": "morefood:chicken_select",
+            "required": false
+        },
+        {
+            "id": "morefood:beef_sub",
+            "required": false
+        },
+        {
+            "id": "morefood:pizza",
+            "required": false
+        },
+        {
+            "id": "morefood:pizza_slice",
+            "required": false
+        },
+        {
+            "id": "morefood:hot_dog",
+            "required": false
+        },
+        {
+            "id": "morefood:taco",
+            "required": false
+        },
+        {
+            "id": "morefood:chicken_fajita",
+            "required": false
+        },
+        {
+            "id": "morefood:burrito",
+            "required": false
+        },
+        {
+            "id": "morefood:kebab",
+            "required": false
+        },
+        {
+            "id": "morefood:bacon_egg_sandwich",
+            "required": false
+        },
+        {
+            "id": "morefood:bacon_egg_muffin",
+            "required": false
+        },
+        {
+            "id": "morefood:breakfast_sub",
+            "required": false
+        },
+        {
+            "id": "morefood:sausage_egg_muffin",
+            "required": false
+        },
+        {
+            "id": "morefood:sausage_egg_sandwich",
+            "required": false
+        },
+        {
+            "id": "morefood:chicken_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:pork_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:steak_pie",
+            "required": false
+        },
+        {
+            "id": "morefood:chicken_sub",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_chicken_mcnugget",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_chicken_piece",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_bat_meat",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_hamburger_patty",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_bacon",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_hot_dog_sausage",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_sausage",
+            "required": false
+        },
+        {
+            "id": "morefood:cooked_hoglin_meat",
+            "required": false
+        },
+        {
+            "id": "morefood:bat_meat",
+            "required": false
+        },
+        {
+            "id": "morefood:bacon",
+            "required": false
+        },
+        {
+            "id": "morefood:hot_dog_sausage",
+            "required": false
+        },
+        {
+            "id": "morefood:sausage",
+            "required": false
+        },
+        {
+            "id": "morefood:hoglin_meat",
+            "required": false
+        },
+        {
+            "id": "morefood:chicken_nugget",
+            "required": false
+        },
+        {
+            "id": "morefood:rotten_porkchop",
+            "required": false
+        },
+        {
+            "id": "morefood:spaghetti",
+            "required": false
+        },
+        {
+            "id": "morefood:ramen_noodles",
+            "required": false
+        },
+        {
+            "id": "morefood:netherwart_chicken_soup",
+            "required": false
+        },
+        {
+            "id": "morefood:beef_goulash",
+            "required": false
+        },
+        {
+            "id": "morefood:beef_ravioli",
+            "required": false
+        },
+        {
+            "id": "morefood:beef_stew",
+            "required": false
+        },
+        {
+            "id": "morefood:cheese_tortellini",
+            "required": false
+        },
+        {
+            "id": "morefood:chicken_soup",
+            "required": false
+        },
+        {
+            "id": "morefood:chili",
+            "required": false
+        },
+        {
+            "id": "morefood:pork_sausage_burger",
+            "required": false
+        },
+        {
+            "id": "morefood:pulled_beef_burger",
+            "required": false
+        },
+        {
+            "id": "morefood:spaghetti_with_meatballs",
+            "required": false
+        },
+        {
+            "id": "morehoney:honey_cooked_beef",
+            "required": false
+        },
+        {
+            "id": "morehoney:honey_cooked_chicken",
+            "required": false
+        },
+        {
+            "id": "morehoney:honey_cooked_mutton",
+            "required": false
+        },
+        {
+            "id": "morehoney:honey_cooked_porkchop",
+            "required": false
+        },
+        {
+            "id": "the_food_update:beef_burger",
+            "required": false
+        },
+        {
+            "id": "oretastic:sandwich",
+            "required": false
+        },
+        {
+            "id": "travel_friendly_food:travelers_ham_sandwich",
+            "required": false
+        },
+        {
+            "id": "travel_friendly_food:travelersclassicburger",
+            "required": false
+        },
+        {
+            "id": "tropicana:orange_chicken",
+            "required": false
+        },
+        {
+            "id": "usefulfood:porkchopsandwich",
+            "required": false
+        },
+        {
+            "id": "usefulfood:steaksandwich",
+            "required": false
+        },
+        {
+            "id": "usefulfood:chickensandwich",
+            "required": false
+        },
+        {
+            "id": "usefulfood:muttonsandwich",
             "required": false
         }
     ]

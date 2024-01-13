@@ -1,6 +1,10 @@
 {
     "values": [
         {
+            "id": "minecraft:apple",
+            "required": true
+        },
+        {
             "id": "expandeddelight:cheese_slice",
             "required": false
         }

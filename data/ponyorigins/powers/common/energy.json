@@ -431,7 +431,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "minecraft:enchanted_golden_apple"
+                "tag": "ponyorigins:superchargers"
             }
         },
         "trigger": "finish",
