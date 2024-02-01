@@ -39,6 +39,94 @@
         {
             "id": "friendsandfoes:glare",
             "required": false
+        },
+        {
+            "id": "naturalist:tortoise",
+            "required": false
+        },
+        {
+            "id": "naturalist:cardinal",
+            "required": false
+        },
+        {
+            "id": "naturalist:bluejay",
+            "required": false
+        },
+        {
+            "id": "naturalist:robin",
+            "required": false
+        },
+        {
+            "id": "naturalist:canary",
+            "required": false
+        },
+        {
+            "id": "chococraft:chocobo",
+            "required": false
+        },
+        {
+            "id": "capymod:capybara",
+            "required": false
+        },
+        {
+            "id": "clutter:capybara",
+            "required": false
+        },
+        {
+            "id": "clutter:chameleon",
+            "required": false
+        },
+        {
+            "id": "guineapigs:guinea_pig",
+            "required": false
+        },
+        {
+            "id": "hamsters:hamster",
+            "required": false
+        },
+        {
+            "id": "nevixitysmod:capybara",
+            "required": false
+        },
+        {
+            "id": "nevixitysmod:redpanda",
+            "required": false
+        },
+        {
+            "id": "ydms_redpanda:redpanda",
+            "required": false
+        },
+        {
+            "id": "ydms_redpanda:redpanda",
+            "required": false
+        },
+        {
+            "id": "skunk:warden_skunk",
+            "required": false
+        },
+        {
+            "id": "skunk:skunk",
+            "required": false
+        },
+        {
+            "id": "spawn:hamster",
+            "required": false
+        },
+        {
+            "id": "uselessreptile:river_pikehorn",
+            "required": false
+        },
+        {
+            "id": "uselessreptile:wyvern",
+            "required": false
+        },
+        {
+            "id": "uselessreptile:moleclaw",
+            "required": false
+        },
+        {
+            "id": "species:roombug",
+            "required": false
         }
     ]
 }

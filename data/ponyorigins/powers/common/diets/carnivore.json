@@ -136,8 +136,8 @@
     "nutrition": {
         "type": "origins:resource",
         "min": 0,
-        "max": 4,
-        "start_value": 4
+        "max": 8,
+        "start_value": 8
     },
     "off_diet_risk": {
         "type": "origins:modify_food",
@@ -360,7 +360,7 @@
                                         "type": "origins:resource",
                                         "resource": "*:*_nutrition",
                                         "comparison": "<",
-                                        "compare_to": 2
+                                        "compare_to": 4
                                     }
                                 ]
                             },

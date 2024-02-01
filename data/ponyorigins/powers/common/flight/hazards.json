@@ -146,6 +146,32 @@
             ]
         }
     },
+    "wing_protector_check": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "chest",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "ponyorigins:wing_protectors"
+                }
+            }
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_wearing_wing_protectors",
+            "change": 1,
+            "operation": "set"
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_wearing_wing_protectors",
+            "change": 0,
+            "operation": "set"
+        }
+    },
     "slower_in_webs": {
         "condition": {
             "type": "origins:and",
@@ -206,25 +232,6 @@
         "max": 3,
         "start_value": 0
     },
-    "burn_detector": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_wearing_wing_protectors",
-            "comparison": "==",
-            "compare_to": 0
-        },
-        "type": "origins:action_when_damage_taken",
-        "damage_condition": {
-            "type": "origins:fire"
-        },
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "ponyorigins:common/flight/main_burn_cd",
-            "change": 20,
-            "operation": "add"
-        },
-        "cooldown": 10
-    },
     "in_flight_hazard_clear": {
         "condition": {
             "type": "origins:and",
@@ -266,90 +273,30 @@
         "type": "origins:action_over_time",
         "interval": 2,
         "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:sprinting"
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:sprinting"
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                        "change": -1,
+                        "operation": "add"
                     },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                "change": -1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_ice_cd",
-                                "change": -1,
-                                "operation": "add"
-                            }
-                        ]
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/flight/main_ice_cd",
+                        "change": -1,
+                        "operation": "add"
                     }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:moving"
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                "change": -1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_ice_cd",
-                                "change": -1,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_wing_type",
-                        "comparison": ">=",
-                        "compare_to": 2
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                "change": -1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_oil_cd",
-                                "change": -1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_ice_cd",
-                                "change": -1,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                }
-            ]
+                ]
+            }
         }
     },
-    "hazard_heal": {
+    "wet_ice_oil_clean": {
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -364,12 +311,6 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/flight/main_web_cd",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "type": "origins:resource",
                             "resource": "ponyorigins:common/flight/main_oil_cd",
                             "comparison": ">",
                             "compare_to": 0
@@ -377,6 +318,593 @@
                         {
                             "type": "origins:resource",
                             "resource": "ponyorigins:common/flight/main_ice_cd",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/flight/main_frozen",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wing_type",
+                                "comparison": ">=",
+                                "compare_to": 2
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/flight/main_oil_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:fluid",
+                                    "fluid_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:oil"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.25
+                                },
+                                "if_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wing_type",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_oil_cd",
+                                        "change": -1,
+                                        "operation": "add"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_flap_tick",
+                                            "comparison": "==",
+                                            "compare_to": 9
+                                        },
+                                        "if_action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/flight/main_oil_cd",
+                                            "change": -6,
+                                            "operation": "add"
+                                        }
+                                    }
+                                },
+                                "else_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wing_type",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_oil_cd",
+                                        "change": -1,
+                                        "operation": "add"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_flap_tick",
+                                            "comparison": "==",
+                                            "compare_to": 9
+                                        },
+                                        "if_action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/flight/main_oil_cd",
+                                            "change": -3,
+                                            "operation": "add"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wing_type",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                },
+                                "if_action": {
+                                    "type": "origins:execute_command",
+                                    "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
+                                },
+                                "else_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_flap_tick",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "else_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/flight/main_oil_cd",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:in_block",
+                                    "block_condition": {
+                                        "type": "origins:fluid",
+                                        "fluid_condition": {
+                                            "type": "origins:in_tag",
+                                            "tag": "ponyorigins:oil"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wearing_wing_protectors",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": ">",
+                                        "compare_to": 0.3
+                                    },
+                                    "if_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_flap_tick",
+                                            "comparison": "==",
+                                            "compare_to": 9
+                                        },
+                                        "if_action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/flight/main_oil_cd",
+                                            "change": -2,
+                                            "operation": "add"
+                                        }
+                                    },
+                                    "else_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_flap_tick",
+                                            "comparison": "==",
+                                            "compare_to": 9
+                                        },
+                                        "if_action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/flight/main_oil_cd",
+                                            "change": -1,
+                                            "operation": "add"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:on_fire"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_oil_cd",
+                                        "change": -1,
+                                        "operation": "add"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wing_type",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_flap_tick",
+                                            "comparison": "==",
+                                            "compare_to": 9
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:creative_flying"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:in_rain"
+                                    },
+                                    {
+                                        "type": "origins:creative_flying"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wing_type",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                },
+                                "if_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_wing_type",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                        "change": -1,
+                                        "operation": "add"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_flap_tick",
+                                            "comparison": "==",
+                                            "compare_to": 9
+                                        },
+                                        "if_action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/flight/main_wet_cd",
+                                            "change": -6,
+                                            "operation": "add"
+                                        }
+                                    }
+                                },
+                                "else_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_flap_tick",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_wet_cd",
+                                        "change": -3,
+                                        "operation": "add"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wing_type",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                },
+                                "if_action": {
+                                    "type": "origins:execute_command",
+                                    "command": "function ponyorigins:shed/water"
+                                },
+                                "else_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_flap_tick",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "function ponyorigins:shed/water"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/flight/main_ice_cd",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/flight/main_frozen",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/flight/main_wet_cd",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_wearing_wing_protectors",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:creative_flying"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:in_block",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:powder_snow"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:creative_flying"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:exposed_to_sky"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:predicate",
+                                                "predicate": "ponyorigins:weather/is_rain"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:exposed_to_sky"
+                                    },
+                                    {
+                                        "type": "origins:creative_flying"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wing_type",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                },
+                                "if_action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/flight/main_ice_cd",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                "else_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_flap_tick",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:common/flight/main_ice_cd",
+                                        "change": -5,
+                                        "operation": "add"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_wing_type",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                },
+                                "if_action": {
+                                    "type": "origins:execute_command",
+                                    "command": "execute anchored feet run particle minecraft:snowflake ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
+                                },
+                                "else_action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_flap_tick",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "execute anchored feet run particle minecraft:snowflake ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_flap_tick",
+                        "comparison": "<",
+                        "compare_to": 9
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_flap_tick",
+                        "change": 1,
+                        "operation": "add"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_flap_tick",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_flap_tick",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "fire_web_heal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/flight/main_web_cd",
                             "comparison": ">",
                             "compare_to": 0
                         },
@@ -397,7 +925,7 @@
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 10,
+        "interval": 9,
         "entity_action": {
             "type": "origins:and",
             "actions": [
@@ -453,216 +981,6 @@
                             "change": -2,
                             "operation": "add"
                         }
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_wing_type",
-                                "comparison": ">=",
-                                "compare_to": 2
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "ponyorigins:common/flight/main_oil_cd",
-                                "comparison": ">",
-                                "compare_to": 0
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:in_block",
-                                "block_condition": {
-                                    "type": "origins:fluid",
-                                    "fluid_condition": {
-                                        "type": "origins:in_tag",
-                                        "tag": "ponyorigins:oil"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_wearing_wing_protectors",
-                                "comparison": "==",
-                                "compare_to": 0
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:fluid_height",
-                                    "fluid": "minecraft:water",
-                                    "comparison": ">",
-                                    "compare_to": 0.25
-                                },
-                                "if_action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/flight/main_oil_cd",
-                                    "change": -6,
-                                    "operation": "add"
-                                },
-                                "else_action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/flight/main_oil_cd",
-                                    "change": -3,
-                                    "operation": "add"
-                                }
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
-                            }
-                        ]
-                    },
-                    "else_action": {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/flight/main_oil_cd",
-                                    "comparison": ">",
-                                    "compare_to": 0
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:in_block",
-                                    "block_condition": {
-                                        "type": "origins:fluid",
-                                        "fluid_condition": {
-                                            "type": "origins:in_tag",
-                                            "tag": "ponyorigins:oil"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_wearing_wing_protectors",
-                                    "comparison": "==",
-                                    "compare_to": 0
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "type": "origins:fluid_height",
-                                        "fluid": "minecraft:water",
-                                        "comparison": ">",
-                                        "compare_to": 0.3
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "ponyorigins:common/flight/main_oil_cd",
-                                        "change": -2,
-                                        "operation": "add"
-                                    },
-                                    "else_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "ponyorigins:common/flight/main_oil_cd",
-                                        "change": -1,
-                                        "operation": "add"
-                                    }
-                                },
-                                {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "type": "origins:on_fire"
-                                    },
-                                    "if_action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:change_resource",
-                                                "resource": "ponyorigins:common/flight/main_oil_cd",
-                                                "change": -10,
-                                                "operation": "add"
-                                            },
-                                            {
-                                                "type": "origins:damage",
-                                                "amount": 2,
-                                                "damage_type": "is_fire"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "execute anchored feet run particle block honey_block ^ ^0.5 ^ 0.1 0.1 0.1 1 8 normal"
-                                }
-                            ]
-                        }
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:fluid_height",
-                                "fluid": "minecraft:water",
-                                "comparison": "==",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                "comparison": ">",
-                                "compare_to": 0
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:in_rain"
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_wearing_wing_protectors",
-                                "comparison": "==",
-                                "compare_to": 0
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_wing_type",
-                                    "comparison": ">",
-                                    "compare_to": 0
-                                },
-                                "if_action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/flight/main_wet_cd",
-                                    "change": -6,
-                                    "operation": "add"
-                                },
-                                "else_action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/flight/main_wet_cd",
-                                    "change": -3,
-                                    "operation": "add"
-                                }
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "function ponyorigins:shed/water"
-                            }
-                        ]
                     }
                 },
                 {
@@ -831,84 +1149,28 @@
                             }
                         ]
                     }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:resource",
-                                "resource": "ponyorigins:common/flight/main_ice_cd",
-                                "comparison": ">",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "ponyorigins:common/flight/main_frozen",
-                                "comparison": "==",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "ponyorigins:common/flight/main_wet_cd",
-                                "comparison": "==",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_wearing_wing_protectors",
-                                "comparison": "==",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:fluid_height",
-                                "fluid": "minecraft:water",
-                                "comparison": "<=",
-                                "compare_to": 0.25
-                            },
-                            {
-                                "type": "origins:or",
-                                "conditions": [
-                                    {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:exposed_to_sky"
-                                            },
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:predicate",
-                                                "predicate": "ponyorigins:weather/is_rain"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:exposed_to_sky"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/flight/main_ice_cd",
-                                "change": -5,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "execute anchored feet run particle minecraft:snowflake ^ ^0.5 ^ 0.5 0.5 0.5 0.1 8 normal"
-                            }
-                        ]
-                    }
                 }
             ]
         }
+    },
+    "burn_detector": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_wearing_wing_protectors",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_when_damage_taken",
+        "damage_condition": {
+            "type": "origins:fire"
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "ponyorigins:common/flight/main_burn_cd",
+            "change": 20,
+            "operation": "add"
+        },
+        "cooldown": 10
     },
     "wet_tick": {
         "type": "origins:resource",
@@ -1021,7 +1283,7 @@
                         "if_action": {
                             "type": "origins:change_resource",
                             "resource": "ponyorigins:common/flight/main_wet_cd",
-                            "change": 1,
+                            "change": 3,
                             "operation": "add"
                         }
                     },
@@ -1500,32 +1762,6 @@
         "min": 0,
         "max": 1,
         "start_value": 0
-    },
-    "wing_protector_check": {
-        "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "chest",
-            "item_condition": {
-                "type": "origins:ingredient",
-                "ingredient": {
-                    "tag": "ponyorigins:wing_protectors"
-                }
-            }
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "rising_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_wearing_wing_protectors",
-            "change": 1,
-            "operation": "set"
-        },
-        "falling_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_wearing_wing_protectors",
-            "change": 0,
-            "operation": "set"
-        }
     },
     "ice_detector": {
         "condition": {
@@ -2470,6 +2706,12 @@
         "type": "origins:resource",
         "min": 0,
         "max": 2,
+        "start_value": 0
+    },
+    "flap_tick": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 9,
         "start_value": 0
     }
 }

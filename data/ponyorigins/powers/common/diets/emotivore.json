@@ -329,6 +329,18 @@
                             {
                                 "type": "origins:actor_action",
                                 "action": {
+                                    "type": "origins:raycast",
+                                    "distance": 6,
+                                    "block": true,
+                                    "entity": true,
+                                    "shape_type": "collider",
+                                    "fluid_handling": "any",
+                                    "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
+                                }
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
                                     "type": "origins:change_resource",
                                     "resource": "*:*_cd_res",
                                     "change": 0,
@@ -545,6 +557,18 @@
                                         }
                                     }
                                 ]
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:raycast",
+                                    "distance": 6,
+                                    "block": true,
+                                    "entity": true,
+                                    "shape_type": "collider",
+                                    "fluid_handling": "any",
+                                    "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
+                                }
                             },
                             {
                                 "type": "origins:actor_action",
@@ -790,6 +814,18 @@
                                         }
                                     }
                                 ]
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:raycast",
+                                    "distance": 6,
+                                    "block": true,
+                                    "entity": true,
+                                    "shape_type": "collider",
+                                    "fluid_handling": "any",
+                                    "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
+                                }
                             },
                             {
                                 "type": "origins:actor_action",
@@ -1332,6 +1368,18 @@
                             "type": "origins:execute_command",
                             "command": "advancement grant @s until ponyorigins:changeling/full"
                         }
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:raycast",
+                        "distance": 6,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "command_along_ray": "particle heart ^ ^-0.25 ^ 0 0 0 0.1 1 force"
                     }
                 }
             ]

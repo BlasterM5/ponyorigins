@@ -9,6 +9,11 @@
         }
     ],
     "type": "origins:multiple",
+    "sound_muter": {
+        "type": "apugli:custom_hurt_sound",
+        "muted": true,
+        "volume": 0
+    },
     "damage_reduction": {
         "type": "origins:modify_damage_taken",
         "damage_condition": {
@@ -27,16 +32,21 @@
             "pitch": 1
         }
     },
-    "sound_muter": {
-        "type": "apugli:custom_hurt_sound",
-        "muted": true,
-        "volume": 0
-    },
     "ap_damage_noise": {
         "type": "origins:modify_damage_taken",
         "damage_condition": {
-            "type": "origins:in_tag",
-            "tag": "bypasses_armor"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "bypasses_armor"
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
         },
         "self_action": {
             "type": "origins:play_sound",
