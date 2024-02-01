@@ -31,115 +31,176 @@
     ],
     "type": "origins:multiple",
     "tame": {
-        "type": "origins:action_on_entity_use",
-        "bientity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:in_tag",
-                                    "tag": "ponyorigins:tameable"
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 10,
+            "block": false,
+            "entity": true,
+            "shape_type": "outline",
+            "fluid_handling": "any",
+            "bientity_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:tameable"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:tamed"
+                                    }
                                 }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:tamed"
-                                }
-                            }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:tame"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:in_tag",
-                                    "tag": "ponyorigins:tameable_rides"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tame:1b}"
-                                }
-                            }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:target_action",
+                            ]
+                        },
                         "action": {
-                            "type": "origins:execute_command",
-                            "command": "data modify entity @s Tame set value 1b"
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:tame"
+                                },
+                                {
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:spawn_particles",
+                                        "particle": "heart",
+                                        "count": 16,
+                                        "speed": 1,
+                                        "force": true,
+                                        "spread": {
+                                            "x": 1,
+                                            "y": 1,
+                                            "z": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:tameable_rides"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tame:1b}"
+                                    }
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "data modify entity @s Tame set value 1b"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:spawn_particles",
+                                        "particle": "heart",
+                                        "count": 16,
+                                        "speed": 1,
+                                        "force": true,
+                                        "spread": {
+                                            "x": 1,
+                                            "y": 1,
+                                            "z": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:tameable_trust"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:command",
+                                        "command": "tag @s list",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    }
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "data modify entity @s Trusted append from entity @p UUID"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "tag @s add po.tamed"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:spawn_particles",
+                                        "particle": "heart",
+                                        "count": 16,
+                                        "speed": 1,
+                                        "force": true,
+                                        "spread": {
+                                            "x": 1,
+                                            "y": 1,
+                                            "z": 1
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:in_tag",
-                                    "tag": "ponyorigins:tameable_trust"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:command",
-                                    "command": "tag @s list",
-                                    "comparison": "==",
-                                    "compare_to": 0
-                                }
-                            }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:execute_command",
-                                    "command": "data modify entity @s Trusted append from entity @p UUID"
-                                }
-                            },
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:execute_command",
-                                    "command": "tag @s add po.tamed"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
+                ]
+            },
+            "command_along_ray": "particle heart ^ ^-0.25 ^ 0 0 0 0.1 1 force",
+            "command_along_ray_only_on_hit": true
         },
-        "item_condition": {
-            "type": "origins:empty"
-        },
-        "hands": [
-            "main_hand"
-        ],
-        "action_result": "success",
-        "priority": 0
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
     },
     "pacifist_melee": {
         "type": "origins:modify_damage_dealt",
