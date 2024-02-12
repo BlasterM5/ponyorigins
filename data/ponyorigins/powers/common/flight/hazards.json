@@ -1283,7 +1283,7 @@
                         "if_action": {
                             "type": "origins:change_resource",
                             "resource": "ponyorigins:common/flight/main_wet_cd",
-                            "change": 3,
+                            "change": 2,
                             "operation": "add"
                         }
                     },
@@ -1527,10 +1527,21 @@
                                     "type": "origins:and",
                                     "conditions": [
                                         {
-                                            "type": "origins:resource",
-                                            "resource": "ponyorigins:common/flight/main_wet_cd",
-                                            "comparison": "<=",
-                                            "compare_to": 80
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:resource",
+                                                    "resource": "ponyorigins:common/flight/main_wet_cd",
+                                                    "comparison": "<=",
+                                                    "compare_to": 80
+                                                },
+                                                {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_wing_type",
+                                                    "comparison": "==",
+                                                    "compare_to": 2
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "origins:or",
