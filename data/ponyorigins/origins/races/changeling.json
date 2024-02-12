@@ -8,6 +8,7 @@
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",
+        "ponyorigins:common/wallclimb",
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/flight/main",

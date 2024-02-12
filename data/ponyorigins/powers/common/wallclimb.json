@@ -1,0 +1,182 @@
+{
+    "name": "Wall Climb",
+    "description": "Climb vertical surfaces with relative ease.",
+    "type": "origins:multiple",
+    "wall_climb": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">=",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/hooves"
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "block_condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:icey"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:slick"
+                                            },
+                                            {
+                                                "type": "origins:movement_blocking"
+                                            }
+                                        ]
+                                    },
+                                    "offset_x": 0.2,
+                                    "offset_y": 0,
+                                    "offset_z": 0.2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/hooves"
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "block_condition": {
+                                        "type": "origins:movement_blocking"
+                                    },
+                                    "offset_x": 0.2,
+                                    "offset_y": 0,
+                                    "offset_z": 0.2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/hooves"
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "block_condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:icey"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:slick"
+                                            },
+                                            {
+                                                "type": "origins:movement_blocking"
+                                            }
+                                        ]
+                                    },
+                                    "offset_x": -0.2,
+                                    "offset_y": 0,
+                                    "offset_z": -0.2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/hooves"
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "block_condition": {
+                                        "type": "origins:movement_blocking"
+                                    },
+                                    "offset_x": -0.2,
+                                    "offset_y": 0,
+                                    "offset_z": -0.2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:block_collision",
+                    "block_condition": {
+                        "type": "origins:movement_blocking"
+                    },
+                    "offset_x": 0,
+                    "offset_y": -0.1,
+                    "offset_z": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/telekinesis"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_mainhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_offhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:climbing",
+        "allow_holding": true
+    },
+    "stamina_drain": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_wall_climb"
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.0025
+        }
+    }
+}

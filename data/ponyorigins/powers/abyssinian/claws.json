@@ -1,0 +1,15 @@
+{
+    "name": "Claws",
+    "description": "Extra attack damage when unarmed.",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "ponyorigins:common/00_empty_mainhand",
+        "comparison": "==",
+        "compare_to": 1
+    },
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": 2
+    }
+}

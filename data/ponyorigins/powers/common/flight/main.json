@@ -74,27 +74,21 @@
                         {
                             "type": "origins:block_collision",
                             "offset_x": 0.5,
-                            "offset_y": 0,
-                            "offset_z": 0
+                            "offset_y": 0.5,
+                            "offset_z": 0.5
                         },
                         {
                             "type": "origins:block_collision",
                             "offset_x": -0.5,
                             "offset_y": 0,
-                            "offset_z": 0
-                        },
-                        {
-                            "type": "origins:block_collision",
-                            "offset_x": 0,
-                            "offset_y": 0.5,
-                            "offset_z": 0
+                            "offset_z": -0.5
                         }
                     ]
                 }
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 20,
+        "interval": 1,
         "rising_action": {
             "type": "origins:and",
             "actions": [

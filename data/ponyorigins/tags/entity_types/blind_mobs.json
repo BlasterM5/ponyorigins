@@ -1,0 +1,8 @@
+{
+    "values": [
+        {
+            "id": "minecraft:warden",
+            "required": true
+        }
+    ]
+}

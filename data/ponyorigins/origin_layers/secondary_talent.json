@@ -457,6 +457,29 @@
         },
         {
             "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/vanish"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/vanish"
+            ]
+        },
+        {
+            "condition": {
                 "type": "origins:or",
                 "conditions": [
                     {
