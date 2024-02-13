@@ -838,7 +838,7 @@
                 },
                 {
                     "type": "origins:gain_air",
-                    "value": -10
+                    "value": -30
                 },
                 {
                     "type": "origins:if_else",

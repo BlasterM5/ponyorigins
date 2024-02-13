@@ -45,7 +45,7 @@
         },
         "type": "origins:invisibility",
         "render_armor": false,
-        "render_outline": false
+        "render_outline": true
     },
     "invisible_to_mobs": {
         "condition": {
@@ -123,56 +123,60 @@
             }
         }
     },
-    "trigger": {
+    "blindness_active": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "blindness",
+                "duration": 200,
+                "amplifier": 9,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            }
+        },
+        "rising_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "blindness",
+                "duration": 200,
+                "amplifier": 9,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            }
+        },
+        "falling_action": {
+            "type": "origins:clear_effect",
+            "effect": "blindness"
+        }
+    },
+    "trigger_primary": {
         "condition": {
             "type": "origins:and",
             "conditions": [
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:unicorn/vanish"
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_key_primary_active",
-                                    "comparison": ">",
-                                    "compare_to": 0
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:talents/vanish"
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_key_secondary_active",
-                                    "comparison": ">",
-                                    "compare_to": 0
-                                }
-                            ]
-                        }
-                    ]
-                },
                 {
                     "type": "origins:resource",
                     "resource": "ponyorigins:common/energy_level",
                     "comparison": ">",
                     "compare_to": 0
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:unicorn/vanish"
                 }
             ]
         },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "rising_action": {
+        "type": "origins:active_self",
+        "entity_action": {
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:resource",
@@ -181,42 +185,64 @@
                 "compare_to": 0
             },
             "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_active",
-                        "change": 1,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:apply_effect",
-                        "effect": {
-                            "effect": "blindness",
-                            "duration": -1,
-                            "amplifier": 9,
-                            "is_ambient": true,
-                            "show_particles": false,
-                            "show_icon": false
-                        }
-                    }
-                ]
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 1,
+                "operation": "set"
             },
             "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_active",
-                        "change": 0,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:clear_effect",
-                        "effect": "blindness"
-                    }
-                ]
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 0,
+                "operation": "set"
             }
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "trigger_secondary": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/vanish"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_active",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 1,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 0,
+                "operation": "set"
+            }
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.secondary_active"
         }
     }
 }
