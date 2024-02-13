@@ -115,7 +115,7 @@
             ]
         }
     },
-    "cd_timer": {
+    "cd": {
         "type": "origins:resource",
         "min": 0,
         "max": 2,
