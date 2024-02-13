@@ -1,6 +1,6 @@
 {
     "name": "Friend of the Animals",
-    "description": "Press your secondary power key while looking at a tameable creature to tame them.",
+    "description": "Press your [primary/secondary] power key while looking at a tameable creature to tame them.",
     "badges": [
         {
             "type": "origins:tooltip",

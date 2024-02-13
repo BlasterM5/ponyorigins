@@ -1,6 +1,6 @@
 {
     "name": "Teleport",
-    "description": "Hold your [primary/secondary] power to charge up a teleport in the direction you are looking. Requires aiming for something solid.",
+    "description": "Hold your [primary/secondary] power to charge up a teleport in the direction you are looking. Aim for something solid.",
     "badges": [
         {
             "type": "origins:tooltip",
