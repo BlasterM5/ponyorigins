@@ -1,22 +1,15 @@
 {
     "name": "Fireball",
-    "description": "Press your [primary/secondary] power to launch a Fireball in the direction you're looking.",
+    "description": "Hold your [primary/secondary] power to charge, release to launch up to three Fireballs in the direction you're looking.",
     "badges": [
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Hold [",
+                "Hold [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to charge and fire"
-            ],
-            "sprite": "minecraft:textures/particle/flame.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Hold [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },

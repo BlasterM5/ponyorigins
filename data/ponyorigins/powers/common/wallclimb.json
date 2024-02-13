@@ -1,6 +1,18 @@
 {
     "name": "Wall Climb",
     "description": "Climb vertical surfaces with relative ease.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Must be barefoot",
+            "sprite": "minecraft:textures/item/leather_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Must have main and off (hand or hooves) free",
+            "sprite": "minecraft:textures/item/wooden_pickaxe.png"
+        }
+    ],
     "type": "origins:multiple",
     "wall_climb": {
         "condition": {
@@ -22,28 +34,105 @@
                                     "power": "ponyorigins:common/hooves"
                                 },
                                 {
-                                    "type": "origins:block_collision",
-                                    "block_condition": {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:in_tag",
-                                                "tag": "ponyorigins:icey"
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:icey"
+                                                    },
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:slick"
+                                                    },
+                                                    {
+                                                        "type": "origins:movement_blocking"
+                                                    }
+                                                ]
                                             },
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:in_tag",
-                                                "tag": "ponyorigins:slick"
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:icey"
+                                                    },
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:slick"
+                                                    },
+                                                    {
+                                                        "type": "origins:movement_blocking"
+                                                    }
+                                                ]
                                             },
-                                            {
-                                                "type": "origins:movement_blocking"
-                                            }
-                                        ]
-                                    },
-                                    "offset_x": 0.2,
-                                    "offset_y": 0,
-                                    "offset_z": 0.2
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:icey"
+                                                    },
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:slick"
+                                                    },
+                                                    {
+                                                        "type": "origins:movement_blocking"
+                                                    }
+                                                ]
+                                            },
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:icey"
+                                                    },
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:slick"
+                                                    },
+                                                    {
+                                                        "type": "origins:movement_blocking"
+                                                    }
+                                                ]
+                                            },
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -56,65 +145,45 @@
                                     "power": "ponyorigins:common/hooves"
                                 },
                                 {
-                                    "type": "origins:block_collision",
-                                    "block_condition": {
-                                        "type": "origins:movement_blocking"
-                                    },
-                                    "offset_x": 0.2,
-                                    "offset_y": 0,
-                                    "offset_z": 0.2
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/hooves"
-                                },
-                                {
-                                    "type": "origins:block_collision",
-                                    "block_condition": {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:in_tag",
-                                                "tag": "ponyorigins:icey"
-                                            },
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:in_tag",
-                                                "tag": "ponyorigins:slick"
-                                            },
-                                            {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
                                                 "type": "origins:movement_blocking"
-                                            }
-                                        ]
-                                    },
-                                    "offset_x": -0.2,
-                                    "offset_y": 0,
-                                    "offset_z": -0.2
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "inverted": true,
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/hooves"
-                                },
-                                {
-                                    "type": "origins:block_collision",
-                                    "block_condition": {
-                                        "type": "origins:movement_blocking"
-                                    },
-                                    "offset_x": -0.2,
-                                    "offset_y": 0,
-                                    "offset_z": -0.2
+                                            },
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:movement_blocking"
+                                            },
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:movement_blocking"
+                                            },
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "block_condition": {
+                                                "type": "origins:movement_blocking"
+                                            },
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        }
+                                    ]
                                 }
                             ]
                         }

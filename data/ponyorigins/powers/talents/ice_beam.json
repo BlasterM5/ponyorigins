@@ -5,18 +5,11 @@
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Hold [",
+                "Hold [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to freeze everything"
-            ],
-            "sprite": "minecraft:textures/item/snowball.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Hold [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },

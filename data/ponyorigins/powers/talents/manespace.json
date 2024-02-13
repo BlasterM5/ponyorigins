@@ -5,18 +5,11 @@
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Press [",
+                "Press [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to open"
-            ],
-            "sprite": "minecraft:textures/item/bundle_filled.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Press [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },

@@ -1,22 +1,15 @@
 {
     "name": "Tactical Fireworks",
-    "description": "Hold your [primary/secondary] power to launch fireworks at your target!",
+    "description": "Hold your [primary/secondary] power to charge, release to launch up to five fireworks in the direction you are looking.",
     "badges": [
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Hold [",
+                "Hold [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to charge and fire"
-            ],
-            "sprite": "minecraft:textures/item/firework_rocket.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Hold [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },

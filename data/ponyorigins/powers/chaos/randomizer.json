@@ -77,6 +77,14 @@
                                             {
                                                 "weight": 1,
                                                 "element": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "ponyorigins:abyssinian/claws",
+                                                    "source": "ponyorigins:races/chaos"
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
                                                     "type": "origins:nothing"
                                                 }
                                             }
@@ -111,6 +119,14 @@
                                                 "element": {
                                                     "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/talons",
+                                                    "source": "ponyorigins:races/chaos"
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "ponyorigins:abyssinian/claws",
                                                     "source": "ponyorigins:races/chaos"
                                                 }
                                             },
@@ -402,6 +418,15 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "ponyorigins:common/nightvision",
+                        "source": "ponyorigins:races/chaos"
+                    }
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 0.2,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "ponyorigins:common/wallclimb",
                         "source": "ponyorigins:races/chaos"
                     }
                 },

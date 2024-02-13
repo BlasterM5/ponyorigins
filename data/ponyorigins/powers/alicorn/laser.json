@@ -1,6 +1,6 @@
 {
     "name": "Kinetic Blast",
-    "description": "Hold your secondary power to focus your telekinesis in a single, explosive blast in the direction you are looking!",
+    "description": "Hold your secondary power to charge, release to fire your telekinesis in a single, explosive shove in the direction you are looking!",
     "badges": [
         {
             "type": "origins:tooltip",

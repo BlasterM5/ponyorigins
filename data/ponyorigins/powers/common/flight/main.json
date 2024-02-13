@@ -35,6 +35,11 @@
         },
         {
             "type": "origins:tooltip",
+            "text": "Frozen wings disable flight",
+            "sprite": "minecraft:textures/block/ice.png"
+        },
+        {
+            "type": "origins:tooltip",
             "text": "Severe injuries (below 4 health) disable flight",
             "sprite": "minecraft:textures/particle/damage.png"
         },
@@ -56,7 +61,7 @@
         "max": 1,
         "start_value": 0
     },
-    "block_wing_hit_detection": {
+    "block_wingstrike_check": {
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -80,7 +85,19 @@
                         {
                             "type": "origins:block_collision",
                             "offset_x": -0.5,
-                            "offset_y": 0,
+                            "offset_y": 0.5,
+                            "offset_z": -0.5
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": -0.5,
+                            "offset_y": 0.5,
+                            "offset_z": 0.5
+                        },
+                        {
+                            "type": "origins:block_collision",
+                            "offset_x": 0.5,
+                            "offset_y": 0.5,
                             "offset_z": -0.5
                         }
                     ]
@@ -178,16 +195,30 @@
                 "type": "origins:and",
                 "actions": [
                     {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_buffer",
-                        "change": 20,
-                        "operation": "add"
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": 20,
+                                    "operation": "add"
+                                }
+                            ]
+                        }
                     }
                 ]
             },
@@ -195,14 +226,27 @@
                 "type": "origins:and",
                 "actions": [
                     {
-                        "type": "origins:exhaust",
-                        "amount": 0.1
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_buffer",
-                        "change": 20,
-                        "operation": "add"
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:food_level",
+                            "comparison": ">",
+                            "compare_to": 4
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:exhaust",
+                                    "amount": 0.1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": 20,
+                                    "operation": "add"
+                                }
+                            ]
+                        }
                     }
                 ]
             }
@@ -655,6 +699,12 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
+                            "resource": "*:*_buffer",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
                             "resource": "*:*_waterlogged",
                             "comparison": "==",
                             "compare_to": 1
@@ -799,53 +849,6 @@
                                 {
                                     "type": "origins:dimension",
                                     "dimension": "ad_astra:glacio_orbit"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:and",
-                                    "conditions": [
-                                        {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/energy"
-                                        },
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "ponyorigins:common/energy_level",
-                                            "comparison": "==",
-                                            "compare_to": 0
-                                        },
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_buffer",
-                                            "comparison": "==",
-                                            "compare_to": 0
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "origins:and",
-                                    "conditions": [
-                                        {
-                                            "inverted": true,
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/energy"
-                                        },
-                                        {
-                                            "type": "origins:food_level",
-                                            "comparison": "<=",
-                                            "compare_to": 4
-                                        },
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_buffer",
-                                            "comparison": "==",
-                                            "compare_to": 0
-                                        }
-                                    ]
                                 }
                             ]
                         },

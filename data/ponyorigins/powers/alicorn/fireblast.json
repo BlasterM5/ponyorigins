@@ -1,6 +1,6 @@
 {
-    "name": "Fireball",
-    "description": "Press your secondary power to launch a destructive ball of plasma in the direction you're looking.",
+    "name": "Fire Blast",
+    "description": "Hold your secondary power to charge, release to launch a destructive ball of plasma in the direction you're looking.",
     "badges": [
         {
             "type": "origins:tooltip",

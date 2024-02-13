@@ -19,6 +19,11 @@
         },
         {
             "type": "origins:tooltip",
+            "text": "Wings can be frozen in snowstorms",
+            "sprite": "minecraft:textures/block/ice.png"
+        },
+        {
+            "type": "origins:tooltip",
             "text": "Minimum health threshold +2",
             "sprite": "minecraft:textures/particle/damage.png"
         }

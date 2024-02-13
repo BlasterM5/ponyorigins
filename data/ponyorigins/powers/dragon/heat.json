@@ -14,6 +14,11 @@
         },
         {
             "type": "origins:tooltip",
+            "text": "Eating Fuel: +20 Heat",
+            "sprite": "minecraft:textures/item/coal.png"
+        },
+        {
+            "type": "origins:tooltip",
             "text": "Eating Blaze Rods: +50 Heat",
             "sprite": "minecraft:textures/item/blaze_rod.png"
         }

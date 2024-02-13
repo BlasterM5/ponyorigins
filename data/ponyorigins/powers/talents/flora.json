@@ -5,18 +5,11 @@
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Hold [",
+                "Hold [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to grow plants"
-            ],
-            "sprite": "minecraft:textures/block/dandelion.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Hold [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },

@@ -1,26 +1,19 @@
 {
     "name": "Kinetic Burst",
-    "description": "Hold your [primary/secondary] power to focus your telekinesis in a single, explosive shove in the direction you are looking!",
+    "description": "Hold your [primary/secondary] power to charge, release to fire your telekinesis in a single, explosive shove in the direction you are looking!",
     "badges": [
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Hold [",
+                "Hold [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to charge, release to fire"
-            ],
-            "sprite": "minecraft:textures/block/tnt_side.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Hold [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },
-                "] to charge and fire"
+                "] to charge, release to fire"
             ],
             "sprite": "minecraft:textures/block/tnt_side.png"
         }

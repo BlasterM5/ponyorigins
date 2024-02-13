@@ -14,6 +14,11 @@
         },
         {
             "type": "origins:tooltip",
+            "text": "Wings can be frozen in snowstorms",
+            "sprite": "minecraft:textures/block/ice.png"
+        },
+        {
+            "type": "origins:tooltip",
             "text": "Cobweb clearing rate +100 percent",
             "sprite": "minecraft:textures/block/cobweb.png"
         },

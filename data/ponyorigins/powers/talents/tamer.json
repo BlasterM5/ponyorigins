@@ -7,6 +7,10 @@
             "text": [
                 "Press [",
                 {
+                    "keybind": "key.origins.primary_active"
+                },
+                "/",
+                {
                     "keybind": "key.origins.secondary_active"
                 },
                 "] on a tameable creature"

@@ -41,6 +41,17 @@
                     "resource": "*:*_supercharge",
                     "comparison": "==",
                     "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">=",
+                    "compare_to": 6
                 }
             ]
         },
@@ -52,144 +63,53 @@
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:food_level",
-                                "comparison": ">=",
-                                "compare_to": 6
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_level",
-                                "comparison": ">",
-                                "compare_to": 0
-                            }
-                        ]
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:alicorn/celestial"
                     },
                     "if_action": {
                         "type": "origins:and",
                         "actions": [
                             {
+                                "type": "origins:exhaust",
+                                "amount": 0.25
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            },
+                            {
                                 "type": "origins:if_else",
                                 "condition": {
-                                    "inverted": true,
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:alicorn/celestial"
-                                },
-                                "if_action": {
                                     "type": "origins:and",
-                                    "actions": [
+                                    "conditions": [
                                         {
-                                            "type": "origins:exhaust",
-                                            "amount": 0.25
+                                            "type": "origins:origin",
+                                            "origin": "ponyorigins:races/unicorn"
                                         },
                                         {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_level",
-                                            "change": 1,
-                                            "operation": "add"
-                                        },
-                                        {
-                                            "type": "origins:if_else",
-                                            "condition": {
-                                                "type": "origins:and",
-                                                "conditions": [
-                                                    {
-                                                        "type": "origins:origin",
-                                                        "origin": "ponyorigins:races/unicorn"
-                                                    },
-                                                    {
-                                                        "inverted": true,
-                                                        "type": "origins:advancement",
-                                                        "advancement": "ponyorigins:unicorn/energy"
-                                                    }
-                                                ]
-                                            },
-                                            "if_action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_up_energy_achievement",
-                                                "change": 1,
-                                                "operation": "add"
-                                            }
+                                            "inverted": true,
+                                            "type": "origins:advancement",
+                                            "advancement": "ponyorigins:unicorn/energy"
                                         }
                                     ]
                                 },
-                                "else_action": {
+                                "if_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_celestial_cd",
+                                    "resource": "*:*_up_energy_achievement",
                                     "change": 1,
                                     "operation": "add"
                                 }
                             }
                         ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_level",
-                                "comparison": "==",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_cd_timer",
-                                "comparison": "==",
-                                "compare_to": 41
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd_timer",
-                        "change": 0,
-                        "operation": "set"
                     },
                     "else_action": {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_level",
-                                    "comparison": "==",
-                                    "compare_to": 0
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "*:*_cd_timer",
-                                    "comparison": "==",
-                                    "compare_to": 40
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_level",
-                            "change": 1,
-                            "operation": "add"
-                        },
-                        "else_action": {
-                            "type": "origins:if_else",
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_cd_timer",
-                                "comparison": "<",
-                                "compare_to": 41
-                            },
-                            "if_action": {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_cd_timer",
-                                "change": 1,
-                                "operation": "add"
-                            }
-                        }
+                        "type": "origins:change_resource",
+                        "resource": "*:*_celestial_cd",
+                        "change": 1,
+                        "operation": "add"
                     }
                 }
             ]
@@ -198,8 +118,8 @@
     "cd_timer": {
         "type": "origins:resource",
         "min": 0,
-        "max": 41,
-        "start_value": 41
+        "max": 2,
+        "start_value": 2
     },
     "celestial_cd": {
         "type": "origins:resource",
@@ -653,6 +573,38 @@
             "resource": "*:*_sc_color_tick",
             "change": 0,
             "operation": "set"
+        }
+    },
+    "cd_set": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": 2,
+            "operation": "add"
+        }
+    },
+    "cd_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
         }
     }
 }

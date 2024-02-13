@@ -180,6 +180,13 @@
                             }
                         },
                         {
+                            "weight": 4,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/vanish"
+                            }
+                        },
+                        {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",

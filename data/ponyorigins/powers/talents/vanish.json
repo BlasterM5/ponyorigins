@@ -14,7 +14,8 @@
                     "keybind": "key.origins.secondary_active"
                 },
                 "] to toggle"
-            ]
+            ],
+            "sprite": "minecraft:textures/item/enchanted_book.png"
         }
     ],
     "type": "origins:multiple",
