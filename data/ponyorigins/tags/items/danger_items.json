@@ -1,0 +1,88 @@
+{
+    "values": [
+        {
+            "id": "minecraft:tnt",
+            "required": false
+        },
+        {
+            "id": "minecraft:dispenser",
+            "required": false
+        },
+        {
+            "id": "minecraft:sticky_piston",
+            "required": false
+        },
+        {
+            "id": "minecraft:piston",
+            "required": false
+        },
+        {
+            "id": "minecraft:pointed_dripstone",
+            "required": false
+        },
+        {
+            "id": "minecraft:lava_bucket",
+            "required": false
+        },
+        {
+            "id": "#sand",
+            "required": false
+        },
+        {
+            "id": "minecraft:gravel",
+            "required": false
+        },
+        {
+            "id": "minecraft:sweet_berry_bush",
+            "required": false
+        },
+        {
+            "id": "minecraft:cactus",
+            "required": false
+        },
+        {
+            "id": "minecraft:flint_and_steel",
+            "required": false
+        },
+        {
+            "id": "minecraft:fire_charge",
+            "required": false
+        },
+        {
+            "id": "minecraft:tnt_minecart",
+            "required": false
+        },
+        {
+            "id": "minecraft:bow",
+            "required": false
+        },
+        {
+            "id": "minecraft:crossbow",
+            "required": false
+        },
+        {
+            "id": "minecraft:firework_rocket",
+            "required": false
+        },
+        {
+            "id": "minecraft:snowball",
+            "required": false
+        },
+        {
+            "id": "#pressure_plates",
+            "required": false
+        },
+        {
+            "id": "minecraft:tripwire",
+            "required": false
+        },
+        {
+            "id": "minecraft:magma_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:trident",
+            "required": false
+        }
+    ]
+}

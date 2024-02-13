@@ -1,1 +1,0 @@
-advancement grant @s until ponyorigins:ascension/chaos

@@ -35,6 +35,13 @@
                         "inverted": true,
                         "type": "origins:sneaking"
                     }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:sneaking"
+                    }
                 }
             ]
         },

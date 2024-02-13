@@ -65,8 +65,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_active"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:resource",
@@ -101,12 +103,10 @@
         "cooldown": 10
     },
     "active": {
-        "type": "origins:toggle",
-        "active_by_default": false,
-        "key": {
-            "key": "key.origins.null"
-        },
-        "retain_state": false
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     },
     "trigger": {
         "condition": {
@@ -119,50 +119,31 @@
                 {
                     "type": "origins:fluid_height",
                     "fluid": "minecraft:water",
+                    "comparison": "<",
+                    "compare_to": 0.3
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
                     "comparison": "==",
                     "compare_to": 0
                 },
                 {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_active"
-                },
-                {
                     "type": "origins:resource",
                     "resource": "*:*_rage",
-                    "comparison": ">",
+                    "comparison": ">=",
                     "compare_to": 25
                 }
             ]
         },
         "type": "origins:active_self",
         "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:*_rage",
-                        "comparison": ">",
-                        "compare_to": 25
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power_active",
-                        "power": "*:*_active"
-                    }
-                ]
-            },
-            "if_action": {
-                "type": "origins:toggle",
-                "power": "*:*_active"
-            },
-            "else_action": {
-                "type": "origins:nothing"
-            }
+            "type": "origins:change_resource",
+            "resource": "*:*_active",
+            "change": 1,
+            "operation": "set"
         },
-        "cooldown": 20,
+        "cooldown": 5,
         "key": {
             "key": "key.origins.primary_active"
         }
@@ -172,8 +153,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_active"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:resource",
@@ -182,40 +165,42 @@
                     "compare_to": 2
                 },
                 {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },
-        "type": "origins:fire_projectile",
-        "entity_type": "minecraft:small_fireball",
-        "cooldown": 10,
-        "count": 1,
-        "interval": 0,
-        "start_delay": 0,
-        "speed": 1.5,
-        "divergence": 1,
-        "sound": "minecraft:entity.blaze.shoot",
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "apugli:fire_projectile",
+                    "entity_type": "minecraft:small_fireball",
+                    "count": 1,
+                    "speed": 1.5,
+                    "divergence": 1,
+                    "projectile_action": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.blaze.shoot",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_rage",
+                    "change": -5,
+                    "operation": "add"
+                }
+            ]
+        },
+        "cooldown": 4,
         "key": {
             "key": "key.attack"
         }
-    },
-    "fireball_drain": {
-        "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_fireball"
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_rage",
-            "change": -5,
-            "operation": "add"
-        },
-        "cooldown": 10
     },
     "rage": {
         "type": "origins:resource",
@@ -236,8 +221,10 @@
                         "compare_to": 25
                     },
                     {
-                        "type": "origins:power_active",
-                        "power": "*:*_active"
+                        "type": "origins:resource",
+                        "resource": "*:*_active",
+                        "comparison": "==",
+                        "compare_to": 1
                     }
                 ]
             }
@@ -248,9 +235,10 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "inverted": true,
-                        "type": "origins:power_active",
-                        "power": "*:*_active"
+                        "type": "origins:resource",
+                        "resource": "*:*_active",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "inverted": true,
@@ -259,14 +247,16 @@
                     {
                         "type": "origins:fluid_height",
                         "fluid": "minecraft:water",
-                        "comparison": "==",
-                        "compare_to": 0
+                        "comparison": "<",
+                        "compare_to": 0.3
                     }
                 ]
             },
             "if_action": {
-                "type": "origins:toggle",
-                "power": "*:*_active"
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 1,
+                "operation": "set"
             }
         }
     },
@@ -285,8 +275,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_active"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:resource",
@@ -301,13 +293,13 @@
                 {
                     "type": "origins:fluid_height",
                     "fluid": "minecraft:water",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "comparison": "<",
+                    "compare_to": 0.3
                 }
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 4,
+        "interval": 8,
         "entity_action": {
             "type": "origins:and",
             "actions": [
@@ -339,12 +331,16 @@
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "type": "origins:power_active",
-                        "power": "*:*_active"
+                        "type": "origins:resource",
+                        "resource": "*:*_active",
+                        "comparison": "==",
+                        "compare_to": 1
                     },
                     "if_action": {
-                        "type": "origins:toggle",
-                        "power": "*:*_active"
+                        "type": "origins:change_resource",
+                        "resource": "*:*_active",
+                        "change": 0,
+                        "operation": "set"
                     }
                 },
                 {
@@ -479,7 +475,7 @@
     "set_fires": {
         "type": "origins:resource",
         "min": 0,
-        "max": 10,
+        "max": 5,
         "start_value": 0,
         "max_action": {
             "type": "origins:and",

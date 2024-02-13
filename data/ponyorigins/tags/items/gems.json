@@ -145,6 +145,50 @@
             "required": false
         },
         {
+            "id": "spectrum:pure_diamond",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_emerald",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_quartz",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_prismarine",
+            "required": false
+        },
+        {
+            "id": "#spectrum:shooting_stars",
+            "required": false
+        },
+        {
+            "id": "#spectrum:rock_candy",
+            "required": false
+        },
+        {
+            "id": "spectrum:topaz_shard",
+            "required": false
+        },
+        {
+            "id": "spectrum:citrine_shard",
+            "required": false
+        },
+        {
+            "id": "spectrum:onyx_shard",
+            "required": false
+        },
+        {
+            "id": "spectrum:moonstone_shard",
+            "required": false
+        },
+        {
+            "id": "spectrum:resonance_shard",
+            "required": false
+        },
+        {
             "id": "techreborn:peridot_gem",
             "required": false
         },
@@ -201,23 +245,7 @@
             "required": false
         },
         {
-            "id": "minecraft:heart_of_the_sea",
-            "required": false
-        },
-        {
-            "id": "minecraft:blaze_rod",
-            "required": false
-        },
-        {
             "id": "minecraft:echo_shard",
-            "required": false
-        },
-        {
-            "id": "minecraft:prismarine_shard",
-            "required": false
-        },
-        {
-            "id": "minecraft:nether_star",
             "required": false
         },
         {
@@ -234,6 +262,30 @@
         },
         {
             "id": "minecraft:diamond",
+            "required": false
+        },
+        {
+            "id": "#gemperience:gems",
+            "required": false
+        },
+        {
+            "id": "diamond_apples:diamond_apple",
+            "required": false
+        },
+        {
+            "id": "diamond_apples:enchanted_diamond_apple",
+            "required": false
+        },
+        {
+            "id": "enchanted-eats:slime_smoothie",
+            "required": false
+        },
+        {
+            "id": "#jewelry:gems",
+            "required": false
+        },
+        {
+            "id": "nexivitysmod:raw_odium",
             "required": false
         }
     ]

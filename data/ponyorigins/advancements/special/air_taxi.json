@@ -3,7 +3,7 @@
         "icon": {
             "item": "minecraft:saddle"
         },
-        "title": "Taxi",
+        "title": "Air Taxi",
         "description": "Get a ride on another flying player",
         "frame": "challenge",
         "show_toast": true,

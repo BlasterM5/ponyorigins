@@ -75,6 +75,318 @@
         {
             "id": "minecraft:cod",
             "required": false
+        },
+        {
+            "id": "#fabric:raw_fishes",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_clam",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_mantaray",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_stingray",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_anglerfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_koi",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_rainbow_trout",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_catfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_prawn",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_shrimp",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_bettafish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_goldfish",
+            "required": false
+        },
+        {
+            "id": "wildlife:raw_bluegill",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:small_fish_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:tentacle",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:crab_meat",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:lionfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:mahi_mahi",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:yellowfin_tuna",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:opah",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:rockfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:blue_spotted_stingray",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:moray_eel",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:needlefish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:piranha",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:anglerfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:barreleye",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:blue_tang",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:clownfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:unicorn_fish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:cowfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:triggerfish",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:tiger_barb",
+            "required": false
+        },
+        {
+            "id": "hybrid-aquatic:oscar",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:tentacles",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:cut_tentacles",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:tentacle_on_a_stick",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:guardian_tail",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:elder_guardian_slab",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:elder_guardian_slice",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:elder_guardian_roll",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:fugu_slice",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:fugu_roll",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:stuffed_cod",
+            "required": false
+        },
+        {
+            "id": "spectrum:faded_koi",
+            "required": false
+        },
+        {
+            "id": "bca:axolotl",
+            "required": false
+        },
+        {
+            "id": "beachparty:raw_mussel_meat",
+            "required": false
+        },
+        {
+            "id": "beachparty:raw_mussel_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:raw_turtle_meat",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:axolotl_tail",
+            "required": false
+        },
+        {
+            "id": "eanimalmod:squid_tentacle",
+            "required": false
+        },
+        {
+            "id": "fab:squid",
+            "required": false
+        },
+        {
+            "id": "fab:battered_squid",
+            "required": false
+        },
+        {
+            "id": "foodtxf:clean_pufferfish",
+            "required": false
+        },
+        {
+            "id": "foodtxf:fish_on_stick",
+            "required": false
+        },
+        {
+            "id": "more_food:temaki",
+            "required": false
+        },
+        {
+            "id": "morefood:sushi",
+            "required": false
+        },
+        {
+            "id": "morefood:sashimi",
+            "required": false
+        },
+        {
+            "id": "morefood:raw_squid",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:obsidianfish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:searing_cod_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:blazefish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:magmacubefish_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:glowdine_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:soulsucker_slice",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:obsidianfish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:searing_cod_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:blazefish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:magmacubefish_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:glowdine_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:soulsucker_roll",
+            "required": false
+        },
+        {
+            "id": "squidcraft:shredded_squid",
+            "required": false
+        },
+        {
+            "id": "simplekelpies:goldfin_cod",
+            "required": false
+        },
+        {
+            "id": "usefulfood:squidrtentacle",
+            "required": false
+        },
+        {
+            "id": "usefulfood:squidsushi",
+            "required": false
         }
     ]
 }

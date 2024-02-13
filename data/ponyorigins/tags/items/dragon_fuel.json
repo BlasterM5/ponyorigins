@@ -1,0 +1,40 @@
+{
+    "values": [
+        {
+            "id": "#minecraft:coals",
+            "required": false
+        },
+        {
+            "id": "#c:coals",
+            "required": false
+        },
+        {
+            "id": "minecraft:blaze_powder",
+            "required": false
+        },
+        {
+            "id": "enchanted-eats:lava_soup",
+            "required": false
+        },
+        {
+            "id": "enchanted-eats:lava_soup",
+            "required": false
+        },
+        {
+            "id": "enchanted-eats:netherwart_noodles",
+            "required": false
+        },
+        {
+            "id": "foodtxf:glass_of_lava",
+            "required": false
+        },
+        {
+            "id": "#ponyorigins:nether_fishes",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_coal",
+            "required": false
+        }
+    ]
+}

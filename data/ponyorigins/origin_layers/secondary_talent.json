@@ -1,5 +1,5 @@
 {
-    "order": 2,
+    "order": 3,
     "origins": [
         {
             "condition": {
@@ -12,14 +12,33 @@
                 "ponyorigins:talents/barrier_alicorn",
                 "ponyorigins:talents/fireball_alicorn",
                 "ponyorigins:talents/laser_alicorn",
+                "ponyorigins:talents/teleport_alicorn",
                 "ponyorigins:talents/celestial_alicorn"
             ]
         },
         {
             "condition": {
-                "inverted": true,
-                "type": "origins:origin",
-                "origin": "ponyorigins:talents/blank"
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:alicorn/ascension"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:special/rejected"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/harmony_alicorn"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": true
             },
             "origins": [
                 "ponyorigins:talents/other"
@@ -194,7 +213,7 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight"
+                        "power": "ponyorigins:common/flight/main"
                     },
                     {
                         "inverted": true,
@@ -316,12 +335,96 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/firecracker"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/firecracker"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
                         "origin": "ponyorigins:unicorn/flamethrower"
                     }
                 ]
             },
             "origins": [
                 "ponyorigins:talents/flamethrower"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/ice_beam"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/ice_beam"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:unicorn/shock_ray"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/shock_ray"
             ]
         },
         {
@@ -367,17 +470,30 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:races/changeling"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/ice_beam"
+                        "origin": "ponyorigins:unicorn/vanish"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talents/ice_beam"
+                "ponyorigins:talents/vanish"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changeling"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:races/changedling"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talents/web_shot"
             ]
         },
         {
@@ -437,7 +553,7 @@
                 "conditions": [
                     {
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight"
+                        "power": "ponyorigins:common/flight/main"
                     },
                     {
                         "type": "origins:power",
@@ -460,25 +576,6 @@
         },
         {
             "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/pony"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/other"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talents/blank"
-            ]
-        },
-        {
-            "condition": {
                 "type": "origins:origin",
                 "origin": "ponyorigins:races/chaos"
             },
@@ -486,13 +583,22 @@
                 "ponyorigins:chaos/fireworks",
                 "ponyorigins:chaos/sound"
             ]
+        },
+        {
+            "condition": {
+                "type": "origins:power",
+                "power": "ponyorigins:common/pony"
+            },
+            "origins": [
+                "ponyorigins:talents/blank"
+            ]
         }
     ],
     "enabled": true,
     "loading_priority": 2,
     "name": "Secondary Talent",
     "gui_title": {
-        "choose_origin": "Choose your Secondary Talent",
+        "choose_origin": "Choose your Secondary (Cutie Mark) Talent",
         "view_origin": "Secondary Talent"
     },
     "missing_name": "",

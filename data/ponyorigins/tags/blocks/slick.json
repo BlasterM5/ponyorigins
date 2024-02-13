@@ -1421,6 +1421,18 @@
             "required": false
         },
         {
+            "id": "ad_astra:steel_plating",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_slab",
+            "required": false
+        },
+        {
             "id": "ad_astra:desh_block",
             "required": false
         },
@@ -1434,6 +1446,26 @@
         },
         {
             "id": "ad_astra:calorite_block",
+            "required": false
+        },
+        {
+            "id": "clutter:silver_block",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_stairs",
             "required": false
         }
     ]

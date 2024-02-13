@@ -1,0 +1,20 @@
+{
+    "values": [
+        {
+            "id": "minecraft:lever",
+            "required": false
+        },
+        {
+            "id": "#buttons",
+            "required": false
+        },
+        {
+            "id": "#pressure_plates",
+            "required": false
+        },
+        {
+            "id": "minecraft:tripwire",
+            "required": false
+        }
+    ]
+}

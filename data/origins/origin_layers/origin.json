@@ -1,5 +1,5 @@
 {
-    "order": 0,
+    "order": 1,
     "origins": [
         {
             "condition": {
@@ -12,13 +12,13 @@
                 "ponyorigins:races/earth_pony",
                 "ponyorigins:races/unicorn",
                 "ponyorigins:races/pegasus",
-                "ponyorigins:races/thestral",
-                "ponyorigins:races/umbrum",
                 "ponyorigins:races/zebra",
                 "ponyorigins:races/yak",
                 "ponyorigins:races/seapony",
-                "ponyorigins:races/hippogriff",
+                "ponyorigins:races/umbrum",
                 "ponyorigins:races/kirin",
+                "ponyorigins:races/thestral",
+                "ponyorigins:races/hippogriff",
                 "ponyorigins:races/griffon",
                 "ponyorigins:races/dragon",
                 "ponyorigins:races/changeling",
@@ -58,12 +58,5 @@
     ],
     "enabled": true,
     "replace": true,
-    "loading_priority": 0,
-    "name": "Species",
-    "gui_title": {
-        "choose_origin": "Choose your Species wisely. Each one has exclusive abilities.",
-        "view_origin": "Your Species"
-    },
-    "missing_name": "",
-    "missing_description": ""
+    "loading_priority": 0
 }

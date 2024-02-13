@@ -2,15 +2,16 @@
     "name": "Seapony",
     "description": "The underwater pony race, masters of the sea. Automatically transforms into an Earth Pony when exiting the water.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/waterborn",
         "ponyorigins:common/diets/pescavore",
-        "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",
         "ponyorigins:common/pony",
         "ponyorigins:common/energy",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/sounds/seapony"
     ],
     "icon": {
         "item": "minecraft:heart_of_the_sea"

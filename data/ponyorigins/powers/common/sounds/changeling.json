@@ -1,0 +1,18 @@
+{
+    "name": "Changeling Sounds",
+    "description": "Changeling races make skeleton horse noises",
+    "hidden": true,
+    "type": "origins:multiple",
+    "hurt": {
+        "type": "apugli:custom_hurt_sound",
+        "sound": "entity.skeleton_horse.hurt",
+        "pitch": 1.3,
+        "volume": 0.5
+    },
+    "death": {
+        "type": "apugli:custom_death_sound",
+        "sound": "entity.skeleton_horse.death",
+        "pitch": 1.3,
+        "volume": 0.5
+    }
+}

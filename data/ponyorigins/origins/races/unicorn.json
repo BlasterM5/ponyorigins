@@ -2,6 +2,8 @@
     "name": "Unicorn",
     "description": "Home to Equestria's mountains and forests, Unicorns can change the world with their wide range of abilities.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
@@ -10,7 +12,7 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/pony",
         "ponyorigins:common/telekinesis",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:diamond"
@@ -21,6 +23,6 @@
             "origin": "ponyorigins:races/alicorn"
         }
     ],
-    "order": 5,
+    "order": 4,
     "impact": 0
 }

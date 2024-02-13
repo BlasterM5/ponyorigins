@@ -2,6 +2,8 @@
     "name": "Earth Pony",
     "description": "The most common pony, the backbone of Equestrian civilization, attuned to the earth.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
@@ -11,7 +13,7 @@
         "ponyorigins:earth_pony/flora",
         "ponyorigins:common/pony",
         "ponyorigins:common/health/plus_four",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:apple"

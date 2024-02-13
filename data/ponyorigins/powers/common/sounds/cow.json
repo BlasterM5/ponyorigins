@@ -1,0 +1,16 @@
+{
+    "name": "Cow Sounds",
+    "description": "Cow races make cow noises",
+    "hidden": true,
+    "type": "origins:multiple",
+    "hurt": {
+        "type": "apugli:custom_hurt_sound",
+        "sound": "entity.cow.hurt",
+        "volume": 0.5
+    },
+    "death": {
+        "type": "apugli:custom_death_sound",
+        "sound": "entity.cow.death",
+        "volume": 0.5
+    }
+}

@@ -2,11 +2,12 @@
     "name": "Orinthian",
     "description": "Flightless, anthropomorphic birdlike creatures from Orinthia.",
     "powers": [
-        "ponyorigins:common/diets/herbivore",
-        "ponyorigins:orinthian/talons",
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
+        "ponyorigins:common/talons",
         "origins:slow_falling",
         "ponyorigins:common/health/minus_two",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/sounds/avian"
     ],
     "icon": {
         "item": "minecraft:wheat_seeds"

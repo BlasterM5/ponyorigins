@@ -11,7 +11,7 @@
     "type": "origins:modify_damage_taken",
     "damage_condition": {
         "type": "origins:name",
-        "name": "minecraft:freeze"
+        "name": "freeze"
     },
     "modifier": {
         "operation": "set_total",

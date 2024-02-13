@@ -1,0 +1,722 @@
+{
+    "name": "Shock Ray",
+    "description": "Hold your [primary/secondary] power to zap your target with a ray of miniature lightning.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Hold [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "/",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to shock"
+            ],
+            "sprite": "minecraft:textures/block/lightning_rod.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 2,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_buffer",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_charged",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_charged",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "cd_timer": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "charged": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "buffer_return": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_charged",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_buffer",
+                "comparison": "<",
+                "compare_to": 5
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_charged",
+                "change": 1,
+                "operation": "set"
+            }
+        }
+    },
+    "charge": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "<",
+                        "compare_to": 10
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": "==",
+                    "compare_to": 10
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_charged",
+                    "change": 1,
+                    "operation": "set"
+                }
+            }
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_charged",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 0.1,
+                        "pitch": 1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "trigger": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:unicorn/shock_ray"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_key_primary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:talents/shock_ray"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_key_secondary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:simple"
+    },
+    "spark": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_charged",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "<",
+                        "compare_to": 5
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:electric_spark ~ ~ ~ 0 0.1 0 1 0 force"
+            }
+        }
+    },
+    "zap": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_charged",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 10,
+            "block": true,
+            "entity": true,
+            "shape_type": "collider",
+            "fluid_handling": "none",
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "inverted": true,
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "head",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "ponyorigins:conductive_armor"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "chest",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "ponyorigins:conductive_armor"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "legs",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "ponyorigins:conductive_armor"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "feet",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "ponyorigins:conductive_armor"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:on_block",
+                                        "block_condition": {
+                                            "type": "origins:movement_blocking"
+                                        }
+                                    }
+                                ]
+                            },
+                            "if_action": {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/energy"
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:slowness",
+                                                "duration": 20,
+                                                "amplifier": 4,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:damage",
+                                            "amount": 1,
+                                            "source": {
+                                                "name": "lightningBolt.player"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "else_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "minecraft:slowness",
+                                                "duration": 20,
+                                                "amplifier": 10,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:damage",
+                                            "amount": 2,
+                                            "source": {
+                                                "name": "lightningBolt.player"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:spawn_particles",
+                            "particle": "electric_spark",
+                            "count": 16,
+                            "speed": 1,
+                            "force": true,
+                            "spread": {
+                                "x": 0.1,
+                                "y": 0.1,
+                                "z": 0.1
+                            },
+                            "offset_y": 0.5
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:in_rain"
+                                    },
+                                    {
+                                        "type": "origins:on_block",
+                                        "block_condition": {
+                                            "type": "origins:in_tag",
+                                            "tag": "ponyorigins:conductors"
+                                        }
+                                    }
+                                ]
+                            },
+                            "if_action": {
+                                "type": "origins:area_of_effect",
+                                "radius": 4,
+                                "include_target": true,
+                                "bientity_condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:fluid_height",
+                                                "fluid": "minecraft:water",
+                                                "comparison": ">",
+                                                "compare_to": 0
+                                            },
+                                            {
+                                                "type": "origins:in_rain"
+                                            },
+                                            {
+                                                "type": "origins:on_block",
+                                                "block_condition": {
+                                                    "type": "origins:in_tag",
+                                                    "tag": "ponyorigins:conductors"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "bientity_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:target_condition",
+                                                "condition": {
+                                                    "inverted": true,
+                                                    "type": "origins:and",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "head",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:conductive_armor"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "chest",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:conductive_armor"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "legs",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:conductive_armor"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:equipped_item",
+                                                            "equipment_slot": "feet",
+                                                            "item_condition": {
+                                                                "type": "origins:ingredient",
+                                                                "ingredient": {
+                                                                    "tag": "ponyorigins:conductive_armor"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:on_block",
+                                                            "block_condition": {
+                                                                "type": "origins:movement_blocking"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "if_action": {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:target_condition",
+                                                    "condition": {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/energy"
+                                                    }
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:target_action",
+                                                    "action": {
+                                                        "type": "origins:and",
+                                                        "actions": [
+                                                            {
+                                                                "type": "origins:apply_effect",
+                                                                "effect": {
+                                                                    "effect": "minecraft:slowness",
+                                                                    "duration": 20,
+                                                                    "amplifier": 4,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "origins:damage",
+                                                                "amount": 1,
+                                                                "source": {
+                                                                    "name": "lightningBolt.player"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:target_action",
+                                                    "action": {
+                                                        "type": "origins:and",
+                                                        "actions": [
+                                                            {
+                                                                "type": "origins:apply_effect",
+                                                                "effect": {
+                                                                    "effect": "minecraft:slowness",
+                                                                    "duration": 20,
+                                                                    "amplifier": 10,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "origins:damage",
+                                                                "amount": 2,
+                                                                "source": {
+                                                                    "name": "lightningBolt.player"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:target_action",
+                                            "action": {
+                                                "type": "origins:spawn_particles",
+                                                "particle": "electric_spark",
+                                                "count": 16,
+                                                "speed": 1,
+                                                "spread": {
+                                                    "x": 0.1,
+                                                    "y": 0.1,
+                                                    "z": 0.1
+                                                },
+                                                "offset_y": 0.5
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "before_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 0.1,
+                        "pitch": 1
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_active"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "change": -1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_buffer",
+                            "change": -1,
+                            "operation": "add"
+                        }
+                    }
+                ]
+            },
+            "command_along_ray": "particle minecraft:electric_spark ^ ^0.5 ^ 0 0 0 1 0 force",
+            "command_step": 1
+        }
+    }
+}

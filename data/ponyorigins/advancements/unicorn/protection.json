@@ -5,7 +5,7 @@
             "nbt": "{Enchantments:[{id:\"minecraft:protection\",lvl:4s}]}"
         },
         "title": "Uniguard Armor",
-        "description": "Wear your armor with maximum Protection",
+        "description": "Power up every piece of your Armor",
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": false

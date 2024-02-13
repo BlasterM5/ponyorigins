@@ -1,0 +1,24 @@
+{
+    "values": [
+        {
+            "id": "minecraft:axolotl",
+            "required": false
+        },
+        {
+            "id": "minecraft:fox",
+            "required": false
+        },
+        {
+            "id": "minecraft:ocelot",
+            "required": false
+        },
+        {
+            "id": "fennecfox:fennecfox",
+            "required": false
+        },
+        {
+            "id": "species:wraptor",
+            "required": false
+        }
+    ]
+}

@@ -4,7 +4,7 @@
             "item": "minecraft:leather_boots"
         },
         "title": "Traveler",
-        "description": "Travel the world",
+        "description": "Travel around the World",
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": false

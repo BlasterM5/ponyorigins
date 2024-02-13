@@ -1,0 +1,203 @@
+{
+    "name": "Web Shot",
+    "description": "By eating food, you can create sticky silk, and spit it at your target to slow them down.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Press [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to shot web"
+            ],
+            "sprite": "minecraft:textures/block/cobweb.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eating food fills your silk",
+            "sprite": "minecraft:textures/item/bread.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "silk": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 5
+        }
+    },
+    "food": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 0
+    },
+    "silk_maker": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_food",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_food",
+                    "change": -2,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_silk",
+                    "change": 1,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "split_nutrition": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_silk",
+                    "comparison": "<",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_food",
+                    "comparison": "<=",
+                    "compare_to": 100
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/changeling"
+                }
+            ]
+        },
+        "type": "origins:modify_food",
+        "food_modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_food",
+            "change": 50,
+            "operation": "add"
+        },
+        "always_edible": true
+    },
+    "food_full": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "==",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_silk",
+                    "comparison": "<",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_food",
+                    "comparison": "<=",
+                    "compare_to": 100
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/changeling"
+                }
+            ]
+        },
+        "type": "origins:modify_food",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_food",
+            "change": 100,
+            "operation": "add"
+        },
+        "always_edible": true
+    },
+    "shot_web": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_silk",
+                    "comparison": ">=",
+                    "compare_to": 25
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "apugli:fire_projectile",
+                    "entity_type": "minecraft:armor_stand",
+                    "count": 1,
+                    "speed": 2,
+                    "divergence": 1,
+                    "tag": "{Invisible:1b,NoBasePlate:1b,Small:1b,DisabledSlots:4144959,CustomName:'[{\"text\":\"Web Shot\"}]',Silent:1b,ArmorDropChances:[f,f,f],ArmorItems:[{},{},{id:cobweb,Count:1}]}",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:grant_power",
+                            "power": "ponyorigins:projectiles/cobweb",
+                            "source": "o:changeling/web_shot"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "entity.llama.spit",
+                    "volume": 1,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_silk",
+                    "change": -25,
+                    "operation": "add"
+                }
+            ]
+        }
+    }
+}

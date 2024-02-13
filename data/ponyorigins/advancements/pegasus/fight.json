@@ -4,7 +4,7 @@
             "item": "minecraft:bow"
         },
         "title": "Aerial Mastery",
-        "description": "Clear the realm of monsters from the air",
+        "description": "Defeat monsters while flying",
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": false

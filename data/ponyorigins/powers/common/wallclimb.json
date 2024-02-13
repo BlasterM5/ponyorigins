@@ -1,0 +1,184 @@
+{
+    "name": "Wall Climb",
+    "description": "Climb vertical surfaces with relative ease.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Must be barefoot",
+            "sprite": "minecraft:textures/item/leather_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Must have main and off (hand or hooves) free",
+            "sprite": "minecraft:textures/item/wooden_pickaxe.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "wall_climb": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">=",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/hooves"
+                                },
+                                {
+                                    "type": "origins:block_in_radius",
+                                    "block_condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:icey"
+                                            },
+                                            {
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:slick"
+                                            }
+                                        ]
+                                    },
+                                    "radius": 1,
+                                    "shape": "sphere",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/hooves"
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": 0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": -0.2,
+                                            "offset_y": 0,
+                                            "offset_z": -0.2
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:block_collision",
+                    "offset_x": 0,
+                    "offset_y": -0.1,
+                    "offset_z": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/telekinesis"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_mainhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_offhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:climbing",
+        "allow_holding": true
+    },
+    "stamina_drain": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_wall_climb"
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.0025
+        }
+    }
+}

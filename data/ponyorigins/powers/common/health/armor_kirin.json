@@ -8,13 +8,49 @@
             "sprite": "minecraft:textures/item/iron_chestplate.png"
         }
     ],
-    "type": "origins:modify_damage_taken",
-    "damage_condition": {
-        "inverted": true,
-        "type": "origins:bypasses_armor"
+    "type": "origins:multiple",
+    "sound_muter": {
+        "type": "apugli:custom_hurt_sound",
+        "muted": true,
+        "volume": 0
     },
-    "modifier": {
-        "operation": "multiply_base_additive",
-        "value": -0.25
+    "damage_reduction": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:bypasses_armor"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.shulker.hurt_closed",
+            "volume": 1,
+            "pitch": 1
+        }
+    },
+    "ap_damage_noise": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:bypasses_armor"
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.player.hurt",
+            "volume": 1,
+            "pitch": 1
+        }
     }
 }

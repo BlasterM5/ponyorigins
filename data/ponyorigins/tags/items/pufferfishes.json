@@ -1,0 +1,16 @@
+{
+    "values": [
+        {
+            "id": "minecraft:pufferfish",
+            "required": true
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:lava_pufferfish_slice",
+            "required": false
+        }
+    ]
+}

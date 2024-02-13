@@ -1,0 +1,20 @@
+{
+    "values": [
+        {
+            "id": "minecraft:bow",
+            "required": false
+        },
+        {
+            "id": "minecraft:crossbow",
+            "required": false
+        },
+        {
+            "id": "minecraft:trident",
+            "required": false
+        },
+        {
+            "id": "minecraft:fire_charge",
+            "required": false
+        }
+    ]
+}

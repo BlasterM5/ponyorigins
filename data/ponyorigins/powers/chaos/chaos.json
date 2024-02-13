@@ -103,6 +103,13 @@
                             }
                         },
                         {
+                            "weight": 4,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/firecracker"
+                            }
+                        },
+                        {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
@@ -128,6 +135,13 @@
                             "element": {
                                 "type": "origins:execute_command",
                                 "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/ice_beam"
+                            }
+                        },
+                        {
+                            "weight": 4,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/shock_ray"
                             }
                         },
                         {
@@ -163,6 +177,13 @@
                             "element": {
                                 "type": "origins:execute_command",
                                 "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/teleport"
+                            }
+                        },
+                        {
+                            "weight": 4,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/vanish"
                             }
                         },
                         {

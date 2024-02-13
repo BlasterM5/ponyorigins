@@ -1,19 +1,22 @@
 {
-    "name": "Dragonborn",
-    "description": "Hatched in lava, born of fire, dragonborn are an unstoppable force in the world.",
+    "name": "Dragon",
+    "description": "Hatched in lava, born of fire, dragons are an unstoppable force in the world.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/lithovore",
-        "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",
         "ponyorigins:common/rideable",
         "ponyorigins:dragon/heat",
         "ponyorigins:dragon/flamethrower",
         "ponyorigins:dragon/fireproof",
-        "ponyorigins:common/flight",
+        "ponyorigins:common/flight/main",
+        "ponyorigins:common/flight/hazards",
         "ponyorigins:common/wings/membraneous",
+        "ponyorigins:common/nightvision",
         "ponyorigins:common/health/armor_dragon",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/sounds/dragon"
     ],
     "icon": {
         "item": "minecraft:blaze_powder"

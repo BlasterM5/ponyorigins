@@ -1,0 +1,96 @@
+{
+    "values": [
+        {
+            "id": "minecraft:camel",
+            "required": false
+        },
+        {
+            "id": "minecraft:donkey",
+            "required": false
+        },
+        {
+            "id": "minecraft:horse",
+            "required": false
+        },
+        {
+            "id": "minecraft:mule",
+            "required": false
+        },
+        {
+            "id": "minecraft:skeleton_horse",
+            "required": false
+        },
+        {
+            "id": "minecraft:zombie_horse",
+            "required": false
+        },
+        {
+            "id": "livingthings:elephant",
+            "required": false
+        },
+        {
+            "id": "naturalist:zebra",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:courierbird",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:moth",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:nudibranch",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:netherbat",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:nightmare",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:colelytra",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:firebird",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:dragon",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:archelon",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:griffon",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:direwolf",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:acencia",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:geckotoalizard",
+            "required": false
+        },
+        {
+            "id": "mythicmounts:ridinglizard",
+            "required": false
+        },
+        {
+            "id": "simplekelpies:kelpie",
+            "required": false
+        }
+    ]
+}

@@ -5,6 +5,14 @@
             "required": false
         },
         {
+            "id": "#c:grass_variants",
+            "required": false
+        },
+        {
+            "id": "#c:grass",
+            "required": false
+        },
+        {
             "id": "#minecraft:leaves",
             "required": false
         },
@@ -262,6 +270,54 @@
         },
         {
             "id": "minecraft:grass",
+            "required": false
+        },
+        {
+            "id": "beachparty:beach_grass",
+            "required": false
+        },
+        {
+            "id": "#c:wheat",
+            "required": false
+        },
+        {
+            "id": "enhancermod:wild_wheat",
+            "required": false
+        },
+        {
+            "id": "enhancermod:rockcress",
+            "required": false
+        },
+        {
+            "id": "#minecraft:straw",
+            "required": false
+        },
+        {
+            "id": "guineapigs:alfalfa",
+            "required": false
+        },
+        {
+            "id": "morefood:watermint",
+            "required": false
+        },
+        {
+            "id": "morefood:spearmint",
+            "required": false
+        },
+        {
+            "id": "nears:cinder_grass",
+            "required": false
+        },
+        {
+            "id": "nears:cinder_grain",
+            "required": false
+        },
+        {
+            "id": "nutritious-feast:illuminating_flower",
+            "required": false
+        },
+        {
+            "id": "sandwichable:ancient_grain",
             "required": false
         }
     ]

@@ -70,15 +70,10 @@
     },
     "recharge_buffer": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/energy_level",
+            "comparison": "==",
+            "compare_to": 0
         },
         "type": "origins:action_over_time",
         "interval": 4,

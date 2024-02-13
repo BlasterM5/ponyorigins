@@ -1,0 +1,276 @@
+{
+    "values": [
+        {
+            "id": "#c:crops",
+            "required": false
+        },
+        {
+            "id": "#c:grass",
+            "required": false
+        },
+        {
+            "id": "#c:grass_variants",
+            "required": false
+        },
+        {
+            "id": "#minecraft:leaves",
+            "required": false
+        },
+        {
+            "id": "#minecraft:flowers",
+            "required": false
+        },
+        {
+            "id": "#createadditions:plants",
+            "required": false
+        },
+        {
+            "id": "mcwfences:oak_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:spruce_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:birch_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:jungle_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:acacia_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:dark_oak_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:azalea_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:flowering_azalea_hedge",
+            "required": false
+        },
+        {
+            "id": "mcwfences:mangrove_hedge",
+            "required": false
+        },
+        {
+            "id": "farmersrespite:green_tea_leaves",
+            "required": false
+        },
+        {
+            "id": "farmersrespite:yellow_tea_leaves",
+            "required": false
+        },
+        {
+            "id": "farmersrespite:black_tea_leaves",
+            "required": false
+        },
+        {
+            "id": "farmersrespite:rose_hips",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:sandy_shrub",
+            "required": false
+        },
+        {
+            "id": "#farmersdelight:wild_crops",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:straw",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:horse_feed",
+            "required": false
+        },
+        {
+            "id": "expandeddelight:cinnamon_sapling",
+            "required": false
+        },
+        {
+            "id": "expandeddelight:wild_asparagus",
+            "required": false
+        },
+        {
+            "id": "expandeddelight:wild_sweet_potatoes",
+            "required": false
+        },
+        {
+            "id": "expandeddelight:wild_chili_pepper",
+            "required": false
+        },
+        {
+            "id": "expandeddelight:wild_peanuts",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:wild_cucumbers",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:wild_corn",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:wild_eggplants",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:avocado_sapling",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:willowing_branches",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:black_thistle",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:foxglove",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:cattail",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:reed",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:small_lily_pad",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:water_lily",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:ivy",
+            "required": false
+        },
+        {
+            "id": "botania:vine_ball",
+            "required": false
+        },
+        {
+            "id": "charm:ebony_leaves",
+            "required": false
+        },
+        {
+            "id": "gofish:seaweed",
+            "required": false
+        },
+        {
+            "id": "swampier_swamps:small_lily_pad",
+            "required": false
+        },
+        {
+            "id": "swampier_swamps:big_lily_pad",
+            "required": false
+        },
+        {
+            "id": "#goodending:flowering_lily_pads",
+            "required": false
+        },
+        {
+            "id": "goodending:hanging_oak_leaves",
+            "required": false
+        },
+        {
+            "id": "goodending:hanging_dark_oak_leaves",
+            "required": false
+        },
+        {
+            "id": "goodending:duckweed",
+            "required": false
+        },
+        {
+            "id": "goodending:cattail",
+            "required": false
+        },
+        {
+            "id": "naturalist:duckweed",
+            "required": false
+        },
+        {
+            "id": "naturalist:cattail",
+            "required": false
+        },
+        {
+            "id": "sandwichable:shrub",
+            "required": false
+        },
+        {
+            "id": "sandwichable:ancient_grain",
+            "required": false
+        },
+        {
+            "id": "supplementaries:flax",
+            "required": false
+        },
+        {
+            "id": "minecraft:wheat",
+            "required": false
+        },
+        {
+            "id": "minecraft:large_fern",
+            "required": false
+        },
+        {
+            "id": "minecraft:tall_grass",
+            "required": false
+        },
+        {
+            "id": "minecraft:lily_pad",
+            "required": false
+        },
+        {
+            "id": "minecraft:vine",
+            "required": false
+        },
+        {
+            "id": "minecraft:small_dripleaf",
+            "required": false
+        },
+        {
+            "id": "minecraft:big_dripleaf",
+            "required": false
+        },
+        {
+            "id": "minecraft:kelp",
+            "required": false
+        },
+        {
+            "id": "minecraft:paper",
+            "required": false
+        },
+        {
+            "id": "minecraft:sugar_cane",
+            "required": false
+        },
+        {
+            "id": "minecraft:seagrass",
+            "required": false
+        },
+        {
+            "id": "minecraft:fern",
+            "required": false
+        },
+        {
+            "id": "minecraft:grass",
+            "required": false
+        }
+    ]
+}

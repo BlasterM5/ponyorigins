@@ -1,0 +1,84 @@
+{
+    "name": "Avian Sounds",
+    "description": "Avian races make bird noises, accounts for waterborn hippogriff as well",
+    "hidden": true,
+    "type": "origins:multiple",
+    "hurt": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/waterborn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                }
+            ]
+        },
+        "type": "apugli:custom_hurt_sound",
+        "sound": "entity.parrot.hurt",
+        "volume": 0.5
+    },
+    "death": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/waterborn"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                }
+            ]
+        },
+        "type": "apugli:custom_death_sound",
+        "sound": "entity.parrot.death",
+        "volume": 0.5
+    },
+    "hurt_water": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/waterborn"
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                }
+            ]
+        },
+        "type": "apugli:custom_hurt_sound",
+        "sound": "entity.dolphin.hurt",
+        "pitch": 1.3,
+        "volume": 0.5
+    },
+    "death_water": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/waterborn"
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                }
+            ]
+        },
+        "type": "apugli:custom_death_sound",
+        "sound": "entity.dolphin.death",
+        "pitch": 1.3,
+        "volume": 0.5
+    }
+}

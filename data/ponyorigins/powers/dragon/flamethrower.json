@@ -15,182 +15,29 @@
         }
     ],
     "type": "origins:multiple",
-    "flamethrower": {
+    "fire": {
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:dragon/heat_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
                     "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:raycast",
-            "distance": 10,
-            "block": true,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "any",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:damage",
-                            "amount": 2,
-                            "source": {
-                                "name": "onFire.player",
-                                "fire": true
-                            }
-                        },
-                        {
-                            "type": "origins:set_on_fire",
-                            "duration": 4
-                        },
-                        {
-                            "type": "origins:block_action_at",
-                            "block_action": {
-                                "type": "origins:add_block",
-                                "block": "minecraft:fire"
-                            }
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "tag": "ponyorigins:enclosed_helmets"
                         }
-                    ]
-                }
-            },
-            "block_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:add_block",
-                        "block": "minecraft:fire"
-                    },
-                    {
-                        "type": "origins:if_else_list",
-                        "actions": [
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:snow"
-                                },
-                                "action": {
-                                    "type": "origins:set_block",
-                                    "block": "minecraft:blue_ice"
-                                }
-                            },
-                            {
-                                "condition": {
-                                    "type": "origins:block",
-                                    "block": "minecraft:packed_ice"
-                                },
-                                "action": {
-                                    "type": "origins:set_block",
-                                    "block": "minecraft:blue_ice"
-                                }
-                            }
-                        ]
                     }
-                ]
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:dragon/heat_level",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "block.fire.ambient",
-                        "volume": 1,
-                        "pitch": 0.5
-                    }
-                ]
-            },
-            "command_along_ray": "particle minecraft:flame ~ ~ ~ 0 0 0 1 0 force",
-            "command_step": 1
-        },
-        "key": {
-            "key": "key.origins.secondary_active",
-            "continuous": true
-        }
-    },
-    "water_bubbles": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
                 },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:dragon/heat_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:raycast",
-                    "distance": 3,
-                    "block": false,
-                    "entity": false,
-                    "shape_type": "visual",
-                    "fluid_handling": "none",
-                    "command_along_ray": "particle minecraft:bubble_column_up ~ ~ ~ 0 0 0 1 8 force",
-                    "command_step": 1
-                },
-                {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:block.bubble_column.upwards_inside",
-                    "volume": 1,
-                    "pitch": 1
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_level",
-                    "change": -1,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:gain_air",
-                    "value": -1
-                }
-            ]
-        },
-        "cooldown": 5,
-        "key": {
-            "key": "key.origins.secondary_active"
-        }
-    },
-    "out_of_heat": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
                 {
                     "inverted": true,
                     "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "fluid": "minecraft:lava"
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "ponyorigins:dragon/heat_level",
+                    "resource": "*:*_cd",
                     "comparison": "==",
                     "compare_to": 0
                 }
@@ -198,29 +45,265 @@
         },
         "type": "origins:active_self",
         "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:dragon/heat_level",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:air",
+                        "comparison": ">",
+                        "compare_to": 60
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "inverted": true,
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                },
+                "if_action": {
                     "type": "origins:raycast",
-                    "distance": 3,
-                    "block": false,
-                    "entity": false,
+                    "distance": 15,
+                    "block": true,
+                    "entity": true,
                     "shape_type": "collider",
-                    "fluid_handling": "none",
-                    "command_along_ray": "particle minecraft:ash ~ ~ ~ 0.1 0.1 0.1 0.2 3 force",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:damage",
+                                    "amount": 4,
+                                    "source": {
+                                        "name": "onFire.player",
+                                        "fire": true
+                                    }
+                                },
+                                {
+                                    "type": "origins:set_on_fire",
+                                    "duration": 4
+                                },
+                                {
+                                    "type": "origins:block_action_at",
+                                    "block_action": {
+                                        "type": "origins:add_block",
+                                        "block": "minecraft:fire"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "block_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:add_block",
+                                "block": "minecraft:fire"
+                            },
+                            {
+                                "type": "origins:if_else_list",
+                                "actions": [
+                                    {
+                                        "condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:snow"
+                                        },
+                                        "action": {
+                                            "type": "origins:set_block",
+                                            "block": "minecraft:blue_ice"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:packed_ice"
+                                        },
+                                        "action": {
+                                            "type": "origins:set_block",
+                                            "block": "minecraft:blue_ice"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "before_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:dragon/heat_level",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.ambient",
+                                "volume": 1,
+                                "pitch": 0.5
+                            },
+                            {
+                                "type": "origins:gain_air",
+                                "value": -30
+                            }
+                        ]
+                    },
+                    "command_along_ray": "particle minecraft:flame ^ ^-0.25 ^ 0 0 0 1 0 force",
                     "command_step": 1
                 },
-                {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:block.fire.extinguish",
-                    "volume": 0.25,
-                    "pitch": 1
+                "else_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 3,
+                            "block": false,
+                            "entity": false,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "command_along_ray": "particle minecraft:bubble_column_up ^ ^-0.25 ^ 0 0 0 1 8 force",
+                            "command_step": 1
+                        },
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:block.bubble_column.upwards_inside",
+                            "volume": 1,
+                            "pitch": 1
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "ponyorigins:dragon/heat_level",
+                            "change": -1,
+                            "operation": "add"
+                        },
+                        {
+                            "type": "origins:gain_air",
+                            "value": -30
+                        }
+                    ]
                 }
-            ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:air",
+                    "comparison": ">",
+                    "compare_to": 30
+                },
+                "if_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:water"
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:raycast",
+                                "distance": 3,
+                                "block": false,
+                                "entity": false,
+                                "shape_type": "collider",
+                                "fluid_handling": "none",
+                                "command_along_ray": "particle minecraft:ash ^ ^-0.25 ^ 0.1 0.1 0.1 0.2 3 force",
+                                "command_step": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:gain_air",
+                                "value": -30
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd",
+                                "change": 2,
+                                "operation": "add"
+                            }
+                        ]
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:raycast",
+                                "distance": 3,
+                                "block": false,
+                                "entity": false,
+                                "shape_type": "visual",
+                                "fluid_handling": "none",
+                                "command_along_ray": "particle minecraft:bubble_column_up ^ ^-0.25 ^ 0 0 0 1 8 force",
+                                "command_step": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.bubble_column.upwards_inside",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:gain_air",
+                                "value": -30
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd",
+                                "change": 2,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                }
+            }
         },
-        "cooldown": 5,
+        "cooldown": 2,
         "key": {
-            "key": "key.origins.secondary_active"
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "cd_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
         }
     }
 }

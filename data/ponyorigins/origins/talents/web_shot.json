@@ -1,0 +1,11 @@
+{
+    "name": "Web Shot",
+    "description": "A changeling's body produces an impressive amount of silky material, which is used to capture its prey.",
+    "powers": [
+        "ponyorigins:changeling/web_shot"
+    ],
+    "icon": {
+        "item": "minecraft:cobweb"
+    },
+    "impact": 0
+}

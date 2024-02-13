@@ -3,16 +3,6 @@
     "description": "As a pony, you bear (or one day will bear) a cutie mark, that depicts your innermost self.",
     "hidden": true,
     "type": "origins:multiple",
-    "ep_farmer": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1000,
-        "start_value": 0,
-        "max_action": {
-            "type": "origins:execute_command",
-            "command": "advancement grant @s only ponyorigins:earth_pony/farmer"
-        }
-    },
     "ep_travel": {
         "condition": {
             "type": "origins:and",
@@ -36,7 +26,7 @@
                 "type": "origins:scoreboard",
                 "objective": "po.eptravel",
                 "comparison": ">=",
-                "compare_to": 1000000
+                "compare_to": 5000000
             },
             "if_action": {
                 "type": "origins:execute_command",
@@ -47,33 +37,6 @@
                 "command": "function ponyorigins:advancements/travel_math"
             }
         }
-    },
-    "ep_harvest": {
-        "condition": {
-            "type": "origins:origin",
-            "origin": "ponyorigins:races/earth_pony"
-        },
-        "type": "origins:action_on_block_break",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_ep_farmer",
-            "change": 1,
-            "operation": "add"
-        },
-        "block_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:in_tag",
-                    "tag": "c:crops"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "ponyorigins:items/crops_minecraft"
-                }
-            ]
-        },
-        "only_when_harvested": true
     },
     "ep_trader": {
         "condition": {
@@ -106,15 +69,166 @@
             }
         }
     },
-    "pp_fight_counter": {
+    "ep_mastery_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/earth_pony"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:earth_pony/mastery"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:earth_pony/farmer"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:earth_pony/trader"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:earth_pony/travel"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "advancement grant @s only ponyorigins:earth_pony/mastery"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "scoreboard players set @s po.eporb 1"
+                    }
+                ]
+            }
+        }
+    },
+    "ep_farmer_count": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/earth_pony"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:earth_pony/farmer"
+                }
+            ]
+        },
         "type": "origins:resource",
         "min": 0,
-        "max": 100,
+        "max": 1000,
         "start_value": 0,
         "max_action": {
-            "type": "origins:execute_command",
-            "command": "advancement grant @s only ponyorigins:pegasus/fight"
+            "type": "origins:if_else",
+            "condition": {
+                "inverted": true,
+                "type": "origins:advancement",
+                "advancement": "ponyorigins:earth_pony/farmer"
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "advancement grant @s only ponyorigins:earth_pony/farmer"
+            }
         }
+    },
+    "ep_farmer": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:races/earth_pony"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:earth_pony/farmer"
+                }
+            ]
+        },
+        "type": "origins:action_on_block_break",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_ep_farmer_count",
+            "change": 1,
+            "operation": "add"
+        },
+        "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:crops"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:crops_2_stage"
+                                },
+                                {
+                                    "type": "origins:block_state",
+                                    "property": "age",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:crops_3_stage"
+                                },
+                                {
+                                    "type": "origins:block_state",
+                                    "property": "age",
+                                    "comparison": "==",
+                                    "compare_to": 3
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:in_tag",
+                            "tag": "ponyorigins:crops_0_stage"
+                        },
+                        {
+                            "type": "origins:block_state",
+                            "property": "age",
+                            "comparison": "==",
+                            "compare_to": 7
+                        }
+                    ]
+                }
+            ]
+        },
+        "only_when_harvested": true
     },
     "pp_fight_check": {
         "condition": {
@@ -151,6 +265,16 @@
         },
         "cooldown": 1
     },
+    "pp_fight_counter": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "advancement grant @s only ponyorigins:pegasus/fight"
+        }
+    },
     "pp_flight": {
         "condition": {
             "type": "origins:and",
@@ -179,57 +303,6 @@
             "if_action": {
                 "type": "origins:execute_command",
                 "command": "advancement grant @s only ponyorigins:pegasus/flight"
-            }
-        }
-    },
-    "ep_mastery_check": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:races/earth_pony"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:advancement",
-                    "advancement": "ponyorigins:earth_pony/mastery"
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 40,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:earth_pony/flora"
-                    },
-                    {
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:earth_pony/trader"
-                    },
-                    {
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:earth_pony/travel"
-                    }
-                ]
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:execute_command",
-                        "command": "advancement grant @s only ponyorigins:earth_pony/mastery"
-                    },
-                    {
-                        "type": "origins:execute_command",
-                        "command": "scoreboard players set @s po.eporb 1"
-                    }
-                ]
             }
         }
     },
@@ -372,15 +445,15 @@
                 "conditions": [
                     {
                         "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/energy"
+                        "advancement": "ponyorigins:pegasus/mastery"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/tk_mastery"
+                        "advancement": "ponyorigins:unicorn/mastery"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/protection"
+                        "advancement": "ponyorigins:earth_pony/mastery"
                     }
                 ]
             },
@@ -469,9 +542,9 @@
                         "equipment_slot": "head",
                         "item_condition": {
                             "type": "origins:enchantment",
-                            "enchantment": "protection",
-                            "comparison": ">=",
-                            "compare_to": 4
+                            "enchantment": "minecraft:protection",
+                            "comparison": ">",
+                            "compare_to": 0
                         }
                     },
                     {
@@ -479,9 +552,9 @@
                         "equipment_slot": "chest",
                         "item_condition": {
                             "type": "origins:enchantment",
-                            "enchantment": "protection",
-                            "comparison": ">=",
-                            "compare_to": 4
+                            "enchantment": "minecraft:protection",
+                            "comparison": ">",
+                            "compare_to": 0
                         }
                     },
                     {
@@ -489,9 +562,9 @@
                         "equipment_slot": "legs",
                         "item_condition": {
                             "type": "origins:enchantment",
-                            "enchantment": "protection",
-                            "comparison": ">=",
-                            "compare_to": 4
+                            "enchantment": "minecraft:protection",
+                            "comparison": ">",
+                            "compare_to": 0
                         }
                     },
                     {
@@ -499,9 +572,9 @@
                         "equipment_slot": "feet",
                         "item_condition": {
                             "type": "origins:enchantment",
-                            "enchantment": "protection",
-                            "comparison": ">=",
-                            "compare_to": 4
+                            "enchantment": "minecraft:protection",
+                            "comparison": ">",
+                            "compare_to": 0
                         }
                     }
                 ]

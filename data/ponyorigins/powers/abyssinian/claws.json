@@ -1,0 +1,22 @@
+{
+    "name": "Claws",
+    "description": "Extra attack damage when unarmed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+200 percent attack strength when unarmed",
+            "sprite": "minecraft:textures/item/iron_sword.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:resource",
+        "resource": "ponyorigins:common/00_empty_mainhand",
+        "comparison": "==",
+        "compare_to": 1
+    },
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": 2
+    }
+}

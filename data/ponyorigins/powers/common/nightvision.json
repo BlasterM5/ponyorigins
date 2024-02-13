@@ -16,165 +16,506 @@
         "start_value": 0
     },
     "check_brightness": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:brightness",
+                            "comparison": ">",
+                            "compare_to": 0.2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "==",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:blindness",
+                    "min_amplifier": 0
+                }
+            ]
+        },
         "type": "origins:action_over_time",
-        "interval": 2,
+        "interval": 1,
         "entity_action": {
             "type": "origins:if_else_list",
             "actions": [
                 {
                     "condition": {
-                        "type": "origins:or",
+                        "type": "origins:and",
                         "conditions": [
                             {
                                 "type": "origins:brightness",
-                                "comparison": ">",
-                                "compare_to": 0.3
+                                "comparison": "<=",
+                                "compare_to": 0.02
                             },
                             {
-                                "type": "origins:status_effect",
-                                "effect": "minecraft:blindness",
-                                "min_amplifier": 0
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": "<",
+                                "compare_to": 10
                             }
                         ]
                     },
                     "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_intensity",
-                        "change": 0,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.3
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
                         "change": 1,
-                        "operation": "set"
+                        "operation": "add"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.04
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.02
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 9
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 9
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.06
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.04
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 8
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 8
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.08
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.06
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 7
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 7
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.1
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.08
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 6
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 6
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.12
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 5
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 5
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.14
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.12
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 4
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 4
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.16
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.14
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 3
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 3
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.18
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.16
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 2
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 2
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:brightness",
+                                "comparison": "<=",
+                                "compare_to": 0.2
+                            },
+                            {
+                                "type": "origins:brightness",
+                                "comparison": ">",
+                                "compare_to": 0.18
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_intensity",
+                            "comparison": "<",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_intensity",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_intensity",
+                                "comparison": ">",
+                                "compare_to": 1
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_intensity",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
                     }
                 },
                 {
                     "condition": {
                         "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.27
+                        "comparison": ">",
+                        "compare_to": 0.2
                     },
                     "action": {
                         "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 2,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.24
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 3,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.21
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 4,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.18
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 5,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.15
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 6,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.12
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 7,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.09
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 8,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.06
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 9,
-                        "operation": "set"
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:brightness",
-                        "comparison": "<=",
-                        "compare_to": 0.03
-                    },
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_intensity",
-                        "change": 10,
-                        "operation": "set"
+                        "resource": "*:*_intensify",
+                        "change": -1,
+                        "operation": "add"
                     }
                 }
             ]
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_intensity",
+            "change": 0,
+            "operation": "set"
         }
     },
     "nv1": {
@@ -185,7 +526,7 @@
             "compare_to": 1
         },
         "type": "origins:night_vision",
-        "strength": 0.1
+        "strength": 0.02
     },
     "nv2": {
         "condition": {
@@ -195,7 +536,7 @@
             "compare_to": 2
         },
         "type": "origins:night_vision",
-        "strength": 0.2
+        "strength": 0.04
     },
     "nv3": {
         "condition": {
@@ -205,7 +546,7 @@
             "compare_to": 3
         },
         "type": "origins:night_vision",
-        "strength": 0.3
+        "strength": 0.06
     },
     "nv4": {
         "condition": {
@@ -215,7 +556,7 @@
             "compare_to": 4
         },
         "type": "origins:night_vision",
-        "strength": 0.4
+        "strength": 0.08
     },
     "nv5": {
         "condition": {
@@ -225,7 +566,7 @@
             "compare_to": 5
         },
         "type": "origins:night_vision",
-        "strength": 0.5
+        "strength": 0.1
     },
     "nv6": {
         "condition": {
@@ -235,7 +576,7 @@
             "compare_to": 6
         },
         "type": "origins:night_vision",
-        "strength": 0.6
+        "strength": 0.12
     },
     "nv7": {
         "condition": {
@@ -245,7 +586,7 @@
             "compare_to": 7
         },
         "type": "origins:night_vision",
-        "strength": 0.7
+        "strength": 0.14
     },
     "nv8": {
         "condition": {
@@ -255,7 +596,7 @@
             "compare_to": 8
         },
         "type": "origins:night_vision",
-        "strength": 0.8
+        "strength": 0.16
     },
     "nv9": {
         "condition": {
@@ -265,7 +606,7 @@
             "compare_to": 9
         },
         "type": "origins:night_vision",
-        "strength": 0.9
+        "strength": 0.18
     },
     "nv10": {
         "condition": {
@@ -275,6 +616,6 @@
             "compare_to": 10
         },
         "type": "origins:night_vision",
-        "strength": 1
+        "strength": 0.2
     }
 }

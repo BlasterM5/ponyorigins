@@ -1,5 +1,5 @@
 {
-    "order": 1,
+    "order": 2,
     "origins": [
         {
             "condition": {
@@ -19,11 +19,13 @@
                 "ponyorigins:unicorn/flora",
                 "ponyorigins:unicorn/teleport",
                 "ponyorigins:unicorn/fireball",
+                "ponyorigins:unicorn/firecracker",
                 "ponyorigins:unicorn/flamethrower",
-                "ponyorigins:unicorn/thunder",
                 "ponyorigins:unicorn/ice_beam",
+                "ponyorigins:unicorn/shock_ray",
                 "ponyorigins:unicorn/laser",
-                "ponyorigins:unicorn/blank"
+                "ponyorigins:unicorn/thunder",
+                "ponyorigins:unicorn/vanish"
             ]
         }
     ],
@@ -31,7 +33,7 @@
     "loading_priority": 1,
     "name": "Primary Talent",
     "gui_title": {
-        "choose_origin": "Choose your Primary Talent",
+        "choose_origin": "Choose your Primary (Innate) Talent",
         "view_origin": "Primary Talent"
     },
     "missing_name": "",

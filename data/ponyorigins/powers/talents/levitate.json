@@ -5,18 +5,11 @@
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Jump while in the air to fly. Press [",
+                "Jump while in the air to fly. Press [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to toggle"
-            ],
-            "sprite": "minecraft:textures/item/feather.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Jump while in the air to fly. Press [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },
@@ -165,7 +158,21 @@
         "type": "origins:modify_air_speed",
         "modifier": {
             "operation": "multiply_base_additive",
-            "value": -0.8
+            "value": -0.6
         }
+    },
+    "slower_than_wings_horizontal": {
+        "condition": {
+            "type": "origins:creative_flying"
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.6
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
     }
 }

@@ -1,27 +1,231 @@
 {
     "values": [
         {
-            "id": "farmersdelight:stuffed_pumpkin_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:roast_chicken_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:honey_glazed_ham_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:shepherds_pie_block",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:rice_roll_medley_block",
-            "required": false
-        },
-        {
             "id": "minecraft:cake",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:cheese_wheel",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:quiche_lorraine",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:stargazy_pie",
+            "required": false
+        },
+        {
+            "id": "ends_delight:chorus_fruit_pie",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:ube_cake",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:leche_flan_feast",
+            "required": false
+        },
+        {
+            "id": "bakery:strawberry_cake",
+            "required": false
+        },
+        {
+            "id": "bakery:sweetberry_cake",
+            "required": false
+        },
+        {
+            "id": "bakery:chocolate_cake",
+            "required": false
+        },
+        {
+            "id": "bakery:pudding",
+            "required": false
+        },
+        {
+            "id": "bakery:bundt_cake",
+            "required": false
+        },
+        {
+            "id": "bakery:linzer_tart",
+            "required": false
+        },
+        {
+            "id": "bakery:apple_pie",
+            "required": false
+        },
+        {
+            "id": "bakery:glowberry_tart",
+            "required": false
+        },
+        {
+            "id": "bakery:chocolate_tart",
+            "required": false
+        },
+        {
+            "id": "candlelight:chocolate_box",
+            "required": false
+        },
+        {
+            "id": "meadow:roasted_ham",
+            "required": false
+        },
+        {
+            "id": "bakery:bread_crate",
+            "required": false
+        },
+        {
+            "id": "bakery:chocolate_box",
+            "required": false
+        },
+        {
+            "id": "ekac:ekac",
+            "required": false
+        },
+        {
+            "id": "fab:honey_cake",
+            "required": false
+        },
+        {
+            "id": "fab:apple_cake",
+            "required": false
+        },
+        {
+            "id": "fab:berry_cake",
+            "required": false
+        },
+        {
+            "id": "fab:orange_cake",
+            "required": false
+        },
+        {
+            "id": "fab:banana_cake",
+            "required": false
+        },
+        {
+            "id": "fab:chocolate_cake",
+            "required": false
+        },
+        {
+            "id": "foodplusid:medovik",
+            "required": false
+        },
+        {
+            "id": "#c:cakes",
+            "required": false
+        },
+        {
+            "id": "moreberries:blue_berry_cake",
+            "required": false
+        },
+        {
+            "id": "moreberries:yellow_berry_cake",
+            "required": false
+        },
+        {
+            "id": "moreberries:orange_berry_cake",
+            "required": false
+        },
+        {
+            "id": "moreberries:purple_berry_cake",
+            "required": false
+        },
+        {
+            "id": "moreberries:green_berry_cake",
+            "required": false
+        },
+        {
+            "id": "moreberries:black_berry_cake",
+            "required": false
+        },
+        {
+            "id": "morefood:rainbow_cake",
+            "required": false
+        },
+        {
+            "id": "morefood:redwhiteblue_cake",
+            "required": false
+        },
+        {
+            "id": "morefood:cake_with_cherries",
+            "required": false
+        },
+        {
+            "id": "#minecraft:cake",
+            "required": false
+        },
+        {
+            "id": "#placeable_food:pizza",
+            "required": false
+        },
+        {
+            "id": "placeable_food:grant_pumpkin_pie",
+            "required": false
+        },
+        {
+            "id": "placeable_food:pink_muffins",
+            "required": false
+        },
+        {
+            "id": "placeable_food:vanilla_muffin",
+            "required": false
+        },
+        {
+            "id": "placeable_food:chocolate_muffins",
+            "required": false
+        },
+        {
+            "id": "placeable_food:all_muffins",
+            "required": false
+        },
+        {
+            "id": "placeable_food:placeable_bread",
+            "required": false
+        },
+        {
+            "id": "placeable_food:placeable_bread",
+            "required": false
+        },
+        {
+            "id": "placeable_food:hs",
+            "required": false
+        },
+        {
+            "id": "placeable_food:sandwich_mix",
+            "required": false
+        },
+        {
+            "id": "placeable_food:veggie_sandwiches",
+            "required": false
+        },
+        {
+            "id": "placeable_food:big_hamburger",
+            "required": false
+        },
+        {
+            "id": "placeable_food:veggie_burger",
+            "required": false
+        },
+        {
+            "id": "tropicana:orange_cake",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applecake",
+            "required": false
+        },
+        {
+            "id": "usefulfood:chocolatecake",
+            "required": false
+        },
+        {
+            "id": "usefulfood:magiccake",
+            "required": false
+        },
+        {
+            "id": "usefulfood:caramelcake",
             "required": false
         }
     ]

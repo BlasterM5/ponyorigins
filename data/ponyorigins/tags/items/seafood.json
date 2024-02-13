@@ -15,6 +15,58 @@
         {
             "id": "minecraft:sea_pickle",
             "required": false
+        },
+        {
+            "id": "oceansdelight:braised_sea_pickle",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:honey_fried_kelp",
+            "required": false
+        },
+        {
+            "id": "oceansdelight:seagrass_salad",
+            "required": false
+        },
+        {
+            "id": "enhancermod:algae",
+            "required": false
+        },
+        {
+            "id": "foodplusid:sea_salad",
+            "required": false
+        },
+        {
+            "id": "more_food:fried_rice",
+            "required": false
+        },
+        {
+            "id": "morefood:onigiri",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:warped_kelp",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:crimson_kelp",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:warped_seagrass",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:crimson_seagrass",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:warped_kelp_roll",
+            "required": false
+        },
+        {
+            "id": "netherdepthsupgrade:warped_kelp_roll_slice",
+            "required": false
         }
     ]
 }

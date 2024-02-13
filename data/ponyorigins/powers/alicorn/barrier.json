@@ -187,7 +187,7 @@
                         },
                         {
                             "type": "origins:play_sound",
-                            "sound": "minecraft:entity.enderman.teleport",
+                            "sound": "minecraft:entity.illusioner.mirror_move",
                             "volume": 1,
                             "pitch": 1
                         }
@@ -333,5 +333,14 @@
             "change": 1,
             "operation": "add"
         }
+    },
+    "barrier_visual": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "apugli:energy_swirl",
+        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "speed": 0.001
     }
 }

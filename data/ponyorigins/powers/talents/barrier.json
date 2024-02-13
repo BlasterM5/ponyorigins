@@ -5,18 +5,11 @@
         {
             "type": "origins:tooltip",
             "text": [
-                "Primary Talent: Press [",
+                "Press [",
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to toggle"
-            ],
-            "sprite": "minecraft:textures/particle/bubble.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": [
-                "Secondary Talent: Press [",
+                "/",
                 {
                     "keybind": "key.origins.secondary_active"
                 },
@@ -341,7 +334,7 @@
                         },
                         {
                             "type": "origins:play_sound",
-                            "sound": "minecraft:entity.enderman.teleport",
+                            "sound": "minecraft:entity.illusioner.mirror_move",
                             "volume": 1,
                             "pitch": 1
                         }
@@ -409,7 +402,7 @@
                         },
                         {
                             "type": "origins:play_sound",
-                            "sound": "minecraft:entity.enderman.teleport",
+                            "sound": "minecraft:entity.illusioner.mirror_move",
                             "volume": 1,
                             "pitch": 1
                         }
@@ -421,5 +414,14 @@
         "key": {
             "key": "key.origins.secondary_active"
         }
+    },
+    "barrier_visual": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_active"
+        },
+        "type": "apugli:energy_swirl",
+        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "speed": 0.001
     }
 }

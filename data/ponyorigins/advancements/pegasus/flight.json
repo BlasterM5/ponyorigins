@@ -4,7 +4,7 @@
             "item": "minecraft:feather"
         },
         "title": "Frequent Flyer",
-        "description": "Fly around the world",
+        "description": "Fly around the World",
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": false

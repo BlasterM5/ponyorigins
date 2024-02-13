@@ -22,39 +22,19 @@
     "type": "origins:multiple",
     "flight": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:creative_flight"
     },
-    "trigger": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:brightness",
-                    "comparison": "<",
-                    "compare_to": 0.56
-                }
-            ]
-        },
-        "type": "origins:toggle",
-        "active_by_default": false,
-        "key": {
-            "key": "key.origins.primary_active"
-        },
-        "retain_state": false
-    },
     "drain": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
         "interval": 3,
@@ -98,37 +78,39 @@
         },
         "rising_action": {
             "type": "origins:play_sound",
-            "sound": "entity.enderman.teleport",
+            "sound": "minecraft:entity.illusioner.mirror_move",
             "volume": 1,
             "pitch": 1
         },
         "falling_action": {
             "type": "origins:play_sound",
-            "sound": "entity.enderman.teleport",
+            "sound": "minecraft:entity.illusioner.mirror_move",
             "volume": 1,
             "pitch": 1
         }
     },
     "phantom": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:phasing",
         "block_condition": {
-            "type": "origins:constant",
-            "value": true
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "origins:unphasable"
         },
         "render_type": "blindness",
-        "view_distance": 10,
-        "phase_down_condition": {
-            "type": "origins:sneaking"
-        }
+        "view_distance": 10
     },
     "flight_speed": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_air_speed",
         "modifier": {
@@ -138,19 +120,21 @@
     },
     "render": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
-        "type": "origins:model_color",
-        "red": 0,
-        "green": 0,
-        "blue": 0,
-        "alpha": 0
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "render_outline": true
     },
     "no_phasing_damage": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_damage_taken",
         "modifier": {
@@ -160,8 +144,10 @@
     },
     "no_phasing_attacks": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_damage_dealt",
         "modifier": {
@@ -171,13 +157,148 @@
     },
     "no_mining": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_trigger"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_break_speed",
         "modifier": {
             "operation": "set_total",
             "value": 0
+        }
+    },
+    "no_block_interaction": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:prevent_block_use",
+        "block_condition": {
+            "type": "origins:constant",
+            "value": true
+        }
+    },
+    "no_entity_interaction": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:prevent_entity_use"
+    },
+    "deactivate": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:brightness",
+                            "comparison": ">=",
+                            "compare_to": 0.56
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_active",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "trigger": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:brightness",
+                        "comparison": "<",
+                        "compare_to": 0.56
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 1,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_active",
+                "change": 0,
+                "operation": "set"
+            }
+        },
+        "cooldown": 5,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "invisible": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "apugli:mobs_ignore"
+    },
+    "shadow_particles": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute anchored eyes positioned ^ ^-0.5 ^-0.5 run particle entity_effect ~ ~ ~ 0.01 0.01 0.01 0 8 force"
         }
     }
 }

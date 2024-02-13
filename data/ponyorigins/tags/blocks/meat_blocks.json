@@ -1,19 +1,35 @@
 {
     "values": [
         {
-            "id": "farmersdelight:roast_chicken_block",
+            "id": "casualness_delight:quiche_lorraine",
             "required": false
         },
         {
-            "id": "farmersdelight:honey_glazed_ham_block",
+            "id": "casualness_delight:stargazy_pie",
             "required": false
         },
         {
-            "id": "farmersdelight:shepherds_pie_block",
+            "id": "meadow:roasted_ham",
             "required": false
         },
         {
-            "id": "farmersdelight:rice_roll_medley_block",
+            "id": "placeable_food:pizza_pepperoni",
+            "required": false
+        },
+        {
+            "id": "placeable_food:pizza_deluxe",
+            "required": false
+        },
+        {
+            "id": "placeable_food:hs",
+            "required": false
+        },
+        {
+            "id": "placeable_food:sandwich_mix",
+            "required": false
+        },
+        {
+            "id": "placeable_food:big_hamburger",
             "required": false
         }
     ]

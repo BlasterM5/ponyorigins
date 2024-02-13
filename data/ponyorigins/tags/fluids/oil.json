@@ -5,11 +5,27 @@
             "required": false
         },
         {
+            "id": "ad_astra:fuel",
+            "required": false
+        },
+        {
             "id": "createaddition:seed_oil",
             "required": false
         },
         {
             "id": "techreborn:oil",
+            "required": false
+        },
+        {
+            "id": "oretastic:oil_fluid_block",
+            "required": false
+        },
+        {
+            "id": "oretastic:oil_still",
+            "required": false
+        },
+        {
+            "id": "puddingmod:pudding",
             "required": false
         }
     ]

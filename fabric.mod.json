@@ -7,17 +7,13 @@
         "minecraft": ">=1.19.0 <=1.19.3",
         "origins": ">=1.7.0"
     },
-    "name": "Pony Origins",
+    "name": "Pony Origins LTS",
     "id": "ponyorigins",
-    "version": "1.0.0-a31",
+    "version": "1.3.3-b1",
     "description": "Origins Replacement Mod, designed to compliment Mine Little Pony.",
-    "license": "unlicense",
-    "pack_format": 10,
+    "license": "Unlicense",
     "icon": "pack.png",
     "authors": [
         "BlasterM5"
-    ],
-    "contact": {
-        "repo": "https://github.com/BlasterM5/ponyorigins"
-    }
+    ]
 }

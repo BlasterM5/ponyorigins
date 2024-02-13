@@ -1,0 +1,28 @@
+{
+    "values": [
+        {
+            "id": "minecraft:water_bucket",
+            "required": false
+        },
+        {
+            "id": "minecraft:lava_bucket",
+            "required": false
+        },
+        {
+            "id": "ad_astra:oil_bucket",
+            "required": false
+        },
+        {
+            "id": "ad_astra:fuel_bucket",
+            "required": false
+        },
+        {
+            "id": "ad_astra:cryo_fuel_bucket",
+            "required": false
+        },
+        {
+            "id": "oretastic:oil_bucket",
+            "required": false
+        }
+    ]
+}

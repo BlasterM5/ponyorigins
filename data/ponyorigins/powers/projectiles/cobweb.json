@@ -1,0 +1,261 @@
+{
+    "name": "Cobweb",
+    "description": "A cobweb projectile, which slows a target with cobwebs on hit",
+    "hidden": true,
+    "type": "origins:multiple",
+    "tick_logic": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle item cobweb ~ ~0.5 ~ 0.1 0.1 0.1 0.1 4 force"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_arm_timer",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_arm_timer",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0,
+                                            "offset_y": 0,
+                                            "offset_z": 0
+                                        },
+                                        {
+                                            "type": "origins:on_block",
+                                            "block_condition": {
+                                                "type": "origins:movement_blocking"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:block_action_at",
+                                            "block_action": {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:air"
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:set_block",
+                                                    "block": "minecraft:cobweb"
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "type": "origins:and",
+                                                        "conditions": [
+                                                            {
+                                                                "inverted": true,
+                                                                "type": "origins:in_tag",
+                                                                "tag": "minecraft:doors"
+                                                            },
+                                                            {
+                                                                "inverted": true,
+                                                                "type": "origins:in_tag",
+                                                                "tag": "minecraft:trapdoors"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:add_block",
+                                                        "block": "minecraft:cobweb"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle item cobweb ~ ~0.5 ~ 0.1 0.1 0.1 0.1 32 force"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_hit",
+                                            "change": 1,
+                                            "operation": "add"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:command",
+                                    "command": "execute if entity @e[distance=..0.9]",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "if_action": {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 1,
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:target_condition",
+                                                    "condition": {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/flight/main"
+                                                    }
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:target_action",
+                                                    "action": {
+                                                        "type": "origins:change_resource",
+                                                        "resource": "ponyorigins:common/flight/main_web_cd",
+                                                        "change": 30,
+                                                        "operation": "add"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "type": "origins:and",
+                                                        "conditions": [
+                                                            {
+                                                                "type": "origins:block_in_radius",
+                                                                "block_condition": {
+                                                                    "type": "origins:movement_blocking"
+                                                                },
+                                                                "radius": 1,
+                                                                "shape": "sphere",
+                                                                "comparison": ">",
+                                                                "compare_to": 0
+                                                            },
+                                                            {
+                                                                "type": "origins:block_in_radius",
+                                                                "block_condition": {
+                                                                    "type": "origins:or",
+                                                                    "conditions": [
+                                                                        {
+                                                                            "type": "origins:in_tag",
+                                                                            "tag": "minecraft:doors"
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:in_tag",
+                                                                            "tag": "minecraft:trapdoors"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "radius": 1,
+                                                                "shape": "sphere",
+                                                                "comparison": "==",
+                                                                "compare_to": 0
+                                                            }
+                                                        ]
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:block_action_at",
+                                                        "block_action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "origins:block",
+                                                                "block": "minecraft:air"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:set_block",
+                                                                "block": "minecraft:cobweb"
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:add_block",
+                                                                "block": "minecraft:cobweb"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:apply_effect",
+                                                    "effect": {
+                                                        "effect": "minecraft:slowness",
+                                                        "duration": 200,
+                                                        "amplifier": 4,
+                                                        "is_ambient": true,
+                                                        "show_particles": false,
+                                                        "show_icon": true
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:execute_command",
+                                                    "command": "particle item cobweb ~ ~0.5 ~ 0.1 0.1 0.1 0.1 32 force"
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_hit",
+                                                    "change": 1,
+                                                    "operation": "add"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_hit",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "if_action": {
+                                    "type": "origins:execute_command",
+                                    "command": "kill @s"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "arm_timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 2
+    },
+    "hit": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    }
+}

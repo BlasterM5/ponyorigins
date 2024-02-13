@@ -2,21 +2,24 @@
     "name": "Thestral",
     "description": "The fly by night pony race, home to Equestria's caves.",
     "powers": [
+        "ponyorigins:common/00",
+        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/fructivore",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",
         "ponyorigins:common/energy",
         "ponyorigins:common/pony",
-        "ponyorigins:common/flight",
+        "ponyorigins:common/flight/main",
+        "ponyorigins:common/flight/hazards",
         "ponyorigins:common/wings/membraneous",
         "ponyorigins:common/nightvision",
         "ponyorigins:common/health/minus_two",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "minecraft:coal"
     },
-    "order": 9,
+    "order": 11,
     "impact": 0
 }

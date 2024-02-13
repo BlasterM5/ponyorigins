@@ -26,6 +26,131 @@
         }
     ],
     "type": "origins:multiple",
+    "smash": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer_smash",
+                    "comparison": "==",
+                    "compare_to": 10
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_primary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 3,
+            "block": true,
+            "entity": true,
+            "shape_type": "outline",
+            "fluid_handling": "none",
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:add_velocity",
+                        "x": 0,
+                        "y": 0.25,
+                        "z": 2,
+                        "client": false,
+                        "server": true
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "minecraft:entity.generic.explode",
+                                    "volume": 1,
+                                    "pitch": 1
+                                },
+                                {
+                                    "type": "origins:spawn_particles",
+                                    "particle": "minecraft:flash",
+                                    "count": 1,
+                                    "speed": 1,
+                                    "force": true,
+                                    "spread": {
+                                        "x": 0.2,
+                                        "y": 0.2,
+                                        "z": 0.2
+                                    }
+                                },
+                                {
+                                    "type": "origins:damage",
+                                    "amount": 8,
+                                    "source": {
+                                        "name": "player"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "block_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "inverted": true,
+                    "type": "origins:in_tag",
+                    "tag": "origins:unphasable"
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "apugli:destroy",
+                            "drop_block": true
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "playsound minecraft:entity.generic.explode block @a ~ ~ ~"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "particle flash ~ ~ ~ 0.2 0.2 0.2 1 1 force"
+                        }
+                    ]
+                }
+            },
+            "hit_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer_smash",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd_smash",
+                        "change": 1,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:swing_hand",
+                        "hand": "MAIN_HAND"
+                    },
+                    {
+                        "type": "origins:exhaust",
+                        "amount": 2
+                    }
+                ]
+            }
+        }
+    },
     "stomp": {
         "condition": {
             "type": "origins:and",
@@ -38,7 +163,7 @@
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_antilag_stomp",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
                     "comparison": ">",
                     "compare_to": 0
                 },
@@ -52,7 +177,7 @@
         },
         "type": "origins:action_over_time",
         "interval": 1,
-        "entity_action": {
+        "rising_action": {
             "type": "origins:and",
             "actions": [
                 {
@@ -89,26 +214,17 @@
                     "type": "origins:area_of_effect",
                     "radius": 8,
                     "bientity_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:add_velocity",
-                                "y": 1,
-                                "client": true,
-                                "server": true
-                            }
-                        ]
+                        "type": "origins:add_velocity",
+                        "x": 0,
+                        "y": 1,
+                        "z": 0,
+                        "client": false,
+                        "server": true
                     }
                 },
                 {
                     "type": "origins:change_resource",
                     "resource": "*:*_buffer_stomp",
-                    "change": 0,
-                    "operation": "set"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_antilag_stomp",
                     "change": 0,
                     "operation": "set"
                 },
@@ -138,119 +254,6 @@
             }
         }
     },
-    "smash": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_buffer_smash",
-                    "comparison": "==",
-                    "compare_to": 10
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag_smash",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:raycast",
-            "distance": 3,
-            "block": false,
-            "entity": true,
-            "shape_type": "collider",
-            "fluid_handling": "none",
-            "bientity_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:add_velocity",
-                        "y": 0.25,
-                        "z": 2,
-                        "client": true,
-                        "server": true
-                    },
-                    {
-                        "type": "origins:target_action",
-                        "action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:play_sound",
-                                    "sound": "minecraft:entity.generic.explode",
-                                    "volume": 1,
-                                    "pitch": 1
-                                },
-                                {
-                                    "type": "origins:spawn_particles",
-                                    "particle": "minecraft:flash",
-                                    "count": 1,
-                                    "speed": 1,
-                                    "force": true,
-                                    "spread": {
-                                        "x": 0.2,
-                                        "y": 0.2,
-                                        "z": 0.2
-                                    }
-                                },
-                                {
-                                    "type": "origins:damage",
-                                    "amount": 8,
-                                    "source": {
-                                        "name": "player"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:actor_action",
-                        "action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:swing_hand",
-                                    "hand": "MAIN_HAND"
-                                },
-                                {
-                                    "type": "origins:exhaust",
-                                    "amount": 2
-                                }
-                            ]
-                        }
-                    }
-                ]
-            },
-            "before_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_buffer_smash",
-                        "change": 0,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_antilag_smash",
-                        "change": 0,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd_smash",
-                        "change": 1,
-                        "operation": "set"
-                    }
-                ]
-            }
-        }
-    },
     "buffer_stomp": {
         "type": "origins:resource",
         "min": 0,
@@ -267,18 +270,6 @@
                 "compare_to": 0
             }
         }
-    },
-    "antilag_smash": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
-    },
-    "antilag_stomp": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
     },
     "cd_smash": {
         "type": "origins:resource",
@@ -330,18 +321,6 @@
             "conditions": [
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_antilag_smash",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag_stomp",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
                     "resource": "*:*_buffer_smash",
                     "comparison": ">",
                     "compare_to": 0
@@ -349,6 +328,18 @@
                 {
                     "type": "origins:resource",
                     "resource": "*:*_buffer_stomp",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_primary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
                     "comparison": ">",
                     "compare_to": 0
                 }
@@ -366,16 +357,15 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_antilag_smash",
+                                "resource": "ponyorigins:common/00_key_primary_active",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
                             {
-                                "type": "origins:equipped_item",
-                                "equipment_slot": "mainhand",
-                                "item_condition": {
-                                    "type": "origins:empty"
-                                }
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/00_empty_mainhand",
+                                "comparison": "==",
+                                "compare_to": 1
                             },
                             {
                                 "type": "origins:food_level",
@@ -391,15 +381,10 @@
                         "operation": "add"
                     },
                     "else_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_buffer_smash",
-                                "change": -2,
-                                "operation": "add"
-                            }
-                        ]
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer_smash",
+                        "change": -1,
+                        "operation": "add"
                     }
                 },
                 {
@@ -409,23 +394,21 @@
                         "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:*_antilag_stomp",
+                                "resource": "ponyorigins:common/00_key_secondary_active",
                                 "comparison": ">",
                                 "compare_to": 0
                             },
                             {
-                                "type": "origins:equipped_item",
-                                "equipment_slot": "mainhand",
-                                "item_condition": {
-                                    "type": "origins:empty"
-                                }
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/00_empty_mainhand",
+                                "comparison": "==",
+                                "compare_to": 1
                             },
                             {
-                                "type": "origins:equipped_item",
-                                "equipment_slot": "offhand",
-                                "item_condition": {
-                                    "type": "origins:empty"
-                                }
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/00_empty_offhand",
+                                "comparison": "==",
+                                "compare_to": 1
                             },
                             {
                                 "type": "origins:food_level",
@@ -441,109 +424,13 @@
                         "operation": "add"
                     },
                     "else_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_buffer_stomp",
-                                "change": -2,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_antilag_smash",
-                    "change": -1,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_antilag_stomp",
-                    "change": -1,
-                    "operation": "add"
-                }
-            ]
-        }
-    },
-    "trigger_smash": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": ">",
-                    "compare_to": 4
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd_smash",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:empty"
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer_stomp",
+                        "change": -1,
+                        "operation": "add"
                     }
                 }
             ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag_smash",
-            "change": 5,
-            "operation": "set"
-        },
-        "key": {
-            "key": "key.origins.primary_active",
-            "continuous": true
-        }
-    },
-    "trigger_stomp": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": ">",
-                    "compare_to": 4
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd_stomp",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "offhand",
-                    "item_condition": {
-                        "type": "origins:empty"
-                    }
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag_stomp",
-            "change": 5,
-            "operation": "set"
-        },
-        "key": {
-            "key": "key.origins.secondary_active",
-            "continuous": true
         }
     }
 }

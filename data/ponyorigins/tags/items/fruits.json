@@ -9,19 +9,31 @@
             "required": false
         },
         {
+            "id": "#c:berries",
+            "required": false
+        },
+        {
             "id": "bwplus:dragonfruit",
             "required": false
         },
         {
-            "id": "create:chocolate_glazed_berries",
-            "required": false
-        },
-        {
-            "id": "create:honeyed_apple",
-            "required": false
-        },
-        {
             "id": "farmersdelight:tomato",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:apple_cider",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:melon_juice",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:pumpkin_slice",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:melon_popsicle",
             "required": false
         },
         {
@@ -50,6 +62,702 @@
         },
         {
             "id": "minecraft:apple",
+            "required": false
+        },
+        {
+            "id": "bakery:strawberry",
+            "required": false
+        },
+        {
+            "id": "bewitchment:witchberry",
+            "required": false
+        },
+        {
+            "id": "candlelight:tomato",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:fruit_salad",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:soul_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:wither_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:apple_slime",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_slimeapple",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_soul_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:punch_wither_berry",
+            "required": false
+        },
+        {
+            "id": "#vinery:grapejuice",
+            "required": false
+        },
+        {
+            "id": "cell:sweet_berry_juice",
+            "required": false
+        },
+        {
+            "id": "enhancermod:melon_juice",
+            "required": false
+        },
+        {
+            "id": "fab:lemon_juice",
+            "required": false
+        },
+        {
+            "id": "fab:lime_juice",
+            "required": false
+        },
+        {
+            "id": "fab:orange_juice",
+            "required": false
+        },
+        {
+            "id": "fab:apple_juice",
+            "required": false
+        },
+        {
+            "id": "fab:pumpkin_juice",
+            "required": false
+        },
+        {
+            "id": "fab:tomato_juice",
+            "required": false
+        },
+        {
+            "id": "fab:melon_juice",
+            "required": false
+        },
+        {
+            "id": "fab:sweet_berry_juice",
+            "required": false
+        },
+        {
+            "id": "fab:blueberry_juice",
+            "required": false
+        },
+        {
+            "id": "fab:blackberry_juice",
+            "required": false
+        },
+        {
+            "id": "fab:mango_juice",
+            "required": false
+        },
+        {
+            "id": "foodplusid:apple_juice",
+            "required": false
+        },
+        {
+            "id": "foodplusid:sweet_berries_juice",
+            "required": false
+        },
+        {
+            "id": "foodplusid:glow_berries_juice",
+            "required": false
+        },
+        {
+            "id": "foodplusid:melon_juice",
+            "required": false
+        },
+        {
+            "id": "foodtxf:glass_of_fruit_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:apple_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:orange_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:grape_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:tomato_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:berry_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:mixed_fruit_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:melon_juice",
+            "required": false
+        },
+        {
+            "id": "morefood:lemon_juice",
+            "required": false
+        },
+        {
+            "id": "tropicana:orange_juice",
+            "required": false
+        },
+        {
+            "id": "usefulfood:magicapplejuice",
+            "required": false
+        },
+        {
+            "id": "usefulfood:melonjuice",
+            "required": false
+        },
+        {
+            "id": "usefulfood:applejuice",
+            "required": false
+        },
+        {
+            "id": "actual_cherries:cherry",
+            "required": false
+        },
+        {
+            "id": "beachparty:coconut_cocktail",
+            "required": false
+        },
+        {
+            "id": "beachparty:sweetberries_cocktail",
+            "required": false
+        },
+        {
+            "id": "beachparty:pumpkin_cocktail",
+            "required": false
+        },
+        {
+            "id": "beachparty:melon_cocktail",
+            "required": false
+        },
+        {
+            "id": "beachparty:refreshing_drink",
+            "required": false
+        },
+        {
+            "id": "#c:tomato",
+            "required": false
+        },
+        {
+            "id": "breakfast:jam",
+            "required": false
+        },
+        {
+            "id": "cactusforage:vivipara_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:missouriensis_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:tetrancistra_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:meiacantha_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:mojavensis_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:fendleri_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:triglochidiatus_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:e_engelmanii_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:o_engelmanii_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:viridiflorus_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:humifusa_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:phaeacantha_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:macrorhiza_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:magmaensis_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:galaxensis_fruit",
+            "required": false
+        },
+        {
+            "id": "cactusforage:galaxensis_fruit",
+            "required": false
+        },
+        {
+            "id": "cheese:tomato",
+            "required": false
+        },
+        {
+            "id": "cheese:tomato_sauce",
+            "required": false
+        },
+        {
+            "id": "#clutter:fruits_and_berries",
+            "required": false
+        },
+        {
+            "id": "clutter:thornbloom_pear",
+            "required": false
+        },
+        {
+            "id": "clutter:kiwi",
+            "required": false
+        },
+        {
+            "id": "culinaire:tomato",
+            "required": false
+        },
+        {
+            "id": "#minecraft:fox_food",
+            "required": false
+        },
+        {
+            "id": "#vinery:grape",
+            "required": false
+        },
+        {
+            "id": "#vinery:red_grape",
+            "required": false
+        },
+        {
+            "id": "vinery:apple_juice",
+            "required": false
+        },
+        {
+            "id": "vinery:apple_mash",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:apricot",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:banana",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:cherries",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:coconut",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:cranberry",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:date",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:fig",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:gogi",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:persimmon",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:gotgam",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:mango",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:papaya",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:plum",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:prune",
+            "required": false
+        },
+        {
+            "id": "driedfruitmod:tomato",
+            "required": false
+        },
+        {
+            "id": "enhancermod:sweet_berry_jam",
+            "required": false
+        },
+        {
+            "id": "enhancermod:melon_juice",
+            "required": false
+        },
+        {
+            "id": "enhancermod:golden_delight",
+            "required": false
+        },
+        {
+            "id": "fab:pumpkin_slices",
+            "required": false
+        },
+        {
+            "id": "fab:lemon",
+            "required": false
+        },
+        {
+            "id": "fab:lime",
+            "required": false
+        },
+        {
+            "id": "#fab:fruit",
+            "required": false
+        },
+        {
+            "id": "fab:fruit_salad",
+            "required": false
+        },
+        {
+            "id": "fab:lemonade",
+            "required": false
+        },
+        {
+            "id": "foodplusid:varenie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:glow_varenie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:berry_cookie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:glow_berry_cookie",
+            "required": false
+        },
+        {
+            "id": "foodplusid:mysterious_medicine",
+            "required": false
+        },
+        {
+            "id": "#foodtxf:fruits",
+            "required": false
+        },
+        {
+            "id": "foodtxf:fruit_salad",
+            "required": false
+        },
+        {
+            "id": "grapecraft:grape",
+            "required": false
+        },
+        {
+            "id": "jam_mod:strawberry",
+            "required": false
+        },
+        {
+            "id": "jam_mod:plum",
+            "required": false
+        },
+        {
+            "id": "more_food:apple_on_a_stick",
+            "required": false
+        },
+        {
+            "id": "more_food:cherries",
+            "required": false
+        },
+        {
+            "id": "#c:fruits",
+            "required": false
+        },
+        {
+            "id": "morefood:tomato_puree",
+            "required": false
+        },
+        {
+            "id": "morefood:apple_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:berry_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:lemon_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:grape_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:melon_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:mixed_fruit_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:orange_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:apple_raspberry_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:banana_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:berry_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:grape_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:raspberry_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:mixed_fruit_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:apple_soda",
+            "required": false
+        },
+        {
+            "id": "morefood:berry_soda",
+            "required": false
+        },
+        {
+            "id": "morefood:grape_soda",
+            "required": false
+        },
+        {
+            "id": "morefood:lemon_soda",
+            "required": false
+        },
+        {
+            "id": "morefood:orange_soda",
+            "required": false
+        },
+        {
+            "id": "morefood:strawberry_soda",
+            "required": false
+        },
+        {
+            "id": "morefood:ketchup",
+            "required": false
+        },
+        {
+            "id": "morefood:coconut_milk",
+            "required": false
+        },
+        {
+            "id": "morefood:coconut_meat",
+            "required": false
+        },
+        {
+            "id": "morefood:applesauce",
+            "required": false
+        },
+        {
+            "id": "morefood:glowberry_icecrush",
+            "required": false
+        },
+        {
+            "id": "morefood:glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "morefood:glowberry_smoothie",
+            "required": false
+        },
+        {
+            "id": "morefood:glowberry_soda",
+            "required": false
+        },
+        {
+            "id": "nutritious-feast:blueberries",
+            "required": false
+        },
+        {
+            "id": "pureberries:blueberries",
+            "required": false
+        },
+        {
+            "id": "pureberries:cloudberries",
+            "required": false
+        },
+        {
+            "id": "pureberries:goji_berries",
+            "required": false
+        },
+        {
+            "id": "pizzas:tomato",
+            "required": false
+        },
+        {
+            "id": "simplemango:mango",
+            "required": false
+        },
+        {
+            "id": "strangeberries:speed_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:haste_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:strength_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:regeneration_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:leaping_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:night_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:crimson_fire_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:warped_fire_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:resistance_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:healing_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:ascending_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:invisibility_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:sea_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:dolphin_berries",
+            "required": false
+        },
+        {
+            "id": "strangeberries:golden_berries",
+            "required": false
+        },
+        {
+            "id": "tropicana:orange",
+            "required": false
+        },
+        {
+            "id": "tropicana:pineapple",
+            "required": false
+        },
+        {
+            "id": "tropicana:cut_pineapple",
+            "required": false
+        },
+        {
+            "id": "tropicana:orange_juice",
+            "required": false
+        },
+        {
+            "id": "tropicana:fruit_salad",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:blackberries",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:blueberries",
+            "required": false
+        },
+        {
+            "id": "tsm_betterpies:cherries",
+            "required": false
+        },
+        {
+            "id": "usefulfood:fruitsalad",
             "required": false
         }
     ]

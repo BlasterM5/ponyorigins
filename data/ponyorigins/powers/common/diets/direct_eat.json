@@ -1,6 +1,6 @@
 {
-    "name": "Expanded Diet",
-    "description": "You can eat certain raw ingredients directly for nutrition, based on your diet.",
+    "name": "Graze",
+    "description": "Eat plants directly, as nature intended.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -15,687 +15,12 @@
         }
     ],
     "type": "origins:multiple",
-    "eat_loop": {
+    "slow_movement": {
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_antilag",
             "comparison": ">",
             "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_eat_timer",
-                        "comparison": "==",
-                        "compare_to": 30
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else_list",
-                                "actions": [
-                                    {
-                                        "condition": {
-                                            "type": "origins:and",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:or",
-                                                    "conditions": [
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/diets/herbivore"
-                                                        },
-                                                        {
-                                                            "type": "origins:origin",
-                                                            "origin": "ponyorigins:races/goat"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "origins:or",
-                                                    "conditions": [
-                                                        {
-                                                            "type": "origins:equipped_item",
-                                                            "equipment_slot": "mainhand",
-                                                            "item_condition": {
-                                                                "type": "origins:ingredient",
-                                                                "ingredient": {
-                                                                    "tag": "ponyorigins:plants"
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "origins:equipped_item",
-                                                            "equipment_slot": "offhand",
-                                                            "item_condition": {
-                                                                "type": "origins:ingredient",
-                                                                "ingredient": {
-                                                                    "tag": "ponyorigins:plants"
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:feed",
-                                                    "food": 1,
-                                                    "saturation": 0.5
-                                                },
-                                                {
-                                                    "type": "origins:if_else_list",
-                                                    "actions": [
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:equipped_item",
-                                                                "equipment_slot": "mainhand",
-                                                                "item_condition": {
-                                                                    "type": "origins:ingredient",
-                                                                    "ingredient": {
-                                                                        "tag": "ponyorigins:plants"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:equipped_item_action",
-                                                                "equipment_slot": "mainhand",
-                                                                "action": {
-                                                                    "type": "origins:consume",
-                                                                    "amount": 1
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:equipped_item",
-                                                                "equipment_slot": "offhand",
-                                                                "item_condition": {
-                                                                    "type": "origins:ingredient",
-                                                                    "ingredient": {
-                                                                        "tag": "ponyorigins:plants"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:equipped_item_action",
-                                                                "equipment_slot": "offhand",
-                                                                "action": {
-                                                                    "type": "origins:consume",
-                                                                    "amount": 1
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:and",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/diets/lithovore"
-                                                },
-                                                {
-                                                    "type": "origins:or",
-                                                    "conditions": [
-                                                        {
-                                                            "type": "origins:equipped_item",
-                                                            "equipment_slot": "mainhand",
-                                                            "item_condition": {
-                                                                "type": "origins:ingredient",
-                                                                "ingredient": {
-                                                                    "tag": "ponyorigins:gems"
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "origins:equipped_item",
-                                                            "equipment_slot": "offhand",
-                                                            "item_condition": {
-                                                                "type": "origins:ingredient",
-                                                                "ingredient": {
-                                                                    "tag": "ponyorigins:gems"
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:feed",
-                                                    "food": 8,
-                                                    "saturation": 1
-                                                },
-                                                {
-                                                    "type": "origins:change_resource",
-                                                    "resource": "ponyorigins:dragon/heat_level",
-                                                    "change": 10,
-                                                    "operation": "add"
-                                                },
-                                                {
-                                                    "type": "origins:if_else_list",
-                                                    "actions": [
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:or",
-                                                                "conditions": [
-                                                                    {
-                                                                        "type": "origins:equipped_item",
-                                                                        "equipment_slot": "mainhand",
-                                                                        "item_condition": {
-                                                                            "type": "origins:ingredient",
-                                                                            "ingredient": {
-                                                                                "item": "minecraft:nether_star"
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "type": "origins:and",
-                                                                        "conditions": [
-                                                                            {
-                                                                                "inverted": true,
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "mainhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "tag": "ponyorigins:gems"
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "offhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "item": "minecraft:nether_star"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:and",
-                                                                "actions": [
-                                                                    {
-                                                                        "type": "origins:apply_effect",
-                                                                        "effects": [
-                                                                            {
-                                                                                "effect": "minecraft:absorption",
-                                                                                "duration": 2400,
-                                                                                "amplifier": 0,
-                                                                                "show_particles": true,
-                                                                                "show_icon": true
-                                                                            },
-                                                                            {
-                                                                                "effect": "minecraft:regeneration",
-                                                                                "duration": 100,
-                                                                                "amplifier": 1,
-                                                                                "show_particles": true,
-                                                                                "show_icon": true
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        "type": "origins:if_else",
-                                                                        "condition": {
-                                                                            "inverted": true,
-                                                                            "type": "origins:advancement",
-                                                                            "advancement": "ponyorigins:special/star_power"
-                                                                        },
-                                                                        "if_action": {
-                                                                            "type": "origins:execute_command",
-                                                                            "command": "advancement grant @s until ponyorigins:special/star_power"
-                                                                        }
-                                                                    }
-                                                                ]
-                                                            }
-                                                        },
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:or",
-                                                                "conditions": [
-                                                                    {
-                                                                        "type": "origins:equipped_item",
-                                                                        "equipment_slot": "mainhand",
-                                                                        "item_condition": {
-                                                                            "type": "origins:ingredient",
-                                                                            "ingredient": {
-                                                                                "item": "minecraft:blaze_rod"
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "type": "origins:and",
-                                                                        "conditions": [
-                                                                            {
-                                                                                "inverted": true,
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "mainhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "tag": "ponyorigins:gems"
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "offhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "item": "minecraft:blaze_rod"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:change_resource",
-                                                                "resource": "ponyorigins:dragon/heat_level",
-                                                                "change": 40,
-                                                                "operation": "add"
-                                                            }
-                                                        },
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:or",
-                                                                "conditions": [
-                                                                    {
-                                                                        "type": "origins:equipped_item",
-                                                                        "equipment_slot": "mainhand",
-                                                                        "item_condition": {
-                                                                            "type": "origins:ingredient",
-                                                                            "ingredient": {
-                                                                                "item": "minecraft:heart_of_the_sea"
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "type": "origins:and",
-                                                                        "conditions": [
-                                                                            {
-                                                                                "inverted": true,
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "mainhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "tag": "ponyorigins:gems"
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "offhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "item": "minecraft:heart_of_the_sea"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:and",
-                                                                "actions": [
-                                                                    {
-                                                                        "type": "origins:apply_effect",
-                                                                        "effect": {
-                                                                            "effect": "minecraft:water_breathing",
-                                                                            "duration": 12000,
-                                                                            "amplifier": 1,
-                                                                            "show_particles": true,
-                                                                            "show_icon": true
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "type": "origins:if_else",
-                                                                        "condition": {
-                                                                            "inverted": true,
-                                                                            "type": "origins:advancement",
-                                                                            "advancement": "ponyorigins:special/expensive_taste"
-                                                                        },
-                                                                        "if_action": {
-                                                                            "type": "origins:execute_command",
-                                                                            "command": "advancement grant @s until ponyorigins:special/expensive_taste"
-                                                                        }
-                                                                    }
-                                                                ]
-                                                            }
-                                                        },
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:or",
-                                                                "conditions": [
-                                                                    {
-                                                                        "type": "origins:equipped_item",
-                                                                        "equipment_slot": "mainhand",
-                                                                        "item_condition": {
-                                                                            "type": "origins:ingredient",
-                                                                            "ingredient": {
-                                                                                "item": "minecraft:prismarine_shard"
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "type": "origins:and",
-                                                                        "conditions": [
-                                                                            {
-                                                                                "inverted": true,
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "mainhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "tag": "ponyorigins:gems"
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "type": "origins:equipped_item",
-                                                                                "equipment_slot": "offhand",
-                                                                                "item_condition": {
-                                                                                    "type": "origins:ingredient",
-                                                                                    "ingredient": {
-                                                                                        "item": "minecraft:prismarine_shard"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:apply_effect",
-                                                                "effect": {
-                                                                    "effect": "minecraft:water_breathing",
-                                                                    "duration": 600,
-                                                                    "amplifier": 1,
-                                                                    "show_particles": true,
-                                                                    "show_icon": true
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "origins:if_else_list",
-                                                    "actions": [
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:equipped_item",
-                                                                "equipment_slot": "mainhand",
-                                                                "item_condition": {
-                                                                    "type": "origins:ingredient",
-                                                                    "ingredient": {
-                                                                        "tag": "ponyorigins:gems"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:equipped_item_action",
-                                                                "equipment_slot": "mainhand",
-                                                                "action": {
-                                                                    "type": "origins:consume",
-                                                                    "amount": 1
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:equipped_item",
-                                                                "equipment_slot": "offhand",
-                                                                "item_condition": {
-                                                                    "type": "origins:ingredient",
-                                                                    "ingredient": {
-                                                                        "tag": "ponyorigins:gems"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:equipped_item_action",
-                                                                "equipment_slot": "offhand",
-                                                                "action": {
-                                                                    "type": "origins:consume",
-                                                                    "amount": 1
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:and",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/diets/pescavore"
-                                                },
-                                                {
-                                                    "type": "origins:or",
-                                                    "conditions": [
-                                                        {
-                                                            "type": "origins:equipped_item",
-                                                            "equipment_slot": "mainhand",
-                                                            "item_condition": {
-                                                                "type": "origins:ingredient",
-                                                                "ingredient": {
-                                                                    "tag": "ponyorigins:seafood"
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "origins:equipped_item",
-                                                            "equipment_slot": "offhand",
-                                                            "item_condition": {
-                                                                "type": "origins:ingredient",
-                                                                "ingredient": {
-                                                                    "tag": "ponyorigins:seafood"
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:feed",
-                                                    "food": 1,
-                                                    "saturation": 0.5
-                                                },
-                                                {
-                                                    "type": "origins:if_else_list",
-                                                    "actions": [
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:equipped_item",
-                                                                "equipment_slot": "mainhand",
-                                                                "item_condition": {
-                                                                    "type": "origins:ingredient",
-                                                                    "ingredient": {
-                                                                        "tag": "ponyorigins:seafood"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:equipped_item_action",
-                                                                "equipment_slot": "mainhand",
-                                                                "action": {
-                                                                    "type": "origins:consume",
-                                                                    "amount": 1
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "condition": {
-                                                                "type": "origins:equipped_item",
-                                                                "equipment_slot": "offhand",
-                                                                "item_condition": {
-                                                                    "type": "origins:ingredient",
-                                                                    "ingredient": {
-                                                                        "tag": "ponyorigins:seafood"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "action": {
-                                                                "type": "origins:equipped_item_action",
-                                                                "equipment_slot": "offhand",
-                                                                "action": {
-                                                                    "type": "origins:consume",
-                                                                    "amount": 1
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "playsound minecraft:entity.player.burp player @a ~ ~ ~"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_eat_timer",
-                                "change": 0,
-                                "operation": "set"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_cd",
-                                "change": 1,
-                                "operation": "set"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_antilag",
-                                "change": 0,
-                                "operation": "set"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_eat_timer",
-                        "comparison": "<",
-                        "compare_to": 30
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:and",
-                                    "conditions": [
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_antilag",
-                                            "comparison": ">",
-                                            "compare_to": 0
-                                        },
-                                        {
-                                            "type": "origins:power_active",
-                                            "power": "*:*_edible"
-                                        }
-                                    ]
-                                },
-                                "if_action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_sound_timer",
-                                            "change": 1,
-                                            "operation": "add"
-                                        },
-                                        {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_eat_timer",
-                                            "change": 1,
-                                            "operation": "add"
-                                        },
-                                        {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_antilag",
-                                            "change": -1,
-                                            "operation": "add"
-                                        }
-                                    ]
-                                },
-                                "else_action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_eat_timer",
-                                            "change": 0,
-                                            "operation": "set"
-                                        },
-                                        {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_antilag",
-                                            "change": 0,
-                                            "operation": "set"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    "slow_movement": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
         },
         "type": "origins:modify_attribute",
         "attribute": "minecraft:generic.movement_speed",
@@ -706,19 +31,10 @@
     },
     "no_sprint_eating": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_antilag",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_edible"
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "*:*_antilag",
+            "comparison": ">",
+            "compare_to": 0
         },
         "type": "origins:prevent_sprinting"
     },
@@ -743,7 +59,7 @@
     "sound_timer": {
         "type": "origins:resource",
         "min": 0,
-        "max": 4,
+        "max": 2,
         "start_value": 0,
         "max_action": {
             "type": "origins:and",
@@ -756,7 +72,7 @@
                     },
                     "if_action": {
                         "type": "origins:execute_command",
-                        "command": "execute rotated as @s run particle item minecraft:wheat ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                        "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                     },
                     "else_action": {
                         "type": "origins:if_else",
@@ -766,21 +82,21 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute rotated as @s run particle item minecraft:kelp ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                            "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:kelp ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:common/lithovore"
+                                "power": "ponyorigins:common/diets/lithovore"
                             },
                             "if_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute rotated as @s run particle item minecraft:diamond_block ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:diamond_block ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                             },
                             "else_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute rotated as @s run particle item minecraft:wheat ~ ~0.5 ~0.15 0.1 0.1 0.1 0.055 4"
+                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                             }
                         }
                     }
@@ -822,226 +138,6 @@
             "operation": "add"
         }
     },
-    "trigger": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_edible"
-                },
-                {
-                    "type": "origins:food_level",
-                    "comparison": "<",
-                    "compare_to": 20
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:gamemode",
-                    "gamemode": "creative"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:food"
-                            }
-                        },
-                        {
-                            "inverted": true,
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:food"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_antilag",
-            "change": 5,
-            "operation": "set"
-        },
-        "cooldown": 4,
-        "key": {
-            "key": "key.use",
-            "continuous": true
-        }
-    },
-    "edible": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/diets/herbivore"
-                                },
-                                {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:races/goat"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:plants"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:plants"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/diets/lithovore"
-                        },
-                        {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:gems"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:gems"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/diets/pescavore"
-                        },
-                        {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "mainhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:seafood"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "origins:equipped_item",
-                                    "equipment_slot": "offhand",
-                                    "item_condition": {
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:seafood"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        "type": "origins:simple"
-    },
-    "not_edible_cancel": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_eat_timer",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "inverted": true,
-                "type": "origins:power_active",
-                "power": "*:*_edible"
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd",
-                        "change": 1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_eat_timer",
-                        "change": 0,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_antilag",
-                        "change": 0,
-                        "operation": "set"
-                    }
-                ]
-            }
-        }
-    },
     "eat_cancel_decay": {
         "condition": {
             "type": "origins:and",
@@ -1068,5 +164,178 @@
             "change": -1,
             "operation": "add"
         }
+    },
+    "eating_tick": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_eat_timer",
+                    "comparison": "<",
+                    "compare_to": 30
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_on_block_use",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:plants"
+        },
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 1,
+            "block": true,
+            "entity": false,
+            "shape_type": "outline",
+            "fluid_handling": "any",
+            "hit_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_eat_timer",
+                        "change": 1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_sound_timer",
+                        "change": 1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_antilag",
+                        "change": 5,
+                        "operation": "set"
+                    }
+                ]
+            }
+        },
+        "action_result": "consume_partial"
+    },
+    "antilag_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_antilag",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_antilag",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "eating_complete_plants": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_eat_timer",
+                    "comparison": "==",
+                    "compare_to": 30
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_on_block_use",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:plants"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_eat_timer",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_sound_timer",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cd",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 1,
+                    "saturation": 0.5
+                }
+            ]
+        },
+        "block_action": {
+            "type": "apugli:destroy",
+            "drop_block": false
+        },
+        "action_result": "consume"
     }
 }

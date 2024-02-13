@@ -10,6 +10,7 @@ scoreboard objectives remove po.uporb
 scoreboard objectives remove po.chdorb
 scoreboard objectives remove po.aliorb
 scoreboard objectives remove po.chaos
+scoreboard objectives remove po.chaosorb
 scoreboard objectives remove po.globalflags
 scoreboard objectives remove po.scoreboard
 say Pony Origins Scoreboards Uninstalled

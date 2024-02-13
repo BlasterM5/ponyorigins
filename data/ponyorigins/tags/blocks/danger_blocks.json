@@ -1,0 +1,80 @@
+{
+    "values": [
+        {
+            "id": "minecraft:tnt",
+            "required": false
+        },
+        {
+            "id": "minecraft:dispenser",
+            "required": false
+        },
+        {
+            "id": "minecraft:sticky_piston",
+            "required": false
+        },
+        {
+            "id": "minecraft:piston",
+            "required": false
+        },
+        {
+            "id": "minecraft:pointed_dripstone",
+            "required": false
+        },
+        {
+            "id": "minecraft:lava",
+            "required": false
+        },
+        {
+            "id": "#sand",
+            "required": false
+        },
+        {
+            "id": "minecraft:gravel",
+            "required": false
+        },
+        {
+            "id": "minecraft:sweet_berry_bush",
+            "required": false
+        },
+        {
+            "id": "minecraft:cactus",
+            "required": false
+        },
+        {
+            "id": "minecraft:fire",
+            "required": false
+        },
+        {
+            "id": "minecraft:magma_block",
+            "required": false
+        },
+        {
+            "id": "minecraft:trapped_chest",
+            "required": false
+        },
+        {
+            "id": "#charm:chests/trapped",
+            "required": false
+        },
+        {
+            "id": "#supplementaries:trapped_presents",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_juniper_chest",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_cypress_chest",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_elder_chest",
+            "required": false
+        },
+        {
+            "id": "bewitchment:trapped_dragons_blood_chest",
+            "required": false
+        }
+    ]
+}
