@@ -109,6 +109,9 @@
                 },
                 {
                     "tag": "c:cooked_fishes"
+                },
+                {
+                    "tag": "ponyorigins:seafood"
                 }
             ]
         },
@@ -379,42 +382,39 @@
                     "type": "origins:equipped_item",
                     "equipment_slot": "mainhand",
                     "item_condition": {
-                        "inverted": true,
-                        "type": "origins:food"
-                    }
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:and",
-                                "conditions": [
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:ingredient",
-                                        "ingredient": {
-                                            "tag": "ponyorigins:seafood"
-                                        }
-                                    },
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:food"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "tag": "ponyorigins:seafood"
+                                }
+                            },
+                            {
                                 "inverted": true,
                                 "type": "origins:food"
                             }
-                        }
-                    ]
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "tag": "ponyorigins:seafood"
+                                }
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:food"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -470,6 +470,9 @@
                         },
                         {
                             "tag": "c:cooked_fishes"
+                        },
+                        {
+                            "tag": "ponyorigins:seafood"
                         }
                     ]
                 }
