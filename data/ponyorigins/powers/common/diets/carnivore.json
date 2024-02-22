@@ -210,7 +210,7 @@
                             },
                             "action": {
                                 "type": "origins:chance",
-                                "chance": 0.25,
+                                "chance": 0.05,
                                 "action": {
                                     "type": "origins:and",
                                     "actions": [

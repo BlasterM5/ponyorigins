@@ -48,9 +48,14 @@
                 {
                     "inverted": true,
                     "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "ponyorigins:pufferfishes"
-                    }
+                    "ingredient": [
+                        {
+                            "tag": "ponyorigins:pufferfishes"
+                        },
+                        {
+                            "tag": "c:cooked_fishes"
+                        }
+                    ]
                 }
             ]
         },
@@ -73,10 +78,33 @@
     "seafood_delight": {
         "type": "origins:modify_food",
         "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": [
+            "type": "origins:and",
+            "conditions": [
                 {
-                    "tag": "c:cooked_fishes"
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "minecraft:fishes"
+                        },
+                        {
+                            "tag": "c:cooked_fishes"
+                        },
+                        {
+                            "tag": "ponyorigins:seafood"
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "ponyorigins:pufferfishes"
+                        },
+                        {
+                            "tag": "c:raw_fishes"
+                        }
+                    ]
                 }
             ]
         },
@@ -724,7 +752,7 @@
                             "tag": "c:cooked_fishes"
                         },
                         {
-                            "tag": "c:seafood"
+                            "tag": "ponyorigins:seafood"
                         }
                     ]
                 },
@@ -762,7 +790,7 @@
                             },
                             "action": {
                                 "type": "origins:chance",
-                                "chance": 0.25,
+                                "chance": 0.05,
                                 "action": {
                                     "type": "origins:and",
                                     "actions": [

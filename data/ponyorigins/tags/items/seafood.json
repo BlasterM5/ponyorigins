@@ -6,15 +6,15 @@
         },
         {
             "id": "minecraft:seagrass",
-            "required": false
+            "required": true
         },
         {
             "id": "minecraft:kelp",
-            "required": false
+            "required": true
         },
         {
             "id": "minecraft:sea_pickle",
-            "required": false
+            "required": true
         },
         {
             "id": "oceansdelight:braised_sea_pickle",
