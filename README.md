@@ -5,6 +5,7 @@ This datapack mod replaces all the vanilla origins with origins specifically for
 Requires [Origins](https://www.modrinth.com/mod/origins), [Apugli](https://www.modrinth.com/mod/apugli), and [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony). [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Beware, due to the way the advancements and ascensions work, this mod *replaces* the vanilla Origins, and is incompatible with other Origin mods and datapacks at this time.
 
 A test server is now open, if you want to help test the mod. Download [this modpack](https://modrinth.com/modpack/pony-origins-test-pack) and connect to the server saved in the list.
+
 [Pony Origins R&D Discord](https://discord.gg/DYB3UQpYz4) is now open to users.
 
 Installation:
