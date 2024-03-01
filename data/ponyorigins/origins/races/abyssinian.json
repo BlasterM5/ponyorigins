@@ -2,8 +2,6 @@
     "name": "Abyssinian",
     "description": "Anthropomorphic cats from the deserts of Abyssinia.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/carnivore",
         "ponyorigins:common/nightvision",
         "origins:fall_immunity",

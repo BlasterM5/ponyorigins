@@ -2,8 +2,6 @@
     "name": "Goat",
     "description": "A mundane denizen of Equestria. Goats can walk along the steepest of surfaces, and eat nearly anything edible.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/goat",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",

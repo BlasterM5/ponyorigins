@@ -58,5 +58,10 @@
     ],
     "enabled": true,
     "replace": true,
-    "loading_priority": 0
+    "loading_priority": 0,
+    "name": "Race",
+    "gui_title": {
+        "choose_origin": "Choose Your Origin Race",
+        "view_origin": "Your Race"
+    }
 }

@@ -2,8 +2,6 @@
     "name": "Unicorn",
     "description": "Home to Equestria's mountains and forests, Unicorns can change the world with their wide range of abilities.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",

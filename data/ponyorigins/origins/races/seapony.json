@@ -2,8 +2,6 @@
     "name": "Seapony",
     "description": "The underwater pony race, masters of the sea. Automatically transforms into an Earth Pony when exiting the water.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/waterborn",
         "ponyorigins:common/diets/pescavore",
         "ponyorigins:common/quadruped",

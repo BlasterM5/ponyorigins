@@ -2,8 +2,6 @@
     "name": "Pegasus",
     "description": "The winged pony race, born to fly.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",

@@ -2,8 +2,6 @@
     "name": "Kirin",
     "description": "Half unicorn, half dragon, the pony race from the East with a heart of fire.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",

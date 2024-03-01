@@ -2,8 +2,6 @@
     "name": "Thestral",
     "description": "The fly by night pony race, home to Equestria's caves.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/fructivore",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",

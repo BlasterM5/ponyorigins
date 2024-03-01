@@ -1,0 +1,11 @@
+{
+    "order": 2,
+    "origins": [
+        "ponyorigins:talents/common"
+    ],
+    "enabled": true,
+    "loading_priority": 1,
+    "name": "Common",
+    "default_origin": "ponyorigins:talents/common",
+    "auto_choose": true
+}

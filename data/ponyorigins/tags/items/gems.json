@@ -287,6 +287,38 @@
         {
             "id": "nexivitysmod:raw_odium",
             "required": false
+        },
+        {
+            "id": "#c:gems",
+            "required": false
+        },
+        {
+            "id": "#balm:gems",
+            "required": false
+        },
+        {
+            "id": "minecraft:lapis_lazuli",
+            "required": false
+        },
+        {
+            "id": "spectrum:pure_lapis",
+            "required": false
+        },
+        {
+            "id": "spectrum:shimmerstone_gem",
+            "required": false
+        },
+        {
+            "id": "spectrum:paltaeria_gem",
+            "required": false
+        },
+        {
+            "id": "spectrum:stratine_gem",
+            "required": false
+        },
+        {
+            "id": "spectrum:mermaids_gem",
+            "required": false
         }
     ]
 }

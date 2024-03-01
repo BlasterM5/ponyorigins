@@ -2,8 +2,6 @@
     "name": "Dragon",
     "description": "Hatched in lava, born of fire, dragons are an unstoppable force in the world.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/lithovore",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",

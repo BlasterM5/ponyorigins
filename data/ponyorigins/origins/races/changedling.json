@@ -2,8 +2,6 @@
     "name": "Changedling",
     "description": "A changeling's evolved form, caused by purging the tainted love taken from others and sharing the pure love received by others.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",

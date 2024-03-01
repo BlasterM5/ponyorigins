@@ -1,5 +1,5 @@
 {
-    "order": 3,
+    "order": 4,
     "origins": [
         {
             "condition": {
@@ -595,7 +595,7 @@
         }
     ],
     "enabled": true,
-    "loading_priority": 2,
+    "loading_priority": 3,
     "name": "Secondary Talent",
     "gui_title": {
         "choose_origin": "Choose your Secondary (Cutie Mark) Talent",

@@ -2,8 +2,6 @@
     "name": "Orinthian",
     "description": "Flightless, anthropomorphic birdlike creatures from Orinthia.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/talons",
         "origins:slow_falling",
         "ponyorigins:common/health/minus_two",
