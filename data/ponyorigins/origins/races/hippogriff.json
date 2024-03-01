@@ -2,8 +2,6 @@
     "name": "Hippogriff",
     "description": "Front end of an osprey, back end of a pony, a friendlier predator of the skies.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/pescavore",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/talons",

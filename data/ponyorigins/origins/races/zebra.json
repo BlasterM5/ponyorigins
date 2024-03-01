@@ -2,8 +2,6 @@
     "name": "Zebra",
     "description": "A culturally distinct race from the land of Zebrica. Similar to an earth pony, and yet, quite different.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
         "ponyorigins:common/quadruped",

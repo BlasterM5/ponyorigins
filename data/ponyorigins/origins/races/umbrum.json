@@ -2,8 +2,6 @@
     "name": "Umbrum",
     "description": "Unicorn-like shadow wraiths that stalk the dark corners of the world.",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd",
         "ponyorigins:common/quadruped",
         "ponyorigins:common/hooves",
         "ponyorigins:common/rideable",

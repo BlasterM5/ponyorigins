@@ -123,41 +123,6 @@
             "operation": "add"
         }
     },
-    "not_seafood": {
-        "type": "origins:modify_food",
-        "item_condition": {
-            "inverted": true,
-            "type": "origins:ingredient",
-            "ingredient": [
-                {
-                    "tag": "minecraft:fishes"
-                },
-                {
-                    "tag": "c:raw_fishes"
-                },
-                {
-                    "tag": "c:cooked_fishes"
-                },
-                {
-                    "tag": "ponyorigins:seafood"
-                }
-            ]
-        },
-        "food_modifier": {
-            "operation": "multiply_total",
-            "value": -0.5
-        },
-        "saturation_modifier": {
-            "operation": "multiply_total",
-            "value": -0.5
-        },
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
-            "change": -1,
-            "operation": "add"
-        }
-    },
     "diet_risk_blocks": {
         "type": "origins:action_on_block_use",
         "block_condition": {
@@ -484,9 +449,6 @@
                     ]
                 },
                 {
-                    "type": "origins:food"
-                },
-                {
                     "inverted": true,
                     "type": "origins:ingredient",
                     "ingredient": [
@@ -736,28 +698,20 @@
     "off_diet_risk": {
         "type": "origins:modify_food",
         "item_condition": {
-            "type": "origins:and",
-            "conditions": [
+            "inverted": true,
+            "type": "origins:ingredient",
+            "ingredient": [
                 {
-                    "inverted": true,
-                    "type": "origins:ingredient",
-                    "ingredient": [
-                        {
-                            "tag": "minecraft:fishes"
-                        },
-                        {
-                            "tag": "c:raw_fishes"
-                        },
-                        {
-                            "tag": "c:cooked_fishes"
-                        },
-                        {
-                            "tag": "ponyorigins:seafood"
-                        }
-                    ]
+                    "tag": "minecraft:fishes"
                 },
                 {
-                    "type": "origins:food"
+                    "tag": "c:raw_fishes"
+                },
+                {
+                    "tag": "c:cooked_fishes"
+                },
+                {
+                    "tag": "ponyorigins:seafood"
                 }
             ]
         },
