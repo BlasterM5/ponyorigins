@@ -416,8 +416,8 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:food",
-                    "inverted": true
+                    "inverted": true,
+                    "type": "origins:food"
                 },
                 {
                     "type": "origins:ingredient",
