@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[20,)"
+license="Unlicense"
+logoFile="pack.png"
+logoBlur=false
+
+[[mods]]
+modId="ponyorigins"
+displayName="Pony Origins LTS"
+version="1.3.4-b2"
+description='''
+Origins Replacement Mod, designed to Ponify Origins.
+'''
+[[dependencies.ponyorigins]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.0,1.19.3]"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.ponyorigins]]
+    modId="origins"
+    mandatory=true
+    versionRange="[0.1.0,)"
+    ordering="NONE"
+    side="BOTH"

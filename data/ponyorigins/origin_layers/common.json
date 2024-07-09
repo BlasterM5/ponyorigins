@@ -1,11 +1,24 @@
 {
     "order": 2,
     "origins": [
-        "ponyorigins:talents/common"
+        {
+            "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "player"
+            },
+            "origins": [
+                "ponyorigins:talents/common"
+            ]
+        }
     ],
     "enabled": true,
     "loading_priority": 1,
     "name": "Common",
+    "gui_title": {
+        "choose_origin": "Setting Common Powers",
+        "view_origin": "Common Powers"
+    },
     "default_origin": "ponyorigins:talents/common",
-    "auto_choose": true
+    "auto_choose": true,
+    "hidden": true
 }

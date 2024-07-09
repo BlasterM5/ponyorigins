@@ -3,12 +3,6 @@
     "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key.",
     "hidden": true,
     "type": "origins:multiple",
-    "key_secondary_active": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 2,
-        "start_value": 0
-    },
     "key_primary": {
         "type": "origins:active_self",
         "entity_action": {
@@ -34,6 +28,18 @@
             "key": "key.origins.secondary_active",
             "continuous": true
         }
+    },
+    "key_primary_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
+    },
+    "key_secondary_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0
     },
     "key_antilag_decay": {
         "condition": {
@@ -90,12 +96,6 @@
                 }
             ]
         }
-    },
-    "key_primary_active": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 2,
-        "start_value": 0
     },
     "empty_mainhand": {
         "type": "origins:resource",
