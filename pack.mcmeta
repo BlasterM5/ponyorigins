@@ -3,11 +3,11 @@
         "name": "Pony Origins",
         "id": "ponyorigins",
         "pack_format": 15,
-        "version": "1.3.4-b1",
+        "version": "1.3.4-b2",
         "authors": [
             "BlasterM5"
         ],
-        "description": "Origins Replacement Mod, designed to compliment Mine Little Pony.",
+        "description": "Origins Replacement Mod, designed to Ponify Origins.",
         "license": "Unlicense"
     }
 }
