@@ -2,7 +2,14 @@ Deep in the blocky multiverse of Origins Minecraft, is a land called Equestria. 
 
 This datapack mod replaces all the vanilla origins with origins specifically for Mine Little Pony. Expand your gameplay with the unique abilities and features of these four legged races.
 
-Requires [Origins](https://www.modrinth.com/mod/origins), [Apugli](https://www.modrinth.com/mod/apugli), and [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony). [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Beware, due to the way the advancements and ascensions work, this mod *replaces* the vanilla Origins, and is incompatible with other Origin mods and datapacks at this time.
+Requires [Origins](https://www.modrinth.com/mod/origins) and [Apugli](https://www.modrinth.com/mod/apugli). Recommended to have either [Figura](https://www.modrinth.com/mod/figura) or [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony) for your player model. [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Beware, due to the way the advancements and ascensions work, this mod *replaces* the vanilla Origins, and is incompatible with other Origin mods and datapacks at this time. Several of the Pony Origins have similar gameplay functionality to the default Origins.
+
+<details>
+<summary>Modpack / Server Makers who Still Want to Enable Vanilla and Other Modded Origins
+</summary>
+If you really, really want to have vanilla Origins as well, you will have to manually edit the mod, but that's easy. Edit the following line in data/origins/origin_layers/origin.json:
+`    "replace": true,` with `    "replace": false,` and repack the jar. Again, this is unsupported and might break some interactions, but I did a best effort to come up with a system that will still cater to non-pony origins.
+</details>
 
 A test server is now open, if you want to help test the mod. Download [this modpack](https://modrinth.com/modpack/pony-origins-test-pack) and connect to the server saved in the list.
 
@@ -13,8 +20,8 @@ Installation:
 - Install Fabric
 - Install [Origins](https://www.modrinth.com/mod/origins)
 - Install [Apugli](https://www.modrinth.com/mod/apugli)
-- Install [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony)
-- (Recommended) Install [HD Skins](https://www.modrinth.com/mod/hd-skins)
+- (Recommended) Install [Figura](https://www.modrinth.com/mod/figura) and/or [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony)
+- (Recommended with Mine Little Pony) Install [HD Skins](https://www.modrinth.com/mod/hd-skins)
 - (Optional) Install [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive)
 - Install Pony Origins
 
@@ -25,7 +32,7 @@ On the first boot, you need to enter Options, Controls, Key Binds, and bind a ke
 Then, enter Options, Accessibility Settings, and turn FOV Effects to Off.
 Alternately, install [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive), and in Options, Accessibility Settings, set FOV Effects to Vanilla Only.
 
-Finally, upload a minecraft skin compatible with Mine Little Pony for your player model.
+Finally, either use your MLP Figura avatar, or upload a minecraft skin compatible with Mine Little Pony for your player model.
 Alternately, install [HD Skins](https://www.modrinth.com/mod/hd-skins), and click the icon on the bottom right of the main menu with the leggings. This will allow you to upload an HD skin for Mine Little Pony, without changing your Minecraft player skin. Other players using HD Skins will see your MLP skin this way.
 
 Mine Little Pony provides several community made skins [here](https://github.com/MineLittlePony/Community-Skin-Pack).
@@ -88,5 +95,8 @@ Several Bipedal races from around Equestria are included. While their abilities 
 - Diamond Dog: Best described as a cross between a prairie dog and a canine, diamond dogs are seen throughout the subterranean areas of Equestria. Their claws are able to dig through rock and stone with ease, and deal significant damage unarmed. Diamond Dogs are carnivores, naturally gifted with night vision.
 
 Don't like the race you first chose and want to change? Craft a Harmonic Resonator by surrounding a Nether Star with diamonds and amethyst shards in the crafting table, then use the Harmonic Resonator to change to a new race with new talents.
+
+
+Note for Modmakers and Modpackmakers: If the Unlicense isn't clear enough, you are free to use this mod however, wherever, with whatever, no restrictions. You can even grab the source code and make your own version if you want, there's no restrictions.
 
 For a full readup of the abilities and races, refer to the wiki.
