@@ -48,6 +48,10 @@
                 {
                     "inverted": true,
                     "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
                 }
             ]
         },
@@ -86,6 +90,10 @@
                         {
                             "inverted": true,
                             "type": "origins:creative_flying"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:fall_flying"
                         }
                     ]
                 },

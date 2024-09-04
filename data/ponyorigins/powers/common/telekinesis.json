@@ -13,96 +13,46 @@
             "sprite": "minecraft:textures/item/light.png"
         }
     ],
-    "type": "origins:multiple",
-    "stat": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_mainhand",
-                            "comparison": "==",
-                            "compare_to": 0
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_mainhand",
-                            "comparison": "==",
-                            "compare_to": 0
-                        }
-                    ]
-                }
-            ]
-        },
-        "type": "origins:attribute",
-        "modifiers": [
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
             {
-                "attribute": "reach-entity-attributes:reach",
-                "operation": "addition",
-                "value": 3
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">",
+                "compare_to": 0
             },
             {
-                "attribute": "reach-entity-attributes:attack_range",
-                "operation": "addition",
-                "value": 3
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_mainhand",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_offhand",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
             }
-        ],
-        "update_health": true
+        ]
     },
-    "up_tk_level": {
-        "condition": {
-            "inverted": true,
-            "type": "origins:advancement",
-            "advancement": "ponyorigins:unicorn/tk_mastery"
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "attribute": "reach-entity-attributes:reach",
+            "operation": "addition",
+            "value": 3
         },
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1000,
-        "start_value": 0,
-        "max_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "inverted": true,
-                "type": "origins:advancement",
-                "advancement": "ponyorigins:unicorn/tk_mastery"
-            },
-            "if_action": {
-                "type": "origins:execute_command",
-                "command": "advancement grant @s only ponyorigins:unicorn/tk_mastery"
-            }
+        {
+            "attribute": "reach-entity-attributes:attack_range",
+            "operation": "addition",
+            "value": 3
         }
-    },
-    "up_tk_block_break": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "inverted": true,
-                    "type": "origins:advancement",
-                    "advancement": "ponyorigins:unicorn/tk_mastery"
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:races/unicorn"
-                }
-            ]
-        },
-        "type": "origins:action_on_block_break",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_up_tk_level",
-            "change": 1,
-            "operation": "add"
-        },
-        "only_when_harvested": true
-    }
+    ],
+    "update_health": false
 }

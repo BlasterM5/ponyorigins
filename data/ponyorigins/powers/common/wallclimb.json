@@ -9,7 +9,7 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Must have main and off (hand or hooves) free",
+            "text": "Must have main and off (hands or hooves) free",
             "sprite": "minecraft:textures/item/wooden_pickaxe.png"
         }
     ],

@@ -1,0 +1,2 @@
+execute store result score @s po.chlove run resource get @s ponyorigins:common/diets/emotivore_love
+execute store result score @s po.chtaint run resource get @s ponyorigins:common/diets/emotivore_taint

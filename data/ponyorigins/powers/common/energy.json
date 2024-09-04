@@ -86,8 +86,10 @@
                                     "type": "origins:and",
                                     "conditions": [
                                         {
-                                            "type": "origins:origin",
-                                            "origin": "ponyorigins:races/unicorn"
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/pony_eup_flag",
+                                            "comparison": "==",
+                                            "compare_to": 2
                                         },
                                         {
                                             "inverted": true,
@@ -98,7 +100,7 @@
                                 },
                                 "if_action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_up_energy_achievement",
+                                    "resource": "ponyorigins:common/pony_up_energy",
                                     "change": 1,
                                     "operation": "add"
                                 }
@@ -520,47 +522,6 @@
                     "operation": "add"
                 }
             ]
-        }
-    },
-    "up_energy_achievement": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:races/unicorn"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:advancement",
-                    "advancement": "ponyorigins:unicorn/energy"
-                }
-            ]
-        },
-        "type": "origins:resource",
-        "min": 0,
-        "max": 10000,
-        "start_value": 0,
-        "max_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "inverted": true,
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/energy"
-                    },
-                    {
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:races/unicorn"
-                    }
-                ]
-            },
-            "if_action": {
-                "type": "origins:execute_command",
-                "command": "advancement grant @s only ponyorigins:unicorn/energy"
-            }
         }
     },
     "sc_color_tick": {

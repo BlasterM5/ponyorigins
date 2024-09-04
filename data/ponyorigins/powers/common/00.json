@@ -2,6 +2,7 @@
     "name": "00 Common Checks",
     "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key.",
     "hidden": true,
+    "loading_priority": 0,
     "type": "origins:multiple",
     "key_primary": {
         "type": "origins:active_self",
