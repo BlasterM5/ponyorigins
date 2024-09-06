@@ -1,0 +1,419 @@
+{
+    "name": "Make Your Mark",
+    "description": "Advancement Tracker for Make Your Mark advancements",
+    "hidden": true,
+    "loading_priority": 1,
+    "type": "origins:multiple",
+    "advancement_trackers": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "minecraft:nether/all_effects"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/chaos"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function ponyorigins:ascension/chaos"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "minecraft:end/kill_dragon"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/the_end"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $the_end po.globalflags matches 1 run function ponyorigins:ascension/the_end"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "minecraft:adventure/adventuring_time"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/traveler"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $traveler po.globalflags matches 1 run function ponyorigins:ascension/traveler"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "minecraft:husbandry/bred_all_animals"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/breeder"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $breeder po.globalflags matches 1 run function ponyorigins:ascension/breeder"
+                    }
+                }
+            ]
+        }
+    },
+    "clear_mym": {
+        "condition": {
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:ascension/root"
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:revoke_power",
+            "power": "ponyorigins:advancements/mym",
+            "source": "ponyorigins:common/orb_cd"
+        }
+    },
+    "fd_mym_check": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={farmersdelight:main/plant_all_crops=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={farmersdelight:main/master_chef=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/farmersdelight/farmersmastery"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $farmersmastery po.globalflags matches 1 run function ponyorigins:ascension/farmersdelight/farmersmastery"
+                    }
+                }
+            ]
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "farmersdelight"
+                ]
+            }
+        ]
+    },
+    "botania_mym_check": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={botania:challenge/gaia_gardian_hardmode=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/botania/gaia_hard"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $gaia_hard po.globalflags matches 1 run function ponyorigins:ascension/botania/gaia_hard"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={botania:main/gaia_guardian_kill=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/botania/gaia"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $gaia po.globalflags matches 1 run function ponyorigins:ascension/botania/gaia"
+                    }
+                }
+            ]
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "botania"
+                ]
+            }
+        ]
+    },
+    "ad_astra_mym_check": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ad_astra:moon=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/ad_astra/moon"
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "ad_astra:moon"
+                            },
+                            {
+                                "type": "origins:on_block"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:riding"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $moon po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/moon"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ad_astra:mars=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/ad_astra/mars"
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "ad_astra:mars"
+                            },
+                            {
+                                "type": "origins:on_block"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:riding"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $mars po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/mars"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ad_astra:venus=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/ad_astra/venus"
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "ad_astra:venus"
+                            },
+                            {
+                                "type": "origins:on_block"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:riding"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $venus po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/venus"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ad_astra:mercury=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/ad_astra/mercury"
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "ad_astra:mercury"
+                            },
+                            {
+                                "type": "origins:on_block"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:riding"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $mercury po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/mercury"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ad_astra:interstellar=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/ad_astra/glacio"
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "ad_astra:glacio"
+                            },
+                            {
+                                "type": "origins:on_block"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:riding"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $glacio po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/glacio"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={ponyorigins:special/interstellar=true}]",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/ad_astra/grand_tour"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $grand_tour po.globalflags matches 1 run function ponyorigins:ascension/ad_astra/grand_tour"
+                    }
+                }
+            ]
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "ad_astra"
+                ]
+            }
+        ]
+    }
+}

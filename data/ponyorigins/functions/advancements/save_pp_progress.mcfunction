@@ -1,2 +1,4 @@
-execute store result score @s po.ppfight run resource get @s ponyorigins:common/pony_pp_fight
-execute store result score @s po.ppflight run resource get @s ponyorigins:common/pony_pp_flight
+resource operation @s ponyorigins:advancements/pegasus_fight >< @s po.ppfight
+resource operation @s ponyorigins:advancements/pegasus_fight = @s po.ppfight
+resource operation @s ponyorigins:advancements/pegasus_flight >< @s po.ppflight
+resource operation @s ponyorigins:advancements/pegasus_flight = @s po.ppflight

@@ -1,2 +1,2 @@
-resource operation @s ponyorigins:common/pony_up_energy = po.upenergy
-resource operation @s ponyorigins:common/pony_up_mine = po.upmine
+resource operation @s ponyorigins:common/energy_odometer = @s po.upenergy
+resource operation @s ponyorigins:advancements/unicorn_mine = @s po.upmine

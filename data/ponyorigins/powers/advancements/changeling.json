@@ -1,0 +1,54 @@
+{
+    "name": "Changeling Advancement Tracker",
+    "description": "Tracks Advancements for the Changelings",
+    "hidden": true,
+    "loading_priority": 1,
+    "type": "origins:multiple",
+    "give_orb": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "po.chdorb",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function ponyorigins:mastery/changeling"
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "ponyorigins:advancements/changeling",
+                    "source": "ponyorigins:common/orb_cd"
+                }
+            ]
+        }
+    },
+    "setup": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:execute_command",
+            "command": "function ponyorigins:advancements/load_ch_progress"
+        },
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "function ponyorigins:advancements/save_ch_progress"
+        }
+    }
+}

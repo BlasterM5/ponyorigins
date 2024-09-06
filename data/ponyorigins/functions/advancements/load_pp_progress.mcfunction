@@ -1,2 +1,2 @@
-resource operation @s ponyorigins:common/pony_pp_fight = po.ppfight
-resource operation @s ponyorigins:common/pony_pp_flight = po.ppflight
+resource operation @s ponyorigins:advancements/pegasus_fight = @s po.ppfight
+resource operation @s ponyorigins:advancements/pegasus_flight = @s po.ppflight

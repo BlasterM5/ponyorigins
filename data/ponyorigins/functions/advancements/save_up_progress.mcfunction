@@ -1,2 +1,4 @@
-execute store result score @s po.upenergy run resource get @s ponyorigins:common/pony_up_energy
-execute store result score @s po.upmine run resource get @s ponyorigins:common/pony_up_mine
+resource operation @s ponyorigins:common/energy_odometer >< @s po.upenergy
+resource operation @s ponyorigins:common/energy_odometer = @s po.upenergy
+resource operation @s ponyorigins:advancements/unicorn_mine >< @s po.upmine
+resource operation @s ponyorigins:advancements/unicorn_mine = @s po.upmine

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "ad_astra:tier_4_rocket"
+            "item": "minecraft:firework_rocket"
         },
         "title": "The Grand Tour",
         "description": "Visit every world, dimension, and orbit",

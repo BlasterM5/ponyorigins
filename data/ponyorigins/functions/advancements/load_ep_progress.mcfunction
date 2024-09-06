@@ -1,1 +1,1 @@
-resource operation @s ponyorigins:common/pony_ep_farmer = po.epfarmer
+resource operation @s ponyorigins:advancements/earth_pony_farmer = @s po.epfarmer

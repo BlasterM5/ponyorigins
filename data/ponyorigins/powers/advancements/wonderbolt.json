@@ -1,0 +1,208 @@
+{
+    "name": "Wonderbolt Advancement Tracker",
+    "description": "Tracks the Wonderbolt Advancement",
+    "hidden": true,
+    "loading_priority": 1,
+    "type": "origins:multiple",
+    "check_valid": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:special/wonderbolt"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/flight/main"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "ponyorigins:advancements/wonderbolt",
+                "source": "ponyorigins:common/orb_cd"
+            }
+        }
+    },
+    "countdown": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_timer",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "kill_start": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_timer",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:on_block"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:creative_flying"
+                        },
+                        {
+                            "type": "origins:fall_flying"
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "change": 10,
+            "operation": "set"
+        }
+    },
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0,
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_counter",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "counter": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "advancement grant @s until ponyorigins:special/wonderbolt"
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "ponyorigins:advancements/wonderbolt",
+                    "source": "ponyorigins:common/orb_cd"
+                }
+            ]
+        }
+    },
+    "kill_count": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:on_block"
+                }
+            ]
+        },
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:tamed"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:villager"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:tamed"
+                        },
+                        {
+                            "type": "origins:entity_group",
+                            "group": "undead"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:entity_group",
+                    "group": "illager"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:raiders"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:skeletons"
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_counter",
+            "change": 1,
+            "operation": "add"
+        },
+        "cooldown": 0
+    },
+    "kill_reset": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_timer",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:on_block"
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_timer",
+                "change": 0,
+                "operation": "set"
+            }
+        }
+    }
+}

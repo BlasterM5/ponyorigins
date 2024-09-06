@@ -602,10 +602,6 @@
         "action_result": "consume",
         "priority": 1
     },
-    "no_nourishment": {
-        "type": "origins:effect_immunity",
-        "effect": "farmersdelight:nourishment"
-    },
     "love_vis": {
         "type": "origins:resource",
         "min": 0,
@@ -632,18 +628,6 @@
             "resource": "*:*_love_vis",
             "change": -1,
             "operation": "add"
-        }
-    },
-    "save_load_love": {
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
-        "entity_action_lost": {
-            "type": "origins:execute_command",
-            "command": "function ponyorigins:advancements/save_ch_love"
-        },
-        "entity_action_added": {
-            "type": "origins:execute_command",
-            "command": "function ponyorigins:advancements/update_ch_love"
         }
     },
     "drain": {
@@ -1515,5 +1499,17 @@
         },
         "action_result": "consume",
         "priority": 1
+    },
+    "no_fd_nourishment": {
+        "type": "origins:effect_immunity",
+        "effect": "farmersdelight:nourishment",
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "farmersdelight"
+                ]
+            }
+        ]
     }
 }

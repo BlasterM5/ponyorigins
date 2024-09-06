@@ -563,20 +563,6 @@
             "meat": false
         }
     },
-    "horse_feed": {
-        "type": "apugli:edible_item",
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "farmersdelight:horse_feed"
-            }
-        },
-        "food_component": {
-            "hunger": 14,
-            "saturation": 1.25,
-            "meat": false
-        }
-    },
     "nutrition": {
         "type": "origins:resource",
         "min": 0,
@@ -873,5 +859,36 @@
             "change": 1,
             "operation": "add"
         }
+    },
+    "fd_horse_feed": {
+        "type": "apugli:edible_item",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:food"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "farmersdelight:horse_feed"
+                    }
+                }
+            ]
+        },
+        "food_component": {
+            "hunger": 14,
+            "saturation": 1.25,
+            "meat": false
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "farmersdelight"
+                ]
+            }
+        ]
     }
 }

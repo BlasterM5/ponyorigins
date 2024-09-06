@@ -1,3 +1,4 @@
-execute store result score @s po.test1 run resource get @s ponyorigins:common/pp_flight
-execute if score @s po.test1 < @s po.ppflight run resource change @s ponyorigins:common/pony_pp_flight_vis 5
-resource operation @s ponyorigins:common/pony_pp_flight = po.ppflight
+resource operation @s ponyorigins:advancements/pegasus_flight >< @s po.test1
+resource operation @s ponyorigins:advancements/pegasus_flight = @s po.test1
+execute if score @s po.test1 < @s po.ppflight run resource change @s ponyorigins:advancements/pegasus_flight_vis 5
+resource operation @s ponyorigins:common/advancements/pegasus_flight = @s po.ppflight

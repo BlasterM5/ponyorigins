@@ -1,0 +1,122 @@
+{
+    "name": "Alicorn Advancements",
+    "description": "Contains Advancement Logic for Alicorn Ascension",
+    "hidden": true,
+    "loading_priority": 1,
+    "type": "origins:multiple",
+    "ascension_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:alicorn/ascension"
+                },
+                {
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:alicorn/mastery"
+                },
+                {
+                    "type": "origins:advancement",
+                    "advancement": "ponyorigins:ascension/root"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 80,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "advancement grant @s only ponyorigins:alicorn/ascension"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s po.aliorb 1"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:scoreboard",
+                        "objective": "po.chaosorb",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:grant_power",
+                                "power": "ponyorigins:chaos/chaos",
+                                "source": "ponyorigins:races/alicorn"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s \"Chaos Energy interferes with your Ascension...\""
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scoreboard players set @s po.chaos 2"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "orb_give": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "po.aliorb",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 80,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function ponyorigins:mastery/alicorn"
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "ponyorigins:advancements/alicorn",
+                    "source": "ponyorigins:common/pony"
+                }
+            ]
+        }
+    },
+    "valid_check": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:scoreboard",
+                "objective": "po.aliorb",
+                "comparison": "==",
+                "compare_to": 2
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "ponyorigins:advancements/alicorn",
+                "source": "ponyorigins:common/pony"
+            }
+        }
+    }
+}

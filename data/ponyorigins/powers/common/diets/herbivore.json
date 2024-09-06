@@ -553,7 +553,7 @@
             "meat": false
         }
     },
-    "horse_feed": {
+    "fd_horse_feed": {
         "type": "apugli:edible_item",
         "item_condition": {
             "type": "origins:and",
@@ -574,6 +574,14 @@
             "hunger": 14,
             "saturation": 1.25,
             "meat": false
-        }
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "farmersdelight"
+                ]
+            }
+        ]
     }
 }
