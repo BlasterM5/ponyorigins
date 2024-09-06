@@ -7,17 +7,8 @@
     "advancement_setup": {
         "type": "origins:action_on_callback",
         "entity_action_chosen": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "execute function ponyorigins:advancements/setup_pp"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "scoreboard players set @s po.pporb 0"
-                }
-            ]
+            "type": "origins:execute_command",
+            "command": "execute function ponyorigins:advancements/setup_pp"
         },
         "execute_chosen_when_orb": true,
         "entity_action_added": {
@@ -41,7 +32,7 @@
             "if_action": {
                 "type": "origins:revoke_power",
                 "power": "ponyorigins:advancements/pegasus",
-                "source": "ponyorigins:common/pony"
+                "source": "ponyorigins:common/00"
             },
             "else_action": {
                 "type": "origins:execute_command",
@@ -139,7 +130,7 @@
                                         {
                                             "type": "origins:grant_power",
                                             "power": "ponyorigins:advancements/alicorn",
-                                            "source": "ponyorigins:races/pegasus"
+                                            "source": "ponyorigins:common/00"
                                         }
                                     ]
                                 }
@@ -172,43 +163,46 @@
         }
     },
     "orb_give": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_empty_mainhand",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:scoreboard",
-                    "objective": "po.pporb",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:advancement",
-                    "advancement": "ponyorigins:alicorn/mastery"
-                }
-            ]
-        },
         "type": "origins:action_over_time",
-        "interval": 20,
-        "rising_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "function ponyorigins:mastery/pegasus"
-                },
-                {
-                    "type": "origins:revoke_power",
-                    "power": "ponyorigins:advancements/pegasus",
-                    "source": "ponyorigins:common/pony"
-                }
-            ]
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_mainhand",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.pporb",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:alicorn/mastery"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function ponyorigins:mastery/pegasus"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "ponyorigins:advancements/pegasus",
+                        "source": "ponyorigins:common/00"
+                    }
+                ]
+            }
         }
     },
     "fight_vis": {

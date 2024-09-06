@@ -103,7 +103,7 @@
         "entity_action": {
             "type": "origins:revoke_power",
             "power": "ponyorigins:advancements/mym",
-            "source": "ponyorigins:common/orb_cd"
+            "source": "ponyorigins:common/00"
         }
     },
     "fd_mym_check": {

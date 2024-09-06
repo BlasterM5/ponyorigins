@@ -38,30 +38,33 @@
         "start_value": 0
     },
     "silk_maker": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_food",
-            "comparison": ">",
-            "compare_to": 0
-        },
         "type": "origins:action_over_time",
         "interval": 5,
         "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_food",
-                    "change": -2,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_silk",
-                    "change": 1,
-                    "operation": "add"
-                }
-            ]
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_food",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_food",
+                        "change": -2,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_silk",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                ]
+            }
         }
     },
     "split_nutrition": {

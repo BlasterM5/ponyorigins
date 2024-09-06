@@ -26,8 +26,10 @@
                     "compare_to": 10
                 },
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_active"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },
@@ -133,8 +135,10 @@
                                 }
                             },
                             {
-                                "type": "origins:toggle",
-                                "power": "*:*_active"
+                                "type": "origins:change_resource",
+                                "resource": "*:*_active",
+                                "change": 0,
+                                "operation": "set"
                             }
                         ]
                     }
@@ -153,15 +157,19 @@
         "entity_action": {
             "type": "origins:if_else",
             "condition": {
-                "type": "origins:power_active",
-                "power": "*:*_active"
+                "type": "origins:resource",
+                "resource": "*:*_active",
+                "comparison": "==",
+                "compare_to": 1
             },
             "if_action": {
                 "type": "origins:and",
                 "actions": [
                     {
-                        "type": "origins:toggle",
-                        "power": "*:*_active"
+                        "type": "origins:change_resource",
+                        "resource": "*:*_active",
+                        "change": 0,
+                        "operation": "set"
                     },
                     {
                         "type": "origins:play_sound",
@@ -183,8 +191,10 @@
                     "type": "origins:and",
                     "actions": [
                         {
-                            "type": "origins:toggle",
-                            "power": "*:*_active"
+                            "type": "origins:change_resource",
+                            "resource": "*:*_active",
+                            "change": 1,
+                            "operation": "set"
                         },
                         {
                             "type": "origins:play_sound",
@@ -203,8 +213,10 @@
     },
     "passive_drain": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
         "interval": 8,
@@ -229,8 +241,10 @@
                                 "compare_to": 10
                             },
                             {
-                                "type": "origins:power_active",
-                                "power": "*:*_active"
+                                "type": "origins:resource",
+                                "resource": "*:*_active",
+                                "comparison": "==",
+                                "compare_to": 1
                             }
                         ]
                     },
@@ -244,8 +258,10 @@
                                 "pitch": 1
                             },
                             {
-                                "type": "origins:toggle",
-                                "power": "*:*_active"
+                                "type": "origins:change_resource",
+                                "resource": "*:*_active",
+                                "change": 0,
+                                "operation": "set"
                             }
                         ]
                     }
@@ -278,17 +294,17 @@
         }
     },
     "active": {
-        "type": "origins:toggle",
-        "active_by_default": false,
-        "key": {
-            "key": "key.origins.null"
-        },
-        "retain_state": false
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     },
     "speed_limited": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_attribute",
         "attribute": "minecraft:generic.movement_speed",
@@ -299,15 +315,19 @@
     },
     "sprint_limited": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:prevent_sprinting"
     },
     "barrier_fire_immunity": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:invulnerability",
         "damage_condition": {
@@ -339,8 +359,10 @@
     },
     "barrier_visual": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "apugli:energy_swirl",
         "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",

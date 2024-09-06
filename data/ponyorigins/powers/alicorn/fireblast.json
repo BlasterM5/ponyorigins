@@ -15,7 +15,7 @@
         }
     ],
     "type": "origins:multiple",
-    "fireball": {
+    "fireblast": {
         "condition": {
             "type": "origins:and",
             "conditions": [

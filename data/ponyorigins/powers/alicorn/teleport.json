@@ -26,8 +26,10 @@
                     "compare_to": 2
                 },
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_trigger"
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
                 }
             ]
         },
@@ -411,9 +413,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_trigger"
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": "==",
+                    "compare_to": 0
                 },
                 {
                     "type": "origins:resource",
@@ -476,8 +479,10 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_trigger"
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
                 }
             ]
         },
@@ -552,24 +557,6 @@
                 ]
             }
         }
-    },
-    "trigger": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talents/teleport_alicorn"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_key_secondary_active",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:simple"
     },
     "spark": {
         "condition": {

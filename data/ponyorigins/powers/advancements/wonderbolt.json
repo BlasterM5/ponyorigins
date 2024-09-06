@@ -26,36 +26,33 @@
             "if_action": {
                 "type": "origins:revoke_power",
                 "power": "ponyorigins:advancements/wonderbolt",
-                "source": "ponyorigins:common/orb_cd"
+                "source": "ponyorigins:common/00"
             }
         }
     },
     "countdown": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_timer",
-            "comparison": ">",
-            "compare_to": 0
-        },
         "type": "origins:action_over_time",
         "interval": 20,
         "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_timer",
-            "change": -1,
-            "operation": "add"
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_timer",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_timer",
+                "change": -1,
+                "operation": "add"
+            }
         }
     },
-    "kill_start": {
+    "kill_triggers": {
         "condition": {
             "type": "origins:and",
             "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_timer",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
                 {
                     "inverted": true,
                     "type": "origins:on_block"
@@ -75,6 +72,18 @@
         },
         "type": "origins:action_over_time",
         "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:on_block"
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_timer",
+                "change": 0,
+                "operation": "set"
+            }
+        },
         "rising_action": {
             "type": "origins:change_resource",
             "resource": "*:*_timer",
@@ -109,7 +118,7 @@
                 {
                     "type": "origins:revoke_power",
                     "power": "ponyorigins:advancements/wonderbolt",
-                    "source": "ponyorigins:common/orb_cd"
+                    "source": "ponyorigins:common/00"
                 }
             ]
         }
@@ -135,18 +144,23 @@
             "type": "origins:or",
             "conditions": [
                 {
-                    "inverted": true,
-                    "type": "origins:tamed"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:entity_type",
-                    "entity_type": "minecraft:villager"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:entity_type",
-                    "entity_type": "minecraft:player"
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:tamed"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:villager"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:player"
+                        }
+                    ]
                 },
                 {
                     "type": "origins:and",
@@ -182,27 +196,5 @@
             "operation": "add"
         },
         "cooldown": 0
-    },
-    "kill_reset": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_timer",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:on_block"
-            },
-            "if_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_timer",
-                "change": 0,
-                "operation": "set"
-            }
-        }
     }
 }

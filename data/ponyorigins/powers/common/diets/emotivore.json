@@ -156,7 +156,7 @@
             "bar_index": 15,
             "condition": {
                 "type": "origins:resource",
-                "resource": "*:*_taint_vis",
+                "resource": "*:*_bar_vis",
                 "comparison": ">",
                 "compare_to": 0
             }
@@ -182,7 +182,7 @@
                     },
                     {
                         "type": "origins:resource",
-                        "resource": "*:*_love_vis",
+                        "resource": "*:*_bar_vis",
                         "comparison": ">",
                         "compare_to": 0
                     }
@@ -602,32 +602,23 @@
         "action_result": "consume",
         "priority": 1
     },
-    "love_vis": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
-    },
-    "taint_vis": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
-    },
     "update_vis": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_love_vis",
-            "comparison": ">",
-            "compare_to": 0
-        },
         "type": "origins:action_over_time",
         "interval": 20,
         "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_love_vis",
-            "change": -1,
-            "operation": "add"
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_bar_vis",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_bar_vis",
+                "change": -1,
+                "operation": "add"
+            }
         }
     },
     "drain": {
@@ -1481,7 +1472,7 @@
                                 "type": "origins:actor_action",
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_love_vis",
+                                    "resource": "*:*_bar_vis",
                                     "change": 5,
                                     "operation": "add"
                                 }
@@ -1511,5 +1502,11 @@
                 ]
             }
         ]
+    },
+    "bar_vis": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
     }
 }

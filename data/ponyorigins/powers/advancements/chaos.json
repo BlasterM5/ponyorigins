@@ -1,52 +1,81 @@
 {
-    "name": "Chaos Advamcement Tracker",
+    "name": "Chaos Advancement Tracker",
     "description": "Do you like Chaos?",
     "hidden": true,
     "loading_priority": 2,
     "type": "origins:multiple",
     "chaos": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:advancement",
-                    "advancement": "ponyorigins:ascension/chaos"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_empty_mainhand",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:scoreboard",
-                    "objective": "po.chaosorb",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:scoreboard",
-                    "objective": "po.aliorb",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
         "type": "origins:action_over_time",
         "interval": 100,
-        "rising_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "function ponyorigins:mastery/chaos"
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:ascension/chaos"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_mainhand",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.chaosorb",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.aliorb",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function ponyorigins:mastery/chaos"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "ponyorigins:advancements/chaos",
+                        "source": "ponyorigins:common/00"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:advancement",
+                            "advancement": "ponyorigins:ascension/chaos"
+                        },
+                        {
+                            "type": "origins:scoreboard",
+                            "objective": "po.aliorb",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
                 },
-                {
+                "if_action": {
                     "type": "origins:revoke_power",
                     "power": "ponyorigins:advancements/chaos",
-                    "source": "ponyorigins:common/orb_cd"
+                    "source": "ponyorigins:common/00"
+                },
+                "else_action": {
+                    "type": "origins:nothing"
                 }
-            ]
+            }
         }
     }
 }

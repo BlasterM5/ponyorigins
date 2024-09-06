@@ -2,8 +2,7 @@
     "name": "Common",
     "description": "Common Powers, used by other powers to do various things",
     "powers": [
-        "ponyorigins:common/00",
-        "ponyorigins:common/orb_cd"
+        "ponyorigins:common/00"
     ],
     "impact": 0
 }

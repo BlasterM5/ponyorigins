@@ -1,5 +1,5 @@
 {
-    "name": "Changeling Advancement Tracker",
+    "name": "Changeling Advancements Tracker",
     "description": "Tracks Advancements for the Changelings",
     "hidden": true,
     "loading_priority": 1,
@@ -34,7 +34,7 @@
                 {
                     "type": "origins:revoke_power",
                     "power": "ponyorigins:advancements/changeling",
-                    "source": "ponyorigins:common/orb_cd"
+                    "source": "ponyorigins:common/00"
                 }
             ]
         }

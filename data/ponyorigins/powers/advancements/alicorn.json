@@ -50,7 +50,7 @@
                             {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:chaos/chaos",
-                                "source": "ponyorigins:races/alicorn"
+                                "source": "ponyorigins:chaos/chaos"
                             },
                             {
                                 "type": "origins:execute_command",
@@ -96,7 +96,7 @@
                 {
                     "type": "origins:revoke_power",
                     "power": "ponyorigins:advancements/alicorn",
-                    "source": "ponyorigins:common/pony"
+                    "source": "ponyorigins:common/00"
                 }
             ]
         }
@@ -115,7 +115,7 @@
             "if_action": {
                 "type": "origins:revoke_power",
                 "power": "ponyorigins:advancements/alicorn",
-                "source": "ponyorigins:common/pony"
+                "source": "ponyorigins:common/00"
             }
         }
     }
