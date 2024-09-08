@@ -34,7 +34,7 @@
                 {
                     "type": "origins:revoke_power",
                     "power": "ponyorigins:advancements/changeling",
-                    "source": "ponyorigins:common/00"
+                    "source": "ponyorigins:races/changeling"
                 }
             ]
         }

@@ -71,9 +71,6 @@
                     "type": "origins:revoke_power",
                     "power": "ponyorigins:advancements/chaos",
                     "source": "ponyorigins:common/00"
-                },
-                "else_action": {
-                    "type": "origins:nothing"
                 }
             }
         }

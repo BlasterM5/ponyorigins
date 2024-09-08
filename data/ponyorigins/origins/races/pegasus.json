@@ -11,6 +11,7 @@
         "ponyorigins:common/pony",
         "ponyorigins:common/flight/main",
         "ponyorigins:common/flight/hazards",
+        "ponyorigins:common/wings/feathered",
         "ponyorigins:common/health/minus_two",
         "ponyorigins:common/sounds/pony"
     ],

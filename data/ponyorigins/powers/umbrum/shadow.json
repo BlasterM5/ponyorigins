@@ -278,7 +278,24 @@
         "max": 1,
         "start_value": 0
     },
-    "invisible": {
+    "shadow_particles": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_active",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "execute anchored eyes positioned ^ ^-0.5 ^-0.5 run particle entity_effect ~ ~ ~ 0.01 0.01 0.01 0 8 force"
+            }
+        }
+    },
+    "untouchable": {
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_active",
@@ -286,19 +303,5 @@
             "compare_to": 1
         },
         "type": "apugli:mobs_ignore"
-    },
-    "shadow_particles": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_active",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "execute anchored eyes positioned ^ ^-0.5 ^-0.5 run particle entity_effect ~ ~ ~ 0.01 0.01 0.01 0 8 force"
-        }
     }
 }

@@ -37,8 +37,9 @@
         },
         {
             "condition": {
-                "type": "origins:constant",
-                "value": true
+                "inverted": true,
+                "type": "origins:power",
+                "power": "ponyorigins:common/none"
             },
             "origins": [
                 "ponyorigins:talents/other"
@@ -46,9 +47,19 @@
         },
         {
             "condition": {
-                "inverted": true,
-                "type": "origins:power",
-                "power": "ponyorigins:common/energy"
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    }
+                ]
             },
             "origins": [
                 "ponyorigins:talents/defender_stamina",
@@ -63,6 +74,11 @@
                         "inverted": true,
                         "type": "origins:power",
                         "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -87,6 +103,11 @@
                         "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:unicorn/defender"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     }
                 ]
             },
@@ -101,6 +122,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -123,6 +149,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:unicorn/miner"
                     }
@@ -139,6 +170,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/quadruped"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -170,6 +206,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:unicorn/tamer"
                     }
@@ -186,6 +227,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/pony"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -222,6 +268,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:races/umbrum"
                     }
@@ -242,6 +293,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -273,6 +329,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:races/changeling"
                     },
@@ -298,6 +359,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -329,6 +395,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:races/changeling"
                     },
@@ -354,6 +425,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -385,6 +461,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:races/changeling"
                     },
@@ -410,6 +491,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -441,6 +527,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:races/changeling"
                     },
@@ -466,6 +557,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
@@ -510,6 +606,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:races/changeling"
                     },
@@ -538,6 +639,11 @@
                     },
                     {
                         "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:unicorn/laser"
                     }
@@ -558,6 +664,11 @@
                     {
                         "type": "origins:power",
                         "power": "ponyorigins:common/pony"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
                     }
                 ]
             },
@@ -586,8 +697,18 @@
         },
         {
             "condition": {
-                "type": "origins:power",
-                "power": "ponyorigins:common/pony"
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/pony"
+                    }
+                ]
             },
             "origins": [
                 "ponyorigins:talents/blank"

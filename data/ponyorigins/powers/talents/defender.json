@@ -1,6 +1,6 @@
 {
     "name": "Fighting Specialist",
-    "description": "By focusing some of your energy inward, you are able to hit harder and take less damage.",
+    "description": "By naturally focusing some of your energy inward, you are able to hit harder and take less damage.",
     "badges": [
         {
             "type": "origins:tooltip",

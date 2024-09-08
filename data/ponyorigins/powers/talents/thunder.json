@@ -246,43 +246,6 @@
             "operation": "add"
         }
     },
-    "buffer_return": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_buffer",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:power_active",
-                    "power": "*:*_trigger"
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_buffer",
-                    "change": -1,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "change": 1,
-                    "operation": "add"
-                }
-            ]
-        }
-    },
     "charge": {
         "condition": {
             "type": "origins:and",
@@ -426,32 +389,7 @@
         },
         "type": "origins:simple"
     },
-    "spark": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_buffer",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-        }
-    },
-    "weather_check": {
+    "tick": {
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_buffer",
@@ -461,103 +399,146 @@
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:or",
-                "conditions": [
-                    {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
                         "inverted": true,
-                        "type": "origins:exposed_to_sky"
+                        "type": "origins:power_active",
+                        "power": "*:*_trigger"
                     },
-                    {
-                        "type": "origins:biome",
-                        "biome": "ad_astra:orbit"
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_buffer",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
                     }
-                ]
-            },
-            "if_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_weather",
-                "change": -1,
-                "operation": "set"
-            },
-            "else_action": {
-                "type": "origins:if_else_list",
-                "actions": [
-                    {
-                        "condition": {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_dry_thunder"
-                                },
-                                {
-                                    "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_thunderstorm"
-                                }
-                            ]
-                        },
-                        "action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_weather",
-                            "change": 2,
-                            "operation": "set"
-                        }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_cd",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
-                    {
-                        "condition": {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_rain"
-                                },
-                                {
-                                    "type": "origins:biome",
-                                    "condition": {
-                                        "type": "origins:high_humidity"
-                                    }
-                                }
-                            ]
-                        },
-                        "action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_weather",
-                            "change": 1,
-                            "operation": "set"
-                        }
-                    },
-                    {
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "inverted": true,
-                                    "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_rain"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_dry_thunder"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:predicate",
-                                    "predicate": "ponyorigins:weather/is_thunderstorm"
-                                }
-                            ]
-                        },
-                        "action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_weather",
-                            "change": 0,
-                            "operation": "set"
-                        }
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
                     }
-                ]
-            }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "inverted": true,
+                                "type": "origins:exposed_to_sky"
+                            },
+                            {
+                                "type": "origins:biome",
+                                "biome": "ad_astra:orbit"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_weather",
+                        "change": -1,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:predicate",
+                                            "predicate": "ponyorigins:weather/is_dry_thunder"
+                                        },
+                                        {
+                                            "type": "origins:predicate",
+                                            "predicate": "ponyorigins:weather/is_thunderstorm"
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_weather",
+                                    "change": 2,
+                                    "operation": "set"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:predicate",
+                                            "predicate": "ponyorigins:weather/is_rain"
+                                        },
+                                        {
+                                            "type": "origins:biome",
+                                            "condition": {
+                                                "type": "origins:high_humidity"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_weather",
+                                    "change": 1,
+                                    "operation": "set"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:predicate",
+                                            "predicate": "ponyorigins:weather/is_rain"
+                                        },
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:predicate",
+                                            "predicate": "ponyorigins:weather/is_dry_thunder"
+                                        },
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:predicate",
+                                            "predicate": "ponyorigins:weather/is_thunderstorm"
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_weather",
+                                    "change": 0,
+                                    "operation": "set"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     }
 }

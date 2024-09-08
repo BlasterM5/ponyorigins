@@ -30,8 +30,10 @@
                     "compare_to": 20
                 },
                 {
-                    "type": "origins:power_active",
-                    "power": "*:*_active"
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },
@@ -137,8 +139,10 @@
                                 }
                             },
                             {
-                                "type": "origins:toggle",
-                                "power": "*:*_active"
+                                "type": "origins:change_resource",
+                                "resource": "*:*_active",
+                                "change": 0,
+                                "operation": "set"
                             }
                         ]
                     }
@@ -148,8 +152,10 @@
     },
     "passive_drain": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
         "interval": 8,
@@ -174,8 +180,10 @@
                                 "compare_to": 20
                             },
                             {
-                                "type": "origins:power_active",
-                                "power": "*:*_active"
+                                "type": "origins:resource",
+                                "resource": "*:*_active",
+                                "comparison": "==",
+                                "compare_to": 1
                             }
                         ]
                     },
@@ -183,8 +191,10 @@
                         "type": "origins:and",
                         "actions": [
                             {
-                                "type": "origins:toggle",
-                                "power": "*:*_active"
+                                "type": "origins:change_resource",
+                                "resource": "*:*_active",
+                                "change": 0,
+                                "operation": "set"
                             },
                             {
                                 "type": "origins:play_sound",
@@ -223,17 +233,17 @@
         }
     },
     "active": {
-        "type": "origins:toggle",
-        "active_by_default": false,
-        "key": {
-            "key": "key.origins.null"
-        },
-        "retain_state": false
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     },
     "speed_limited": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:modify_attribute",
         "attribute": "minecraft:generic.movement_speed",
@@ -244,15 +254,19 @@
     },
     "sprint_limited": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:prevent_sprinting"
     },
     "barrier_fire_immunity": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:invulnerability",
         "damage_condition": {
@@ -282,7 +296,7 @@
             "operation": "add"
         }
     },
-    "trigger_primary": {
+    "trigger": {
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -293,24 +307,60 @@
                     "compare_to": 20
                 },
                 {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:unicorn/barrier"
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:unicorn/barrier"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_key_primary_active",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:talents/barrier"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_key_secondary_active",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
-        "type": "origins:active_self",
-        "entity_action": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
             "type": "origins:if_else",
             "condition": {
-                "type": "origins:power_active",
-                "power": "*:*_active"
+                "type": "origins:resource",
+                "resource": "*:*_active",
+                "comparison": "==",
+                "compare_to": 1
             },
             "if_action": {
                 "type": "origins:and",
                 "actions": [
                     {
-                        "type": "origins:toggle",
-                        "power": "*:*_active"
+                        "type": "origins:change_resource",
+                        "resource": "*:*_active",
+                        "change": 0,
+                        "operation": "set"
                     },
                     {
                         "type": "origins:play_sound",
@@ -332,8 +382,10 @@
                     "type": "origins:and",
                     "actions": [
                         {
-                            "type": "origins:toggle",
-                            "power": "*:*_active"
+                            "type": "origins:change_resource",
+                            "resource": "*:*_active",
+                            "change": 1,
+                            "operation": "set"
                         },
                         {
                             "type": "origins:play_sound",
@@ -344,84 +396,14 @@
                     ]
                 }
             }
-        },
-        "cooldown": 10,
-        "key": {
-            "key": "key.origins.primary_active"
-        }
-    },
-    "trigger_secondary": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">=",
-                    "compare_to": 20
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talents/barrier"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:power_active",
-                "power": "*:*_active"
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:toggle",
-                        "power": "*:*_active"
-                    },
-                    {
-                        "type": "origins:play_sound",
-                        "sound": "minecraft:block.glass.break",
-                        "volume": 1,
-                        "pitch": 1
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:if_else",
-                "condition": {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">=",
-                    "compare_to": 40
-                },
-                "if_action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:toggle",
-                            "power": "*:*_active"
-                        },
-                        {
-                            "type": "origins:play_sound",
-                            "sound": "minecraft:entity.illusioner.mirror_move",
-                            "volume": 1,
-                            "pitch": 1
-                        }
-                    ]
-                }
-            }
-        },
-        "cooldown": 10,
-        "key": {
-            "key": "key.origins.secondary_active"
         }
     },
     "barrier_visual": {
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_active"
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "apugli:energy_swirl",
         "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",

@@ -8,6 +8,7 @@
         "ponyorigins:common/rideable",
         "ponyorigins:common/flight/main",
         "ponyorigins:common/flight/hazards",
+        "ponyorigins:common/wings/feathered",
         "origins:scare_creepers",
         "ponyorigins:common/sounds/avian"
     ],

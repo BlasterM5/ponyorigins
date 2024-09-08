@@ -84,6 +84,6 @@
             "fluid": "minecraft:water"
         },
         "type": "origins:night_vision",
-        "strength": 0.5
+        "strength": 0.3
     }
 }

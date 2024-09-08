@@ -32,7 +32,7 @@
             "if_action": {
                 "type": "origins:revoke_power",
                 "power": "ponyorigins:advancements/unicorn",
-                "source": "ponyorigins:common/00"
+                "source": "ponyorigins:races/unicorn"
             },
             "else_action": {
                 "type": "origins:execute_command",
@@ -175,7 +175,7 @@
                     {
                         "type": "origins:revoke_power",
                         "power": "ponyorigins:advancements/unicorn",
-                        "source": "ponyorigins:common/00"
+                        "source": "ponyorigins:races/unicorn"
                     }
                 ]
             }

@@ -18,77 +18,66 @@
             "sprite": "minecraft:textures/item/bundle_filled.png"
         }
     ],
-    "type": "origins:multiple",
-    "manespace_primary": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">=",
-                    "compare_to": 25
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:unicorn/manespace"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "change": -25,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:ender_chest"
-                }
-            ]
-        },
-        "cooldown": 20,
-        "key": {
-            "key": "key.origins.primary_active"
-        }
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_level",
+                "comparison": ">=",
+                "compare_to": 25
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/00_key_primary_active",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:origin",
+                                "origin": "ponyorigins:unicorn/manespace"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/00_key_secondary_active",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:origin",
+                                "origin": "ponyorigins:talents/manespace"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
-    "manespace_secondary": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">=",
-                    "compare_to": 25
-                },
-                {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talents/manespace"
-                }
-            ]
-        },
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "change": -25,
-                    "operation": "add"
-                },
-                {
-                    "type": "origins:ender_chest"
-                }
-            ]
-        },
-        "cooldown": 20,
-        "key": {
-            "key": "key.origins.secondary_active"
-        }
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "ponyorigins:common/energy_level",
+                "change": -25,
+                "operation": "add"
+            },
+            {
+                "type": "origins:ender_chest"
+            }
+        ]
     }
 }

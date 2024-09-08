@@ -1,6 +1,6 @@
 {
     "name": "00 Common Checks",
-    "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key.",
+    "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key, as well as VAPS and the harmonic resonator mechanics.",
     "hidden": true,
     "loading_priority": 0,
     "type": "origins:multiple",
@@ -11,7 +11,7 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "function ponyorigins:advancements/check_orbs"
+                    "command": "function ponyorigins:advancements/setup_scores"
                 },
                 {
                     "type": "origins:if_else",
@@ -29,7 +29,7 @@
                             {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:advancements/changeling",
-                                "source": "ponyorigins:common/00"
+                                "source": "ponyorigins:races/changeling"
                             }
                         ]
                     }
@@ -196,72 +196,73 @@
                     }
                 },
                 {
-                    "type": "origins:if_else_list",
-                    "actions": [
-                        {
-                            "condition": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
                                 "type": "origins:origin",
                                 "origin": "ponyorigins:races/earth_pony"
                             },
-                            "action": {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.eporb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                },
-                                "if_action": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancements/earth_pony",
-                                    "source": "ponyorigins:common/00"
-                                }
+                            {
+                                "type": "origins:scoreboard",
+                                "objective": "po.eporb",
+                                "comparison": "<",
+                                "compare_to": 2
                             }
-                        },
-                        {
-                            "condition": {
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:grant_power",
+                        "power": "ponyorigins:advancements/earth_pony",
+                        "source": "ponyorigins:races/earth_pony"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
                                 "type": "origins:origin",
                                 "origin": "ponyorigins:races/unicorn"
                             },
-                            "action": {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.uporb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                },
-                                "if_action": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancements/unicorn",
-                                    "source": "ponyorigins:common/00"
-                                }
+                            {
+                                "type": "origins:scoreboard",
+                                "objective": "po.uporb",
+                                "comparison": "<",
+                                "compare_to": 2
                             }
-                        },
-                        {
-                            "condition": {
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:grant_power",
+                        "power": "ponyorigins:advancements/unicorn",
+                        "source": "ponyorigins:races/unicorn"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
                                 "type": "origins:origin",
                                 "origin": "ponyorigins:races/pegasus"
                             },
-                            "action": {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.pporb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                },
-                                "if_action": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancements/pegasus",
-                                    "source": "ponyorigins:common/00"
-                                }
+                            {
+                                "type": "origins:scoreboard",
+                                "objective": "po.pporb",
+                                "comparison": "<",
+                                "compare_to": 2
                             }
-                        }
-                    ]
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:grant_power",
+                        "power": "ponyorigins:advancements/pegasus",
+                        "source": "ponyorigins:races/pegasus"
+                    }
                 },
                 {
                     "type": "origins:if_else",
@@ -334,62 +335,6 @@
         "max": 2,
         "start_value": 0
     },
-    "key_antilag_decay": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_key_primary_active",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_key_secondary_active",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_key_primary_active",
-                        "comparison": ">",
-                        "compare_to": 0
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_key_primary_active",
-                        "change": -1,
-                        "operation": "add"
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_key_secondary_active",
-                        "comparison": ">",
-                        "compare_to": 0
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_key_secondary_active",
-                        "change": -1,
-                        "operation": "add"
-                    }
-                }
-            ]
-        }
-    },
     "empty_mainhand": {
         "type": "origins:resource",
         "min": 0,
@@ -408,12 +353,133 @@
         "max": 1,
         "start_value": 1
     },
-    "empty_equipped_checks": {
+    "heat_source": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 60,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 1,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_cd",
+                "comparison": "<",
+                "compare_to": 60
+            }
+        }
+    },
+    "cd_timer": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": "<",
+            "compare_to": 60
+        },
+        "type": "origins:action_over_time",
+        "interval": 1200,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "orb_on_cd": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": "<",
+            "compare_to": 60
+        },
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "origins:orb_of_origin"
+            }
+        }
+    },
+    "orb_used": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": "==",
+            "compare_to": 60
+        },
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": 0,
+            "operation": "set"
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "origins:orb_of_origin"
+            }
+        },
+        "trigger": "finish",
+        "priority": 0
+    },
+    "harmonic_resonator": {
+        "type": "origins:modify_crafting",
+        "recipe": "ponyorigins:harmonic_resonator",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "origins:orb_of_origin"
+            }
+        },
+        "result": {
+            "item": "origins:orb_of_origin",
+            "tag": "{display:{Name:'[{\"text\":\"Harmonic Resonator\",\"italic\":false}]'}}"
+        }
+    },
+    "tick": {
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
             "type": "origins:and",
             "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_key_primary_active",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_key_primary_active",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_key_secondary_active",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_key_secondary_active",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
                 {
                     "type": "origins:if_else",
                     "condition": {
@@ -479,131 +545,36 @@
                         "change": 0,
                         "operation": "set"
                     }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:light_level",
+                            "light_type": "block",
+                            "comparison": ">=",
+                            "compare_to": 12
+                        },
+                        "radius": 2,
+                        "shape": "sphere",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_heat_source",
+                        "change": 1,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_heat_source",
+                        "change": 0,
+                        "operation": "set"
+                    }
                 }
             ]
         }
-    },
-    "heat_source_check": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:block_in_radius",
-                "block_condition": {
-                    "type": "origins:light_level",
-                    "light_type": "block",
-                    "comparison": ">=",
-                    "compare_to": 12
-                },
-                "radius": 2,
-                "shape": "sphere",
-                "comparison": ">",
-                "compare_to": 0
-            },
-            "if_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_heat_source",
-                "change": 1,
-                "operation": "set"
-            },
-            "else_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_heat_source",
-                "change": 0,
-                "operation": "set"
-            }
-        }
-    },
-    "heat_source": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "cd": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 60,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
-            "bar_index": 1,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_cd",
-                "comparison": "<",
-                "compare_to": 60
-            }
-        }
-    },
-    "cd_timer": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd",
-            "comparison": "<",
-            "compare_to": 60
-        },
-        "type": "origins:action_over_time",
-        "interval": 1200,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd",
-            "change": 1,
-            "operation": "add"
-        }
-    },
-    "orb_on_cd": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd",
-            "comparison": "<",
-            "compare_to": 60
-        },
-        "type": "origins:prevent_item_use",
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "origins:orb_of_origin"
-            }
-        }
-    },
-    "key17": {
-        "type": "origins:modify_crafting",
-        "recipe": "ponyorigins:harmonic_resonator",
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "origins:orb_of_origin"
-            }
-        },
-        "result": {
-            "item": "origins:orb_of_origin",
-            "tag": "{display:{Name:'[{\"text\":\"Harmonic Resonator\",\"italic\":false}]'}}"
-        }
-    },
-    "orb_used": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd",
-            "comparison": "==",
-            "compare_to": 60
-        },
-        "type": "origins:action_on_item_use",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd",
-            "change": 0,
-            "operation": "set"
-        },
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "origins:orb_of_origin"
-            }
-        },
-        "trigger": "finish",
-        "priority": 0
     }
 }

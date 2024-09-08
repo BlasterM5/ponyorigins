@@ -170,59 +170,6 @@
             "operation": "add"
         }
     },
-    "buffer_return": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_buffer",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_key_secondary_active",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_buffer",
-                "comparison": "<",
-                "compare_to": 20
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_buffer",
-                        "change": -1,
-                        "operation": "add"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": 1,
-                        "operation": "add"
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_charged",
-                "change": 1,
-                "operation": "add"
-            }
-        }
-    },
     "charge": {
         "condition": {
             "type": "origins:and",
@@ -339,42 +286,88 @@
         "max": 1,
         "start_value": 0
     },
-    "spark": {
+    "tick": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_buffer",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "*:*_buffer",
+            "comparison": ">",
+            "compare_to": 0
         },
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_buffer",
-                "comparison": "<",
-                "compare_to": 20
-            },
-            "if_action": {
-                "type": "origins:execute_command",
-                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
-            },
-            "else_action": {
-                "type": "origins:execute_command",
-                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0.025 0.025 0.025 1 16 force"
-            }
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_buffer",
+                                "comparison": "<",
+                                "compare_to": 20
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ponyorigins:common/00_key_secondary_active",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_buffer",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:common/energy_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_charged",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_cd",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_buffer",
+                            "comparison": "<",
+                            "compare_to": 20
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0.025 0.025 0.025 1 16 force"
+                        }
+                    }
+                }
+            ]
         }
     }
 }

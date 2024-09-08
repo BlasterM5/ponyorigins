@@ -1,0 +1,6 @@
+{
+    "name": "No Talents",
+    "description": "This Origin does not use Talents",
+    "hidden": true,
+    "type": "origins:simple"
+}

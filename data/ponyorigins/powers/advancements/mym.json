@@ -89,29 +89,7 @@
                         "type": "origins:execute_command",
                         "command": "execute unless score $breeder po.globalflags matches 1 run function ponyorigins:ascension/breeder"
                     }
-                }
-            ]
-        }
-    },
-    "clear_mym": {
-        "condition": {
-            "type": "origins:advancement",
-            "advancement": "ponyorigins:ascension/root"
-        },
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "entity_action": {
-            "type": "origins:revoke_power",
-            "power": "ponyorigins:advancements/mym",
-            "source": "ponyorigins:common/00"
-        }
-    },
-    "fd_mym_check": {
-        "type": "origins:action_over_time",
-        "interval": 100,
-        "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
+                },
                 {
                     "condition": {
                         "type": "origins:and",
@@ -139,24 +117,7 @@
                         "type": "origins:execute_command",
                         "command": "execute unless score $farmersmastery po.globalflags matches 1 run function ponyorigins:ascension/farmersdelight/farmersmastery"
                     }
-                }
-            ]
-        },
-        "fabric:load_conditions": [
-            {
-                "condition": "fabric:all_mods_loaded",
-                "values": [
-                    "farmersdelight"
-                ]
-            }
-        ]
-    },
-    "botania_mym_check": {
-        "type": "origins:action_over_time",
-        "interval": 100,
-        "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
+                },
                 {
                     "condition": {
                         "type": "origins:and",
@@ -200,24 +161,7 @@
                         "type": "origins:execute_command",
                         "command": "execute unless score $gaia po.globalflags matches 1 run function ponyorigins:ascension/botania/gaia"
                     }
-                }
-            ]
-        },
-        "fabric:load_conditions": [
-            {
-                "condition": "fabric:all_mods_loaded",
-                "values": [
-                    "botania"
-                ]
-            }
-        ]
-    },
-    "ad_astra_mym_check": {
-        "type": "origins:action_over_time",
-        "interval": 100,
-        "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
+                },
                 {
                     "condition": {
                         "type": "origins:and",
@@ -406,14 +350,19 @@
                     }
                 }
             ]
+        }
+    },
+    "clear_mym": {
+        "condition": {
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:ascension/root"
         },
-        "fabric:load_conditions": [
-            {
-                "condition": "fabric:all_mods_loaded",
-                "values": [
-                    "ad_astra"
-                ]
-            }
-        ]
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:revoke_power",
+            "power": "ponyorigins:advancements/mym",
+            "source": "ponyorigins:common/00"
+        }
     }
 }

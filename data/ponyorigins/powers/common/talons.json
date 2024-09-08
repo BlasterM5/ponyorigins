@@ -9,42 +9,27 @@
         }
     ],
     "condition": {
-        "type": "origins:or",
+        "type": "origins:and",
         "conditions": [
             {
-                "type": "origins:and",
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/00_empty_mainhand",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            {
+                "type": "origins:or",
                 "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/quadruped"
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/00_empty_mainhand",
-                        "comparison": "==",
-                        "compare_to": 1
-                    },
                     {
                         "type": "origins:resource",
                         "resource": "ponyorigins:common/00_empty_feet",
                         "comparison": "==",
                         "compare_to": 1
-                    }
-                ]
-            },
-            {
-                "type": "origins:and",
-                "conditions": [
+                    },
                     {
                         "inverted": true,
                         "type": "origins:power",
                         "power": "ponyorigins:common/quadruped"
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/00_empty_mainhand",
-                        "comparison": "==",
-                        "compare_to": 1
                     }
                 ]
             }

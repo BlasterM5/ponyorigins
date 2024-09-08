@@ -23,21 +23,10 @@
                 "compare_to": 0
             },
             {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/00_empty_mainhand",
-                        "comparison": "==",
-                        "compare_to": 0
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/00_empty_offhand",
-                        "comparison": "==",
-                        "compare_to": 0
-                    }
-                ]
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/00_empty_mainhand",
+                "comparison": "==",
+                "compare_to": 0
             }
         ]
     },

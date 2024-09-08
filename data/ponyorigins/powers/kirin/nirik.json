@@ -378,7 +378,7 @@
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 40,
+        "interval": 120,
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_rage",
@@ -495,5 +495,25 @@
                 }
             ]
         }
+    },
+    "sleep_it_off": {
+        "type": "origins:action_on_wake_up",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_rage",
+            "change": -50,
+            "operation": "add"
+        }
+    },
+    "no_rest_for_the_enraged": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:prevent_sleep",
+        "message": "You can't sleep until you've calmed down.",
+        "set_spawn_point": false
     }
 }

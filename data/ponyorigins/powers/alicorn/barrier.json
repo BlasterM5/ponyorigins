@@ -148,13 +148,25 @@
     },
     "trigger": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "ponyorigins:common/energy_level",
-            "comparison": ">",
-            "compare_to": 10
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 10
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
         },
-        "type": "origins:active_self",
-        "entity_action": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:resource",
@@ -205,10 +217,6 @@
                     ]
                 }
             }
-        },
-        "cooldown": 10,
-        "key": {
-            "key": "key.origins.secondary_active"
         }
     },
     "passive_drain": {
@@ -293,12 +301,6 @@
             ]
         }
     },
-    "active": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
     "speed_limited": {
         "condition": {
             "type": "origins:resource",
@@ -367,5 +369,11 @@
         "type": "apugli:energy_swirl",
         "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
         "speed": 0.001
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "Cow Sounds",
-    "description": "Cow races make cow noises",
+    "description": "Bovine races make cow noises",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

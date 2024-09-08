@@ -614,10 +614,21 @@
                 ]
             },
             "if_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_is_unicorn_training",
-                "change": 1,
-                "operation": "set"
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_is_unicorn_training",
+                        "change": 1,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_odometer",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                ]
             },
             "else_action": {
                 "type": "origins:change_resource",

@@ -32,7 +32,7 @@
             "if_action": {
                 "type": "origins:revoke_power",
                 "power": "ponyorigins:advancements/earth_pony",
-                "source": "ponyorigins:common/pony"
+                "source": "ponyorigins:races/earth_pony"
             },
             "else_action": {
                 "type": "origins:execute_command",
@@ -295,7 +295,7 @@
                                         {
                                             "type": "origins:grant_power",
                                             "power": "ponyorigins:advancements/alicorn",
-                                            "source": "ponyorigins:common/pony"
+                                            "source": "ponyorigins:common/00"
                                         }
                                     ]
                                 }
@@ -439,7 +439,7 @@
                     {
                         "type": "origins:revoke_power",
                         "power": "ponyorigins:advancements/earth_pony",
-                        "source": "ponyorigins:common/00"
+                        "source": "ponyorigins:races/earth_pony"
                     }
                 ]
             }

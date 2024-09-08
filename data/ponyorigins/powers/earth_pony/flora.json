@@ -17,8 +17,8 @@
     "condition": {
         "type": "origins:resource",
         "resource": "ponyorigins:common/energy_level",
-        "comparison": ">=",
-        "compare_to": 1
+        "comparison": ">",
+        "compare_to": 0
     },
     "type": "origins:active_self",
     "entity_action": {
