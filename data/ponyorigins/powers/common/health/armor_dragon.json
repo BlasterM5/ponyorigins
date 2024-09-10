@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "50 percent damage reduction unless armor piercing",
-            "sprite": "minecraft:textures/item/diamond_chestplate.png"
+            "sprite": "textures/item/diamond_chestplate.png"
         }
     ],
     "type": "origins:multiple",

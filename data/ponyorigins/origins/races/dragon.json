@@ -17,7 +17,7 @@
         "ponyorigins:common/sounds/dragon"
     ],
     "icon": {
-        "item": "minecraft:blaze_powder"
+        "item": "blaze_powder"
     },
     "order": 14,
     "impact": 0

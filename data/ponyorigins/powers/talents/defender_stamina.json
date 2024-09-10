@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "text": "+25 percent Attack Damage",
-            "sprite": "minecraft:textures/item/iron_sword.png"
+            "sprite": "textures/item/iron_sword.png"
         },
         {
             "type": "origins:tooltip",
             "text": "+25 percent Damage Resistance",
-            "sprite": "minecraft:textures/item/iron_chestplate.png"
+            "sprite": "textures/item/iron_chestplate.png"
         }
     ],
     "hidden": true,

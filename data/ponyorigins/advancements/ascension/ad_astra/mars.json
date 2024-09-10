@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:red_sand"
+            "item": "red_sand"
         },
         "title": "The Red Planet",
         "description": "Prime real estate for the newest potato farm",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

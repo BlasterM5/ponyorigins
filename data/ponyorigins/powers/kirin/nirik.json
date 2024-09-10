@@ -11,7 +11,7 @@
                 },
                 "] when heat is displayed to ignite"
             ],
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         },
         {
             "type": "origins:tooltip",
@@ -22,35 +22,35 @@
                 },
                 "] when active while unarmed to throw fire"
             ],
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         },
         {
             "type": "origins:tooltip",
             "text": {
                 "text": "Melee Attack an opponent to set them on fire"
             },
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         },
         {
             "type": "origins:tooltip",
             "text": {
                 "text": "Sets the ground on fire every 2 seconds"
             },
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         },
         {
             "type": "origins:tooltip",
             "text": {
                 "text": "Activates at Max Heat"
             },
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         },
         {
             "type": "origins:tooltip",
             "text": {
                 "text": "Can not be toggled off!"
             },
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         }
     ],
     "type": "origins:multiple",
@@ -118,7 +118,7 @@
                 },
                 {
                     "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
+                    "fluid": "water",
                     "comparison": "<",
                     "compare_to": 0.3
                 },
@@ -178,7 +178,7 @@
             "actions": [
                 {
                     "type": "origins:fire_projectile",
-                    "entity_type": "minecraft:small_fireball",
+                    "entity_type": "small_fireball",
                     "count": 1,
                     "speed": 1.5,
                     "divergence": 1,
@@ -246,7 +246,7 @@
                     },
                     {
                         "type": "origins:fluid_height",
-                        "fluid": "minecraft:water",
+                        "fluid": "water",
                         "comparison": "<",
                         "compare_to": 0.3
                     }
@@ -292,7 +292,7 @@
                 },
                 {
                     "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
+                    "fluid": "water",
                     "comparison": "<",
                     "compare_to": 0.3
                 }
@@ -398,7 +398,7 @@
                 },
                 {
                     "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "fluid": "water"
                 }
             ]
         },
@@ -455,7 +455,7 @@
                     "type": "origins:in_block",
                     "block_condition": {
                         "type": "origins:block",
-                        "block": "minecraft:powder_snow"
+                        "block": "powder_snow"
                     }
                 }
             ]
@@ -484,7 +484,7 @@
                     "type": "origins:block_action_at",
                     "block_action": {
                         "type": "origins:add_block",
-                        "block": "minecraft:fire"
+                        "block": "fire"
                     }
                 },
                 {

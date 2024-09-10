@@ -11,12 +11,12 @@
                 },
                 "] to toggle. Jump while in the air to fly"
             ],
-            "sprite": "minecraft:textures/mob_effect/darkness.png"
+            "sprite": "textures/mob_effect/darkness.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Disabled when above light level 0.55",
-            "sprite": "minecraft:textures/mob_effect/darkness.png"
+            "sprite": "textures/mob_effect/darkness.png"
         }
     ],
     "type": "origins:multiple",
@@ -78,13 +78,13 @@
         },
         "rising_action": {
             "type": "origins:play_sound",
-            "sound": "minecraft:entity.illusioner.mirror_move",
+            "sound": "entity.illusioner.mirror_move",
             "volume": 1,
             "pitch": 1
         },
         "falling_action": {
             "type": "origins:play_sound",
-            "sound": "minecraft:entity.illusioner.mirror_move",
+            "sound": "entity.illusioner.mirror_move",
             "volume": 1,
             "pitch": 1
         }

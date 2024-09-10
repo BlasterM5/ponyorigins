@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:nether_star"
+            "item": "nether_star"
         },
         "title": "Ascension",
         "description": "Prove yourself worthy to become an Alicorn",
@@ -16,7 +16,7 @@
     },
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

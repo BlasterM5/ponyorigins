@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:gravel"
+            "item": "gravel"
         },
         "title": "Straight to the Moon",
         "description": "And you did it the hard way",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

@@ -5,7 +5,7 @@
         "ponyorigins:talents/laser"
     ],
     "icon": {
-        "item": "minecraft:tnt"
+        "item": "tnt"
     },
     "upgrades": [
         {

@@ -15,7 +15,7 @@
                 },
                 "] to freeze everything"
             ],
-            "sprite": "minecraft:textures/item/snowball.png"
+            "sprite": "textures/item/snowball.png"
         }
     ],
     "type": "origins:multiple",
@@ -59,7 +59,7 @@
                         {
                             "type": "origins:apply_effect",
                             "effect": {
-                                "effect": "minecraft:slowness",
+                                "effect": "slowness",
                                 "duration": 100,
                                 "amplifier": 0,
                                 "show_particles": false,
@@ -78,24 +78,24 @@
                     {
                         "condition": {
                             "type": "origins:block",
-                            "block": "minecraft:water"
+                            "block": "water"
                         },
                         "action": {
                             "type": "origins:set_block",
-                            "block": "minecraft:ice"
+                            "block": "ice"
                         }
                     },
                     {
                         "condition": {
                             "type": "origins:block",
-                            "block": "minecraft:lava"
+                            "block": "lava"
                         },
                         "action": {
                             "type": "origins:and",
                             "actions": [
                                 {
                                     "type": "origins:set_block",
-                                    "block": "minecraft:obsidian"
+                                    "block": "obsidian"
                                 },
                                 {
                                     "type": "origins:execute_command",
@@ -110,7 +110,7 @@
                         },
                         "action": {
                             "type": "origins:add_block",
-                            "block": "minecraft:snow"
+                            "block": "snow"
                         }
                     }
                 ]
@@ -150,13 +150,13 @@
                     },
                     {
                         "type": "origins:play_sound",
-                        "sound": "minecraft:block.fire.extinguish",
+                        "sound": "block.fire.extinguish",
                         "volume": 0.15,
                         "pitch": 0.5
                     }
                 ]
             },
-            "command_along_ray": "particle minecraft:snowflake ^ ^0.5 ^ 0 0 0 1 0 force",
+            "command_along_ray": "particle snowflake ^ ^0.5 ^ 0 0 0 1 0 force",
             "command_step": 1
         }
     },
@@ -338,7 +338,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:unicorn/ice_beam"
+                            "origin": "ponyorigins:talents/ice_beam",
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -353,7 +354,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:talents/ice_beam"
+                            "origin": "ponyorigins:talents/ice_beam",
+                            "layer": "ponyorigins:secondary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -464,11 +466,11 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
                         },
                         "else_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:snowflake ~ ~ ~ 0 0.1 0 1 0 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle snowflake ~ ~ ~ 0 0.1 0 1 0 force"
                         }
                     }
                 ]

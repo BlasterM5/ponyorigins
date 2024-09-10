@@ -1,7 +1,7 @@
 {
     "values": [
         {
-            "id": "minecraft:cake",
+            "id": "cake",
             "required": false
         },
         {
@@ -153,7 +153,7 @@
             "required": false
         },
         {
-            "id": "#minecraft:cake",
+            "id": "#cake",
             "required": false
         },
         {

@@ -14,7 +14,7 @@
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {
-        "item": "minecraft:apple"
+        "item": "apple"
     },
     "upgrades": [
         {

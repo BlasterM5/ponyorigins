@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:cornflower"
+            "item": "cornflower"
         },
         "title": "Willing Prey",
         "description": "Wait, others can just give you love?",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:changeling/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

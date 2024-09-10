@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:golden_apple"
+            "item": "golden_apple"
         },
         "title": "Pony Origins",
         "description": "Origins for Mine Little Pony",
@@ -12,7 +12,7 @@
     "parent": "global:ponyorigins",
     "criteria": {
         "trigger": {
-            "trigger": "minecraft:tick"
+            "trigger": "tick"
         }
     }
 }

@@ -1,23 +1,23 @@
 {
     "values": [
         {
-            "id": "minecraft:redstone",
+            "id": "redstone",
             "required": false
         },
         {
-            "id": "minecraft:glowstone_dust",
+            "id": "glowstone_dust",
             "required": false
         },
         {
-            "id": "minecraft:blaze_powder",
+            "id": "blaze_powder",
             "required": false
         },
         {
-            "id": "minecraft:snowball",
+            "id": "snowball",
             "required": false
         },
         {
-            "id": "minecraft:bone_meal",
+            "id": "bone_meal",
             "required": false
         }
     ]

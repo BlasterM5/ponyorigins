@@ -5,7 +5,7 @@
         "ponyorigins:talents/endurance"
     ],
     "icon": {
-        "item": "minecraft:leather_boots"
+        "item": "leather_boots"
     },
     "impact": 0
 }

@@ -16,7 +16,7 @@
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {
-        "item": "minecraft:nether_star"
+        "item": "nether_star"
     },
     "order": 17,
     "impact": 0

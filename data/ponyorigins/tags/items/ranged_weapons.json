@@ -1,19 +1,19 @@
 {
     "values": [
         {
-            "id": "minecraft:bow",
+            "id": "bow",
             "required": false
         },
         {
-            "id": "minecraft:crossbow",
+            "id": "crossbow",
             "required": false
         },
         {
-            "id": "minecraft:trident",
+            "id": "trident",
             "required": false
         },
         {
-            "id": "minecraft:fire_charge",
+            "id": "fire_charge",
             "required": false
         }
     ]

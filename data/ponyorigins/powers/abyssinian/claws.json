@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "+200 percent attack strength when unarmed",
-            "sprite": "minecraft:textures/item/iron_sword.png"
+            "sprite": "textures/item/iron_sword.png"
         }
     ],
     "condition": {

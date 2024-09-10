@@ -245,23 +245,23 @@
             "required": false
         },
         {
-            "id": "minecraft:echo_shard",
+            "id": "echo_shard",
             "required": false
         },
         {
-            "id": "minecraft:amethyst_shard",
+            "id": "amethyst_shard",
             "required": false
         },
         {
-            "id": "minecraft:quartz",
+            "id": "quartz",
             "required": false
         },
         {
-            "id": "minecraft:emerald",
+            "id": "emerald",
             "required": false
         },
         {
-            "id": "minecraft:diamond",
+            "id": "diamond",
             "required": false
         },
         {
@@ -297,7 +297,7 @@
             "required": false
         },
         {
-            "id": "minecraft:lapis_lazuli",
+            "id": "lapis_lazuli",
             "required": false
         },
         {

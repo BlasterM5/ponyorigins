@@ -1,51 +1,51 @@
 {
     "values": [
         {
-            "id": "minecraft:iron_helmet",
+            "id": "iron_helmet",
             "required": false
         },
         {
-            "id": "minecraft:iron_chestplate",
+            "id": "iron_chestplate",
             "required": false
         },
         {
-            "id": "minecraft:iron_leggings",
+            "id": "iron_leggings",
             "required": false
         },
         {
-            "id": "minecraft:iron_boots",
+            "id": "iron_boots",
             "required": false
         },
         {
-            "id": "minecraft:chainmail_helmet",
+            "id": "chainmail_helmet",
             "required": false
         },
         {
-            "id": "minecraft:chainmail_chestplate",
+            "id": "chainmail_chestplate",
             "required": false
         },
         {
-            "id": "minecraft:chainmail_leggings",
+            "id": "chainmail_leggings",
             "required": false
         },
         {
-            "id": "minecraft:chainmail_boots",
+            "id": "chainmail_boots",
             "required": false
         },
         {
-            "id": "minecraft:golden_helmet",
+            "id": "golden_helmet",
             "required": false
         },
         {
-            "id": "minecraft:golden_chestplate",
+            "id": "golden_chestplate",
             "required": false
         },
         {
-            "id": "minecraft:golden_leggings",
+            "id": "golden_leggings",
             "required": false
         },
         {
-            "id": "minecraft:golden_boots",
+            "id": "golden_boots",
             "required": false
         },
         {

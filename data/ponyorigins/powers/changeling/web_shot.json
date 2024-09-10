@@ -11,12 +11,12 @@
                 },
                 "] to shot web"
             ],
-            "sprite": "minecraft:textures/block/cobweb.png"
+            "sprite": "textures/block/cobweb.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Eating food fills your silk",
-            "sprite": "minecraft:textures/item/bread.png"
+            "sprite": "textures/item/bread.png"
         }
     ],
     "type": "origins:multiple",
@@ -162,7 +162,7 @@
             "actions": [
                 {
                     "type": "origins:fire_projectile",
-                    "entity_type": "minecraft:armor_stand",
+                    "entity_type": "armor_stand",
                     "count": 1,
                     "speed": 2,
                     "divergence": 1,

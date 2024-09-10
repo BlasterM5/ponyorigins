@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:saddle"
+            "item": "saddle"
         },
         "title": "Taxi",
         "description": "Get a ride on another player",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

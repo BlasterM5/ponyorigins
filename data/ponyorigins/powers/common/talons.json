@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "When Unarmed and not wearing boots: +400 percent Attack Damage",
-            "sprite": "minecraft:textures/item/iron_sword.png"
+            "sprite": "textures/item/iron_sword.png"
         }
     ],
     "condition": {

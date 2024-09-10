@@ -11,12 +11,12 @@
                 },
                 "] to feed"
             ],
-            "sprite": "minecraft:textures/particle/heart.png"
+            "sprite": "textures/particle/heart.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Eating Food: Saturation 0 percent",
-            "sprite": "minecraft:textures/block/wither_rose.png"
+            "sprite": "textures/block/wither_rose.png"
         }
     ],
     "type": "origins:multiple",
@@ -656,7 +656,7 @@
                                 "type": "origins:target_condition",
                                 "condition": {
                                     "type": "origins:entity_type",
-                                    "entity_type": "minecraft:player"
+                                    "entity_type": "player"
                                 }
                             },
                             {

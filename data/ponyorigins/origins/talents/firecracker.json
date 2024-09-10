@@ -5,7 +5,7 @@
         "ponyorigins:talents/firecracker"
     ],
     "icon": {
-        "item": "minecraft:firework_rocket"
+        "item": "firework_rocket"
     },
     "impact": 0
 }

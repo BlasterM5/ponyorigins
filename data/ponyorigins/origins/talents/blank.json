@@ -2,7 +2,7 @@
     "name": "Blank Flank",
     "description": "You do not need a special ability.",
     "icon": {
-        "item": "minecraft:paper"
+        "item": "paper"
     },
     "impact": 0
 }

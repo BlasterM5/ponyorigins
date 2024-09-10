@@ -5,15 +5,15 @@
             "required": false
         },
         {
-            "id": "minecraft:seagrass",
+            "id": "seagrass",
             "required": true
         },
         {
-            "id": "minecraft:kelp",
+            "id": "kelp",
             "required": true
         },
         {
-            "id": "minecraft:sea_pickle",
+            "id": "sea_pickle",
             "required": true
         },
         {

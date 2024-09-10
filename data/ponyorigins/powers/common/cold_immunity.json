@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "Freeze damage Immunity",
-            "sprite": "minecraft:textures/item/leather.png"
+            "sprite": "textures/item/leather.png"
         }
     ],
     "type": "origins:modify_damage_taken",

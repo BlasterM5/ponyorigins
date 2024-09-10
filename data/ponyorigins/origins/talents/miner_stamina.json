@@ -5,7 +5,7 @@
         "ponyorigins:talents/miner_stamina"
     ],
     "icon": {
-        "item": "minecraft:iron_pickaxe"
+        "item": "iron_pickaxe"
     },
     "impact": 0
 }

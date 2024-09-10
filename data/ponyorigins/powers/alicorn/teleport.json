@@ -11,7 +11,7 @@
                 },
                 "] to charge"
             ],
-            "sprite": "minecraft:textures/item/ender_pearl.png"
+            "sprite": "textures/item/ender_pearl.png"
         }
     ],
     "type": "origins:multiple",
@@ -506,7 +506,7 @@
                 "actions": [
                     {
                         "type": "origins:play_sound",
-                        "sound": "minecraft:block.fire.extinguish",
+                        "sound": "block.fire.extinguish",
                         "volume": 0.1,
                         "pitch": 1
                     },
@@ -570,7 +570,7 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
                         }
                     }
                 ]

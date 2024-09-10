@@ -37,31 +37,31 @@
             "required": false
         },
         {
-            "id": "minecraft:glow_berries",
+            "id": "glow_berries",
             "required": false
         },
         {
-            "id": "minecraft:sweet_berries",
+            "id": "sweet_berries",
             "required": false
         },
         {
-            "id": "minecraft:glistering_melon_slice",
+            "id": "glistering_melon_slice",
             "required": false
         },
         {
-            "id": "minecraft:melon_slice",
+            "id": "melon_slice",
             "required": false
         },
         {
-            "id": "minecraft:enchanted_golden_apple",
+            "id": "enchanted_golden_apple",
             "required": false
         },
         {
-            "id": "minecraft:golden_apple",
+            "id": "golden_apple",
             "required": false
         },
         {
-            "id": "minecraft:apple",
+            "id": "apple",
             "required": false
         },
         {
@@ -353,7 +353,7 @@
             "required": false
         },
         {
-            "id": "#minecraft:fox_food",
+            "id": "#fox_food",
             "required": false
         },
         {

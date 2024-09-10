@@ -15,7 +15,7 @@
                 },
                 "] to shock"
             ],
-            "sprite": "minecraft:textures/block/lightning_rod.png"
+            "sprite": "textures/block/lightning_rod.png"
         }
     ],
     "type": "origins:multiple",
@@ -193,7 +193,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:unicorn/shock_ray"
+                            "origin": "ponyorigins:talents/shock_ray",
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -208,7 +209,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:talents/shock_ray"
+                            "origin": "ponyorigins:talents/shock_ray",
+                            "layer": "ponyorigins:secondary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -320,7 +322,7 @@
                                         {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:slowness",
+                                                "effect": "slowness",
                                                 "duration": 20,
                                                 "amplifier": 4,
                                                 "show_particles": false,
@@ -340,7 +342,7 @@
                                         {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:slowness",
+                                                "effect": "slowness",
                                                 "duration": 20,
                                                 "amplifier": 10,
                                                 "show_particles": false,
@@ -376,7 +378,7 @@
                                 "conditions": [
                                     {
                                         "type": "origins:fluid_height",
-                                        "fluid": "minecraft:water",
+                                        "fluid": "water",
                                         "comparison": ">",
                                         "compare_to": 0
                                     },
@@ -403,7 +405,7 @@
                                         "conditions": [
                                             {
                                                 "type": "origins:fluid_height",
-                                                "fluid": "minecraft:water",
+                                                "fluid": "water",
                                                 "comparison": ">",
                                                 "compare_to": 0
                                             },
@@ -497,7 +499,7 @@
                                                             {
                                                                 "type": "origins:apply_effect",
                                                                 "effect": {
-                                                                    "effect": "minecraft:slowness",
+                                                                    "effect": "slowness",
                                                                     "duration": 20,
                                                                     "amplifier": 4,
                                                                     "show_particles": false,
@@ -520,7 +522,7 @@
                                                             {
                                                                 "type": "origins:apply_effect",
                                                                 "effect": {
-                                                                    "effect": "minecraft:slowness",
+                                                                    "effect": "slowness",
                                                                     "duration": 20,
                                                                     "amplifier": 10,
                                                                     "show_particles": false,
@@ -600,7 +602,7 @@
                     }
                 ]
             },
-            "command_along_ray": "particle minecraft:electric_spark ^ ^0.5 ^ 0 0 0 1 0 force",
+            "command_along_ray": "particle electric_spark ^ ^0.5 ^ 0 0 0 1 0 force",
             "command_step": 1
         }
     },
@@ -701,11 +703,11 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
                         },
                         "else_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:electric_spark ~ ~ ~ 0 0.1 0 1 0 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle electric_spark ~ ~ ~ 0 0.1 0 1 0 force"
                         }
                     }
                 ]

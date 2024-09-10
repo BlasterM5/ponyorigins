@@ -18,7 +18,7 @@
                             "type": "origins:target_condition",
                             "condition": {
                                 "type": "origins:entity_type",
-                                "entity_type": "minecraft:player"
+                                "entity_type": "player"
                             }
                         }
                     },
@@ -81,7 +81,7 @@
                                     },
                                     {
                                         "type": "origins:entity_type",
-                                        "entity_type": "minecraft:player"
+                                        "entity_type": "player"
                                     }
                                 ]
                             }

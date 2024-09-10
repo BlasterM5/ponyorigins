@@ -11,22 +11,22 @@
                 },
                 "] to tame a creature"
             ],
-            "sprite": "minecraft:textures/particle/heart.png"
+            "sprite": "textures/particle/heart.png"
         },
         {
             "type": "origins:tooltip",
             "text": "ALL ATTACKS DO NO DAMAGE",
-            "sprite": "minecraft:textures/block/rose_bush_top.png"
+            "sprite": "textures/block/rose_bush_top.png"
         },
         {
             "type": "origins:tooltip",
             "text": "50% Damage Resistance",
-            "sprite": "minecraft:textures/particle/bubble.png"
+            "sprite": "textures/particle/bubble.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Some blocks can't be placed, broken, or used near other creatures",
-            "sprite": "minecraft:textures/block/tnt_side.png"
+            "sprite": "textures/block/tnt_side.png"
         }
     ],
     "type": "origins:multiple",
@@ -258,7 +258,7 @@
             "compare_to": 0
         },
         "type": "apugli:energy_swirl",
-        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "texture_location": "textures/entity/creeper/creeper_armor.png",
         "speed": "0.001"
     },
     "defense": {
@@ -291,13 +291,13 @@
                     },
                     {
                         "type": "origins:play_sound",
-                        "sound": "minecraft:block.amethyst_block.break",
+                        "sound": "block.amethyst_block.break",
                         "volume": 1,
                         "pitch": 1
                     },
                     {
                         "type": "origins:spawn_particles",
-                        "particle": "minecraft:firework",
+                        "particle": "firework",
                         "count": 8,
                         "speed": 1,
                         "force": true,
@@ -373,7 +373,7 @@
             "conditions": [
                 {
                     "type": "origins:block",
-                    "block": "minecraft:torch"
+                    "block": "torch"
                 },
                 {
                     "inverted": true,
@@ -400,7 +400,7 @@
                     "type": "origins:block_in_radius",
                     "block_condition": {
                         "type": "origins:block",
-                        "block": "minecraft:torch"
+                        "block": "torch"
                     },
                     "radius": 15,
                     "shape": "cube",
@@ -432,11 +432,11 @@
                     "conditions": [
                         {
                             "type": "origins:dimension",
-                            "dimension": "minecraft:nether"
+                            "dimension": "nether"
                         },
                         {
                             "type": "origins:dimension",
-                            "dimension": "minecraft:the_end"
+                            "dimension": "the_end"
                         }
                     ]
                 }
@@ -662,13 +662,13 @@
                                                     {
                                                         "type": "origins:ingredient",
                                                         "ingredient": {
-                                                            "item": "minecraft:flint_and_steel"
+                                                            "item": "flint_and_steel"
                                                         }
                                                     },
                                                     {
                                                         "type": "origins:ingredient",
                                                         "ingredient": {
-                                                            "item": "minecraft:fire_charge"
+                                                            "item": "fire_charge"
                                                         }
                                                     }
                                                 ]
@@ -683,13 +683,13 @@
                                                     {
                                                         "type": "origins:ingredient",
                                                         "ingredient": {
-                                                            "item": "minecraft:flint_and_steel"
+                                                            "item": "flint_and_steel"
                                                         }
                                                     },
                                                     {
                                                         "type": "origins:ingredient",
                                                         "ingredient": {
-                                                            "item": "minecraft:fire_charge"
+                                                            "item": "fire_charge"
                                                         }
                                                     }
                                                 ]

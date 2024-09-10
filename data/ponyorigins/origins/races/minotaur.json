@@ -9,7 +9,7 @@
         "ponyorigins:common/sounds/cow"
     ],
     "icon": {
-        "item": "minecraft:anvil"
+        "item": "anvil"
     },
     "impact": 0
 }

@@ -15,7 +15,7 @@
                 },
                 "] to grow plants"
             ],
-            "sprite": "minecraft:textures/block/dandelion.png"
+            "sprite": "textures/block/dandelion.png"
         }
     ],
     "condition": {
@@ -35,7 +35,8 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:unicorn/flora"
+                                "origin": "ponyorigins:talents/flora",
+                                "layer": "ponyorigins:primary_talent"
                             },
                             {
                                 "type": "origins:resource",
@@ -50,7 +51,8 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:talents/flora"
+                                "origin": "ponyorigins:talents/flora",
+                                "layer": "ponyorigins:secondary_talent"
                             },
                             {
                                 "type": "origins:resource",
@@ -85,7 +87,7 @@
                             "condition": {
                                 "inverted": true,
                                 "type": "origins:in_tag",
-                                "tag": "minecraft:flowers"
+                                "tag": "flowers"
                             },
                             "if_action": {
                                 "type": "origins:bonemeal",
@@ -99,7 +101,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:in_tag",
-                        "tag": "minecraft:flowers"
+                        "tag": "flowers"
                     },
                     "if_action": {
                         "type": "origins:bonemeal",
@@ -119,7 +121,7 @@
                                 "condition": {
                                     "inverted": true,
                                     "type": "origins:in_tag",
-                                    "tag": "minecraft:flowers"
+                                    "tag": "flowers"
                                 },
                                 "if_action": {
                                     "type": "origins:bonemeal",
@@ -138,7 +140,7 @@
             },
             {
                 "type": "origins:execute_command",
-                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
             }
         ]
     }

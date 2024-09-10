@@ -1,5 +1,5 @@
 {
-    "type": "minecraft:crafting_shaped",
+    "type": "crafting_shaped",
     "pattern": [
         "DAD",
         "ANA",
@@ -7,13 +7,13 @@
     ],
     "key": {
         "D": {
-            "item": "minecraft:diamond"
+            "item": "diamond"
         },
         "A": {
-            "item": "minecraft:amethyst_shard"
+            "item": "amethyst_shard"
         },
         "N": {
-            "item": "minecraft:nether_star"
+            "item": "nether_star"
         }
     },
     "result": {

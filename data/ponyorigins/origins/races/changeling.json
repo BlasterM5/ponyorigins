@@ -17,7 +17,7 @@
         "ponyorigins:common/sounds/changeling"
     ],
     "icon": {
-        "item": "minecraft:wither_rose"
+        "item": "wither_rose"
     },
     "upgrades": [
         {

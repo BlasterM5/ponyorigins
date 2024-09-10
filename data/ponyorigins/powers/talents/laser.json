@@ -15,7 +15,7 @@
                 },
                 "] to charge, release to fire"
             ],
-            "sprite": "minecraft:textures/block/tnt_side.png"
+            "sprite": "textures/block/tnt_side.png"
         }
     ],
     "type": "origins:multiple",
@@ -70,7 +70,7 @@
                                 "type": "origins:target_action",
                                 "action": {
                                     "type": "origins:spawn_particles",
-                                    "particle": "minecraft:flash",
+                                    "particle": "flash",
                                     "count": 1,
                                     "speed": 1,
                                     "spread": {
@@ -102,7 +102,7 @@
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "particle minecraft:flash ~ ~ ~ 0 0 0 1 1 force"
+                                "command": "particle flash ~ ~ ~ 0 0 0 1 1 force"
                             },
                             {
                                 "type": "origins:execute_command",
@@ -110,7 +110,7 @@
                             }
                         ]
                     },
-                    "command_along_ray": "particle minecraft:instant_effect ^ ^0.5 ^ 0.1 0.1 0.1 10 8 force",
+                    "command_along_ray": "particle instant_effect ^ ^0.5 ^ 0.1 0.1 0.1 10 8 force",
                     "command_step": 1
                 },
                 {
@@ -287,7 +287,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:unicorn/laser"
+                            "origin": "ponyorigins:talents/laser",
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -302,7 +303,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:talents/laser"
+                            "origin": "ponyorigins:talents/laser",
+                            "layer": "ponyorigins:secondary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -393,11 +395,11 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
                         },
                         "else_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0.025 0.025 0.025 1 4 force"
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0.025 0.025 0.025 1 4 force"
                         }
                     }
                 ]

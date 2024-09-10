@@ -12,7 +12,7 @@
         "ponyorigins:common/sounds/avian"
     ],
     "icon": {
-        "item": "minecraft:cod"
+        "item": "cod"
     },
     "order": 13,
     "impact": 0

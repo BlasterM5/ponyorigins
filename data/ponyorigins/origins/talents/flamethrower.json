@@ -5,7 +5,7 @@
         "ponyorigins:talents/flamethrower"
     ],
     "icon": {
-        "item": "minecraft:blaze_powder"
+        "item": "blaze_powder"
     },
     "impact": 0
 }

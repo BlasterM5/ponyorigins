@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "text": "Must be barefoot",
-            "sprite": "minecraft:textures/item/leather_boots.png"
+            "sprite": "textures/item/leather_boots.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Must have main and off (hands or hooves) free",
-            "sprite": "minecraft:textures/item/wooden_pickaxe.png"
+            "sprite": "textures/item/wooden_pickaxe.png"
         }
     ],
     "type": "origins:multiple",

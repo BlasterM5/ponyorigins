@@ -11,7 +11,7 @@
                 },
                 "] to rocket forwards"
             ],
-            "sprite": "minecraft:textures/item/firework_rocket.png"
+            "sprite": "textures/item/firework_rocket.png"
         }
     ],
     "type": "origins:multiple",
@@ -164,7 +164,7 @@
                     "type": "origins:apply_effect",
                     "effects": [
                         {
-                            "effect": "minecraft:nausea",
+                            "effect": "nausea",
                             "duration": 200,
                             "amplifier": 0,
                             "is_ambient": true,
@@ -172,7 +172,7 @@
                             "show_icon": true
                         },
                         {
-                            "effect": "minecraft:slowness",
+                            "effect": "slowness",
                             "duration": 200,
                             "amplifier": 1,
                             "is_ambient": true,
@@ -180,7 +180,7 @@
                             "show_icon": true
                         },
                         {
-                            "effect": "minecraft:weakness",
+                            "effect": "weakness",
                             "duration": 400,
                             "amplifier": 1,
                             "is_ambient": true,
@@ -188,7 +188,7 @@
                             "show_icon": true
                         },
                         {
-                            "effect": "minecraft:mining_fatigue",
+                            "effect": "mining_fatigue",
                             "duration": 400,
                             "amplifier": 1,
                             "is_ambient": true,
@@ -242,13 +242,13 @@
                 },
                 {
                     "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
+                    "fluid": "water",
                     "comparison": "==",
                     "compare_to": 0
                 },
                 {
                     "type": "origins:fluid_height",
-                    "fluid": "minecraft:lava",
+                    "fluid": "lava",
                     "comparison": "==",
                     "compare_to": 0
                 },

@@ -16,7 +16,7 @@
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {
-        "item": "minecraft:coal"
+        "item": "coal"
     },
     "order": 11,
     "impact": 0

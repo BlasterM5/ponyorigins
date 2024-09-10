@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "text": "Using Tools: +25 percent Block Break Speed",
-            "sprite": "minecraft:textures/item/golden_pickaxe.png"
+            "sprite": "textures/item/golden_pickaxe.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Consumes Energy",
-            "sprite": "minecraft:textures/item/light.png"
+            "sprite": "textures/item/light.png"
         }
     ],
     "hidden": true,

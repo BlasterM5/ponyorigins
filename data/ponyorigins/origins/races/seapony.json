@@ -12,7 +12,7 @@
         "ponyorigins:common/sounds/seapony"
     ],
     "icon": {
-        "item": "minecraft:heart_of_the_sea"
+        "item": "heart_of_the_sea"
     },
     "order": 8,
     "impact": 0

@@ -16,7 +16,7 @@
         "ponyorigins:common/sounds/changeling"
     ],
     "icon": {
-        "item": "minecraft:poppy"
+        "item": "poppy"
     },
     "order": 16,
     "impact": 0

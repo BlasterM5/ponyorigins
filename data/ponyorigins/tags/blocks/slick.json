@@ -1045,187 +1045,187 @@
             "required": false
         },
         {
-            "id": "minecraft:polished_granite",
+            "id": "polished_granite",
             "required": false
         },
         {
-            "id": "minecraft:polished_diorite",
+            "id": "polished_diorite",
             "required": false
         },
         {
-            "id": "minecraft:polished_andesite",
+            "id": "polished_andesite",
             "required": false
         },
         {
-            "id": "minecraft:polished_deepslate",
+            "id": "polished_deepslate",
             "required": false
         },
         {
-            "id": "minecraft:polished_basalt",
+            "id": "polished_basalt",
             "required": false
         },
         {
-            "id": "minecraft:polished_granite_stairs",
+            "id": "polished_granite_stairs",
             "required": false
         },
         {
-            "id": "minecraft:polished_diorite_stairs",
+            "id": "polished_diorite_stairs",
             "required": false
         },
         {
-            "id": "minecraft:polished_andesite_stairs",
+            "id": "polished_andesite_stairs",
             "required": false
         },
         {
-            "id": "minecraft:polished_deepslate_stairs",
+            "id": "polished_deepslate_stairs",
             "required": false
         },
         {
-            "id": "minecraft:polished_granite_slab",
+            "id": "polished_granite_slab",
             "required": false
         },
         {
-            "id": "minecraft:polished_diorite_slab",
+            "id": "polished_diorite_slab",
             "required": false
         },
         {
-            "id": "minecraft:polished_andesite_slab",
+            "id": "polished_andesite_slab",
             "required": false
         },
         {
-            "id": "minecraft:polished_deepslate_slab",
+            "id": "polished_deepslate_slab",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone",
+            "id": "polished_blackstone",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_slab",
+            "id": "polished_blackstone_slab",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_stairs",
+            "id": "polished_blackstone_stairs",
             "required": false
         },
         {
-            "id": "minecraft:chiseled_polished_blackstone",
+            "id": "chiseled_polished_blackstone",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_bricks",
+            "id": "polished_blackstone_bricks",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_brick_slab",
+            "id": "polished_blackstone_brick_slab",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_brick_stairs",
+            "id": "polished_blackstone_brick_stairs",
             "required": false
         },
         {
-            "id": "minecraft:cracked_polished_blackstone_bricks",
+            "id": "cracked_polished_blackstone_bricks",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_wall",
+            "id": "polished_blackstone_wall",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_brick_wall",
+            "id": "polished_blackstone_brick_wall",
             "required": false
         },
         {
-            "id": "minecraft:polished_deepslate_wall",
+            "id": "polished_deepslate_wall",
             "required": false
         },
         {
-            "id": "minecraft:polished_blackstone_pressure_plate",
+            "id": "polished_blackstone_pressure_plate",
             "required": false
         },
         {
-            "id": "minecraft:smooth_stone_slab",
+            "id": "smooth_stone_slab",
             "required": false
         },
         {
-            "id": "minecraft:smooth_quartz",
+            "id": "smooth_quartz",
             "required": false
         },
         {
-            "id": "minecraft:smooth_red_sandstone",
+            "id": "smooth_red_sandstone",
             "required": false
         },
         {
-            "id": "minecraft:smooth_sandstone",
+            "id": "smooth_sandstone",
             "required": false
         },
         {
-            "id": "minecraft:smooth_stone",
+            "id": "smooth_stone",
             "required": false
         },
         {
-            "id": "minecraft:smooth_basalt",
+            "id": "smooth_basalt",
             "required": false
         },
         {
-            "id": "minecraft:smooth_red_sandstone_stairs",
+            "id": "smooth_red_sandstone_stairs",
             "required": false
         },
         {
-            "id": "minecraft:smooth_sandstone_stairs",
+            "id": "smooth_sandstone_stairs",
             "required": false
         },
         {
-            "id": "minecraft:smooth_quartz_stairs",
+            "id": "smooth_quartz_stairs",
             "required": false
         },
         {
-            "id": "minecraft:smooth_red_sandstone_slab",
+            "id": "smooth_red_sandstone_slab",
             "required": false
         },
         {
-            "id": "minecraft:smooth_sandstone_slab",
+            "id": "smooth_sandstone_slab",
             "required": false
         },
         {
-            "id": "minecraft:smooth_quartz_slab",
+            "id": "smooth_quartz_slab",
             "required": false
         },
         {
-            "id": "minecraft:packed_mud",
+            "id": "packed_mud",
             "required": false
         },
         {
-            "id": "minecraft:iron_block",
+            "id": "iron_block",
             "required": false
         },
         {
-            "id": "minecraft:copper_block",
+            "id": "copper_block",
             "required": false
         },
         {
-            "id": "minecraft:gold_block",
+            "id": "gold_block",
             "required": false
         },
         {
-            "id": "minecraft:diamond_block",
+            "id": "diamond_block",
             "required": false
         },
         {
-            "id": "minecraft:emerald_block",
+            "id": "emerald_block",
             "required": false
         },
         {
-            "id": "minecraft:waxed_copper_block",
+            "id": "waxed_copper_block",
             "required": false
         },
         {
-            "id": "minecraft:glass",
+            "id": "glass",
             "required": false
         },
         {
-            "id": "minecraft:tinted_glass",
+            "id": "tinted_glass",
             "required": false
         },
         {

@@ -61,11 +61,11 @@
                                                 "type": "origins:if_else",
                                                 "condition": {
                                                     "type": "origins:block",
-                                                    "block": "minecraft:air"
+                                                    "block": "air"
                                                 },
                                                 "if_action": {
                                                     "type": "origins:set_block",
-                                                    "block": "minecraft:cobweb"
+                                                    "block": "cobweb"
                                                 },
                                                 "else_action": {
                                                     "type": "origins:if_else",
@@ -75,18 +75,18 @@
                                                             {
                                                                 "inverted": true,
                                                                 "type": "origins:in_tag",
-                                                                "tag": "minecraft:doors"
+                                                                "tag": "doors"
                                                             },
                                                             {
                                                                 "inverted": true,
                                                                 "type": "origins:in_tag",
-                                                                "tag": "minecraft:trapdoors"
+                                                                "tag": "trapdoors"
                                                             }
                                                         ]
                                                     },
                                                     "if_action": {
                                                         "type": "origins:add_block",
-                                                        "block": "minecraft:cobweb"
+                                                        "block": "cobweb"
                                                     }
                                                 }
                                             }
@@ -161,11 +161,11 @@
                                                                     "conditions": [
                                                                         {
                                                                             "type": "origins:in_tag",
-                                                                            "tag": "minecraft:doors"
+                                                                            "tag": "doors"
                                                                         },
                                                                         {
                                                                             "type": "origins:in_tag",
-                                                                            "tag": "minecraft:trapdoors"
+                                                                            "tag": "trapdoors"
                                                                         }
                                                                     ]
                                                                 },
@@ -182,15 +182,15 @@
                                                             "type": "origins:if_else",
                                                             "condition": {
                                                                 "type": "origins:block",
-                                                                "block": "minecraft:air"
+                                                                "block": "air"
                                                             },
                                                             "if_action": {
                                                                 "type": "origins:set_block",
-                                                                "block": "minecraft:cobweb"
+                                                                "block": "cobweb"
                                                             },
                                                             "else_action": {
                                                                 "type": "origins:add_block",
-                                                                "block": "minecraft:cobweb"
+                                                                "block": "cobweb"
                                                             }
                                                         }
                                                     }
@@ -201,7 +201,7 @@
                                                 "action": {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:slowness",
+                                                        "effect": "slowness",
                                                         "duration": 200,
                                                         "amplifier": 4,
                                                         "is_ambient": true,

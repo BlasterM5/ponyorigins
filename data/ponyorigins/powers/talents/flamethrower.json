@@ -15,7 +15,7 @@
                 },
                 "] to burn everything"
             ],
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         }
     ],
     "type": "origins:multiple",
@@ -47,7 +47,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:submerged_in",
-                        "fluid": "minecraft:water"
+                        "fluid": "water"
                     },
                     "if_action": {
                         "type": "origins:raycast",
@@ -74,7 +74,7 @@
                                         "type": "origins:block_action_at",
                                         "block_action": {
                                             "type": "origins:add_block",
-                                            "block": "minecraft:fire"
+                                            "block": "fire"
                                         }
                                     }
                                 ]
@@ -82,7 +82,7 @@
                         },
                         "block_action": {
                             "type": "origins:add_block",
-                            "block": "minecraft:fire"
+                            "block": "fire"
                         },
                         "before_action": {
                             "type": "origins:play_sound",
@@ -90,7 +90,7 @@
                             "volume": 0.5,
                             "pitch": 0.5
                         },
-                        "command_along_ray": "particle minecraft:flame ^ ^0.5 ^ 0 0 0 1 0 force",
+                        "command_along_ray": "particle flame ^ ^0.5 ^ 0 0 0 1 0 force",
                         "command_step": 1
                     },
                     "else_action": {
@@ -103,12 +103,12 @@
                                 "entity": false,
                                 "shape_type": "visual",
                                 "fluid_handling": "none",
-                                "command_along_ray": "particle minecraft:bubble_column_up ^ ^0.5 ^ 0 0 0 1 8 force",
+                                "command_along_ray": "particle bubble_column_up ^ ^0.5 ^ 0 0 0 1 8 force",
                                 "command_step": 1
                             },
                             {
                                 "type": "origins:play_sound",
-                                "sound": "minecraft:block.bubble_column.upwards_inside",
+                                "sound": "block.bubble_column.upwards_inside",
                                 "volume": 1,
                                 "pitch": 1
                             }
@@ -322,7 +322,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:unicorn/flamethrower"
+                            "origin": "ponyorigins:talents/flamethrower",
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -337,7 +338,8 @@
                     "conditions": [
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:talents/flamethrower"
+                            "origin": "ponyorigins:talents/flamethrower",
+                            "layer": "ponyorigins:secondary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -451,22 +453,22 @@
                             },
                             "if_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
                             },
                             "else_action": {
                                 "type": "origins:if_else",
                                 "condition": {
                                     "inverted": true,
                                     "type": "origins:submerged_in",
-                                    "fluid": "minecraft:water"
+                                    "fluid": "water"
                                 },
                                 "if_action": {
                                     "type": "origins:execute_command",
-                                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:flame ~ ~ ~ 0 0.1 0 1 0 force"
+                                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle flame ~ ~ ~ 0 0.1 0 1 0 force"
                                 },
                                 "else_action": {
                                     "type": "origins:execute_command",
-                                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:bubble_column_up ~ ~ ~ 0 0.1 0 1 0 force"
+                                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle bubble_column_up ~ ~ ~ 0 0.1 0 1 0 force"
                                 }
                             }
                         }

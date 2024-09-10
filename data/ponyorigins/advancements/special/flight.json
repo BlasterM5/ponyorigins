@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:feather"
+            "item": "feather"
         },
         "title": "Flight",
         "description": "",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

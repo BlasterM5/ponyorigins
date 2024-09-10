@@ -5,22 +5,22 @@
         {
             "type": "origins:tooltip",
             "text": "Below light level 0.3: Attack Strength +25 percent",
-            "sprite": "minecraft:textures/item/netherite_sword.png"
+            "sprite": "textures/item/netherite_sword.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Below light level 0.3: Damage Resistance +25 percent",
-            "sprite": "minecraft:textures/item/netherite_chestplate.png"
+            "sprite": "textures/item/netherite_chestplate.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Above light level 0.56: Attack Strength -25 percent",
-            "sprite": "minecraft:textures/item/wooden_sword.png"
+            "sprite": "textures/item/wooden_sword.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Above light level 0.56: Damage Resistance -25 percent",
-            "sprite": "minecraft:textures/item/leather_chestplate.png"
+            "sprite": "textures/item/leather_chestplate.png"
         }
     ],
     "type": "origins:multiple",

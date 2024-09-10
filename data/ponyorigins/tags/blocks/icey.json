@@ -29,27 +29,27 @@
             "required": false
         },
         {
-            "id": "minecraft:honey_block",
+            "id": "honey_block",
             "required": false
         },
         {
-            "id": "minecraft:slime_block",
+            "id": "slime_block",
             "required": false
         },
         {
-            "id": "minecraft:snow_block",
+            "id": "snow_block",
             "required": false
         },
         {
-            "id": "minecraft:ice",
+            "id": "ice",
             "required": false
         },
         {
-            "id": "minecraft:packed_ice",
+            "id": "packed_ice",
             "required": false
         },
         {
-            "id": "minecraft:blue_ice",
+            "id": "blue_ice",
             "required": false
         }
     ]

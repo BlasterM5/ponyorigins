@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "text": "Unarmed: Attack Strength +100 percent",
-            "sprite": "minecraft:textures/item/stone_sword.png"
+            "sprite": "textures/item/stone_sword.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Unarmed: Block Break Speed +100 percent",
-            "sprite": "minecraft:textures/item/stone_pickaxe.png"
+            "sprite": "textures/item/stone_pickaxe.png"
         },
         {
             "type": "origins:tooltip",
@@ -21,7 +21,7 @@
                 },
                 "] to charge and attack"
             ],
-            "sprite": "minecraft:textures/block/tnt_side.png"
+            "sprite": "textures/block/tnt_side.png"
         }
     ],
     "type": "origins:multiple",
@@ -156,13 +156,13 @@
                                         "actions": [
                                             {
                                                 "type": "origins:play_sound",
-                                                "sound": "minecraft:entity.generic.explode",
+                                                "sound": "entity.generic.explode",
                                                 "volume": 0.5,
                                                 "pitch": 1
                                             },
                                             {
                                                 "type": "origins:spawn_particles",
-                                                "particle": "minecraft:flash",
+                                                "particle": "flash",
                                                 "count": 1,
                                                 "speed": 1,
                                                 "force": true,
@@ -198,7 +198,7 @@
                                     },
                                     {
                                         "type": "origins:execute_command",
-                                        "command": "playsound minecraft:entity.generic.explode block @a ~ ~ ~"
+                                        "command": "playsound entity.generic.explode block @a ~ ~ ~"
                                     },
                                     {
                                         "type": "origins:execute_command",

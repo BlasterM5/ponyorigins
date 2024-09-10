@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "Using Tools: +25 percent Block Break Speed",
-            "sprite": "minecraft:textures/item/iron_pickaxe.png"
+            "sprite": "textures/item/iron_pickaxe.png"
         }
     ],
     "hidden": true,

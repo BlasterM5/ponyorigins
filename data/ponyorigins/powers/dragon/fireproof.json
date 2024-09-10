@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "Fireproof",
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         }
     ],
     "type": "origins:invulnerability",

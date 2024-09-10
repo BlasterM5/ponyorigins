@@ -5,7 +5,7 @@
         "ponyorigins:talents/shock_ray"
     ],
     "icon": {
-        "item": "minecraft:lightning_rod"
+        "item": "lightning_rod"
     },
     "impact": 0
 }

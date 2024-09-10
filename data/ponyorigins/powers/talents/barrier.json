@@ -15,7 +15,7 @@
                 },
                 "] to toggle"
             ],
-            "sprite": "minecraft:textures/particle/bubble.png"
+            "sprite": "textures/particle/bubble.png"
         }
     ],
     "type": "origins:multiple",
@@ -90,13 +90,13 @@
                             },
                             {
                                 "type": "origins:play_sound",
-                                "sound": "minecraft:block.amethyst_block.break",
+                                "sound": "block.amethyst_block.break",
                                 "volume": 1,
                                 "pitch": 1
                             },
                             {
                                 "type": "origins:spawn_particles",
-                                "particle": "minecraft:firework",
+                                "particle": "firework",
                                 "count": 8,
                                 "speed": 1,
                                 "force": true,
@@ -122,13 +122,13 @@
                         "actions": [
                             {
                                 "type": "origins:play_sound",
-                                "sound": "minecraft:block.glass.break",
+                                "sound": "block.glass.break",
                                 "volume": 1,
                                 "pitch": 1
                             },
                             {
                                 "type": "origins:spawn_particles",
-                                "particle": "minecraft:firework",
+                                "particle": "firework",
                                 "count": 128,
                                 "speed": 1,
                                 "force": true,
@@ -198,7 +198,7 @@
                             },
                             {
                                 "type": "origins:play_sound",
-                                "sound": "minecraft:block.glass.break",
+                                "sound": "block.glass.break",
                                 "volume": 1,
                                 "pitch": 1
                             }
@@ -221,7 +221,7 @@
                 {
                     "type": "origins:apply_effect",
                     "effect": {
-                        "effect": "minecraft:water_breathing",
+                        "effect": "water_breathing",
                         "duration": 10,
                         "amplifier": 0,
                         "is_ambient": true,
@@ -246,7 +246,7 @@
             "compare_to": 1
         },
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:generic.movement_speed",
+        "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
             "value": -0.5
@@ -314,7 +314,8 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:unicorn/barrier"
+                                    "origin": "ponyorigins:talents/barrier",
+                                    "layer": "ponyorigins:primary_talent"
                                 },
                                 {
                                     "type": "origins:resource",
@@ -329,7 +330,8 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:talents/barrier"
+                                    "origin": "ponyorigins:talents/barrier",
+                                    "layer": "ponyorigins:secondary_talent"
                                 },
                                 {
                                     "type": "origins:resource",
@@ -364,7 +366,7 @@
                     },
                     {
                         "type": "origins:play_sound",
-                        "sound": "minecraft:block.glass.break",
+                        "sound": "block.glass.break",
                         "volume": 1,
                         "pitch": 1
                     }
@@ -389,7 +391,7 @@
                         },
                         {
                             "type": "origins:play_sound",
-                            "sound": "minecraft:entity.illusioner.mirror_move",
+                            "sound": "entity.illusioner.mirror_move",
                             "volume": 1,
                             "pitch": 1
                         }
@@ -406,7 +408,7 @@
             "compare_to": 1
         },
         "type": "apugli:energy_swirl",
-        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "texture_location": "textures/entity/creeper/creeper_armor.png",
         "speed": 0.001
     }
 }

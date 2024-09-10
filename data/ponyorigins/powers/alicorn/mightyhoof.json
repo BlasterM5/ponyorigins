@@ -5,22 +5,22 @@
         {
             "type": "origins:tooltip",
             "text": "Attack Strength +100 percent",
-            "sprite": "minecraft:textures/item/diamond_sword"
+            "sprite": "textures/item/diamond_sword"
         },
         {
             "type": "origins:tooltip",
             "text": "Unarmed Attack Damage +4",
-            "sprite": "minecraft:textures/item/diamond_sword"
+            "sprite": "textures/item/diamond_sword"
         },
         {
             "type": "origins:tooltip",
             "text": "Damage Resistance +50 percent",
-            "sprite": "minecraft:textures/item/diamond_chestplate"
+            "sprite": "textures/item/diamond_chestplate"
         },
         {
             "type": "origins:tooltip",
             "text": "Consumes Energy",
-            "sprite": "minecraft:textures/item/light.png"
+            "sprite": "textures/item/light.png"
         },
         {
             "type": "origins:tooltip",
@@ -31,7 +31,7 @@
                 },
                 "] to charge and attack"
             ],
-            "sprite": "minecraft:textures/block/tnt_side.png"
+            "sprite": "textures/block/tnt_side.png"
         }
     ],
     "hidden": true,
@@ -236,13 +236,13 @@
                                         "actions": [
                                             {
                                                 "type": "origins:play_sound",
-                                                "sound": "minecraft:entity.generic.explode",
+                                                "sound": "entity.generic.explode",
                                                 "volume": 0.5,
                                                 "pitch": 1
                                             },
                                             {
                                                 "type": "origins:spawn_particles",
-                                                "particle": "minecraft:flash",
+                                                "particle": "flash",
                                                 "count": 1,
                                                 "speed": 1,
                                                 "force": true,
@@ -278,7 +278,7 @@
                                     },
                                     {
                                         "type": "origins:execute_command",
-                                        "command": "playsound minecraft:entity.generic.explode block @a ~ ~ ~"
+                                        "command": "playsound entity.generic.explode block @a ~ ~ ~"
                                     },
                                     {
                                         "type": "origins:execute_command",

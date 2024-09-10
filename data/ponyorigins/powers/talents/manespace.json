@@ -15,7 +15,7 @@
                 },
                 "] to open"
             ],
-            "sprite": "minecraft:textures/item/bundle_filled.png"
+            "sprite": "textures/item/bundle_filled.png"
         }
     ],
     "condition": {
@@ -41,7 +41,8 @@
                             },
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:unicorn/manespace"
+                                "origin": "ponyorigins:talents/manespace",
+                                "layer": "ponyorigins:primary_talent"
                             }
                         ]
                     },
@@ -56,7 +57,8 @@
                             },
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:talents/manespace"
+                                "origin": "ponyorigins:talents/manespace",
+                                "layer": "ponyorigins:secondary_talent"
                             }
                         ]
                     }

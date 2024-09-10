@@ -1,27 +1,27 @@
 {
     "values": [
         {
-            "id": "minecraft:camel",
+            "id": "camel",
             "required": false
         },
         {
-            "id": "minecraft:donkey",
+            "id": "donkey",
             "required": false
         },
         {
-            "id": "minecraft:horse",
+            "id": "horse",
             "required": false
         },
         {
-            "id": "minecraft:mule",
+            "id": "mule",
             "required": false
         },
         {
-            "id": "minecraft:skeleton_horse",
+            "id": "skeleton_horse",
             "required": false
         },
         {
-            "id": "minecraft:zombie_horse",
+            "id": "zombie_horse",
             "required": false
         },
         {

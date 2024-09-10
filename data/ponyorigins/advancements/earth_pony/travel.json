@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:leather_boots"
+            "item": "leather_boots"
         },
         "title": "Traveler",
         "description": "Travel around the World",
@@ -12,7 +12,7 @@
     "parent": "ponyorigins:earth_pony/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

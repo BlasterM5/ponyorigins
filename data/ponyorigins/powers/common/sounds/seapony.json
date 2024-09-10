@@ -6,7 +6,7 @@
     "hurt": {
         "condition": {
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "apugli:custom_hurt_sound",
         "sound": "entity.dolphin.hurt",
@@ -16,7 +16,7 @@
     "death": {
         "condition": {
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "apugli:custom_death_sound",
         "sound": "entity.dolphin.death",
@@ -27,7 +27,7 @@
         "condition": {
             "inverted": true,
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "apugli:custom_hurt_sound",
         "sound": "entity.horse.hurt",
@@ -38,7 +38,7 @@
         "condition": {
             "inverted": true,
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "apugli:custom_death_sound",
         "sound": "entity.horse.death",

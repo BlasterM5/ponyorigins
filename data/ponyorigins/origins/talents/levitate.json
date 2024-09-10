@@ -5,7 +5,7 @@
         "ponyorigins:talents/levitate"
     ],
     "icon": {
-        "item": "minecraft:feather"
+        "item": "feather"
     },
     "impact": 0
 }

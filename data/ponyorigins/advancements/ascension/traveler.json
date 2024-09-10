@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:map"
+            "item": "map"
         },
         "title": "World Traveler",
         "description": "You've been everywhere, seen every biome",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

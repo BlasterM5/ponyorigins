@@ -125,7 +125,7 @@
             "required": false
         },
         {
-            "id": "minecraft:pumpkin_pie",
+            "id": "pumpkin_pie",
             "required": false
         },
         {

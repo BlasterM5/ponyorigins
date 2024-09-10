@@ -61,19 +61,19 @@
             "required": false
         },
         {
-            "id": "minecraft:pufferfish",
+            "id": "pufferfish",
             "required": false
         },
         {
-            "id": "minecraft:tropical_fish",
+            "id": "tropical_fish",
             "required": false
         },
         {
-            "id": "minecraft:salmon",
+            "id": "salmon",
             "required": false
         },
         {
-            "id": "minecraft:cod",
+            "id": "cod",
             "required": false
         },
         {

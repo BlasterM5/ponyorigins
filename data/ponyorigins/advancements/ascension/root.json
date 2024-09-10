@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:enchanted_book"
+            "item": "enchanted_book"
         },
         "title": "Make Your Mark",
         "description": "Be the first non-alicorn to do this",
@@ -12,7 +12,7 @@
     "parent": "ponyorigins:root",
     "criteria": {
         "choice": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

@@ -4,12 +4,12 @@
     "badges": [
         {
             "type": "origins:sprite",
-            "sprite": "minecraft:textures/particle/heart.png"
+            "sprite": "textures/particle/heart.png"
         }
     ],
     "type": "origins:attribute",
     "modifier": {
-        "attribute": "minecraft:generic.max_health",
+        "attribute": "generic.max_health",
         "operation": "addition",
         "value": 2
     },

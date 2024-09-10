@@ -5,17 +5,17 @@
         {
             "type": "origins:tooltip",
             "text": "Eat gemstones directly",
-            "sprite": "minecraft:textures/item/diamond.png"
+            "sprite": "textures/item/diamond.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Nether Star equates to Golden Apple",
-            "sprite": "minecraft:textures/item/nether_star.png"
+            "sprite": "textures/item/nether_star.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Eating Food: Saturation -75 percent and no effects",
-            "sprite": "minecraft:textures/item/charcoal.png"
+            "sprite": "textures/item/charcoal.png"
         }
     ],
     "type": "origins:multiple",
@@ -79,7 +79,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "minecraft:blaze_rod"
+                "item": "blaze_rod"
             }
         },
         "food_component": {
@@ -105,7 +105,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "minecraft:nether_star"
+                "item": "nether_star"
             }
         },
         "food_component": {
@@ -120,14 +120,14 @@
                     "type": "origins:apply_effect",
                     "effects": [
                         {
-                            "effect": "minecraft:absorption",
+                            "effect": "absorption",
                             "duration": 2400,
                             "amplifier": 0,
                             "show_particles": true,
                             "show_icon": true
                         },
                         {
-                            "effect": "minecraft:regeneration",
+                            "effect": "regeneration",
                             "duration": 100,
                             "amplifier": 1,
                             "show_particles": true,
@@ -167,7 +167,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "minecraft:heart_of_the_sea"
+                "item": "heart_of_the_sea"
             }
         },
         "food_component": {
@@ -181,7 +181,7 @@
                 {
                     "type": "origins:apply_effect",
                     "effect": {
-                        "effect": "minecraft:water_breathing",
+                        "effect": "water_breathing",
                         "duration": 12000,
                         "amplifier": 1,
                         "show_particles": true,
@@ -220,7 +220,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "minecraft:prismarine_shard"
+                "item": "prismarine_shard"
             }
         },
         "food_component": {
@@ -234,7 +234,7 @@
                 {
                     "type": "origins:apply_effect",
                     "effect": {
-                        "effect": "minecraft:water_breathing",
+                        "effect": "water_breathing",
                         "duration": 600,
                         "amplifier": 1,
                         "show_particles": true,
@@ -261,7 +261,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "minecraft:lava_bucket"
+                "item": "lava_bucket"
             }
         },
         "food_component": {
@@ -306,7 +306,7 @@
         },
         "use_action": "drink",
         "return_stack": {
-            "item": "minecraft:bucket",
+            "item": "bucket",
             "amount": 1
         }
     },

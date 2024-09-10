@@ -5,7 +5,7 @@
         "ponyorigins:talents/barrier"
     ],
     "icon": {
-        "item": "minecraft:shield"
+        "item": "shield"
     },
     "upgrades": [
         {

@@ -1,15 +1,15 @@
 {
     "values": [
         {
-            "id": "minecraft:axolotl",
+            "id": "axolotl",
             "required": false
         },
         {
-            "id": "minecraft:fox",
+            "id": "fox",
             "required": false
         },
         {
-            "id": "minecraft:ocelot",
+            "id": "ocelot",
             "required": false
         },
         {

@@ -15,7 +15,7 @@
                 },
                 "] on a tameable creature"
             ],
-            "sprite": "minecraft:textures/particle/heart.png"
+            "sprite": "textures/particle/heart.png"
         }
     ],
     "condition": {
@@ -35,7 +35,8 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:unicorn/tamer"
+                                "origin": "ponyorigins:talents/tamer",
+                                "layer": "ponyorigins:primary_talent"
                             },
                             {
                                 "type": "origins:resource",
@@ -50,7 +51,8 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:talents/tamer"
+                                "origin": "ponyorigins:talents/tamer",
+                                "layer": "ponyorigins:secondary_talent"
                             },
                             {
                                 "type": "origins:resource",

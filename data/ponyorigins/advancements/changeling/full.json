@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:dandelion"
+            "item": "dandelion"
         },
         "title": "Pure of Heart",
         "description": "You've received love to your fill, but there is one more step...",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:changeling/loved",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

@@ -1,11 +1,11 @@
 {
     "values": [
         {
-            "id": "minecraft:beetroot",
+            "id": "beetroot",
             "required": false
         },
         {
-            "id": "minecraft:nether_wart",
+            "id": "nether_wart",
             "required": false
         },
         {

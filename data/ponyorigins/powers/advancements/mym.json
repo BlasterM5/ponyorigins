@@ -16,7 +16,7 @@
                         "conditions": [
                             {
                                 "type": "origins:advancement",
-                                "advancement": "minecraft:nether/all_effects"
+                                "advancement": "nether/all_effects"
                             },
                             {
                                 "inverted": true,
@@ -36,7 +36,7 @@
                         "conditions": [
                             {
                                 "type": "origins:advancement",
-                                "advancement": "minecraft:end/kill_dragon"
+                                "advancement": "end/kill_dragon"
                             },
                             {
                                 "inverted": true,
@@ -56,7 +56,7 @@
                         "conditions": [
                             {
                                 "type": "origins:advancement",
-                                "advancement": "minecraft:adventure/adventuring_time"
+                                "advancement": "adventure/adventuring_time"
                             },
                             {
                                 "inverted": true,
@@ -76,7 +76,7 @@
                         "conditions": [
                             {
                                 "type": "origins:advancement",
-                                "advancement": "minecraft:husbandry/bred_all_animals"
+                                "advancement": "husbandry/bred_all_animals"
                             },
                             {
                                 "inverted": true,

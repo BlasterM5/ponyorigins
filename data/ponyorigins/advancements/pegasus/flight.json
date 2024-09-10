@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:feather"
+            "item": "feather"
         },
         "title": "Frequent Flyer",
         "description": "Fly around the World",
@@ -12,7 +12,7 @@
     "parent": "ponyorigins:pegasus/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

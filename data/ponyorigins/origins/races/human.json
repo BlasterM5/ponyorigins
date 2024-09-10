@@ -2,7 +2,7 @@
     "name": "Human",
     "description": "A regular human. Your ordinary Minecraft experience awaits.",
     "icon": {
-        "item": "minecraft:grass_block"
+        "item": "grass_block"
     },
     "order": 1,
     "impact": 0

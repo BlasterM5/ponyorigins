@@ -15,7 +15,7 @@
                 },
                 "] to toggle"
             ],
-            "sprite": "minecraft:textures/item/enchanted_book.png"
+            "sprite": "textures/item/enchanted_book.png"
         }
     ],
     "type": "origins:multiple",
@@ -177,7 +177,8 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:unicorn/vanish"
+                                    "origin": "ponyorigins:talents/vanish",
+                                    "layer": "ponyorigins:primary_talent"
                                 },
                                 {
                                     "type": "origins:resource",
@@ -192,7 +193,8 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:talents/vanish"
+                                    "origin": "ponyorigins:talents/vanish",
+                                    "layer": "ponyorigins:secondary_talent"
                                 },
                                 {
                                     "type": "origins:resource",

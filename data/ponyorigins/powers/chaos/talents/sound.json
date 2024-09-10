@@ -11,7 +11,7 @@
                 },
                 "] to sound off"
             ],
-            "sprite": "minecraft:textures/item/goat_horn.png"
+            "sprite": "textures/item/goat_horn.png"
         }
     ],
     "type": "origins:multiple",

@@ -8,7 +8,7 @@
         "ponyorigins:common/sounds/avian"
     ],
     "icon": {
-        "item": "minecraft:wheat_seeds"
+        "item": "wheat_seeds"
     },
     "impact": 0
 }

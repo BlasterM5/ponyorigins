@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:wither_rose"
+            "item": "wither_rose"
         },
         "title": "Rejection of Harmony",
         "description": "Harmony will no longer protect you",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

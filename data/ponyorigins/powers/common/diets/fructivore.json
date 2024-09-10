@@ -5,22 +5,22 @@
         {
             "type": "origins:tooltip",
             "text": "Eating Fruit: Saturation +200 percent",
-            "sprite": "minecraft:textures/item/apple.png"
+            "sprite": "textures/item/apple.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Eating non-fruit Food: Saturation -50 percent",
-            "sprite": "minecraft:textures/item/bread.png"
+            "sprite": "textures/item/bread.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Eating off-diet accumulates malnutrition risks",
-            "sprite": "minecraft:textures/item/bone.png"
+            "sprite": "textures/item/bone.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Eating Meat: +50 percent chance of dietary illness",
-            "sprite": "minecraft:textures/item/chicken.png"
+            "sprite": "textures/item/chicken.png"
         }
     ],
     "type": "origins:multiple",
@@ -45,7 +45,7 @@
                                     "tag": "c:cooked_meat"
                                 },
                                 {
-                                    "tag": "minecraft:fishes"
+                                    "tag": "fishes"
                                 }
                             ]
                         }
@@ -62,7 +62,7 @@
                 {
                     "condition": {
                         "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
+                        "effect": "hunger"
                     },
                     "action": {
                         "type": "origins:chance",
@@ -73,7 +73,7 @@
                                 {
                                     "type": "origins:apply_effect",
                                     "effect": {
-                                        "effect": "minecraft:poison",
+                                        "effect": "poison",
                                         "duration": 500,
                                         "amplifier": 0,
                                         "show_particles": false,
@@ -108,7 +108,7 @@
                                                 {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:slowness",
+                                                        "effect": "slowness",
                                                         "duration": 1000,
                                                         "amplifier": 1,
                                                         "show_particles": false,
@@ -142,7 +142,7 @@
                                                 {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:weakness",
+                                                        "effect": "weakness",
                                                         "duration": 1000,
                                                         "amplifier": 1,
                                                         "show_particles": false,
@@ -176,7 +176,7 @@
                                                 {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:mining_fatigue",
+                                                        "effect": "mining_fatigue",
                                                         "duration": 1000,
                                                         "amplifier": 1,
                                                         "show_particles": false,
@@ -207,7 +207,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
+                        "effect": "hunger"
                     },
                     "action": {
                         "type": "origins:chance",
@@ -215,7 +215,7 @@
                         "action": {
                             "type": "origins:apply_effect",
                             "effect": {
-                                "effect": "minecraft:hunger",
+                                "effect": "hunger",
                                 "duration": 500,
                                 "amplifier": 0,
                                 "show_particles": false,
@@ -233,7 +233,7 @@
                                         "action": {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:slowness",
+                                                "effect": "slowness",
                                                 "duration": 1000,
                                                 "amplifier": 0,
                                                 "show_particles": false,
@@ -250,7 +250,7 @@
                                         "action": {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:weakness",
+                                                "effect": "weakness",
                                                 "duration": 1000,
                                                 "amplifier": 0,
                                                 "show_particles": false,
@@ -267,7 +267,7 @@
                                         "action": {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:mining_fatigue",
+                                                "effect": "mining_fatigue",
                                                 "duration": 1000,
                                                 "amplifier": 0,
                                                 "show_particles": false,
@@ -295,7 +295,7 @@
                 {
                     "condition": {
                         "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
+                        "effect": "hunger"
                     },
                     "action": {
                         "type": "origins:chance",
@@ -306,7 +306,7 @@
                                 {
                                     "type": "origins:apply_effect",
                                     "effect": {
-                                        "effect": "minecraft:poison",
+                                        "effect": "poison",
                                         "duration": 500,
                                         "amplifier": 0,
                                         "show_particles": false,
@@ -341,7 +341,7 @@
                                                 {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:slowness",
+                                                        "effect": "slowness",
                                                         "duration": 1000,
                                                         "amplifier": 1,
                                                         "show_particles": false,
@@ -375,7 +375,7 @@
                                                 {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:weakness",
+                                                        "effect": "weakness",
                                                         "duration": 1000,
                                                         "amplifier": 1,
                                                         "show_particles": false,
@@ -409,7 +409,7 @@
                                                 {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:mining_fatigue",
+                                                        "effect": "mining_fatigue",
                                                         "duration": 1000,
                                                         "amplifier": 1,
                                                         "show_particles": false,
@@ -440,7 +440,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:status_effect",
-                        "effect": "minecraft:hunger"
+                        "effect": "hunger"
                     },
                     "action": {
                         "type": "origins:chance",
@@ -448,7 +448,7 @@
                         "action": {
                             "type": "origins:apply_effect",
                             "effect": {
-                                "effect": "minecraft:hunger",
+                                "effect": "hunger",
                                 "duration": 500,
                                 "amplifier": 0,
                                 "show_particles": false,
@@ -466,7 +466,7 @@
                                         "action": {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:slowness",
+                                                "effect": "slowness",
                                                 "duration": 1000,
                                                 "amplifier": 0,
                                                 "show_particles": false,
@@ -483,7 +483,7 @@
                                         "action": {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:weakness",
+                                                "effect": "weakness",
                                                 "duration": 1000,
                                                 "amplifier": 0,
                                                 "show_particles": false,
@@ -500,7 +500,7 @@
                                         "action": {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:mining_fatigue",
+                                                "effect": "mining_fatigue",
                                                 "duration": 1000,
                                                 "amplifier": 0,
                                                 "show_particles": false,
@@ -552,7 +552,7 @@
                 {
                     "type": "origins:ingredient",
                     "ingredient": {
-                        "item": "minecraft:glistering_melon_slice"
+                        "item": "glistering_melon_slice"
                     }
                 }
             ]
@@ -622,7 +622,7 @@
                                         {
                                             "type": "origins:apply_effect",
                                             "effect": {
-                                                "effect": "minecraft:blindness",
+                                                "effect": "blindness",
                                                 "duration": 1000,
                                                 "amplifier": 5,
                                                 "show_particles": false,
@@ -657,7 +657,7 @@
                                                         {
                                                             "type": "origins:apply_effect",
                                                             "effect": {
-                                                                "effect": "minecraft:slowness",
+                                                                "effect": "slowness",
                                                                 "duration": 1000,
                                                                 "amplifier": 1,
                                                                 "show_particles": false,
@@ -691,7 +691,7 @@
                                                         {
                                                             "type": "origins:apply_effect",
                                                             "effect": {
-                                                                "effect": "minecraft:weakness",
+                                                                "effect": "weakness",
                                                                 "duration": 1000,
                                                                 "amplifier": 1,
                                                                 "show_particles": false,
@@ -725,7 +725,7 @@
                                                         {
                                                             "type": "origins:apply_effect",
                                                             "effect": {
-                                                                "effect": "minecraft:mining_fatigue",
+                                                                "effect": "mining_fatigue",
                                                                 "duration": 1000,
                                                                 "amplifier": 1,
                                                                 "show_particles": false,
@@ -759,7 +759,7 @@
                                     {
                                         "inverted": true,
                                         "type": "origins:status_effect",
-                                        "effect": "minecraft:hunger"
+                                        "effect": "hunger"
                                     },
                                     {
                                         "type": "origins:resource",
@@ -775,7 +775,7 @@
                                 "action": {
                                     "type": "origins:apply_effect",
                                     "effect": {
-                                        "effect": "minecraft:hunger",
+                                        "effect": "hunger",
                                         "duration": 500,
                                         "amplifier": 0,
                                         "show_particles": false,
@@ -793,7 +793,7 @@
                                                 "action": {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:slowness",
+                                                        "effect": "slowness",
                                                         "duration": 1000,
                                                         "amplifier": 0,
                                                         "show_particles": false,
@@ -810,7 +810,7 @@
                                                 "action": {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:weakness",
+                                                        "effect": "weakness",
                                                         "duration": 1000,
                                                         "amplifier": 0,
                                                         "show_particles": false,
@@ -827,7 +827,7 @@
                                                 "action": {
                                                     "type": "origins:apply_effect",
                                                     "effect": {
-                                                        "effect": "minecraft:mining_fatigue",
+                                                        "effect": "mining_fatigue",
                                                         "duration": 1000,
                                                         "amplifier": 0,
                                                         "show_particles": false,

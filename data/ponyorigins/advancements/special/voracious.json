@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:charcoal"
+            "item": "charcoal"
         },
         "title": "Voracious",
         "description": "Well, that wasn't satisfying at all!",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/food",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

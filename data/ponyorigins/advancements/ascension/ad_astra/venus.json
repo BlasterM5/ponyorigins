@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:magma_block"
+            "item": "magma_block"
         },
         "title": "Dragon's Paradise",
         "description": "Venus is one hot planet",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

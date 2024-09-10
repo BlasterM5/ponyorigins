@@ -13,7 +13,7 @@
         "ponyorigins:common/sounds/avian"
     ],
     "icon": {
-        "item": "minecraft:salmon"
+        "item": "salmon"
     },
     "order": 12,
     "impact": 0

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:player_head",
+            "item": "player_head",
             "nbt": "{SkullOwner:BlasterM5}"
         },
         "title": "BlasterM5",
@@ -13,7 +13,7 @@
     "parent": "global:root",
     "criteria": {
         "trigger": {
-            "trigger": "minecraft:tick"
+            "trigger": "tick"
         }
     }
 }

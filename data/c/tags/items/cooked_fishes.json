@@ -73,11 +73,11 @@
             "required": false
         },
         {
-            "id": "minecraft:cooked_cod",
+            "id": "cooked_cod",
             "required": false
         },
         {
-            "id": "minecraft:cooked_salmon",
+            "id": "cooked_salmon",
             "required": false
         },
         {

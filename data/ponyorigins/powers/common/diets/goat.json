@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "Eat most plants directly",
-            "sprite": "minecraft:textures/item/wheat.png"
+            "sprite": "textures/item/wheat.png"
         }
     ],
     "type": "origins:multiple",
@@ -44,7 +44,7 @@
                 {
                     "type": "origins:ingredient",
                     "ingredient": {
-                        "item": "minecraft:glistering_melon_slice"
+                        "item": "glistering_melon_slice"
                     }
                 }
             ]

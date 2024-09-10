@@ -11,7 +11,7 @@
                 },
                 "] to blow fire"
             ],
-            "sprite": "minecraft:textures/item/blaze_powder.png"
+            "sprite": "textures/item/blaze_powder.png"
         },
         {
             "type": "origins:tooltip",
@@ -22,7 +22,7 @@
                 },
                 "] to blow frost"
             ],
-            "sprite": "minecraft:textures/item/snowball.png"
+            "sprite": "textures/item/snowball.png"
         },
         {
             "type": "origins:tooltip",
@@ -33,7 +33,7 @@
                 },
                 "] to blow static"
             ],
-            "sprite": "minecraft:textures/item/redstone.png"
+            "sprite": "textures/item/redstone.png"
         },
         {
             "type": "origins:tooltip",
@@ -44,7 +44,7 @@
                 },
                 "] to mark a creature"
             ],
-            "sprite": "minecraft:textures/item/glowstone_dust.png"
+            "sprite": "textures/item/glowstone_dust.png"
         },
         {
             "type": "origins:tooltip",
@@ -55,7 +55,7 @@
                 },
                 "] to grow plants"
             ],
-            "sprite": "minecraft:textures/item/bone_meal.png"
+            "sprite": "textures/item/bone_meal.png"
         }
     ],
     "type": "origins:multiple",
@@ -114,12 +114,12 @@
                 {
                     "inverted": true,
                     "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "fluid": "water"
                 },
                 {
                     "inverted": true,
                     "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava"
+                    "fluid": "lava"
                 },
                 {
                     "type": "origins:air",
@@ -143,7 +143,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:blaze_powder"
+                                        "item": "blaze_powder"
                                     }
                                 }
                             },
@@ -153,7 +153,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:blaze_powder"
+                                        "item": "blaze_powder"
                                     }
                                 }
                             }
@@ -184,7 +184,7 @@
                                         "type": "origins:block_action_at",
                                         "block_action": {
                                             "type": "origins:add_block",
-                                            "block": "minecraft:fire"
+                                            "block": "fire"
                                         }
                                     }
                                 ]
@@ -195,7 +195,7 @@
                             "actions": [
                                 {
                                     "type": "origins:add_block",
-                                    "block": "minecraft:fire"
+                                    "block": "fire"
                                 },
                                 {
                                     "type": "origins:if_else_list",
@@ -203,21 +203,21 @@
                                         {
                                             "condition": {
                                                 "type": "origins:block",
-                                                "block": "minecraft:snow"
+                                                "block": "snow"
                                             },
                                             "action": {
                                                 "type": "origins:set_block",
-                                                "block": "minecraft:blue_ice"
+                                                "block": "blue_ice"
                                             }
                                         },
                                         {
                                             "condition": {
                                                 "type": "origins:block",
-                                                "block": "minecraft:packed_ice"
+                                                "block": "packed_ice"
                                             },
                                             "action": {
                                                 "type": "origins:set_block",
-                                                "block": "minecraft:blue_ice"
+                                                "block": "blue_ice"
                                             }
                                         }
                                     ]
@@ -230,7 +230,7 @@
                             "volume": 0.5,
                             "pitch": 0.5
                         },
-                        "command_along_ray": "particle minecraft:flame ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_along_ray": "particle flame ^ ^-0.25 ^ 0 0 0 1 0 force",
                         "command_step": 1
                     }
                 },
@@ -245,7 +245,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:snowball"
+                                        "item": "snowball"
                                     }
                                 }
                             },
@@ -255,7 +255,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:snowball"
+                                        "item": "snowball"
                                     }
                                 }
                             }
@@ -281,7 +281,7 @@
                                     {
                                         "type": "origins:apply_effect",
                                         "effect": {
-                                            "effect": "minecraft:slowness",
+                                            "effect": "slowness",
                                             "duration": 100,
                                             "amplifier": 1,
                                             "show_particles": false,
@@ -303,24 +303,24 @@
                                         {
                                             "condition": {
                                                 "type": "origins:block",
-                                                "block": "minecraft:water"
+                                                "block": "water"
                                             },
                                             "action": {
                                                 "type": "origins:set_block",
-                                                "block": "minecraft:ice"
+                                                "block": "ice"
                                             }
                                         },
                                         {
                                             "condition": {
                                                 "type": "origins:block",
-                                                "block": "minecraft:lava"
+                                                "block": "lava"
                                             },
                                             "action": {
                                                 "type": "origins:and",
                                                 "actions": [
                                                     {
                                                         "type": "origins:set_block",
-                                                        "block": "minecraft:obsidian"
+                                                        "block": "obsidian"
                                                     },
                                                     {
                                                         "type": "origins:execute_command",
@@ -335,7 +335,7 @@
                                             },
                                             "action": {
                                                 "type": "origins:add_block",
-                                                "block": "minecraft:snow"
+                                                "block": "snow"
                                             }
                                         }
                                     ]
@@ -348,7 +348,7 @@
                             "volume": 0.25,
                             "pitch": 0.5
                         },
-                        "command_along_ray": "particle minecraft:instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_along_ray": "particle instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force",
                         "command_step": 1
                     }
                 },
@@ -363,7 +363,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:redstone"
+                                        "item": "redstone"
                                     }
                                 }
                             },
@@ -373,7 +373,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:redstone"
+                                        "item": "redstone"
                                     }
                                 }
                             }
@@ -457,7 +457,7 @@
                                                     {
                                                         "type": "origins:apply_effect",
                                                         "effect": {
-                                                            "effect": "minecraft:slowness",
+                                                            "effect": "slowness",
                                                             "duration": 20,
                                                             "amplifier": 4,
                                                             "show_particles": false,
@@ -477,7 +477,7 @@
                                                     {
                                                         "type": "origins:apply_effect",
                                                         "effect": {
-                                                            "effect": "minecraft:slowness",
+                                                            "effect": "slowness",
                                                             "duration": 20,
                                                             "amplifier": 10,
                                                             "show_particles": false,
@@ -513,7 +513,7 @@
                                             "conditions": [
                                                 {
                                                     "type": "origins:fluid_height",
-                                                    "fluid": "minecraft:water",
+                                                    "fluid": "water",
                                                     "comparison": ">",
                                                     "compare_to": 0
                                                 },
@@ -540,7 +540,7 @@
                                                     "conditions": [
                                                         {
                                                             "type": "origins:fluid_height",
-                                                            "fluid": "minecraft:water",
+                                                            "fluid": "water",
                                                             "comparison": ">",
                                                             "compare_to": 0
                                                         },
@@ -634,7 +634,7 @@
                                                                         {
                                                                             "type": "origins:apply_effect",
                                                                             "effect": {
-                                                                                "effect": "minecraft:slowness",
+                                                                                "effect": "slowness",
                                                                                 "duration": 20,
                                                                                 "amplifier": 4,
                                                                                 "show_particles": false,
@@ -657,7 +657,7 @@
                                                                         {
                                                                             "type": "origins:apply_effect",
                                                                             "effect": {
-                                                                                "effect": "minecraft:slowness",
+                                                                                "effect": "slowness",
                                                                                 "duration": 20,
                                                                                 "amplifier": 10,
                                                                                 "show_particles": false,
@@ -702,7 +702,7 @@
                             "volume": 0.25,
                             "pitch": 0.5
                         },
-                        "command_along_ray": "particle minecraft:electric_spark ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_along_ray": "particle electric_spark ^ ^-0.25 ^ 0 0 0 1 0 force",
                         "command_step": 1
                     }
                 },
@@ -717,7 +717,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:glowstone_dust"
+                                        "item": "glowstone_dust"
                                     }
                                 }
                             },
@@ -727,7 +727,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:glowstone_dust"
+                                        "item": "glowstone_dust"
                                     }
                                 }
                             }
@@ -745,7 +745,7 @@
                             "action": {
                                 "type": "origins:apply_effect",
                                 "effect": {
-                                    "effect": "minecraft:glowing",
+                                    "effect": "glowing",
                                     "duration": 1200,
                                     "amplifier": 0,
                                     "is_ambient": true,
@@ -760,7 +760,7 @@
                             "volume": 0.25,
                             "pitch": 0.5
                         },
-                        "command_along_ray": "particle minecraft:instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force",
+                        "command_along_ray": "particle instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force",
                         "command_step": 1
                     }
                 },
@@ -775,7 +775,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:bone_meal"
+                                        "item": "bone_meal"
                                     }
                                 }
                             },
@@ -785,7 +785,7 @@
                                 "item_condition": {
                                     "type": "origins:ingredient",
                                     "ingredient": {
-                                        "item": "minecraft:bone_meal"
+                                        "item": "bone_meal"
                                     }
                                 }
                             }
@@ -833,7 +833,7 @@
                                 }
                             }
                         },
-                        "command_along_ray": "particle minecraft:instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force"
+                        "command_along_ray": "particle instant_effect ^ ^-0.25 ^ 0 0 0 1 0 force"
                     }
                 },
                 {

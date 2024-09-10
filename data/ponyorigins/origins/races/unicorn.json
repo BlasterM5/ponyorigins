@@ -13,7 +13,7 @@
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {
-        "item": "minecraft:diamond"
+        "item": "diamond"
     },
     "upgrades": [
         {

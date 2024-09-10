@@ -5,46 +5,46 @@
         {
             "type": "origins:tooltip",
             "text": "Water Breathing",
-            "sprite": "minecraft:textures/mob_effect/water_breathing.png"
+            "sprite": "textures/mob_effect/water_breathing.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Water Vision",
-            "sprite": "minecraft:textures/mob_effect/night_vision.png"
+            "sprite": "textures/mob_effect/night_vision.png"
         },
         {
             "type": "origins:tooltip",
             "text": "+150 percent swim speed",
-            "sprite": "minecraft:textures/item/cod.png"
+            "sprite": "textures/item/cod.png"
         },
         {
             "type": "origins:tooltip",
             "text": "+200 percent block break speed while underwater",
-            "sprite": "minecraft:textures/item/iron_pickaxe.png"
+            "sprite": "textures/item/iron_pickaxe.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Transform when entering / leaving water",
-            "sprite": "minecraft:textures/item/heart_of_the_sea.png"
+            "sprite": "textures/item/heart_of_the_sea.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Default Spawn underwater in Ocean Biome",
-            "sprite": "minecraft:textures/misc/underwater.png"
+            "sprite": "textures/misc/underwater.png"
         }
     ],
     "type": "origins:multiple",
     "water_breathing": {
         "condition": {
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "origins:action_over_time",
         "interval": 20,
         "entity_action": {
             "type": "origins:apply_effect",
             "effect": {
-                "effect": "minecraft:water_breathing",
+                "effect": "water_breathing",
                 "duration": 21,
                 "amplifier": 1,
                 "is_ambient": true,
@@ -63,7 +63,7 @@
     "underwater_mining_boost": {
         "condition": {
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "origins:modify_break_speed",
         "modifier": {
@@ -73,15 +73,15 @@
     },
     "ocean_spawn": {
         "type": "origins:modify_player_spawn",
-        "dimension": "minecraft:overworld",
-        "biome": "minecraft:ocean",
+        "dimension": "overworld",
+        "biome": "ocean",
         "spawn_strategy": "default",
         "dimension_distance_multiplier": 1
     },
     "night_vision": {
         "condition": {
             "type": "origins:submerged_in",
-            "fluid": "minecraft:water"
+            "fluid": "water"
         },
         "type": "origins:night_vision",
         "strength": 0.3

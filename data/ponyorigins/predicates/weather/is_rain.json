@@ -1,4 +1,4 @@
 {
-    "condition": "minecraft:weather_check",
+    "condition": "weather_check",
     "raining": true
 }

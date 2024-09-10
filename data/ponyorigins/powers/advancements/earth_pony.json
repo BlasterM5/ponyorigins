@@ -32,7 +32,7 @@
             "if_action": {
                 "type": "origins:revoke_power",
                 "power": "ponyorigins:advancements/earth_pony",
-                "source": "ponyorigins:races/earth_pony"
+                "source": "ponyorigins:common/00"
             },
             "else_action": {
                 "type": "origins:execute_command",
@@ -73,7 +73,7 @@
             "conditions": [
                 {
                     "type": "origins:in_tag",
-                    "tag": "minecraft:crops"
+                    "tag": "crops"
                 },
                 {
                     "type": "origins:or",
@@ -439,7 +439,7 @@
                     {
                         "type": "origins:revoke_power",
                         "power": "ponyorigins:advancements/earth_pony",
-                        "source": "ponyorigins:races/earth_pony"
+                        "source": "ponyorigins:common/00"
                     }
                 ]
             }

@@ -11,7 +11,7 @@
                 },
                 "] to grow plants"
             ],
-            "sprite": "minecraft:textures/block/dandelion.png"
+            "sprite": "textures/block/dandelion.png"
         }
     ],
     "condition": {
@@ -40,7 +40,7 @@
                             "condition": {
                                 "inverted": true,
                                 "type": "origins:in_tag",
-                                "tag": "minecraft:flowers"
+                                "tag": "flowers"
                             },
                             "if_action": {
                                 "type": "origins:bonemeal",
@@ -54,7 +54,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:in_tag",
-                        "tag": "minecraft:flowers"
+                        "tag": "flowers"
                     },
                     "if_action": {
                         "type": "origins:bonemeal",
@@ -74,7 +74,7 @@
                                 "condition": {
                                     "inverted": true,
                                     "type": "origins:in_tag",
-                                    "tag": "minecraft:flowers"
+                                    "tag": "flowers"
                                 },
                                 "if_action": {
                                     "type": "origins:bonemeal",

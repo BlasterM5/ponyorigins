@@ -11,7 +11,7 @@
                 },
                 "] to burn everything"
             ],
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         }
     ],
     "type": "origins:multiple",
@@ -33,7 +33,7 @@
                 {
                     "inverted": true,
                     "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava"
+                    "fluid": "lava"
                 },
                 {
                     "type": "origins:resource",
@@ -73,7 +73,7 @@
                 "condition": {
                     "inverted": true,
                     "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "fluid": "water"
                 },
                 "if_action": {
                     "type": "origins:raycast",
@@ -100,7 +100,7 @@
                                     "type": "origins:block_action_at",
                                     "block_action": {
                                         "type": "origins:add_block",
-                                        "block": "minecraft:fire"
+                                        "block": "fire"
                                     }
                                 }
                             ]
@@ -111,7 +111,7 @@
                         "actions": [
                             {
                                 "type": "origins:add_block",
-                                "block": "minecraft:fire"
+                                "block": "fire"
                             },
                             {
                                 "type": "origins:if_else_list",
@@ -119,21 +119,21 @@
                                     {
                                         "condition": {
                                             "type": "origins:block",
-                                            "block": "minecraft:snow"
+                                            "block": "snow"
                                         },
                                         "action": {
                                             "type": "origins:set_block",
-                                            "block": "minecraft:blue_ice"
+                                            "block": "blue_ice"
                                         }
                                     },
                                     {
                                         "condition": {
                                             "type": "origins:block",
-                                            "block": "minecraft:packed_ice"
+                                            "block": "packed_ice"
                                         },
                                         "action": {
                                             "type": "origins:set_block",
-                                            "block": "minecraft:blue_ice"
+                                            "block": "blue_ice"
                                         }
                                     }
                                 ]
@@ -161,7 +161,7 @@
                             }
                         ]
                     },
-                    "command_along_ray": "particle minecraft:flame ^ ^-0.25 ^ 0 0 0 1 0 force",
+                    "command_along_ray": "particle flame ^ ^-0.25 ^ 0 0 0 1 0 force",
                     "command_step": 1
                 },
                 "else_action": {
@@ -174,12 +174,12 @@
                             "entity": false,
                             "shape_type": "visual",
                             "fluid_handling": "none",
-                            "command_along_ray": "particle minecraft:bubble_column_up ^ ^-0.25 ^ 0 0 0 1 8 force",
+                            "command_along_ray": "particle bubble_column_up ^ ^-0.25 ^ 0 0 0 1 8 force",
                             "command_step": 1
                         },
                         {
                             "type": "origins:play_sound",
-                            "sound": "minecraft:block.bubble_column.upwards_inside",
+                            "sound": "block.bubble_column.upwards_inside",
                             "volume": 1,
                             "pitch": 1
                         },
@@ -208,7 +208,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:submerged_in",
-                        "fluid": "minecraft:water"
+                        "fluid": "water"
                     },
                     "if_action": {
                         "type": "origins:and",
@@ -220,12 +220,12 @@
                                 "entity": false,
                                 "shape_type": "collider",
                                 "fluid_handling": "none",
-                                "command_along_ray": "particle minecraft:ash ^ ^-0.25 ^ 0.1 0.1 0.1 0.2 3 force",
+                                "command_along_ray": "particle ash ^ ^-0.25 ^ 0.1 0.1 0.1 0.2 3 force",
                                 "command_step": 1
                             },
                             {
                                 "type": "origins:play_sound",
-                                "sound": "minecraft:block.fire.extinguish",
+                                "sound": "block.fire.extinguish",
                                 "volume": 0.25,
                                 "pitch": 1
                             },
@@ -251,12 +251,12 @@
                                 "entity": false,
                                 "shape_type": "visual",
                                 "fluid_handling": "none",
-                                "command_along_ray": "particle minecraft:bubble_column_up ^ ^-0.25 ^ 0 0 0 1 8 force",
+                                "command_along_ray": "particle bubble_column_up ^ ^-0.25 ^ 0 0 0 1 8 force",
                                 "command_step": 1
                             },
                             {
                                 "type": "origins:play_sound",
-                                "sound": "minecraft:block.bubble_column.upwards_inside",
+                                "sound": "block.bubble_column.upwards_inside",
                                 "volume": 1,
                                 "pitch": 1
                             },

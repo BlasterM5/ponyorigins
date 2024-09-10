@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:crossbow"
+            "item": "crossbow"
         },
         "title": "Wonderbolt",
         "description": "16 hostiles, without touching the ground, in 10 seconds flat!",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/flight",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

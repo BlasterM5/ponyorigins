@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:writable_book"
+            "item": "writable_book"
         },
         "title": "EUP Mastery",
         "description": "Master the three primary pony races...",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:alicorn/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

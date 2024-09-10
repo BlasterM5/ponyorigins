@@ -1,19 +1,15 @@
 {
     "values": [
         {
-            "id": "lever",
+            "id": "#water",
             "required": false
         },
         {
-            "id": "#buttons",
+            "id": "#lava",
             "required": false
         },
         {
-            "id": "#pressure_plates",
-            "required": false
-        },
-        {
-            "id": "tripwire",
+            "id": "#ponyorigins:oil",
             "required": false
         }
     ]

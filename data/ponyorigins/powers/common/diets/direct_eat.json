@@ -11,7 +11,7 @@
                 },
                 "] to eat"
             ],
-            "sprite": "minecraft:textures/item/wheat.png"
+            "sprite": "textures/item/wheat.png"
         }
     ],
     "type": "origins:multiple",
@@ -23,7 +23,7 @@
             "compare_to": 0
         },
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:generic.movement_speed",
+        "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
             "value": -0.75
@@ -72,7 +72,7 @@
                     },
                     "if_action": {
                         "type": "origins:execute_command",
-                        "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
+                        "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                     },
                     "else_action": {
                         "type": "origins:if_else",
@@ -82,7 +82,7 @@
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:kelp ~ ~ ~ 0.1 0.1 0.1 0.055 4"
+                            "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item kelp ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                         },
                         "else_action": {
                             "type": "origins:if_else",
@@ -92,18 +92,18 @@
                             },
                             "if_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:diamond_block ~ ~ ~ 0.1 0.1 0.1 0.055 4"
+                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item diamond_block ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                             },
                             "else_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item minecraft:wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
+                                "command": "execute anchored eyes positioned ^ ^-0.5 ^0.45 run particle item wheat ~ ~ ~ 0.1 0.1 0.1 0.055 4"
                             }
                         }
                     }
                 },
                 {
                     "type": "origins:play_sound",
-                    "sound": "minecraft:entity.generic.eat",
+                    "sound": "entity.generic.eat",
                     "volume": 1,
                     "pitch": 1
                 },

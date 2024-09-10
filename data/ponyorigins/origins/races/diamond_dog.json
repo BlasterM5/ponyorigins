@@ -9,7 +9,7 @@
         "ponyorigins:common/sounds/dog"
     ],
     "icon": {
-        "item": "minecraft:emerald"
+        "item": "emerald"
     },
     "impact": 0
 }

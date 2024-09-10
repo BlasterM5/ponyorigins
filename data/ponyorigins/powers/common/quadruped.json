@@ -5,22 +5,22 @@
         {
             "type": "origins:tooltip",
             "text": "No held items: Movement Speed +25 percent",
-            "sprite": "minecraft:textures/item/leather_boots.png"
+            "sprite": "textures/item/leather_boots.png"
         },
         {
             "type": "origins:tooltip",
             "text": "One held item: Movement Speed normal",
-            "sprite": "minecraft:textures/item/iron_hoe.png"
+            "sprite": "textures/item/iron_hoe.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Two held items: Movement Speed -25 percent",
-            "sprite": "minecraft:textures/item/flint_and_steel.png"
+            "sprite": "textures/item/flint_and_steel.png"
         },
         {
             "type": "origins:tooltip",
             "text": "+25 percent Exhaustion",
-            "sprite": "minecraft:textures/item/wheat.png"
+            "sprite": "textures/item/wheat.png"
         }
     ],
     "type": "origins:multiple",
@@ -56,7 +56,7 @@
             ]
         },
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:generic.movement_speed",
+        "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
             "value": -0.25
@@ -127,7 +127,7 @@
             ]
         },
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:generic.movement_speed",
+        "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
             "value": 0
@@ -161,7 +161,7 @@
             ]
         },
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:generic.movement_speed",
+        "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
             "value": 0.25

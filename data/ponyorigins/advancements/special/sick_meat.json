@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:rotten_flesh"
+            "item": "rotten_flesh"
         },
         "title": "Don't Feel So Good",
         "description": "Too much meat in your diet!",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/food",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

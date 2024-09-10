@@ -11,47 +11,47 @@
                 },
                 "] to toggle"
             ],
-            "sprite": "minecraft:textures/item/feather.png"
+            "sprite": "textures/item/feather.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Water disables flight",
-            "sprite": "minecraft:textures/particle/splash_0.png"
+            "sprite": "textures/particle/splash_0.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Spiderwebs disable flight",
-            "sprite": "minecraft:textures/block/cobweb.png"
+            "sprite": "textures/block/cobweb.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Oil disables flight",
-            "sprite": "minecraft:textures/particle/splash_0.png"
+            "sprite": "textures/particle/splash_0.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Burned wings disable flight",
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Frozen wings disable flight",
-            "sprite": "minecraft:textures/block/ice.png"
+            "sprite": "textures/block/ice.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Severe injuries (below 4 health) disable flight",
-            "sprite": "minecraft:textures/particle/damage.png"
+            "sprite": "textures/particle/damage.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Requires a half block clearance on either side and above to spread your wings",
-            "sprite": "minecraft:textures/item/feather.png"
+            "sprite": "textures/item/feather.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Fall slowly and land gracefully unless exhausted",
-            "sprite": "minecraft:textures/item/feather.png"
+            "sprite": "textures/item/feather.png"
         }
     ],
     "type": "origins:multiple",
@@ -139,7 +139,7 @@
                                                     "inverted": true,
                                                     "type": "origins:ingredient",
                                                     "ingredient": {
-                                                        "item": "minecraft:elytra"
+                                                        "item": "elytra"
                                                     }
                                                 }
                                             }
@@ -217,7 +217,7 @@
                 },
                 {
                     "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
+                    "fluid": "water",
                     "comparison": ">",
                     "compare_to": 0
                 }
@@ -300,7 +300,7 @@
                 },
                 {
                     "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
+                    "fluid": "water",
                     "comparison": ">",
                     "compare_to": 0
                 }
@@ -753,7 +753,7 @@
                         },
                         {
                             "type": "origins:status_effect",
-                            "effect": "minecraft:nausea"
+                            "effect": "nausea"
                         },
                         {
                             "type": "origins:gamemode",
@@ -770,13 +770,13 @@
                         },
                         {
                             "type": "origins:fluid_height",
-                            "fluid": "minecraft:water",
+                            "fluid": "water",
                             "comparison": ">",
                             "compare_to": 0.25
                         },
                         {
                             "type": "origins:fluid_height",
-                            "fluid": "minecraft:lava",
+                            "fluid": "lava",
                             "comparison": ">",
                             "compare_to": 0.1
                         },
@@ -784,7 +784,7 @@
                             "type": "origins:block_collision",
                             "block_condition": {
                                 "type": "origins:block",
-                                "block": "minecraft:cobweb"
+                                "block": "cobweb"
                             },
                             "offset_x": 0,
                             "offset_y": 0,

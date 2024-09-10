@@ -7,7 +7,7 @@
         "ponyorigins:common/energy"
     ],
     "icon": {
-        "item": "minecraft:sculk_vein"
+        "item": "sculk_vein"
     },
     "impact": 0
 }

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:heart_of_the_sea"
+            "item": "heart_of_the_sea"
         },
         "title": "Expensive Taste",
         "description": "Worth it!",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/food",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

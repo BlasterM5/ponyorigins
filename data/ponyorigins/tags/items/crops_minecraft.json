@@ -1,16 +1,16 @@
 {
     "values": [
-        "minecraft:wheat",
-        "minecraft:sugar_cane",
-        "minecraft:potato",
-        "minecraft:beetroot",
-        "minecraft:carrot",
-        "minecraft:melon",
-        "minecraft:pumpkin",
-        "minecraft:cocoa_beans",
-        "minecraft:red_mushroom",
-        "minecraft:brown_mushroom",
-        "minecraft:sweet_berries",
-        "minecraft:glow_berries"
+        "wheat",
+        "sugar_cane",
+        "potato",
+        "beetroot",
+        "carrot",
+        "melon",
+        "pumpkin",
+        "cocoa_beans",
+        "red_mushroom",
+        "brown_mushroom",
+        "sweet_berries",
+        "glow_berries"
     ]
 }

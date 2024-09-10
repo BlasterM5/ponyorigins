@@ -25,15 +25,15 @@
             "required": false
         },
         {
-            "id": "#minecraft:dirt",
+            "id": "#dirt",
             "required": false
         },
         {
-            "id": "#minecraft:stone_crafting_materials",
+            "id": "#stone_crafting_materials",
             "required": false
         },
         {
-            "id": "#minecraft:sand",
+            "id": "#sand",
             "required": false
         }
     ]

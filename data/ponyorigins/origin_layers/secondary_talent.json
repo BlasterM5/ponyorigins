@@ -102,7 +102,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/defender"
+                        "origin": "ponyorigins:talents/defender"
                     },
                     {
                         "inverted": true,
@@ -131,7 +131,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/ranger"
+                        "origin": "ponyorigins:talents/ranger"
                     }
                 ]
             },
@@ -155,7 +155,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/miner"
+                        "origin": "ponyorigins:talents/miner"
                     }
                 ]
             },
@@ -179,7 +179,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/runner"
+                        "origin": "ponyorigins:talents/runner"
                     }
                 ]
             },
@@ -212,7 +212,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/tamer"
+                        "origin": "ponyorigins:talents/tamer"
                     }
                 ]
             },
@@ -236,7 +236,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/manespace"
+                        "origin": "ponyorigins:talents/manespace"
                     }
                 ]
             },
@@ -307,7 +307,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/flora"
+                        "origin": "ponyorigins:talents/flora"
                     }
                 ]
             },
@@ -340,7 +340,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/teleport"
+                        "origin": "ponyorigins:talents/teleport"
                     }
                 ]
             },
@@ -373,7 +373,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/fireball"
+                        "origin": "ponyorigins:talents/fireball"
                     }
                 ]
             },
@@ -406,7 +406,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/firecracker"
+                        "origin": "ponyorigins:talents/firecracker"
                     }
                 ]
             },
@@ -439,7 +439,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/flamethrower"
+                        "origin": "ponyorigins:talents/flamethrower"
                     }
                 ]
             },
@@ -472,7 +472,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/ice_beam"
+                        "origin": "ponyorigins:talents/ice_beam"
                     }
                 ]
             },
@@ -505,7 +505,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/shock_ray"
+                        "origin": "ponyorigins:talents/shock_ray"
                     }
                 ]
             },
@@ -538,7 +538,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/thunder"
+                        "origin": "ponyorigins:talents/thunder"
                     }
                 ]
             },
@@ -566,7 +566,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/vanish"
+                        "origin": "ponyorigins:talents/vanish"
                     }
                 ]
             },
@@ -617,7 +617,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/barrier"
+                        "origin": "ponyorigins:talents/barrier"
                     }
                 ]
             },
@@ -645,7 +645,7 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:unicorn/laser"
+                        "origin": "ponyorigins:talents/laser"
                     }
                 ]
             },

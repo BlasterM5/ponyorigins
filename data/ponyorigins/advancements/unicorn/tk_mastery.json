@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:diamond_pickaxe"
+            "item": "diamond_pickaxe"
         },
         "title": "Telekinetic Mastery",
         "description": "Master telekinesis by mining with tools",
@@ -12,7 +12,7 @@
     "parent": "ponyorigins:unicorn/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

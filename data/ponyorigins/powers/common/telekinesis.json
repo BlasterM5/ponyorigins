@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "text": "+3 Reach with held item",
-            "sprite": "minecraft:textures/particle/glow.png"
+            "sprite": "textures/particle/glow.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Requires Energy",
-            "sprite": "minecraft:textures/item/light.png"
+            "sprite": "textures/item/light.png"
         }
     ],
     "condition": {

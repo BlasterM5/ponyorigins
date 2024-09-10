@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:writable_book"
+            "item": "writable_book"
         },
         "title": "Pegasus Mastery",
         "description": "Master the Pegasus way",
@@ -16,7 +16,7 @@
     },
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

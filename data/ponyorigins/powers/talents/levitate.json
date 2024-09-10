@@ -15,7 +15,7 @@
                 },
                 "] to toggle"
             ],
-            "sprite": "minecraft:textures/item/feather.png"
+            "sprite": "textures/item/feather.png"
         }
     ],
     "type": "origins:multiple",
@@ -138,7 +138,8 @@
                         },
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:unicorn/levitate"
+                            "origin": "ponyorigins:talents/levitate",
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -164,7 +165,8 @@
                         },
                         {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:talents/levitate"
+                            "origin": "ponyorigins:talents/levitate",
+                            "layer": "ponyorigins:secondary_talent"
                         },
                         {
                             "type": "origins:resource",

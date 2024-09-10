@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:firework_rocket"
+            "item": "firework_rocket"
         },
         "title": "The Grand Tour",
         "description": "Visit every world, dimension, and orbit",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

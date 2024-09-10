@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:poisonous_potato"
+            "item": "poisonous_potato"
         },
         "title": "Don't Feel So Good",
         "description": "Not enough meat in your diet!",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/food",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

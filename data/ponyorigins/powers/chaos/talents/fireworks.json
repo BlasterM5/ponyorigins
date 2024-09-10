@@ -11,7 +11,7 @@
                 },
                 "] to launch"
             ],
-            "sprite": "minecraft:textures/item/firework_rocket.png"
+            "sprite": "textures/item/firework_rocket.png"
         }
     ],
     "type": "origins:multiple",

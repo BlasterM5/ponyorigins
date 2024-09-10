@@ -381,19 +381,19 @@
             "required": false
         },
         {
-            "id": "minecraft:iron_block",
+            "id": "iron_block",
             "required": false
         },
         {
-            "id": "minecraft:copper_block",
+            "id": "copper_block",
             "required": false
         },
         {
-            "id": "minecraft:gold_block",
+            "id": "gold_block",
             "required": false
         },
         {
-            "id": "minecraft:redstone_block",
+            "id": "redstone_block",
             "required": false
         },
         {

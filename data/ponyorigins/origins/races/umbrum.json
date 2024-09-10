@@ -13,7 +13,7 @@
         "ponyorigins:common/sounds/spectre"
     ],
     "icon": {
-        "item": "minecraft:amethyst_shard"
+        "item": "amethyst_shard"
     },
     "order": 9,
     "impact": 0

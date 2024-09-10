@@ -5,27 +5,27 @@
         {
             "type": "origins:tooltip",
             "text": "Flight Speed -50 percent",
-            "sprite": "minecraft:textures/item/phantom_membrane.png"
+            "sprite": "textures/item/phantom_membrane.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Flight disabled in rain and water",
-            "sprite": "minecraft:textures/particle/splash_0.png"
+            "sprite": "textures/particle/splash_0.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Wings can be frozen in snowstorms",
-            "sprite": "minecraft:textures/block/ice.png"
+            "sprite": "textures/block/ice.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Cobweb clearing rate +100 percent",
-            "sprite": "minecraft:textures/block/cobweb.png"
+            "sprite": "textures/block/cobweb.png"
         },
         {
             "type": "origins:tooltip",
             "text": "Burn heal rate -100 percent",
-            "sprite": "minecraft:textures/particle/flame.png"
+            "sprite": "textures/particle/flame.png"
         }
     ],
     "type": "origins:simple"

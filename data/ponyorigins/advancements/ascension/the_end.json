@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:dragon_egg"
+            "item": "dragon_egg"
         },
         "title": "Ender Dragon Down",
         "description": "You've defeated the Ender Dragon",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

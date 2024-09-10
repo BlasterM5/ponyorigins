@@ -11,7 +11,7 @@
                 },
                 "] to advance time"
             ],
-            "sprite": "minecraft:textures/item/clock_45.png"
+            "sprite": "textures/item/clock_45.png"
         }
     ],
     "type": "origins:active_self",
@@ -24,7 +24,7 @@
             },
             {
                 "type": "origins:execute_command",
-                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle minecraft:instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
             },
             {
                 "type": "origins:change_resource",

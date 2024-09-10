@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "Ranged Attack Damage +25 percent",
-            "sprite": "minecraft:textures/item/arrow.png"
+            "sprite": "textures/item/arrow.png"
         }
     ],
     "hidden": true,

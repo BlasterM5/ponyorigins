@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:nether_star"
+            "item": "nether_star"
         },
         "title": "Alicorn",
         "description": "The path to Ascension",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:root",
     "criteria": {
         "info": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

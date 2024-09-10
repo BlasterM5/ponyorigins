@@ -1,8 +1,8 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:diamond_chestplate",
-            "nbt": "{Enchantments:[{id:\"minecraft:protection\",lvl:4s}]}"
+            "item": "diamond_chestplate",
+            "nbt": "{Enchantments:[{id:\"protection\",lvl:4s}]}"
         },
         "title": "Uniguard Armor",
         "description": "Power up every piece of your Armor",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:unicorn/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

@@ -1,23 +1,23 @@
 {
     "values": [
         {
-            "id": "minecraft:cat",
+            "id": "cat",
             "required": false
         },
         {
-            "id": "minecraft:llama",
+            "id": "llama",
             "required": false
         },
         {
-            "id": "minecraft:parrot",
+            "id": "parrot",
             "required": false
         },
         {
-            "id": "minecraft:trader_llama",
+            "id": "trader_llama",
             "required": false
         },
         {
-            "id": "minecraft:wolf",
+            "id": "wolf",
             "required": false
         },
         {

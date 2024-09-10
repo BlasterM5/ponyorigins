@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "+5 Energy/sec, -1.25 Hunger/sec. Hunger below 6 stops charging",
-            "sprite": "minecraft:textures/item/light.png"
+            "sprite": "textures/item/light.png"
         }
     ],
     "type": "origins:multiple",
@@ -307,7 +307,7 @@
                 },
                 {
                     "type": "origins:play_sound",
-                    "sound": "minecraft:item.trident.return",
+                    "sound": "item.trident.return",
                     "volume": 1,
                     "pitch": 1
                 },
@@ -325,7 +325,7 @@
                 },
                 {
                     "type": "origins:spawn_particles",
-                    "particle": "minecraft:firework",
+                    "particle": "firework",
                     "count": 64,
                     "speed": 1,
                     "force": true,
@@ -367,7 +367,7 @@
                 {
                     "type": "origins:apply_effect",
                     "effect": {
-                        "effect": "minecraft:speed",
+                        "effect": "speed",
                         "duration": 100,
                         "amplifier": 1,
                         "show_particles": true,
@@ -376,7 +376,7 @@
                 },
                 {
                     "type": "origins:spawn_particles",
-                    "particle": "minecraft:electric_spark",
+                    "particle": "electric_spark",
                     "count": 8,
                     "speed": 1,
                     "force": true,
@@ -398,12 +398,12 @@
             "actions": [
                 {
                     "type": "origins:clear_effect",
-                    "effect": "minecraft:speed"
+                    "effect": "speed"
                 },
                 {
                     "type": "origins:apply_effect",
                     "effect": {
-                        "effect": "minecraft:slowness",
+                        "effect": "slowness",
                         "duration": 1200,
                         "amplifier": 0,
                         "show_particles": true,

@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "text": "Waterproof",
-            "sprite": "minecraft:textures/particle/splash_0.png"
+            "sprite": "textures/particle/splash_0.png"
         }
     ],
     "type": "origins:simple"

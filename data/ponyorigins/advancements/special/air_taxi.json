@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:saddle"
+            "item": "saddle"
         },
         "title": "Air Taxi",
         "description": "Get a ride on another flying player",
@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/flight",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

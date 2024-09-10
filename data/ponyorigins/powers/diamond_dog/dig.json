@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "text": "When Unarmed: +400 percent Attack Damage",
-            "sprite": "minecraft:textures/item/iron_sword.png"
+            "sprite": "textures/item/iron_sword.png"
         },
         {
             "type": "origins:tooltip",
             "text": "When Unarmed and breaking natural terrain: +300 percent Block Break Speed",
-            "sprite": "minecraft:textures/item/iron_pickaxe.png"
+            "sprite": "textures/item/iron_pickaxe.png"
         }
     ],
     "type": "origins:multiple",

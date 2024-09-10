@@ -1,8 +1,8 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:potion",
-            "nbt": "{Potion:\"minecraft:empty\"}"
+            "item": "potion",
+            "nbt": "{Potion:\"empty\"}"
         },
         "title": "Chaos",
         "description": "You did it. You actually did it, you mad lad!",
@@ -14,7 +14,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "minecraft:impossible"
+            "trigger": "impossible"
         }
     }
 }

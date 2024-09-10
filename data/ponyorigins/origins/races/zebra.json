@@ -14,7 +14,7 @@
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {
-        "item": "minecraft:vine"
+        "item": "vine"
     },
     "order": 6,
     "impact": 0

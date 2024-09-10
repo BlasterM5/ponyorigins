@@ -11,7 +11,7 @@
         "ponyorigins:common/sounds/goat"
     ],
     "icon": {
-        "item": "minecraft:goat_horn"
+        "item": "goat_horn"
     },
     "order": 2,
     "impact": 0
