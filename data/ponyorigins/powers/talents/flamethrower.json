@@ -453,7 +453,7 @@
                             },
                             "if_action": {
                                 "type": "origins:execute_command",
-                                "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force"
+                                "command": "function ponyorigins:charge/spark"
                             },
                             "else_action": {
                                 "type": "origins:if_else",
@@ -468,7 +468,7 @@
                                 },
                                 "else_action": {
                                     "type": "origins:execute_command",
-                                    "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle bubble_column_up ~ ~ ~ 0 0.1 0 1 0 force"
+                                    "command": "function ponyorigins:charge/bubble"
                                 }
                             }
                         }

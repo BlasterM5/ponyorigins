@@ -116,8 +116,8 @@
                     "else_action": {
                         "type": "origins:if_else",
                         "condition": {
-                            "type": "origins:scoreboard",
-                            "objective": "po.chlove",
+                            "type": "origins:resource",
+                            "resource": "*:*_love",
                             "comparison": ">=",
                             "compare_to": 1
                         },
@@ -125,8 +125,10 @@
                             "type": "origins:and",
                             "actions": [
                                 {
-                                    "type": "origins:execute_command",
-                                    "command": "scoreboard players operation @s po.chlove -= 1"
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_love",
+                                    "change": -1,
+                                    "operation": "add"
                                 },
                                 {
                                     "type": "origins:execute_command",
@@ -235,8 +237,8 @@
                                         "condition": {
                                             "type": "origins:target_condition",
                                             "condition": {
-                                                "type": "origins:scoreboard",
-                                                "objective": "po.chtaint",
+                                                "type": "origins:resource",
+                                                "resource": "*:*_taint",
                                                 "comparison": ">=",
                                                 "compare_to": 4
                                             }
@@ -244,15 +246,19 @@
                                         "if_action": {
                                             "type": "origins:target_action",
                                             "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "scoreboard players operation @s po.chtaint -= 4"
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_taint",
+                                                "change": -4,
+                                                "operation": "add"
                                             }
                                         },
                                         "else_action": {
                                             "type": "origins:target_action",
                                             "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "scoreboard players operation @s po.chlove += 4"
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_love",
+                                                "change": 4,
+                                                "operation": "add"
                                             }
                                         }
                                     }
@@ -291,8 +297,8 @@
                                         "condition": {
                                             "type": "origins:target_condition",
                                             "condition": {
-                                                "type": "origins:scoreboard",
-                                                "objective": "po.chtaint",
+                                                "type": "origins:resource",
+                                                "resource": "*:*_taint",
                                                 "comparison": ">=",
                                                 "compare_to": 2
                                             }
@@ -300,15 +306,19 @@
                                         "if_action": {
                                             "type": "origins:target_action",
                                             "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "scoreboard players operation @s po.chtaint -= 2"
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_taint",
+                                                "change": -2,
+                                                "operation": "add"
                                             }
                                         },
                                         "else_action": {
                                             "type": "origins:target_action",
                                             "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "scoreboard players operation @s po.chlove += 2"
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_love",
+                                                "change": 2,
+                                                "operation": "add"
                                             }
                                         }
                                     }
@@ -347,8 +357,8 @@
                                         "condition": {
                                             "type": "origins:target_condition",
                                             "condition": {
-                                                "type": "origins:scoreboard",
-                                                "objective": "po.chtaint",
+                                                "type": "origins:resource",
+                                                "resource": "*:*_taint",
                                                 "comparison": ">=",
                                                 "compare_to": 1
                                             }
@@ -356,15 +366,19 @@
                                         "if_action": {
                                             "type": "origins:target_action",
                                             "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "scoreboard players operation @s po.chtaint -= 1"
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_taint",
+                                                "change": -1,
+                                                "operation": "add"
                                             }
                                         },
                                         "else_action": {
                                             "type": "origins:target_action",
                                             "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "scoreboard players operation @s po.chlove += 1"
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_love",
+                                                "change": 1,
+                                                "operation": "add"
                                             }
                                         }
                                     }
@@ -399,8 +413,8 @@
                                 "condition": {
                                     "type": "origins:actor_condition",
                                     "condition": {
-                                        "type": "origins:scoreboard",
-                                        "objective": "po.chtaint",
+                                        "type": "origins:resource",
+                                        "resource": "*:*_taint",
                                         "comparison": ">=",
                                         "compare_to": 10
                                     }
@@ -408,15 +422,19 @@
                                 "if_action": {
                                     "type": "origins:actor_action",
                                     "action": {
-                                        "type": "origins:execute_command",
-                                        "command": "scoreboard players operation @s po.chtaint -= 10"
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_taint",
+                                        "change": -10,
+                                        "operation": "add"
                                     }
                                 },
                                 "else_action": {
                                     "type": "origins:actor_action",
                                     "action": {
-                                        "type": "origins:execute_command",
-                                        "command": "scoreboard players operation @s po.chlove += 10"
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_love",
+                                        "change": 10,
+                                        "operation": "add"
                                     }
                                 }
                             },
@@ -425,9 +443,9 @@
                                 "condition": {
                                     "type": "origins:actor_condition",
                                     "condition": {
-                                        "type": "origins:scoreboard",
-                                        "objective": "po.chlove",
-                                        "comparison": ">=",
+                                        "type": "origins:resource",
+                                        "resource": "*:*_love",
+                                        "comparison": "==",
                                         "compare_to": 1000
                                     }
                                 },
@@ -458,8 +476,10 @@
                                                             "command": "scoreboard players set @s po.chdorb 1"
                                                         },
                                                         {
-                                                            "type": "origins:execute_command",
-                                                            "command": "scoreboard players set @s po.chlove 0"
+                                                            "type": "origins:change_resource",
+                                                            "resource": "*:*_love",
+                                                            "change": 0,
+                                                            "operation": "set"
                                                         }
                                                     ]
                                                 }
@@ -497,8 +517,8 @@
                                     "advancement": "ponyorigins:changeling/loved"
                                 },
                                 {
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.chtaint",
+                                    "type": "origins:resource",
+                                    "resource": "*:*_taint",
                                     "comparison": "==",
                                     "compare_to": 0
                                 }

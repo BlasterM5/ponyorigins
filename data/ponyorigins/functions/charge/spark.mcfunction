@@ -1,0 +1,1 @@
+execute anchored eyes positioned ^ ^0.5 ^0.5 run particle instant_effect ~ ~ ~ 0 0.1 0 1 0 force
