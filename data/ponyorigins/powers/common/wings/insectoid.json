@@ -1,6 +1,6 @@
 {
     "name": "Insectoid Wings",
-    "description": "Your wings are thin, cellular membranes. They don't work when wet, but are resilient against physical injuries.",
+    "description": "Your wings are thin, cellular membranes. Extremely light, they flap very easily and are resilient against physical injuries, but they become too heavy to fly when wet.",
     "badges": [
         {
             "type": "origins:tooltip",

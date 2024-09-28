@@ -1,8 +1,8 @@
 {
     "values": [
         {
-            "id": "beetroot",
-            "required": false
+            "id": "beetroots",
+            "required": true
         },
         {
             "id": "nether_wart",
@@ -18,6 +18,18 @@
         },
         {
             "id": "ubesdelight:lemongrass_leaf_crop",
+            "required": false
+        },
+        {
+            "id": "culinaire:lettuce",
+            "required": false
+        },
+        {
+            "id": "culinaire:tomatoes",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:corn",
             "required": false
         }
     ]

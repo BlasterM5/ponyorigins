@@ -12,7 +12,7 @@
     "parent": "ponyorigins:unicorn/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

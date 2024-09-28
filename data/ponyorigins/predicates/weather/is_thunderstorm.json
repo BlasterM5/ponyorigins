@@ -1,5 +1,5 @@
 {
-    "condition": "weather_check",
+    "condition": "minecraft:weather_check",
     "raining": true,
     "thundering": true
 }

@@ -1,6 +1,6 @@
 {
     "name": "Pony Sounds",
-    "description": "Ponies make horse noises",
+    "description": "Ponies make horse noises.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

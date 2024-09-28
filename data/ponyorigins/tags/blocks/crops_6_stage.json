@@ -1,0 +1,12 @@
+{
+    "values": [
+        {
+            "id": "barrier",
+            "required": true
+        },
+        {
+            "id": "bakingdelight:black_pepper",
+            "required": false
+        }
+    ]
+}

@@ -2,7 +2,6 @@
     "name": "Earth Pony Advancements",
     "description": "Contains Advancement Logic for Earth Pony",
     "hidden": true,
-    "loading_priority": 1,
     "type": "origins:multiple",
     "advancement_setup": {
         "type": "origins:action_on_callback",
@@ -83,13 +82,28 @@
                             "conditions": [
                                 {
                                     "type": "origins:in_tag",
-                                    "tag": "ponyorigins:crops_2_stage"
+                                    "tag": "ponyorigins:crops_6_stage"
                                 },
                                 {
                                     "type": "origins:block_state",
                                     "property": "age",
-                                    "comparison": "==",
-                                    "compare_to": 2
+                                    "comparison": ">=",
+                                    "compare_to": 6
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:crops_5_stage"
+                                },
+                                {
+                                    "type": "origins:block_state",
+                                    "property": "age",
+                                    "comparison": ">=",
+                                    "compare_to": 5
                                 }
                             ]
                         },
@@ -103,8 +117,23 @@
                                 {
                                     "type": "origins:block_state",
                                     "property": "age",
-                                    "comparison": "==",
+                                    "comparison": ">=",
                                     "compare_to": 3
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:crops_2_stage"
+                                },
+                                {
+                                    "type": "origins:block_state",
+                                    "property": "age",
+                                    "comparison": ">=",
+                                    "compare_to": 2
                                 }
                             ]
                         },
@@ -115,7 +144,7 @@
                         {
                             "type": "origins:block_state",
                             "property": "age",
-                            "comparison": "==",
+                            "comparison": ">=",
                             "compare_to": 7
                         }
                     ]

@@ -2,7 +2,6 @@
     "name": "00 Common Checks",
     "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key, as well as VAPS and the harmonic resonator mechanics.",
     "hidden": true,
-    "loading_priority": 0,
     "type": "origins:multiple",
     "vaps": {
         "type": "origins:action_on_callback",
@@ -681,7 +680,7 @@
                     }
                 ]
             },
-            "ticks": 10
+            "ticks": 2
         }
     },
     "key_primary": {

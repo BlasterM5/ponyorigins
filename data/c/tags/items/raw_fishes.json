@@ -381,11 +381,39 @@
             "required": false
         },
         {
-            "id": "usefulfood:squidrtentacle",
+            "id": "usefulfood:squidtentacle",
             "required": false
         },
         {
             "id": "usefulfood:squidsushi",
+            "required": false
+        },
+        {
+            "id": "#c:foods/raw_fishes",
+            "required": false
+        },
+        {
+            "id": "#c:foods/raw_squid",
+            "required": false
+        },
+        {
+            "id": "#c:foods/raw_calamari",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:squid_tentacle",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:glow_squid_tentacle",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:raw_glow_squid_tentacle_kebabs",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:raw_squid_tentacle_kebabs",
             "required": false
         }
     ]

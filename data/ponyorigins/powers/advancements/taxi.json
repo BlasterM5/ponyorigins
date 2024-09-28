@@ -2,7 +2,6 @@
     "name": "Taxi Advancement Tracker",
     "description": "This checks for the taxi advancement",
     "hidden": true,
-    "loading_priority": 1,
     "type": "origins:multiple",
     "taxi_check": {
         "type": "origins:action_over_time",

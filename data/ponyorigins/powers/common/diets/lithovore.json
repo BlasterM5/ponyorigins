@@ -94,7 +94,7 @@
             "operation": "add"
         }
     },
-    "edible_nether_star": {
+    "edible_gapple_equivalent": {
         "condition": {
             "type": "origins:resource",
             "resource": "ponyorigins:dragon/heat_sc_triggered",
@@ -105,7 +105,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "item": "nether_star"
+                "tag": "ponyorigins:dragon_gapples"
             }
         },
         "food_component": {
@@ -130,6 +130,75 @@
                             "effect": "regeneration",
                             "duration": 100,
                             "amplifier": 1,
+                            "show_particles": true,
+                            "show_icon": true
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:special/star_power"
+                    },
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "advancement grant @s until ponyorigins:special/star_power"
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:dragon/heat_level",
+                    "change": 10,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "edible_egapple_equivalent": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "apugli:edible_item",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:dragon_egapples"
+            }
+        },
+        "food_component": {
+            "hunger": 16,
+            "saturation": 1,
+            "always_edible": true
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "absorption",
+                            "duration": 2400,
+                            "amplifier": 3,
+                            "show_particles": true,
+                            "show_icon": true
+                        },
+                        {
+                            "effect": "regeneration",
+                            "duration": 400,
+                            "amplifier": 1,
+                            "show_particles": true,
+                            "show_icon": true
+                        },
+                        {
+                            "effect": "resistance",
+                            "duration": 6000,
+                            "amplifier": 0,
                             "show_particles": true,
                             "show_icon": true
                         }

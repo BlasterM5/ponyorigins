@@ -1,6 +1,6 @@
 {
     "name": "Goat Sounds",
-    "description": "Goats make goat noises",
+    "description": "Goats make goat noises.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

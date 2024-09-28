@@ -531,6 +531,14 @@
         {
             "id": "clutter:silver_block",
             "required": false
+        },
+        {
+            "id": "#c:tin_blocks",
+            "required": false
+        },
+        {
+            "id": "rosegoldequipment:rose_gold_block",
+            "required": false
         }
     ]
 }

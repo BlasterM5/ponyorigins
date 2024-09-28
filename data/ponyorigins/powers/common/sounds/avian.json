@@ -1,6 +1,6 @@
 {
     "name": "Avian Sounds",
-    "description": "Avian races make bird noises, accounts for waterborn hippogriff as well",
+    "description": "Avian races make bird noises, accounts for waterborn hippogriff as well.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

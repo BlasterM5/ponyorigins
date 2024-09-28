@@ -11,6 +11,10 @@
         {
             "id": "netherdepthsupgrade:lava_pufferfish_slice",
             "required": false
+        },
+        {
+            "id": "culturaldelights:pufferfish_roll",
+            "required": false
         }
     ]
 }

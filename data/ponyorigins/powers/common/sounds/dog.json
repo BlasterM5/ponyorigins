@@ -1,6 +1,6 @@
 {
     "name": "Dog Sounds",
-    "description": "Dog races make dog noises",
+    "description": "Dog races make dog noises.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

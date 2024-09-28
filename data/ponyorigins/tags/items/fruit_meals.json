@@ -1075,6 +1075,26 @@
         {
             "id": "usefulfood:melonjam",
             "required": false
+        },
+        {
+            "id": "nutritious_feast:blueberry_pie",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:hearty_salad",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:avocado_toast",
+            "required": false
+        },
+        {
+            "id": "ends_delight:end_mixed_salad",
+            "required": false
+        },
+        {
+            "id": "ends_delight:assorted_salad",
+            "required": false
         }
     ]
 }

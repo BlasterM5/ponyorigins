@@ -1,6 +1,6 @@
 {
     "name": "Membraneous Wings",
-    "description": "Your wings are folds of skin, stretched out like sails. They can't get waterlogged, but take longer to heal from injuries.",
+    "description": "Your wings are folds of skin, stretched out like sails. They can't get waterlogged, but take longer to heal from injuries and have no protection against freezing weather.",
     "badges": [
         {
             "type": "origins:tooltip",

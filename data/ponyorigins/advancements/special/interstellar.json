@@ -16,91 +16,91 @@
     },
     "criteria": {
         "nether": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "nether",
                 "player": {}
             }
         },
         "the_end": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "the_end",
                 "player": {}
             }
         },
         "earth_orbit": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:earth_orbit",
                 "player": {}
             }
         },
         "moon": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:moon",
                 "player": {}
             }
         },
         "moon_orbit": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:moon_orbit",
                 "player": {}
             }
         },
         "mars": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:mars",
                 "player": {}
             }
         },
         "mars_orbit": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:mars_orbit",
                 "player": {}
             }
         },
         "venus": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:venus",
                 "player": {}
             }
         },
         "venus_orbit": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:venus_orbit",
                 "player": {}
             }
         },
         "mercury": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:mercury",
                 "player": {}
             }
         },
         "mercury_orbit": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:mercury_orbit",
                 "player": {}
             }
         },
         "glacio": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:glacio",
                 "player": {}
             }
         },
         "glacio_orbit": {
-            "trigger": "changed_dimension",
+            "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "ad_astra:glacio_orbit",
                 "player": {}

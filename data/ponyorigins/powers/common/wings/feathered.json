@@ -1,5 +1,5 @@
 {
     "name": "Feathered Wings",
-    "hidden": true,
+    "description": "Your wings are covered in light yet sturdy feathers, which maximize your wingspan when unfurled, allowing you to fly. Feathers protect your wings from freezing weather.",
     "type": "origins:simple"
 }

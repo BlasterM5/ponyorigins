@@ -3,6 +3,10 @@
         {
             "id": "casualness_delight:stargazy_pie",
             "required": false
+        },
+        {
+            "id": "culturaldelights:exotic_roll_medley",
+            "required": false
         }
     ]
 }

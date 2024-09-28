@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "brown_mushroom",
-            "required": false
+            "required": true
         },
         {
             "id": "red_mushroom",
@@ -74,6 +74,38 @@
         },
         {
             "id": "ubesdelight:wild_ube",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:wild_pepper",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:wild_garlic",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:wild_coffee_plant",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:wild_rooibos_plant",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:wild_yerba_mate_plant",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:wild_corn",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:wild_cucumbers",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:wild_eggplants",
             "required": false
         }
     ]

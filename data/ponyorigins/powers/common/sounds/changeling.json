@@ -1,6 +1,6 @@
 {
     "name": "Changeling Sounds",
-    "description": "Changeling races make skeleton horse noises",
+    "description": "Changeling races make skeleton horse noises.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

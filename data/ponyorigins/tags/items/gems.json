@@ -319,6 +319,38 @@
         {
             "id": "spectrum:mermaids_gem",
             "required": false
+        },
+        {
+            "id": "thelongstory:zarosite_gemstone",
+            "required": false
+        },
+        {
+            "id": "thelongstory:zarosite_shard",
+            "required": false
+        },
+        {
+            "id": "thelongstory:green_shard",
+            "required": false
+        },
+        {
+            "id": "thelongstory:pure_amethyst_shard",
+            "required": false
+        },
+        {
+            "id": "thelongstory:flaming_shard",
+            "required": false
+        },
+        {
+            "id": "ait:zeiton_shard",
+            "required": false
+        },
+        {
+            "id": "ait:charged_zeiton_crystal",
+            "required": false
+        },
+        {
+            "id": "ait:zeiton_cluster",
+            "required": false
         }
     ]
 }

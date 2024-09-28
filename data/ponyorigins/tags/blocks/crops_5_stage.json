@@ -1,0 +1,16 @@
+{
+    "values": [
+        {
+            "id": "barrier",
+            "required": true
+        },
+        {
+            "id": "bakingdelight:garlic",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:white_eggplants",
+            "required": false
+        }
+    ]
+}

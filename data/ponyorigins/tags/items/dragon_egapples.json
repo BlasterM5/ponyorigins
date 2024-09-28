@@ -1,0 +1,12 @@
+{
+    "values": [
+        {
+            "id": "end_crystal",
+            "required": true
+        },
+        {
+            "id": "thelongstory:power_star",
+            "required": false
+        }
+    ]
+}

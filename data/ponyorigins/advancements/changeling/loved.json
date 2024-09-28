@@ -13,7 +13,7 @@
     "parent": "ponyorigins:changeling/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

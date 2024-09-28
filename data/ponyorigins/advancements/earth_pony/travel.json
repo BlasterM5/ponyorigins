@@ -12,7 +12,7 @@
     "parent": "ponyorigins:earth_pony/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

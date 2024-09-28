@@ -21,29 +21,25 @@
     ],
     "type": "origins:multiple",
     "cd_res": {
-        "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_cd"
-        },
         "type": "origins:resource",
         "min": 0,
-        "max": 2,
+        "max": 1,
         "start_value": 0
     },
     "cd": {
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_cd_res",
-            "comparison": "<",
-            "compare_to": 2
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
-        "interval": 10,
-        "entity_action": {
+        "interval": 4,
+        "rising_action": {
             "type": "origins:change_resource",
             "resource": "*:*_cd_res",
-            "change": 1,
-            "operation": "add"
+            "change": 0,
+            "operation": "set"
         }
     },
     "no_eating_blocks": {
@@ -81,11 +77,11 @@
     "energy_reserve": {
         "condition": {
             "type": "origins:food_level",
-            "comparison": "<",
+            "comparison": "<=",
             "compare_to": 2
         },
         "type": "origins:action_over_time",
-        "interval": 8,
+        "interval": 1,
         "entity_action": {
             "type": "origins:and",
             "actions": [
@@ -94,7 +90,7 @@
                     "condition": {
                         "type": "origins:resource",
                         "resource": "ponyorigins:common/energy_level",
-                        "comparison": ">=",
+                        "comparison": ">",
                         "compare_to": 4
                     },
                     "if_action": {
@@ -108,7 +104,7 @@
                             },
                             {
                                 "type": "origins:feed",
-                                "food": 2,
+                                "food": 1,
                                 "saturation": 0
                             }
                         ]
@@ -118,8 +114,8 @@
                         "condition": {
                             "type": "origins:resource",
                             "resource": "*:*_love",
-                            "comparison": ">=",
-                            "compare_to": 1
+                            "comparison": ">",
+                            "compare_to": 0
                         },
                         "if_action": {
                             "type": "origins:and",
@@ -131,13 +127,9 @@
                                     "operation": "add"
                                 },
                                 {
-                                    "type": "origins:execute_command",
-                                    "command": "function ponyorigins:advancements/update_ch_love"
-                                },
-                                {
                                     "type": "origins:change_resource",
                                     "resource": "ponyorigins:common/energy_level",
-                                    "change": 16,
+                                    "change": 4,
                                     "operation": "add"
                                 }
                             ]
@@ -194,9 +186,20 @@
     },
     "receive_love": {
         "condition": {
-            "type": "origins:food_level",
-            "comparison": "<",
-            "compare_to": 20
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:action_on_being_used",
         "bientity_action": {
@@ -209,129 +212,19 @@
                             "condition": {
                                 "type": "origins:actor_condition",
                                 "condition": {
-                                    "type": "origins:food_level",
-                                    "comparison": ">",
-                                    "compare_to": 8
-                                }
-                            },
-                            "action": {
-                                "type": "origins:and",
-                                "actions": [
-                                    {
-                                        "type": "origins:actor_action",
-                                        "action": {
-                                            "type": "origins:exhaust",
-                                            "amount": 8.5
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:target_action",
-                                        "action": {
-                                            "type": "origins:feed",
-                                            "food": 4,
-                                            "saturation": 1
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:if_else",
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_taint",
-                                                "comparison": ">=",
-                                                "compare_to": 4
-                                            }
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:origin",
+                                            "origin": "ponyorigins:races/changeling"
                                         },
-                                        "if_action": {
-                                            "type": "origins:target_action",
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_taint",
-                                                "change": -4,
-                                                "operation": "add"
-                                            }
-                                        },
-                                        "else_action": {
-                                            "type": "origins:target_action",
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_love",
-                                                "change": 4,
-                                                "operation": "add"
-                                            }
+                                        {
+                                            "type": "origins:food_level",
+                                            "comparison": ">=",
+                                            "compare_to": 2.5
                                         }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:actor_condition",
-                                "condition": {
-                                    "type": "origins:food_level",
-                                    "comparison": ">",
-                                    "compare_to": 4
-                                }
-                            },
-                            "action": {
-                                "type": "origins:and",
-                                "actions": [
-                                    {
-                                        "type": "origins:actor_action",
-                                        "action": {
-                                            "type": "origins:exhaust",
-                                            "amount": 3.5
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:target_action",
-                                        "action": {
-                                            "type": "origins:feed",
-                                            "food": 2,
-                                            "saturation": 1
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:if_else",
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_taint",
-                                                "comparison": ">=",
-                                                "compare_to": 2
-                                            }
-                                        },
-                                        "if_action": {
-                                            "type": "origins:target_action",
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_taint",
-                                                "change": -2,
-                                                "operation": "add"
-                                            }
-                                        },
-                                        "else_action": {
-                                            "type": "origins:target_action",
-                                            "action": {
-                                                "type": "origins:change_resource",
-                                                "resource": "*:*_love",
-                                                "change": 2,
-                                                "operation": "add"
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:actor_condition",
-                                "condition": {
-                                    "type": "origins:food_level",
-                                    "comparison": "<",
-                                    "compare_to": 4
+                                    ]
                                 }
                             },
                             "action": {
@@ -395,8 +288,19 @@
                             "type": "origins:or",
                             "conditions": [
                                 {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:races/changeling"
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:origin",
+                                            "origin": "ponyorigins:races/changeling"
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_love",
+                                            "comparison": ">",
+                                            "compare_to": 1
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "origins:origin",
@@ -408,36 +312,6 @@
                     "if_action": {
                         "type": "origins:and",
                         "actions": [
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:actor_condition",
-                                    "condition": {
-                                        "type": "origins:resource",
-                                        "resource": "*:*_taint",
-                                        "comparison": ">=",
-                                        "compare_to": 10
-                                    }
-                                },
-                                "if_action": {
-                                    "type": "origins:actor_action",
-                                    "action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "*:*_taint",
-                                        "change": -10,
-                                        "operation": "add"
-                                    }
-                                },
-                                "else_action": {
-                                    "type": "origins:actor_action",
-                                    "action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "*:*_love",
-                                        "change": 10,
-                                        "operation": "add"
-                                    }
-                                }
-                            },
                             {
                                 "type": "origins:if_else",
                                 "condition": {
@@ -480,6 +354,10 @@
                                                             "resource": "*:*_love",
                                                             "change": 0,
                                                             "operation": "set"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:advancements/update_ch_love"
                                                         }
                                                     ]
                                                 }
@@ -487,14 +365,61 @@
                                             {
                                                 "type": "origins:target_action",
                                                 "action": {
-                                                    "type": "origins:change_resource",
-                                                    "resource": "*:*_love",
-                                                    "change": 1000,
-                                                    "operation": "add"
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:change_resource",
+                                                            "resource": "*:*_love",
+                                                            "change": 999,
+                                                            "operation": "add"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:advancements/update_ch_love"
+                                                        }
+                                                    ]
                                                 }
                                             }
                                         ]
                                     }
+                                },
+                                "else_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:actor_action",
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_love",
+                                                "change": -1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:target_action",
+                                            "action": {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_taint",
+                                                    "comparison": ">",
+                                                    "compare_to": 0
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_taint",
+                                                    "change": -1,
+                                                    "operation": "add"
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_love",
+                                                    "change": 1,
+                                                    "operation": "add"
+                                                }
+                                            }
+                                        }
+                                    ]
                                 }
                             }
                         ]
@@ -577,20 +502,6 @@
                         "fluid_handling": "any",
                         "command_along_ray": "particle heart ^ ^-0.25 ^ 0 0 0 0.1 1 force"
                     }
-                },
-                {
-                    "type": "origins:target_action",
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "function ponyorigins:advancements/update_ch_love"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "function ponyorigins:advancements/update_ch_love"
-                    }
                 }
             ]
         },
@@ -603,18 +514,10 @@
                         "type": "origins:sneaking"
                     },
                     {
-                        "type": "origins:or",
-                        "conditions": [
-                            {
-                                "type": "origins:food_level",
-                                "comparison": ">",
-                                "compare_to": 4
-                            },
-                            {
-                                "type": "origins:origin",
-                                "origin": "ponyorigins:races/changeling"
-                            }
-                        ]
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_mainhand",
+                        "comparison": "==",
+                        "compare_to": 1
                     }
                 ]
             }
@@ -660,856 +563,289 @@
                     "type": "origins:resource",
                     "resource": "*:*_cd_res",
                     "comparison": "==",
-                    "compare_to": 2
+                    "compare_to": 0
                 }
             ]
         },
         "type": "origins:action_on_entity_use",
         "bientity_action": {
-            "type": "origins:if_else_list",
+            "type": "origins:and",
             "actions": [
                 {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:entity_type",
-                                    "entity_type": "player"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:and",
-                                    "conditions": [
-                                        {
-                                            "type": "origins:food_level",
-                                            "comparison": ">",
-                                            "compare_to": 4
-                                        },
-                                        {
-                                            "type": "origins:health",
-                                            "comparison": ">",
-                                            "compare_to": 2
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:target_condition",
+                                        "condition": {
+                                            "type": "origins:entity_type",
+                                            "entity_type": "player"
                                         }
-                                    ]
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:exhaust",
+                                                    "amount": 1
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:feed",
+                                                    "food": 1,
+                                                    "saturation": 0
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:tamed"
                                 }
                             },
-                            {
-                                "type": "origins:or",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:heal",
+                                            "amount": -1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:feed",
+                                            "food": 1,
+                                            "saturation": 0.5
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
                                 "conditions": [
                                     {
                                         "type": "origins:target_condition",
                                         "condition": {
                                             "inverted": true,
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:origin",
-                                                    "origin": "ponyorigins:races/changeling"
-                                                },
-                                                {
-                                                    "type": "origins:origin",
-                                                    "origin": "ponyorigins:races/changedling"
-                                                }
-                                            ]
+                                            "type": "origins:entity_group",
+                                            "group": "undead"
                                         }
                                     },
                                     {
-                                        "type": "origins:actor_condition",
+                                        "type": "origins:target_condition",
                                         "condition": {
-                                            "type": "origins:resource",
-                                            "resource": "*:*_love",
-                                            "comparison": "<",
-                                            "compare_to": 1000
+                                            "inverted": true,
+                                            "type": "origins:entity_group",
+                                            "group": "illager"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_condition",
+                                        "condition": {
+                                            "inverted": true,
+                                            "type": "origins:entity_group",
+                                            "group": "arthropod"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_condition",
+                                        "condition": {
+                                            "inverted": true,
+                                            "type": "origins:tamed"
                                         }
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else_list",
+                            },
+                            "action": {
+                                "type": "origins:and",
                                 "actions": [
                                     {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:food_level",
-                                                "comparison": ">",
-                                                "compare_to": 11
-                                            }
-                                        },
+                                        "type": "origins:target_action",
                                         "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:exhaust",
-                                                        "amount": 9
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 4,
-                                                        "saturation": 1
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 8
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -8,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 8,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
+                                            "type": "origins:heal",
+                                            "amount": -1
                                         }
                                     },
                                     {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:food_level",
-                                                "comparison": ">",
-                                                "compare_to": 9
-                                            }
-                                        },
+                                        "type": "origins:actor_action",
                                         "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:exhaust",
-                                                        "amount": 7
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 3,
-                                                        "saturation": 1
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 6
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -6,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 6,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:food_level",
-                                                "comparison": ">",
-                                                "compare_to": 7
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:exhaust",
-                                                        "amount": 5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 2,
-                                                        "saturation": 1
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 4
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -4,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 4,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:food_level",
-                                                "comparison": ">",
-                                                "compare_to": 4
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:exhaust",
-                                                        "amount": 2
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 1,
-                                                        "saturation": 1
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 2
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -2,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 2,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
+                                            "type": "origins:feed",
+                                            "food": 1,
+                                            "saturation": 0
                                         }
                                     }
                                 ]
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:raycast",
-                                    "distance": 6,
-                                    "block": true,
-                                    "entity": true,
-                                    "shape_type": "collider",
-                                    "fluid_handling": "any",
-                                    "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
-                                }
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd_res",
-                                    "change": 0,
-                                    "operation": "set"
-                                }
                             }
-                        ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:actor_condition",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_love",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_love",
+                            "change": -1,
+                            "operation": "add"
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_taint",
+                            "change": 1,
+                            "operation": "add"
+                        }
                     }
                 },
                 {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:tamed"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:health",
-                                    "comparison": ">",
-                                    "compare_to": 2
-                                }
-                            }
-                        ]
-                    },
+                    "type": "origins:actor_action",
                     "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else_list",
-                                "actions": [
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:health",
-                                                "comparison": ">",
-                                                "compare_to": 6
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:heal",
-                                                        "amount": -6
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 4,
-                                                        "saturation": 0.5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 4
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -4,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 4,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:health",
-                                                "comparison": ">",
-                                                "compare_to": 3
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:heal",
-                                                        "amount": -4
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 3,
-                                                        "saturation": 0.5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 3
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -3,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 3,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:health",
-                                                "comparison": ">",
-                                                "compare_to": 2
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:heal",
-                                                        "amount": -1.5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 1,
-                                                        "saturation": 0.5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 1
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -1,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 1,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:raycast",
-                                    "distance": 6,
-                                    "block": true,
-                                    "entity": true,
-                                    "shape_type": "collider",
-                                    "fluid_handling": "any",
-                                    "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
-                                }
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd_res",
-                                    "change": 0,
-                                    "operation": "set"
-                                }
-                            }
-                        ]
+                        "type": "origins:raycast",
+                        "distance": 6,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
                     }
                 },
                 {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:entity_group",
-                                    "group": "undead"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:entity_group",
-                                    "group": "illager"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:entity_group",
-                                    "group": "arthropod"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "inverted": true,
-                                    "type": "origins:tamed"
-                                }
-                            },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:health",
-                                    "comparison": ">",
-                                    "compare_to": 1.5
-                                }
-                            }
-                        ]
-                    },
+                    "type": "origins:actor_action",
                     "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:if_else_list",
-                                "actions": [
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:health",
-                                                "comparison": ">",
-                                                "compare_to": 5
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:heal",
-                                                        "amount": -5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 4,
-                                                        "saturation": 0
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 4
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -4,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 4,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:health",
-                                                "comparison": ">",
-                                                "compare_to": 3
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:heal",
-                                                        "amount": -3
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 2,
-                                                        "saturation": 0
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 2
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -2,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 2,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "condition": {
-                                            "type": "origins:target_condition",
-                                            "condition": {
-                                                "type": "origins:health",
-                                                "comparison": ">",
-                                                "compare_to": 1.5
-                                            }
-                                        },
-                                        "action": {
-                                            "type": "origins:and",
-                                            "actions": [
-                                                {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:heal",
-                                                        "amount": -1.5
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:actor_action",
-                                                    "action": {
-                                                        "type": "origins:feed",
-                                                        "food": 1,
-                                                        "saturation": 0
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:if_else",
-                                                    "condition": {
-                                                        "type": "origins:actor_condition",
-                                                        "condition": {
-                                                            "type": "origins:resource",
-                                                            "resource": "*:*_love",
-                                                            "comparison": ">=",
-                                                            "compare_to": 1
-                                                        }
-                                                    },
-                                                    "if_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_love",
-                                                            "change": -1,
-                                                            "operation": "add"
-                                                        }
-                                                    },
-                                                    "else_action": {
-                                                        "type": "origins:actor_action",
-                                                        "action": {
-                                                            "type": "origins:change_resource",
-                                                            "resource": "*:*_taint",
-                                                            "change": 1,
-                                                            "operation": "add"
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:raycast",
-                                    "distance": 6,
-                                    "block": true,
-                                    "entity": true,
-                                    "shape_type": "collider",
-                                    "fluid_handling": "any",
-                                    "command_along_ray": "particle damage_indicator ^ ^-0.25 ^ 0 0 0 0.1 1 force"
-                                }
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd_res",
-                                    "change": 0,
-                                    "operation": "set"
-                                }
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_bar_vis",
-                                    "change": 5,
-                                    "operation": "add"
-                                }
-                            }
-                        ]
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd_res",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_bar_vis",
+                        "change": 5,
+                        "operation": "add"
                     }
                 }
             ]
         },
         "bientity_condition": {
-            "type": "origins:target_condition",
-            "condition": {
-                "type": "origins:living"
-            }
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:health",
+                                "comparison": ">",
+                                "compare_to": 2
+                            },
+                            {
+                                "type": "origins:living"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:entity_type",
+                                        "entity_type": "player"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:origin",
+                                        "origin": "ponyorigins:races/changeling"
+                                    },
+                                    {
+                                        "type": "origins:food_level",
+                                        "comparison": ">",
+                                        "compare_to": 2
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:actor_condition",
+                                    "condition": {
+                                        "inverted": true,
+                                        "type": "origins:sneaking"
+                                    }
+                                },
+                                {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:entity_type",
+                                                "entity_type": "player"
+                                            },
+                                            {
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:races/changeling"
+                                            },
+                                            {
+                                                "type": "origins:food_level",
+                                                "comparison": ">",
+                                                "compare_to": 2
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         "action_result": "consume",
-        "priority": 1
+        "priority": 2
     },
     "no_fd_nourishment": {
         "type": "origins:effect_immunity",

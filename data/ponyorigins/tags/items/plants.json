@@ -319,6 +319,106 @@
         {
             "id": "sandwichable:ancient_grain",
             "required": false
+        },
+        {
+            "id": "thelongstory:egoric_leaves",
+            "required": false
+        },
+        {
+            "id": "thelongstory:oast_leaves",
+            "required": false
+        },
+        {
+            "id": "thelongstory:sephin_leaves",
+            "required": false
+        },
+        {
+            "id": "thelongstory:kiwi_leaves",
+            "required": false
+        },
+        {
+            "id": "thelongstory:binary_leaves",
+            "required": false
+        },
+        {
+            "id": "thelongstory:torn_bush",
+            "required": false
+        },
+        {
+            "id": "thelongstory:torn_flower",
+            "required": false
+        },
+        {
+            "id": "thelongstory:pink_phygelus",
+            "required": false
+        },
+        {
+            "id": "thelongstory:yellow_phygelus",
+            "required": false
+        },
+        {
+            "id": "thelongstory:red_ospet",
+            "required": false
+        },
+        {
+            "id": "thelongstory:blue_ospet",
+            "required": false
+        },
+        {
+            "id": "thelongstory:green_ospet",
+            "required": false
+        },
+        {
+            "id": "thelongstory:yellow_ospet",
+            "required": false
+        },
+        {
+            "id": "thelongstory:bulbo_flower",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:green_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:green_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:dried_green_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:dried_out_green_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:black_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:mixed_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:oolong_tea_leaf_block",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:hibiscus",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:lavender",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:lavender_blossom",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:green_tea_leaf",
+            "required": false
         }
     ]
 }

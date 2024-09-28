@@ -35,6 +35,10 @@
         {
             "id": "spectrum:pure_coal",
             "required": false
+        },
+        {
+            "id": "thelongstory:flaming_shard",
+            "required": false
         }
     ]
 }

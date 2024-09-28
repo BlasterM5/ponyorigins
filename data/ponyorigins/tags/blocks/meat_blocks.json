@@ -31,6 +31,10 @@
         {
             "id": "placeable_food:big_hamburger",
             "required": false
+        },
+        {
+            "id": "#ponyorigins:seafood_blocks",
+            "required": false
         }
     ]
 }

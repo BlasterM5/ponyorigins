@@ -1,6 +1,6 @@
 {
     "name": "Dragon Sounds",
-    "description": "Dragons make dragon noises",
+    "description": "Dragons make dragon noises.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

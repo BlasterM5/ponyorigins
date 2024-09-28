@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "iron_helmet",
-            "required": false
+            "required": true
         },
         {
             "id": "iron_chestplate",
@@ -598,6 +598,22 @@
         },
         {
             "id": "oretastic:steel_boots",
+            "required": false
+        },
+        {
+            "id": "rosegoldequipment:rose_golden_helmet",
+            "required": false
+        },
+        {
+            "id": "rosegoldequipment:rose_golden_chestplate",
+            "required": false
+        },
+        {
+            "id": "rosegoldequipment:rose_golden_leggings",
+            "required": false
+        },
+        {
+            "id": "rosegoldequipment:rose_golden_boots",
             "required": false
         }
     ]

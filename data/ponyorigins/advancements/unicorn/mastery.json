@@ -16,7 +16,7 @@
     },
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

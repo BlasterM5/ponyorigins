@@ -2,7 +2,6 @@
     "name": "Pegasus Advancements",
     "description": "Contains Advancement Logic for Pegasus",
     "hidden": true,
-    "loading_priority": 1,
     "type": "origins:multiple",
     "advancement_setup": {
         "type": "origins:action_on_callback",

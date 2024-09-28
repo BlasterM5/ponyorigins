@@ -3,6 +3,18 @@
         {
             "id": "expandeddelight:cheese_slice",
             "required": false
+        },
+        {
+            "id": "culinaire:cheese",
+            "required": false
+        },
+        {
+            "id": "brewinandchewin:flaxen_cheese_wedge",
+            "required": false
+        },
+        {
+            "id": "brewinandchewin:scarlet_cheese_wedge",
+            "required": false
         }
     ]
 }

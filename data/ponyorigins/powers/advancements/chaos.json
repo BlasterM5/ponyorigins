@@ -2,7 +2,6 @@
     "name": "Chaos Advancement Tracker",
     "description": "Do you like Chaos?",
     "hidden": true,
-    "loading_priority": 2,
     "type": "origins:multiple",
     "chaos": {
         "type": "origins:action_over_time",

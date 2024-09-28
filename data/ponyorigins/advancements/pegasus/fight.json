@@ -12,7 +12,7 @@
     "parent": "ponyorigins:pegasus/choice",
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

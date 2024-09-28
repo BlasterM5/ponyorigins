@@ -1,6 +1,6 @@
 {
     "name": "Spectre Sounds",
-    "description": "Spectre races have phantom sounds",
+    "description": "Spectre races have phantom sounds.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

@@ -5,15 +5,11 @@
             "required": false
         },
         {
-            "id": "#ponyorigins:water",
+            "id": "energizedpower:dirty_water",
             "required": false
         },
         {
-            "id": "#lava",
-            "required": false
-        },
-        {
-            "id": "#ponyorigins:oil",
+            "id": "energizedpower:flowing_dirty_water",
             "required": false
         }
     ]

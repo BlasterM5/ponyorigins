@@ -759,6 +759,66 @@
         {
             "id": "usefulfood:fruitsalad",
             "required": false
+        },
+        {
+            "id": "thelongstory:vitaly_fruit",
+            "required": false
+        },
+        {
+            "id": "thelongstory:sweet_pear",
+            "required": false
+        },
+        {
+            "id": "thelongstory:emerald_apple",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iron_apple",
+            "required": false
+        },
+        {
+            "id": "thelongstory:diamond_apple",
+            "required": false
+        },
+        {
+            "id": "thelongstory:lapis_apple",
+            "required": false
+        },
+        {
+            "id": "thelongstory:amethyst_apple",
+            "required": false
+        },
+        {
+            "id": "thelongstory:redstone_apple",
+            "required": false
+        },
+        {
+            "id": "vinery:savanna_grapes_red",
+            "required": false
+        },
+        {
+            "id": "vinery:savanna_grapes_white",
+            "required": false
+        },
+        {
+            "id": "vinery:taiga_grapes_red",
+            "required": false
+        },
+        {
+            "id": "vinery:taiga_grapes_white",
+            "required": false
+        },
+        {
+            "id": "vinery:jungle_grapes_red",
+            "required": false
+        },
+        {
+            "id": "vinery:jungle_grapes_white",
+            "required": false
+        },
+        {
+            "id": "c:foods/fruits",
+            "required": false
         }
     ]
 }

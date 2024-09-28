@@ -13,7 +13,7 @@
     "parent": "ponyorigins:special/food",
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

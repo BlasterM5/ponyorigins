@@ -1807,6 +1807,106 @@
         {
             "id": "usefulfood:muttonsandwich",
             "required": false
+        },
+        {
+            "id": "thelongstory:infested_flesh",
+            "required": false
+        },
+        {
+            "id": "thelongstory:infested_flesh",
+            "required": false
+        },
+        {
+            "id": "thelongstory:breedy_flesh",
+            "required": false
+        },
+        {
+            "id": "thelongstory:tooki_meat",
+            "required": false
+        },
+        {
+            "id": "thelongstory:cooked_tooki_meat",
+            "required": false
+        },
+        {
+            "id": "ends_delight:enderman_gristle",
+            "required": false
+        },
+        {
+            "id": "ends_delight:shulker_omelette_mixture",
+            "required": false
+        },
+        {
+            "id": "ends_delight:shulker_omelette",
+            "required": false
+        },
+        {
+            "id": "ends_delight:raw_ender_sausage",
+            "required": false
+        },
+        {
+            "id": "ends_delight:ender_sausage",
+            "required": false
+        },
+        {
+            "id": "ends_delight:shulker_soup",
+            "required": false
+        },
+        {
+            "id": "ends_delight:ender_noodle",
+            "required": false
+        },
+        {
+            "id": "ends_delight:enderman_gristle_stew",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:raw_donkey_meat",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:cooked_donkey_meat",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:donkey_burger",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:raw_chicken_bobo_chicken",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:chicken_bobo_chicken",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:raw_spring_roll",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:spring_roll",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:fried_chicken_chip",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:tonkatsu",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:raw_fried_dumpling",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:fried_dumpling",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:bowl_of_fried_dumpling",
+            "required": false
         }
     ]
 }

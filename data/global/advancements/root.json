@@ -12,7 +12,7 @@
     },
     "criteria": {
         "trigger": {
-            "trigger": "tick"
+            "trigger": "minecraft:tick"
         }
     }
 }

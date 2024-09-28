@@ -227,6 +227,14 @@
         {
             "id": "usefulfood:caramelcake",
             "required": false
+        },
+        {
+            "id": "#ponyorigins:meat_blocks",
+            "required": false
+        },
+        {
+            "id": "#ponyorigins:seafood_blocks",
+            "required": false
         }
     ]
 }

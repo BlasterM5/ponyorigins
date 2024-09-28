@@ -12,7 +12,7 @@
     "parent": "global:ponyorigins",
     "criteria": {
         "trigger": {
-            "trigger": "tick"
+            "trigger": "minecraft:tick"
         }
     }
 }

@@ -427,6 +427,58 @@
         {
             "id": "usefulfood:fishsoup",
             "required": false
+        },
+        {
+            "id": "#c:foods/cooked_fishes",
+            "required": false
+        },
+        {
+            "id": "#c:foods/cooked_squid",
+            "required": false
+        },
+        {
+            "id": "#c:foods/cooked_calamari",
+            "required": false
+        },
+        {
+            "id": "brewinandchewin:kippers",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:fish_taco",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:rice_ball",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:calamari_roll",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:bowl_of_paper_wrapped_fish",
+            "required": false
+        },
+        {
+            "id": "casualness_delight:fried_fish",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:roasted_glow_squid",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:roasted_squid",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:glow_squid_tentacle_kebabs",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:squid_tentacle_kebabs",
+            "required": false
         }
     ]
 }

@@ -14,7 +14,7 @@
     "parent": "ponyorigins:ascension/root",
     "criteria": {
         "placeholder": {
-            "trigger": "impossible"
+            "trigger": "minecraft:impossible"
         }
     }
 }

@@ -322,6 +322,14 @@
                                                 "weight": 1,
                                                 "element": {
                                                     "type": "origins:grant_power",
+                                                    "power": "ponyorigins:common/wings/feathered",
+                                                    "source": "ponyorigins:races/chaos"
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/wings/insectoid",
                                                     "source": "ponyorigins:races/chaos"
                                                 }
@@ -340,12 +348,6 @@
                                                     "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/wings/waterproof",
                                                     "source": "ponyorigins:races/chaos"
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:nothing"
                                                 }
                                             }
                                         ]
@@ -563,6 +565,12 @@
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/sounds/spectre",
                                 "source": "ponyorigins:races/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:nothing"
                             }
                         }
                     ]

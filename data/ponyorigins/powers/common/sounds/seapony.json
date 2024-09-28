@@ -1,6 +1,6 @@
 {
     "name": "Seapony Sounds",
-    "description": "Seaponies make either pony noises or dolphin noises depending on transformation",
+    "description": "Seaponies make either pony noises or dolphin noises depending on transformation.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {
