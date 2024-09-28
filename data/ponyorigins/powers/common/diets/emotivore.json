@@ -750,40 +750,39 @@
             "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:target_condition",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:health",
-                                "comparison": ">",
-                                "compare_to": 2
-                            },
-                            {
-                                "type": "origins:living"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_group",
-                                "group": "undead"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_group",
-                                "group": "illager"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_group",
-                                "group": "arthropod"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_type",
-                                "entity_type": "player"
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:health",
+                                        "comparison": ">",
+                                        "compare_to": 2
+                                    },
+                                    {
+                                        "type": "origins:living"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:hostile_mobs"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:entity_type",
+                                        "entity_type": "player"
+                                    }
+                                ]
                             }
-                        ]
-                    }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:attack_target"
+                        }
+                    ]
                 },
                 {
                     "type": "origins:or",
@@ -794,6 +793,11 @@
                                 "type": "origins:and",
                                 "conditions": [
                                     {
+                                        "type": "origins:food_level",
+                                        "comparison": ">",
+                                        "compare_to": 2
+                                    },
+                                    {
                                         "type": "origins:entity_type",
                                         "entity_type": "player"
                                     },
@@ -801,11 +805,6 @@
                                         "inverted": true,
                                         "type": "origins:origin",
                                         "origin": "ponyorigins:races/changeling"
-                                    },
-                                    {
-                                        "type": "origins:food_level",
-                                        "comparison": ">",
-                                        "compare_to": 2
                                     }
                                 ]
                             }
@@ -879,35 +878,39 @@
             "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:target_condition",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:health",
-                                "comparison": ">",
-                                "compare_to": 2
-                            },
-                            {
-                                "type": "origins:living"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_group",
-                                "group": "undead"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_group",
-                                "group": "illager"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:entity_group",
-                                "group": "arthropod"
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:health",
+                                        "comparison": ">",
+                                        "compare_to": 2
+                                    },
+                                    {
+                                        "type": "origins:living"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:hostile_mobs"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:entity_type",
+                                        "entity_type": "player"
+                                    }
+                                ]
                             }
-                        ]
-                    }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:attack_target"
+                        }
+                    ]
                 },
                 {
                     "type": "origins:or",

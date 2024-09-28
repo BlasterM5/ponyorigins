@@ -1,0 +1,52 @@
+{
+    "values": [
+        {
+            "id": "#undead",
+            "required": true
+        },
+        {
+            "id": "#arthropod",
+            "required": false
+        },
+        {
+            "id": "#raiders",
+            "required": false
+        },
+        {
+            "id": "#bosses",
+            "required": false
+        },
+        {
+            "id": "#axolotl_always_hostiles",
+            "required": false
+        },
+        {
+            "id": "enderman",
+            "required": false
+        },
+        {
+            "id": "blaze",
+            "required": false
+        },
+        {
+            "id": "ghast",
+            "required": false
+        },
+        {
+            "id": "hoglin",
+            "required": false
+        },
+        {
+            "id": "warden",
+            "required": false
+        },
+        {
+            "id": "vex",
+            "required": false
+        },
+        {
+            "id": "creeper",
+            "required": false
+        }
+    ]
+}
