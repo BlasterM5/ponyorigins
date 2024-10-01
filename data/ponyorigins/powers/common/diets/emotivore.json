@@ -20,28 +20,6 @@
         }
     ],
     "type": "origins:multiple",
-    "cd_res": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "cd": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd_res",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "origins:action_over_time",
-        "interval": 4,
-        "rising_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd_res",
-            "change": 0,
-            "operation": "set"
-        }
-    },
     "no_eating_blocks": {
         "type": "origins:prevent_block_use",
         "block_condition": {
@@ -185,22 +163,6 @@
         }
     },
     "receive_love": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "<",
-                    "compare_to": 20
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
         "type": "origins:action_on_being_used",
         "bientity_action": {
             "type": "origins:and",
@@ -337,6 +299,38 @@
                                 }
                             }
                         ]
+                    },
+                    "else_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:actor_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_love",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_love",
+                                        "comparison": "<",
+                                        "compare_to": 1000
+                                    }
+                                ]
+                            }
+                        },
+                        "if_action": {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_love",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
                     }
                 },
                 {
@@ -421,6 +415,24 @@
                         "fluid_handling": "any",
                         "command_along_ray": "particle heart ^ ^-0.25 ^ 0 0 0 0.1 1 force"
                     }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_bar_vis",
+                        "change": 5,
+                        "operation": "set"
+                    }
                 }
             ]
         },
@@ -468,32 +480,41 @@
                 {
                     "type": "origins:target_condition",
                     "condition": {
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:races/changeling"
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:food_level",
+                                "comparison": "<",
+                                "compare_to": 20
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
                     }
                 }
             ]
         },
         "action_result": "consume",
-        "priority": 1
+        "priority": 2
     },
     "update_vis": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_bar_vis",
+            "comparison": ">",
+            "compare_to": 0
+        },
         "type": "origins:action_over_time",
         "interval": 20,
         "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_bar_vis",
-                "comparison": ">",
-                "compare_to": 0
-            },
-            "if_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_bar_vis",
-                "change": -1,
-                "operation": "add"
-            }
+            "type": "origins:change_resource",
+            "resource": "*:*_bar_vis",
+            "change": -1,
+            "operation": "add"
         }
     },
     "drain": {
@@ -513,7 +534,7 @@
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:*_cd_res",
+                    "resource": "*:*_cd",
                     "comparison": "==",
                     "compare_to": 0
                 }
@@ -665,7 +686,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:change_resource",
-                        "resource": "*:*_cd_res",
+                        "resource": "*:*_cd",
                         "change": 1,
                         "operation": "set"
                     }
@@ -698,17 +719,17 @@
                                         "compare_to": 2
                                     },
                                     {
+                                        "inverted": true,
+                                        "type": "origins:entity_type",
+                                        "entity_type": "player"
+                                    },
+                                    {
                                         "type": "origins:living"
                                     },
                                     {
                                         "inverted": true,
                                         "type": "origins:in_tag",
                                         "tag": "ponyorigins:hostile_mobs"
-                                    },
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:entity_type",
-                                        "entity_type": "player"
                                     }
                                 ]
                             }
@@ -720,7 +741,7 @@
                     ]
                 },
                 {
-                    "type": "origins:or",
+                    "type": "origins:and",
                     "conditions": [
                         {
                             "type": "origins:target_condition",
@@ -735,45 +756,53 @@
                                     {
                                         "type": "origins:entity_type",
                                         "entity_type": "player"
-                                    },
-                                    {
-                                        "inverted": true,
-                                        "type": "origins:origin",
-                                        "origin": "ponyorigins:races/changeling"
                                     }
                                 ]
                             }
                         },
                         {
-                            "type": "origins:and",
+                            "type": "origins:or",
                             "conditions": [
-                                {
-                                    "type": "origins:actor_condition",
-                                    "condition": {
-                                        "inverted": true,
-                                        "type": "origins:sneaking"
-                                    }
-                                },
                                 {
                                     "type": "origins:target_condition",
                                     "condition": {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:entity_type",
-                                                "entity_type": "player"
-                                            },
-                                            {
-                                                "type": "origins:origin",
-                                                "origin": "ponyorigins:races/changeling"
-                                            },
-                                            {
-                                                "type": "origins:food_level",
-                                                "comparison": ">",
-                                                "compare_to": 2
-                                            }
-                                        ]
+                                        "inverted": true,
+                                        "type": "origins:origin",
+                                        "origin": "ponyorigins:races/changeling"
                                     }
+                                },
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:actor_condition",
+                                            "condition": {
+                                                "inverted": true,
+                                                "type": "origins:sneaking"
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:target_condition",
+                                            "condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:entity_type",
+                                                        "entity_type": "player"
+                                                    },
+                                                    {
+                                                        "type": "origins:origin",
+                                                        "origin": "ponyorigins:races/changeling"
+                                                    },
+                                                    {
+                                                        "type": "origins:food_level",
+                                                        "comparison": ">",
+                                                        "compare_to": 2
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -913,5 +942,27 @@
         "red": 1,
         "green": 0.5,
         "blue": 0.5
+    },
+    "cd_tick": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     }
 }
