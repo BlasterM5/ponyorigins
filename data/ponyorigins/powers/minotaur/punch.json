@@ -19,7 +19,7 @@
                 {
                     "keybind": "key.origins.secondary_active"
                 },
-                "] to charge and attack"
+                "] to charge, release to attack"
             ],
             "sprite": "textures/block/tnt_side.png"
         }
@@ -84,29 +84,13 @@
             }
         }
     },
-    "cd_smash": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "cd_recharge_smash": {
+    "tick": {
         "condition": {
             "type": "origins:resource",
-            "resource": "*:*_cd_smash",
+            "resource": "*:*_cd",
             "comparison": "==",
-            "compare_to": 1
+            "compare_to": 0
         },
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "rising_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd_smash",
-            "change": 0,
-            "operation": "set"
-        }
-    },
-    "tick": {
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
@@ -126,7 +110,7 @@
                             {
                                 "type": "origins:resource",
                                 "resource": "ponyorigins:common/00_key_primary_active",
-                                "comparison": ">",
+                                "comparison": "==",
                                 "compare_to": 0
                             }
                         ]
@@ -218,8 +202,33 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_cd_smash",
-                                    "change": 1,
+                                    "resource": "*:*_cd",
+                                    "change": 10,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:swing_hand",
+                                    "hand": "MAIN_HAND"
+                                },
+                                {
+                                    "type": "origins:exhaust",
+                                    "amount": 2
+                                }
+                            ]
+                        },
+                        "miss_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer_smash",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 10,
                                     "operation": "set"
                                 },
                                 {
@@ -232,66 +241,123 @@
                                 }
                             ]
                         }
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:or",
-                        "conditions": [
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:*_buffer_smash",
-                                "comparison": ">",
-                                "compare_to": 0
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "ponyorigins:common/00_key_primary_active",
-                                "comparison": ">",
-                                "compare_to": 0
-                            }
-                        ]
                     },
-                    "if_action": {
+                    "else_action": {
                         "type": "origins:if_else",
                         "condition": {
-                            "type": "origins:and",
+                            "type": "origins:or",
                             "conditions": [
                                 {
                                     "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_key_primary_active",
+                                    "resource": "*:*_buffer_smash",
                                     "comparison": ">",
                                     "compare_to": 0
                                 },
                                 {
                                     "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_empty_mainhand",
-                                    "comparison": "==",
-                                    "compare_to": 1
-                                },
-                                {
-                                    "type": "origins:food_level",
+                                    "resource": "ponyorigins:common/00_key_primary_active",
                                     "comparison": ">",
-                                    "compare_to": 4
+                                    "compare_to": 0
                                 }
                             ]
                         },
                         "if_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_buffer_smash",
-                            "change": 1,
-                            "operation": "add"
-                        },
-                        "else_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_buffer_smash",
-                            "change": -1,
-                            "operation": "add"
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "ponyorigins:common/00_key_primary_active",
+                                        "comparison": ">",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "ponyorigins:common/00_empty_mainhand",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    },
+                                    {
+                                        "type": "origins:food_level",
+                                        "comparison": ">",
+                                        "compare_to": 4
+                                    }
+                                ]
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_buffer_smash",
+                                "change": 1,
+                                "operation": "add"
+                            },
+                            "else_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_buffer_smash",
+                                "change": -1,
+                                "operation": "add"
+                            }
                         }
                     }
                 }
             ]
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0
+    },
+    "cd_recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_cd",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_key_primary_active",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cd",
+                "change": 0,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": ">",
+                    "compare_to": 1
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cd",
+                    "change": -1,
+                    "operation": "add"
+                }
+            }
         }
     }
 }

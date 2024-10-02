@@ -1,6 +1,6 @@
 {
     "name": "YAK SMASH",
-    "description": "Hold your primary power with an empty hoof to SMASH your opponent!\n\nHold your secondary power with empty hooves to STOMP the ground, launching nearby creatures skyward!",
+    "description": "Hold your primary power with an empty hoof to charge up and SMASH your opponent!\n\nHold your secondary power with empty hooves to charge up and STOMP the ground, launching nearby creatures skyward!",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -9,7 +9,7 @@
                 {
                     "keybind": "key.origins.primary_active"
                 },
-                "] to SMASH"
+                "] to charge, release to SMASH"
             ],
             "sprite": "textures/block/tnt_side.png"
         },
@@ -20,7 +20,7 @@
                 {
                     "keybind": "key.origins.secondary_active"
                 },
-                "] to STOMP"
+                "] to charge, release to STOMP"
             ],
             "sprite": "textures/block/tnt_side.png"
         }
@@ -60,58 +60,19 @@
             }
         }
     },
-    "cd_smash": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "cd_stomp": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
-    "cd_recharge_smash": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd_smash",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "rising_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd_smash",
-            "change": 0,
-            "operation": "set"
-        }
-    },
-    "cd_recharge_stomp": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd_stomp",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "rising_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd_stomp",
-            "change": 0,
-            "operation": "set"
-        }
-    },
     "tick": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": "==",
+            "compare_to": 0
+        },
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:and",
+            "type": "origins:if_else_list",
             "actions": [
                 {
-                    "type": "origins:if_else",
                     "condition": {
                         "type": "origins:and",
                         "conditions": [
@@ -124,12 +85,12 @@
                             {
                                 "type": "origins:resource",
                                 "resource": "ponyorigins:common/00_key_primary_active",
-                                "comparison": ">",
+                                "comparison": "==",
                                 "compare_to": 0
                             }
                         ]
                     },
-                    "if_action": {
+                    "action": {
                         "type": "origins:raycast",
                         "distance": 3,
                         "block": true,
@@ -216,8 +177,8 @@
                                 },
                                 {
                                     "type": "origins:change_resource",
-                                    "resource": "*:*_cd_smash",
-                                    "change": 1,
+                                    "resource": "*:*_cd",
+                                    "change": 10,
                                     "operation": "set"
                                 },
                                 {
@@ -229,11 +190,35 @@
                                     "amount": 2
                                 }
                             ]
+                        },
+                        "miss_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer_smash",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 10,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:swing_hand",
+                                    "hand": "MAIN_HAND"
+                                },
+                                {
+                                    "type": "origins:exhaust",
+                                    "amount": 1
+                                }
+                            ]
                         }
                     }
                 },
                 {
-                    "type": "origins:if_else",
                     "condition": {
                         "type": "origins:and",
                         "conditions": [
@@ -246,7 +231,7 @@
                             {
                                 "type": "origins:resource",
                                 "resource": "ponyorigins:common/00_key_secondary_active",
-                                "comparison": ">",
+                                "comparison": "==",
                                 "compare_to": 0
                             },
                             {
@@ -257,7 +242,7 @@
                             }
                         ]
                     },
-                    "if_action": {
+                    "action": {
                         "type": "origins:and",
                         "actions": [
                             {
@@ -310,15 +295,14 @@
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:*_cd_stomp",
-                                "change": 1,
+                                "resource": "*:*_cd",
+                                "change": 10,
                                 "operation": "set"
                             }
                         ]
                     }
                 },
                 {
-                    "type": "origins:if_else",
                     "condition": {
                         "type": "origins:or",
                         "conditions": [
@@ -348,7 +332,7 @@
                             }
                         ]
                     },
-                    "if_action": {
+                    "action": {
                         "type": "origins:and",
                         "actions": [
                             {
@@ -435,6 +419,69 @@
                     }
                 }
             ]
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0
+    },
+    "cd_recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_cd",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_key_primary_active",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_key_secondary_active",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cd",
+                "change": 0,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": ">",
+                    "compare_to": 1
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cd",
+                    "change": -1,
+                    "operation": "add"
+                }
+            }
         }
     }
 }

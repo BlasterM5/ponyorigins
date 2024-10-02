@@ -221,7 +221,7 @@
         },
         "type": "origins:action_over_time",
         "interval": 1,
-        "rising_action": {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_active",
             "change": 0,
