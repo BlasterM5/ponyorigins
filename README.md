@@ -2,10 +2,10 @@ Deep in the blocky multiverse of Origins Minecraft, is a land called Equestria. 
 
 This datapack mod replaces all the vanilla origins with origins specifically for Mine Little Pony. Expand your gameplay with the unique abilities and features of these four legged races.
 
-Requires [Origins](https://www.modrinth.com/mod/origins) and [Apugli](https://www.modrinth.com/mod/apugli). Recommended to have either [Figura](https://www.modrinth.com/mod/figura) or [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony) for your player model. [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Beware, due to the way the advancements and ascensions work, this mod *replaces* the vanilla Origins, and is incompatible with other Origin mods and datapacks at this time. Several of the Pony Origins have similar gameplay functionality to the default Origins.
+Requires [Origins](https://www.modrinth.com/mod/origins) and [Apugli](https://www.modrinth.com/mod/apugli). Recommended to have either [Figura](https://www.modrinth.com/mod/figura) or [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony) for your player model. [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Note, this mod *replaces* the vanilla Origins, with some Pony Origins providing similar gameplay functionality to the default Origins.
 
 <details>
-<summary>Modpack / Server Makers who Still Want to Enable Vanilla and Other Modded Origins
+<summary>Modpack / Server Makers who Still Want to Enable Vanilla Origins
 </summary>
 If you really, really want to have vanilla Origins as well, you will have to manually edit the mod, but that's easy. Edit the following line in data/origins/origin_layers/origin.json:
 `    "replace": true,` with `    "replace": false,` and repack the jar. Again, this is unsupported and might break some interactions, but I did a best effort to come up with a system that will still cater to non-pony origins.
