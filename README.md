@@ -28,8 +28,7 @@ Installation:
 - Install Fabric
 - Install [Origins](https://www.modrinth.com/mod/origins)
 - Install [Apugli](https://www.modrinth.com/mod/apugli)
-- (Recommended) Install [Figura](https://www.modrinth.com/mod/figura) and/or [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony)
-- (Recommended with Mine Little Pony) Install [HD Skins](https://www.modrinth.com/mod/hd-skins)
+- (Recommended) Install [Figura](https://www.modrinth.com/mod/figura) and/or [Customizeable Player Models](https://modrinth.com/plugin/custom-player-models)
 - (Optional) Install [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive)
 - Install Pony Origins
 
@@ -40,10 +39,7 @@ On the first boot, you need to enter Options, Controls, Key Binds, and bind a ke
 Then, enter Options, Accessibility Settings, and turn FOV Effects to Off.
 Alternately, install [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive), and in Options, Accessibility Settings, set FOV Effects to Vanilla Only.
 
-Finally, either use your MLP Figura avatar, or upload a minecraft skin compatible with Mine Little Pony for your player model.
-Alternately, install [HD Skins](https://www.modrinth.com/mod/hd-skins), and click the icon on the bottom right of the main menu with the leggings. This will allow you to upload an HD skin for Mine Little Pony, without changing your Minecraft player skin. Other players using HD Skins will see your MLP skin this way.
-
-Mine Little Pony provides several community made skins [here](https://github.com/MineLittlePony/Community-Skin-Pack).
+Finally, either use your MLP Figura avatar, or upload a minecraft skin compatible with Customizeable Player Models for your player model.
 
 Playable Races:
 
