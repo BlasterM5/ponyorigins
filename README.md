@@ -2,8 +2,16 @@ Deep in the blocky multiverse of Origins Minecraft, is a land called Equestria. 
 
 This datapack mod replaces all the vanilla origins with origins specifically for Mine Little Pony. Expand your gameplay with the unique abilities and features of these four legged races.
 
-Requires [Origins](https://www.modrinth.com/mod/origins) and [Apugli](https://www.modrinth.com/mod/apugli). Recommended to have either [Figura](https://www.modrinth.com/mod/figura) or [Mine Little Pony](https://www.modrinth.com/mod/mine-little-pony) for your player model. [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Note, this mod *replaces* the vanilla Origins, with some Pony Origins providing similar gameplay functionality to the default Origins.
-
+Requires [Origins](https://www.modrinth.com/mod/origins) and [Apugli](https://www.modrinth.com/mod/apugli). Recommended to have either [Figura](https://www.modrinth.com/mod/figura) or [Customizeable Player Models](https://modrinth.com/plugin/custom-player-models) for your player model. [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Note, this mod *replaces* the vanilla Origins, with some Pony Origins providing similar gameplay functionality to the default Origins.
+<details>
+<summary>Creating/Converting Pony Skins to Figura
+</summary>
+If you already have a pony skin for MineLittlePony, here are some useful resources to convert it into a Figura model:
+Don't have your active skin? Download it over at the [MineLP website](https://minelittlepony-mod.com/tools/)
+You can use [CardGambit's Figura Skin Converter](https://bronytales.com/figura-converter) to convert your MineLP skin to a Figura model
+Don't have a pony model and willing to make one? First, you are going to need to learn [Blockbench](https://www.blockbench.net) for modelling and animation.
+Base Models: [Coney Poney Figura Ponies](https://github.com/Coney-Poney/figura-ponies), [Cheese Wheelson's MLP Avatar Template on the FiguraMC Discord](https://discord.com/channels/1129805506354085959/1302766402318630992/1302766402318630992)
+</details>
 <details>
 <summary>Modpack / Server Makers who Still Want to Enable Vanilla Origins
 </summary>
