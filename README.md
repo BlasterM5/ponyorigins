@@ -4,19 +4,29 @@ This datapack mod replaces all the vanilla origins with origins specifically for
 
 Requires [Origins](https://www.modrinth.com/mod/origins) and [Apugli](https://www.modrinth.com/mod/apugli). Recommended to have either [Figura](https://www.modrinth.com/mod/figura) or [Customizeable Player Models](https://modrinth.com/plugin/custom-player-models) for your player model. [Custom FoV](https://www.modrinth.com/mod/custom-fov-illusive) mod set to Vanilla Only, or disabled FoV highly recommended (technical limitation in Origins). Note, this mod *replaces* the vanilla Origins, with some Pony Origins providing similar gameplay functionality to the default Origins.
 <details>
-<summary>Creating/Converting Pony Skins to Figura
+<summary>
+Creating/Converting Pony Skins to Figura
 </summary>
 If you already have a pony skin for MineLittlePony, here are some useful resources to convert it into a Figura model:
+  
 Don't have your active skin? Download it over at the [MineLP website](https://minelittlepony-mod.com/tools/)
+
 You can use [CardGambit's Figura Skin Converter](https://bronytales.com/figura-converter) to convert your MineLP skin to a Figura model
+
 Don't have a pony model and willing to make one? First, you are going to need to learn [Blockbench](https://www.blockbench.net) for modelling and animation.
+
 Base Models: [Coney Poney Figura Ponies](https://github.com/Coney-Poney/figura-ponies), [Cheese Wheelson's MLP Avatar Template on the FiguraMC Discord](https://discord.com/channels/1129805506354085959/1302766402318630992/1302766402318630992)
+
 </details>
 <details>
-<summary>Modpack / Server Makers who Still Want to Enable Vanilla Origins
+<summary>
+Modpack / Server Makers who Still Want to Enable Vanilla Origins
 </summary>
 If you really, really want to have vanilla Origins as well, you will have to manually edit the mod, but that's easy. Edit the following line in data/origins/origin_layers/origin.json:
-`    "replace": true,` with `    "replace": false,` and repack the jar. Again, this is unsupported and might break some interactions, but I did a best effort to come up with a system that will still cater to non-pony origins.
+
+`    "replace": true,` with `    "replace": false,`
+
+and repack the jar. Again, this is unsupported and might break some interactions, but I did a best effort to come up with a system that will still cater to non-pony origins.
 </details>
 
 A test server is now open, if you want to help test the mod. Download [this modpack](https://modrinth.com/modpack/pony-origins-test-pack) and connect to the server saved in the list.
@@ -103,4 +113,4 @@ Don't like the race you first chose and want to change? Craft a Harmonic Resonat
 
 Note for Modmakers and Modpackmakers: If the Unlicense isn't clear enough, you are free to use this mod however, wherever, with whatever, no restrictions. You can even grab the source code and make your own version if you want, there's no restrictions.
 
-For a full readup of the abilities and races, refer to the wiki.
+For a full readup of the abilities and races, refer to the [wiki](https://github.com/BlasterM5/ponyorigins/wiki).
