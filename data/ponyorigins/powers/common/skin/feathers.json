@@ -1,0 +1,67 @@
+{
+    "name": "Feathers",
+    "description": "Your body is covered in a layer of feathers. Lightweight, but maintenance heavy, they'll keep you warm in the cold at the cost of extra endurance and longer drying time.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Cold Resistance: +25 Percent",
+            "sprite": "textures/item/leather_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Exhaustion +5 Percent",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.05
+        }
+    },
+    "cold_defense": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "cold_defense_burned_var": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.0025,
+            "modifier": {
+                "operation": "multiply_base_multiplicative",
+                "value": -100,
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 0,
+                    "resource": "ponyorigins:common/hazards_burned"
+                }
+            }
+        }
+    }
+}

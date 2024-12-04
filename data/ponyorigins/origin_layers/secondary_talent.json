@@ -1,5 +1,5 @@
 {
-    "order": 4,
+    "order": 99,
     "origins": [
         {
             "condition": {
@@ -169,7 +169,7 @@
                 "conditions": [
                     {
                         "type": "origins:power",
-                        "power": "ponyorigins:common/quadruped"
+                        "power": "ponyorigins:common/limbs/quadruped"
                     },
                     {
                         "inverted": true,
@@ -259,7 +259,7 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight/main"
+                        "power": "ponyorigins:common/flight"
                     },
                     {
                         "inverted": true,
@@ -659,7 +659,7 @@
                 "conditions": [
                     {
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight/main"
+                        "power": "ponyorigins:common/flight"
                     },
                     {
                         "type": "origins:power",
@@ -716,7 +716,6 @@
         }
     ],
     "enabled": true,
-    "loading_priority": 3,
     "name": "Secondary Talent",
     "gui_title": {
         "choose_origin": "Choose your Secondary (Cutie Mark) Talent",

@@ -1,0 +1,55 @@
+{
+    "name": "No Arms",
+    "description": "You have no arms at all, not even wings. Unless you also have telekinesis, you are unable to use items or blocks if you are wielding two at once.",
+    "type": "origins:multiple",
+    "disable_item_use_on_offhand_mainhand": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_offhand",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/telekinesis"
+                }
+            ]
+        },
+        "type": "origins:prevent_item_use"
+    },
+    "disable_block_use_on_offhand_mainhand": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_offhand",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/telekinesis"
+                }
+            ]
+        },
+        "type": "origins:prevent_block_use"
+    }
+}

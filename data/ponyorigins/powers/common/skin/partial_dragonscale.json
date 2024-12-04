@@ -1,0 +1,135 @@
+{
+    "name": "Partial Dragonscale",
+    "description": "Your body is partly covered in dragonscale and partly in hair, which helps you resist both physical and some elemental damage without as big a hit on endurance.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "50 percent heat resistance",
+            "sprite": "textures/item/netherite_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "25 percent cold resistance",
+            "sprite": "textures/item/leather_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "25 percent damage reduction unless armor piercing",
+            "sprite": "textures/item/iron_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Exhaustion +8 Percent",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "damage_reduction": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "bypasses_armor"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.shulker.hurt_closed",
+            "volume": 1,
+            "pitch": 1
+        }
+    },
+    "ap_damage_noise": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "bypasses_armor"
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.player.hurt",
+            "volume": 1,
+            "pitch": 1
+        }
+    },
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.08
+        }
+    },
+    "sound_muter": {
+        "type": "apugli:custom_hurt_sound",
+        "muted": true,
+        "sound": "entity.shulker.hurt_closed",
+        "volume": 0
+    },
+    "cold_defense": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.25
+        }
+    },
+    "hot_defense": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_fire"
+        },
+        "modifier": {
+            "operation": "multiply_total_additive",
+            "value": -0.5
+        }
+    },
+    "cold_defense_burned_var": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.0025,
+            "modifier": {
+                "operation": "multiply_base_multiplicative",
+                "value": -100,
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 0,
+                    "resource": "ponyorigins:common/hazards_burned"
+                }
+            }
+        }
+    }
+}

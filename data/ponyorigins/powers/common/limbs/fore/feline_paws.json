@@ -1,0 +1,63 @@
+{
+    "name": "Feline Paws",
+    "description": "Your forelimbs end in quiet paws with retractible, sharp claws. Extra attack damage when unarmed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Unarmed and barefoot Attacks: +200 Percent Attack Damage",
+            "sprite": "textures/item/iron_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "When barefoot: -5 Percent Ice Slipperiness",
+            "sprite": "textures/item/iron_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "melee_damage": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/limbs/taur"
+                }
+            ]
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 2
+        }
+    },
+    "ice_less_slippery": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/00_empty_feet",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:ice"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.05
+        }
+    }
+}

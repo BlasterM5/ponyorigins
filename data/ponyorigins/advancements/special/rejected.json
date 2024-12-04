@@ -4,7 +4,7 @@
             "item": "wither_rose"
         },
         "title": "Rejection of Harmony",
-        "description": "Harmony will no longer protect you",
+        "description": "Harmony will no longer protect you, as you have broken your Pact with Harmony.",
         "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,

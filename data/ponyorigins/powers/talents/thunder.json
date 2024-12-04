@@ -197,7 +197,8 @@
                             "operation": "set"
                         }
                     ]
-                }
+                },
+                "command_at_hit": "function ponyorigins:abilities/aggro"
             }
         }
     },
@@ -375,9 +376,10 @@
                     "type": "origins:and",
                     "conditions": [
                         {
+                            "inverted": true,
                             "type": "origins:origin",
                             "origin": "ponyorigins:talents/thunder",
-                            "layer": "ponyorigins:secondary_talent"
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",

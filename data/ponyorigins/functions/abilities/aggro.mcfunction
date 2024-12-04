@@ -1,0 +1,1 @@
+data modify entity @e[type=!player,distance=..1,limit=1,sort=nearest] AngryAt set from entity @s UUID

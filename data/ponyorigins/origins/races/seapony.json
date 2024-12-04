@@ -4,12 +4,15 @@
     "powers": [
         "ponyorigins:common/waterborn",
         "ponyorigins:common/diets/pescavore",
-        "ponyorigins:common/quadruped",
-        "ponyorigins:common/hooves",
-        "ponyorigins:common/rideable",
+        "ponyorigins:common/health/base",
         "ponyorigins:common/pony",
         "ponyorigins:common/energy",
-        "ponyorigins:common/sounds/seapony"
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
+        "ponyorigins:common/sounds/pony"
     ],
     "icon": {
         "item": "heart_of_the_sea"

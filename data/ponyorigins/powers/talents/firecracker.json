@@ -669,9 +669,10 @@
                     "type": "origins:and",
                     "conditions": [
                         {
+                            "inverted": true,
                             "type": "origins:origin",
                             "origin": "ponyorigins:talents/firecracker",
-                            "layer": "ponyorigins:secondary_talent"
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",

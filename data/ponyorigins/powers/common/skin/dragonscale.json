@@ -1,0 +1,77 @@
+{
+    "name": "Dragonscale",
+    "description": "Your body is covered in strong scales, able to resist damage and grant complete fire immunity at the cost of endurance.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Fireproof",
+            "sprite": "textures/item/netherite_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "50 percent damage reduction unless armor piercing",
+            "sprite": "textures/item/diamond_chestplate.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_total_additive",
+            "value": 0.15
+        }
+    },
+    "fireproof": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:fire"
+        }
+    },
+    "sound_muter": {
+        "type": "apugli:custom_hurt_sound",
+        "muted": true,
+        "sound": "entity.shulker.hurt_closed",
+        "volume": 0
+    },
+    "damage_reduction": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "bypasses_armor"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.shulker.hurt_closed",
+            "volume": 1,
+            "pitch": 1
+        }
+    },
+    "ap_damage_noise": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "bypasses_armor"
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "self_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.player.hurt",
+            "volume": 1,
+            "pitch": 1
+        }
+    }
+}

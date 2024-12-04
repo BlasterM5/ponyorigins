@@ -1,10 +1,10 @@
 {
-    "order": 3,
+    "order": 98,
     "origins": [
         {
             "condition": {
-                "type": "origins:origin",
-                "origin": "ponyorigins:races/unicorn"
+                "type": "origins:power",
+                "power": "ponyorigins:common/versatile"
             },
             "origins": [
                 "ponyorigins:talents/other",
@@ -30,7 +30,6 @@
         }
     ],
     "enabled": true,
-    "loading_priority": 2,
     "name": "Primary Talent",
     "gui_title": {
         "choose_origin": "Choose your Primary (Innate) Talent",

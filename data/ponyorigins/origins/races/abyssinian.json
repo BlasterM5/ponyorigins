@@ -3,14 +3,15 @@
     "description": "Anthropomorphic cats from the deserts of Abyssinia.",
     "powers": [
         "ponyorigins:common/diets/carnivore",
+        "ponyorigins:common/health/minus_two",
         "ponyorigins:common/nightvision",
         "origins:fall_immunity",
-        "origins:sprint_jump",
-        "ponyorigins:abyssinian/claws",
         "ponyorigins:common/wallclimb",
-        "origins:velvet_paws",
         "origins:scare_creepers",
-        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/limbs/biped",
+        "ponyorigins:common/limbs/arms/feline_paws",
+        "ponyorigins:common/limbs/hind/feline_paws",
+        "ponyorigins:common/skin/fur",
         "ponyorigins:common/sounds/cat"
     ],
     "icon": {

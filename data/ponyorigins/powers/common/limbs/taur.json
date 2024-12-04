@@ -1,0 +1,23 @@
+{
+    "name": "Taur Body",
+    "description": "Your body is quadrupedal, but with a bipedal body where the neck would be. Gain the bonuses of quadrupeds without the hindrance of wielding items, at the cost of a substantial weight penalty.",
+    "type": "origins:multiple",
+    "movement_speed_buff": {
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.2
+        }
+    },
+    "faster_exhaustion": {
+        "condition": {
+            "type": "origins:moving"
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.2
+        }
+    }
+}

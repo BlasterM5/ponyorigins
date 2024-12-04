@@ -1,0 +1,1496 @@
+{
+    "values": [
+        {
+            "id": "betternether:quartz_glass",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_white",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_orange",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_magenta",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_light_blue",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_yellow",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_lime",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_pink",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_gray",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_light_gray",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_cyan",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_purple",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_blue",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_brown",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_green",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_red",
+            "required": false
+        },
+        {
+            "id": "betternether:quartz_glass_black",
+            "required": false
+        },
+        {
+            "id": "betternether:nether_ruby_block",
+            "required": false
+        },
+        {
+            "id": "betternether:cincinnasite_tile_large",
+            "required": false
+        },
+        {
+            "id": "betternether:cincinnasite_slab",
+            "required": false
+        },
+        {
+            "id": "betternether:cincinnasite_plate",
+            "required": false
+        },
+        {
+            "id": "betternether:nether_brick_tile_large",
+            "required": false
+        },
+        {
+            "id": "betternether:obsidian_tile",
+            "required": false
+        },
+        {
+            "id": "betterend:violecite_polished",
+            "required": false
+        },
+        {
+            "id": "betterend:sulphuric_rock_polished",
+            "required": false
+        },
+        {
+            "id": "betterend:virid_jadestone_polished",
+            "required": false
+        },
+        {
+            "id": "betterend:azure_jadestone_polished",
+            "required": false
+        },
+        {
+            "id": "betterend:sandy_jadestone_polished",
+            "required": false
+        },
+        {
+            "id": "betterend:umbralith_polished",
+            "required": false
+        },
+        {
+            "id": "betterend:thallasium_block",
+            "required": false
+        },
+        {
+            "id": "betterend:terminite_block",
+            "required": false
+        },
+        {
+            "id": "betterend:aeternium_block",
+            "required": false
+        },
+        {
+            "id": "betterend:ender_block",
+            "required": false
+        },
+        {
+            "id": "betterend:aurora_crystal",
+            "required": false
+        },
+        {
+            "id": "betterend:amber_block",
+            "required": false
+        },
+        {
+            "id": "betterend:smaragdant_crystal_polished",
+            "required": false
+        },
+        {
+            "id": "bewitchment:silver_block",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:polished_mesmerite",
+            "required": false
+        },
+        {
+            "id": "botania:polished_livingrock",
+            "required": false
+        },
+        {
+            "id": "botania:polished_livingrock_stairs",
+            "required": false
+        },
+        {
+            "id": "botania:polished_livingrock_slab",
+            "required": false
+        },
+        {
+            "id": "botania:polished_livingrock_wall",
+            "required": false
+        },
+        {
+            "id": "botania:mana_glass",
+            "required": false
+        },
+        {
+            "id": "botania:elf_glass",
+            "required": false
+        },
+        {
+            "id": "botania:bifrost_perm",
+            "required": false
+        },
+        {
+            "id": "charm:waxed_iron_block",
+            "required": false
+        },
+        {
+            "id": "charm:waxed_cut_iron",
+            "required": false
+        },
+        {
+            "id": "charm:waxed_cut_iron_slab",
+            "required": false
+        },
+        {
+            "id": "charm:waxed_cut_iron_stairs",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_sculk_stone",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_sculk_stone_wall",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_sculk_stone_slab",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_sculk_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_gloomslate",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_gloomslate",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_gloomslate_wall",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_gloomslate_slab",
+            "required": false
+        },
+        {
+            "id": "deeperdarker:polished_gloomslate_stairs",
+            "required": false
+        },
+        {
+            "id": "enderscape:nebulite_block",
+            "required": false
+        },
+        {
+            "id": "enderscape:smooth_shadow_quartz",
+            "required": false
+        },
+        {
+            "id": "enderscape:smooth_shadow_quartz_wall",
+            "required": false
+        },
+        {
+            "id": "enderscape:smooth_shadow_quartz_slab",
+            "required": false
+        },
+        {
+            "id": "enderscape:smooth_shadow_quartz_stairs",
+            "required": false
+        },
+        {
+            "id": "enderscape:polished_veradite",
+            "required": false
+        },
+        {
+            "id": "enderscape:polished_veradite_wall",
+            "required": false
+        },
+        {
+            "id": "enderscape:polished_veradite_slab",
+            "required": false
+        },
+        {
+            "id": "enderscape:polished_veradite_stairs",
+            "required": false
+        },
+        {
+            "id": "galosphere:silver_block",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_amethyst",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_amethyst_slab",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_amethyst_stairs",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_allurite",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_allurite_slab",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_allurite_stairs",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_lumiere",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_lumiere_slab",
+            "required": false
+        },
+        {
+            "id": "galosphere:smooth_lumiere_stairs",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:polished_mesmerite_wall",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:polished_mesmerite_stairs",
+            "required": false
+        },
+        {
+            "id": "biomemakeover:polished_mesmerite_slab",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:aluminum_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:annealed_copper_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:antimony_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:battery_alloy_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:bauxite_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:beryllium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:bronze_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:chromium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:cupronickel_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:electrum_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:he_mox_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:he_uranium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:invar_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:iridium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:kanthal_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:le_mox_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:le_uranium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:lead_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:mozanite_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:neodymium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:nickel_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:platinum_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:plutonium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:tungsten_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:uranium_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:uranium_235_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:uranium_238_block",
+            "required": false
+        },
+        {
+            "id": "modern_industrialization:yttrium_block",
+            "required": false
+        },
+        {
+            "id": "naturalist:azure_froglass",
+            "required": false
+        },
+        {
+            "id": "naturalist:verdant_froglass",
+            "required": false
+        },
+        {
+            "id": "naturalist:crimson_froglass",
+            "required": false
+        },
+        {
+            "id": "powah:energized_steel_block",
+            "required": false
+        },
+        {
+            "id": "powah:blazing_crystal_block",
+            "required": false
+        },
+        {
+            "id": "powah:niotic_crystal_block",
+            "required": false
+        },
+        {
+            "id": "powah:spirited_crystal_block",
+            "required": false
+        },
+        {
+            "id": "powah:nitro_crystal_block",
+            "required": false
+        },
+        {
+            "id": "powah:uraninite_block",
+            "required": false
+        },
+        {
+            "id": "refinedstorage2:quartz_enriched_iron_block",
+            "required": false
+        },
+        {
+            "id": "spectrum:polished_calcite",
+            "required": false
+        },
+        {
+            "id": "spectrum:polished_calcite_wall",
+            "required": false
+        },
+        {
+            "id": "spectrum:polished_calcite_slab",
+            "required": false
+        },
+        {
+            "id": "spectrum:polished_calcite_stairs",
+            "required": false
+        },
+        {
+            "id": "spectrum:malachite_block",
+            "required": false
+        },
+        {
+            "id": "spectrum:topaz_storage_block",
+            "required": false
+        },
+        {
+            "id": "spectrum:amethyst_storage_block",
+            "required": false
+        },
+        {
+            "id": "spectrum:citrine_storage_block",
+            "required": false
+        },
+        {
+            "id": "spectrum:onyx_storage_block",
+            "required": false
+        },
+        {
+            "id": "spectrum:moonstone_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:advanced_alloy_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:aluminum_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:brass_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:bronze_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:chrome_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:electrum_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:invar_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:iridium_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:lead_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:nickel_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:platinum_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:refined_iron_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:silver_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:steel_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:tin_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:titanium_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungsten_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:tungstensteel_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block_wall",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block_slab",
+            "required": false
+        },
+        {
+            "id": "techreborn:zinc_storage_block_stairs",
+            "required": false
+        },
+        {
+            "id": "supplementaries:soap_block",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_granite",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_granite_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_granite_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_granite_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_diorite",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_diorite_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_diorite_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_diorite_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_andesite",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_andesite_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_andesite_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_andesite_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_calcite",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_calcite_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_calcite_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_calcite_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_dripstone",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_dripstone_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_dripstone_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_dripstone_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_deepslate",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_deepslate_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_deepslate_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_deepslate_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_tuff",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_tuff_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_tuff_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_tuff_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_asurine",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_asurine_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_asurine_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_asurine_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_crimsite",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_crimsite_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_crimsite_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_crimsite_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_limestone",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_limestone_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_limestone_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_limestone_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_ochrum",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_ochrum_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_ochrum_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_ochrum_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scoria",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scoria_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scoria_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scoria_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scorchia",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scorchia_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scorchia_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_scorchia_wall",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_veridium",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_veridium_stairs",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_veridium_slab",
+            "required": false
+        },
+        {
+            "id": "create:polished_cut_veridium_wall",
+            "required": false
+        },
+        {
+            "id": "polished_granite",
+            "required": false
+        },
+        {
+            "id": "polished_diorite",
+            "required": false
+        },
+        {
+            "id": "polished_andesite",
+            "required": false
+        },
+        {
+            "id": "polished_deepslate",
+            "required": false
+        },
+        {
+            "id": "polished_basalt",
+            "required": false
+        },
+        {
+            "id": "polished_granite_stairs",
+            "required": false
+        },
+        {
+            "id": "polished_diorite_stairs",
+            "required": false
+        },
+        {
+            "id": "polished_andesite_stairs",
+            "required": false
+        },
+        {
+            "id": "polished_deepslate_stairs",
+            "required": false
+        },
+        {
+            "id": "polished_granite_slab",
+            "required": false
+        },
+        {
+            "id": "polished_diorite_slab",
+            "required": false
+        },
+        {
+            "id": "polished_andesite_slab",
+            "required": false
+        },
+        {
+            "id": "polished_deepslate_slab",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_slab",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_stairs",
+            "required": false
+        },
+        {
+            "id": "chiseled_polished_blackstone",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_bricks",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_brick_slab",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "cracked_polished_blackstone_bricks",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_wall",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_brick_wall",
+            "required": false
+        },
+        {
+            "id": "polished_deepslate_wall",
+            "required": false
+        },
+        {
+            "id": "polished_blackstone_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "smooth_stone_slab",
+            "required": false
+        },
+        {
+            "id": "smooth_quartz",
+            "required": false
+        },
+        {
+            "id": "smooth_red_sandstone",
+            "required": false
+        },
+        {
+            "id": "smooth_sandstone",
+            "required": false
+        },
+        {
+            "id": "smooth_stone",
+            "required": false
+        },
+        {
+            "id": "smooth_basalt",
+            "required": false
+        },
+        {
+            "id": "smooth_red_sandstone_stairs",
+            "required": false
+        },
+        {
+            "id": "smooth_sandstone_stairs",
+            "required": false
+        },
+        {
+            "id": "smooth_quartz_stairs",
+            "required": false
+        },
+        {
+            "id": "smooth_red_sandstone_slab",
+            "required": false
+        },
+        {
+            "id": "smooth_sandstone_slab",
+            "required": false
+        },
+        {
+            "id": "smooth_quartz_slab",
+            "required": false
+        },
+        {
+            "id": "packed_mud",
+            "required": false
+        },
+        {
+            "id": "iron_block",
+            "required": false
+        },
+        {
+            "id": "copper_block",
+            "required": false
+        },
+        {
+            "id": "gold_block",
+            "required": false
+        },
+        {
+            "id": "diamond_block",
+            "required": false
+        },
+        {
+            "id": "emerald_block",
+            "required": false
+        },
+        {
+            "id": "waxed_copper_block",
+            "required": false
+        },
+        {
+            "id": "glass",
+            "required": false
+        },
+        {
+            "id": "tinted_glass",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:adamantite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:aquarium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:banglum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:bronze_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:carmot_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:celestium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:durasteel_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:kyber_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:manganese_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:metallurgium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:morkite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:midas_gold_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:mythril_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:orichalcum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:osmium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:palladium_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:platinum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:prometheum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:quadrillum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:runite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:silver_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:star_platinum_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:starrite_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:steel_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:stormyx_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:tin_block",
+            "required": false
+        },
+        {
+            "id": "mythicmetals:unobtainium_block",
+            "required": false
+        },
+        {
+            "id": "createdeco:cast_iron_block",
+            "required": false
+        },
+        {
+            "id": "alloy_forgery:polished_blackstone_forge_controller",
+            "required": false
+        },
+        {
+            "id": "ae2:smooth_quartz_block",
+            "required": false
+        },
+        {
+            "id": "ae2:smooth_quartz_stairs",
+            "required": false
+        },
+        {
+            "id": "ae2:smooth_quartz_wall",
+            "required": false
+        },
+        {
+            "id": "ae2:smooth_quartz_slab",
+            "required": false
+        },
+        {
+            "id": "ae2:quartz_glass",
+            "required": false
+        },
+        {
+            "id": "ae2:quartz_vibrant_glass",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_moon_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_moon_stone_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_mars_stone",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_mars_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_mars_stone_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_conglomerate",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_venus_stone",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_venus_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_venus_stone_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_mercury_stone",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_mercury_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_mercury_stone_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_block",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:steel_plating_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:desh_block",
+            "required": false
+        },
+        {
+            "id": "ad_astra:desh_block",
+            "required": false
+        },
+        {
+            "id": "ad_astra:ostrum_block",
+            "required": false
+        },
+        {
+            "id": "ad_astra:calorite_block",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_permafrost_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_permafrost_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_permafrost",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_glacio_stone_slab",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_glacio_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "ad_astra:polished_glacio_stone",
+            "required": false
+        },
+        {
+            "id": "clutter:silver_block",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_stairs",
+            "required": false
+        }
+    ]
+}

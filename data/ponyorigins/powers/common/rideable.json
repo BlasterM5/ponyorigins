@@ -48,7 +48,7 @@
         "action_result": "success",
         "priority": 0
     },
-    "stamina": {
+    "stamina_cost": {
         "condition": {
             "type": "origins:passenger",
             "comparison": ">",

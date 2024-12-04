@@ -4,13 +4,15 @@
     "powers": [
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
-        "ponyorigins:common/quadruped",
-        "ponyorigins:common/hooves",
-        "ponyorigins:common/rideable",
+        "ponyorigins:common/health/base",
+        "ponyorigins:kirin/nirik",
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
-        "ponyorigins:kirin/nirik",
-        "ponyorigins:common/health/armor_kirin",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/partial_dragonscale",
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {

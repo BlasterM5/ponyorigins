@@ -1,0 +1,112 @@
+{
+    "name": "Feline Paws",
+    "description": "Your feline paws are silent to the ground, and your retractible claws make ice a little less slippery when barefoot. You also jump good.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "When barefoot: -5 Percent Ice Slipperiness",
+            "sprite": "textures/item/iron_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "When Barefoot (requires all feet to be paws): Move Silently when walking",
+            "sprite": "textures/item/leather_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+33 Percent Jump Height when sprinting or crouching",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "silent_steps": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/quadruped"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/limbs/quadruped"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/limbs/fore/feline_paws"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:sprinting"
+                }
+            ]
+        },
+        "type": "origins:prevent_game_event",
+        "event": "step"
+    },
+    "ice_less_slippery": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/00_empty_feet",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:ice"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.05
+        }
+    },
+    "jump_good": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:sneaking"
+                        },
+                        {
+                            "type": "origins:sprinting"
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "ponyorigins:ice"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.33
+        }
+    }
+}

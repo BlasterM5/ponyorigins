@@ -1,0 +1,6 @@
+{
+    "name": "Hands",
+    "description": "Human hands, the most dexterous forelimbs, designed for bipedal creatures.",
+    "hidden": true,
+    "type": "origins:simple"
+}

@@ -1,6 +1,6 @@
 {
     "name": "Telekinesis",
-    "description": "Your telekinesis levitates the items you are holding, freeing your forelegs for movement and allowing you to reach further.",
+    "description": "Your telekinesis can levitate the items you are holding, allowing you to reach further as long as you have the energy.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -11,6 +11,11 @@
             "type": "origins:tooltip",
             "text": "Requires Energy",
             "sprite": "textures/item/light.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Negates any encumbrance from holding items",
+            "sprite": "textures/item/leather_boots.png"
         }
     ],
     "condition": {

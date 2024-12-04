@@ -1,0 +1,28 @@
+{
+    "name": "Hooves",
+    "description": "Your arms are hooved. Kick enemies further away when attacking unarmed. Ponder how you are able to hold items with hooves.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Extra Melee Knockback when Unarmed",
+            "sprite": "textures/item/iron_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "knockback": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/00_empty_mainhand",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.25,
+            "client": true,
+            "server": true
+        },
+        "cooldown": 10
+    }
+}

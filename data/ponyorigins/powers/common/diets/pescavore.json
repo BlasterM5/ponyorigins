@@ -430,8 +430,11 @@
         "food_component": {
             "hunger": 1,
             "saturation": 0.5,
-            "meat": false
-        }
+            "meat": false,
+            "always_edible": false,
+            "snack": false
+        },
+        "use_action": "eat"
     },
     "land_meat_risk": {
         "type": "origins:modify_food",

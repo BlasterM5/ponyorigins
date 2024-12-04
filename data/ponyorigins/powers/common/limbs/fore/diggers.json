@@ -1,0 +1,149 @@
+{
+    "name": "Diggers",
+    "description": "These heavy forelimbs are made for digging. Extra large claws can dig through materials faster and deal extra damage when unarmed and not wearing boots.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "When Unarmed and not wearing boots: +300 percent Attack Damage",
+            "sprite": "textures/item/iron_sword.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "When Unarmed and not wearing boots while breaking natural terrain: +300 percent Block Break Speed",
+            "sprite": "textures/item/iron_pickaxe.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "When barefoot: -10 Percent Ice Slipperiness",
+            "sprite": "textures/item/iron_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "melee": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/limbs/taur"
+                }
+            ]
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 3
+        }
+    },
+    "dig": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/limbs/taur"
+                }
+            ]
+        },
+        "type": "origins:modify_break_speed",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "origins:natural_stone"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:diggable"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 3
+        }
+    },
+    "mine_stones": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/limbs/taur"
+                }
+            ]
+        },
+        "type": "origins:modify_harvest",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "origins:natural_stone"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:diggable"
+                }
+            ]
+        },
+        "allow": true
+    },
+    "ice_less_slippery": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/00_empty_feet",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:ice"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.1
+        }
+    }
+}

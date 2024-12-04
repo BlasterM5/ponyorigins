@@ -29,8 +29,11 @@
         "food_component": {
             "hunger": 1,
             "saturation": 0.5,
-            "meat": false
-        }
+            "meat": false,
+            "always_edible": false,
+            "snack": false
+        },
+        "use_action": "eat"
     },
     "glistering_melon_slice": {
         "type": "apugli:edible_item",
@@ -38,8 +41,8 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:food",
-                    "inverted": true
+                    "inverted": true,
+                    "type": "origins:food"
                 },
                 {
                     "type": "origins:ingredient",
@@ -52,8 +55,11 @@
         "food_component": {
             "hunger": 2,
             "saturation": 1.2,
-            "meat": false
-        }
+            "meat": false,
+            "always_edible": false,
+            "snack": false
+        },
+        "use_action": "eat"
     },
     "fd_horse_feed": {
         "type": "apugli:edible_item",

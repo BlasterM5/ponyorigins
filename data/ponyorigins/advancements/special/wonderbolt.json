@@ -4,7 +4,7 @@
             "item": "crossbow"
         },
         "title": "Wonderbolt",
-        "description": "16 hostiles, without touching the ground, in 10 seconds flat!",
+        "description": "20 hostiles, without touching the ground, in 10 seconds flat!",
         "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,

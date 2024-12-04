@@ -18,7 +18,7 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight/main"
+                        "power": "ponyorigins:common/flight"
                     }
                 ]
             },
@@ -140,53 +140,8 @@
         },
         "type": "origins:self_action_on_kill",
         "target_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:tamed"
-                        },
-                        {
-                            "inverted": true,
-                            "type": "origins:entity_type",
-                            "entity_type": "villager"
-                        },
-                        {
-                            "inverted": true,
-                            "type": "origins:entity_type",
-                            "entity_type": "player"
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:tamed"
-                        },
-                        {
-                            "type": "origins:entity_group",
-                            "group": "undead"
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:entity_group",
-                    "group": "illager"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "raiders"
-                },
-                {
-                    "type": "origins:in_tag",
-                    "tag": "skeletons"
-                }
-            ]
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:hostile_mobs"
         },
         "entity_action": {
             "type": "origins:change_resource",

@@ -1,0 +1,6 @@
+{
+    "name": "Feet",
+    "description": "Human feet, designed for bipedal creatures.",
+    "hidden": true,
+    "type": "origins:simple"
+}

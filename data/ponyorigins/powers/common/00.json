@@ -1,6 +1,6 @@
 {
     "name": "00 Common Checks",
-    "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key, as well as VAPS and the harmonic resonator mechanics.",
+    "description": "A simple power that checks some common expensive routines, such as if a hand is empty and providing an anti-lag for the held down power key, as well as VAPS, weight, and the harmonic resonator mechanics.",
     "hidden": true,
     "type": "origins:multiple",
     "vaps": {
@@ -156,7 +156,7 @@
                         "conditions": [
                             {
                                 "type": "origins:power",
-                                "power": "ponyorigins:common/flight/main"
+                                "power": "ponyorigins:common/flight"
                             },
                             {
                                 "inverted": true,
@@ -470,7 +470,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:power",
-                                    "power": "ponyorigins:common/flight/main"
+                                    "power": "ponyorigins:common/flight"
                                 },
                                 {
                                     "inverted": true,
@@ -962,5 +962,915 @@
                 }
             ]
         }
+    },
+    "weight_calculator": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_weight",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/health/minus_four"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/health/minus_two"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 8,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/health/base"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 12,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/health/plus_two"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 16,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/health/plus_four"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 20,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:constant",
+                                                "value": true
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 12,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/limbs/taur"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:if_else_list",
+                                        "actions": [
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/minus_four"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 2,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/minus_two"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 4,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/base"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 6,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/plus_two"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 8,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/plus_four"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 10,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:constant",
+                                                    "value": true
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 6,
+                                                    "operation": "add"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/limbs/quadruped"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:if_else_list",
+                                        "actions": [
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/minus_four"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 1,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/minus_two"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 2,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/base"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 3,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/plus_two"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 4,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/health/plus_four"
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 5,
+                                                    "operation": "add"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:constant",
+                                                    "value": true
+                                                },
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "*:*_weight",
+                                                    "change": 3,
+                                                    "operation": "add"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/arms/talons"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/arms/stiction"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/arms/feline_paws"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/arms/hands"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/arms/hooves"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/arms/canine_paws"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 8,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/arms/diggers"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 10,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/arms/wings"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/arms/none"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:nothing"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "inverted": true,
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/quadruped"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/taur"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/fore/talons"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/fore/stiction"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/fore/feline_paws"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/fore/hands"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/fore/feet"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/fore/hooves"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/fore/canine_paws"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 8,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/fore/diggers"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 10,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/quadruped"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/taur"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/hind/talons"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/hind/stiction"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/hind/feline_paws"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/hind/hands"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/hind/feet"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/hind/hooves"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/hind/canine_paws"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 8,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/hind/diggers"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 10,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:constant",
+                                                "value": true
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/wings/membraneous"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/limbs/wings/feathered"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/wings/waterproof"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 3,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/wings/insectoid"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/skin/chitin"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/skin/skin"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/skin/hair"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/skin/fur"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/skin/arctic_fur"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/skin/partial_dragonscale"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 7,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/skin/dragonscale"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 10,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:constant",
+                                                "value": true
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/diets/emotivore"
+                                            },
+                                            "action": {
+                                                "type": "origins:nothing"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/diets/pescavore"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:changeling/web_shot"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/diets/carnivore"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/diets/omnivore"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 3,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:or",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/diets/fructivore"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/diets/herbivore"
+                                                    },
+                                                    {
+                                                        "type": "origins:power",
+                                                        "power": "ponyorigins:common/diets/goat"
+                                                    }
+                                                ]
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/diets/lithovore"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 8,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:constant",
+                                                "value": true
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 3,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/energy"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_weight",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/telekinesis"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_weight",
+                                        "change": 1,
+                                        "operation": "add"
+                                    }
+                                }
+                            ]
+                        },
+                        "ticks": 1
+                    }
+                ]
+            },
+            "ticks": 2
+        }
+    },
+    "weight": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 99,
+        "start_value": 0
     }
 }

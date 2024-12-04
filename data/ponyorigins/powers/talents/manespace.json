@@ -34,15 +34,15 @@
                         "type": "origins:and",
                         "conditions": [
                             {
+                                "type": "origins:origin",
+                                "origin": "ponyorigins:talents/manespace",
+                                "layer": "ponyorigins:primary_talent"
+                            },
+                            {
                                 "type": "origins:resource",
                                 "resource": "ponyorigins:common/00_key_primary_active",
                                 "comparison": ">",
                                 "compare_to": 0
-                            },
-                            {
-                                "type": "origins:origin",
-                                "origin": "ponyorigins:talents/manespace",
-                                "layer": "ponyorigins:primary_talent"
                             }
                         ]
                     },
@@ -50,15 +50,16 @@
                         "type": "origins:and",
                         "conditions": [
                             {
+                                "inverted": true,
+                                "type": "origins:origin",
+                                "origin": "ponyorigins:talents/manespace",
+                                "layer": "ponyorigins:primary_talent"
+                            },
+                            {
                                 "type": "origins:resource",
                                 "resource": "ponyorigins:common/00_key_secondary_active",
                                 "comparison": ">",
                                 "compare_to": 0
-                            },
-                            {
-                                "type": "origins:origin",
-                                "origin": "ponyorigins:talents/manespace",
-                                "layer": "ponyorigins:secondary_talent"
                             }
                         ]
                     }

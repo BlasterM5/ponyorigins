@@ -1,0 +1,35 @@
+{
+    "name": "Diggers",
+    "description": "These heavy hind legs are made for digging. Ice is less slippery.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "When barefoot: -10 Percent Ice Slipperiness",
+            "sprite": "textures/item/iron_boots.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:power",
+                "power": "ponyorigins:common/limbs/quadruped"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/00_empty_feet",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        ]
+    },
+    "type": "origins:modify_slipperiness",
+    "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "ponyorigins:ice"
+    },
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": -0.1
+    }
+}

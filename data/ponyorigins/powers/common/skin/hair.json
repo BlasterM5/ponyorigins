@@ -1,0 +1,94 @@
+{
+    "name": "Hairs",
+    "description": "Your body is covered in a thin layer of hair, which keeps you warm in the cold, but reduces your endurance slightly.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Cold Resistance: +25 Percent",
+            "sprite": "textures/item/leather_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Exhaustion +5 Percent, increasing to +10 percent in extreme heat",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.05
+        }
+    },
+    "heat_exhaustion": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:temperature",
+                        "comparison": ">",
+                        "compare_to": 1.5
+                    }
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "nether"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.05
+        }
+    },
+    "cold_defense": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "cold_protection_burned": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.0025,
+            "modifier": {
+                "operation": "multiply_base_multiplicative",
+                "value": -100,
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 0,
+                    "resource": "ponyorigins:common/hazards_burned"
+                }
+            }
+        }
+    }
+}

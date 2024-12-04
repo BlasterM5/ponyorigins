@@ -1,0 +1,83 @@
+{
+    "name": "Chitin",
+    "description": "Your body is encased in a hard exoskeleton. This protects you a little from the elements at the cost of a little endurance.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Cold Resistance: +25 Percent",
+            "sprite": "textures/item/leather_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Heat Resistance: +10 Percent",
+            "sprite": "textures/item/leather_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Exhaustion +5 Percent",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.05
+        }
+    },
+    "cold_resistance": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.25
+        }
+    },
+    "heat_resistance": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_fire"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.1
+        }
+    },
+    "cold_resistance_burned": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.0025,
+            "modifier": {
+                "operation": "multiply_base_multiplicative",
+                "value": -100,
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 0,
+                    "resource": "ponyorigins:common/hazards_burned"
+                }
+            }
+        }
+    }
+}

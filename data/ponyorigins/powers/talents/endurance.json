@@ -9,9 +9,12 @@
         }
     ],
     "hidden": true,
+    "condition": {
+        "type": "origins:moving"
+    },
     "type": "origins:modify_exhaustion",
     "modifier": {
         "operation": "multiply_base_additive",
-        "value": -0.25
+        "value": -0.2
     }
 }

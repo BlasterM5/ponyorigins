@@ -1,0 +1,159 @@
+{
+    "name": "Arctic Fur",
+    "description": "Your body is covered in an extra thick layer of fur, which grants you immunity from the cold, at the cost of extra endurance loss in warm climates.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Cold Immunity",
+            "sprite": "textures/item/leather_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Exhaustion +5 Percent in the cold, increasing to +30 percent in the heat",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "cold_damage_immunity": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "exhaustion_base": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.1
+        }
+    },
+    "exhaustion_cold": {
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:temperature",
+                "comparison": "<=",
+                "compare_to": 0
+            }
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.05
+        }
+    },
+    "exhaustion_hot": {
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:temperature",
+                        "comparison": ">=",
+                        "compare_to": 0.2
+                    },
+                    {
+                        "type": "origins:temperature",
+                        "comparison": "<=",
+                        "compare_to": 1
+                    }
+                ]
+            }
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.05
+        }
+    },
+    "exhaustion_hotter": {
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:temperature",
+                        "comparison": ">",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:temperature",
+                        "comparison": "<",
+                        "compare_to": 2
+                    }
+                ]
+            }
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.1
+        }
+    },
+    "exhaustion_hottest": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:temperature",
+                        "comparison": ">",
+                        "compare_to": 2
+                    }
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "nether"
+                    }
+                }
+            ]
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.2
+        }
+    },
+    "cold_damage_burned_debuff": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/hazards_burned",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "is_freezing"
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.01,
+            "modifier": {
+                "operation": "multiply_base_multiplicative",
+                "value": -100,
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 0,
+                    "resource": "ponyorigins:common/hazards_burned"
+                }
+            }
+        }
+    }
+}

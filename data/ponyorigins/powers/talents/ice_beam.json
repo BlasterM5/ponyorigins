@@ -99,7 +99,7 @@
                                 },
                                 {
                                     "type": "origins:execute_command",
-                                    "command": "playsound block.fire.extinguish block @a"
+                                    "command": "playsound block.fire.extinguish block @a ~ ~ ~"
                                 }
                             ]
                         }
@@ -156,6 +156,7 @@
                     }
                 ]
             },
+            "command_at_hit": "function ponyorigins:abilities/aggro",
             "command_along_ray": "particle snowflake ^ ^0.5 ^ 0 0 0 1 0 force",
             "command_step": 1
         }
@@ -353,9 +354,10 @@
                     "type": "origins:and",
                     "conditions": [
                         {
+                            "inverted": true,
                             "type": "origins:origin",
                             "origin": "ponyorigins:talents/ice_beam",
-                            "layer": "ponyorigins:secondary_talent"
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",

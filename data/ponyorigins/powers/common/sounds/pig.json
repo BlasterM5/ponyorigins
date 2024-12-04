@@ -1,0 +1,44 @@
+{
+    "name": "Pig Sounds",
+    "description": "Pig races make pig noises.",
+    "hidden": true,
+    "type": "origins:multiple",
+    "hurt": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/waterborn"
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "water"
+                }
+            ]
+        },
+        "type": "apugli:custom_hurt_sound",
+        "sound": "entity.pig.hurt",
+        "volume": 0.5
+    },
+    "death": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:talents/waterborn"
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "water"
+                }
+            ]
+        },
+        "type": "apugli:custom_death_sound",
+        "sound": "entity.pig.death",
+        "volume": 0.5
+    }
+}

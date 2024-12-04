@@ -1,5 +1,5 @@
 {
-    "order": 2,
+    "order": 97,
     "origins": [
         {
             "condition": {
@@ -12,7 +12,6 @@
         }
     ],
     "enabled": true,
-    "loading_priority": 1,
     "name": "Common",
     "gui_title": {
         "choose_origin": "Setting Common Powers",

@@ -119,22 +119,12 @@
                                         "type": "origins:and",
                                         "actions": [
                                             {
-                                                "type": "origins:if_else",
-                                                "condition": {
-                                                    "type": "origins:target_condition",
-                                                    "condition": {
-                                                        "type": "origins:power",
-                                                        "power": "ponyorigins:common/flight/main"
-                                                    }
-                                                },
-                                                "if_action": {
-                                                    "type": "origins:target_action",
-                                                    "action": {
-                                                        "type": "origins:change_resource",
-                                                        "resource": "ponyorigins:common/flight/main_web_cd",
-                                                        "change": 30,
-                                                        "operation": "add"
-                                                    }
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "ponyorigins:common/hazards_webbed",
+                                                    "change": 100,
+                                                    "operation": "add"
                                                 }
                                             },
                                             {

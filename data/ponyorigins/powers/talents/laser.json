@@ -55,20 +55,17 @@
                     "shape_type": "collider",
                     "fluid_handling": "any",
                     "bientity_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:target_action",
-                                "action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
                                     "type": "origins:explode",
                                     "power": 1,
                                     "destruction_type": "none",
                                     "damage_self": true
-                                }
-                            },
-                            {
-                                "type": "origins:target_action",
-                                "action": {
+                                },
+                                {
                                     "type": "origins:spawn_particles",
                                     "particle": "flash",
                                     "count": 1,
@@ -78,18 +75,15 @@
                                         "y": 0,
                                         "z": 0
                                     }
-                                }
-                            },
-                            {
-                                "type": "origins:target_action",
-                                "action": {
+                                },
+                                {
                                     "type": "origins:play_sound",
                                     "sound": "entity.generic.explode",
                                     "volume": 1,
                                     "pitch": 1
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     },
                     "block_action": {
                         "type": "origins:and",
@@ -106,10 +100,11 @@
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "playsound entity.generic.explode master @a"
+                                "command": "playsound entity.generic.explode master @a ~ ~ ~"
                             }
                         ]
                     },
+                    "command_at_hit": "function ponyorigins:abilities/aggro",
                     "command_along_ray": "particle instant_effect ^ ^0.5 ^ 0.1 0.1 0.1 10 8 force",
                     "command_step": 1
                 },
@@ -302,9 +297,10 @@
                     "type": "origins:and",
                     "conditions": [
                         {
+                            "inverted": true,
                             "type": "origins:origin",
                             "origin": "ponyorigins:talents/laser",
-                            "layer": "ponyorigins:secondary_talent"
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",

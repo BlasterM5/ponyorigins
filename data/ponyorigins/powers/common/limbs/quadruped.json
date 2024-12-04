@@ -1,0 +1,109 @@
+{
+    "name": "Quadruped",
+    "description": "You stand and walk on all four legs, granting you more speed but costing more stamina. Holding items in your forelimbs slows you down.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "No held items: Movement Speed +20 percent",
+            "sprite": "textures/item/leather_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "One held item: Movement Speed normal",
+            "sprite": "textures/item/iron_hoe.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Two held items: Movement Speed -20 percent",
+            "sprite": "textures/item/flint_and_steel.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+20 percent Exhaustion when moving",
+            "sprite": "textures/item/wheat.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "slowertwoheld": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_offhand",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/telekinesis"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.2
+        }
+    },
+    "normalspeed": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_mainhand",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_offhand",
+                            "comparison": "==",
+                            "compare_to": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/telekinesis"
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.2
+        }
+    },
+    "faster_exhaustion": {
+        "condition": {
+            "type": "origins:moving"
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.2
+        }
+    }
+}

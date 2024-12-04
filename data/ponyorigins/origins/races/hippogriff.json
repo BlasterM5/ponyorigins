@@ -3,12 +3,14 @@
     "description": "Front end of an osprey, back end of a pony, a friendlier predator of the skies.",
     "powers": [
         "ponyorigins:common/diets/pescavore",
-        "ponyorigins:common/quadruped",
-        "ponyorigins:common/talons",
+        "ponyorigins:common/health/base",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/talons",
+        "ponyorigins:common/limbs/wings/waterproof",
+        "ponyorigins:common/limbs/hind/hooves",
         "ponyorigins:common/rideable",
-        "ponyorigins:common/flight/main",
-        "ponyorigins:common/flight/hazards",
-        "ponyorigins:common/wings/waterproof",
+        "ponyorigins:common/skin/hair",
         "ponyorigins:common/sounds/avian"
     ],
     "icon": {

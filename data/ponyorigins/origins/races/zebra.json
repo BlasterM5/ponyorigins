@@ -4,13 +4,15 @@
     "powers": [
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
-        "ponyorigins:common/quadruped",
-        "ponyorigins:common/hooves",
-        "ponyorigins:common/rideable",
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:zebra/dust",
         "ponyorigins:common/energy",
         "ponyorigins:common/pony",
-        "ponyorigins:zebra/dust",
-        "ponyorigins:common/health/plus_four",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
         "ponyorigins:common/sounds/pony"
     ],
     "icon": {

@@ -1,0 +1,6 @@
+{
+    "name": "Base Health",
+    "description": "Your body has the normal amount of health.",
+    "hidden": true,
+    "type": "origins:simple"
+}

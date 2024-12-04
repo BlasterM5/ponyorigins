@@ -103,10 +103,11 @@
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "playsound entity.generic.explode master @a"
+                                "command": "playsound entity.generic.explode master @a ~ ~ ~"
                             }
                         ]
                     },
+                    "command_at_hit": "function ponyorigins:abilities/aggro",
                     "command_along_ray": "particle instant_effect ^ ^0.25 ^ 0.1 0.1 0.1 10 8 force",
                     "command_step": 1
                 },

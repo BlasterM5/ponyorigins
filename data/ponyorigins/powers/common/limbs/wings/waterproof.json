@@ -1,0 +1,16 @@
+{
+    "name": "Waterproof Feathers",
+    "description": "Your wings are covered in heavy, waterproof guard feathers, allowing you to dive into and take off from water without getting waterlogged.",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "textures/item/feather.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Waterproof",
+            "sprite": "textures/particle/splash_0.png"
+        }
+    ],
+    "type": "origins:simple"
+}

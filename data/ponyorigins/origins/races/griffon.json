@@ -3,13 +3,15 @@
     "description": "Front end of an eagle, back end of a lion, a fearsome predator of the skies.",
     "powers": [
         "ponyorigins:common/diets/carnivore",
-        "ponyorigins:common/quadruped",
-        "ponyorigins:common/talons",
-        "ponyorigins:common/rideable",
-        "ponyorigins:common/flight/main",
-        "ponyorigins:common/flight/hazards",
-        "ponyorigins:common/wings/feathered",
+        "ponyorigins:common/health/base",
+        "ponyorigins:common/flight",
         "origins:scare_creepers",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/talons",
+        "ponyorigins:common/limbs/wings/feathered",
+        "ponyorigins:common/limbs/hind/feline_paws",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/fur",
         "ponyorigins:common/sounds/avian"
     ],
     "icon": {

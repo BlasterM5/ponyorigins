@@ -4,12 +4,13 @@
     "powers": [
         "ponyorigins:common/diets/herbivore",
         "ponyorigins:common/diets/direct_eat",
-        "ponyorigins:common/quadruped",
-        "ponyorigins:common/hooves",
-        "ponyorigins:common/rideable",
-        "ponyorigins:common/cold_immunity",
-        "ponyorigins:yak/smash",
         "ponyorigins:common/health/plus_four",
+        "ponyorigins:yak/smash",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/arctic_fur",
         "ponyorigins:common/sounds/cow"
     ],
     "icon": {

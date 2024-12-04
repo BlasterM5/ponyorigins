@@ -208,9 +208,10 @@
                     "type": "origins:and",
                     "conditions": [
                         {
+                            "inverted": true,
                             "type": "origins:origin",
                             "origin": "ponyorigins:talents/shock_ray",
-                            "layer": "ponyorigins:secondary_talent"
+                            "layer": "ponyorigins:primary_talent"
                         },
                         {
                             "type": "origins:resource",
@@ -602,6 +603,7 @@
                     }
                 ]
             },
+            "command_at_hit": "function ponyorigins:abilities/aggro",
             "command_along_ray": "particle electric_spark ^ ^0.5 ^ 0 0 0 1 0 force",
             "command_step": 1
         }

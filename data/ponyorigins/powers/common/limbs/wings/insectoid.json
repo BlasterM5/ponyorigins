@@ -1,0 +1,32 @@
+{
+    "name": "Insectoid Wings",
+    "description": "Your wings are thin, cellular membranes. Extremely light, they flap very easily and are resilient against physical injuries, but they become too heavy to fly when wet.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Flight Speed -20 percent",
+            "sprite": "textures/item/phantom_membrane.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Flight disabled in rain and water",
+            "sprite": "textures/particle/splash_0.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Wings can be frozen in snowstorms",
+            "sprite": "textures/block/ice.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Cobwebs are easier to clean off",
+            "sprite": "textures/block/cobweb.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Burns take longer to heal",
+            "sprite": "textures/particle/flame.png"
+        }
+    ],
+    "type": "origins:simple"
+}

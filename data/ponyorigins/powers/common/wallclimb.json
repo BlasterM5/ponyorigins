@@ -9,7 +9,7 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Must have main and off (hands or hooves) free",
+            "text": "Must have both forelimbs free",
             "sprite": "textures/item/wooden_pickaxe.png"
         }
     ],
@@ -30,8 +30,17 @@
                             "type": "origins:and",
                             "conditions": [
                                 {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/hooves"
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/fore/hooves"
+                                        },
+                                        {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/hind/hooves"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "origins:or",
@@ -44,12 +53,12 @@
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:icey"
+                                                        "tag": "ponyorigins:ice"
                                                     },
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:slick"
+                                                        "tag": "ponyorigins:slippery_when_wet"
                                                     },
                                                     {
                                                         "type": "origins:movement_blocking"
@@ -68,12 +77,12 @@
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:icey"
+                                                        "tag": "ponyorigins:ice"
                                                     },
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:slick"
+                                                        "tag": "ponyorigins:slippery_when_wet"
                                                     },
                                                     {
                                                         "type": "origins:movement_blocking"
@@ -92,12 +101,12 @@
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:icey"
+                                                        "tag": "ponyorigins:ice"
                                                     },
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:slick"
+                                                        "tag": "ponyorigins:slippery_when_wet"
                                                     },
                                                     {
                                                         "type": "origins:movement_blocking"
@@ -116,12 +125,12 @@
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:icey"
+                                                        "tag": "ponyorigins:ice"
                                                     },
                                                     {
                                                         "inverted": true,
                                                         "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:slick"
+                                                        "tag": "ponyorigins:slippery_when_wet"
                                                     },
                                                     {
                                                         "type": "origins:movement_blocking"
@@ -140,9 +149,19 @@
                             "type": "origins:and",
                             "conditions": [
                                 {
-                                    "inverted": true,
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/hooves"
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/fore/hooves"
+                                        },
+                                        {
+                                            "inverted": true,
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/hind/hooves"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "origins:or",

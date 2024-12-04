@@ -1,5 +1,5 @@
 {
-    "name": "Strong Arms",
+    "name": "Boxing Arms",
     "description": "You naturally punch harder, doing a little more damage, breaking through blocks barehanded faster, and knocking enemies back.\n\nCharge up a windup punch to smash your target with a powerful, block-breaking hit.",
     "badges": [
         {
@@ -240,7 +240,8 @@
                                     "amount": 2
                                 }
                             ]
-                        }
+                        },
+                        "command_at_hit": "function ponyorigins:abilities/aggro"
                     },
                     "else_action": {
                         "type": "origins:if_else",
