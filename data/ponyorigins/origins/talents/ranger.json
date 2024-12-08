@@ -2,7 +2,7 @@
     "name": "Ranger",
     "description": "An exceptional shot.",
     "powers": [
-        "ponyorigins:talents/bow"
+        "ponyorigins:talents/ranger"
     ],
     "icon": {
         "item": "crossbow"

@@ -15,7 +15,7 @@
         "power": {
             "trigger": "origins:chose_origin",
             "conditions": {
-                "origin": "ponyorigins:talents/harmony_alicorn"
+                "origin": "ponyorigins:talents/alicorn/harmony"
             }
         }
     }

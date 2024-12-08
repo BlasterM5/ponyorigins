@@ -2,7 +2,7 @@
     "name": "Miner",
     "description": "Rock and Stone to the bone!",
     "powers": [
-        "ponyorigins:talents/miner_stamina"
+        "ponyorigins:talents/stamina/miner"
     ],
     "icon": {
         "item": "iron_pickaxe"

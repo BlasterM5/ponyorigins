@@ -10,7 +10,7 @@
     "upgrades": [
         {
             "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talents/teleport_alicorn"
+            "origin": "ponyorigins:talents/alicorn/teleport"
         }
     ],
     "impact": 0

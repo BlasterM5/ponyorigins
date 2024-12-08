@@ -311,6 +311,10 @@
                 },
                 {
                     "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:on_block"
                 }
             ]
         },

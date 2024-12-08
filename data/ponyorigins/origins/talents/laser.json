@@ -10,7 +10,7 @@
     "upgrades": [
         {
             "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talents/laser_alicorn"
+            "origin": "ponyorigins:talents/alicorn/laser"
         }
     ],
     "impact": 0

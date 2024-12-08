@@ -10,7 +10,7 @@
     "upgrades": [
         {
             "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talents/fireball_alicorn"
+            "origin": "ponyorigins:talents/alicorn/fireball"
         }
     ],
     "impact": 0

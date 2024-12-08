@@ -85,14 +85,14 @@
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/barrier_alicorn"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/barrier"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/celestial_alicorn"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/celestial"
                             }
                         },
                         {
@@ -113,7 +113,7 @@
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/fireball_alicorn"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/fireball"
                             }
                         },
                         {
@@ -155,7 +155,7 @@
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/laser_alicorn"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/laser"
                             }
                         },
                         {

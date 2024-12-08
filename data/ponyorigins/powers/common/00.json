@@ -93,7 +93,7 @@
                             {
                                 "inverted": true,
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:talents/harmony_alicorn"
+                                "origin": "ponyorigins:talents/alicorn/harmony"
                             }
                         ]
                     },
@@ -394,7 +394,7 @@
                                 {
                                     "inverted": true,
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:talents/harmony_alicorn"
+                                    "origin": "ponyorigins:talents/alicorn/harmony"
                                 }
                             ]
                         },

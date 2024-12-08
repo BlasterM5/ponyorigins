@@ -10,7 +10,7 @@
     "upgrades": [
         {
             "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talents/barrier_alicorn"
+            "origin": "ponyorigins:talents/alicorn/barrier"
         }
     ],
     "impact": 0

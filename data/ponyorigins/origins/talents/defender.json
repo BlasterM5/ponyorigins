@@ -10,7 +10,7 @@
     "upgrades": [
         {
             "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talents/defender_alicorn"
+            "origin": "ponyorigins:talents/alicorn/defender"
         }
     ],
     "impact": 0
