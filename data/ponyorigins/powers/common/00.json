@@ -1730,7 +1730,7 @@
                                         {
                                             "condition": {
                                                 "type": "origins:power",
-                                                "power": "ponyorigins:common/diets/emotivore"
+                                                "power": "ponyorigins:common/diets/amorevore"
                                             },
                                             "action": {
                                                 "type": "origins:nothing"
