@@ -1,0 +1,18 @@
+{
+    "name": "Diamond Dog",
+    "description": "A species of subterranean canines, diamond dogs are adept at digging underground.",
+    "powers": [
+        "ponyorigins:common/diet/carnivore",
+        "ponyorigins:common/health/base",
+        "ponyorigins:common/nightvision",
+        "ponyorigins:common/limbs/biped",
+        "ponyorigins:common/limbs/arms/diggers",
+        "ponyorigins:common/limbs/hind/canine_paws",
+        "ponyorigins:common/skin/fur",
+        "ponyorigins:common/sound/dog"
+    ],
+    "icon": {
+        "item": "emerald"
+    },
+    "impact": 0
+}

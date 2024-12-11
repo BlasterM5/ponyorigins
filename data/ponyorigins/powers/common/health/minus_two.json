@@ -1,6 +1,6 @@
 {
     "name": "Light",
-    "description": "Your body is lighter than average for your size, giving you only 9 hearts.",
+    "description": "This body is lighter than average, having only 9 health hearts.",
     "badges": [
         {
             "type": "origins:sprite",

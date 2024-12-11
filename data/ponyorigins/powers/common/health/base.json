@@ -1,6 +1,6 @@
 {
     "name": "Base Health",
-    "description": "Your body has the normal amount of health.",
+    "description": "A normal amount of health for a human-sized body.",
     "hidden": true,
     "type": "origins:simple"
 }

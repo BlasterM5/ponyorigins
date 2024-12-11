@@ -14,7 +14,7 @@
         "choice": {
             "trigger": "origins:chose_origin",
             "conditions": {
-                "origin": "ponyorigins:races/pegasus"
+                "origin": "ponyorigins:species/pegasus"
             }
         }
     }

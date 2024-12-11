@@ -1,0 +1,11 @@
+{
+    "name": "Firecracker",
+    "description": "Launch fireworks in the direction you are looking!",
+    "powers": [
+        "ponyorigins:talent/firecracker"
+    ],
+    "icon": {
+        "item": "firework_rocket"
+    },
+    "impact": 0
+}

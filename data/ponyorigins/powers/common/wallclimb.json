@@ -149,17 +149,67 @@
                             "type": "origins:and",
                             "conditions": [
                                 {
-                                    "type": "origins:and",
+                                    "type": "origins:or",
                                     "conditions": [
                                         {
-                                            "inverted": true,
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/fore/hooves"
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/hooves"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/hooves"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/hooves"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "inverted": true,
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/hind/hooves"
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/cloven_hooves"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/cloven_hooves"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/cloven_hooves"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/hands"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/hands"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/hands"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },

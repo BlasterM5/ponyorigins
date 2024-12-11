@@ -1,6 +1,6 @@
 {
     "name": "Canine Paws",
-    "description": "Your forelimbs are sturdy canine paws.",
+    "description": "Sturdy canine paws, for extra movement speed.",
     "badges": [
         {
             "type": "origins:tooltip",

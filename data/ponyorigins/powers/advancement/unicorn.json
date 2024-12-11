@@ -1,0 +1,347 @@
+{
+    "name": "Unicorn Advancements",
+    "description": "Contains Advancement Logic for Unicorn",
+    "hidden": true,
+    "type": "origins:multiple",
+    "advancement_setup": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "execute function ponyorigins:advancement/setup_up"
+        },
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:species/unicorn"
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.uporb",
+                        "comparison": "==",
+                        "compare_to": 2
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "ponyorigins:advancement/unicorn",
+                "source": "ponyorigins:common/00"
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "function ponyorigins:advancement/load_up_progress"
+            }
+        },
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "function ponyorigins:advancement/save_up_progress"
+        }
+    },
+    "mastery_check": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:unicorn/energy"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:unicorn/tk_mastery"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:unicorn/protection"
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.uporb",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "advancement grant @s only ponyorigins:unicorn/mastery"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "scoreboard players set @s po.uporb 1"
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:advancement",
+                                    "advancement": "ponyorigins:earth_pony/mastery"
+                                },
+                                {
+                                    "type": "origins:advancement",
+                                    "advancement": "ponyorigins:pegasus/mastery"
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "advancement grant @s only ponyorigins:alicorn/mastery"
+                                },
+                                {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:advancement/alicorn",
+                                    "source": "ponyorigins:common/00"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "bar_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_mine_vis",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/energy_odometer_vis",
+                    "change": -1,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "orb_give": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_mainhand",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.uporb",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:alicorn/mastery"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function ponyorigins:mastery/unicorn"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "ponyorigins:advancement/unicorn",
+                        "source": "ponyorigins:common/00"
+                    }
+                ]
+            }
+        }
+    },
+    "armor_check": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:unicorn/protection"
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "head",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "chest",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "legs",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "feet",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "advancement grant @s only ponyorigins:unicorn/protection"
+            }
+        }
+    },
+    "tk_mastery_check": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "ponyorigins:common/telekinesis"
+        },
+        "type": "origins:action_on_block_break",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_mine",
+                    "change": 1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_mine_vis",
+                    "change": 5,
+                    "operation": "set"
+                }
+            ]
+        },
+        "only_when_harvested": true
+    },
+    "mine": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 3,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_mine_vis",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_mine",
+                        "comparison": "<",
+                        "compare_to": 1000
+                    }
+                ]
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "advancement grant @s only ponyorigins:unicorn/tk_mastery"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_mine_vis",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "mine_vis": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
+    },
+    "energy_check": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:unicorn/energy"
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_odometer",
+                "comparison": "==",
+                "compare_to": 10000
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "advancement grant @s only ponyorigins:unicorn/energy"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_odometer_vis",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -540,7 +540,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:races/dragon"
+                                    "origin": "ponyorigins:species/dragon"
                                 },
                                 {
                                     "type": "origins:resource",
@@ -870,7 +870,7 @@
                                     },
                                     {
                                         "type": "origins:origin",
-                                        "origin": "ponyorigins:races/dragon"
+                                        "origin": "ponyorigins:species/dragon"
                                     }
                                 ]
                             },

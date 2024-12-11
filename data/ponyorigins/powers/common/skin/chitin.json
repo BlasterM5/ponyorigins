@@ -1,6 +1,6 @@
 {
     "name": "Chitin",
-    "description": "Your body is encased in a hard exoskeleton. This protects you a little from the elements at the cost of a little endurance.",
+    "description": "An insectoid body encased in a hard exoskeleton. This protects a little from the elements at the cost of a little endurance.",
     "badges": [
         {
             "type": "origins:tooltip",

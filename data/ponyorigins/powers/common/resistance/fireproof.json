@@ -1,6 +1,6 @@
 {
     "name": "Fireproof",
-    "description": "Your body is immune to fire damage.",
+    "description": "Total immunity to fire and heat damage.",
     "badges": [
         {
             "type": "origins:tooltip",

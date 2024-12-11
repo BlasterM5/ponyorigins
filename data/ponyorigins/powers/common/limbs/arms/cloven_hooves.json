@@ -1,0 +1,270 @@
+{
+    "name": "Hooves",
+    "description": "Arms that end with a split hoof. Punch enemies further away when attacking unarmed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Extra Melee Knockback when Unarmed",
+            "sprite": "textures/item/iron_boots.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "slipperier_ice": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ponyorigins:common/00_empty_feet",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:ice"
+        },
+        "modifier": {
+            "operation": "set_base",
+            "value": 0.989
+        }
+    },
+    "slippery_wet_blocks": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:in_rain"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/hazards_wet",
+                            "comparison": ">",
+                            "compare_to": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_slipperiness",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "ponyorigins:slippery_when_wet"
+        },
+        "modifier": {
+            "operation": "set_base",
+            "value": 0.98
+        }
+    },
+    "movement_buff": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_feet",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:in_rain"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/hazards_wet",
+                                    "comparison": ">",
+                                    "compare_to": 20
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:slippery_when_wet"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_feet",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:ice"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.05
+        }
+    },
+    "jump_good": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:sneaking"
+                        },
+                        {
+                            "type": "origins:sprinting"
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_feet",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:in_rain"
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/hazards_wet",
+                                            "comparison": ">",
+                                            "compare_to": 20
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:on_block",
+                                    "block_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:slippery_when_wet"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_feet",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:on_block",
+                                    "block_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:ice"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.33
+        }
+    },
+    "jump_bad_on_slippery": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_feet",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:in_rain"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/hazards_wet",
+                                    "comparison": ">",
+                                    "compare_to": 20
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:slippery_when_wet"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_empty_feet",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:ice"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    }
+}

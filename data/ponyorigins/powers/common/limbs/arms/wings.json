@@ -1,6 +1,5 @@
 {
-    "name": "Wings",
-    "description": "Your wings are your arms.",
-    "hidden": true,
+    "name": "Wing Arms",
+    "description": "Your arms are your wings. Grabbers optional.",
     "type": "origins:simple"
 }

@@ -1,0 +1,341 @@
+{
+    "name": "Pegasus Advancements",
+    "description": "Contains Advancement Logic for Pegasus",
+    "hidden": true,
+    "type": "origins:multiple",
+    "advancement_setup": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "execute function ponyorigins:advancement/setup_pp"
+        },
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:species/pegasus"
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.pporb",
+                        "comparison": "==",
+                        "compare_to": 2
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "ponyorigins:advancement/pegasus",
+                "source": "ponyorigins:common/00"
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "function ponyorigins:advancement/load_pp_progress"
+            }
+        },
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "function ponyorigins:advancement/save_pp_progress"
+        }
+    },
+    "mastery_check": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:pegasus/flight"
+                    },
+                    "if_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_flight",
+                            "comparison": "==",
+                            "compare_to": 5000000
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "advancement grant @s only ponyorigins:pegasus/flight"
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "function ponyorigins:advancement/update_pp_flight"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:pegasus/fight"
+                            },
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:pegasus/flight"
+                            },
+                            {
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:pegasus/skyhome"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "advancement grant @s only ponyorigins:pegasus/mastery"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scoreboard players set @s po.pporb 1"
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:advancement",
+                                            "advancement": "ponyorigins:earth_pony/mastery"
+                                        },
+                                        {
+                                            "type": "origins:advancement",
+                                            "advancement": "ponyorigins:unicorn/mastery"
+                                        }
+                                    ]
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "advancement grant @s only ponyorigins:alicorn/mastery"
+                                        },
+                                        {
+                                            "type": "origins:grant_power",
+                                            "power": "ponyorigins:advancement/alicorn",
+                                            "source": "ponyorigins:common/00"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "bar_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_fight_vis",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_flight_vis",
+                    "change": -1,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "orb_give": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/00_empty_mainhand",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.pporb",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:alicorn/mastery"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function ponyorigins:mastery/pegasus"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "ponyorigins:advancement/pegasus",
+                        "source": "ponyorigins:common/00"
+                    }
+                ]
+            }
+        }
+    },
+    "fight_vis": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
+    },
+    "fight": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 1,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_fight_vis",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_fight",
+                        "comparison": "<",
+                        "compare_to": 20
+                    }
+                ]
+            }
+        },
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "advancement grant @s only ponyorigins:pegasus/fight"
+        }
+    },
+    "flight": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5000000,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 4,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_flight_vis",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_flight",
+                        "comparison": "<",
+                        "compare_to": 5000000
+                    }
+                ]
+            }
+        }
+    },
+    "flight_vis": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
+    },
+    "skyhome_check": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:pegasus/skyhome"
+        },
+        "type": "origins:action_on_wake_up",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "advancement grant @s only ponyorigins:pegasus/skyhome"
+        },
+        "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:exposed_to_sky"
+                },
+                {
+                    "type": "origins:height",
+                    "comparison": ">=",
+                    "compare_to": 191
+                }
+            ]
+        }
+    },
+    "fight_check": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:on_block"
+                }
+            ]
+        },
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_fight",
+                    "change": 1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_fight_vis",
+                    "change": 5,
+                    "operation": "add"
+                }
+            ]
+        },
+        "cooldown": 1
+    }
+}

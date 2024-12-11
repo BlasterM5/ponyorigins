@@ -1,6 +1,6 @@
 {
     "name": "Diggers",
-    "description": "These heavy forelimbs are made for digging. Extra large claws can dig through materials faster and deal extra damage when unarmed and not wearing boots.",
+    "description": "Heavy forelimbs with extra large claws can dig through natural materials faster and deal extra damage when unarmed and not wearing boots.",
     "badges": [
         {
             "type": "origins:tooltip",

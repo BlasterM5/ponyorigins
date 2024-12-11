@@ -10,24 +10,24 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "function ponyorigins:advancements/setup_scores"
+                    "command": "function ponyorigins:advancement/setup_scores"
                 },
                 {
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:origin",
-                        "origin": "ponyorigins:races/changeling"
+                        "origin": "ponyorigins:species/changeling"
                     },
                     "if_action": {
                         "type": "origins:and",
                         "actions": [
                             {
                                 "type": "origins:execute_command",
-                                "command": "function ponyorigins:advancements/setup_ch"
+                                "command": "function ponyorigins:advancement/setup_ch"
                             },
                             {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:advancements/changeling",
+                                "power": "ponyorigins:advancement/changeling",
                                 "source": "ponyorigins:common/00"
                             }
                         ]
@@ -41,7 +41,7 @@
                             {
                                 "inverted": true,
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:races/chaos"
+                                "origin": "ponyorigins:species/chaos"
                             },
                             {
                                 "type": "origins:or",
@@ -51,7 +51,7 @@
                                         "conditions": [
                                             {
                                                 "type": "origins:origin",
-                                                "origin": "ponyorigins:races/alicorn"
+                                                "origin": "ponyorigins:species/alicorn"
                                             },
                                             {
                                                 "type": "origins:scoreboard",
@@ -64,7 +64,7 @@
                                     {
                                         "inverted": true,
                                         "type": "origins:origin",
-                                        "origin": "ponyorigins:races/alicorn"
+                                        "origin": "ponyorigins:species/alicorn"
                                     }
                                 ]
                             },
@@ -93,13 +93,13 @@
                             {
                                 "inverted": true,
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:talents/alicorn/harmony"
+                                "origin": "ponyorigins:talent/alicorn/harmony"
                             }
                         ]
                     },
                     "if_action": {
                         "type": "origins:execute_command",
-                        "command": "function ponyorigins:advancements/reject_harmony"
+                        "command": "function ponyorigins:advancement/reject_harmony"
                     }
                 },
                 {
@@ -110,7 +110,7 @@
                             {
                                 "inverted": true,
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:races/alicorn"
+                                "origin": "ponyorigins:species/alicorn"
                             },
                             {
                                 "inverted": true,
@@ -121,7 +121,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/mym",
+                        "power": "ponyorigins:advancement/mym",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -145,7 +145,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/chaos",
+                        "power": "ponyorigins:advancement/chaos",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -167,7 +167,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/wonderbolt",
+                        "power": "ponyorigins:advancement/wonderbolt",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -190,7 +190,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/taxi",
+                        "power": "ponyorigins:advancement/taxi",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -201,7 +201,7 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:races/earth_pony"
+                                "origin": "ponyorigins:species/earth_pony"
                             },
                             {
                                 "type": "origins:scoreboard",
@@ -213,7 +213,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/earth_pony",
+                        "power": "ponyorigins:advancement/earth_pony",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -224,7 +224,7 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:races/unicorn"
+                                "origin": "ponyorigins:species/unicorn"
                             },
                             {
                                 "type": "origins:scoreboard",
@@ -236,7 +236,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/unicorn",
+                        "power": "ponyorigins:advancement/unicorn",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -247,7 +247,7 @@
                         "conditions": [
                             {
                                 "type": "origins:origin",
-                                "origin": "ponyorigins:races/pegasus"
+                                "origin": "ponyorigins:species/pegasus"
                             },
                             {
                                 "type": "origins:scoreboard",
@@ -259,7 +259,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/pegasus",
+                        "power": "ponyorigins:advancement/pegasus",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -282,7 +282,7 @@
                     },
                     "if_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:advancements/alicorn",
+                        "power": "ponyorigins:advancement/alicorn",
                         "source": "ponyorigins:common/00"
                     }
                 },
@@ -304,18 +304,18 @@
                         "type": "origins:if_else",
                         "condition": {
                             "type": "origins:origin",
-                            "origin": "ponyorigins:races/changeling"
+                            "origin": "ponyorigins:species/changeling"
                         },
                         "if_action": {
                             "type": "origins:and",
                             "actions": [
                                 {
                                     "type": "origins:execute_command",
-                                    "command": "function ponyorigins:advancements/setup_ch"
+                                    "command": "function ponyorigins:advancement/setup_ch"
                                 },
                                 {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancements/changeling",
+                                    "power": "ponyorigins:advancement/changeling",
                                     "source": "ponyorigins:common/00"
                                 }
                             ]
@@ -324,12 +324,12 @@
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/changeling",
+                                "power": "ponyorigins:advancement/changeling",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/changeling",
+                                "power": "ponyorigins:advancement/changeling",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -342,7 +342,7 @@
                                 {
                                     "inverted": true,
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:races/chaos"
+                                    "origin": "ponyorigins:species/chaos"
                                 },
                                 {
                                     "type": "origins:or",
@@ -352,7 +352,7 @@
                                             "conditions": [
                                                 {
                                                     "type": "origins:origin",
-                                                    "origin": "ponyorigins:races/alicorn"
+                                                    "origin": "ponyorigins:species/alicorn"
                                                 },
                                                 {
                                                     "type": "origins:scoreboard",
@@ -365,7 +365,7 @@
                                         {
                                             "inverted": true,
                                             "type": "origins:origin",
-                                            "origin": "ponyorigins:races/alicorn"
+                                            "origin": "ponyorigins:species/alicorn"
                                         }
                                     ]
                                 },
@@ -394,13 +394,13 @@
                                 {
                                     "inverted": true,
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:talents/alicorn/harmony"
+                                    "origin": "ponyorigins:talent/alicorn/harmony"
                                 }
                             ]
                         },
                         "if_action": {
                             "type": "origins:execute_command",
-                            "command": "function ponyorigins:advancements/reject_harmony"
+                            "command": "function ponyorigins:advancement/reject_harmony"
                         }
                     },
                     {
@@ -411,7 +411,7 @@
                                 {
                                     "inverted": true,
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:races/alicorn"
+                                    "origin": "ponyorigins:species/alicorn"
                                 },
                                 {
                                     "inverted": true,
@@ -422,7 +422,7 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/mym",
+                            "power": "ponyorigins:advancement/mym",
                             "source": "ponyorigins:common/00"
                         }
                     },
@@ -446,19 +446,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/chaos",
+                            "power": "ponyorigins:advancement/chaos",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/chaos",
+                                "power": "ponyorigins:advancement/chaos",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/chaos",
+                                "power": "ponyorigins:advancement/chaos",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -481,19 +481,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/wonderbolt",
+                            "power": "ponyorigins:advancement/wonderbolt",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/wonderbolt",
+                                "power": "ponyorigins:advancement/wonderbolt",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/wonderbolt",
+                                "power": "ponyorigins:advancement/wonderbolt",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -517,19 +517,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/taxi",
+                            "power": "ponyorigins:advancement/taxi",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/taxi",
+                                "power": "ponyorigins:advancement/taxi",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/taxi",
+                                "power": "ponyorigins:advancement/taxi",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -541,7 +541,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:races/earth_pony"
+                                    "origin": "ponyorigins:species/earth_pony"
                                 },
                                 {
                                     "type": "origins:scoreboard",
@@ -553,19 +553,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/earth_pony",
+                            "power": "ponyorigins:advancement/earth_pony",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/earth_pony",
+                                "power": "ponyorigins:advancement/earth_pony",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/earth_pony",
+                                "power": "ponyorigins:advancement/earth_pony",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -577,7 +577,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:races/unicorn"
+                                    "origin": "ponyorigins:species/unicorn"
                                 },
                                 {
                                     "type": "origins:scoreboard",
@@ -589,19 +589,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/unicorn",
+                            "power": "ponyorigins:advancement/unicorn",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/unicorn",
+                                "power": "ponyorigins:advancement/unicorn",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/unicorn",
+                                "power": "ponyorigins:advancement/unicorn",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -613,7 +613,7 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:races/pegasus"
+                                    "origin": "ponyorigins:species/pegasus"
                                 },
                                 {
                                     "type": "origins:scoreboard",
@@ -625,19 +625,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/pegasus",
+                            "power": "ponyorigins:advancement/pegasus",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/pegasus",
+                                "power": "ponyorigins:advancement/pegasus",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/pegasus",
+                                "power": "ponyorigins:advancement/pegasus",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -661,19 +661,19 @@
                         },
                         "if_action": {
                             "type": "origins:grant_power",
-                            "power": "ponyorigins:advancements/alicorn",
+                            "power": "ponyorigins:advancement/alicorn",
                             "source": "ponyorigins:common/00"
                         },
                         "else_action": {
                             "type": "origins:if_else",
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:advancements/alicorn",
+                                "power": "ponyorigins:advancement/alicorn",
                                 "source": "ponyorigins:common/00"
                             },
                             "if_action": {
                                 "type": "origins:revoke_power",
-                                "power": "ponyorigins:advancements/alicorn",
+                                "power": "ponyorigins:advancement/alicorn",
                                 "source": "ponyorigins:common/00"
                             }
                         }
@@ -1146,8 +1146,17 @@
                                 {
                                     "type": "origins:if_else",
                                     "condition": {
-                                        "type": "origins:power",
-                                        "power": "ponyorigins:common/limbs/quadruped"
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/quadruped"
+                                            },
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/gastropod"
+                                            }
+                                        ]
                                     },
                                     "if_action": {
                                         "type": "origins:if_else_list",
@@ -1279,6 +1288,18 @@
                                             "condition": {
                                                 "type": "origins:power",
                                                 "power": "ponyorigins:common/limbs/arms/hooves"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/arms/cloven_hooves"
                                             },
                                             "action": {
                                                 "type": "origins:change_resource",
@@ -1425,6 +1446,18 @@
                                         {
                                             "condition": {
                                                 "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/fore/cloven_hooves"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
                                                 "power": "ponyorigins:common/limbs/fore/canine_paws"
                                             },
                                             "action": {
@@ -1523,6 +1556,18 @@
                                                 "type": "origins:change_resource",
                                                 "resource": "*:*_weight",
                                                 "change": 4,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/hind/cloven_hooves"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 6,
                                                 "operation": "add"
                                             }
                                         },
@@ -1730,7 +1775,7 @@
                                         {
                                             "condition": {
                                                 "type": "origins:power",
-                                                "power": "ponyorigins:common/diets/amorevore"
+                                                "power": "ponyorigins:common/diet/amorevore"
                                             },
                                             "action": {
                                                 "type": "origins:nothing"
@@ -1742,7 +1787,7 @@
                                                 "conditions": [
                                                     {
                                                         "type": "origins:power",
-                                                        "power": "ponyorigins:common/diets/pescavore"
+                                                        "power": "ponyorigins:common/diet/pescavore"
                                                     },
                                                     {
                                                         "type": "origins:power",
@@ -1760,7 +1805,7 @@
                                         {
                                             "condition": {
                                                 "type": "origins:power",
-                                                "power": "ponyorigins:common/diets/carnivore"
+                                                "power": "ponyorigins:common/diet/carnivore"
                                             },
                                             "action": {
                                                 "type": "origins:change_resource",
@@ -1772,7 +1817,7 @@
                                         {
                                             "condition": {
                                                 "type": "origins:power",
-                                                "power": "ponyorigins:common/diets/omnivore"
+                                                "power": "ponyorigins:common/diet/omnivore"
                                             },
                                             "action": {
                                                 "type": "origins:change_resource",
@@ -1787,15 +1832,15 @@
                                                 "conditions": [
                                                     {
                                                         "type": "origins:power",
-                                                        "power": "ponyorigins:common/diets/fructivore"
+                                                        "power": "ponyorigins:common/diet/fructivore"
                                                     },
                                                     {
                                                         "type": "origins:power",
-                                                        "power": "ponyorigins:common/diets/herbivore"
+                                                        "power": "ponyorigins:common/diet/herbivore"
                                                     },
                                                     {
                                                         "type": "origins:power",
-                                                        "power": "ponyorigins:common/diets/goat"
+                                                        "power": "ponyorigins:common/diet/extreme_omnivore"
                                                     }
                                                 ]
                                             },
@@ -1809,7 +1854,7 @@
                                         {
                                             "condition": {
                                                 "type": "origins:power",
-                                                "power": "ponyorigins:common/diets/lithovore"
+                                                "power": "ponyorigins:common/diet/lithovore"
                                             },
                                             "action": {
                                                 "type": "origins:change_resource",

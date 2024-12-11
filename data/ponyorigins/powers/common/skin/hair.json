@@ -1,6 +1,6 @@
 {
     "name": "Hairs",
-    "description": "Your body is covered in a thin layer of hair, which keeps you warm in the cold, but reduces your endurance slightly.",
+    "description": "A body covered in a layer of hair, which resists the cold some, but reduces endurance in the heat.",
     "badges": [
         {
             "type": "origins:tooltip",

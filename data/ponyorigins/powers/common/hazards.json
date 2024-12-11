@@ -2138,7 +2138,7 @@
                                                                 {
                                                                     "inverted": true,
                                                                     "type": "origins:origin",
-                                                                    "origin": "ponyorigins:races/human"
+                                                                    "origin": "ponyorigins:species/human"
                                                                 }
                                                             ]
                                                         },
@@ -2240,7 +2240,7 @@
                                                                 {
                                                                     "inverted": true,
                                                                     "type": "origins:origin",
-                                                                    "origin": "ponyorigins:races/human"
+                                                                    "origin": "ponyorigins:species/human"
                                                                 }
                                                             ]
                                                         },

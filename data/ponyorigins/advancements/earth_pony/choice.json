@@ -14,7 +14,7 @@
         "choice": {
             "trigger": "origins:chose_origin",
             "conditions": {
-                "origin": "ponyorigins:races/earth_pony"
+                "origin": "ponyorigins:species/earth_pony"
             }
         }
     }

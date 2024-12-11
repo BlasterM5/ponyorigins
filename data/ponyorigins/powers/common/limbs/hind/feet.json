@@ -1,6 +1,5 @@
 {
     "name": "Feet",
-    "description": "Human feet, designed for bipedal creatures.",
-    "hidden": true,
+    "description": "Human feet, an efficient foot type for moving about.",
     "type": "origins:simple"
 }

@@ -1,0 +1,30 @@
+{
+    "name": "Pegasus",
+    "description": "The winged pony tribe, home to the skies above Equestria.",
+    "powers": [
+        "ponyorigins:common/diet/herbivore",
+        "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/pony",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/wings/feathered",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
+        "ponyorigins:common/sound/pony"
+    ],
+    "icon": {
+        "item": "feather"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:species/alicorn"
+        }
+    ],
+    "order": 4,
+    "impact": 0
+}

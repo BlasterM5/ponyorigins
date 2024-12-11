@@ -1,6 +1,6 @@
 {
     "name": "Sound Effect",
-    "description": "Use your energy to vibrate the air and make a sound!",
+    "description": "Make a random sound on demand!",
     "powers": [
         "ponyorigins:chaos/talents/sound"
     ],

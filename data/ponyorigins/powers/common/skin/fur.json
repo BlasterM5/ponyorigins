@@ -1,6 +1,6 @@
 {
     "name": "Fur",
-    "description": "Your body is covered in a thick layer of fur, which keeps you warm in the cold, but decreases your endurance.",
+    "description": "A body covered in a thick layer of fur, which keeps the cold out, but decreases endurance in the heat.",
     "badges": [
         {
             "type": "origins:tooltip",

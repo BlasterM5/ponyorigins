@@ -7,8 +7,8 @@
                 "power": "ponyorigins:common/versatile"
             },
             "origins": [
-                "ponyorigins:talents/other",
-                "ponyorigins:talents/ranger"
+                "ponyorigins:talent/other",
+                "ponyorigins:talent/ranger"
             ]
         },
         {
@@ -26,8 +26,8 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talents/defender",
-                "ponyorigins:talents/miner"
+                "ponyorigins:talent/defender",
+                "ponyorigins:talent/miner"
             ]
         },
         {
@@ -46,8 +46,8 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talents/stamina/defender",
-                "ponyorigins:talents/stamina/miner"
+                "ponyorigins:talent/stamina/defender",
+                "ponyorigins:talent/stamina/miner"
             ]
         },
         {
@@ -74,7 +74,7 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talents/runner"
+                "ponyorigins:talent/runner"
             ]
         },
         {
@@ -96,8 +96,8 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talents/tamer",
-                "ponyorigins:talents/manespace"
+                "ponyorigins:talent/tamer",
+                "ponyorigins:talent/manespace"
             ]
         },
         {
@@ -119,9 +119,9 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talents/barrier",
-                "ponyorigins:talents/laser",
-                "ponyorigins:talents/vanish"
+                "ponyorigins:talent/barrier",
+                "ponyorigins:talent/laser",
+                "ponyorigins:talent/vanish"
             ]
         },
         {
@@ -143,20 +143,20 @@
                     {
                         "inverted": true,
                         "type": "origins:origin",
-                        "origin": "ponyorigins:races/changeling"
+                        "origin": "ponyorigins:species/changeling"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talents/levitate",
-                "ponyorigins:talents/flora",
-                "ponyorigins:talents/teleport",
-                "ponyorigins:talents/fireball",
-                "ponyorigins:talents/firecracker",
-                "ponyorigins:talents/flamethrower",
-                "ponyorigins:talents/ice_beam",
-                "ponyorigins:talents/shock_ray",
-                "ponyorigins:talents/thunder"
+                "ponyorigins:talent/levitate",
+                "ponyorigins:talent/flora",
+                "ponyorigins:talent/teleport",
+                "ponyorigins:talent/fireball",
+                "ponyorigins:talent/firecracker",
+                "ponyorigins:talent/flamethrower",
+                "ponyorigins:talent/ice_beam",
+                "ponyorigins:talent/shock_ray",
+                "ponyorigins:talent/thunder"
             ]
         }
     ],

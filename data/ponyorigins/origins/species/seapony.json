@@ -1,0 +1,22 @@
+{
+    "name": "Seapony",
+    "description": "The underwater pony species, masters of the sea. Automatically transforms into an Earth Pony when exiting the water.",
+    "powers": [
+        "ponyorigins:common/waterborn",
+        "ponyorigins:common/diet/pescavore",
+        "ponyorigins:common/health/base",
+        "ponyorigins:common/pony",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
+        "ponyorigins:common/sound/pony"
+    ],
+    "icon": {
+        "item": "heart_of_the_sea"
+    },
+    "order": 8,
+    "impact": 0
+}

@@ -1,6 +1,6 @@
 {
     "name": "Hooves",
-    "description": "Your arms are hooved. Kick enemies further away when attacking unarmed. Ponder how you are able to hold items with hooves.",
+    "description": "Arms that end with a hoof. Punch enemies further away when attacking unarmed. Ponder how you are able to hold items.",
     "badges": [
         {
             "type": "origins:tooltip",

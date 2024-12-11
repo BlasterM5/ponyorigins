@@ -1,6 +1,6 @@
 {
     "name": "Chaos Form",
-    "description": "Chaos forms are naturally indeterminate, but will collapse to some kind of form at random after choosing this race.",
+    "description": "Chaos forms are naturally indeterminate, but will collapse to some kind of form at random once chosen.",
     "type": "origins:multiple",
     "randomize": {
         "type": "origins:action_on_callback",
@@ -15,7 +15,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/biped",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -26,7 +26,7 @@
                                     {
                                         "type": "origins:grant_power",
                                         "power": "ponyorigins:common/limbs/quadruped",
-                                        "source": "ponyorigins:races/chaos"
+                                        "source": "ponyorigins:species/chaos"
                                     },
                                     {
                                         "type": "origins:chance",
@@ -34,7 +34,7 @@
                                         "action": {
                                             "type": "origins:grant_power",
                                             "power": "ponyorigins:common/rideable",
-                                            "source": "ponyorigins:races/chaos"
+                                            "source": "ponyorigins:species/chaos"
                                         }
                                     },
                                     {
@@ -43,7 +43,7 @@
                                         "action": {
                                             "type": "origins:grant_power",
                                             "power": "ponyorigins:common/limbs/taur",
-                                            "source": "ponyorigins:races/chaos"
+                                            "source": "ponyorigins:species/chaos"
                                         }
                                     }
                                 ]
@@ -74,7 +74,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/hooves",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -82,7 +82,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/talons",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -90,7 +90,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/feline_paws",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -98,7 +98,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/diggers",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -106,7 +106,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/hands",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -114,7 +114,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/canine_paws",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -122,7 +122,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/wings",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -130,7 +130,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/stiction",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -138,7 +138,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/arms/none",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             }
                         ]
@@ -158,7 +158,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/hooves",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -166,7 +166,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/talons",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -174,7 +174,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/feline_paws",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -182,7 +182,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/diggers",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -190,7 +190,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/hands",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -198,7 +198,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/feet",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -206,7 +206,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/canine_paws",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -214,7 +214,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/fore/stiction",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             }
                         ]
@@ -228,7 +228,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/hooves",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -236,7 +236,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/talons",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -244,7 +244,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/diggers",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -252,7 +252,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/feline_paws",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -260,7 +260,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/canine_paws",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -268,7 +268,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/stiction",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -276,7 +276,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/hands",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -284,7 +284,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/limbs/hind/feet",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         }
                     ]
@@ -297,7 +297,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/skin",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -305,7 +305,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/hair",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -313,7 +313,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/fur",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -321,7 +321,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/arctic_fur",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -329,7 +329,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/feathers",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -337,7 +337,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/chitin",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -345,7 +345,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/partial_dragonscale",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -353,7 +353,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/skin/dragonscale",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         }
                     ]
@@ -365,24 +365,24 @@
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diets/amorevore",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/diet/amorevore",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diets/fructivore",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/diet/fructivore",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diets/herbivore",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/diet/herbivore",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -392,13 +392,13 @@
                                 "actions": [
                                     {
                                         "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/diets/lithovore",
-                                        "source": "ponyorigins:races/chaos"
+                                        "power": "ponyorigins:common/diet/lithovore",
+                                        "source": "ponyorigins:species/chaos"
                                     },
                                     {
                                         "type": "origins:grant_power",
                                         "power": "ponyorigins:dragon/heat",
-                                        "source": "ponyorigins:races/chaos"
+                                        "source": "ponyorigins:species/chaos"
                                     }
                                 ]
                             }
@@ -407,24 +407,24 @@
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diets/pescavore",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/diet/pescavore",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diets/carnivore",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/diet/carnivore",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diets/omnivore",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/diet/omnivore",
+                                "source": "ponyorigins:species/chaos"
                             }
                         }
                     ]
@@ -434,8 +434,8 @@
                     "chance": 0.33,
                     "action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:common/diets/direct_eat",
-                        "source": "ponyorigins:races/chaos"
+                        "power": "ponyorigins:common/diet/direct_eat",
+                        "source": "ponyorigins:species/chaos"
                     }
                 },
                 {
@@ -446,7 +446,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/health/minus_four",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -454,7 +454,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/health/minus_two",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -462,7 +462,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/health/plus_two",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -470,7 +470,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/health/plus_four",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -478,7 +478,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:common/health/base",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         }
                     ]
@@ -494,7 +494,7 @@
                                     {
                                         "type": "origins:grant_power",
                                         "power": "ponyorigins:common/flight",
-                                        "source": "ponyorigins:races/chaos"
+                                        "source": "ponyorigins:species/chaos"
                                     },
                                     {
                                         "type": "origins:choice",
@@ -504,7 +504,7 @@
                                                 "element": {
                                                     "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/limbs/wings/feathered",
-                                                    "source": "ponyorigins:races/chaos"
+                                                    "source": "ponyorigins:species/chaos"
                                                 }
                                             },
                                             {
@@ -512,7 +512,7 @@
                                                 "element": {
                                                     "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/limbs/wings/insectoid",
-                                                    "source": "ponyorigins:races/chaos"
+                                                    "source": "ponyorigins:species/chaos"
                                                 }
                                             },
                                             {
@@ -520,7 +520,7 @@
                                                 "element": {
                                                     "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/limbs/wings/membraneous",
-                                                    "source": "ponyorigins:races/chaos"
+                                                    "source": "ponyorigins:species/chaos"
                                                 }
                                             },
                                             {
@@ -528,7 +528,7 @@
                                                 "element": {
                                                     "type": "origins:grant_power",
                                                     "power": "ponyorigins:common/limbs/wings/waterproof",
-                                                    "source": "ponyorigins:races/chaos"
+                                                    "source": "ponyorigins:species/chaos"
                                                 }
                                             }
                                         ]
@@ -541,7 +541,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:earth_pony/flora",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -549,7 +549,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:kirin/nirik",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -557,7 +557,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:umbrum/shadow",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -565,7 +565,7 @@
                             "element": {
                                 "type": "origins:grant_power",
                                 "power": "ponyorigins:zebra/dust",
-                                "source": "ponyorigins:races/chaos"
+                                "source": "ponyorigins:species/chaos"
                             }
                         }
                     ]
@@ -581,7 +581,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/resistance/fireproof",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -589,7 +589,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/resistance/cold_immunity",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             }
                         ]
@@ -601,7 +601,7 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "ponyorigins:common/nightvision",
-                        "source": "ponyorigins:races/chaos"
+                        "source": "ponyorigins:species/chaos"
                     }
                 },
                 {
@@ -610,7 +610,7 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "ponyorigins:common/wallclimb",
-                        "source": "ponyorigins:races/chaos"
+                        "source": "ponyorigins:species/chaos"
                     }
                 },
                 {
@@ -619,7 +619,7 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "ponyorigins:umbrum/dark_strength",
-                        "source": "ponyorigins:races/chaos"
+                        "source": "ponyorigins:species/chaos"
                     }
                 },
                 {
@@ -633,7 +633,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "origins:fall_immunity",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -641,7 +641,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "origins:slow_falling",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             }
                         ]
@@ -653,7 +653,7 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "origins:scare_creepers",
-                        "source": "ponyorigins:races/chaos"
+                        "source": "ponyorigins:species/chaos"
                     }
                 },
                 {
@@ -662,7 +662,7 @@
                     "action": {
                         "type": "origins:grant_power",
                         "power": "origins:sprint_jump",
-                        "source": "ponyorigins:races/chaos"
+                        "source": "ponyorigins:species/chaos"
                     }
                 },
                 {
@@ -672,104 +672,104 @@
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/avian",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/avian",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/cat",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/cat",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/changeling",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/changeling",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/cow",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/cow",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/dog",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/dog",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/dragon",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/dragon",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/goat",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/goat",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/pony",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/pony",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/sheep",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/sheep",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/chicken",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/chicken",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/pig",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/pig",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/spectre",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/spectre",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sounds/dolphin",
-                                "source": "ponyorigins:races/chaos"
+                                "power": "ponyorigins:common/sound/dolphin",
+                                "source": "ponyorigins:species/chaos"
                             }
                         },
                         {
@@ -804,7 +804,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/wings/feathered",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -812,7 +812,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/wings/insectoid",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -820,7 +820,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/wings/membraneous",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             },
                             {
@@ -828,7 +828,7 @@
                                 "element": {
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/wings/waterproof",
-                                    "source": "ponyorigins:races/chaos"
+                                    "source": "ponyorigins:species/chaos"
                                 }
                             }
                         ]

@@ -1,6 +1,6 @@
 {
     "name": "Hands",
-    "description": "Human hands, the most dexterous hindlimbs, designed for bipedal creatures that like to climb things, but not really for walking.",
+    "description": "Human hands, the most dexterous hindlimbs. Not efficient to walk on, but great for climbing.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -8,7 +8,6 @@
             "sprite": "textures/item/leather_boots.png"
         }
     ],
-    "hidden": true,
     "type": "origins:modify_attribute",
     "attribute": "generic.movement_speed",
     "modifier": {

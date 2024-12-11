@@ -1,0 +1,11 @@
+{
+    "name": "Miner",
+    "description": "Rock and Stone to the bone!",
+    "powers": [
+        "ponyorigins:talent/stamina/miner"
+    ],
+    "icon": {
+        "item": "iron_pickaxe"
+    },
+    "impact": 0
+}

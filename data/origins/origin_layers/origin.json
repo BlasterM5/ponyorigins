@@ -6,25 +6,25 @@
                 "value": true
             },
             "origins": [
-                "ponyorigins:races/human",
-                "ponyorigins:races/goat",
-                "ponyorigins:races/earth_pony",
-                "ponyorigins:races/unicorn",
-                "ponyorigins:races/pegasus",
-                "ponyorigins:races/zebra",
-                "ponyorigins:races/yak",
-                "ponyorigins:races/seapony",
-                "ponyorigins:races/umbrum",
-                "ponyorigins:races/kirin",
-                "ponyorigins:races/thestral",
-                "ponyorigins:races/hippogriff",
-                "ponyorigins:races/griffon",
-                "ponyorigins:races/dragon",
-                "ponyorigins:races/changeling",
-                "ponyorigins:races/orinthian",
-                "ponyorigins:races/abyssinian",
-                "ponyorigins:races/minotaur",
-                "ponyorigins:races/diamond_dog"
+                "ponyorigins:species/human",
+                "ponyorigins:species/earth_pony",
+                "ponyorigins:species/unicorn",
+                "ponyorigins:species/pegasus",
+                "ponyorigins:species/goat",
+                "ponyorigins:species/zebra",
+                "ponyorigins:species/yak",
+                "ponyorigins:species/seapony",
+                "ponyorigins:species/umbrum",
+                "ponyorigins:species/kirin",
+                "ponyorigins:species/thestral",
+                "ponyorigins:species/hippogriff",
+                "ponyorigins:species/griffon",
+                "ponyorigins:species/dragon",
+                "ponyorigins:species/changeling",
+                "ponyorigins:species/orinthian",
+                "ponyorigins:species/abyssinian",
+                "ponyorigins:species/minotaur",
+                "ponyorigins:species/diamond_dog"
             ]
         },
         {
@@ -33,7 +33,7 @@
                 "advancement": "ponyorigins:changeling/love"
             },
             "origins": [
-                "ponyorigins:races/changedling"
+                "ponyorigins:species/changedling"
             ]
         },
         {
@@ -42,7 +42,7 @@
                 "advancement": "ponyorigins:alicorn/ascension"
             },
             "origins": [
-                "ponyorigins:races/alicorn"
+                "ponyorigins:species/alicorn"
             ]
         },
         {
@@ -51,7 +51,7 @@
                 "advancement": "ponyorigins:ascension/chaos"
             },
             "origins": [
-                "ponyorigins:races/chaos"
+                "ponyorigins:species/chaos"
             ]
         }
     ],

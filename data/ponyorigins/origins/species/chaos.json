@@ -1,0 +1,13 @@
+{
+    "name": "Chaos Creature",
+    "description": "The chaos creature is indeterminate, but will collapse into a random form once chosen. This form might not coincide with its looks.",
+    "powers": [
+        "ponyorigins:chaos/chaos",
+        "ponyorigins:chaos/randomizer",
+        "ponyorigins:common/energy"
+    ],
+    "icon": {
+        "item": "sculk_vein"
+    },
+    "impact": 0
+}

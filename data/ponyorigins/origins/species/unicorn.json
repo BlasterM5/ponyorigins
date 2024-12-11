@@ -1,0 +1,30 @@
+{
+    "name": "Unicorn",
+    "description": "Home to Equestria's mountains and forests, Unicorns can change the world with their wide range of abilities.",
+    "powers": [
+        "ponyorigins:common/diet/herbivore",
+        "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/health/base",
+        "ponyorigins:common/versatile",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/telekinesis",
+        "ponyorigins:common/pony",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
+        "ponyorigins:common/sound/pony"
+    ],
+    "icon": {
+        "item": "diamond"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:species/alicorn"
+        }
+    ],
+    "order": 3,
+    "impact": 0
+}

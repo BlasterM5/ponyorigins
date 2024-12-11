@@ -1,1 +1,0 @@
-execute if score @s po.chlove matches 1.. run function ponyorigins:advancements/balance_ch_love

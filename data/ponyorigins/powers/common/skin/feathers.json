@@ -1,6 +1,6 @@
 {
     "name": "Feathers",
-    "description": "Your body is covered in a layer of feathers. Lightweight, but maintenance heavy, they'll keep you warm in the cold at the cost of extra endurance and longer drying time.",
+    "description": "An avian body covered in a layer of feathers. Lightweight, but maintenance heavy, if offers some cold resistance at the cost of extra endurance and longer drying time.",
     "badges": [
         {
             "type": "origins:tooltip",

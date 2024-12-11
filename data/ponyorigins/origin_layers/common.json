@@ -7,7 +7,7 @@
                 "entity_type": "player"
             },
             "origins": [
-                "ponyorigins:talents/common"
+                "ponyorigins:talent/common"
             ]
         }
     ],
@@ -17,7 +17,7 @@
         "choose_origin": "Setting Common Powers",
         "view_origin": "Common Powers"
     },
-    "default_origin": "ponyorigins:talents/common",
+    "default_origin": "ponyorigins:talent/common",
     "auto_choose": true,
     "hidden": true
 }

@@ -1,6 +1,6 @@
 {
     "name": "Dense",
-    "description": "Your body is heavier than average for your size, giving you 11 hearts.",
+    "description": "This body is heavier than average, packing in denser muscles and bones, having 11 health hearts.",
     "badges": [
         {
             "type": "origins:sprite",

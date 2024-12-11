@@ -1,6 +1,6 @@
 {
     "name": "Talons",
-    "description": "Your lightweight forelimbs end in long, sharp talons. Deal extra attack damage when unarmed (and barefoot for quadrupeds).",
+    "description": "Lightweight, avian forelimbs that end in long, sharp talons. Deal extra attack damage when unarmed and barefoot.",
     "badges": [
         {
             "type": "origins:tooltip",

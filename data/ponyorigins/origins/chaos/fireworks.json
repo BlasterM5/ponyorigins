@@ -1,6 +1,6 @@
 {
     "name": "Fireworks",
-    "description": "Launch fireworks into the sky using only your energy reserves!",
+    "description": "Summon and launch fireworks into the sky!",
     "powers": [
         "ponyorigins:chaos/talents/fireworks"
     ],

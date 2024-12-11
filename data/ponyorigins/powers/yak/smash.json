@@ -216,7 +216,7 @@
                                 }
                             ]
                         },
-                        "command_at_hit": "function ponyorigins:abilities/aggro"
+                        "command_at_hit": "function ponyorigins:ability/aggro"
                     }
                 },
                 {

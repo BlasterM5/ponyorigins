@@ -1,6 +1,6 @@
 {
     "name": "Quadruped",
-    "description": "You stand and walk on all four legs, granting you more speed but costing more stamina. Holding items in your forelimbs slows you down.",
+    "description": "Stand and walk on all four legs, granting more speed but costing more stamina. Holding items in either forelimb reduces movement speeds.",
     "badges": [
         {
             "type": "origins:tooltip",

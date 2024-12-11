@@ -1,0 +1,11 @@
+{
+    "name": "Defender",
+    "description": "Channel your inner strength to hit harder and last longer in a melee fight.",
+    "powers": [
+        "ponyorigins:talent/stamina/defender"
+    ],
+    "icon": {
+        "item": "iron_sword"
+    },
+    "impact": 0
+}

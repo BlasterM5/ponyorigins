@@ -1,6 +1,17 @@
 {
     "name": "Hands",
-    "description": "Human hands, the most dexterous forelimbs, designed for bipedal creatures.",
-    "hidden": true,
-    "type": "origins:simple"
+    "description": "Human hands, the most dexterous forelimbs. Not efficient to walk on, but great for climbing.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "-5 Percent Movement Speed",
+            "sprite": "textures/item/leather_boots.png"
+        }
+    ],
+    "type": "origins:modify_attribute",
+    "attribute": "generic.movement_speed",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": -0.05
+    }
 }

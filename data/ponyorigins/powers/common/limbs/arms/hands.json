@@ -1,6 +1,5 @@
 {
     "name": "Hands",
-    "description": "Human hands, the most dexterous arms, the pinnacle of object manipulation.",
-    "hidden": true,
+    "description": "Human hands, the apex of dexterity.",
     "type": "origins:simple"
 }

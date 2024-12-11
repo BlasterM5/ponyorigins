@@ -1,6 +1,6 @@
 {
     "name": "Arctic Fur",
-    "description": "Your body is covered in an extra thick layer of fur, which grants you immunity from the cold, at the cost of extra endurance loss in warm climates.",
+    "description": "A body covered in an extra thick layer of fur, which grants immunity from the cold, at the cost of extra endurance loss in temperate and hotter climates.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -111,7 +111,7 @@
                     "type": "origins:biome",
                     "condition": {
                         "type": "origins:temperature",
-                        "comparison": ">",
+                        "comparison": ">=",
                         "compare_to": 2
                     }
                 },

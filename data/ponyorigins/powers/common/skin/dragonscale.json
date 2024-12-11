@@ -1,6 +1,6 @@
 {
     "name": "Dragonscale",
-    "description": "Your body is covered in strong scales, able to resist damage and grant complete fire immunity at the cost of endurance.",
+    "description": "A body covered in dragonscale, able to resist a lot of damage and grant complete fire immunity at the cost of endurance.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -11,6 +11,11 @@
             "type": "origins:tooltip",
             "text": "50 percent damage reduction unless armor piercing",
             "sprite": "textures/item/diamond_chestplate.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Exhaustion +15 Percent",
+            "sprite": "textures/item/leather_boots.png"
         }
     ],
     "type": "origins:multiple",

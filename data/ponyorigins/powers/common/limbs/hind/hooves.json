@@ -1,6 +1,6 @@
 {
     "name": "Hooves",
-    "description": "Your hind legs are hooved. Move a little faster overall, but some polished surfaces are extra slippery when wet. You also jump good.",
+    "description": "Hind legs that end in a hoof. Great for outrunning danger, but some polished surfaces are extra slippery when wet. They also jump good when they can get a grip.",
     "badges": [
         {
             "type": "origins:tooltip",

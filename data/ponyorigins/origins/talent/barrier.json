@@ -1,0 +1,17 @@
+{
+    "name": "Barrier",
+    "description": "Manifest an impervious barrier of protection around you, as long as your energy reserves hold out.",
+    "powers": [
+        "ponyorigins:talent/barrier"
+    ],
+    "icon": {
+        "item": "shield"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:talent/alicorn/barrier"
+        }
+    ],
+    "impact": 0
+}

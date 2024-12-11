@@ -1,0 +1,21 @@
+{
+    "name": "Yak",
+    "description": "Hardy creatures from Yakyakistan, yaks pride themselves on their unrelenting strength.",
+    "powers": [
+        "ponyorigins:common/diet/herbivore",
+        "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:yak/smash",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/cloven_hooves",
+        "ponyorigins:common/limbs/hind/cloven_hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/arctic_fur",
+        "ponyorigins:common/sound/cow"
+    ],
+    "icon": {
+        "item": "oak_wood"
+    },
+    "order": 7,
+    "impact": 0
+}

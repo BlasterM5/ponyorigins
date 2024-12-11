@@ -1,0 +1,21 @@
+{
+    "name": "Goat",
+    "description": "A mundane citizen of Equestria's mountains. Goats can walk along the steepest of surfaces, as long as their hooves can get a grip.",
+    "powers": [
+        "ponyorigins:common/diet/herbivore",
+        "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/wallclimb",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/cloven_hooves",
+        "ponyorigins:common/limbs/hind/cloven_hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/fur",
+        "ponyorigins:common/sound/goat"
+    ],
+    "icon": {
+        "item": "goat_horn"
+    },
+    "order": 5,
+    "impact": 0
+}

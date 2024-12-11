@@ -1,6 +1,6 @@
 {
     "name": "Diggers",
-    "description": "These heavy hind legs are made for digging. Ice is less slippery.",
+    "description": "Heavy hind legs with extra large claws made for digging. Ice is less slippery.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -9,19 +9,10 @@
         }
     ],
     "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:power",
-                "power": "ponyorigins:common/limbs/quadruped"
-            },
-            {
-                "type": "origins:resource",
-                "resource": "ponyorigins:common/00_empty_feet",
-                "comparison": "==",
-                "compare_to": 1
-            }
-        ]
+        "type": "origins:resource",
+        "resource": "ponyorigins:common/00_empty_feet",
+        "comparison": "==",
+        "compare_to": 1
     },
     "type": "origins:modify_slipperiness",
     "block_condition": {

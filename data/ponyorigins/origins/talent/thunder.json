@@ -1,0 +1,11 @@
+{
+    "name": "Thunder",
+    "description": "Charge the ground, or your target, to attract lightning!",
+    "powers": [
+        "ponyorigins:talent/thunder"
+    ],
+    "icon": {
+        "item": "lightning_rod"
+    },
+    "impact": 0
+}

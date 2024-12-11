@@ -1,6 +1,5 @@
 {
     "name": "Biped",
-    "description": "You naturally stand and walk on your hind legs, like the humans do.",
-    "hidden": true,
+    "description": "Stand and walk on just the hind legs, like the humans do.",
     "type": "origins:simple"
 }

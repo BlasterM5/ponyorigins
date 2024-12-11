@@ -1,6 +1,6 @@
 {
     "name": "Diggers",
-    "description": "These heavy arms are made for digging. Extra large claws can dig through materials faster and deal extra damage when unarmed.",
+    "description": "Heavy arms with extra large claws dig through natural materials faster and deal extra damage when unarmed.",
     "badges": [
         {
             "type": "origins:tooltip",

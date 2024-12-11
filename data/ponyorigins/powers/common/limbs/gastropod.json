@@ -1,0 +1,73 @@
+{
+    "name": "Gastropod Body",
+    "description": "Legs are overrated. A long, slender body doesn't need legs to move. Silently slither along stone and soil, with a slight swimming speed boost.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "10 percent slower movement speed",
+            "sprite": "textures/item/leather_boots"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Movement is silent",
+            "sprite": "textures/item/leather_boots"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Can't wear leggings or boots",
+            "sprite": "textures/item/leather_leggings.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "10 percent faster swim speed",
+            "sprite": "textures/item/cod.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+10 percent Exhaustion when moving",
+            "sprite": "textures/item/wheat.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "slower_overall": {
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.1
+        }
+    },
+    "faster_swim": {
+        "type": "origins:modify_attribute",
+        "attribute": "generic.swim_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.1
+        }
+    },
+    "faster_exhaustion": {
+        "condition": {
+            "type": "origins:moving"
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.1
+        }
+    },
+    "silent_slither": {
+        "type": "origins:prevent_game_event",
+        "event": "step"
+    },
+    "no_boots": {
+        "type": "origins:restrict_armor",
+        "legs": {
+            "type": "origins:constant",
+            "value": true
+        },
+        "feet": {
+            "type": "origins:constant",
+            "value": true
+        }
+    }
+}

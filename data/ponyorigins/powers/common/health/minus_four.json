@@ -1,6 +1,6 @@
 {
-    "name": "Fragilty",
-    "description": "Your body is frail, with only 8 hearts.",
+    "name": "Frail",
+    "description": "This very light body is frail, with only 8 health hearts.",
     "badges": [
         {
             "type": "origins:sprite",

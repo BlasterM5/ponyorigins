@@ -91,7 +91,7 @@
                 {
                     "inverted": true,
                     "type": "origins:origin",
-                    "origin": "ponyorigins:races/changeling"
+                    "origin": "ponyorigins:species/changeling"
                 }
             ]
         },
@@ -136,7 +136,7 @@
                 {
                     "inverted": true,
                     "type": "origins:origin",
-                    "origin": "ponyorigins:races/changeling"
+                    "origin": "ponyorigins:species/changeling"
                 }
             ]
         },
@@ -169,7 +169,7 @@
                     "tag": "{Invisible:1b,NoBasePlate:1b,Small:1b,DisabledSlots:4144959,CustomName:'[{\"text\":\"Web Shot\"}]',Silent:1b,ArmorDropChances:[f,f,f],ArmorItems:[{},{},{id:cobweb,Count:1}]}",
                     "projectile_action": {
                         "type": "origins:grant_power",
-                        "power": "ponyorigins:projectiles/cobweb",
+                        "power": "ponyorigins:projectile/cobweb",
                         "source": "ponyorigins:changeling/web_shot"
                     }
                 },

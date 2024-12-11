@@ -1,6 +1,6 @@
 {
     "name": "Canine Paws",
-    "description": "Your paws are extra sturdy, giving you a slight movement speed boost. You also jump good.",
+    "description": "Sturdy canine paws for faster movement. They also jump good.",
     "badges": [
         {
             "type": "origins:tooltip",

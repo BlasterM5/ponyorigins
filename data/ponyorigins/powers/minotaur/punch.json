@@ -241,7 +241,7 @@
                                 }
                             ]
                         },
-                        "command_at_hit": "function ponyorigins:abilities/aggro"
+                        "command_at_hit": "function ponyorigins:ability/aggro"
                     },
                     "else_action": {
                         "type": "origins:if_else",

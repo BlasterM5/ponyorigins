@@ -1,6 +1,6 @@
 {
     "name": "Cold Immunity",
-    "description": "The cold doesn't bother you anyway.",
+    "description": "Freeze damage does nothing.",
     "badges": [
         {
             "type": "origins:tooltip",

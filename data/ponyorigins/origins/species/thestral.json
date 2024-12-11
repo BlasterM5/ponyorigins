@@ -1,0 +1,24 @@
+{
+    "name": "Thestral",
+    "description": "The nocturnal \"fourth\" pony tribe, home to Equestria's caves and vineyards.",
+    "powers": [
+        "ponyorigins:common/diet/fructivore",
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:common/flight",
+        "ponyorigins:common/nightvision",
+        "ponyorigins:common/energy",
+        "ponyorigins:common/pony",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/fore/hooves",
+        "ponyorigins:common/limbs/wings/membraneous",
+        "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
+        "ponyorigins:common/sound/pony"
+    ],
+    "icon": {
+        "item": "coal"
+    },
+    "order": 11,
+    "impact": 0
+}
