@@ -10,6 +10,7 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/razor",
         "ponyorigins:common/limbs/fore/stiction",
         "ponyorigins:common/limbs/wings/insectoid",
         "ponyorigins:common/limbs/hind/stiction",
@@ -26,6 +27,6 @@
             "origin": "ponyorigins:species/changedling"
         }
     ],
-    "order": 15,
+    "order": 17,
     "impact": 0
 }

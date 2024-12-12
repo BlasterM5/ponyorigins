@@ -1,24 +1,23 @@
 {
-    "name": "Kirin",
-    "description": "Half unicorn, half dragon, the hybrid creature from the East with a heart of fire.",
+    "name": "Deer",
+    "description": "Native to Equestria's forests, Deer are attuned to the earth, but have abilities similar to Unicorns.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",
-        "ponyorigins:common/health/base",
-        "ponyorigins:kirin/nirik",
+        "ponyorigins:common/health/minus_two",
+        "ponyorigins:earth_pony/flora",
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/limbs/quadruped",
-        "ponyorigins:common/limbs/horn/unicorn_antler",
+        "ponyorigins:common/limbs/horn/antlers",
         "ponyorigins:common/limbs/fore/cloven_hooves",
         "ponyorigins:common/limbs/hind/cloven_hooves",
         "ponyorigins:common/rideable",
-        "ponyorigins:common/skin/partial_dragonscale",
-        "ponyorigins:common/sound/pony"
+        "ponyorigins:common/skin/fur"
     ],
     "icon": {
-        "item": "flint_and_steel"
+        "item": "stick"
     },
-    "order": 12,
+    "order": 10,
     "impact": 0
 }

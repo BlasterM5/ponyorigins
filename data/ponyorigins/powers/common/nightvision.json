@@ -617,5 +617,10 @@
         },
         "type": "origins:night_vision",
         "strength": 0.2
+    },
+    "desaturated_vision": {
+        "type": "origins:shader",
+        "shader": "shaders/post/desaturate.png",
+        "toggleable": false
     }
 }

@@ -1,0 +1,25 @@
+{
+    "name": "Antlers",
+    "description": "Large, branching horns on either side of the head. Provides additional armor toughness to worn helmets.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+2 Armor Toughness on worn Helmets",
+            "sprite": "textures/item/diamond_helmet.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "head",
+        "item_condition": {
+            "inverted": true,
+            "type": "origins:empty"
+        }
+    },
+    "type": "origins:modify_attribute",
+    "attribute": "generic.armor_toughness",
+    "modifier": {
+        "operation": "add_base_early",
+        "value": 2
+    }
+}

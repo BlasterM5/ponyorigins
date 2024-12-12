@@ -9,6 +9,7 @@
         "ponyorigins:common/flight",
         "ponyorigins:common/nightvision",
         "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/ram",
         "ponyorigins:common/limbs/fore/diggers",
         "ponyorigins:common/limbs/wings/membraneous",
         "ponyorigins:common/limbs/hind/diggers",
@@ -19,6 +20,6 @@
     "icon": {
         "item": "blaze_powder"
     },
-    "order": 14,
+    "order": 16,
     "impact": 0
 }

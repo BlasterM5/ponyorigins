@@ -1,0 +1,24 @@
+{
+    "name": "Rhino Horns",
+    "description": "A large, curved nose horn, folllowed behind by a small horn in tandem. Provides some extra armor toughness on worn helmets.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+1 Armor Toughness on worn Helmets",
+            "sprite": "textures/item/iron_helmet.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "head",
+        "item_condition": {
+            "inverted": true,
+            "type": "origins:empty"
+        }
+    },
+    "type": "origins:modify_attribute",
+    "modifier": {
+        "operation": "add_base_early",
+        "value": 1
+    }
+}

@@ -182,11 +182,7 @@
                                     },
                                     {
                                         "type": "origins:execute_command",
-                                        "command": "playsound entity.generic.explode block @a ~ ~ ~"
-                                    },
-                                    {
-                                        "type": "origins:execute_command",
-                                        "command": "particle flash ~ ~ ~ 0.2 0.2 0.2 1 1 force"
+                                        "command": "function ponyorigins:ability/block_explosion_effect"
                                     }
                                 ]
                             }

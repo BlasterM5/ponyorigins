@@ -10,6 +10,7 @@
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/pony",
         "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/alicorn",
         "ponyorigins:common/limbs/fore/hooves",
         "ponyorigins:common/limbs/wings/feathered",
         "ponyorigins:common/limbs/hind/hooves",
@@ -20,6 +21,6 @@
     "icon": {
         "item": "nether_star"
     },
-    "order": 17,
+    "order": 19,
     "impact": 0
 }

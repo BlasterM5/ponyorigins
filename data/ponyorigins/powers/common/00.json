@@ -1878,23 +1878,147 @@
                                     ]
                                 },
                                 {
-                                    "type": "origins:if_else",
-                                    "condition": {
-                                        "type": "origins:power",
-                                        "power": "ponyorigins:common/energy"
-                                    },
-                                    "if_action": {
-                                        "type": "origins:change_resource",
-                                        "resource": "*:*_weight",
-                                        "change": 1,
-                                        "operation": "add"
-                                    }
+                                    "type": "origins:if_else_list",
+                                    "actions": [
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/unicorn"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/unicorn_swept"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/bovine"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/razor"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 1,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/alicorn"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/binicorn"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/unicorn_antler"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/ram"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 2,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/alicorn_sighted"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 3,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/rhino"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 3,
+                                                "operation": "add"
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/limbs/horn/antlers"
+                                            },
+                                            "action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "*:*_weight",
+                                                "change": 4,
+                                                "operation": "add"
+                                            }
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "origins:if_else",
                                     "condition": {
                                         "type": "origins:power",
-                                        "power": "ponyorigins:common/telekinesis"
+                                        "power": "ponyorigins:common/energy"
                                     },
                                     "if_action": {
                                         "type": "origins:change_resource",

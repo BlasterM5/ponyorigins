@@ -1,6 +1,10 @@
 {
     "values": [
         {
+            "id": "#origins:natural_stone",
+            "required": true
+        },
+        {
             "id": "#c:gravel",
             "required": false
         },

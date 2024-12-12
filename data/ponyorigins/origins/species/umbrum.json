@@ -10,6 +10,7 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/razor",
         "ponyorigins:common/limbs/fore/hooves",
         "ponyorigins:common/limbs/hind/hooves",
         "ponyorigins:common/rideable",
@@ -18,6 +19,6 @@
     "icon": {
         "item": "amethyst_shard"
     },
-    "order": 9,
+    "order": 11,
     "impact": 0
 }

@@ -10,6 +10,7 @@
         "ponyorigins:common/energy",
         "ponyorigins:common/telekinesis",
         "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/razor",
         "ponyorigins:common/limbs/fore/stiction",
         "ponyorigins:common/limbs/wings/insectoid",
         "ponyorigins:common/limbs/hind/stiction",
@@ -20,6 +21,6 @@
     "icon": {
         "item": "poppy"
     },
-    "order": 16,
+    "order": 18,
     "impact": 0
 }

@@ -1,0 +1,86 @@
+{
+    "name": "Milk Producer",
+    "description": "Your milk is a prized item. Use an empty bucket to collect it.",
+    "type": "origins:multiple",
+    "level": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 9,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_level",
+                "comparison": "<",
+                "compare_to": 100
+            }
+        }
+    },
+    "get_milk": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "==",
+            "compare_to": 100
+        },
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "milk_bucket",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_level",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        },
+        "item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "bucket"
+            }
+        },
+        "trigger": "finish",
+        "priority": 0
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "<",
+            "compare_to": 100
+        },
+        "type": "origins:action_over_time",
+        "interval": 16,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_level",
+                    "change": 1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:exhaust",
+                    "amount": 0.02
+                }
+            ]
+        }
+    }
+}

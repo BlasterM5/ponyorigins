@@ -4,9 +4,12 @@
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:goat/charge",
+        "ponyorigins:common/self_milking",
         "ponyorigins:common/health/minus_two",
         "ponyorigins:common/wallclimb",
         "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/ram",
         "ponyorigins:common/limbs/fore/cloven_hooves",
         "ponyorigins:common/limbs/hind/cloven_hooves",
         "ponyorigins:common/rideable",

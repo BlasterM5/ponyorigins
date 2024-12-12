@@ -1,0 +1,25 @@
+{
+    "name": "Unicorn Antler",
+    "description": "A branching, single horn, similar to a unicorn horn, with a little of the antler's protection.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "+1 Armor Toughness on worn Helmets",
+            "sprite": "textures/item/iron_helmet.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "head",
+        "item_condition": {
+            "inverted": true,
+            "type": "origins:empty"
+        }
+    },
+    "type": "origins:modify_attribute",
+    "attribute": "generic.armor_toughness",
+    "modifier": {
+        "operation": "add_base_early",
+        "value": 1
+    }
+}
