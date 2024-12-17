@@ -1,6 +1,5 @@
 {
     "name": "Pig Sounds",
-    "description": "Pigs go oink.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

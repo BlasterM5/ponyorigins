@@ -1,6 +1,6 @@
 {
     "name": "Gastropod Body",
-    "description": "Legs are overrated. A long, slender body doesn't need legs to move. Silently slither along stone and soil, with a slight swimming speed boost.",
+    "description": "Legs are overrated. A long, slender body doesn't need legs to move. Silently slither and squirm along stone and soil, with a slight swimming speed boost.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -38,11 +38,10 @@
         }
     },
     "faster_swim": {
-        "type": "origins:modify_attribute",
-        "attribute": "generic.swim_speed",
+        "type": "origins:modify_swim_speed",
         "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.1
+            "operation": "multiply_base",
+            "value": 1.1
         }
     },
     "faster_exhaustion": {

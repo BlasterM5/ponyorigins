@@ -1,6 +1,6 @@
 {
     "name": "Dragonscale",
-    "description": "A body covered in dragonscale, able to resist a lot of damage and grant complete fire immunity at the cost of endurance.",
+    "description": "A body covered in dragonscale, able to resist a lot of damage and grant complete fire immunity at the cost of weight and endurance.",
     "badges": [
         {
             "type": "origins:tooltip",

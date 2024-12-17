@@ -1,0 +1,11 @@
+{
+    "name": "Frost Beam",
+    "description": "Fire a beam of frequency-tuned energy to freeze all it touches.",
+    "powers": [
+        "ponyorigins:talent/elemental/ice_beam"
+    ],
+    "icon": {
+        "item": "snow_block"
+    },
+    "impact": 0
+}

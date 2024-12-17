@@ -1,6 +1,5 @@
 {
     "name": "Chicken Sounds",
-    "description": "Chickens go cluck.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

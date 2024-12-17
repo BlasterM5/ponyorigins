@@ -1,6 +1,6 @@
 {
     "name": "Fight Training",
-    "description": "An expert in melee combat, you hit harder and take less damage, for a little more work.",
+    "description": "Hit harder and take less damage, for a little more stamina use.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -13,13 +13,12 @@
             "sprite": "textures/item/iron_chestplate.png"
         }
     ],
-    "hidden": true,
     "type": "origins:multiple",
     "offense": {
         "condition": {
             "type": "origins:food_level",
             "comparison": ">",
-            "compare_to": 2
+            "compare_to": 3
         },
         "type": "origins:modify_damage_dealt",
         "modifier": {
@@ -31,7 +30,7 @@
         "condition": {
             "type": "origins:food_level",
             "comparison": ">",
-            "compare_to": 2
+            "compare_to": 3
         },
         "type": "origins:modify_damage_taken",
         "modifier": {

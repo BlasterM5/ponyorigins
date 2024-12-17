@@ -1,0 +1,138 @@
+{
+    "name": "Horn Type Calculator",
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_added": {
+        "type": "origins:delay",
+        "action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/ram"
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 1,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/rhino"
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 2,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/antlers"
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 3,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/unicorn_swept"
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 4,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/limbs/horn/razor"
+                                    },
+                                    {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/limbs/horn/unicorn_antler"
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 5,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/limbs/horn/unicorn"
+                                    },
+                                    {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/limbs/horn/bovine"
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 6,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/alicorn"
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 7,
+                                "operation": "set"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:constant",
+                                "value": true
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "ponyorigins:talent/stamina/charge_horn",
+                                "change": 0,
+                                "operation": "set"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "ponyorigins:common/calc/horn",
+                    "source": "ponyorigins:common/00"
+                }
+            ]
+        },
+        "ticks": 3
+    }
+}

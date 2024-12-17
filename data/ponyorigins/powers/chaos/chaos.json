@@ -1,6 +1,6 @@
 {
     "name": "Chaos",
-    "description": "Chaos Energy is unstable. It's unlikely you will be able to use the same ability twice in a row.",
+    "description": "Chaos Energy is unstable. Using an ability will cause it to change afterwards.",
     "type": "origins:multiple",
     "trigger": {
         "type": "origins:active_self",
@@ -78,7 +78,7 @@
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/barrier"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/barrier"
                             }
                         },
                         {
@@ -99,14 +99,14 @@
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/fireball"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/fireball"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/firecracker"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/pony/firecracker"
                             }
                         },
                         {
@@ -120,35 +120,35 @@
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/flamethrower"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/flamethrower"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/flora"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/flora"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/ice_beam"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/ice_beam"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/shock_ray"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/shock_ray"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/laser"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/laser"
                             }
                         },
                         {
@@ -162,35 +162,42 @@
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/manespace"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/pony/manespace"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/rocketeer"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/pony/rocket"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/teleport"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/teleport"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/vanish"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/vanish"
                             }
                         },
                         {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/thunder"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/thunder"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/stamina/charge"
                             }
                         },
                         {

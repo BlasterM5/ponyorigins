@@ -1,6 +1,5 @@
 {
     "name": "Dog Sounds",
-    "description": "Dogs go bark.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

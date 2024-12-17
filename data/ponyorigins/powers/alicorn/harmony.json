@@ -1,13 +1,13 @@
 {
     "name": "Friend of All",
-    "description": "Tame any tameable creature with an empty hoof.\n\nAll mobs will ignore you.\n\nYOU CANNOT HARM ANOTHER LIVING CREATURE",
+    "description": "Press to tame any tameable creature.\n\nAll mobs will ignore you.\n\nYOU CANNOT HARM ANOTHER LIVING CREATURE",
     "badges": [
         {
             "type": "origins:tooltip",
             "text": [
                 "Press [",
                 {
-                    "keybind": "key.use"
+                    "keybind": "key.origins.secondary_active"
                 },
                 "] to tame a creature"
             ],

@@ -1,6 +1,5 @@
 {
     "name": "Changeling Sounds",
-    "description": "Changelings sound ... skeletony?",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

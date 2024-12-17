@@ -1,0 +1,44 @@
+{
+    "name": "Archery Expert",
+    "description": "Ranged attacks do a little more damage, for a little more stamina.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Ranged Attack Damage +25 percent",
+            "sprite": "textures/item/arrow.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "modifier": {
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 2
+        },
+        "type": "origins:modify_projectile_damage",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.25
+        }
+    },
+    "stamina": {
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 2
+        },
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.05
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:ranged_weapons"
+            }
+        },
+        "trigger": "finish",
+        "priority": 0
+    }
+}

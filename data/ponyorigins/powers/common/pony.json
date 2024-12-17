@@ -1,6 +1,5 @@
 {
     "name": "Pony",
-    "description": "As a pony, you bear (or one day will bear) a cutie mark, that depicts your innermost self.",
     "hidden": true,
     "loading_priority": 0,
     "type": "origins:simple"

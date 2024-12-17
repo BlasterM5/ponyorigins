@@ -1,0 +1,11 @@
+{
+    "name": "Tamer",
+    "description": "Tame any tameable creature on demand.",
+    "powers": [
+        "ponyorigins:talent/pony/tamer"
+    ],
+    "icon": {
+        "item": "egg"
+    },
+    "impact": 0
+}

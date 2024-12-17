@@ -7,7 +7,8 @@
         "ponyorigins:common/limbs/biped",
         "ponyorigins:common/limbs/arms/hands",
         "ponyorigins:common/limbs/hind/feet",
-        "ponyorigins:common/skin/skin"
+        "ponyorigins:common/skin/skin",
+        "ponyorigins:common/none"
     ],
     "icon": {
         "item": "grass_block"

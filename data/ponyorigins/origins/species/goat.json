@@ -1,11 +1,10 @@
 {
     "name": "Goat",
-    "description": "A mundane citizen of Equestria's mountains. Goats can walk along the steepest of surfaces, as long as their hooves can get a grip.",
+    "description": "A mundane citizen of Equestria's mountains, able to walk along the steepest of surfaces.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",
-        "ponyorigins:goat/charge",
-        "ponyorigins:common/self_milking",
+        "ponyorigins:talent/stamina/charge",
         "ponyorigins:common/health/minus_two",
         "ponyorigins:common/wallclimb",
         "ponyorigins:common/limbs/quadruped",

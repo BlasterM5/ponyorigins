@@ -1,6 +1,6 @@
 {
     "name": "Membraneous Wings",
-    "description": "Your wings are folds of skin, stretched out like sails. They can't get waterlogged, but take longer to heal from injuries and have no protection against freezing weather.",
+    "description": "Wings made of elongated fingers, webbed by folds of skin stretched thin like sails. Waterproof, but more susceptible to injury than other wing types.",
     "badges": [
         {
             "type": "origins:sprite",

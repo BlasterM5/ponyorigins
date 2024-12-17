@@ -3,11 +3,11 @@
         "name": "Pony Origins",
         "id": "ponyorigins",
         "pack_format": 15,
-        "version": "1.9.9-a1",
+        "version": "1.9.9-a2",
         "authors": [
             "BlasterM5"
         ],
         "description": "Origins Replacement Mod, designed to Ponify Origins.",
-        "license": "Unlicense"
+        "license": "0BSD"
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "Barrier",
-    "description": "Press your secondary power to activate your barrier to become invulnerable to damage. Your barrier will deplete your energy reserves as you take hits.",
+    "description": "Press to activate and become invulnerable to damage. Barrier will deplete energy reserves when hit.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -368,6 +368,7 @@
         },
         "type": "apugli:energy_swirl",
         "texture_location": "textures/entity/creeper/creeper_armor.png",
+        "size": 1,
         "speed": 0.001
     },
     "active": {

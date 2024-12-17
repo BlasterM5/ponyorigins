@@ -1,6 +1,5 @@
 {
     "name": "Cow Sounds",
-    "description": "Cows go moo.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

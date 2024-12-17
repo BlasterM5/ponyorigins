@@ -1,6 +1,6 @@
 {
     "name": "Nirik",
-    "description": "Taking damage will build up rage. Press your primary power to unleash your rage in the terrifying Nirik form, a burning, fire launching monster!\n\nAttack with an empty hoof to launch fireballs, or directly set opponents on fire!\n\nWarning: Will activate if rage exceeds its limits. Cannot be turned off until all the rage is out!",
+    "description": "Taking damage will build up rage. Press to unleash pent-up rage in the terrifying Nirik form, a burning, fire launching monster!\n\nAttack with an empty hoof to launch fireballs, or directly set opponents on fire!\n\nWarning: Will activate if rage exceeds its limits. Cannot be turned off until all the rage is out!",
     "badges": [
         {
             "type": "origins:tooltip",

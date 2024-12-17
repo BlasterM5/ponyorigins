@@ -1,6 +1,5 @@
 {
     "name": "Dolphin Sounds",
-    "description": "The sounds of an aquatic species on land.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

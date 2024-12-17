@@ -1,0 +1,11 @@
+{
+    "name": "Runner",
+    "description": "Extra endurance to go the distance.",
+    "powers": [
+        "ponyorigins:talent/stamina/runner"
+    ],
+    "icon": {
+        "item": "leather_boots"
+    },
+    "impact": 0
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Charge",
+    "description": "A reckless tackle that deals damage to all parties involved.",
+    "powers": [
+        "ponyorigins:talent/stamina/charge"
+    ],
+    "icon": {
+        "item": "goat_horn"
+    },
+    "impact": 0
+}

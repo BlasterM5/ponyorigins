@@ -8,44 +8,7 @@
             },
             "origins": [
                 "ponyorigins:talent/other",
-                "ponyorigins:talent/ranger"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/versatile"
-                    },
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/defender",
-                "ponyorigins:talent/miner"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/versatile"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    }
-                ]
-            },
-            "origins": [
+                "ponyorigins:talent/stamina/ranger",
                 "ponyorigins:talent/stamina/defender",
                 "ponyorigins:talent/stamina/miner"
             ]
@@ -74,7 +37,7 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talent/runner"
+                "ponyorigins:talent/stamina/runner"
             ]
         },
         {
@@ -96,8 +59,8 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talent/tamer",
-                "ponyorigins:talent/manespace"
+                "ponyorigins:talent/pony/tamer",
+                "ponyorigins:talent/pony/manespace"
             ]
         },
         {
@@ -119,9 +82,9 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talent/barrier",
-                "ponyorigins:talent/laser",
-                "ponyorigins:talent/vanish"
+                "ponyorigins:talent/energy/barrier",
+                "ponyorigins:talent/energy/laser",
+                "ponyorigins:talent/energy/vanish"
             ]
         },
         {
@@ -148,15 +111,47 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talent/levitate",
-                "ponyorigins:talent/flora",
-                "ponyorigins:talent/teleport",
-                "ponyorigins:talent/fireball",
-                "ponyorigins:talent/firecracker",
-                "ponyorigins:talent/flamethrower",
-                "ponyorigins:talent/ice_beam",
-                "ponyorigins:talent/shock_ray",
-                "ponyorigins:talent/thunder"
+                "ponyorigins:talent/energy/levitate",
+                "ponyorigins:talent/elemental/flora",
+                "ponyorigins:talent/energy/teleport",
+                "ponyorigins:talent/elemental/fireball",
+                "ponyorigins:talent/pony/firecracker",
+                "ponyorigins:talent/elemental/flamethrower",
+                "ponyorigins:talent/elemental/ice_beam",
+                "ponyorigins:talent/elemental/shock_ray",
+                "ponyorigins:talent/elemental/thunder"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/versatile"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talent/stamina/charge"
+                    },
+                    {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/hind/hooves"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/hind/cloven_hooves"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/stamina/charge"
             ]
         }
     ],

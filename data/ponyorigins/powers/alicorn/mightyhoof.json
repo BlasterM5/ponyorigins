@@ -1,6 +1,6 @@
 {
     "name": "Mighty Hoof",
-    "description": "Attacks against your form are mere inconveniences. Wind up a kick to launch enemies away with explosive power!",
+    "description": "Shrug off hits as inconveniences, deal extra unarmed damage. Hold to wind up a kick to launch enemies away with explosive power!",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -221,22 +221,8 @@
                                 "type": "origins:and",
                                 "actions": [
                                     {
-                                        "type": "origins:play_sound",
-                                        "sound": "entity.generic.explode",
-                                        "volume": 0.5,
-                                        "pitch": 1
-                                    },
-                                    {
-                                        "type": "origins:spawn_particles",
-                                        "particle": "flash",
-                                        "count": 1,
-                                        "speed": 1,
-                                        "force": true,
-                                        "spread": {
-                                            "x": 0.2,
-                                            "y": 0.2,
-                                            "z": 0.2
-                                        }
+                                        "type": "origins:execute_command",
+                                        "command": "function ponyorigins:ability/smash_effect"
                                     },
                                     {
                                         "type": "origins:damage",
@@ -264,11 +250,7 @@
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "playsound entity.generic.explode block @a ~ ~ ~"
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "particle flash ~ ~ ~ 0.2 0.2 0.2 1 1 force"
+                                "command": "function ponyorigins:ability/smash_effect"
                             }
                         ]
                     }

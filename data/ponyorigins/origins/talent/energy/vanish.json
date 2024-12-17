@@ -1,0 +1,11 @@
+{
+    "name": "Vanish",
+    "description": "Bend light to become invisible, at the cost of being able to see while active.",
+    "powers": [
+        "ponyorigins:talent/energy/vanish"
+    ],
+    "icon": {
+        "item": "enchanted_book"
+    },
+    "impact": 0
+}

@@ -1,6 +1,5 @@
 {
     "name": "Earth Pony Advancements",
-    "description": "Contains Advancement Logic for Earth Pony",
     "hidden": true,
     "type": "origins:multiple",
     "advancement_setup": {

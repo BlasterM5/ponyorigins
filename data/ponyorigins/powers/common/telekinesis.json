@@ -1,6 +1,6 @@
 {
     "name": "Telekinesis",
-    "description": "Your telekinesis can levitate the items you are holding, allowing you to reach further as long as you have the energy.",
+    "description": "Levitates held items, freeing forelegs for movement and allowing extended reach.",
     "badges": [
         {
             "type": "origins:tooltip",

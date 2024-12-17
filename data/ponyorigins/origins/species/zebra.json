@@ -1,6 +1,6 @@
 {
     "name": "Zebra",
-    "description": "A culturally distinct species from the land of Zebrica. Similar to an earth pony, and yet, quite different.",
+    "description": "A culturally distinct pony species from the land of Zebrica.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",

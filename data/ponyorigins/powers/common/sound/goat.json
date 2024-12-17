@@ -1,6 +1,5 @@
 {
     "name": "Goat Sounds",
-    "description": "Goats go AAAAAAAAAAAAA",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

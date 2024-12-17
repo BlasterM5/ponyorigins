@@ -1,6 +1,5 @@
 {
-    "name": "Unicorn Advancements",
-    "description": "Contains Advancement Logic for Unicorn",
+    "name": "Unicorn Advancements Tracker",
     "hidden": true,
     "type": "origins:multiple",
     "advancement_setup": {

@@ -1,6 +1,6 @@
 {
-    "name": "Rocket Mare",
-    "description": "Hold secondary power to launch in the direction you are looking at incredible speed, impacting for explosive damage!\n\nWARNING: The impact may kill you!",
+    "name": "Rocket Dash",
+    "description": "Hold to blast forward at incredible speed, impacting for explosive damage!\n\nWARNING: The impact may kill you!",
     "badges": [
         {
             "type": "origins:tooltip",

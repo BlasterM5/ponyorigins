@@ -1,6 +1,5 @@
 {
     "name": "Cobweb",
-    "description": "A cobweb projectile, which slows a target with cobwebs on hit",
     "hidden": true,
     "type": "origins:multiple",
     "tick_logic": {
@@ -122,7 +121,7 @@
                                                 "type": "origins:target_action",
                                                 "action": {
                                                     "type": "origins:change_resource",
-                                                    "resource": "ponyorigins:common/hazards_webbed",
+                                                    "resource": "ponyorigins:common/hazard_webbed",
                                                     "change": 100,
                                                     "operation": "add"
                                                 }

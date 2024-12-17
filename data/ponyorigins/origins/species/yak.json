@@ -1,6 +1,6 @@
 {
     "name": "Yak",
-    "description": "Hardy creatures from Yakyakistan, yaks pride themselves on their unrelenting strength.",
+    "description": "Hardy creatures from Yakyakistan, masters of unrelenting strength.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",

@@ -1,6 +1,5 @@
 {
     "name": "Bare Skin",
     "description": "Skin exposed with minimal hair coverage, granting the best efficiency in endurance, but no natural protection from the elements.",
-    "hidden": true,
     "type": "origins:simple"
 }

@@ -1,8 +1,8 @@
 {
-    "name": "Mageia Fodienda",
+    "name": "Magna Miner",
     "description": "Rock! And! Stone!",
     "powers": [
-        "ponyorigins:alicorn/miner"
+        "ponyorigins:talent/stamina/miner"
     ],
     "icon": {
         "item": "diamond_pickaxe"

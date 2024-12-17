@@ -1,6 +1,6 @@
 {
     "name": "Waterborn",
-    "description": "Born of the sea, you breathe water and swim like a fish.\nIn addition, you are wearing a shard of the Pearl of Transformation, which automatically converts you between land and sea creature as you enter and leave the water.\n\nAs a sea creature, your voice will be different underwater.\n\nYour spawn point is in the ocean.",
+    "description": "Spawn in the ocean. Transform into a land creature when exiting the water, and back to a sea creature when diving underwater.",
     "badges": [
         {
             "type": "origins:tooltip",

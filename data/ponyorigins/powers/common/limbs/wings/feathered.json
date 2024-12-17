@@ -1,6 +1,6 @@
 {
     "name": "Feathered Wings",
-    "description": "Your wings are covered in light yet sturdy feathers, which maximize your wingspan when unfurled, allowing you to fly. Feathers protect your wings from freezing weather, but you have to keep them clean to keep flying.",
+    "description": "Wings covered in light, but sturdy feathers that catch the wind, allowing for flight. Keep them clean to keep flying.",
     "badges": [
         {
             "type": "origins:sprite",

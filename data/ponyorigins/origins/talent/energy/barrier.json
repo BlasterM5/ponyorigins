@@ -1,0 +1,17 @@
+{
+    "name": "Barrier",
+    "description": "Manifest an impervious barrier of protection.",
+    "powers": [
+        "ponyorigins:talent/energy/barrier"
+    ],
+    "icon": {
+        "item": "shield"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:talent/alicorn/barrier"
+        }
+    ],
+    "impact": 0
+}

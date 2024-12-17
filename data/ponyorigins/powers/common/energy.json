@@ -1,6 +1,6 @@
 {
     "name": "Thaumphatic System",
-    "description": "A special organ system in your body trades calories for thaumatic energy, channeling it throughout your body to give you access to special abilities.",
+    "description": "A special organ system trades calories for thaumatic energy, channeling it throughout the body to provide special abilities.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -107,7 +107,7 @@
     "cd": {
         "type": "origins:resource",
         "min": 0,
-        "max": 2,
+        "max": 20,
         "start_value": 2
     },
     "celestial_cd": {
@@ -639,10 +639,31 @@
         },
         "execute_chosen_when_orb": true,
         "entity_action_respawned": {
-            "type": "origins:change_resource",
-            "resource": "*:*_level",
-            "change": 100,
-            "operation": "set"
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": 100,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_supercharge",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_cd",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                ]
+            },
+            "ticks": 3
         }
     }
 }

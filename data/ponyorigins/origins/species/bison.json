@@ -1,0 +1,21 @@
+{
+    "name": "Bison",
+    "description": "Mundane, but muscular, citizens of midwest Equestria.",
+    "powers": [
+        "ponyorigins:common/diet/herbivore",
+        "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/health/plus_four",
+        "ponyorigins:common/limbs/quadruped",
+        "ponyorigins:common/limbs/horn/bovine",
+        "ponyorigins:common/limbs/fore/cloven_hooves",
+        "ponyorigins:common/limbs/hind/cloven_hooves",
+        "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/fur",
+        "ponyorigins:common/sound/cow"
+    ],
+    "icon": {
+        "item": "goat_horn"
+    },
+    "order": 7,
+    "impact": 0
+}

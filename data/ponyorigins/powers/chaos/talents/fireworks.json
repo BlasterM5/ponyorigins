@@ -1,6 +1,6 @@
 {
     "name": "Summon Fireworks",
-    "description": "Hold your secondary power to launch fireworks anywhere!",
+    "description": "Hold to continuously launch fireworks into the air!",
     "badges": [
         {
             "type": "origins:tooltip",

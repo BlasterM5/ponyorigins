@@ -1,6 +1,6 @@
 {
     "name": "Deer",
-    "description": "Native to Equestria's forests, Deer are attuned to the earth, but have abilities similar to Unicorns.",
+    "description": "Native to Equestria's forests, attuned to the earth, but with the abilities of a Unicorn.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",

@@ -1,6 +1,5 @@
 {
-    "name": "Pegasus Advancements",
-    "description": "Contains Advancement Logic for Pegasus",
+    "name": "Pegasus Advancement Tracker",
     "hidden": true,
     "type": "origins:multiple",
     "advancement_setup": {

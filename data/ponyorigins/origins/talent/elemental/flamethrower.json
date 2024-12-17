@@ -1,0 +1,11 @@
+{
+    "name": "Flamethrower",
+    "description": "Release a continuous stream of fire on demand.",
+    "powers": [
+        "ponyorigins:talent/elemental/flamethrower"
+    ],
+    "icon": {
+        "item": "blaze_powder"
+    },
+    "impact": 0
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Levitation",
+    "description": "The key is to push the ground away.",
+    "powers": [
+        "ponyorigins:talent/energy/levitate"
+    ],
+    "icon": {
+        "item": "feather"
+    },
+    "impact": 0
+}

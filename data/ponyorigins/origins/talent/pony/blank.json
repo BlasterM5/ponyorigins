@@ -1,0 +1,8 @@
+{
+    "name": "Blank Flank",
+    "description": "A blank flank is an opportunity to discover the inner self.",
+    "icon": {
+        "item": "paper"
+    },
+    "impact": 0
+}

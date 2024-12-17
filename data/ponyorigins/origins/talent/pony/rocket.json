@@ -1,0 +1,11 @@
+{
+    "name": "Rocket Dash",
+    "description": "Launch forward on a rocket ride of wind energy! Warning: Dangerous!",
+    "powers": [
+        "ponyorigins:pegasus/rocket"
+    ],
+    "icon": {
+        "item": "firework_rocket"
+    },
+    "impact": 0
+}

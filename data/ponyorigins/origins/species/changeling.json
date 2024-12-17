@@ -1,6 +1,6 @@
 {
     "name": "Changeling",
-    "description": "Insectoid creature that infiltrates pony society and feeds on the love of others to survive.",
+    "description": "Insectoid creature that infiltrates pony society and feeds on the love of others.",
     "powers": [
         "ponyorigins:common/diet/amorevore",
         "ponyorigins:common/health/minus_four",

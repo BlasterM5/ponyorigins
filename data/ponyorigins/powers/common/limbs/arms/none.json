@@ -1,6 +1,6 @@
 {
     "name": "No Arms",
-    "description": "No arms at all, not even wings. Unless you also have telekinesis, you are unable to use items or blocks if you are wielding two at once.",
+    "description": "No arms at all, not even wings. without telekinesis, it is impossible to use items or blocks when wielding two at once.",
     "type": "origins:multiple",
     "disable_item_use_on_offhand_mainhand": {
         "condition": {

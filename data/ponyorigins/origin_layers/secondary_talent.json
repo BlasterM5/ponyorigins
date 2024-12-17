@@ -22,8 +22,17 @@
                 "ponyorigins:talent/alicorn/barrier",
                 "ponyorigins:talent/alicorn/fireball",
                 "ponyorigins:talent/alicorn/laser",
-                "ponyorigins:talent/alicorn/teleport",
                 "ponyorigins:talent/alicorn/celestial"
+            ]
+        },
+        {
+            "condition": {
+                "inverted": true,
+                "type": "origins:power",
+                "power": "ponyorigins:common/none"
+            },
+            "origins": [
+                "ponyorigins:talent/other"
             ]
         },
         {
@@ -52,16 +61,6 @@
         },
         {
             "condition": {
-                "inverted": true,
-                "type": "origins:power",
-                "power": "ponyorigins:common/none"
-            },
-            "origins": [
-                "ponyorigins:talent/other"
-            ]
-        },
-        {
-            "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
@@ -72,23 +71,18 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/ranger"
+                        "power": "ponyorigins:talent/stamina/ranger"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/ranger"
+                "ponyorigins:talent/stamina/ranger"
             ]
         },
         {
             "condition": {
                 "type": "origins:and",
                 "conditions": [
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
                     {
                         "inverted": true,
                         "type": "origins:power",
@@ -112,11 +106,6 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
                         "power": "ponyorigins:common/none"
                     },
                     {
@@ -128,54 +117,6 @@
             },
             "origins": [
                 "ponyorigins:talent/stamina/miner"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:talent/defender"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/defender"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:talent/miner"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/miner"
             ]
         },
         {
@@ -203,12 +144,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/runner"
+                        "power": "ponyorigins:talent/stamina/runner"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/runner"
+                "ponyorigins:talent/stamina/runner"
             ]
         },
         {
@@ -231,12 +172,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/tamer"
+                        "power": "ponyorigins:talent/pony/tamer"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/tamer"
+                "ponyorigins:talent/pony/tamer"
             ]
         },
         {
@@ -259,12 +200,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/manespace"
+                        "power": "ponyorigins:talent/pony/manespace"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/manespace"
+                "ponyorigins:talent/pony/manespace"
             ]
         },
         {
@@ -282,17 +223,17 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/barrier"
+                        "power": "ponyorigins:common/none"
                     },
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/none"
+                        "power": "ponyorigins:talent/energy/barrier"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/barrier"
+                "ponyorigins:talent/energy/barrier"
             ]
         },
         {
@@ -311,11 +252,6 @@
                         "inverted": true,
                         "type": "origins:power",
                         "power": "ponyorigins:common/flight"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:talent/levitate"
                     },
                     {
                         "inverted": true,
@@ -326,11 +262,16 @@
                         "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:species/umbrum"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talent/energy/levitate"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/levitate"
+                "ponyorigins:talent/energy/levitate"
             ]
         },
         {
@@ -358,12 +299,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/flora"
+                        "power": "ponyorigins:talent/elemental/flora"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/flora"
+                "ponyorigins:talent/elemental/flora"
             ]
         },
         {
@@ -391,12 +332,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/teleport"
+                        "power": "ponyorigins:talent/energy/teleport"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/teleport"
+                "ponyorigins:talent/energy/teleport"
             ]
         },
         {
@@ -424,12 +365,49 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/fireball"
+                        "power": "ponyorigins:talent/elemental/fireball"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/fireball"
+                "ponyorigins:talent/elemental/fireball"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/pony"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:species/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talent/pony/firecracker"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/pony/firecracker"
             ]
         },
         {
@@ -457,12 +435,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/firecracker"
+                        "power": "ponyorigins:talent/elemental/flamethrower"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/firecracker"
+                "ponyorigins:talent/elemental/flamethrower"
             ]
         },
         {
@@ -490,12 +468,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/flamethrower"
+                        "power": "ponyorigins:talent/elemental/ice_beam"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/flamethrower"
+                "ponyorigins:talent/elemental/ice_beam"
             ]
         },
         {
@@ -523,12 +501,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/ice_beam"
+                        "power": "ponyorigins:talent/elemental/shock_ray"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/ice_beam"
+                "ponyorigins:talent/elemental/shock_ray"
             ]
         },
         {
@@ -556,45 +534,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/shock_ray"
+                        "power": "ponyorigins:talent/elemental/thunder"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/shock_ray"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/telekinesis"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:species/changeling"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:talent/thunder"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/thunder"
+                "ponyorigins:talent/elemental/thunder"
             ]
         },
         {
@@ -617,12 +562,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/vanish"
+                        "power": "ponyorigins:talent/energy/vanish"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/vanish"
+                "ponyorigins:talent/energy/vanish"
             ]
         },
         {
@@ -645,12 +590,12 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/laser"
+                        "power": "ponyorigins:talent/energy/laser"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/laser"
+                "ponyorigins:talent/energy/laser"
             ]
         },
         {
@@ -677,7 +622,86 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talent/rocketeer"
+                "ponyorigins:talent/pony/rocket"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talent/stamina/charge"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:talent/stamina/charge"
+                    },
+                    {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/hind/hooves"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/hind/cloven_hooves"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/alicorn"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/antlers"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/bovine"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/ram"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/razor"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/rhino"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/unicorn"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/unicorn_antler"
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/horn/unicorn_swept"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/stamina/charge"
             ]
         },
         {
@@ -720,6 +744,11 @@
                         "inverted": true,
                         "type": "origins:power",
                         "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:changeling/web_shot"
                     }
                 ]
             },
@@ -763,7 +792,7 @@
                 ]
             },
             "origins": [
-                "ponyorigins:talent/blank"
+                "ponyorigins:talent/pony/blank"
             ]
         }
     ],

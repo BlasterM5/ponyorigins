@@ -1,6 +1,6 @@
 {
     "name": "Web Shot",
-    "description": "A changeling's body produces an impressive amount of silky material, which is used to capture its prey.",
+    "description": "Eat to produce silk, then shoot it to capture prey.",
     "powers": [
         "ponyorigins:changeling/web_shot"
     ],

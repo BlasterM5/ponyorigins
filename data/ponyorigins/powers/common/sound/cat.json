@@ -1,6 +1,5 @@
 {
     "name": "Cat Sounds",
-    "description": "Cats go meow.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

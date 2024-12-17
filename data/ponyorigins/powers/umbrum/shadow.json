@@ -1,6 +1,6 @@
 {
     "name": "Shadow Walk",
-    "description": "Press your primary power to become an intangible shadow, and haunt your quarrel through walls and other solid objects, immune to harm!\n\nWarning: Fails in bright light!",
+    "description": "Press to become an intangible shadow, able to phase through most materials and become immune to damage.\n\nWarning: Fails in bright light!",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -37,7 +37,7 @@
             "compare_to": 1
         },
         "type": "origins:action_over_time",
-        "interval": 3,
+        "interval": 6,
         "entity_action": {
             "type": "origins:and",
             "actions": [
@@ -70,9 +70,13 @@
                     "if_action": {
                         "type": "origins:change_resource",
                         "resource": "ponyorigins:common/energy_level",
-                        "change": -2,
+                        "change": -1,
                         "operation": "add"
                     }
+                },
+                {
+                    "type": "origins:gain_air",
+                    "value": 100
                 }
             ]
         },
@@ -103,7 +107,7 @@
             "tag": "origins:unphasable"
         },
         "render_type": "blindness",
-        "view_distance": 10
+        "view_distance": 2
     },
     "flight_speed": {
         "condition": {
@@ -303,5 +307,14 @@
             "compare_to": 1
         },
         "type": "apugli:mobs_ignore"
+    },
+    "water_phasing": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:ignore_water"
     }
 }

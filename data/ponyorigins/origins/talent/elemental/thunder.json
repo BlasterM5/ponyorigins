@@ -1,0 +1,11 @@
+{
+    "name": "Thunder",
+    "description": "Summon lightning with pinpoint accuracy!",
+    "powers": [
+        "ponyorigins:talent/elemental/thunder"
+    ],
+    "icon": {
+        "item": "lightning_rod"
+    },
+    "impact": 0
+}

@@ -1,6 +1,6 @@
 {
     "name": "Abyssinian",
-    "description": "Anthropomorphic cats from the deserts of Abyssinia.",
+    "description": "Bipedal cats from the deserts of Abyssinia.",
     "powers": [
         "ponyorigins:common/diet/carnivore",
         "ponyorigins:common/health/minus_two",

@@ -1,6 +1,5 @@
 {
     "name": "Spectre Sounds",
-    "description": "Spectres hiss ephemerally?",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

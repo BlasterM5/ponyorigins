@@ -1,6 +1,6 @@
 {
     "name": "Celestia Custodio",
-    "description": "You were born for a special task... to maintain the world's day cycle. This takes some of your energy at all times, but it lets you advance the day quickly, should you need to.",
+    "description": "Maintain the world's day cycle, or advance it rapidly on demand.",
     "powers": [
         "ponyorigins:alicorn/celestial"
     ],

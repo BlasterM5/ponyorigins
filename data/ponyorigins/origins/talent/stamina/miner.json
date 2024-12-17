@@ -1,11 +1,17 @@
 {
     "name": "Miner",
-    "description": "Rock and Stone to the bone!",
+    "description": "Rock and Stone!",
     "powers": [
         "ponyorigins:talent/stamina/miner"
     ],
     "icon": {
         "item": "iron_pickaxe"
     },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:talent/alicorn/miner"
+        }
+    ],
     "impact": 0
 }

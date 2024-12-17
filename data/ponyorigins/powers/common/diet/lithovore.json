@@ -1,6 +1,6 @@
 {
     "name": "Lithovore",
-    "description": "A digestive system designed to eat gemstones. Normal food turns to ash when eaten, greatly reducing its nutrition while preventing any effects, good or bad. Eat gemstones the same as normal food.",
+    "description": "A digestive system designed to eat gemstones to fuel a bioreactor. Normal food turns to ash when eaten, greatly reducing its nutrition while preventing any effects, good or bad. Eat gemstones and fuel items to boost heat quickly. Heat level will increase faster in hot weather, and decrease in cold weather. No heat causes slowness.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -16,6 +16,16 @@
             "type": "origins:tooltip",
             "text": "Eating Food: Saturation -75 percent and no effects",
             "sprite": "textures/item/charcoal.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "+2.5 Heat/sec, -0.75 Hunger/sec. Hunger below 6 stops charging",
+            "sprite": "textures/particle/flame.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Eat Gems or Fuel to boost heat",
+            "sprite": "textures/item/coal.png"
         }
     ],
     "type": "origins:multiple",
@@ -46,7 +56,7 @@
     "edible_gems": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -67,7 +77,7 @@
         "use_action": "eat",
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "ponyorigins:dragon/heat_level",
+            "resource": "*:*_level",
             "change": 10,
             "operation": "add"
         }
@@ -75,7 +85,7 @@
     "edible_blaze_rod": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -96,7 +106,7 @@
         "use_action": "eat",
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "ponyorigins:dragon/heat_level",
+            "resource": "*:*_level",
             "change": 50,
             "operation": "add"
         }
@@ -104,7 +114,7 @@
     "edible_gapple_equivalent": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -159,7 +169,7 @@
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_level",
+                    "resource": "*:*_level",
                     "change": 10,
                     "operation": "add"
                 }
@@ -169,7 +179,7 @@
     "edible_egapple_equivalent": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -231,7 +241,7 @@
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_level",
+                    "resource": "*:*_level",
                     "change": 10,
                     "operation": "add"
                 }
@@ -241,7 +251,7 @@
     "edible_heart_of_the_sea": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -287,7 +297,7 @@
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_level",
+                    "resource": "*:*_level",
                     "change": 10,
                     "operation": "add"
                 }
@@ -297,7 +307,7 @@
     "edible_prismarine_shard": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -331,7 +341,7 @@
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_level",
+                    "resource": "*:*_level",
                     "change": 10,
                     "operation": "add"
                 }
@@ -341,7 +351,7 @@
     "edible_lava_bucket": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -369,19 +379,19 @@
             "actions": [
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_sc_triggered",
+                    "resource": "*:*_sc_triggered",
                     "change": 1,
                     "operation": "add"
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_level",
+                    "resource": "*:*_level",
                     "change": 100,
                     "operation": "add"
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "ponyorigins:dragon/heat_supercharge",
+                    "resource": "*:*_supercharge",
                     "change": 1000,
                     "operation": "add"
                 },
@@ -403,7 +413,7 @@
     "obsidian_fill": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 1
         },
@@ -415,7 +425,7 @@
     "edible_dragon_fuel": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:dragon/heat_sc_triggered",
+            "resource": "*:*_sc_triggered",
             "comparison": "==",
             "compare_to": 0
         },
@@ -436,9 +446,711 @@
         "use_action": "eat",
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "ponyorigins:dragon/heat_level",
+            "resource": "*:*_level",
             "change": 20,
             "operation": "add"
         }
+    },
+    "level": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 7,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_sc_triggered",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        }
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "<",
+            "compare_to": 100
+        },
+        "type": "origins:action_over_time",
+        "interval": 8,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:food_level",
+                                "comparison": ">=",
+                                "compare_to": 6
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_sc_triggered",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:exhaust",
+                                "amount": 0.25
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:fluid_height",
+                        "fluid": "lava",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "lava",
+                                    "comparison": ">=",
+                                    "compare_to": 0.75
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 4,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "lava",
+                                    "comparison": ">=",
+                                    "compare_to": 0.5
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 3,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "lava",
+                                    "comparison": ">=",
+                                    "compare_to": 0.25
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 2,
+                                    "operation": "add"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_level",
+                                    "comparison": ">=",
+                                    "compare_to": 0
+                                },
+                                "action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:on_fire"
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": 2,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "powder_snow"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": -4,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:extinguish"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_rain"
+                            },
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "water",
+                                "comparison": "<",
+                                "compare_to": 0.5
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:biome",
+                                        "condition": {
+                                            "type": "origins:temperature",
+                                            "comparison": ">",
+                                            "compare_to": 1.5
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_source",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<",
+                                    "compare_to": -0.3
+                                }
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": -2,
+                                "operation": "add"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<",
+                                    "compare_to": 0.1
+                                }
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": -1,
+                                "operation": "add"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:fluid_height",
+                        "fluid": "water",
+                        "comparison": ">=",
+                        "compare_to": 0.5
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_level",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd_timer",
+                                "comparison": "==",
+                                "compare_to": 21
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd_timer",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    "else_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_level",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_cd_timer",
+                                    "comparison": "==",
+                                    "compare_to": 20
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_level",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_cd_timer",
+                                "comparison": "<",
+                                "compare_to": 21
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd_timer",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "cd_timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 21,
+        "start_value": 21
+    },
+    "slow_when_cold": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "no_sprint_when_cold": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_level",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:prevent_sprinting"
+    },
+    "freeze_extinguish": {
+        "type": "origins:action_when_damage_taken",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "freeze"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_level",
+                    "change": -4,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:extinguish"
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "supercharge": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 3,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_supercharge",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "sc_triggered": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "sc_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_supercharge",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle flame ~ ~0.5 ~-0.25 0.2 0.2 0.2 0.05 8 force"
+                }
+            ]
+        }
+    },
+    "sc_recharge": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_supercharge",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "<=",
+                                "compare_to": 50
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_supercharge",
+                                "comparison": ">=",
+                                "compare_to": 50
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -50,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 50,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "<=",
+                                "compare_to": 75
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_supercharge",
+                                "comparison": ">=",
+                                "compare_to": 25
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -25,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 25,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "<=",
+                                "compare_to": 90
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_supercharge",
+                                "comparison": ">=",
+                                "compare_to": 10
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -10,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 10,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": "<=",
+                                "compare_to": 99
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_supercharge",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_supercharge",
+                                "change": -1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_level",
+                                "change": 1,
+                                "operation": "add"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_sc_triggered",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_obsidian_slag",
+                        "change": 40,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "slowness",
+                            "duration": 800,
+                            "amplifier": 4,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            }
+        }
+    },
+    "obsidian_slag_decay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_obsidian_slag",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_obsidian_slag",
+            "change": -1,
+            "operation": "add"
+        },
+        "falling_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_sc_triggered",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon item ~ ~ ~ {Item:{id:\"obsidian\",Count:1}}"
+                }
+            ]
+        }
+    },
+    "obsidian_slag": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "start_value": 0
     }
 }

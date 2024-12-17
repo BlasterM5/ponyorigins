@@ -1,6 +1,6 @@
 {
     "name": "Kinetic Blast",
-    "description": "Hold your secondary power to charge, release to fire your telekinesis in a single, explosive shove in the direction you are looking!",
+    "description": "Hold to charge, release to fire a single, explosive shove at the target!",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -52,62 +52,21 @@
                     "shape_type": "collider",
                     "fluid_handling": "any",
                     "bientity_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:explode",
-                                    "power": 2,
-                                    "destruction_type": "break",
-                                    "damage_self": true
-                                }
-                            },
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:spawn_particles",
-                                    "particle": "flash",
-                                    "count": 1,
-                                    "speed": 1,
-                                    "spread": {
-                                        "x": 0,
-                                        "y": 0,
-                                        "z": 0
-                                    }
-                                }
-                            },
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:play_sound",
-                                    "sound": "entity.generic.explode",
-                                    "volume": 1,
-                                    "pitch": 1
-                                }
-                            }
-                        ]
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:explode",
+                            "power": 2,
+                            "destruction_type": "break",
+                            "damage_self": true
+                        }
                     },
                     "block_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:explode",
-                                "power": 2,
-                                "destruction_type": "break",
-                                "damage_self": true
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "particle flash ~ ~ ~ 0 0 0 1 1 force"
-                            },
-                            {
-                                "type": "origins:execute_command",
-                                "command": "playsound entity.generic.explode master @a ~ ~ ~"
-                            }
-                        ]
+                        "type": "origins:explode",
+                        "power": 2,
+                        "destruction_type": "break",
+                        "damage_self": true
                     },
-                    "command_at_hit": "function ponyorigins:ability/aggro",
+                    "command_at_hit": "function ponyorigins:ability/blast_effect",
                     "command_along_ray": "particle instant_effect ^ ^0.25 ^ 0.1 0.1 0.1 10 8 force",
                     "command_step": 1
                 },

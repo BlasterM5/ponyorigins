@@ -1,6 +1,5 @@
 {
     "name": "Pony Sounds",
-    "description": "Ponies go neigh.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

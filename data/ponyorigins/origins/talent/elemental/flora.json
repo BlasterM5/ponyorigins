@@ -1,0 +1,11 @@
+{
+    "name": "Flora",
+    "description": "Concentrate harder on a plant to make it grow.",
+    "powers": [
+        "ponyorigins:talent/elemental/flora"
+    ],
+    "icon": {
+        "item": "wheat"
+    },
+    "impact": 0
+}

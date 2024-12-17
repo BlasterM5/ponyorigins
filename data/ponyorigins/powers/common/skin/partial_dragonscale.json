@@ -1,6 +1,6 @@
 {
     "name": "Partial Dragonscale",
-    "description": "A body partly covered in dragonscale and partly in hair, which helps resist both physical and some elemental damage without as big a hit on endurance.",
+    "description": "A body partly covered in dragonscale and partly in fur, which helps resist both physical and some elemental damage without as big a hit on endurance.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -81,7 +81,7 @@
     "cold_defense": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:common/hazards_burned",
+            "resource": "ponyorigins:common/hazard_burned",
             "comparison": "==",
             "compare_to": 0
         },
@@ -109,7 +109,7 @@
     "cold_defense_burned_var": {
         "condition": {
             "type": "origins:resource",
-            "resource": "ponyorigins:common/hazards_burned",
+            "resource": "ponyorigins:common/hazard_burned",
             "comparison": ">",
             "compare_to": 0
         },
@@ -127,7 +127,7 @@
                 "modifier": {
                     "operation": "add_base_early",
                     "value": 0,
-                    "resource": "ponyorigins:common/hazards_burned"
+                    "resource": "ponyorigins:common/hazard_burned"
                 }
             }
         }

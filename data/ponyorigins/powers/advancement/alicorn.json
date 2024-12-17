@@ -1,6 +1,5 @@
 {
-    "name": "Alicorn Advancements",
-    "description": "Contains Advancement Logic for Alicorn Ascension",
+    "name": "Alicorn Ascension Tracker",
     "hidden": true,
     "type": "origins:multiple",
     "ascension_check": {

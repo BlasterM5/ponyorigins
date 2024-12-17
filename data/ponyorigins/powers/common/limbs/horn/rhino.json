@@ -17,6 +17,7 @@
         }
     },
     "type": "origins:modify_attribute",
+    "attribute": "generic.armor_toughness",
     "modifier": {
         "operation": "add_base_early",
         "value": 1

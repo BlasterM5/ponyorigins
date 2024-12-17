@@ -1,6 +1,5 @@
 {
     "name": "Avian Sounds",
-    "description": "Avians go tweet.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

@@ -1,6 +1,6 @@
 {
     "name": "Charge",
-    "description": "Launch forwards at high speeds, ramming anything in the way!\n\nWARNING: The Impact might kill you!\n\nWARNING: The impact may kill you!",
+    "description": "Launch forwards at high speed, ramming anything in the way!\n\nWARNING: The Impact might kill you!",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -22,7 +22,7 @@
     "cd": {
         "type": "origins:resource",
         "min": 0,
-        "max": 1,
+        "max": 20,
         "start_value": 0
     },
     "cd_timer": {
@@ -33,19 +33,13 @@
             "compare_to": 0
         },
         "type": "origins:action_over_time",
-        "interval": 400,
+        "interval": 20,
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_cd",
             "change": -1,
             "operation": "add"
         }
-    },
-    "antilag": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
     },
     "sound_triggered": {
         "type": "origins:resource",
@@ -71,12 +65,11 @@
                             "conditions": [
                                 {
                                     "type": "origins:origin",
-                                    "origin": "ponyorigins:talent/stamina/charge",
-                                    "layer": "ponyorigins:secondary_talent"
+                                    "origin": "ponyorigins:species/goat"
                                 },
                                 {
                                     "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_key_secondary_active",
+                                    "resource": "ponyorigins:common/00_key_primary_active",
                                     "comparison": ">",
                                     "compare_to": 0
                                 }
@@ -93,6 +86,23 @@
                                 {
                                     "type": "origins:resource",
                                     "resource": "ponyorigins:common/00_key_primary_active",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:talent/stamina/charge",
+                                    "layer": "ponyorigins:primary_talent"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_key_secondary_active",
                                     "comparison": ">",
                                     "compare_to": 0
                                 }
@@ -122,6 +132,44 @@
                     "fluid": "lava",
                     "comparison": "==",
                     "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/telekinesis"
+                        },
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/taur"
+                        },
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/biped"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_mainhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_offhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/limbs/quadruped"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "origins:or",
@@ -160,6 +208,47 @@
                                                 "type": "origins:in_tag",
                                                 "tag": "ponyorigins:slippery_when_wet"
                                             }
+                                        },
+                                        {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:block_collision",
+                                                    "block_condition": {
+                                                        "type": "origins:movement_blocking"
+                                                    },
+                                                    "offset_x": 0.5,
+                                                    "offset_y": 0.2,
+                                                    "offset_z": 0.5
+                                                },
+                                                {
+                                                    "type": "origins:block_collision",
+                                                    "block_condition": {
+                                                        "type": "origins:movement_blocking"
+                                                    },
+                                                    "offset_x": -0.5,
+                                                    "offset_y": 0.2,
+                                                    "offset_z": -0.5
+                                                },
+                                                {
+                                                    "type": "origins:block_collision",
+                                                    "block_condition": {
+                                                        "type": "origins:movement_blocking"
+                                                    },
+                                                    "offset_x": 0.5,
+                                                    "offset_y": 0.2,
+                                                    "offset_z": -0.5
+                                                },
+                                                {
+                                                    "type": "origins:block_collision",
+                                                    "block_condition": {
+                                                        "type": "origins:movement_blocking"
+                                                    },
+                                                    "offset_x": -0.5,
+                                                    "offset_y": 0.2,
+                                                    "offset_z": 0.5
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -222,17 +311,16 @@
                             "actions": [
                                 {
                                     "type": "origins:exhaust",
-                                    "amount": 0.1
+                                    "amount": 0.2
                                 },
                                 {
                                     "type": "origins:add_velocity",
                                     "x": 0,
                                     "y": 0,
-                                    "z": 2,
-                                    "space": "local",
+                                    "z": 1,
+                                    "space": "local_horizontal",
                                     "client": true,
-                                    "server": true,
-                                    "set": true
+                                    "server": true
                                 },
                                 {
                                     "type": "origins:spawn_particles",
@@ -290,21 +378,10 @@
                                     "condition": {
                                         "type": "origins:actor_condition",
                                         "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/unicorn"
-                                                },
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/bovine"
-                                                },
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/binicorn"
-                                                }
-                                            ]
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 1
                                         }
                                     },
                                     "action": {
@@ -317,378 +394,12 @@
                                                     "actions": [
                                                         {
                                                             "type": "origins:damage",
-                                                            "amount": 8,
-                                                            "damage_type": "generic"
-                                                        },
-                                                        {
-                                                            "type": "origins:play_sound",
-                                                            "sound": "entity.generic.big_fall",
-                                                            "volume": 1,
-                                                            "pitch": 1
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:actor_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/aggro"
-                                                        },
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 4,
-                                                            "damage_type": "fly_into_wall"
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:add_velocity",
-                                                "x": 0,
-                                                "y": 0.05,
-                                                "z": 0.5,
-                                                "client": false,
-                                                "server": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "condition": {
-                                        "type": "origins:actor_condition",
-                                        "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/alicorn"
-                                                },
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/alicorn_sighted"
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 16,
-                                                            "damage_type": "generic"
-                                                        },
-                                                        {
-                                                            "type": "origins:play_sound",
-                                                            "sound": "entity.generic.big_fall",
-                                                            "volume": 1,
-                                                            "pitch": 1
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:actor_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/aggro"
-                                                        },
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 4,
-                                                            "damage_type": "fly_into_wall"
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:add_velocity",
-                                                "x": 0,
-                                                "y": 0.05,
-                                                "z": 0.5,
-                                                "client": false,
-                                                "server": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "condition": {
-                                        "type": "origins:actor_condition",
-                                        "condition": {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/horn/antlers"
-                                        }
-                                    },
-                                    "action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 8,
-                                                            "damage_type": "player_attack"
-                                                        },
-                                                        {
-                                                            "type": "origins:play_sound",
-                                                            "sound": "entity.generic.big_fall",
-                                                            "volume": 1,
-                                                            "pitch": 1
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:actor_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/aggro"
-                                                        },
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 2,
-                                                            "damage_type": "fly_into_wall"
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:add_velocity",
-                                                "x": 0,
-                                                "y": 0.05,
-                                                "z": 0.5,
-                                                "client": false,
-                                                "server": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "condition": {
-                                        "type": "origins:actor_condition",
-                                        "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/unicorn_antler"
-                                                },
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/razor"
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 8,
-                                                            "damage_type": "player_attack"
-                                                        },
-                                                        {
-                                                            "type": "origins:play_sound",
-                                                            "sound": "entity.generic.big_fall",
-                                                            "volume": 1,
-                                                            "pitch": 1
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:actor_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/aggro"
-                                                        },
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 4,
-                                                            "damage_type": "fly_into_wall"
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:add_velocity",
-                                                "x": 0,
-                                                "y": 0.05,
-                                                "z": 0.5,
-                                                "client": false,
-                                                "server": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "condition": {
-                                        "type": "origins:actor_condition",
-                                        "condition": {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/horn/rhino"
-                                        }
-                                    },
-                                    "action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 8,
-                                                            "damage_type": "player_attack"
-                                                        },
-                                                        {
-                                                            "type": "origins:play_sound",
-                                                            "sound": "entity.generic.big_fall",
-                                                            "volume": 1,
-                                                            "pitch": 1
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:actor_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/aggro"
-                                                        },
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 2,
-                                                            "damage_type": "fly_into_wall"
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:add_velocity",
-                                                "x": 0,
-                                                "y": 0.1,
-                                                "z": 1,
-                                                "client": false,
-                                                "server": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "condition": {
-                                        "type": "origins:actor_condition",
-                                        "condition": {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/horn/unicorn_swept"
-                                        }
-                                    },
-                                    "action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 4,
-                                                            "damage_type": "player_attack"
-                                                        },
-                                                        {
-                                                            "type": "origins:play_sound",
-                                                            "sound": "entity.generic.big_fall",
-                                                            "volume": 1,
-                                                            "pitch": 1
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:actor_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/aggro"
-                                                        },
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 4,
-                                                            "damage_type": "fly_into_wall"
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:add_velocity",
-                                                "x": 0,
-                                                "y": 0.1,
-                                                "z": 1,
-                                                "client": false,
-                                                "server": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "condition": {
-                                        "type": "origins:actor_condition",
-                                        "condition": {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/horn/ram"
-                                        }
-                                    },
-                                    "action": {
-                                        "type": "origins:and",
-                                        "actions": [
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
-                                                    "type": "origins:and",
-                                                    "actions": [
-                                                        {
-                                                            "type": "origins:damage",
-                                                            "amount": 4,
+                                                            "amount": 6,
                                                             "damage_type": "player_attack"
                                                         },
                                                         {
                                                             "type": "origins:execute_command",
-                                                            "command": "function ponyorigins:ability/block_explosion_effect"
+                                                            "command": "function ponyorigins:ability/smash_effect"
                                                         }
                                                     ]
                                                 }
@@ -713,7 +424,422 @@
                                             {
                                                 "type": "origins:add_velocity",
                                                 "x": 0,
+                                                "y": 0.4,
+                                                "z": 4,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:actor_condition",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 2
+                                        }
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 10,
+                                                            "damage_type": "player_attack"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 2,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
+                                                "y": 0.3,
+                                                "z": 3,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:actor_condition",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 3
+                                        }
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 10,
+                                                            "damage_type": "player_attack"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 2,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
                                                 "y": 0.25,
+                                                "z": 2.5,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:actor_condition",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 4
+                                        }
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 6,
+                                                            "damage_type": "player_attack"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 4,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
+                                                "y": 0.2,
+                                                "z": 2,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:actor_condition",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 5
+                                        }
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 10,
+                                                            "damage_type": "player_attack"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 4,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
+                                                "y": 0.25,
+                                                "z": 2,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:actor_condition",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 6
+                                        }
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 10,
+                                                            "damage_type": "generic"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 4,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
+                                                "y": 0.2,
+                                                "z": 2,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:actor_condition",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_horn",
+                                            "comparison": "==",
+                                            "compare_to": 7
+                                        }
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 20,
+                                                            "damage_type": "generic"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 4,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
+                                                "y": 0.2,
+                                                "z": 2,
+                                                "client": false,
+                                                "server": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:constant",
+                                        "value": true
+                                    },
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 4,
+                                                            "damage_type": "player_attack"
+                                                        },
+                                                        {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "entity.generic.big_fall",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:actor_action",
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "function ponyorigins:ability/aggro"
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 4,
+                                                            "damage_type": "fly_into_wall"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:add_velocity",
+                                                "x": 0,
+                                                "y": 0.2,
                                                 "z": 2,
                                                 "client": false,
                                                 "server": true
@@ -735,44 +861,55 @@
                                 {
                                     "type": "origins:if_else",
                                     "condition": {
-                                        "type": "origins:collided_horizontally"
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:block_collision",
+                                                "block_condition": {
+                                                    "type": "origins:movement_blocking"
+                                                },
+                                                "offset_x": 0.2,
+                                                "offset_y": 0.1,
+                                                "offset_z": 0.2
+                                            },
+                                            {
+                                                "type": "origins:block_collision",
+                                                "block_condition": {
+                                                    "type": "origins:movement_blocking"
+                                                },
+                                                "offset_x": -0.2,
+                                                "offset_y": 0.1,
+                                                "offset_z": -0.2
+                                            },
+                                            {
+                                                "type": "origins:block_collision",
+                                                "block_condition": {
+                                                    "type": "origins:movement_blocking"
+                                                },
+                                                "offset_x": 0.2,
+                                                "offset_y": 0.1,
+                                                "offset_z": -0.2
+                                            },
+                                            {
+                                                "type": "origins:block_collision",
+                                                "block_condition": {
+                                                    "type": "origins:movement_blocking"
+                                                },
+                                                "offset_x": -0.2,
+                                                "offset_y": 0.1,
+                                                "offset_z": 0.2
+                                            }
+                                        ]
                                     },
                                     "if_action": {
                                         "type": "origins:if_else_list",
                                         "actions": [
                                             {
                                                 "condition": {
-                                                    "type": "origins:or",
-                                                    "conditions": [
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/alicorn"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/alicorn_sighted"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/binicorn"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/razor"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/unicorn"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/unicorn_antler"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/unicorn_swept"
-                                                        }
-                                                    ]
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_horn",
+                                                    "comparison": ">=",
+                                                    "compare_to": 4
                                                 },
                                                 "action": {
                                                     "type": "origins:raycast",
@@ -836,13 +973,24 @@
                                                                 "type": "origins:if_else",
                                                                 "condition": {
                                                                     "type": "origins:power",
-                                                                    "power": "ponyorigins:common/energy_level"
+                                                                    "power": "ponyorigins:common/energy"
                                                                 },
                                                                 "if_action": {
-                                                                    "type": "origins:change_resource",
-                                                                    "resource": "ponyorigins:common/energy_level",
-                                                                    "change": 0,
-                                                                    "operation": "set"
+                                                                    "type": "origins:and",
+                                                                    "actions": [
+                                                                        {
+                                                                            "type": "origins:change_resource",
+                                                                            "resource": "ponyorigins:common/energy_level",
+                                                                            "change": 0,
+                                                                            "operation": "set"
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:change_resource",
+                                                                            "resource": "ponyorigins:common/energy_cd",
+                                                                            "change": 20,
+                                                                            "operation": "set"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]
@@ -854,16 +1002,16 @@
                                                     "type": "origins:or",
                                                     "conditions": [
                                                         {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/antlers"
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_horn",
+                                                            "comparison": "==",
+                                                            "compare_to": 2
                                                         },
                                                         {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/bovine"
-                                                        },
-                                                        {
-                                                            "type": "origins:power",
-                                                            "power": "ponyorigins:common/limbs/horn/rhino"
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_horn",
+                                                            "comparison": "==",
+                                                            "compare_to": 3
                                                         }
                                                     ]
                                                 },
@@ -929,13 +1077,24 @@
                                                                 "type": "origins:if_else",
                                                                 "condition": {
                                                                     "type": "origins:power",
-                                                                    "power": "ponyorigins:common/energy_level"
+                                                                    "power": "ponyorigins:common/energy"
                                                                 },
                                                                 "if_action": {
-                                                                    "type": "origins:change_resource",
-                                                                    "resource": "ponyorigins:common/energy_level",
-                                                                    "change": 0,
-                                                                    "operation": "set"
+                                                                    "type": "origins:and",
+                                                                    "actions": [
+                                                                        {
+                                                                            "type": "origins:change_resource",
+                                                                            "resource": "ponyorigins:common/energy_level",
+                                                                            "change": 0,
+                                                                            "operation": "set"
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:change_resource",
+                                                                            "resource": "ponyorigins:common/energy_cd",
+                                                                            "change": 10,
+                                                                            "operation": "set"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]
@@ -944,8 +1103,10 @@
                                             },
                                             {
                                                 "condition": {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/horn/ram"
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_horn",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
                                                 },
                                                 "action": {
                                                     "type": "origins:raycast",
@@ -1015,20 +1176,512 @@
                                                                 "type": "origins:add_velocity",
                                                                 "x": 0,
                                                                 "y": 0.05,
-                                                                "z": -0.5,
-                                                                "space": "world",
+                                                                "z": -2,
+                                                                "space": "velocity",
                                                                 "client": true,
                                                                 "server": true
                                                             }
                                                         ]
                                                     },
-                                                    "command_at_hit": "function ponyorigins:ability/block_explosion_effect"
+                                                    "command_at_hit": "function ponyorigins:ability/smash_effect"
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:constant",
+                                                    "value": true
+                                                },
+                                                "action": {
+                                                    "type": "origins:raycast",
+                                                    "distance": 1.5,
+                                                    "block": true,
+                                                    "entity": false,
+                                                    "shape_type": "collider",
+                                                    "fluid_handling": "any",
+                                                    "hit_action": {
+                                                        "type": "origins:and",
+                                                        "actions": [
+                                                            {
+                                                                "type": "origins:apply_effect",
+                                                                "effects": [
+                                                                    {
+                                                                        "effect": "nausea",
+                                                                        "duration": 400,
+                                                                        "amplifier": 0,
+                                                                        "is_ambient": true,
+                                                                        "show_particles": false,
+                                                                        "show_icon": true
+                                                                    },
+                                                                    {
+                                                                        "effect": "slowness",
+                                                                        "duration": 400,
+                                                                        "amplifier": 1,
+                                                                        "is_ambient": true,
+                                                                        "show_particles": false,
+                                                                        "show_icon": true
+                                                                    },
+                                                                    {
+                                                                        "effect": "weakness",
+                                                                        "duration": 800,
+                                                                        "amplifier": 1,
+                                                                        "is_ambient": true,
+                                                                        "show_particles": false,
+                                                                        "show_icon": true
+                                                                    },
+                                                                    {
+                                                                        "effect": "mining_fatigue",
+                                                                        "duration": 800,
+                                                                        "amplifier": 1,
+                                                                        "is_ambient": true,
+                                                                        "show_particles": false,
+                                                                        "show_icon": true
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "origins:damage",
+                                                                "amount": 32,
+                                                                "damage_type": "fly_into_wall"
+                                                            },
+                                                            {
+                                                                "type": "origins:play_sound",
+                                                                "sound": "entity.generic.big_fall",
+                                                                "volume": 1,
+                                                                "pitch": 1
+                                                            },
+                                                            {
+                                                                "type": "origins:if_else",
+                                                                "condition": {
+                                                                    "type": "origins:power",
+                                                                    "power": "ponyorigins:common/energy"
+                                                                },
+                                                                "if_action": {
+                                                                    "type": "origins:and",
+                                                                    "actions": [
+                                                                        {
+                                                                            "type": "origins:change_resource",
+                                                                            "resource": "ponyorigins:common/energy_level",
+                                                                            "change": 0,
+                                                                            "operation": "set"
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:change_resource",
+                                                                            "resource": "ponyorigins:common/energy_cd",
+                                                                            "change": 40,
+                                                                            "operation": "set"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
                                                 }
                                             }
                                         ]
                                     }
                                 }
                             ]
+                        },
+                        "miss_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:block_collision",
+                                        "block_condition": {
+                                            "type": "origins:movement_blocking"
+                                        },
+                                        "offset_x": 0.2,
+                                        "offset_y": 0.1,
+                                        "offset_z": 0.2
+                                    },
+                                    {
+                                        "type": "origins:block_collision",
+                                        "block_condition": {
+                                            "type": "origins:movement_blocking"
+                                        },
+                                        "offset_x": -0.2,
+                                        "offset_y": 0.1,
+                                        "offset_z": -0.2
+                                    },
+                                    {
+                                        "type": "origins:block_collision",
+                                        "block_condition": {
+                                            "type": "origins:movement_blocking"
+                                        },
+                                        "offset_x": 0.2,
+                                        "offset_y": 0.1,
+                                        "offset_z": -0.2
+                                    },
+                                    {
+                                        "type": "origins:block_collision",
+                                        "block_condition": {
+                                            "type": "origins:movement_blocking"
+                                        },
+                                        "offset_x": -0.2,
+                                        "offset_y": 0.1,
+                                        "offset_z": 0.2
+                                    }
+                                ]
+                            },
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_cd",
+                                        "change": 1,
+                                        "operation": "add"
+                                    },
+                                    {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.generic.big_fall",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    },
+                                    {
+                                        "type": "origins:if_else_list",
+                                        "actions": [
+                                            {
+                                                "condition": {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_horn",
+                                                    "comparison": ">=",
+                                                    "compare_to": 4
+                                                },
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effects": [
+                                                                {
+                                                                    "effect": "nausea",
+                                                                    "duration": 200,
+                                                                    "amplifier": 0,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "slowness",
+                                                                    "duration": 200,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "weakness",
+                                                                    "duration": 400,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "mining_fatigue",
+                                                                    "duration": 400,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 16,
+                                                            "damage_type": "fly_into_wall"
+                                                        },
+                                                        {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "origins:power",
+                                                                "power": "ponyorigins:common/energy"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:change_resource",
+                                                                        "resource": "ponyorigins:common/energy_level",
+                                                                        "change": 0,
+                                                                        "operation": "set"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:change_resource",
+                                                                        "resource": "ponyorigins:common/energy_cd",
+                                                                        "change": 20,
+                                                                        "operation": "set"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:change_resource",
+                                                            "resource": "*:*_cd",
+                                                            "change": 19,
+                                                            "operation": "add"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_horn",
+                                                            "comparison": "==",
+                                                            "compare_to": 2
+                                                        },
+                                                        {
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_horn",
+                                                            "comparison": "==",
+                                                            "compare_to": 3
+                                                        }
+                                                    ]
+                                                },
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effects": [
+                                                                {
+                                                                    "effect": "nausea",
+                                                                    "duration": 100,
+                                                                    "amplifier": 0,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "slowness",
+                                                                    "duration": 100,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "weakness",
+                                                                    "duration": 200,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "mining_fatigue",
+                                                                    "duration": 200,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 8,
+                                                            "damage_type": "fly_into_wall"
+                                                        },
+                                                        {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "origins:power",
+                                                                "power": "ponyorigins:common/energy"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:change_resource",
+                                                                        "resource": "ponyorigins:common/energy_level",
+                                                                        "change": 0,
+                                                                        "operation": "set"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:change_resource",
+                                                                        "resource": "ponyorigins:common/energy_cd",
+                                                                        "change": 10,
+                                                                        "operation": "set"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:change_resource",
+                                                            "resource": "*:*_cd",
+                                                            "change": 9,
+                                                            "operation": "add"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:resource",
+                                                    "resource": "*:*_horn",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
+                                                },
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effects": [
+                                                                {
+                                                                    "effect": "nausea",
+                                                                    "duration": 20,
+                                                                    "amplifier": 0,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "slowness",
+                                                                    "duration": 20,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "weakness",
+                                                                    "duration": 40,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "mining_fatigue",
+                                                                    "duration": 40,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 2,
+                                                            "damage_type": "fly_into_wall"
+                                                        },
+                                                        {
+                                                            "type": "origins:add_velocity",
+                                                            "x": 0,
+                                                            "y": 0.05,
+                                                            "z": -0.5,
+                                                            "space": "velocity_horizontal",
+                                                            "client": true,
+                                                            "server": true,
+                                                            "set": true
+                                                        },
+                                                        {
+                                                            "type": "origins:change_resource",
+                                                            "resource": "*:*_cd",
+                                                            "change": 1,
+                                                            "operation": "add"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "condition": {
+                                                    "type": "origins:constant",
+                                                    "value": true
+                                                },
+                                                "action": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:apply_effect",
+                                                            "effects": [
+                                                                {
+                                                                    "effect": "nausea",
+                                                                    "duration": 400,
+                                                                    "amplifier": 0,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "slowness",
+                                                                    "duration": 400,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "weakness",
+                                                                    "duration": 800,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                },
+                                                                {
+                                                                    "effect": "mining_fatigue",
+                                                                    "duration": 800,
+                                                                    "amplifier": 1,
+                                                                    "is_ambient": true,
+                                                                    "show_particles": false,
+                                                                    "show_icon": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "origins:damage",
+                                                            "amount": 32,
+                                                            "damage_type": "fly_into_wall"
+                                                        },
+                                                        {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "origins:power",
+                                                                "power": "ponyorigins:common/energy"
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:change_resource",
+                                                                        "resource": "ponyorigins:common/energy_level",
+                                                                        "change": 0,
+                                                                        "operation": "set"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:change_resource",
+                                                                        "resource": "ponyorigins:common/energy_cd",
+                                                                        "change": 20,
+                                                                        "operation": "set"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:change_resource",
+                                                            "resource": "*:*_cd",
+                                                            "change": 40,
+                                                            "operation": "add"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
                         }
                     }
                 ]
@@ -1049,5 +1702,11 @@
                 }
             }
         }
+    },
+    "horn": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "start_value": 0
     }
 }

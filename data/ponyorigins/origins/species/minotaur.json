@@ -1,6 +1,6 @@
 {
     "name": "Minotaur",
-    "description": "An anthropomorphic creature with the strength and features of a bull but the body shape of a human.",
+    "description": "A bipedal creature with the strength and features of a bull but the body shape of a human.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/health/plus_four",

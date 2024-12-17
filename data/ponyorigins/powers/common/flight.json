@@ -1,6 +1,6 @@
 {
     "name": "Flight",
-    "description": "Jump in the air to spread your wings and take flight! Be careful not to damage them or get them caught in things, or you may be grounded for a while.\n\nManually disable/enable with your primary power to fly with equipment.",
+    "description": "Jump while in the air to start flying. Be careful, hazard and injuries can cause temporary loss of flight.\n\nPress to manually disable/enable in order to fly with equipment.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -385,31 +385,31 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_wet_cd",
+                            "resource": "ponyorigins:common/hazard_wet_cd",
                             "comparison": "==",
                             "compare_to": 1
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_burned_cd",
+                            "resource": "ponyorigins:common/hazard_burned_cd",
                             "comparison": "==",
                             "compare_to": 1
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_webbed_cd",
+                            "resource": "ponyorigins:common/hazard_webbed_cd",
                             "comparison": "==",
                             "compare_to": 1
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_frozen_cd",
+                            "resource": "ponyorigins:common/hazard_frozen_cd",
                             "comparison": "==",
                             "compare_to": 1
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_oiled_cd",
+                            "resource": "ponyorigins:common/hazard_oiled_cd",
                             "comparison": "==",
                             "compare_to": 1
                         },
@@ -539,12 +539,12 @@
                             "type": "origins:and",
                             "conditions": [
                                 {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:species/dragon"
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/lithovore"
                                 },
                                 {
                                     "type": "origins:resource",
-                                    "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                                    "resource": "ponyorigins:common/diet/lithovore_obsidian_slag",
                                     "comparison": ">",
                                     "compare_to": 0
                                 }
@@ -577,31 +577,31 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_wet",
+                            "resource": "ponyorigins:common/hazard_wet",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_oiled",
+                            "resource": "ponyorigins:common/hazard_oiled",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_iced",
+                            "resource": "ponyorigins:common/hazard_iced",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_burned",
+                            "resource": "ponyorigins:common/hazard_burned",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_webbed",
+                            "resource": "ponyorigins:common/hazard_webbed",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -616,19 +616,19 @@
             "modifier": {
                 "operation": "multiply_base_multiplicative",
                 "value": 0,
-                "resource": "ponyorigins:common/hazards_wet",
+                "resource": "ponyorigins:common/hazard_wet",
                 "modifier": {
                     "operation": "add_base_early",
                     "value": 0,
-                    "resource": "ponyorigins:common/hazards_oiled",
+                    "resource": "ponyorigins:common/hazard_oiled",
                     "modifier": {
                         "operation": "add_base_early",
                         "value": 0,
-                        "resource": "ponyorigins:common/hazards_iced",
+                        "resource": "ponyorigins:common/hazard_iced",
                         "modifier": {
                             "operation": "add_base_early",
                             "value": 0,
-                            "resource": "ponyorigins:common/hazards_webbed"
+                            "resource": "ponyorigins:common/hazard_webbed"
                         }
                     }
                 }
@@ -660,31 +660,31 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_wet",
+                            "resource": "ponyorigins:common/hazard_wet",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_oiled",
+                            "resource": "ponyorigins:common/hazard_oiled",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_iced",
+                            "resource": "ponyorigins:common/hazard_iced",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_burned",
+                            "resource": "ponyorigins:common/hazard_burned",
                             "comparison": ">",
                             "compare_to": 0
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_webbed",
+                            "resource": "ponyorigins:common/hazard_webbed",
                             "comparison": ">",
                             "compare_to": 0
                         }
@@ -699,19 +699,19 @@
             "modifier": {
                 "operation": "multiply_base_multiplicative",
                 "value": 0,
-                "resource": "ponyorigins:common/hazards_wet",
+                "resource": "ponyorigins:common/hazard_wet",
                 "modifier": {
                     "operation": "add_base_early",
                     "value": 0,
-                    "resource": "ponyorigins:common/hazards_oiled",
+                    "resource": "ponyorigins:common/hazard_oiled",
                     "modifier": {
                         "operation": "add_base_early",
                         "value": 0,
-                        "resource": "ponyorigins:common/hazards_iced",
+                        "resource": "ponyorigins:common/hazard_iced",
                         "modifier": {
                             "operation": "add_base_early",
                             "value": 0,
-                            "resource": "ponyorigins:common/hazards_webbed"
+                            "resource": "ponyorigins:common/hazard_webbed"
                         }
                     }
                 }
@@ -756,7 +756,7 @@
                             "modifier": {
                                 "operation": "add_base_early",
                                 "value": 0,
-                                "resource": "ponyorigins:common/hazards_sealed"
+                                "resource": "ponyorigins:common/hazard_sealed"
                             }
                         }
                     }
@@ -803,7 +803,7 @@
                         "modifier": {
                             "operation": "add_base_early",
                             "value": 0,
-                            "resource": "ponyorigins:common/hazards_sealed"
+                            "resource": "ponyorigins:common/hazard_sealed"
                         }
                     }
                 }
@@ -899,7 +899,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:common/hazards_wet",
+                        "resource": "ponyorigins:common/hazard_wet",
                         "comparison": ">",
                         "compare_to": 20
                     },
@@ -922,7 +922,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/hazards_wet",
+                                    "resource": "ponyorigins:common/hazard_wet",
                                     "change": -10,
                                     "operation": "add"
                                 }
@@ -934,7 +934,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/hazards_wet",
+                                    "resource": "ponyorigins:common/hazard_wet",
                                     "change": -5,
                                     "operation": "add"
                                 }
@@ -946,7 +946,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:common/hazards_oiled",
+                        "resource": "ponyorigins:common/hazard_oiled",
                         "comparison": ">",
                         "compare_to": 20
                     },
@@ -969,7 +969,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/hazards_oiled",
+                                    "resource": "ponyorigins:common/hazard_oiled",
                                     "change": -4,
                                     "operation": "add"
                                 }
@@ -981,7 +981,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/hazards_oiled",
+                                    "resource": "ponyorigins:common/hazard_oiled",
                                     "change": -2,
                                     "operation": "add"
                                 }
@@ -993,7 +993,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:common/hazards_iced",
+                        "resource": "ponyorigins:common/hazard_iced",
                         "comparison": ">",
                         "compare_to": 20
                     },
@@ -1016,7 +1016,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/hazards_iced",
+                                    "resource": "ponyorigins:common/hazard_iced",
                                     "change": -8,
                                     "operation": "add"
                                 }
@@ -1028,7 +1028,7 @@
                                 },
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "ponyorigins:common/hazards_iced",
+                                    "resource": "ponyorigins:common/hazard_iced",
                                     "change": -4,
                                     "operation": "add"
                                 }
@@ -1122,7 +1122,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:common/hazards_wet",
+                        "resource": "ponyorigins:common/hazard_wet",
                         "comparison": ">",
                         "compare_to": 20
                     },
@@ -1137,13 +1137,13 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:common/hazards_iced",
+                        "resource": "ponyorigins:common/hazard_iced",
                         "comparison": ">",
                         "compare_to": 20
                     },
                     "if_action": {
                         "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/hazards_iced",
+                        "resource": "ponyorigins:common/hazard_iced",
                         "change": -2,
                         "operation": "add"
                     }
@@ -1152,7 +1152,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:common/hazards_oiled",
+                        "resource": "ponyorigins:common/hazard_oiled",
                         "comparison": ">",
                         "compare_to": 20
                     },
@@ -1164,33 +1164,6 @@
                     }
                 }
             ]
-        }
-    },
-    "insectoid_enc_calc": {
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
-        "entity_action_added": {
-            "type": "origins:delay",
-            "action": {
-                "type": "origins:if_else",
-                "condition": {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/limbs/wings/insectoid"
-                },
-                "if_action": {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_insectoid_enc",
-                    "change": 20,
-                    "operation": "set"
-                },
-                "else_action": {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_insectoid_enc",
-                    "change": 0,
-                    "operation": "set"
-                }
-            },
-            "ticks": 2
         }
     }
 }

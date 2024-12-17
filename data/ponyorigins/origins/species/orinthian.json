@@ -1,6 +1,6 @@
 {
     "name": "Orinthian",
-    "description": "Flightless, anthropomorphic birdlike creatures from Orinthia.",
+    "description": "Flightless birdlike creatures from Orinthia.",
     "powers": [
         "ponyorigins:common/diet/omnivore",
         "ponyorigins:common/health/minus_two",

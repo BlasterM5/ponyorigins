@@ -1,6 +1,5 @@
 {
     "name": "Dragon Sounds",
-    "description": "Dragons roar.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

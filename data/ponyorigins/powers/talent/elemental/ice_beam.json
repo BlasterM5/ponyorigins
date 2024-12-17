@@ -1,0 +1,482 @@
+{
+    "name": "Frost Beam",
+    "description": "Hold to charge and stream a specific energy frequency that freezes the target.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": [
+                "Hold [",
+                {
+                    "keybind": "key.origins.primary_active"
+                },
+                "/",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "] to freeze everything"
+            ],
+            "sprite": "textures/item/snowball.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "ice": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_charged",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 10,
+            "block": true,
+            "entity": true,
+            "shape_type": "collider",
+            "fluid_handling": "any",
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:damage",
+                            "amount": 2,
+                            "damage_type": "freeze"
+                        },
+                        {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "slowness",
+                                "duration": 100,
+                                "amplifier": 0,
+                                "show_particles": false,
+                                "show_icon": true
+                            }
+                        },
+                        {
+                            "type": "origins:extinguish"
+                        }
+                    ]
+                }
+            },
+            "block_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:block",
+                            "block": "water"
+                        },
+                        "action": {
+                            "type": "origins:set_block",
+                            "block": "ice"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:block",
+                            "block": "lava"
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:set_block",
+                                    "block": "obsidian"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "playsound block.fire.extinguish block @a ~ ~ ~"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:movement_blocking"
+                        },
+                        "action": {
+                            "type": "origins:add_block",
+                            "block": "snow"
+                        }
+                    }
+                ]
+            },
+            "before_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_trigger"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "change": -1,
+                            "operation": "add"
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_buffer",
+                            "change": -1,
+                            "operation": "add"
+                        }
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 0.15,
+                        "pitch": 0.5
+                    }
+                ]
+            },
+            "command_at_hit": "function ponyorigins:ability/aggro",
+            "command_along_ray": "particle snowflake ^ ^0.5 ^ 0 0 0 1 0 force",
+            "command_step": 1
+        }
+    },
+    "buffer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 5,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_buffer",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_charged",
+            "change": 0,
+            "operation": "set"
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_charged",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "cd_timer": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cd",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "charged": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    },
+    "buffer_return": {
+        "type": "origins:action_over_time",
+        "interval": 1
+    },
+    "charge": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_trigger"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": "<",
+                        "compare_to": 10
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_buffer",
+                        "change": 1,
+                        "operation": "add"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_buffer",
+                    "comparison": "==",
+                    "compare_to": 10
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_charged",
+                    "change": 1,
+                    "operation": "set"
+                }
+            }
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/energy_level",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_charged",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.fire.extinguish",
+                        "volume": 0.1,
+                        "pitch": 1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 1,
+                        "operation": "set"
+                    }
+                ]
+            }
+        }
+    },
+    "trigger": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:talent/elemental/ice_beam",
+                            "layer": "ponyorigins:primary_talent"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_key_primary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:talent/elemental/ice_beam",
+                            "layer": "ponyorigins:primary_talent"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_key_secondary_active",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:simple"
+    },
+    "tick": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_buffer",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_cd",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_buffer",
+                                    "comparison": "<",
+                                    "compare_to": 5
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power_active",
+                                    "power": "*:*_trigger"
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_buffer",
+                                    "change": -1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "change": 1,
+                                    "operation": "add"
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_buffer",
+                                "comparison": "==",
+                                "compare_to": 5
+                            },
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_charged",
+                                "change": 1,
+                                "operation": "set"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_buffer",
+                                    "comparison": "<",
+                                    "compare_to": 5
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_charged",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "function ponyorigins:charge/spark"
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "execute anchored eyes positioned ^ ^0.5 ^0.5 run particle snowflake ~ ~ ~ 0 0.1 0 1 0 force"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

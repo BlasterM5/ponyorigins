@@ -1,6 +1,6 @@
 {
     "name": "Sounder",
-    "description": "Press your secondary power to make noise!",
+    "description": "Press to make noise!",
     "badges": [
         {
             "type": "origins:tooltip",

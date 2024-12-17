@@ -1,0 +1,11 @@
+{
+    "name": "Firecracker",
+    "description": "Summon up to five fireworks at once!",
+    "powers": [
+        "ponyorigins:talent/pony/firecracker"
+    ],
+    "icon": {
+        "item": "firework_rocket"
+    },
+    "impact": 0
+}

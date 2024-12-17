@@ -1,6 +1,5 @@
 {
-    "name": "Make Your Mark",
-    "description": "Advancement Tracker for Make Your Mark advancements",
+    "name": "Make Your Mark Tracker",
     "hidden": true,
     "type": "origins:multiple",
     "advancement_trackers": {

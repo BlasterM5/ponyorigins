@@ -94,7 +94,7 @@
                         },
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/hazards_wet",
+                            "resource": "ponyorigins:common/hazard_wet",
                             "comparison": ">",
                             "compare_to": 20
                         }
@@ -169,7 +169,7 @@
                                         },
                                         {
                                             "type": "origins:resource",
-                                            "resource": "ponyorigins:common/hazards_wet",
+                                            "resource": "ponyorigins:common/hazard_wet",
                                             "comparison": ">",
                                             "compare_to": 20
                                         }

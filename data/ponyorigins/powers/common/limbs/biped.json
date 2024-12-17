@@ -1,5 +1,5 @@
 {
     "name": "Biped",
-    "description": "Stand and walk on just the hind legs, like the humans do.",
+    "description": "This body stands and walks on just the hind legs, the most efficient method of locomotion.",
     "type": "origins:simple"
 }

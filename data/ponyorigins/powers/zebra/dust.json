@@ -1,6 +1,6 @@
 {
     "name": "Dust User",
-    "description": "Hold your primary power while holding certain dusts to perform special abilities.",
+    "description": "Hold while holding certain dusts to blow them at the target, inducing special effects in the process.",
     "badges": [
         {
             "type": "origins:tooltip",

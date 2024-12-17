@@ -1,6 +1,6 @@
 {
     "name": "Boxing Arms",
-    "description": "You naturally punch harder, doing a little more damage, breaking through blocks barehanded faster, and knocking enemies back.\n\nCharge up a windup punch to smash your target with a powerful, block-breaking hit.",
+    "description": "Punch harder when unarmed, doing a little more damage and knockback, while also breaking through blocks barehanded faster.\n\nHold to charge up a windup punch to smash a target with a powerful, block-breaking hit.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -139,22 +139,8 @@
                                         "type": "origins:and",
                                         "actions": [
                                             {
-                                                "type": "origins:play_sound",
-                                                "sound": "entity.generic.explode",
-                                                "volume": 0.5,
-                                                "pitch": 1
-                                            },
-                                            {
-                                                "type": "origins:spawn_particles",
-                                                "particle": "flash",
-                                                "count": 1,
-                                                "speed": 1,
-                                                "force": true,
-                                                "spread": {
-                                                    "x": 0.2,
-                                                    "y": 0.2,
-                                                    "z": 0.2
-                                                }
+                                                "type": "origins:execute_command",
+                                                "command": "function ponyorigins:ability/smash_effect"
                                             },
                                             {
                                                 "type": "origins:damage",
@@ -182,7 +168,7 @@
                                     },
                                     {
                                         "type": "origins:execute_command",
-                                        "command": "function ponyorigins:ability/block_explosion_effect"
+                                        "command": "function ponyorigins:ability/smash_effect"
                                     }
                                 ]
                             }

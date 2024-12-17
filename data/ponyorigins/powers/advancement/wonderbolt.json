@@ -1,6 +1,5 @@
 {
     "name": "Wonderbolt Advancement Tracker",
-    "description": "Tracks the Wonderbolt Advancement",
     "hidden": true,
     "type": "origins:multiple",
     "check_valid": {

@@ -1,6 +1,6 @@
 {
     "name": "Diamond Dog",
-    "description": "A species of subterranean canines, diamond dogs are adept at digging underground.",
+    "description": "A species of subterranean canines, adept at digging underground.",
     "powers": [
         "ponyorigins:common/diet/carnivore",
         "ponyorigins:common/health/base",

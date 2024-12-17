@@ -1,0 +1,17 @@
+{
+    "name": "Kinetic Burst",
+    "description": "Fire a lance of kinetic energy to punch a target from afar.",
+    "powers": [
+        "ponyorigins:talent/energy/laser"
+    ],
+    "icon": {
+        "item": "tnt"
+    },
+    "upgrades": [
+        {
+            "condition": "ponyorigins:alicorn/ascension",
+            "origin": "ponyorigins:talent/alicorn/laser"
+        }
+    ],
+    "impact": 0
+}

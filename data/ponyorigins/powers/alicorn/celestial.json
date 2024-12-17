@@ -1,6 +1,6 @@
 {
     "name": "Move the Heavens",
-    "description": "Hold your secondary power to advance the day cycle rapidly.",
+    "description": "Hold to advance the day cycle rapidly.",
     "badges": [
         {
             "type": "origins:tooltip",

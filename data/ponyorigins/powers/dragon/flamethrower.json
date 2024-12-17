@@ -1,6 +1,6 @@
 {
     "name": "Flamethrower",
-    "description": "Hold your secondary power to release your internal heat as a burst of flame in the direction you are looking!",
+    "description": "Hold to purge Heat as a powerful flamethrower!",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -51,7 +51,7 @@
                 "conditions": [
                     {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:dragon/heat_level",
+                        "resource": "ponyorigins:common/diet/lithovore_level",
                         "comparison": ">",
                         "compare_to": 0
                     },
@@ -62,7 +62,7 @@
                     },
                     {
                         "type": "origins:resource",
-                        "resource": "ponyorigins:dragon/heat_obsidian_slag",
+                        "resource": "ponyorigins:common/diet/lithovore_obsidian_slag",
                         "comparison": "==",
                         "compare_to": 0
                     }
@@ -145,7 +145,7 @@
                         "actions": [
                             {
                                 "type": "origins:change_resource",
-                                "resource": "ponyorigins:dragon/heat_level",
+                                "resource": "ponyorigins:common/diet/lithovore_level",
                                 "change": -1,
                                 "operation": "add"
                             },
@@ -186,7 +186,7 @@
                         },
                         {
                             "type": "origins:change_resource",
-                            "resource": "ponyorigins:dragon/heat_level",
+                            "resource": "ponyorigins:common/diet/lithovore_level",
                             "change": -1,
                             "operation": "add"
                         },

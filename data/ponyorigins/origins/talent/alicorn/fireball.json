@@ -1,8 +1,8 @@
 {
     "name": "Solis Irae",
-    "description": "Call upon the wrath of the sun, and launch a ball of explosive plasma at your enemies!",
+    "description": "Call upon the wrath of the sun, and launch up to three explosive fireballs at once!",
     "powers": [
-        "ponyorigins:alicorn/fireblast"
+        "ponyorigins:talent/elemental/fireball"
     ],
     "icon": {
         "item": "fire_charge"

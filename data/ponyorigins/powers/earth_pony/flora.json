@@ -1,6 +1,6 @@
 {
     "name": "Flora",
-    "description": "Hold your primary power while looking at a plant to help it grow.",
+    "description": "Hold while looking at a plant to help it grow.",
     "badges": [
         {
             "type": "origins:tooltip",

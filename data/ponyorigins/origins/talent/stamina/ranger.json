@@ -1,0 +1,11 @@
+{
+    "name": "Ranger",
+    "description": "An exceptional shot.",
+    "powers": [
+        "ponyorigins:talent/stamina/ranger"
+    ],
+    "icon": {
+        "item": "crossbow"
+    },
+    "impact": 0
+}

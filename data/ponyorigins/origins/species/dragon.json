@@ -1,11 +1,10 @@
 {
     "name": "Dragon",
-    "description": "Hatched in lava, born of fire, dragons are an unstoppable force in the world.",
+    "description": "Hatched in lava, born of fire, an unstoppable force in the world.",
     "powers": [
         "ponyorigins:common/diet/lithovore",
         "ponyorigins:common/health/plus_two",
         "ponyorigins:dragon/flamethrower",
-        "ponyorigins:dragon/heat",
         "ponyorigins:common/flight",
         "ponyorigins:common/nightvision",
         "ponyorigins:common/limbs/quadruped",

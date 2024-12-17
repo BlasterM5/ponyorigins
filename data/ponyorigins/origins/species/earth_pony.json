@@ -1,6 +1,6 @@
 {
     "name": "Earth Pony",
-    "description": "The most common pony, the backbone of Equestrian civilization, attuned to the earth.",
+    "description": "The backbone of Equestrian civilization, the first pony tribe, attuned to the earth.",
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",

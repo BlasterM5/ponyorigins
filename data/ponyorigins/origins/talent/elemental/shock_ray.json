@@ -1,0 +1,11 @@
+{
+    "name": "Shock Ray",
+    "description": "Fire a constant stream of electricity on demand.",
+    "powers": [
+        "ponyorigins:talent/elemental/shock_ray"
+    ],
+    "icon": {
+        "item": "lightning_rod"
+    },
+    "impact": 0
+}

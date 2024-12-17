@@ -1,6 +1,5 @@
 {
-    "name": "Changeling Advancements Tracker",
-    "description": "Tracks Advancements for the Changelings",
+    "name": "Changeling Advancement Tracker",
     "hidden": true,
     "type": "origins:multiple",
     "give_orb": {

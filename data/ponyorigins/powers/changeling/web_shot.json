@@ -1,6 +1,6 @@
 {
     "name": "Web Shot",
-    "description": "By eating food, you can create sticky silk, and spit it at your target to slow them down.",
+    "description": "Press to shot web.",
     "badges": [
         {
             "type": "origins:tooltip",

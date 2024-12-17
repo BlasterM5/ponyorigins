@@ -1,6 +1,5 @@
 {
     "name": "Sheep Sounds",
-    "description": "Sheep go baaa.",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {

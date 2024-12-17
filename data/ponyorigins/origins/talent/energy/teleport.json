@@ -1,0 +1,11 @@
+{
+    "name": "Teleporter",
+    "description": "Eliminate the distance between two points in space, arriving instantly at the target destination.",
+    "powers": [
+        "ponyorigins:talent/energy/teleport"
+    ],
+    "icon": {
+        "item": "ender_pearl"
+    },
+    "impact": 0
+}
