@@ -13,11 +13,12 @@
         "ponyorigins:common/limbs/fore/cloven_hooves",
         "ponyorigins:common/limbs/hind/cloven_hooves",
         "ponyorigins:common/rideable",
-        "ponyorigins:common/skin/fur"
+        "ponyorigins:common/skin/fur",
+        "ponyorigins:common/sound/deer"
     ],
     "icon": {
-        "item": "stick"
+        "item": "grass"
     },
-    "order": 10,
+    "order": 9,
     "impact": 0
 }

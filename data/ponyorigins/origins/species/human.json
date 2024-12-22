@@ -13,6 +13,6 @@
     "icon": {
         "item": "grass_block"
     },
-    "order": 1,
+    "order": 99,
     "impact": 0
 }

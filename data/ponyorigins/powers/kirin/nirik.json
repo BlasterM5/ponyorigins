@@ -55,9 +55,16 @@
     ],
     "type": "origins:multiple",
     "fireproof": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
         "type": "origins:invulnerability",
         "damage_condition": {
-            "type": "origins:fire"
+            "type": "origins:in_tag",
+            "tag": "is_fire"
         }
     },
     "fire_punch": {
@@ -407,38 +414,22 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_rage",
-            "change": -2,
+            "change": -5,
             "operation": "add"
         },
         "rising_action": {
-            "type": "origins:extinguish"
-        }
-    },
-    "rage_rain_decay": {
-        "condition": {
             "type": "origins:and",
-            "conditions": [
+            "actions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "*:*_rage",
-                    "comparison": ">",
-                    "compare_to": 0
+                    "type": "origins:change_resource",
+                    "resource": "*:*_active",
+                    "change": 0,
+                    "operation": "set"
                 },
                 {
-                    "type": "origins:in_rain"
+                    "type": "origins:extinguish"
                 }
             ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_rage",
-            "change": -1,
-            "operation": "add"
-        },
-        "rising_action": {
-            "type": "origins:extinguish"
         }
     },
     "rage_snow_decay": {
@@ -452,24 +443,31 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:in_block",
-                    "block_condition": {
-                        "type": "origins:block",
-                        "block": "powder_snow"
-                    }
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/hazard_iced",
+                    "comparison": ">",
+                    "compare_to": 0
                 }
             ]
         },
         "type": "origins:action_over_time",
-        "interval": 1,
+        "interval": 10,
         "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_rage",
-            "change": -1,
-            "operation": "add"
-        },
-        "rising_action": {
-            "type": "origins:extinguish"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_rage",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/hazard_iced",
+                    "change": -5,
+                    "operation": "add"
+                }
+            ]
         }
     },
     "set_fires": {
@@ -492,6 +490,44 @@
                     "resource": "*:*_set_fires",
                     "change": 0,
                     "operation": "set"
+                }
+            ]
+        }
+    },
+    "rage_wet_decay": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_rage",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/hazard_wet",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_rage",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:common/hazard_wet",
+                    "change": -5,
+                    "operation": "add"
                 }
             ]
         }

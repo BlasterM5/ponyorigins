@@ -2974,67 +2974,6 @@
         "max": 1,
         "start_value": 0
     },
-    "sealed_suit_check": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "head",
-                    "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                            "tag": "ponyorigins:sealed_suits"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "chest",
-                    "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                            "tag": "ponyorigins:sealed_suits"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "legs",
-                    "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                            "tag": "ponyorigins:sealed_suits"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "feet",
-                    "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                            "tag": "ponyorigins:sealed_suits"
-                        }
-                    }
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "rising_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_sealed",
-            "change": 1,
-            "operation": "set"
-        },
-        "falling_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_sealed",
-            "change": 0,
-            "operation": "set"
-        }
-    },
     "tick_timer": {
         "type": "origins:resource",
         "min": 0,
@@ -3456,6 +3395,160 @@
                     "resource": "ponyorigins:common/00_weight"
                 }
             }
+        }
+    },
+    "reset_on_respawn": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_respawned": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_iced",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_wet",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_oiled",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_burned",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_webbed",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_shedding",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_frozen_cd",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_wet_cd",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_webbed_cd",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "ponyorigins:common/hazard_oiled_cd",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                ]
+            },
+            "ticks": 1
+        }
+    },
+    "sealed_check": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "head",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "tag": "ponyorigins:sealed_suits"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "chest",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "tag": "ponyorigins:sealed_suits"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "legs",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "tag": "ponyorigins:sealed_suits"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "feet",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "tag": "ponyorigins:sealed_suits"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:power",
+                            "power": "ponyorigins:umbrum/shadow"
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:umbrum/shadow_active",
+                            "comparison": "==",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_sealed",
+            "change": 1,
+            "operation": "set"
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_sealed",
+            "change": 0,
+            "operation": "set"
         }
     }
 }

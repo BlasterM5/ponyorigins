@@ -425,5 +425,19 @@
                 }
             }
         }
+    },
+    "reset_on_respawn": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_respawned": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "ponyorigins:pegasus/rocket_cd",
+                "change": 0,
+                "operation": "set"
+            },
+            "ticks": 1
+        }
     }
 }

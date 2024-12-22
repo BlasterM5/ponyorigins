@@ -874,6 +874,14 @@
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
+                                "power": "ponyorigins:common/sound/deer",
+                                "source": "ponyorigins:species/chaos"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:grant_power",
                                 "power": "ponyorigins:common/sound/dolphin",
                                 "source": "ponyorigins:species/chaos"
                             }

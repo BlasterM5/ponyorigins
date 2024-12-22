@@ -1,6 +1,5 @@
 {
     "name": "Pony",
     "hidden": true,
-    "loading_priority": 0,
     "type": "origins:simple"
 }

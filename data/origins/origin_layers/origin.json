@@ -6,7 +6,6 @@
                 "value": true
             },
             "origins": [
-                "ponyorigins:species/human",
                 "ponyorigins:species/earth_pony",
                 "ponyorigins:species/unicorn",
                 "ponyorigins:species/pegasus",
@@ -54,6 +53,15 @@
             },
             "origins": [
                 "ponyorigins:species/chaos"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": true
+            },
+            "origins": [
+                "ponyorigins:species/human"
             ]
         }
     ],

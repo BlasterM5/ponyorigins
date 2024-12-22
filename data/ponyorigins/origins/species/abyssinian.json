@@ -17,5 +17,6 @@
     "icon": {
         "item": "tropical_fish"
     },
+    "order": 20,
     "impact": 0
 }

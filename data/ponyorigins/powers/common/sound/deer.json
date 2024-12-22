@@ -1,5 +1,5 @@
 {
-    "name": "Changeling Sounds",
+    "name": "Deer Sounds",
     "hidden": true,
     "type": "origins:multiple",
     "hurt": {
@@ -18,9 +18,9 @@
             ]
         },
         "type": "apugli:custom_hurt_sound",
-        "sound": "entity.skeleton_horse.hurt",
+        "sound": "entity.camel.hurt",
         "volume": 0.5,
-        "pitch": 1.3
+        "pitch": 2
     },
     "death": {
         "condition": {
@@ -38,8 +38,8 @@
             ]
         },
         "type": "apugli:custom_death_sound",
-        "sound": "entity.skeleton_horse.death",
+        "sound": "entity.camel.death",
         "volume": 0.5,
-        "pitch": 1.3
+        "pitch": 2
     }
 }

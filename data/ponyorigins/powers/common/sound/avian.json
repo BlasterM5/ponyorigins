@@ -8,8 +8,8 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talent/waterborn"
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/waterborn"
                 },
                 {
                     "type": "origins:submerged_in",
@@ -27,8 +27,8 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:origin",
-                    "origin": "ponyorigins:talent/waterborn"
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/waterborn"
                 },
                 {
                     "type": "origins:submerged_in",

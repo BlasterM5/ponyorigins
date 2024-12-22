@@ -17,8 +17,8 @@
         "ponyorigins:common/sound/pony"
     ],
     "icon": {
-        "item": "coal"
+        "item": "sweet_berries"
     },
-    "order": 13,
+    "order": 12,
     "impact": 0
 }

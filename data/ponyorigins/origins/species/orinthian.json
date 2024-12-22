@@ -14,5 +14,6 @@
     "icon": {
         "item": "wheat_seeds"
     },
+    "order": 21,
     "impact": 0
 }

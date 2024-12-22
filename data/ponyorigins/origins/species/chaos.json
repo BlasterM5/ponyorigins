@@ -9,5 +9,6 @@
     "icon": {
         "item": "sculk_vein"
     },
+    "order": 24,
     "impact": 0
 }

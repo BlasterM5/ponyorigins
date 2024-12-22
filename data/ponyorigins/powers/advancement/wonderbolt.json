@@ -6,26 +6,30 @@
         "type": "origins:action_on_callback",
         "execute_chosen_when_orb": true,
         "entity_action_added": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:special/wonderbolt"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/flight"
-                    }
-                ]
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:advancement",
+                            "advancement": "ponyorigins:special/wonderbolt"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/flight"
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:revoke_power",
+                    "power": "ponyorigins:advancement/wonderbolt",
+                    "source": "ponyorigins:common/00"
+                }
             },
-            "if_action": {
-                "type": "origins:revoke_power",
-                "power": "ponyorigins:advancement/wonderbolt",
-                "source": "ponyorigins:common/00"
-            }
+            "ticks": 1
         }
     },
     "countdown": {

@@ -1,6 +1,6 @@
 {
     "name": "Waterborn",
-    "description": "Spawn in the ocean. Transform into a land creature when exiting the water, and back to a sea creature when diving underwater.",
+    "description": "Transform into a land creature when exiting the water, and back to a sea creature when diving underwater.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -71,14 +71,7 @@
             "value": 2
         }
     },
-    "ocean_spawn": {
-        "type": "origins:modify_player_spawn",
-        "dimension": "overworld",
-        "biome": "ocean",
-        "spawn_strategy": "default",
-        "dimension_distance_multiplier": 1
-    },
-    "night_vision": {
+    "water_vision": {
         "condition": {
             "type": "origins:submerged_in",
             "fluid": "water"

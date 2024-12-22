@@ -4,38 +4,38 @@
     "type": "origins:multiple",
     "advancement_setup": {
         "type": "origins:action_on_callback",
-        "entity_action_chosen": {
-            "type": "origins:execute_command",
-            "command": "execute function ponyorigins:advancement/setup_pp"
-        },
         "execute_chosen_when_orb": true,
         "entity_action_added": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:species/pegasus"
-                    },
-                    {
-                        "type": "origins:scoreboard",
-                        "objective": "po.pporb",
-                        "comparison": "==",
-                        "compare_to": 2
-                    }
-                ]
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:species/pegasus"
+                        },
+                        {
+                            "type": "origins:scoreboard",
+                            "objective": "po.pporb",
+                            "comparison": "==",
+                            "compare_to": 2
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:revoke_power",
+                    "power": "ponyorigins:advancement/pegasus",
+                    "source": "ponyorigins:common/00"
+                },
+                "else_action": {
+                    "type": "origins:execute_command",
+                    "command": "function ponyorigins:advancement/load_pp_progress"
+                }
             },
-            "if_action": {
-                "type": "origins:revoke_power",
-                "power": "ponyorigins:advancement/pegasus",
-                "source": "ponyorigins:common/00"
-            },
-            "else_action": {
-                "type": "origins:execute_command",
-                "command": "function ponyorigins:advancement/load_pp_progress"
-            }
+            "ticks": 1
         },
         "entity_action_removed": {
             "type": "origins:execute_command",
