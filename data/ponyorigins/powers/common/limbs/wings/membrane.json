@@ -1,6 +1,6 @@
 {
-    "name": "Membraneous Wings",
-    "description": "Wings made of elongated fingers, webbed by folds of skin stretched thin like sails. Waterproof, but more susceptible to injury than other wing types.",
+    "name": "Membrane Wings",
+    "description": "Wings made of elongated fingers, webbed by folds of skin stretched thin like sails. Waterproof, but takes longer to heal.",
     "badges": [
         {
             "type": "origins:sprite",

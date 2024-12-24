@@ -15,7 +15,7 @@
         "experience": 1000
     },
     "criteria": {
-        "placeholder": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

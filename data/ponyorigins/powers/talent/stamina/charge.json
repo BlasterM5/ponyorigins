@@ -217,36 +217,36 @@
                                                     "block_condition": {
                                                         "type": "origins:movement_blocking"
                                                     },
-                                                    "offset_x": 0.5,
+                                                    "offset_x": 0.2,
                                                     "offset_y": 0.2,
-                                                    "offset_z": 0.5
+                                                    "offset_z": 0.2
                                                 },
                                                 {
                                                     "type": "origins:block_collision",
                                                     "block_condition": {
                                                         "type": "origins:movement_blocking"
                                                     },
-                                                    "offset_x": -0.5,
+                                                    "offset_x": -0.2,
                                                     "offset_y": 0.2,
-                                                    "offset_z": -0.5
+                                                    "offset_z": -0.2
                                                 },
                                                 {
                                                     "type": "origins:block_collision",
                                                     "block_condition": {
                                                         "type": "origins:movement_blocking"
                                                     },
-                                                    "offset_x": 0.5,
+                                                    "offset_x": 0.2,
                                                     "offset_y": 0.2,
-                                                    "offset_z": -0.5
+                                                    "offset_z": -0.2
                                                 },
                                                 {
                                                     "type": "origins:block_collision",
                                                     "block_condition": {
                                                         "type": "origins:movement_blocking"
                                                     },
-                                                    "offset_x": -0.5,
+                                                    "offset_x": -0.2,
                                                     "offset_y": 0.2,
-                                                    "offset_z": 0.5
+                                                    "offset_z": 0.2
                                                 }
                                             ]
                                         }
@@ -311,7 +311,7 @@
                             "actions": [
                                 {
                                     "type": "origins:exhaust",
-                                    "amount": 0.2
+                                    "amount": 0.4
                                 },
                                 {
                                     "type": "origins:add_velocity",
@@ -366,10 +366,10 @@
                     },
                     {
                         "type": "origins:raycast",
-                        "distance": 1.5,
+                        "distance": 1.25,
                         "block": true,
                         "entity": true,
-                        "shape_type": "outline",
+                        "shape_type": "collider",
                         "fluid_handling": "any",
                         "bientity_action": {
                             "type": "origins:if_else_list",
@@ -1120,7 +1120,7 @@
                                                         "condition": {
                                                             "inverted": true,
                                                             "type": "origins:in_tag",
-                                                            "tag": "origins:unphaseable"
+                                                            "tag": "origins:unphasable"
                                                         },
                                                         "if_action": {
                                                             "type": "apugli:destroy",

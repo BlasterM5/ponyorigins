@@ -14,12 +14,12 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Ice is more slippery",
+            "text": "When barefoot: Ice is more slippery",
             "sprite": "textures/block/ice.png"
         },
         {
             "type": "origins:tooltip",
-            "text": "Polished blocks are slippery when wet",
+            "text": "When barefoot: Polished blocks are slippery when wet",
             "sprite": "textures/particle/splash_0.png"
         }
     ],

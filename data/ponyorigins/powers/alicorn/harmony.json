@@ -258,7 +258,7 @@
             "compare_to": 0
         },
         "type": "apugli:energy_swirl",
-        "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+        "texture_location": "textures/entity/creeper/creeper_armor.png",
         "size": 1,
         "speed": 0.001
     },

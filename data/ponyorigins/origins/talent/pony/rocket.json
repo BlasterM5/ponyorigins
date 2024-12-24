@@ -1,6 +1,6 @@
 {
     "name": "Rocket Dash",
-    "description": "Launch forward on a rocket ride of wind energy! Warning: Dangerous!",
+    "description": "A reckless aerial charge!",
     "powers": [
         "ponyorigins:pegasus/rocket"
     ],

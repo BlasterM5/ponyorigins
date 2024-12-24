@@ -567,7 +567,7 @@
                                             "conditions": [
                                                 {
                                                     "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/wings/membraneous"
+                                                    "power": "ponyorigins:common/limbs/wings/membrane"
                                                 },
                                                 {
                                                     "type": "origins:power",
@@ -736,7 +736,7 @@
                                             "conditions": [
                                                 {
                                                     "type": "origins:power",
-                                                    "power": "ponyorigins:common/diet/fructivore"
+                                                    "power": "ponyorigins:common/diet/frugivore"
                                                 },
                                                 {
                                                     "type": "origins:power",
@@ -1003,17 +1003,8 @@
                                 "actions": [
                                     {
                                         "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/wings/insectoid"
-                                                },
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/wings/membraneous"
-                                                }
-                                            ]
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/wings/insectoid"
                                         },
                                         "action": {
                                             "type": "origins:change_resource",
@@ -1025,7 +1016,7 @@
                                     {
                                         "condition": {
                                             "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/feathered"
+                                            "power": "ponyorigins:common/limbs/wings/membrane"
                                         },
                                         "action": {
                                             "type": "origins:change_resource",
@@ -1037,12 +1028,24 @@
                                     {
                                         "condition": {
                                             "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/waterproof"
+                                            "power": "ponyorigins:common/limbs/wings/feathered"
                                         },
                                         "action": {
                                             "type": "origins:change_resource",
                                             "resource": "ponyorigins:common/hazard_complexity_wings",
                                             "change": 2,
+                                            "operation": "set"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/wings/waterproof"
+                                        },
+                                        "action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/hazard_complexity_wings",
+                                            "change": 3,
                                             "operation": "set"
                                         }
                                     }

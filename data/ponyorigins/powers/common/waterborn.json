@@ -26,11 +26,6 @@
             "type": "origins:tooltip",
             "text": "Transform when entering / leaving water",
             "sprite": "textures/item/heart_of_the_sea.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": "Default Spawn underwater in Ocean Biome",
-            "sprite": "textures/misc/underwater.png"
         }
     ],
     "type": "origins:multiple",

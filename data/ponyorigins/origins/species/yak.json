@@ -15,7 +15,7 @@
         "ponyorigins:common/sound/cow"
     ],
     "icon": {
-        "item": "oak_wood"
+        "item": "spruce_wood"
     },
     "order": 7,
     "impact": 0

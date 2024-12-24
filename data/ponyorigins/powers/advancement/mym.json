@@ -2,7 +2,20 @@
     "name": "Make Your Mark Tracker",
     "hidden": true,
     "type": "origins:multiple",
-    "advancement_trackers": {
+    "clear_mym": {
+        "condition": {
+            "type": "origins:advancement",
+            "advancement": "ponyorigins:ascension/root"
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:revoke_power",
+            "power": "ponyorigins:advancement/mym",
+            "source": "ponyorigins:common/00"
+        }
+    },
+    "vanilla": {
         "type": "origins:action_over_time",
         "interval": 100,
         "entity_action": {
@@ -91,20 +104,7 @@
             ]
         }
     },
-    "clear_mym": {
-        "condition": {
-            "type": "origins:advancement",
-            "advancement": "ponyorigins:ascension/root"
-        },
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "entity_action": {
-            "type": "origins:revoke_power",
-            "power": "ponyorigins:advancement/mym",
-            "source": "ponyorigins:common/00"
-        }
-    },
-    "ad_astra_trackers": {
+    "ad_astra": {
         "type": "origins:action_over_time",
         "interval": 100,
         "entity_action": {
@@ -308,7 +308,7 @@
             }
         ]
     },
-    "farmers_delight_advancement_trackers": {
+    "farmers_delight": {
         "type": "origins:action_over_time",
         "interval": 100,
         "entity_action": {
@@ -353,7 +353,7 @@
             }
         ]
     },
-    "botania_advancement_trackers": {
+    "botania": {
         "type": "origins:action_over_time",
         "interval": 100,
         "entity_action": {
@@ -410,6 +410,67 @@
                 "condition": "fabric:all_mods_loaded",
                 "values": [
                     "botania"
+                ]
+            }
+        ]
+    },
+    "spectrum": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={spectrum:hidden/status_effects/ascension=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/spectrum/ascension"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $spectrum_asc po.globalflags matches 1 run function ponyorigins:ascension/spectrum/ascension"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:command",
+                                "command": "execute if entity @s[advancements={spectrum:endgame/finish_progression=true}]",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:ascension/spectrum/compass"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute unless score $spectrum_end po.globalflags matches 1 run function ponyorigins:ascension/spectrum/compass"
+                    }
+                }
+            ]
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "spectrum"
                 ]
             }
         ]

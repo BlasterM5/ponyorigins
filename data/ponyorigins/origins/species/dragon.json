@@ -10,14 +10,14 @@
         "ponyorigins:common/limbs/quadruped",
         "ponyorigins:common/limbs/horn/ram",
         "ponyorigins:common/limbs/fore/diggers",
-        "ponyorigins:common/limbs/wings/membraneous",
+        "ponyorigins:common/limbs/wings/membrane",
         "ponyorigins:common/limbs/hind/diggers",
         "ponyorigins:common/rideable",
         "ponyorigins:common/skin/dragonscale",
         "ponyorigins:common/sound/dragon"
     ],
     "icon": {
-        "item": "blaze_powder"
+        "item": "obsidian"
     },
     "order": 15,
     "impact": 0

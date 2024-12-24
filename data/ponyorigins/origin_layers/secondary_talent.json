@@ -40,30 +40,6 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:alicorn/ascension"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:special/rejected"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/alicorn/harmony"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
                         "inverted": true,
                         "type": "origins:power",
                         "power": "ponyorigins:common/none"
@@ -150,6 +126,30 @@
             },
             "origins": [
                 "ponyorigins:talent/stamina/runner"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:alicorn/ascension"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:advancement",
+                        "advancement": "ponyorigins:special/rejected"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/alicorn/harmony"
             ]
         },
         {
@@ -251,7 +251,30 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/flight"
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talent/energy/laser"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/energy/laser"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
                     },
                     {
                         "inverted": true,
@@ -260,18 +283,13 @@
                     },
                     {
                         "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:species/umbrum"
-                    },
-                    {
-                        "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:talent/energy/levitate"
+                        "power": "ponyorigins:talent/energy/vanish"
                     }
                 ]
             },
             "origins": [
-                "ponyorigins:talent/energy/levitate"
+                "ponyorigins:talent/energy/vanish"
             ]
         },
         {
@@ -300,11 +318,54 @@
                         "inverted": true,
                         "type": "origins:power",
                         "power": "ponyorigins:talent/elemental/flora"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:earth_pony/flora"
                     }
                 ]
             },
             "origins": [
                 "ponyorigins:talent/elemental/flora"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/flight"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/none"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:species/umbrum"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:talent/energy/levitate"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/energy/levitate"
             ]
         },
         {
@@ -548,62 +609,6 @@
                 "conditions": [
                     {
                         "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/telekinesis"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:talent/energy/vanish"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/energy/vanish"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/energy"
-                    },
-                    {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/telekinesis"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:talent/energy/laser"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/energy/laser"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:power",
                         "power": "ponyorigins:common/flight"
                     },
                     {
@@ -641,8 +646,8 @@
                     },
                     {
                         "inverted": true,
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:talent/stamina/charge"
+                        "type": "origins:power",
+                        "power": "ponyorigins:yak/smash"
                     },
                     {
                         "type": "origins:or",

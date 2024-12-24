@@ -12,7 +12,7 @@
     },
     "parent": "ponyorigins:root",
     "criteria": {
-        "info": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

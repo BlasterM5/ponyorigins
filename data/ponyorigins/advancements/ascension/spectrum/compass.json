@@ -1,19 +1,16 @@
 {
     "display": {
         "icon": {
-            "item": "writable_book"
+            "item": "compass"
         },
-        "title": "Earth Pony Mastery",
-        "description": "Master the Earth Pony way",
+        "title": "Journey's End",
+        "description": "You've found it!",
         "frame": "goal",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": true
     },
-    "parent": "ponyorigins:earth_pony/travel",
-    "rewards": {
-        "experience": 300
-    },
+    "parent": "ponyorigins:ascension/root",
     "criteria": {
         "key0": {
             "trigger": "minecraft:impossible"

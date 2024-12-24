@@ -412,7 +412,7 @@
                             "weight": 1,
                             "element": {
                                 "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/fructivore",
+                                "power": "ponyorigins:common/diet/frugivore",
                                 "source": "ponyorigins:species/chaos"
                             }
                         },
@@ -548,7 +548,7 @@
                                                 "weight": 1,
                                                 "element": {
                                                     "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/wings/membraneous",
+                                                    "power": "ponyorigins:common/limbs/wings/membrane",
                                                     "source": "ponyorigins:species/chaos"
                                                 }
                                             },
@@ -933,7 +933,7 @@
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/wings/membraneous",
+                                    "power": "ponyorigins:common/limbs/wings/membrane",
                                     "source": "ponyorigins:species/chaos"
                                 }
                             },

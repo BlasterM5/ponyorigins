@@ -107,12 +107,43 @@
                         "inverted": true,
                         "type": "origins:origin",
                         "origin": "ponyorigins:species/changeling"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:power",
+                        "power": "ponyorigins:earth_pony/flora"
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:talent/elemental/flora"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/versatile"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/energy"
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "ponyorigins:common/telekinesis"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:species/changeling"
                     }
                 ]
             },
             "origins": [
                 "ponyorigins:talent/energy/levitate",
-                "ponyorigins:talent/elemental/flora",
                 "ponyorigins:talent/energy/teleport",
                 "ponyorigins:talent/elemental/fireball",
                 "ponyorigins:talent/pony/firecracker",

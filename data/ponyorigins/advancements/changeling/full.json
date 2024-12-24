@@ -12,7 +12,7 @@
     },
     "parent": "ponyorigins:changeling/loved",
     "criteria": {
-        "placeholder": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

@@ -12,7 +12,7 @@
     },
     "parent": "ponyorigins:alicorn/root",
     "criteria": {
-        "placeholder": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

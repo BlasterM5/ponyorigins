@@ -12,7 +12,7 @@
     },
     "parent": "ponyorigins:special/flight",
     "criteria": {
-        "placeholder": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

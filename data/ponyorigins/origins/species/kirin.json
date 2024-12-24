@@ -17,7 +17,7 @@
         "ponyorigins:common/sound/pony"
     ],
     "icon": {
-        "item": "flint_and_steel"
+        "item": "blaze_rod"
     },
     "order": 11,
     "impact": 0

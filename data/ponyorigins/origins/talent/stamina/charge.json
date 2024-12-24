@@ -1,6 +1,6 @@
 {
     "name": "Charge",
-    "description": "A reckless tackle that deals damage to all parties involved.",
+    "description": "A reckless tackle that harms the opponent more than the user.",
     "powers": [
         "ponyorigins:talent/stamina/charge"
     ],

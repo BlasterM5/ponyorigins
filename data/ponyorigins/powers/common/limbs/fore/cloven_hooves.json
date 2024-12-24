@@ -4,22 +4,22 @@
     "badges": [
         {
             "type": "origins:tooltip",
+            "text": "Extra Melee Knockback when Unarmed",
+            "sprite": "textures/item/iron_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
             "text": "+4 Percent Movement Speed",
             "sprite": "textures/item/leather_boots.png"
         },
         {
             "type": "origins:tooltip",
-            "text": "+33 Percent Jump Height when sprinting or crouching",
-            "sprite": "textures/item/leather_boots.png"
-        },
-        {
-            "type": "origins:tooltip",
-            "text": "Ice is more slippery and harder to jump on",
+            "text": "When barefoot: Ice is more slippery",
             "sprite": "textures/block/ice.png"
         },
         {
             "type": "origins:tooltip",
-            "text": "Polished blocks are slippery when wet",
+            "text": "When barefoot: Polished blocks are slippery when wet",
             "sprite": "textures/particle/splash_0.png"
         }
     ],

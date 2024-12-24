@@ -1,0 +1,12 @@
+{
+    "values": [
+        {
+            "id": "sunflower",
+            "required": false
+        },
+        {
+            "id": "rose_bush",
+            "required": false
+        }
+    ]
+}

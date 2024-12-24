@@ -217,6 +217,19 @@
                                                                     ]
                                                                 },
                                                                 {
+                                                                    "type": "origins:and",
+                                                                    "conditions": [
+                                                                        {
+                                                                            "type": "origins:power",
+                                                                            "power": "ponyorigins:common/waterborn"
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:submerged_in",
+                                                                            "fluid": "water"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
                                                                     "type": "origins:resource",
                                                                     "resource": "*:*_complexity",
                                                                     "comparison": "==",
@@ -266,14 +279,20 @@
                                                                                     "compare_to": 0.75
                                                                                 }
                                                                             ]
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:resource",
+                                                                            "resource": "*:*_complexity",
+                                                                            "comparison": "<=",
+                                                                            "compare_to": 1
                                                                         }
                                                                     ]
                                                                 },
                                                                 {
                                                                     "type": "origins:resource",
                                                                     "resource": "*:*_complexity",
-                                                                    "comparison": "<=",
-                                                                    "compare_to": 1
+                                                                    "comparison": "==",
+                                                                    "compare_to": 0
                                                                 }
                                                             ]
                                                         },
@@ -345,6 +364,12 @@
                                                                                     "compare_to": 0.75
                                                                                 }
                                                                             ]
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:resource",
+                                                                            "resource": "*:*_complexity",
+                                                                            "comparison": "<=",
+                                                                            "compare_to": 2
                                                                         }
                                                                     ]
                                                                 },
@@ -352,7 +377,7 @@
                                                                     "type": "origins:resource",
                                                                     "resource": "*:*_complexity",
                                                                     "comparison": "<=",
-                                                                    "compare_to": 2
+                                                                    "compare_to": 1
                                                                 }
                                                             ]
                                                         },
@@ -391,8 +416,49 @@
                                                     },
                                                     {
                                                         "condition": {
-                                                            "type": "origins:constant",
-                                                            "value": true
+                                                            "type": "origins:or",
+                                                            "conditions": [
+                                                                {
+                                                                    "type": "origins:resource",
+                                                                    "resource": "*:*_wet",
+                                                                    "comparison": "<=",
+                                                                    "compare_to": 80
+                                                                },
+                                                                {
+                                                                    "type": "origins:and",
+                                                                    "conditions": [
+                                                                        {
+                                                                            "type": "origins:or",
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "type": "origins:fluid_height",
+                                                                                    "fluid": "water",
+                                                                                    "comparison": ">",
+                                                                                    "compare_to": 0.75
+                                                                                },
+                                                                                {
+                                                                                    "type": "origins:fluid_height",
+                                                                                    "fluid": "flowing_water",
+                                                                                    "comparison": ">",
+                                                                                    "compare_to": 0.75
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "origins:resource",
+                                                                            "resource": "*:*_complexity",
+                                                                            "comparison": "<=",
+                                                                            "compare_to": 2
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "origins:resource",
+                                                                    "resource": "*:*_complexity",
+                                                                    "comparison": "<=",
+                                                                    "compare_to": 1
+                                                                }
+                                                            ]
                                                         },
                                                         "action": {
                                                             "type": "origins:if_else",
@@ -512,8 +578,10 @@
                                                     },
                                                     {
                                                         "condition": {
-                                                            "type": "origins:constant",
-                                                            "value": true
+                                                            "type": "origins:resource",
+                                                            "resource": "*:*_complexity",
+                                                            "comparison": ">=",
+                                                            "compare_to": 3
                                                         },
                                                         "action": {
                                                             "type": "origins:change_resource",
@@ -2446,7 +2514,7 @@
                                                                         },
                                                                         {
                                                                             "type": "origins:power",
-                                                                            "power": "ponyorigins:common/limbs/wings/membraneous"
+                                                                            "power": "ponyorigins:common/limbs/wings/membrane"
                                                                         },
                                                                         {
                                                                             "type": "origins:power",
@@ -2716,7 +2784,7 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/limbs/wings/membraneous"
+                        "power": "ponyorigins:common/limbs/wings/membrane"
                     }
                 ]
             },
@@ -2769,7 +2837,7 @@
                     {
                         "inverted": true,
                         "type": "origins:power",
-                        "power": "ponyorigins:common/limbs/wings/membraneous"
+                        "power": "ponyorigins:common/limbs/wings/membrane"
                     }
                 ]
             },
@@ -2913,7 +2981,7 @@
                                 "conditions": [
                                     {
                                         "type": "origins:power",
-                                        "power": "ponyorigins:common/limbs/wings/membraneous"
+                                        "power": "ponyorigins:common/limbs/wings/membrane"
                                     },
                                     {
                                         "type": "origins:power",

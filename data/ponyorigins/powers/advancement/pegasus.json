@@ -2,7 +2,7 @@
     "name": "Pegasus Advancement Tracker",
     "hidden": true,
     "type": "origins:multiple",
-    "advancement_setup": {
+    "setup": {
         "type": "origins:action_on_callback",
         "execute_chosen_when_orb": true,
         "entity_action_added": {

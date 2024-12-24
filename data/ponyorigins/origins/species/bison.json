@@ -14,7 +14,7 @@
         "ponyorigins:common/sound/cow"
     ],
     "icon": {
-        "item": "goat_horn"
+        "item": "dead_bush"
     },
     "order": 6,
     "impact": 0

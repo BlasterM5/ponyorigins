@@ -207,8 +207,18 @@
         },
         "type": "origins:action_on_block_use",
         "block_condition": {
-            "type": "origins:in_tag",
-            "tag": "ponyorigins:plants"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:plants"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:in_tag",
+                    "tag": "ponyorigins:self_drop_plants"
+                }
+            ]
         },
         "entity_action": {
             "type": "origins:raycast",

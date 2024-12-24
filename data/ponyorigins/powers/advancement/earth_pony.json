@@ -2,7 +2,7 @@
     "name": "Earth Pony Advancements",
     "hidden": true,
     "type": "origins:multiple",
-    "advancement_setup": {
+    "setup": {
         "type": "origins:action_on_callback",
         "execute_chosen_when_orb": true,
         "entity_action_added": {
@@ -42,7 +42,7 @@
             "command": "function ponyorigins:advancement/save_ep_progress"
         }
     },
-    "farmer_progress_tick": {
+    "farmer_tick": {
         "condition": {
             "inverted": true,
             "type": "origins:advancement",

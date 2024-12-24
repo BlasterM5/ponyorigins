@@ -160,6 +160,11 @@
                         "volume": 1,
                         "pitch": 1
                     }
+                },
+                {
+                    "type": "origins:damage",
+                    "amount": 0.001,
+                    "damage_type": "fly_into_wall"
                 }
             ]
         },
@@ -421,7 +426,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/membraneous"
+                                            "power": "ponyorigins:common/limbs/wings/membrane"
                                         },
                                         {
                                             "type": "origins:health",
@@ -866,7 +871,7 @@
                                 "conditions": [
                                     {
                                         "type": "origins:power",
-                                        "power": "ponyorigins:common/limbs/wings/membraneous"
+                                        "power": "ponyorigins:common/limbs/wings/membrane"
                                     },
                                     {
                                         "type": "origins:origin",
@@ -884,7 +889,7 @@
                         {
                             "condition": {
                                 "type": "origins:power",
-                                "power": "ponyorigins:common/limbs/wings/membraneous"
+                                "power": "ponyorigins:common/limbs/wings/membrane"
                             },
                             "action": {
                                 "type": "origins:play_sound",
@@ -912,7 +917,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/membraneous"
+                                            "power": "ponyorigins:common/limbs/wings/membrane"
                                         },
                                         {
                                             "type": "origins:power",
@@ -959,7 +964,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/membraneous"
+                                            "power": "ponyorigins:common/limbs/wings/membrane"
                                         },
                                         {
                                             "type": "origins:power",
@@ -1006,7 +1011,7 @@
                                     "conditions": [
                                         {
                                             "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/membraneous"
+                                            "power": "ponyorigins:common/limbs/wings/membrane"
                                         },
                                         {
                                             "type": "origins:power",

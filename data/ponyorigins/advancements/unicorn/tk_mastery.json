@@ -11,7 +11,7 @@
     },
     "parent": "ponyorigins:unicorn/choice",
     "criteria": {
-        "placeholder": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

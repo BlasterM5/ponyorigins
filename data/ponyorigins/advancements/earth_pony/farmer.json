@@ -11,7 +11,7 @@
     },
     "parent": "ponyorigins:earth_pony/choice",
     "criteria": {
-        "placeholder": {
+        "key0": {
             "trigger": "minecraft:impossible"
         }
     }

@@ -14,12 +14,12 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Ice is more slippery and harder to jump on",
+            "text": "When barefoot: Ice is more slippery and harder to jump on",
             "sprite": "textures/block/ice.png"
         },
         {
             "type": "origins:tooltip",
-            "text": "Polished blocks are slippery when wet",
+            "text": "When barefoot: Polished blocks are slippery when wet",
             "sprite": "textures/particle/splash_0.png"
         }
     ],
