@@ -1,4 +1,5 @@
-execute if entity @s[advancements={ponyorigins:ascension/chaos=true}] run tellraw @s "That was a lovely bit of chaos there. Harmony is so bland with its rules, it's utterly boring."
-execute if entity @s[advancements={ponyorigins:ascension/chaos=true}] run tellraw @s "Instead of wasting your time chasing pony chores, use this, and cause Chaos wherever you want."
-execute if entity @s[advancements={ponyorigins:ascension/chaos=true}] run give @s origins:orb_of_origin{display:{Name:'[{"text":"Chaos Resonator","italic":false,"obfuscated":true}]'},Targets: [{Origin:"ponyorigins:species/chaos", Layer:"origins:origin"},{Layer:"ponyorigins:primary_talent"},{Origin:"ponyorigins:talents/firecracker", Layer:"ponyorigins:secondary_talent"}]}
+execute if entity @s[advancements={ponyorigins:alicorn/mastery=false}] run tellraw @s "That was a lovely bit of chaos there. Harmony is so bland with its rules, it's utterly boring."
+execute if entity @s[advancements={ponyorigins:alicorn/mastery=false}] run tellraw @s "Instead of wasting your time chasing pony chores, use this, and cause Chaos wherever you want."
+execute if entity @s[advancements={ponyorigins:alicorn/mastery=false}] run give @s origins:orb_of_origin{display:{Name:'[{"text":"Chaos Resonator","italic":false,"obfuscated":true}]'},Targets: [{Origin:"ponyorigins:species/chaos", Layer:"origins:origin"},{Layer:"ponyorigins:primary_talent"},{Origin:"ponyorigins:chaos/fireworks", Layer:"ponyorigins:secondary_talent"}]}
+execute if entity @s[advancements={ponyorigins:alicorn/mastery=false}] run scoreboard players set @s po.chaos 1
 scoreboard players set @s po.chaosorb 2

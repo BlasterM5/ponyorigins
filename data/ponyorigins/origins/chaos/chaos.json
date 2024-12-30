@@ -1,0 +1,8 @@
+{
+    "name": "Chaos Theory",
+    "description": "Chaos Energy is unstable.",
+    "powers": [
+        "ponyorigins:chaos/chaos"
+    ],
+    "impact": 0
+}

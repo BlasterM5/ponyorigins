@@ -1,955 +1,987 @@
 {
-    "name": "Chaos Form",
-    "description": "Chaos forms are naturally indeterminate, but will collapse to some kind of form at random once chosen.",
+    "name": "Chaos Randomizer",
+    "hidden": true,
     "type": "origins:multiple",
     "randomize": {
         "type": "origins:action_on_callback",
-        "entity_action_chosen": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 6,
-                            "element": {
-                                "type": "origins:and",
-                                "actions": [
-                                    {
-                                        "type": "origins:choice",
-                                        "actions": [
-                                            {
-                                                "weight": 4,
-                                                "element": {
-                                                    "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/quadruped",
-                                                    "source": "ponyorigins:species/chaos"
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "power revokeall @s ponyorigins:chaos/randomizer"
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 6,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:choice",
+                                            "actions": [
+                                                {
+                                                    "weight": 4,
+                                                    "element": {
+                                                        "type": "origins:grant_power",
+                                                        "power": "ponyorigins:common/limbs/quadruped",
+                                                        "source": "ponyorigins:chaos/randomizer"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:grant_power",
+                                                        "power": "ponyorigins:common/limbs/taur",
+                                                        "source": "ponyorigins:chaos/randomizer"
+                                                    }
                                                 }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/taur",
-                                                    "source": "ponyorigins:species/chaos"
-                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "origins:chance",
+                                            "chance": 0.5,
+                                            "action": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/rideable",
+                                                "source": "ponyorigins:chaos/randomizer"
                                             }
-                                        ]
-                                    },
-                                    {
-                                        "type": "origins:chance",
-                                        "chance": 0.5,
-                                        "action": {
-                                            "type": "origins:grant_power",
-                                            "power": "ponyorigins:common/rideable",
-                                            "source": "ponyorigins:species/chaos"
                                         }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "weight": 3,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/biped",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/gastropod",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/limbs/quadruped"
-                    },
-                    "if_action": {
-                        "type": "origins:choice",
-                        "actions": [
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/hooves",
-                                    "source": "ponyorigins:species/chaos"
+                                    ]
                                 }
                             },
                             {
                                 "weight": 3,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/cloven_hooves",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/talons",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/feline_paws",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/diggers",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/canine_paws",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/hands",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/wings",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/stiction",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/limbs/biped",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             },
                             {
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/arms/none",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/limbs/gastropod",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             }
                         ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/limbs/quadruped"
                     },
-                    "if_action": {
-                        "type": "origins:choice",
-                        "actions": [
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/hooves",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/cloven_hooves",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/talons",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/feline_paws",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/diggers",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/canine_paws",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/stiction",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 2,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/hands",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 1,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/fore/feet",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/limbs/gastropod"
-                    },
-                    "if_action": {
-                        "type": "origins:choice",
-                        "actions": [
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/hooves",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/cloven_hooves",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/talons",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/diggers",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/feline_paws",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/canine_paws",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/stiction",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 2,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/feet",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 1,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/hind/hands",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 3,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/hair",
-                                "source": "ponyorigins:species/chaos"
-                            }
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/quadruped"
                         },
-                        {
-                            "weight": 3,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/fur",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 3,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/feathers",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 2,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/arctic_fur",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 2,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/chitin",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 2,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/partial_dragonscale",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 2,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/dragonscale",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/skin/skin",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/amorevore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/frugivore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/herbivore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/lithovore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/pescavore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/carnivore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/diet/omnivore",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.33,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "ponyorigins:common/diet/direct_eat",
-                        "source": "ponyorigins:species/chaos"
-                    }
-                },
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/health/minus_four",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/health/minus_two",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/health/plus_two",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/health/plus_four",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/health/base",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:and",
-                                "actions": [
-                                    {
+                        "if_action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 3,
+                                    "element": {
                                         "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/flight",
-                                        "source": "ponyorigins:species/chaos"
-                                    },
-                                    {
-                                        "type": "origins:choice",
-                                        "actions": [
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/wings/feathered",
-                                                    "source": "ponyorigins:species/chaos"
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/wings/insectoid",
-                                                    "source": "ponyorigins:species/chaos"
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/wings/membrane",
-                                                    "source": "ponyorigins:species/chaos"
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:grant_power",
-                                                    "power": "ponyorigins:common/limbs/wings/waterproof",
-                                                    "source": "ponyorigins:species/chaos"
-                                                }
-                                            }
-                                        ]
+                                        "power": "ponyorigins:common/limbs/arms/hooves",
+                                        "source": "ponyorigins:chaos/randomizer"
                                     }
-                                ]
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:earth_pony/flora",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:kirin/nirik",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:umbrum/shadow",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:zebra/dust",
-                                "source": "ponyorigins:species/chaos"
-                            }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/cloven_hooves",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/talons",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/feline_paws",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/diggers",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/canine_paws",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/hands",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/wings",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/stiction",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/arms/none",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/alicorn",
-                                "source": "ponyorigins:species/chaos"
-                            }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/quadruped"
                         },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/antlers",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/bovine",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/ram",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/razor",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/rhino",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/unicorn",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/unicorn_antler",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/limbs/horn/unicorn_swept",
-                                "source": "ponyorigins:species/chaos"
-                            }
+                        "if_action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/hooves",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/cloven_hooves",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/talons",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/feline_paws",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/diggers",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/canine_paws",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/stiction",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 2,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/hands",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/fore/feet",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/gastropod"
+                        },
+                        "if_action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/hooves",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/cloven_hooves",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/talons",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/diggers",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/feline_paws",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/canine_paws",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/stiction",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 2,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/feet",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/hind/hands",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "type": "origins:choice",
                         "actions": [
                             {
-                                "weight": 1,
+                                "weight": 3,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/resistance/fireproof",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/skin/hair",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/skin/fur",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/skin/feathers",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/skin/arctic_fur",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/skin/chitin",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/skin/partial_dragonscale",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/skin/dragonscale",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             },
                             {
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/resistance/cold_immunity",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/skin/skin",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "ponyorigins:common/nightvision",
-                        "source": "ponyorigins:species/chaos"
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "ponyorigins:common/wallclimb",
-                        "source": "ponyorigins:species/chaos"
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "ponyorigins:umbrum/dark_strength",
-                        "source": "ponyorigins:species/chaos"
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:choice",
-                        "actions": [
-                            {
-                                "weight": 1,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "origins:fall_immunity",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            },
-                            {
-                                "weight": 1,
-                                "element": {
-                                    "type": "origins:grant_power",
-                                    "power": "origins:slow_falling",
-                                    "source": "ponyorigins:species/chaos"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "origins:scare_creepers",
-                        "source": "ponyorigins:species/chaos"
-                    }
-                },
-                {
-                    "type": "origins:chance",
-                    "chance": 0.2,
-                    "action": {
-                        "type": "origins:grant_power",
-                        "power": "origins:sprint_jump",
-                        "source": "ponyorigins:species/chaos"
-                    }
-                },
-                {
-                    "type": "origins:choice",
-                    "actions": [
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/avian",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/cat",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/changeling",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/cow",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/dog",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/dragon",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/goat",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/pony",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/sheep",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/chicken",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/pig",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/spectre",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/deer",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:grant_power",
-                                "power": "ponyorigins:common/sound/dolphin",
-                                "source": "ponyorigins:species/chaos"
-                            }
-                        },
-                        {
-                            "weight": 1,
-                            "element": {
-                                "type": "origins:nothing"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/limbs/arms/wings"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:power",
-                                "power": "ponyorigins:common/flight"
                             }
                         ]
                     },
-                    "if_action": {
+                    {
                         "type": "origins:choice",
                         "actions": [
                             {
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/wings/feathered",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/diet/amorevore",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             },
                             {
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/wings/insectoid",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/diet/frugivore",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             },
                             {
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/wings/membrane",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/diet/herbivore",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             },
                             {
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
-                                    "power": "ponyorigins:common/limbs/wings/waterproof",
-                                    "source": "ponyorigins:species/chaos"
+                                    "power": "ponyorigins:common/diet/lithovore",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/diet/pescavore",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/diet/carnivore",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/diet/omnivore",
+                                    "source": "ponyorigins:chaos/randomizer"
                                 }
                             }
                         ]
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.33,
+                        "action": {
+                            "type": "origins:grant_power",
+                            "power": "ponyorigins:common/diet/direct_eat",
+                            "source": "ponyorigins:chaos/randomizer"
+                        }
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/health/minus_four",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/health/minus_two",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/health/plus_two",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/health/plus_four",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/health/base",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:grant_power",
+                                            "power": "ponyorigins:common/flight",
+                                            "source": "ponyorigins:chaos/randomizer"
+                                        },
+                                        {
+                                            "type": "origins:choice",
+                                            "actions": [
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:grant_power",
+                                                        "power": "ponyorigins:common/limbs/wings/feathered",
+                                                        "source": "ponyorigins:chaos/randomizer"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:grant_power",
+                                                        "power": "ponyorigins:common/limbs/wings/insectoid",
+                                                        "source": "ponyorigins:chaos/randomizer"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:grant_power",
+                                                        "power": "ponyorigins:common/limbs/wings/membrane",
+                                                        "source": "ponyorigins:chaos/randomizer"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:grant_power",
+                                                        "power": "ponyorigins:common/limbs/wings/waterproof",
+                                                        "source": "ponyorigins:chaos/randomizer"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:earth_pony/flora",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:kirin/nirik",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:umbrum/shadow",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:zebra/dust",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/alicorn",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/antlers",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/bovine",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/ram",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/razor",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/rhino",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/unicorn",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/unicorn_antler",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/horn/unicorn_swept",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.2,
+                        "action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/resistance/fireproof",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/resistance/cold_immunity",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.2,
+                        "action": {
+                            "type": "origins:grant_power",
+                            "power": "ponyorigins:common/nightvision",
+                            "source": "ponyorigins:chaos/randomizer"
+                        }
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.2,
+                        "action": {
+                            "type": "origins:grant_power",
+                            "power": "ponyorigins:common/wallclimb",
+                            "source": "ponyorigins:chaos/randomizer"
+                        }
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.2,
+                        "action": {
+                            "type": "origins:grant_power",
+                            "power": "ponyorigins:umbrum/dark_strength",
+                            "source": "ponyorigins:chaos/randomizer"
+                        }
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.2,
+                        "action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "origins:fall_immunity",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "origins:slow_falling",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:chance",
+                        "chance": 0.2,
+                        "action": {
+                            "type": "origins:grant_power",
+                            "power": "origins:scare_creepers",
+                            "source": "ponyorigins:chaos/randomizer"
+                        }
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/avian",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/cat",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/changeling",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/cow",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/dog",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/dragon",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/goat",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/pony",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/sheep",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/chicken",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/pig",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/spectre",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/deer",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/sound/dolphin",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:nothing"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/limbs/arms/wings"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/flight"
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/wings/feathered",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/wings/insectoid",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/wings/membrane",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:common/limbs/wings/waterproof",
+                                        "source": "ponyorigins:chaos/randomizer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/calc/weight",
+                                    "source": "ponyorigins:common/00"
+                                },
+                                {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/calc/flight",
+                                    "source": "ponyorigins:common/00"
+                                },
+                                {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/calc/horn",
+                                    "source": "ponyorigins:common/00"
+                                },
+                                {
+                                    "type": "origins:delay",
+                                    "action": {
+                                        "type": "origins:revoke_power",
+                                        "power": "ponyorigins:chaos/randomizer",
+                                        "source": "ponyorigins:chaos/chaos"
+                                    },
+                                    "ticks": 3
+                                }
+                            ]
+                        },
+                        "ticks": 6
                     }
-                }
-            ]
-        },
-        "execute_chosen_when_orb": true
+                ]
+            },
+            "ticks": 2
+        }
     }
 }

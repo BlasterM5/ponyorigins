@@ -1,5 +1,5 @@
 {
-    "name": "Wonderbolt Advancement Tracker",
+    "name": "Wonderbolt Advancement",
     "hidden": true,
     "type": "origins:multiple",
     "check_valid": {

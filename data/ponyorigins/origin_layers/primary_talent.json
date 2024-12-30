@@ -184,6 +184,32 @@
             "origins": [
                 "ponyorigins:talent/stamina/charge"
             ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "ponyorigins:species/alicorn"
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.chaos",
+                        "comparison": "<",
+                        "compare_to": 3
+                    },
+                    {
+                        "type": "origins:scoreboard",
+                        "objective": "po.chaos",
+                        "comparison": ">",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            "origins": [
+                "ponyorigins:chaos/chaos"
+            ]
         }
     ],
     "enabled": true,

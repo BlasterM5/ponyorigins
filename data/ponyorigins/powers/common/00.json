@@ -14,311 +14,358 @@
                         "command": "function ponyorigins:advancement/setup_scores"
                     },
                     {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:origin",
-                            "origin": "ponyorigins:species/changeling"
-                        },
-                        "if_action": {
+                        "type": "origins:delay",
+                        "action": {
                             "type": "origins:and",
                             "actions": [
                                 {
-                                    "type": "origins:execute_command",
-                                    "command": "function ponyorigins:advancement/setup_ch"
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:origin",
+                                        "origin": "ponyorigins:species/changeling"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "function ponyorigins:advancement/setup_ch"
+                                            },
+                                            {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:advancement/changeling",
+                                                "source": "ponyorigins:common/00"
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancement/changeling",
-                                    "source": "ponyorigins:common/00"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "inverted": true,
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:species/chaos"
-                                },
-                                {
-                                    "type": "origins:or",
-                                    "conditions": [
-                                        {
-                                            "type": "origins:and",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:origin",
-                                                    "origin": "ponyorigins:species/alicorn"
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:scoreboard",
+                                        "objective": "po.chaos",
+                                        "comparison": ">=",
+                                        "compare_to": 2
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "scoreboard players set @s po.chaos 3"
+                                            },
+                                            {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "inverted": true,
+                                                    "type": "origins:and",
+                                                    "conditions": [
+                                                        {
+                                                            "inverted": true,
+                                                            "type": "origins:origin",
+                                                            "origin": "ponyorigins:species/chaos"
+                                                        },
+                                                        {
+                                                            "type": "origins:power",
+                                                            "power": "ponyorigins:chaos/chaos"
+                                                        }
+                                                    ]
                                                 },
-                                                {
-                                                    "type": "origins:scoreboard",
-                                                    "objective": "po.chaos",
-                                                    "comparison": "==",
-                                                    "compare_to": 2
+                                                "if_action": {
+                                                    "type": "origins:revoke_power",
+                                                    "power": "ponyorigins:chaos/chaos",
+                                                    "source": "ponyorigins:chaos/chaos"
                                                 }
-                                            ]
-                                        },
-                                        {
-                                            "inverted": true,
-                                            "type": "origins:origin",
-                                            "origin": "ponyorigins:species/alicorn"
-                                        }
-                                    ]
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:chaos/chaos",
-                                    "source": "ponyorigins:chaos/chaos"
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:special/harmony_pact"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:talent/alicorn/harmony"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "function ponyorigins:advancement/reject_harmony"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:species/alicorn"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:ascension/root"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:advancement/mym",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:scoreboard",
+                                        "objective": "po.chaosorb",
+                                        "comparison": "<",
+                                        "compare_to": 2
+                                    },
+                                    "if_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:advancement/chaos",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:power",
+                                                "power": "ponyorigins:common/flight"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:special/wonderbolt"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:advancement/wonderbolt",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:special/taxi"
+                                            },
+                                            {
+                                                "inverted": true,
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:special/air_taxi"
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:advancement/taxi",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:species/earth_pony"
+                                            },
+                                            {
+                                                "type": "origins:scoreboard",
+                                                "objective": "po.eporb",
+                                                "comparison": "<",
+                                                "compare_to": 2
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:modify_stat",
+                                                "stat": {
+                                                    "type": "custom",
+                                                    "id": "walk_one_cm"
+                                                },
+                                                "modifier": {
+                                                    "operation": "set_base",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:modify_stat",
+                                                "stat": {
+                                                    "type": "custom",
+                                                    "id": "crouch_one_cm"
+                                                },
+                                                "modifier": {
+                                                    "operation": "set_base",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:modify_stat",
+                                                "stat": {
+                                                    "type": "custom",
+                                                    "id": "sprint_one_cm"
+                                                },
+                                                "modifier": {
+                                                    "operation": "set_base",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:modify_stat",
+                                                "stat": {
+                                                    "type": "custom",
+                                                    "id": "traded_with_villager"
+                                                },
+                                                "modifier": {
+                                                    "operation": "set_base",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "execute function ponyorigins:advancement/setup_ep"
+                                            },
+                                            {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:advancement/earth_pony",
+                                                "source": "ponyorigins:common/00"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:species/unicorn"
+                                            },
+                                            {
+                                                "type": "origins:scoreboard",
+                                                "objective": "po.uporb",
+                                                "comparison": "<",
+                                                "compare_to": 2
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "execute function ponyorigins:advancement/setup_up"
+                                            },
+                                            {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:advancement/unicorn",
+                                                "source": "ponyorigins:common/00"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:origin",
+                                                "origin": "ponyorigins:species/pegasus"
+                                            },
+                                            {
+                                                "type": "origins:scoreboard",
+                                                "objective": "po.pporb",
+                                                "comparison": "<",
+                                                "compare_to": 2
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:modify_stat",
+                                                "stat": {
+                                                    "type": "custom",
+                                                    "id": "fly_one_cm"
+                                                },
+                                                "modifier": {
+                                                    "operation": "set_base",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "execute function ponyorigins:advancement/setup_pp"
+                                            },
+                                            {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:advancement/pegasus",
+                                                "source": "ponyorigins:common/00"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:advancement",
+                                                "advancement": "ponyorigins:alicorn/mastery"
+                                            },
+                                            {
+                                                "type": "origins:scoreboard",
+                                                "objective": "po.aliorb",
+                                                "comparison": "<",
+                                                "compare_to": 2
+                                            }
+                                        ]
+                                    },
+                                    "if_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "ponyorigins:advancement/alicorn",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_cd",
+                                    "change": 60,
+                                    "operation": "set"
                                 }
                             ]
                         },
-                        "if_action": {
-                            "type": "origins:revoke_power",
-                            "power": "ponyorigins:chaos/chaos",
-                            "source": "ponyorigins:chaos/chaos"
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:special/harmony_pact"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:talent/alicorn/harmony"
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:execute_command",
-                            "command": "function ponyorigins:advancement/reject_harmony"
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "inverted": true,
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:species/alicorn"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:ascension/root"
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:grant_power",
-                            "power": "ponyorigins:advancement/mym",
-                            "source": "ponyorigins:common/00"
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:ascension/chaos"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.aliorb",
-                                    "comparison": "==",
-                                    "compare_to": 0
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:grant_power",
-                            "power": "ponyorigins:advancement/chaos",
-                            "source": "ponyorigins:common/00"
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/flight"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:special/wonderbolt"
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:grant_power",
-                            "power": "ponyorigins:advancement/wonderbolt",
-                            "source": "ponyorigins:common/00"
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "inverted": true,
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:special/taxi"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:special/air_taxi"
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:grant_power",
-                            "power": "ponyorigins:advancement/taxi",
-                            "source": "ponyorigins:common/00"
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:species/earth_pony"
-                                },
-                                {
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.eporb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "execute function ponyorigins:advancement/setup_ep"
-                                },
-                                {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancement/earth_pony",
-                                    "source": "ponyorigins:common/00"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:species/unicorn"
-                                },
-                                {
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.uporb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "execute function ponyorigins:advancement/setup_up"
-                                },
-                                {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancement/unicorn",
-                                    "source": "ponyorigins:common/00"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:origin",
-                                    "origin": "ponyorigins:species/pegasus"
-                                },
-                                {
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.pporb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "execute function ponyorigins:advancement/setup_pp"
-                                },
-                                {
-                                    "type": "origins:grant_power",
-                                    "power": "ponyorigins:advancement/pegasus",
-                                    "source": "ponyorigins:common/00"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:alicorn/mastery"
-                                },
-                                {
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.aliorb",
-                                    "comparison": "<",
-                                    "compare_to": 2
-                                }
-                            ]
-                        },
-                        "if_action": {
-                            "type": "origins:grant_power",
-                            "power": "ponyorigins:advancement/alicorn",
-                            "source": "ponyorigins:common/00"
-                        }
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd",
-                        "change": 60,
-                        "operation": "set"
+                        "ticks": 1
                     }
                 ]
             },
@@ -478,20 +525,10 @@
                     {
                         "type": "origins:if_else",
                         "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:advancement",
-                                    "advancement": "ponyorigins:ascension/chaos"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:scoreboard",
-                                    "objective": "po.aliorb",
-                                    "comparison": "==",
-                                    "compare_to": 0
-                                }
-                            ]
+                            "type": "origins:scoreboard",
+                            "objective": "po.chaosorb",
+                            "comparison": "<",
+                            "compare_to": 2
                         },
                         "if_action": {
                             "type": "origins:grant_power",

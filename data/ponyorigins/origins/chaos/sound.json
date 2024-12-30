@@ -2,7 +2,7 @@
     "name": "Sound Effect",
     "description": "Make a random sound on demand!",
     "powers": [
-        "ponyorigins:chaos/talents/sound"
+        "ponyorigins:chaos/talent/sound"
     ],
     "icon": {
         "item": "goat_horn"

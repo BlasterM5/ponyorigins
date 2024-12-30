@@ -1,6 +1,6 @@
 {
-    "name": "Chaos",
-    "description": "Chaos Energy is unstable. Using an ability will cause it to change afterwards.",
+    "name": "Chaos Theory",
+    "description": "Using an ability will cause it to change afterwards.",
     "type": "origins:multiple",
     "trigger": {
         "type": "origins:active_self",
@@ -78,119 +78,119 @@
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/barrier"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/energy/barrier"
                             }
                         },
                         {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/barrier"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/alicorn/barrier"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/celestial"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/alicorn/celestial"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/fireball"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/elemental/fireball"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/pony/firecracker"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/pony/firecracker"
                             }
                         },
                         {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/fireball"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/alicorn/fireball"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/flamethrower"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/elemental/flamethrower"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/flora"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/elemental/flora"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/ice_beam"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/elemental/ice_beam"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/shock_ray"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/elemental/shock_ray"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/laser"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/energy/laser"
                             }
                         },
                         {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/alicorn/laser"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/alicorn/laser"
                             }
                         },
                         {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/pony/manespace"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/pony/manespace"
                             }
                         },
                         {
                             "weight": 1,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/pony/rocket"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/pony/rocket"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/teleport"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/energy/teleport"
                             }
                         },
                         {
                             "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/energy/vanish"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/energy/vanish"
                             }
                         },
                         {
                             "weight": 2,
                             "element": {
                                 "type": "origins:execute_command",
-                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talents/elemental/thunder"
+                                "command": "origin set @s ponyorigins:secondary_talent ponyorigins:talent/elemental/thunder"
                             }
                         },
                         {
@@ -201,14 +201,14 @@
                             }
                         },
                         {
-                            "weight": 12,
+                            "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
                                 "command": "origin set @s ponyorigins:secondary_talent ponyorigins:chaos/sound"
                             }
                         },
                         {
-                            "weight": 8,
+                            "weight": 4,
                             "element": {
                                 "type": "origins:execute_command",
                                 "command": "origin set @s ponyorigins:secondary_talent ponyorigins:chaos/fireworks"
@@ -230,5 +230,132 @@
         "min": 0,
         "max": 1,
         "start_value": 0
+    },
+    "randomizer": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_gained": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:advancement/earth_pony",
+                            "source": "ponyorigins:common/00"
+                        },
+                        "if_action": {
+                            "type": "origins:revoke_power",
+                            "power": "ponyorigins:advancement/earth_pony",
+                            "source": "ponyorigins:common/00"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:advancement/pegasus",
+                            "source": "ponyorigins:common/00"
+                        },
+                        "if_action": {
+                            "type": "origins:revoke_power",
+                            "power": "ponyorigins:advancement/pegasus",
+                            "source": "ponyorigins:common/00"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:advancement/unicorn",
+                            "source": "ponyorigins:common/00"
+                        },
+                        "if_action": {
+                            "type": "origins:revoke_power",
+                            "power": "ponyorigins:advancement/unicorn",
+                            "source": "ponyorigins:common/00"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:advancement/wonderbolt",
+                                    "source": "ponyorigins:common/00"
+                                },
+                                {
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:species/chaos"
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:revoke_power",
+                            "power": "ponyorigins:advancement/wonderbolt",
+                            "source": "ponyorigins:common/00"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:advancement/changeling",
+                            "source": "ponyorigins:common/00"
+                        },
+                        "if_action": {
+                            "type": "origins:revoke_power",
+                            "power": "ponyorigins:advancement/changeling",
+                            "source": "ponyorigins:common/00"
+                        }
+                    }
+                ]
+            },
+            "ticks": 3
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "power revokeall @s ponyorigins:chaos/randomizer"
+        },
+        "entity_action_added": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:species/chaos"
+                },
+                "if_action": {
+                    "type": "origins:grant_power",
+                    "power": "ponyorigins:chaos/randomizer",
+                    "source": "ponyorigins:chaos/chaos"
+                }
+            },
+            "ticks": 1
+        },
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "power revokeall @s ponyorigins:chaos/randomizer"
+        },
+        "entity_action_respawned": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "ponyorigins:species/chaos"
+                },
+                "if_action": {
+                    "type": "origins:grant_power",
+                    "power": "ponyorigins:chaos/randomizer",
+                    "source": "ponyorigins:chaos/chaos"
+                }
+            },
+            "ticks": 1
+        }
     }
 }
