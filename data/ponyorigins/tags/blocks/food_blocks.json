@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "cake",
-            "required": false
+            "required": true
         },
         {
             "id": "casualness_delight:cheese_wheel",
@@ -234,6 +234,14 @@
         },
         {
             "id": "#ponyorigins:seafood_blocks",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_cake",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cake",
             "required": false
         }
     ]

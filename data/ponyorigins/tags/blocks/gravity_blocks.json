@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "#sand",
-            "required": false
+            "required": true
         },
         {
             "id": "gravel",

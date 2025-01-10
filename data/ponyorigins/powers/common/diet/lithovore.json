@@ -64,7 +64,7 @@
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-                "tag": "ponyorigins:gems"
+                "tag": "ponyorigins:dragon_food"
             }
         },
         "food_component": {

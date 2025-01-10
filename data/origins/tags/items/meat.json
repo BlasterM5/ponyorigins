@@ -37,10 +37,6 @@
             "required": false
         },
         {
-            "id": "farmersrespite:black_cod",
-            "required": false
-        },
-        {
             "id": "farmersdelight:dog_food",
             "required": false
         },
@@ -90,10 +86,6 @@
         },
         {
             "id": "farmersdelight:grilled_salmon",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:squid_ink_pasta",
             "required": false
         },
         {
@@ -641,7 +633,15 @@
             "required": false
         },
         {
+            "id": "#c:foods/raw_meats",
+            "required": false
+        },
+        {
             "id": "#c:cooked_meat",
+            "required": false
+        },
+        {
+            "id": "#c:foods/cooked_meats",
             "required": false
         },
         {
@@ -1906,6 +1906,246 @@
         },
         {
             "id": "casualness_delight:bowl_of_fried_dumpling",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:crystal_dumpling",
+            "required": false
+        },
+        {
+            "id": "#c:foods/sausages",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:raw_onion_ring",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:onion_ring",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:raw_chicken_filet",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:fried_chicken_filet",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:chicken_filet",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:beef_tomato_cup",
+            "required": false
+        },
+        {
+            "id": "#0:seafood_meat",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cheese_burger",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:pork_chop_burger",
+            "required": false
+        },
+        {
+            "id": "festive_delight:festive_chicken",
+            "required": false
+        },
+        {
+            "id": "festive_delight:longevity_noodle",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_rabbit_stew",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_rabbit_stew",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_cooked_beef",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_beef",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_porkchop",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_cooked_porkchop",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_cooked_mutton",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_mutton",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_cooked_chicken",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_chicken",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_rabbit",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_cooked_rabbit",
+            "required": false
+        },
+        {
+            "id": "worthy_food:fried_egg_with_bacon",
+            "required": false
+        },
+        {
+            "id": "worthy_food:raw_bacon",
+            "required": false
+        },
+        {
+            "id": "worthy_food:cooked_bacon",
+            "required": false
+        },
+        {
+            "id": "worthy_food:raw_beef_barbecue",
+            "required": false
+        },
+        {
+            "id": "worthy_food:cooked_beef_barbecue",
+            "required": false
+        },
+        {
+            "id": "ends_delight:ender_bamboo_rice",
+            "required": false
+        },
+        {
+            "id": "moredelight:cooked_rice_with_milk_cream_and_chicken_cuts",
+            "required": false
+        },
+        {
+            "id": "moredelight:cooked_rice_with_milk_cream_and_beef",
+            "required": false
+        },
+        {
+            "id": "moredelight:cooked_rice_with_milk_cream_and_porkchop",
+            "required": false
+        },
+        {
+            "id": "moredelight:pasta_with_milk_cream_and_ham",
+            "required": false
+        },
+        {
+            "id": "moredelight:cooked_diced_potatoes_with_chicken_cuts",
+            "required": false
+        },
+        {
+            "id": "moredelight:cooked_diced_potatoes_with_beef",
+            "required": false
+        },
+        {
+            "id": "moredelight:cooked_diced_potatoes_with_porkchop",
+            "required": false
+        },
+        {
+            "id": "moredelight:chicken_salad",
+            "required": false
+        },
+        {
+            "id": "moredelight:simple_hamburger",
+            "required": false
+        },
+        {
+            "id": "moredelight:hamburger_with_cheese",
+            "required": false
+        },
+        {
+            "id": "moredelight:hamburger_with_egg",
+            "required": false
+        },
+        {
+            "id": "moredelight:loaded_hamburger",
+            "required": false
+        },
+        {
+            "id": "moredelight:chicken_sandwich_with_egg_and_tomato",
+            "required": false
+        },
+        {
+            "id": "moredelight:steak_sandwich",
+            "required": false
+        },
+        {
+            "id": "moredelight:porkchop_sandwich",
+            "required": false
+        },
+        {
+            "id": "moredelight:egg_with_bacon_sandwich",
+            "required": false
+        },
+        {
+            "id": "shakdel:bug",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:warden_ear",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:cut_warden_ear",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:warden_ear_on_a_stick",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:baked_warden_ear_on_a_stick",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:warden_ear_fried_rice",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:sculk_barbecue_stick",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:sculk_vein_salad",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:warden_heart",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:minced_warden_heart",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:warden_heart_patty",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:heartburger",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:plate_of_warden_heart",
             "required": false
         }
     ]

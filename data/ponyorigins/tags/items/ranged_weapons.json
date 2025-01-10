@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "bow",
-            "required": false
+            "required": true
         },
         {
             "id": "crossbow",
@@ -14,6 +14,66 @@
         },
         {
             "id": "fire_charge",
+            "required": false
+        },
+        {
+            "id": "#c:bows",
+            "required": false
+        },
+        {
+            "id": "#c:guns",
+            "required": false
+        },
+        {
+            "id": "triggerhappy:iron_handgun",
+            "required": false
+        },
+        {
+            "id": "triggerhappy:golden_handgun",
+            "required": false
+        },
+        {
+            "id": "triggerhappy:diamond_sniper_rifle",
+            "required": false
+        },
+        {
+            "id": "triggerhappy:diamond_shotgun",
+            "required": false
+        },
+        {
+            "id": "triggerhappy:diamond_lmg",
+            "required": false
+        },
+        {
+            "id": "triggerhappy:netherite_sniper_rifle",
+            "required": false
+        },
+        {
+            "id": "gun:flintlock_pistol",
+            "required": false
+        },
+        {
+            "id": "ygm76:yg1",
+            "required": false
+        },
+        {
+            "id": "ygm76:yg2",
+            "required": false
+        },
+        {
+            "id": "ygm76:yg3",
+            "required": false
+        },
+        {
+            "id": "ygm76:sakai_gun",
+            "required": false
+        },
+        {
+            "id": "musketmod:musket",
+            "required": false
+        },
+        {
+            "id": "musketmod:musket_with_bayonet",
             "required": false
         }
     ]

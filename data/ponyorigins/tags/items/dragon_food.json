@@ -1,23 +1,23 @@
 {
     "values": [
         {
-            "id": "redstone",
+            "id": "#ponyorigins:gems",
             "required": true
         },
         {
-            "id": "glowstone_dust",
+            "id": "thelongstory:emerald_apple",
             "required": false
         },
         {
-            "id": "blaze_powder",
+            "id": "thelongstory:diamond_apple",
             "required": false
         },
         {
-            "id": "snowball",
+            "id": "thelongstory:lapis_apple",
             "required": false
         },
         {
-            "id": "bone_meal",
+            "id": "thelongstory:amethyst_apple",
             "required": false
         }
     ]

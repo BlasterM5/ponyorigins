@@ -1162,7 +1162,7 @@
         },
         {
             "id": "smooth_stone",
-            "required": false
+            "required": true
         },
         {
             "id": "smooth_basalt",

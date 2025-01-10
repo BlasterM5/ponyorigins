@@ -33,7 +33,7 @@
             "required": false
         },
         {
-            "id": "bakingdelight:vegetable_oil",
+            "id": "#bakingdelight:oil",
             "required": false
         }
     ]

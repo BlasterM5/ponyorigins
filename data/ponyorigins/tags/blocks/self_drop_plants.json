@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "sunflower",
-            "required": false
+            "required": true
         },
         {
             "id": "rose_bush",

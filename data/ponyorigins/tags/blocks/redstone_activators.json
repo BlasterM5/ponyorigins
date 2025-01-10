@@ -2,7 +2,7 @@
     "values": [
         {
             "id": "lever",
-            "required": false
+            "required": true
         },
         {
             "id": "#buttons",

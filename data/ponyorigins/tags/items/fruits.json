@@ -9,6 +9,10 @@
             "required": false
         },
         {
+            "id": "#c:foods/fruits",
+            "required": false
+        },
+        {
             "id": "#c:berries",
             "required": false
         },
@@ -62,7 +66,7 @@
         },
         {
             "id": "apple",
-            "required": false
+            "required": true
         },
         {
             "id": "bakery:strawberry",
@@ -817,7 +821,47 @@
             "required": false
         },
         {
-            "id": "c:foods/fruits",
+            "id": "#c:foods/fruits",
+            "required": false
+        },
+        {
+            "id": "#c:juices/apple",
+            "required": false
+        },
+        {
+            "id": "#c:juices/sweet_berry",
+            "required": false
+        },
+        {
+            "id": "#c:juices/glow_berry",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:apple_petal",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cherry",
+            "required": false
+        },
+        {
+            "id": "worthy_food:apple_in_caramel",
+            "required": false
+        },
+        {
+            "id": "worthy_food:sweet_berry_juice",
+            "required": false
+        },
+        {
+            "id": "worthy_food:water_melon_juice",
+            "required": false
+        },
+        {
+            "id": "worthy_food:apple_juice",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:cut_avocado",
             "required": false
         }
     ]

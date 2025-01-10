@@ -31,6 +31,90 @@
         {
             "id": "usefulfood:magicapplejuice",
             "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_carrot",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_melon_slice",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_beetroot",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_dried_kelp",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_bread",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_coookie",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_pumpkin_pie",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_chorus_fruit",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_milk_bucket",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_honey_bottle",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_mushroom_stew",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_beetroot_soup",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_rabbit_stew",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_beef",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_porkchop",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_mutton",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_chicken",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_rabbit",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_cod",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_cooked_salmon",
+            "required": false
         }
     ]
 }

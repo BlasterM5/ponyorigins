@@ -382,7 +382,7 @@
         },
         {
             "id": "iron_block",
-            "required": false
+            "required": true
         },
         {
             "id": "copper_block",

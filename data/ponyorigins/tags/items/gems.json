@@ -262,7 +262,7 @@
         },
         {
             "id": "diamond",
-            "required": false
+            "required": true
         },
         {
             "id": "#gemperience:gems",

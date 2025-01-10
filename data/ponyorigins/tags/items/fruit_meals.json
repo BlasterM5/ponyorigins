@@ -1095,6 +1095,190 @@
         {
             "id": "ends_delight:assorted_salad",
             "required": false
+        },
+        {
+            "id": "frightsdelight:cookie_slimeapple",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:soup_slimeapple",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:bone_kebab_slimeapple",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:apple_pudding",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cherry_pudding",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cherry_cake",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cherry_mousse",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cherry_egg",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:steamed_cherry_egg",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:fried_apple",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:golden_apple_cream",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:golden_apple_mousse",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:cherry_ice_lolly",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:pumpkin_cream",
+            "required": false
+        },
+        {
+            "id": "bakingdelight:pumpkin_mousse",
+            "required": false
+        },
+        {
+            "id": "festive_delight:christmas_tea",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_melon_slice",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_melon_slice",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_glow_berries",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_glow_berries",
+            "required": false
+        },
+        {
+            "id": "golden_foods:enchanted_golden_pumpkin_pie",
+            "required": false
+        },
+        {
+            "id": "golden_foods:golden_pumpkin_pie",
+            "required": false
+        },
+        {
+            "id": "worthy_food:apple_pie",
+            "required": false
+        },
+        {
+            "id": "worthy_food:berry_pie",
+            "required": false
+        },
+        {
+            "id": "worthy_food:glowberry_pie",
+            "required": false
+        },
+        {
+            "id": "worthy_food:apple_toast",
+            "required": false
+        },
+        {
+            "id": "worthy_food:berry_toast",
+            "required": false
+        },
+        {
+            "id": "worthy_food:glowberry_toast",
+            "required": false
+        },
+        {
+            "id": "worthy_food:apple_jam",
+            "required": false
+        },
+        {
+            "id": "worthy_food:berry_jam",
+            "required": false
+        },
+        {
+            "id": "worthy_food:glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:smoked_tomato",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:hearty_salad",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:fried_eggplant_pasta",
+            "required": false
+        },
+        {
+            "id": "culturaldelights:eggplant_burger",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:soup_soul_berry",
+            "required": false
+        },
+        {
+            "id": "frightsdelight:soup_wither_berry",
+            "required": false
+        },
+        {
+            "id": "moredelight:tomato_sandwich",
+            "required": false
+        },
+        {
+            "id": "moredelight:toast_with_sweet_berries",
+            "required": false
+        },
+        {
+            "id": "moredelight:toast_with_glow_berries",
+            "required": false
+        },
+        {
+            "id": "moredelight:toast_with_blueberries",
+            "required": false
+        },
+        {
+            "id": "shakdel:shakshuka",
+            "required": false
+        },
+        {
+            "id": "silentsdelight:sculk_sensor_sprinkles",
+            "required": false
+        },
+        {
+            "id": "ubesdelight:halo_halo",
+            "required": false
         }
     ]
 }

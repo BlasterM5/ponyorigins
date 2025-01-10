@@ -1,8 +1,8 @@
 {
     "values": [
         {
-            "id": "command_block",
-            "required": false
+            "id": "barrier",
+            "required": true
         },
         {
             "id": "ad_astra:space_suit",

@@ -1,6 +1,10 @@
 {
     "values": [
         {
+            "id": "barrier",
+            "required": true
+        },
+        {
             "id": "casualness_delight:stargazy_pie",
             "required": false
         },

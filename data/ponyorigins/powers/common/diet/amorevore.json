@@ -749,6 +749,39 @@
                                 "type": "origins:and",
                                 "conditions": [
                                     {
+                                        "type": "origins:health",
+                                        "comparison": ">",
+                                        "compare_to": 2
+                                    },
+                                    {
+                                        "type": "origins:entity_type",
+                                        "entity_type": "villager"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:attack_target"
+                        },
+                        {
+                            "type": "origins:actor_condition",
+                            "condition": {
+                                "inverted": true,
+                                "type": "origins:sneaking"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
                                         "type": "origins:food_level",
                                         "comparison": ">",
                                         "compare_to": 2

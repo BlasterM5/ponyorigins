@@ -270,7 +270,7 @@
         },
         {
             "id": "grass",
-            "required": false
+            "required": true
         }
     ]
 }
