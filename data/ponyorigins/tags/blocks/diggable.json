@@ -39,6 +39,10 @@
         {
             "id": "#sand",
             "required": false
+        },
+        {
+            "id": "#snow",
+            "required": false
         }
     ]
 }

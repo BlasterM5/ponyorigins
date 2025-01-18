@@ -127,10 +127,21 @@
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
             "bar_index": 15,
             "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_bar_vis",
-                "comparison": ">",
-                "compare_to": 0
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_love",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_bar_vis",
+                        "comparison": ">",
+                        "compare_to": 0
+                    }
+                ]
             }
         }
     },
@@ -997,5 +1008,22 @@
         "min": 0,
         "max": 1,
         "start_value": 0
+    },
+    "no_culinaire_tea_bottle": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "culinaire:tea_bottle"
+            }
+        },
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "culinaire"
+                ]
+            }
+        ]
     }
 }

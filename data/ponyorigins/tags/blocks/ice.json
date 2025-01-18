@@ -3,6 +3,122 @@
         {
             "id": "#ice",
             "required": true
+        },
+        {
+            "id": "#c:ice",
+            "required": false
+        },
+        {
+            "id": "moredoors:ice_trapdoor",
+            "required": false
+        },
+        {
+            "id": "moredoors:ice_door",
+            "required": false
+        },
+        {
+            "id": "thelongstory:deep_ice",
+            "required": false
+        },
+        {
+            "id": "thelongstory:frosted_ice",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_slab",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_wall",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cobblestone_wall",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cobblestone_slab",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cobblestone_stairs",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cobblestone",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_bricks",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_bricks_stairs",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_bricks_slab",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_stone_bricks_wall",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_chiseled_stone_bricks_wall",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_chiseled_stone_bricks_slab",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_chiseled_stone_bricks_stairs",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_chiseled_stone_bricks",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cracked_stone_bricks",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cracked_stone_bricks_stairs",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cracked_stone_bricks_slab",
+            "required": false
+        },
+        {
+            "id": "thelongstory:iced_cracked_stone_bricks_wall",
+            "required": false
+        },
+        {
+            "id": "thelongstory:deep_ice_fluorite_ore",
+            "required": false
+        },
+        {
+            "id": "thelongstory:deep_ice_zarosite_ore",
+            "required": false
+        },
+        {
+            "id": "dramaticdoors:short_md_ice_door",
+            "required": false
+        },
+        {
+            "id": "dramaticdoors:tall_md_ice_door",
+            "required": false
         }
     ]
 }

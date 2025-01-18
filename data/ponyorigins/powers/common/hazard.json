@@ -11,7 +11,8 @@
         },
         "type": "origins:action_when_damage_taken",
         "damage_condition": {
-            "type": "origins:fire"
+            "type": "origins:in_tag",
+            "tag": "is_fire"
         },
         "entity_action": {
             "type": "origins:if_else_list",
@@ -35,7 +36,7 @@
                     "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_burned",
-                        "change": 10,
+                        "change": 40,
                         "operation": "add"
                     }
                 },
@@ -49,7 +50,7 @@
                     "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_burned",
-                        "change": 8,
+                        "change": 32,
                         "operation": "add"
                     }
                 },
@@ -63,7 +64,7 @@
                     "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_burned",
-                        "change": 6,
+                        "change": 24,
                         "operation": "add"
                     }
                 },
@@ -77,7 +78,7 @@
                     "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_burned",
-                        "change": 4,
+                        "change": 16,
                         "operation": "add"
                     }
                 },
@@ -91,7 +92,7 @@
                     "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_burned",
-                        "change": 2,
+                        "change": 8,
                         "operation": "add"
                     }
                 }
@@ -249,20 +250,24 @@
                                 "if_action": {
                                     "type": "origins:if_else",
                                     "condition": {
-                                        "type": "origins:and",
-                                        "conditions": [
-                                            {
-                                                "inverted": true,
-                                                "type": "origins:in_block",
-                                                "block_condition": {
+                                        "inverted": true,
+                                        "type": "origins:in_block",
+                                        "block_condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
                                                     "type": "origins:fluid",
                                                     "fluid_condition": {
                                                         "type": "origins:in_tag",
                                                         "tag": "ponyorigins:oil"
                                                     }
+                                                },
+                                                {
+                                                    "type": "origins:in_tag",
+                                                    "tag": "ponyorigins:oil"
                                                 }
-                                            }
-                                        ]
+                                            ]
+                                        }
                                     },
                                     "if_action": {
                                         "type": "origins:and",
@@ -819,11 +824,20 @@
                                 "condition": {
                                     "type": "origins:in_block",
                                     "block_condition": {
-                                        "type": "origins:fluid",
-                                        "fluid_condition": {
-                                            "type": "origins:in_tag",
-                                            "tag": "ponyorigins:oil"
-                                        }
+                                        "type": "origins:or",
+                                        "conditions": [
+                                            {
+                                                "type": "origins:fluid",
+                                                "fluid_condition": {
+                                                    "type": "origins:in_tag",
+                                                    "tag": "ponyorigins:oil"
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:oil"
+                                            }
+                                        ]
                                     }
                                 },
                                 "if_action": {
@@ -1017,10 +1031,8 @@
                                         },
                                         {
                                             "condition": {
-                                                "type": "origins:resource",
-                                                "resource": "*:*_oiled",
-                                                "comparison": ">",
-                                                "compare_to": 40
+                                                "type": "origins:constant",
+                                                "value": true
                                             },
                                             "action": {
                                                 "type": "origins:if_else",
@@ -1299,11 +1311,20 @@
                                                 "inverted": true,
                                                 "type": "origins:in_block",
                                                 "block_condition": {
-                                                    "type": "origins:fluid",
-                                                    "fluid_condition": {
-                                                        "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:oil"
-                                                    }
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:fluid",
+                                                            "fluid_condition": {
+                                                                "type": "origins:in_tag",
+                                                                "tag": "ponyorigins:oil"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "origins:in_tag",
+                                                            "tag": "ponyorigins:oil"
+                                                        }
+                                                    ]
                                                 }
                                             },
                                             {
@@ -2339,11 +2360,20 @@
                                                         "inverted": true,
                                                         "type": "origins:in_block",
                                                         "block_condition": {
-                                                            "type": "origins:fluid",
-                                                            "fluid_condition": {
-                                                                "type": "origins:in_tag",
-                                                                "tag": "ponyorigins:oil"
-                                                            }
+                                                            "type": "origins:or",
+                                                            "conditions": [
+                                                                {
+                                                                    "type": "origins:fluid",
+                                                                    "fluid_condition": {
+                                                                        "type": "origins:in_tag",
+                                                                        "tag": "ponyorigins:oil"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "origins:in_tag",
+                                                                    "tag": "ponyorigins:oil"
+                                                                }
+                                                            ]
                                                         }
                                                     },
                                                     {

@@ -1193,6 +1193,10 @@
             "required": false
         },
         {
+            "id": "smooth_basalt",
+            "required": false
+        },
+        {
             "id": "packed_mud",
             "required": false
         },
@@ -1217,15 +1221,15 @@
             "required": false
         },
         {
-            "id": "waxed_copper_block",
-            "required": false
-        },
-        {
             "id": "glass",
             "required": false
         },
         {
             "id": "tinted_glass",
+            "required": false
+        },
+        {
+            "id": "#ponyorigins:waxed_minecraft",
             "required": false
         },
         {
@@ -1490,6 +1494,934 @@
         },
         {
             "id": "gemperience:polished_echocrine_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_tuff_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_tuff_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_tuff_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_tuff_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_tuff_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_tuff_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_tuff_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_tuff_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_tuff_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_tuff_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_tuff_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_tuff_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_copper_tuff_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_exposed_copper_tuff_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_weathered_copper_tuff_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:waxed_oxidized_copper_tuff_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_soul_sandstone",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_soul_sandstone_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_soul_sandstone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_gravelstone",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_gravelstone_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:smooth_gravelstone_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:smooth_soulstone",
+            "required": false
+        },
+        {
+            "id": "gemperience:smooth_soulstone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:smooth_soulstone_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:smooth_end_sandstone",
+            "required": false
+        },
+        {
+            "id": "gemperience:smooth_end_sandstone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:smooth_end_sandstone_stairs",
+            "required": false
+        },
+        {
+            "id": "geodes:smooth_gypsum_block",
+            "required": false
+        },
+        {
+            "id": "geodes:smooth_gypsum_slab",
+            "required": false
+        },
+        {
+            "id": "geodes:smooth_gypsum_stairs",
+            "required": false
+        },
+        {
+            "id": "geodes:smooth_gypsum_wall",
+            "required": false
+        },
+        {
+            "id": "moredoors:smooth_stone_door",
+            "required": false
+        },
+        {
+            "id": "moredoors:smooth_stone_trapdoor",
+            "required": false
+        },
+        {
+            "id": "dramaticdoors:short_md_smooth_stone_door",
+            "required": false
+        },
+        {
+            "id": "dramaticdoors:tall_md_smooth_stone_door",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_andesite_pillar",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_diorite_pillar",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_granite_pillar",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_dripstone",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_dripstone_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_dripstone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_tuff",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_tuff_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_tuff_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_sculk",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_sculk_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_sculk_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_amethyst",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_amethyst_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_amethyst_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_blackstone_tiles",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_blackstone_tile_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_blackstone_tile_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_blackstone_tile_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_blackstone_pillar",
+            "required": false
+        },
+        {
+            "id": "blockus:herringbone_polished_blackstone_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_blackstone_circular_paving",
+            "required": false
+        },
+        {
+            "id": "blockus:gold_decorated_polished_blackstone",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:cracked_polished_basalt_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:chiseled_polished_basalt",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_pillar",
+            "required": false
+        },
+        {
+            "id": "blockus:herringbone_polished_basalt_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_circular_paving",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_limestone",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_limestone_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_limestone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_marble",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_marble_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_marble_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_bluestone",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_bluestone_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_bluestone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_viridite",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_viridite_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_viridite_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:lava_polished_blackstone_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:lava_polished_blackstone_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:lava_polished_blackstone_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:lava_polished_blackstone_brick_wall",
+            "required": false
+        },
+        {
+            "id": "blockus:chiseled_lava_polished_blackstone",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_netherrack",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_netherrack_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_netherrack_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_nether_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_nether_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_nether_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_red_nether_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_red_nether_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_red_nether_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_charred_nether_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_charred_nether_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_charred_nether_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_teal_nether_bricks",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_teal_nether_brick_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_teal_nether_brick_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_purpur",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_purpur_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_purpur_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_phantom_purpur",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_phantom_purpur_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_phantom_purpur_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_end_stone",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_end_stone_slab",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_end_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_andesite_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_diorite_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_granite_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_netherrack_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_end_stone_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_basalt_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_deepslate_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_tuff_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "blockus:polished_sculk_pressure_plate",
+            "required": false
+        },
+        {
+            "id": "dramaticdoors:short_md_polished_deepslate_door",
+            "required": false
+        },
+        {
+            "id": "dramaticdoors:tall_md_polished_deepslate_door",
+            "required": false
+        },
+        {
+            "id": "moredoors:polished_deepslate_door",
+            "required": false
+        },
+        {
+            "id": "moredoors:polished_deepslate_trapdoor",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_echocrine_stone_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_voidstone",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_voidstone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_voidstone_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_voidstone_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_neurostone",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_neurostone_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_neurostone_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_neurostone_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_marrowshale",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_marrowshale_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_marrowshale_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_marrowshale_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_tarshale",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_tarshale_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_tarshale_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_tarshale_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_illuminium",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_illuminium_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_illuminium_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_illuminium_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_dark_purpur",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_dark_purpur_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_dark_purpur_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_dark_purpur_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_nullslate",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_nullslate_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_nullslate_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_nullslate_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_shadimite",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_shadimite_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_shadimite_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_shadimite_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crulite",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crulite_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crulite_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crulite_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crimium",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crimium_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crimium_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_crimium_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_cooked_brine",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_cooked_brine_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_cooked_brine_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_cooked_brine_wall",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_warped_carapace",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_warped_carapace_slab",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_warped_carapace_stairs",
+            "required": false
+        },
+        {
+            "id": "gemperience:polished_warped_carapace_wall",
+            "required": false
+        },
+        {
+            "id": "geodes:polished_gypsum_block",
+            "required": false
+        },
+        {
+            "id": "geodes:polished_gypsum_slab",
+            "required": false
+        },
+        {
+            "id": "geodes:polished_gypsum_stairs",
+            "required": false
+        },
+        {
+            "id": "geodes:polished_gypsum_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_calcite",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_calcite_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_calcite_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_calcite_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_tuff",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_tuff_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_tuff_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_tuff_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_netherrack",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_netherrack_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_netherrack_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_netherrack_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_end_stone",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_end_stone_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_end_stone_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_end_stone_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_purpur",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_purpur_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_purpur_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_purpur_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_prismarine",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_prismarine_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_prismarine_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_prismarine_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_dark_prismarine",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_dark_prismarine_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_dark_prismarine_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_dark_prismarine_wall",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_quartz",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_quartz_slab",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_quartz_stairs",
+            "required": false
+        },
+        {
+            "id": "stoneworks:polished_quartz_wall",
+            "required": false
+        },
+        {
+            "id": "ironchests:copper_chest",
+            "required": false
+        },
+        {
+            "id": "ironchests:iron_chest",
+            "required": false
+        },
+        {
+            "id": "ironchests:gold_chest",
+            "required": false
+        },
+        {
+            "id": "ironchests:crystal_chest",
+            "required": false
+        },
+        {
+            "id": "#c:silver_blocks",
             "required": false
         }
     ]
