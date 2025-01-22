@@ -430,19 +430,37 @@
                 {
                     "type": "origins:target_action",
                     "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_cd",
-                        "change": 1,
-                        "operation": "set"
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cd",
+                                "change": 1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_bar_vis",
+                                "change": 5,
+                                "operation": "set"
+                            }
+                        ]
                     }
                 },
                 {
-                    "type": "origins:target_action",
+                    "type": "origins:actor_action",
                     "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_bar_vis",
-                        "change": 5,
-                        "operation": "set"
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/diet/amorevore"
+                        },
+                        "if_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_bar_vis",
+                            "change": 5,
+                            "operation": "set"
+                        }
                     }
                 }
             ]
