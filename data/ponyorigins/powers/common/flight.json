@@ -451,10 +451,19 @@
                             "gamemode": "creative"
                         },
                         {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:pegasus/rocket_antilag",
-                            "comparison": ">",
-                            "compare_to": 0
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:pegasus/rocket"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:pegasus/rocket_antilag",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
                         },
                         {
                             "type": "origins:swimming"

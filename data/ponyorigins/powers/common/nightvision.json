@@ -1,6 +1,6 @@
 {
     "name": "Night Vision",
-    "description": "Automatically see extra well in the dark. May come with slight colorblindness.",
+    "description": "Automatically see extra well in the dark.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -617,10 +617,5 @@
         },
         "type": "origins:night_vision",
         "strength": 0.2
-    },
-    "desaturated_vision": {
-        "type": "origins:shader",
-        "shader": "shaders/post/desaturate.json",
-        "toggleable": false
     }
 }

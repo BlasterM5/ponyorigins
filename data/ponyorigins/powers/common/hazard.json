@@ -147,21 +147,10 @@
     },
     "oil_fire_damage_fire_hit": {
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_oiled",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_sealed",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
+            "type": "origins:resource",
+            "resource": "*:*_oiled",
+            "comparison": ">",
+            "compare_to": 0
         },
         "type": "origins:action_when_damage_taken",
         "damage_condition": {
@@ -253,20 +242,11 @@
                                         "inverted": true,
                                         "type": "origins:in_block",
                                         "block_condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:fluid",
-                                                    "fluid_condition": {
-                                                        "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:oil"
-                                                    }
-                                                },
-                                                {
-                                                    "type": "origins:in_tag",
-                                                    "tag": "ponyorigins:oil"
-                                                }
-                                            ]
+                                            "type": "origins:fluid",
+                                            "fluid_condition": {
+                                                "type": "origins:in_tag",
+                                                "tag": "ponyorigins:oil"
+                                            }
                                         }
                                     },
                                     "if_action": {
@@ -824,20 +804,11 @@
                                 "condition": {
                                     "type": "origins:in_block",
                                     "block_condition": {
-                                        "type": "origins:or",
-                                        "conditions": [
-                                            {
-                                                "type": "origins:fluid",
-                                                "fluid_condition": {
-                                                    "type": "origins:in_tag",
-                                                    "tag": "ponyorigins:oil"
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:in_tag",
-                                                "tag": "ponyorigins:oil"
-                                            }
-                                        ]
+                                        "type": "origins:fluid",
+                                        "fluid_condition": {
+                                            "type": "origins:in_tag",
+                                            "tag": "ponyorigins:oil"
+                                        }
                                     }
                                 },
                                 "if_action": {
@@ -1311,20 +1282,11 @@
                                                 "inverted": true,
                                                 "type": "origins:in_block",
                                                 "block_condition": {
-                                                    "type": "origins:or",
-                                                    "conditions": [
-                                                        {
-                                                            "type": "origins:fluid",
-                                                            "fluid_condition": {
-                                                                "type": "origins:in_tag",
-                                                                "tag": "ponyorigins:oil"
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "origins:in_tag",
-                                                            "tag": "ponyorigins:oil"
-                                                        }
-                                                    ]
+                                                    "type": "origins:fluid",
+                                                    "fluid_condition": {
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:oil"
+                                                    }
                                                 }
                                             },
                                             {
@@ -2360,20 +2322,11 @@
                                                         "inverted": true,
                                                         "type": "origins:in_block",
                                                         "block_condition": {
-                                                            "type": "origins:or",
-                                                            "conditions": [
-                                                                {
-                                                                    "type": "origins:fluid",
-                                                                    "fluid_condition": {
-                                                                        "type": "origins:in_tag",
-                                                                        "tag": "ponyorigins:oil"
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "type": "origins:in_tag",
-                                                                    "tag": "ponyorigins:oil"
-                                                                }
-                                                            ]
+                                                            "type": "origins:fluid",
+                                                            "fluid_condition": {
+                                                                "type": "origins:in_tag",
+                                                                "tag": "ponyorigins:oil"
+                                                            }
                                                         }
                                                     },
                                                     {
@@ -2593,9 +2546,18 @@
                                                         }
                                                     },
                                                     {
-                                                        "inverted": true,
-                                                        "type": "origins:predicate",
-                                                        "predicate": "ponyorigins:weather/is_rain"
+                                                        "type": "origins:or",
+                                                        "conditions": [
+                                                            {
+                                                                "inverted": true,
+                                                                "type": "origins:exposed_to_sky"
+                                                            },
+                                                            {
+                                                                "inverted": true,
+                                                                "type": "origins:predicate",
+                                                                "predicate": "ponyorigins:weather/is_rain"
+                                                            }
+                                                        ]
                                                     }
                                                 ]
                                             },
@@ -3703,16 +3665,25 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:resource",
-                        "resource": "*:*_complexity",
-                        "comparison": ">",
-                        "compare_to": 0
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:*_complexity_armor",
-                        "comparison": ">",
-                        "compare_to": 0
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_complexity",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_complexity_armor",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/wings/insectoid"
+                            }
+                        ]
                     },
                     {
                         "inverted": true,
@@ -3762,16 +3733,25 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:resource",
-                        "resource": "*:*_complexity",
-                        "comparison": ">",
-                        "compare_to": 0
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:*_complexity_armor",
-                        "comparison": ">",
-                        "compare_to": 0
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_complexity",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_complexity_armor",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "ponyorigins:common/limbs/wings/insectoid"
+                            }
+                        ]
                     },
                     {
                         "inverted": true,
@@ -4723,5 +4703,23 @@
         "min": 0,
         "max": 4,
         "start_value": 0
+    },
+    "water_run_lightweight": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sprinting"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_weight",
+                    "comparison": "<",
+                    "compare_to": 25
+                }
+            ]
+        },
+        "type": "origins:walk_on_fluid",
+        "fluid": "water"
     }
 }
