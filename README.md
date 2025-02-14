@@ -115,6 +115,6 @@ Several Bipedal species from around Equestria are included. While their abilitie
 Don't like the species you first chose and want to change? Craft a Harmonic Resonator by surrounding a Nether Star with diamonds and amethyst shards in the crafting table, then use the Harmonic Resonator to change to a new species with new talents.
 
 
-Note for Modmakers and Modpackmakers: If the Unlicense isn't clear enough, you are free to use this mod however, wherever, with whatever, no restrictions. You can even grab the source code and make your own version if you want, there's no restrictions.
+Note for Modmakers and Modpackmakers: You already have permission because 0BSD license. Integrate it and have fun.
 
 For a full readup of the abilities and species, refer to the [wiki](https://github.com/BlasterM5/ponyorigins/wiki).
