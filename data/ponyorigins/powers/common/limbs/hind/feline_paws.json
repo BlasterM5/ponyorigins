@@ -27,22 +27,12 @@
                     "type": "origins:or",
                     "conditions": [
                         {
-                            "inverted": true,
                             "type": "origins:power",
-                            "power": "ponyorigins:common/limbs/quadruped"
+                            "power": "ponyorigins:common/limbs/biped"
                         },
                         {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/limbs/quadruped"
-                                },
-                                {
-                                    "type": "origins:power",
-                                    "power": "ponyorigins:common/limbs/fore/feline_paws"
-                                }
-                            ]
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/limbs/fore/feline_paws"
                         }
                     ]
                 },

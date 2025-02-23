@@ -14,6 +14,7 @@
         "ponyorigins:common/limbs/fore/hooves",
         "ponyorigins:common/limbs/hind/hooves",
         "ponyorigins:common/rideable",
+        "ponyorigins:common/skin/hair",
         "ponyorigins:common/sound/spectre"
     ],
     "icon": {

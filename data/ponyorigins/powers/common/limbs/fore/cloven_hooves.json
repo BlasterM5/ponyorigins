@@ -79,56 +79,88 @@
     },
     "movement_buff": {
         "condition": {
-            "inverted": true,
-            "type": "origins:or",
+            "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:and",
+                    "type": "origins:or",
                     "conditions": [
                         {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_feet",
-                            "comparison": "==",
-                            "compare_to": 1
+                            "inverted": true,
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:common/limbs/quadruped"
                         },
                         {
-                            "type": "origins:or",
+                            "type": "origins:and",
                             "conditions": [
                                 {
-                                    "type": "origins:in_rain"
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_mainhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
                                 },
                                 {
                                     "type": "origins:resource",
-                                    "resource": "ponyorigins:common/hazard_wet",
-                                    "comparison": ">",
-                                    "compare_to": 20
+                                    "resource": "ponyorigins:common/00_empty_offhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
                                 }
                             ]
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                                "type": "origins:in_tag",
-                                "tag": "ponyorigins:slippery_when_wet"
-                            }
                         }
                     ]
                 },
                 {
-                    "type": "origins:and",
+                    "inverted": true,
+                    "type": "origins:or",
                     "conditions": [
                         {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_feet",
-                            "comparison": "==",
-                            "compare_to": 1
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_feet",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:on_block",
+                                    "block_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:ice"
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                                "type": "origins:in_tag",
-                                "tag": "ponyorigins:ice"
-                            }
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_feet",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:in_rain"
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "ponyorigins:common/hazard_wet",
+                                            "comparison": ">",
+                                            "compare_to": 20
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:on_block",
+                                    "block_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:slippery_when_wet"
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
@@ -140,5 +172,31 @@
             "operation": "multiply_base_additive",
             "value": 0.04
         }
+    },
+    "knockback": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/limbs/taur"
+                }
+            ]
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.25,
+            "client": true,
+            "server": true
+        },
+        "cooldown": 10
     }
 }

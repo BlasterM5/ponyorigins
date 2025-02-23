@@ -126,8 +126,9 @@
                     "type": "origins:or",
                     "conditions": [
                         {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/limbs/taur"
+                            "inverted": true,
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:common/limbs/quadruped"
                         },
                         {
                             "type": "origins:and",
@@ -162,6 +163,24 @@
                                     "compare_to": 1
                                 },
                                 {
+                                    "type": "origins:on_block",
+                                    "block_condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "ponyorigins:ice"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_feet",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
                                     "type": "origins:or",
                                     "conditions": [
                                         {
@@ -180,24 +199,6 @@
                                     "block_condition": {
                                         "type": "origins:in_tag",
                                         "tag": "ponyorigins:slippery_when_wet"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_empty_feet",
-                                    "comparison": "==",
-                                    "compare_to": 1
-                                },
-                                {
-                                    "type": "origins:on_block",
-                                    "block_condition": {
-                                        "type": "origins:in_tag",
-                                        "tag": "ponyorigins:ice"
                                     }
                                 }
                             ]

@@ -14,16 +14,31 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_empty_mainhand",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_empty_offhand",
-                    "comparison": "==",
-                    "compare_to": 1
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:origin",
+                            "origin": "ponyorigins:common/limbs/quadruped"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_mainhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_empty_offhand",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "inverted": true,

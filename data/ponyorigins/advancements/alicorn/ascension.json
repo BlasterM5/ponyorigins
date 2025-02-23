@@ -12,7 +12,8 @@
     },
     "parent": "ponyorigins:alicorn/mastery",
     "rewards": {
-        "experience": 1000
+        "experience": 1000,
+        "function": "ponyorigins:setup/calc"
     },
     "criteria": {
         "key0": {

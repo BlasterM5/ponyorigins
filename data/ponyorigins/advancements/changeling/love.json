@@ -11,6 +11,10 @@
         "hidden": true
     },
     "parent": "ponyorigins:changeling/full",
+    "rewards": {
+        "experience": 1000,
+        "function": "ponyorigins:setup/calc"
+    },
     "criteria": {
         "key0": {
             "trigger": "minecraft:impossible"
