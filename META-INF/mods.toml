@@ -1,15 +1,15 @@
 modLoader="javafml"
 loaderVersion="[20,)"
-license="Unlicense"
+license="0BSD"
 logoFile="pack.png"
 logoBlur=false
 
 [[mods]]
 modId="ponyorigins"
 displayName="Pony Origins"
-version="1.4.0-b1"
+version="2.0.1"
 description='''
-Origins Replacement Mod, designed to compliment Mine Little Pony.
+Origins Replacement Mod, designed to Ponify Origins.
 '''
 [[dependencies.ponyorigins]]
     modId="minecraft"
@@ -19,6 +19,12 @@ Origins Replacement Mod, designed to compliment Mine Little Pony.
     side="BOTH"
 [[dependencies.ponyorigins]]
     modId="origins"
+    mandatory=true
+    versionRange="[0.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.ponyorigins]]
+    modId="apugli"
     mandatory=true
     versionRange="[0.1.0,)"
     ordering="NONE"

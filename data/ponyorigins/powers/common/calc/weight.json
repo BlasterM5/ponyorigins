@@ -566,17 +566,8 @@
                                     },
                                     {
                                         "condition": {
-                                            "type": "origins:or",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/wings/membrane"
-                                                },
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/limbs/wings/feathered"
-                                                }
-                                            ]
+                                            "type": "origins:power",
+                                            "power": "ponyorigins:common/limbs/wings/feathered"
                                         },
                                         "action": {
                                             "type": "origins:change_resource",
@@ -587,8 +578,17 @@
                                     },
                                     {
                                         "condition": {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/limbs/wings/waterproof"
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/wings/membrane"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/wings/waterproof"
+                                                }
+                                            ]
                                         },
                                         "action": {
                                             "type": "origins:change_resource",
@@ -702,8 +702,17 @@
                                     },
                                     {
                                         "condition": {
-                                            "type": "origins:power",
-                                            "power": "ponyorigins:common/diet/carnivore"
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/diet/carnivore"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/diet/frugivore"
+                                                }
+                                            ]
                                         },
                                         "action": {
                                             "type": "origins:change_resource",
@@ -716,10 +725,6 @@
                                         "condition": {
                                             "type": "origins:or",
                                             "conditions": [
-                                                {
-                                                    "type": "origins:power",
-                                                    "power": "ponyorigins:common/diet/frugivore"
-                                                },
                                                 {
                                                     "type": "origins:power",
                                                     "power": "ponyorigins:common/diet/herbivore"
