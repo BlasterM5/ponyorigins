@@ -119,7 +119,17 @@
                 {
                     "inverted": true,
                     "type": "origins:submerged_in",
+                    "fluid": "flowing_water"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:submerged_in",
                     "fluid": "lava"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:submerged_in",
+                    "fluid": "flowing_lava"
                 },
                 {
                     "type": "origins:air",
@@ -518,6 +528,12 @@
                                                     "compare_to": 0
                                                 },
                                                 {
+                                                    "type": "origins:fluid_height",
+                                                    "fluid": "flowing_water",
+                                                    "comparison": ">",
+                                                    "compare_to": 0
+                                                },
+                                                {
                                                     "type": "origins:in_rain"
                                                 },
                                                 {
@@ -541,6 +557,12 @@
                                                         {
                                                             "type": "origins:fluid_height",
                                                             "fluid": "water",
+                                                            "comparison": ">",
+                                                            "compare_to": 0
+                                                        },
+                                                        {
+                                                            "type": "origins:fluid_height",
+                                                            "fluid": "flowing_water",
                                                             "comparison": ">",
                                                             "compare_to": 0
                                                         },

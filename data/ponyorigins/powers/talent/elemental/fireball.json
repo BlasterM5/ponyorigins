@@ -59,9 +59,19 @@
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "inverted": true,
-                        "type": "origins:submerged_in",
-                        "fluid": "water"
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "inverted": true,
+                                "type": "origins:submerged_in",
+                                "fluid": "water"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:submerged_in",
+                                "fluid": "flowing_water"
+                            }
+                        ]
                     },
                     "if_action": {
                         "type": "origins:if_else",
@@ -380,9 +390,19 @@
                                     "else_action": {
                                         "type": "origins:if_else",
                                         "condition": {
-                                            "inverted": true,
-                                            "type": "origins:submerged_in",
-                                            "fluid": "water"
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:submerged_in",
+                                                    "fluid": "water"
+                                                },
+                                                {
+                                                    "inverted": true,
+                                                    "type": "origins:submerged_in",
+                                                    "fluid": "flowing_water"
+                                                }
+                                            ]
                                         },
                                         "if_action": {
                                             "type": "origins:execute_command",

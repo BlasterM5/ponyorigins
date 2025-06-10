@@ -302,6 +302,12 @@
                     "fluid": "water",
                     "comparison": "<",
                     "compare_to": 0.3
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "flowing_water",
+                    "comparison": "<",
+                    "compare_to": 0.3
                 }
             ]
         },
@@ -406,6 +412,10 @@
                 {
                     "type": "origins:submerged_in",
                     "fluid": "water"
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "flowing_water"
                 }
             ]
         },

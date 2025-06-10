@@ -129,7 +129,19 @@
                 },
                 {
                     "type": "origins:fluid_height",
+                    "fluid": "flowing_water",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fluid_height",
                     "fluid": "lava",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "flowing_lava",
                     "comparison": "==",
                     "compare_to": 0
                 },

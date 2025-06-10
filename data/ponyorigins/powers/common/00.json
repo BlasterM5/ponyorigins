@@ -204,57 +204,17 @@
                                         "type": "origins:and",
                                         "actions": [
                                             {
-                                                "type": "origins:modify_stat",
-                                                "stat": {
-                                                    "type": "custom",
-                                                    "id": "walk_one_cm"
-                                                },
-                                                "modifier": {
-                                                    "operation": "set_base",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:modify_stat",
-                                                "stat": {
-                                                    "type": "custom",
-                                                    "id": "crouch_one_cm"
-                                                },
-                                                "modifier": {
-                                                    "operation": "set_base",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:modify_stat",
-                                                "stat": {
-                                                    "type": "custom",
-                                                    "id": "sprint_one_cm"
-                                                },
-                                                "modifier": {
-                                                    "operation": "set_base",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:modify_stat",
-                                                "stat": {
-                                                    "type": "custom",
-                                                    "id": "traded_with_villager"
-                                                },
-                                                "modifier": {
-                                                    "operation": "set_base",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
                                                 "type": "origins:execute_command",
-                                                "command": "execute function ponyorigins:advancement/setup_ep"
+                                                "command": "function ponyorigins:advancement/setup_ep"
                                             },
                                             {
-                                                "type": "origins:grant_power",
-                                                "power": "ponyorigins:advancement/earth_pony",
-                                                "source": "ponyorigins:common/00"
+                                                "type": "origins:delay",
+                                                "action": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "ponyorigins:advancement/earth_pony",
+                                                    "source": "ponyorigins:common/00"
+                                                },
+                                                "ticks": 1
                                             }
                                         ]
                                     }
@@ -281,12 +241,16 @@
                                         "actions": [
                                             {
                                                 "type": "origins:execute_command",
-                                                "command": "execute function ponyorigins:advancement/setup_up"
+                                                "command": "function ponyorigins:advancement/setup_up"
                                             },
                                             {
-                                                "type": "origins:grant_power",
-                                                "power": "ponyorigins:advancement/unicorn",
-                                                "source": "ponyorigins:common/00"
+                                                "type": "origins:delay",
+                                                "action": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "ponyorigins:advancement/unicorn",
+                                                    "source": "ponyorigins:common/00"
+                                                },
+                                                "ticks": 1
                                             }
                                         ]
                                     }
@@ -312,24 +276,17 @@
                                         "type": "origins:and",
                                         "actions": [
                                             {
-                                                "type": "origins:modify_stat",
-                                                "stat": {
-                                                    "type": "custom",
-                                                    "id": "fly_one_cm"
-                                                },
-                                                "modifier": {
-                                                    "operation": "set_base",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
                                                 "type": "origins:execute_command",
-                                                "command": "execute function ponyorigins:advancement/setup_pp"
+                                                "command": "function ponyorigins:advancement/setup_pp"
                                             },
                                             {
-                                                "type": "origins:grant_power",
-                                                "power": "ponyorigins:advancement/pegasus",
-                                                "source": "ponyorigins:common/00"
+                                                "type": "origins:delay",
+                                                "action": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "ponyorigins:advancement/pegasus",
+                                                    "source": "ponyorigins:common/00"
+                                                },
+                                                "ticks": 1
                                             }
                                         ]
                                     }
@@ -356,16 +313,16 @@
                                         "power": "ponyorigins:advancement/alicorn",
                                         "source": "ponyorigins:common/00"
                                     }
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_cd",
-                                    "change": 60,
-                                    "operation": "set"
                                 }
                             ]
                         },
                         "ticks": 1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
+                        "change": 0,
+                        "operation": "set"
                     }
                 ]
             },
@@ -907,29 +864,6 @@
                 "item": "origins:orb_of_origin"
             }
         }
-    },
-    "orb_used": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cd",
-            "comparison": "==",
-            "compare_to": 60
-        },
-        "type": "origins:action_on_item_use",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_cd",
-            "change": 0,
-            "operation": "set"
-        },
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "origins:orb_of_origin"
-            }
-        },
-        "trigger": "finish",
-        "priority": 0
     },
     "harmonic_resonator": {
         "type": "origins:modify_crafting",

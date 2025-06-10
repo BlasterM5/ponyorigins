@@ -4703,23 +4703,5 @@
         "min": 0,
         "max": 4,
         "start_value": 0
-    },
-    "water_run_lightweight": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:sprinting"
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_weight",
-                    "comparison": "<",
-                    "compare_to": 25
-                }
-            ]
-        },
-        "type": "origins:walk_on_fluid",
-        "fluid": "water"
     }
 }

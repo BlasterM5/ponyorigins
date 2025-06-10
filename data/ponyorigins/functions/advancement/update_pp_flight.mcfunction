@@ -1,3 +1,5 @@
+scoreboard players operation @s po.ppflight = @s po.ppflight_live
+scoreboard players operation @s po.ppflight -= @s po.ppflight_start
 resource operation @s ponyorigins:advancement/pegasus_flight >< @s po.test1
 resource operation @s ponyorigins:advancement/pegasus_flight = @s po.test1
 execute if score @s po.test1 < @s po.ppflight run resource change @s ponyorigins:advancement/pegasus_flight_vis 5
