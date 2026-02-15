@@ -1,0 +1,41 @@
+{
+    "name": "Whale Tail",
+    "description": "A large, muscular tail ending in a large horizontal fin. Greatly improves swimming speed when sprinting. Also improves vertical flight speed when sprinting.",
+    "type": "origins:multiple",
+    "swim_speed_boost": {
+        "condition": {
+            "type": "origins:sprinting"
+        },
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.5
+        }
+    },
+    "flight_vertical_boost": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:sprinting"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.1
+        },
+        "axes": [
+            "z"
+        ]
+    }
+}

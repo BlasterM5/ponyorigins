@@ -1,0 +1,23 @@
+{
+    "name": "Webbed Forelegs",
+    "description": "Folds of skin connecting the digits, slightly improving swim speed at the cost of a little sprinting speed.",
+    "type": "origins:multiple",
+    "swim_speed_modifier": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.05
+        }
+    },
+    "sprint_speed_modifier": {
+        "condition": {
+            "type": "origins:sprinting"
+        },
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.1
+        }
+    }
+}

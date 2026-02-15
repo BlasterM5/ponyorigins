@@ -1,39 +1,7 @@
 {
     "values": [
         {
-            "id": "ad_astra:oil",
-            "required": false
-        },
-        {
-            "id": "ad_astra:fuel",
-            "required": false
-        },
-        {
-            "id": "createaddition:seed_oil",
-            "required": false
-        },
-        {
-            "id": "techreborn:oil",
-            "required": false
-        },
-        {
-            "id": "oretastic:oil_fluid_block",
-            "required": false
-        },
-        {
-            "id": "oretastic:oil_still",
-            "required": false
-        },
-        {
-            "id": "puddingmod:pudding",
-            "required": false
-        },
-        {
-            "id": "gemperience:liquid_tar_block",
-            "required": false
-        },
-        {
-            "id": "gemperience:liquid_tar",
+            "id": "#c:oil",
             "required": false
         },
         {
@@ -41,19 +9,43 @@
             "required": false
         },
         {
-            "id": "bakingdelight:vegetable_oil_fluid_block",
+            "id": "#bakingdelight:cream",
             "required": false
         },
         {
-            "id": "bakingdelight:vegetable_oil",
+            "id": "#bakingdelight:gas",
             "required": false
         },
         {
-            "id": "bakingdelight:cream_fluid_block",
+            "id": "#puddingmod:pudding",
             "required": false
         },
         {
-            "id": "bakingdelight:cream",
+            "id": "createaddition:seed_oil",
+            "required": false
+        },
+        {
+            "id": "gemperience:liquid_tar",
+            "required": false
+        },
+        {
+            "id": "gemperience:flowing_liquid_tar",
+            "required": false
+        },
+        {
+            "id": "oretastic:oil_still",
+            "required": false
+        },
+        {
+            "id": "oretastic:oil_flowing",
+            "required": false
+        },
+        {
+            "id": "techreborn:oil",
+            "required": false
+        },
+        {
+            "id": "techreborn:flowing_oil",
             "required": false
         }
     ]

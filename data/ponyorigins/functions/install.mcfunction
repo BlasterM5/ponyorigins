@@ -50,13 +50,13 @@ scoreboard objectives add po.aliorb dummy
 scoreboard players set $installed po.aliorb 1
 scoreboard objectives add po.chlove dummy
 scoreboard players set $installed po.chlove 1
+scoreboard objectives add po.chtaint dummy
+scoreboard players set $installed po.chtaint 1
 scoreboard objectives add po.test1 dummy
 scoreboard players set $installed po.test1 1
 scoreboard objectives add po.test2 dummy
 scoreboard players set $installed po.test2 1
 scoreboard objectives add po.globalflags dummy
 scoreboard players set $installed po.globalflags 1
-scoreboard objectives add po.chlove dummy
-scoreboard players set $installed po.love 1
-scoreboard objectives add po.chtaint dummy
-scoreboard players set $installed po.chtaint 1
+scoreboard objectives add po.rcd dummy
+scoreboard players set $installed po.rcd 1

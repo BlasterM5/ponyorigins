@@ -8,6 +8,48 @@
             "type": "origins:and",
             "actions": [
                 {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                    "change": 4,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                    "change": 4,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                    "change": 32,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                    "change": 2,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                    "change": 20,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn_ap",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
                     "type": "origins:if_else_list",
                     "actions": [
                         {
@@ -16,10 +58,45 @@
                                 "power": "ponyorigins:common/limbs/horn/ram"
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 1,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 1,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 6,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 1,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 4,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 1,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -28,10 +105,45 @@
                                 "power": "ponyorigins:common/limbs/horn/rhino"
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 2,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 10,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 8,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 3,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 5,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -40,10 +152,45 @@
                                 "power": "ponyorigins:common/limbs/horn/antlers"
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 3,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 3,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 10,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 8,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 3,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 5,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -52,10 +199,45 @@
                                 "power": "ponyorigins:common/limbs/horn/unicorn_swept"
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 4,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 4,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 6,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 4,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 16,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 10,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -73,10 +255,45 @@
                                 ]
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 5,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 5,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 10,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 4,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 16,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 10,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -94,10 +311,51 @@
                                 ]
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 6,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 6,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_ap",
+                                        "change": 1,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 10,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 4,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 16,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 10,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -106,25 +364,63 @@
                                 "power": "ponyorigins:common/limbs/horn/alicorn"
                             },
                             "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 7,
-                                "operation": "set"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:constant",
-                                "value": true
-                            },
-                            "action": {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:talent/stamina/charge_horn",
-                                "change": 0,
-                                "operation": "set"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn",
+                                        "change": 7,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_ap",
+                                        "change": 1,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_damage",
+                                        "change": 20,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_recoil",
+                                        "change": 4,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_block_recoil",
+                                        "change": 16,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_horn_knockback",
+                                        "change": 2,
+                                        "operation": "set"
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier",
+                                        "change": 10,
+                                        "operation": "set"
+                                    }
+                                ]
                             }
                         }
                     ]
+                },
+                {
+                    "type": "origins-math:variable_change_resource",
+                    "resource": "ponyorigins:talent/stamina/charge_horn_cooldown",
+                    "expression": "effect*2",
+                    "variables": {
+                        "effect": "ponyorigins:talent/stamina/charge_recoil_effect_multiplier"
+                    },
+                    "operation": "set"
                 },
                 {
                     "type": "origins:revoke_power",

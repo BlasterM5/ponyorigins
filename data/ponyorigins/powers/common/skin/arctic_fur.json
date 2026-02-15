@@ -1,6 +1,6 @@
 {
     "name": "Arctic Fur",
-    "description": "A body covered in an extra thick layer of fur, which grants immunity from the cold, at the cost of extra endurance loss in temperate and hotter climates.",
+    "description": "A body covered in an extra thick layer of fur, which grants immunity from the cold, at the cost of considerable endurance loss in temperate and hotter climates.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -9,11 +9,27 @@
         },
         {
             "type": "origins:tooltip",
-            "text": "Exhaustion +5 Percent in the cold, increasing to +30 percent in the heat",
+            "text": "Exhaustion increases proportionally above freezing temperatures",
             "sprite": "textures/item/leather_boots.png"
         }
     ],
     "type": "origins:multiple",
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.1,
+            "modifier": {
+                "operation": "origins-math:standard_multiply_base",
+                "value": 0,
+                "resource": "ponyorigins:common/00_temp_r",
+                "modifier": {
+                    "operation": "origins-math:standard_divide_base",
+                    "value": 100
+                }
+            }
+        }
+    },
     "cold_damage_immunity": {
         "condition": {
             "type": "origins:resource",
@@ -29,105 +45,6 @@
         "modifier": {
             "operation": "set_total",
             "value": 0
-        }
-    },
-    "exhaustion_base": {
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.1
-        }
-    },
-    "exhaustion_cold": {
-        "condition": {
-            "type": "origins:biome",
-            "condition": {
-                "type": "origins:temperature",
-                "comparison": "<=",
-                "compare_to": 0
-            }
-        },
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.05
-        }
-    },
-    "exhaustion_hot": {
-        "condition": {
-            "type": "origins:biome",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:temperature",
-                        "comparison": ">=",
-                        "compare_to": 0.2
-                    },
-                    {
-                        "type": "origins:temperature",
-                        "comparison": "<=",
-                        "compare_to": 1
-                    }
-                ]
-            }
-        },
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.05
-        }
-    },
-    "exhaustion_hotter": {
-        "condition": {
-            "type": "origins:biome",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:temperature",
-                        "comparison": ">",
-                        "compare_to": 1
-                    },
-                    {
-                        "type": "origins:temperature",
-                        "comparison": "<",
-                        "compare_to": 2
-                    }
-                ]
-            }
-        },
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.1
-        }
-    },
-    "exhaustion_hottest": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:biome",
-                    "condition": {
-                        "type": "origins:temperature",
-                        "comparison": ">=",
-                        "compare_to": 2
-                    }
-                },
-                {
-                    "type": "origins:biome",
-                    "condition": {
-                        "type": "origins:category",
-                        "category": "nether"
-                    }
-                }
-            ]
-        },
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.2
         }
     },
     "cold_damage_burned_debuff": {

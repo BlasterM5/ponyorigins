@@ -82,7 +82,7 @@
                 },
                 {
                     "type": "origins:name",
-                    "name": "flyIntoWall"
+                    "name": "fly_into_wall"
                 }
             ]
         },
@@ -104,7 +104,7 @@
             "conditions": [
                 {
                     "type": "origins:name",
-                    "name": "flyIntoWall"
+                    "name": "fly_into_wall"
                 },
                 {
                     "type": "origins:in_tag",
@@ -241,28 +241,17 @@
                     "compare_to": 1
                 },
                 {
-                    "type": "origins:fluid_height",
-                    "fluid": "water",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "flowing_water",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "lava",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "flowing_lava",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "type": "origins:block_collision",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "ponyorigins:all"
+                        }
+                    },
+                    "offset_x": 0,
+                    "offset_y": 0.25,
+                    "offset_z": 0
                 },
                 {
                     "type": "origins:or",

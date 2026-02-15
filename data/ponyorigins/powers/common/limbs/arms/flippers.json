@@ -1,0 +1,9 @@
+{
+    "name": "Arm Flippers",
+    "description": "Moderately stiff, weighty fins that improve swimming speed. Ponder how you are able to hold items.",
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 0.25
+    }
+}

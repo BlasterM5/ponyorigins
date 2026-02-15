@@ -161,29 +161,153 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:fire_projectile",
-                    "entity_type": "armor_stand",
+                    "type": "sync:custom_projectile",
+                    "entity_id": "webshot",
+                    "texture_location": "textures/block/cobweb.png",
                     "count": 1,
                     "speed": 2,
                     "divergence": 1,
-                    "tag": "{Invisible:1b,NoBasePlate:1b,Small:1b,DisabledSlots:4144959,CustomName:'[{\"text\":\"Web Shot\"}]',Silent:1b,ArmorDropChances:[f,f,f],ArmorItems:[{},{},{id:cobweb,Count:1}]}",
-                    "projectile_action": {
-                        "type": "origins:grant_power",
-                        "power": "ponyorigins:projectile/cobweb",
-                        "source": "ponyorigins:changeling/web_shot"
-                    }
-                },
-                {
-                    "type": "origins:play_sound",
                     "sound": "entity.llama.spit",
-                    "volume": 1,
-                    "pitch": 1
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_silk",
-                    "change": -25,
-                    "operation": "add"
+                    "bientity_action_after_firing": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_silk",
+                            "change": -25,
+                            "operation": "add"
+                        }
+                    },
+                    "block_action_on_hit": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:block",
+                            "block": "air"
+                        },
+                        "if_action": {
+                            "type": "origins:set_block",
+                            "block": "cobweb"
+                        },
+                        "else_action": {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:in_tag",
+                                        "tag": "doors"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:in_tag",
+                                        "tag": "trapdoors"
+                                    }
+                                ]
+                            },
+                            "if_action": {
+                                "type": "origins:add_block",
+                                "block": "cobweb"
+                            }
+                        }
+                    },
+                    "block_action_cancels_miss_action": false,
+                    "bientity_action_on_hit": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "ponyorigins:common/hazard_webbed",
+                                            "change": 100,
+                                            "operation": "add"
+                                        },
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:and",
+                                                "conditions": [
+                                                    {
+                                                        "type": "origins:block_in_radius",
+                                                        "block_condition": {
+                                                            "type": "origins:movement_blocking"
+                                                        },
+                                                        "radius": 1,
+                                                        "shape": "sphere",
+                                                        "comparison": ">",
+                                                        "compare_to": 0
+                                                    },
+                                                    {
+                                                        "type": "origins:block_in_radius",
+                                                        "block_condition": {
+                                                            "type": "origins:or",
+                                                            "conditions": [
+                                                                {
+                                                                    "type": "origins:in_tag",
+                                                                    "tag": "doors"
+                                                                },
+                                                                {
+                                                                    "type": "origins:in_tag",
+                                                                    "tag": "trapdoors"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "radius": 1,
+                                                        "shape": "sphere",
+                                                        "comparison": "==",
+                                                        "compare_to": 0
+                                                    }
+                                                ]
+                                            },
+                                            "if_action": {
+                                                "type": "origins:block_action_at",
+                                                "block_action": {
+                                                    "type": "origins:if_else",
+                                                    "condition": {
+                                                        "type": "origins:block",
+                                                        "block": "air"
+                                                    },
+                                                    "if_action": {
+                                                        "type": "origins:set_block",
+                                                        "block": "cobweb"
+                                                    },
+                                                    "else_action": {
+                                                        "type": "origins:add_block",
+                                                        "block": "cobweb"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:apply_effect",
+                                            "effect": {
+                                                "effect": "slowness",
+                                                "duration": 200,
+                                                "amplifier": 4,
+                                                "is_ambient": true,
+                                                "show_particles": false,
+                                                "show_icon": true
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle item cobweb ~ ~ ~ 0.5 0.5 0.5 0.1 32 force"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "tick_bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "particle item cobweb ~ ~ ~ 0.1 0.1 0.1 0.1 4 force"
+                        }
+                    }
                 }
             ]
         },

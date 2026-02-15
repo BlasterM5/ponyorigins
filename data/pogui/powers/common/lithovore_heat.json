@@ -1,0 +1,101 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "level_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 7,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/diet/lithovore_supercharge",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/diet/lithovore_obsidian_slag",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "bar_sync": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins-math:set_resource",
+                    "resource": "*:*_level_bar",
+                    "value": "ponyorigins:common/diet/lithovore_level"
+                },
+                {
+                    "type": "origins-math:set_resource",
+                    "resource": "*:*_supercharge_bar",
+                    "value": "ponyorigins:common/diet/lithovore_level"
+                },
+                {
+                    "type": "origins-math:set_resource",
+                    "resource": "*:*_slag_bar",
+                    "value": "ponyorigins:common/diet/lithovore_obsidian_slag"
+                }
+            ]
+        }
+    },
+    "supercharge_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 1000,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 15,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/diet/lithovore_supercharge",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "ponyorigins:common/diet/lithovore_obsidian_slag",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "slag_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/diet/lithovore_obsidian_slag",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    }
+}

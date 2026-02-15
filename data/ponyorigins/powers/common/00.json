@@ -323,6 +323,12 @@
                         "resource": "*:*_cd",
                         "change": 0,
                         "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_nutrition",
+                        "change": 20,
+                        "operation": "set"
                     }
                 ]
             },
@@ -749,10 +755,21 @@
                             "power": "ponyorigins:common/calc/flight",
                             "source": "ponyorigins:common/00"
                         }
+                    },
+                    {
+                        "type": "origins:grant_power",
+                        "power": "pogui:common/calc/ui",
+                        "source": "ponyorigins:common/00"
                     }
                 ]
             },
             "ticks": 2
+        },
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:*_passenger_weight",
+            "change": 0,
+            "operation": "set"
         }
     },
     "key_primary": {
@@ -1016,6 +1033,43 @@
         "type": "origins:resource",
         "min": 0,
         "max": 99,
+        "start_value": 24
+    },
+    "temp": {
+        "type": "origins-math:current_biome_linked_resource",
+        "property": "TEMPERATURE"
+    },
+    "y_level": {
+        "type": "origins-math:player_linked_resource",
+        "property": "Y"
+    },
+    "temp_r": {
+        "type": "origins-math:math_resource",
+        "expression": "(temp-(abs(y-63)*0.01)+heat)*100",
+        "variables": {
+            "temp": "*:*_temp",
+            "heat": "*:*_heat_source",
+            "y": "*:*_y_level"
+        }
+    },
+    "passenger_weight": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 999999,
         "start_value": 0
+    },
+    "combined_weight": {
+        "type": "origins-math:math_resource",
+        "expression": "w+p",
+        "variables": {
+            "w": "*:*_weight",
+            "p": "*:*_passsenger_weight"
+        }
+    },
+    "nutrition": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "start_value": 20
     }
 }

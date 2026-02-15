@@ -1,6 +1,6 @@
 {
     "name": "Barrier",
-    "description": "Press to activate and become invulnerable to damage. Barrier will deplete energy reserves when hit.",
+    "description": "Press to become invulnerable to damage. Barrier will deplete proportionaly to the damage blocked.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -15,6 +15,34 @@
         }
     ],
     "type": "origins:multiple",
+    "damage_amount": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins-math:damage_taken_linked_resource",
+        "duration": 1,
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "is_fall"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "is_drowning"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "ponyorigins:horn_recoil"
+                }
+            ]
+        }
+    },
     "shield": {
         "condition": {
             "type": "origins:and",
@@ -23,7 +51,7 @@
                     "type": "origins:resource",
                     "resource": "ponyorigins:common/energy_level",
                     "comparison": ">",
-                    "compare_to": 10
+                    "compare_to": 20
                 },
                 {
                     "type": "origins:resource",
@@ -51,6 +79,11 @@
                     "inverted": true,
                     "type": "origins:in_tag",
                     "tag": "is_fall"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:name",
+                    "name": "ponyorigins:horn_recoil"
                 }
             ]
         },
@@ -58,164 +91,93 @@
             "operation": "set_total",
             "value": 0
         },
-        "self_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_hit_cd",
-                        "comparison": "==",
-                        "compare_to": 1
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/energy_level",
-                                "change": -10,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_hit_cd",
-                                "change": 0,
-                                "operation": "set"
-                            },
-                            {
-                                "type": "origins:play_sound",
-                                "sound": "block.amethyst_block.break",
-                                "volume": 1,
-                                "pitch": 1
-                            },
-                            {
-                                "type": "origins:spawn_particles",
-                                "particle": "firework",
-                                "count": 8,
-                                "speed": 1,
-                                "force": true,
-                                "spread": {
-                                    "x": 0.1,
-                                    "y": 0.1,
-                                    "z": 0.1
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "comparison": "<=",
-                        "compare_to": 10
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:play_sound",
-                                "sound": "block.glass.break",
-                                "volume": 1,
-                                "pitch": 1
-                            },
-                            {
-                                "type": "origins:spawn_particles",
-                                "particle": "firework",
-                                "count": 128,
-                                "speed": 1,
-                                "force": true,
-                                "spread": {
-                                    "x": 0.1,
-                                    "y": 0.1,
-                                    "z": 0.1
-                                }
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_active",
-                                "change": 0,
-                                "operation": "set"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    "trigger": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 10
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/00_key_secondary_active",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "rising_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_active",
-                "comparison": "==",
-                "compare_to": 1
-            },
-            "if_action": {
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
                 "type": "origins:and",
                 "actions": [
                     {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_active",
-                        "change": 0,
-                        "operation": "set"
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_hit_cd",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins-math:variable_change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "expression": "-(damage*2)",
+                                    "variables": {
+                                        "damage": "*:*_damage_amount"
+                                    },
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_hit_cd",
+                                    "change": 0,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.amethyst_block.break",
+                                    "volume": 1,
+                                    "pitch": 1
+                                },
+                                {
+                                    "type": "origins-math:variable_execute_command",
+                                    "command": "particle firework ~ ~ ~ 0.1 0.1 0.1 1 $dmg force",
+                                    "variables": {
+                                        "dmg": "*:*_damage_amount"
+                                    }
+                                }
+                            ]
+                        }
                     },
                     {
-                        "type": "origins:play_sound",
-                        "sound": "block.glass.break",
-                        "volume": 1,
-                        "pitch": 1
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "comparison": "<=",
+                            "compare_to": 20
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.glass.break",
+                                    "volume": 1,
+                                    "pitch": 1
+                                },
+                                {
+                                    "type": "origins:spawn_particles",
+                                    "particle": "firework",
+                                    "count": 100,
+                                    "speed": 1,
+                                    "force": true,
+                                    "spread": {
+                                        "x": 0.1,
+                                        "y": 0.1,
+                                        "z": 0.1
+                                    },
+                                    "offset_y": 0.5
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_active",
+                                    "change": 0,
+                                    "operation": "set"
+                                }
+                            ]
+                        }
                     }
                 ]
-            },
-            "else_action": {
-                "type": "origins:if_else",
-                "condition": {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">=",
-                    "compare_to": 20
-                },
-                "if_action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:change_resource",
-                            "resource": "*:*_active",
-                            "change": 1,
-                            "operation": "set"
-                        },
-                        {
-                            "type": "origins:play_sound",
-                            "sound": "entity.illusioner.mirror_move",
-                            "volume": 1,
-                            "pitch": 1
-                        }
-                    ]
-                }
             }
         }
     },
@@ -246,7 +208,7 @@
                                 "type": "origins:resource",
                                 "resource": "ponyorigins:common/energy_level",
                                 "comparison": "<=",
-                                "compare_to": 10
+                                "compare_to": 20
                             },
                             {
                                 "type": "origins:resource",
@@ -260,16 +222,16 @@
                         "type": "origins:and",
                         "actions": [
                             {
-                                "type": "origins:play_sound",
-                                "sound": "block.glass.break",
-                                "volume": 1,
-                                "pitch": 1
-                            },
-                            {
                                 "type": "origins:change_resource",
                                 "resource": "*:*_active",
                                 "change": 0,
                                 "operation": "set"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "block.glass.break",
+                                "volume": 1,
+                                "pitch": 1
                             }
                         ]
                     }
@@ -283,7 +245,7 @@
                     "if_action": {
                         "type": "origins:change_resource",
                         "resource": "ponyorigins:common/energy_level",
-                        "change": -2,
+                        "change": -4,
                         "operation": "add"
                     }
                 },
@@ -300,6 +262,12 @@
                 }
             ]
         }
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
     },
     "speed_limited": {
         "condition": {
@@ -369,12 +337,87 @@
         "type": "apugli:energy_swirl",
         "texture_location": "textures/entity/creeper/creeper_armor.png",
         "size": 1,
-        "speed": 0.001
+        "speed": 0.001,
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "apugli"
+                ]
+            }
+        ]
     },
-    "active": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
+    "trigger": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_key_secondary_active",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_active",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_active",
+                        "change": 0,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "block.glass.break",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">=",
+                    "compare_to": 40
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_active",
+                            "change": 1,
+                            "operation": "set"
+                        },
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "entity.illusioner.mirror_move",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    ]
+                }
+            }
+        }
     }
 }

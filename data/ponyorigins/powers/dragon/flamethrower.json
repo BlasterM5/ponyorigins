@@ -36,11 +36,6 @@
                     "fluid": "lava"
                 },
                 {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "flowing_lava"
-                },
-                {
                     "type": "origins:resource",
                     "resource": "*:*_cd",
                     "comparison": "==",
@@ -76,19 +71,8 @@
             "if_action": {
                 "type": "origins:if_else",
                 "condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:submerged_in",
-                            "fluid": "water"
-                        },
-                        {
-                            "inverted": true,
-                            "type": "origins:submerged_in",
-                            "fluid": "flowing_water"
-                        }
-                    ]
+                    "type": "origins:submerged_in",
+                    "fluid": "ponyorigins:all"
                 },
                 "if_action": {
                     "type": "origins:raycast",
@@ -105,7 +89,7 @@
                                 {
                                     "type": "origins:damage",
                                     "amount": 4,
-                                    "damage_type": "on_fire"
+                                    "damage_type": "in_fire"
                                 },
                                 {
                                     "type": "origins:set_on_fire",
@@ -222,19 +206,9 @@
                 "if_action": {
                     "type": "origins:if_else",
                     "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "inverted": true,
-                                "type": "origins:submerged_in",
-                                "fluid": "water"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:submerged_in",
-                                "fluid": "flowing_water"
-                            }
-                        ]
+                        "inverted": true,
+                        "type": "origins:submerged_in",
+                        "fluid": "ponyorigins:all"
                     },
                     "if_action": {
                         "type": "origins:and",

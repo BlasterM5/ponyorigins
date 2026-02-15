@@ -29,19 +29,11 @@
         }
     ],
     "type": "origins:multiple",
-    "slower_overall": {
-        "type": "origins:modify_attribute",
-        "attribute": "generic.movement_speed",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.1
-        }
-    },
     "faster_swim": {
         "type": "origins:modify_swim_speed",
         "modifier": {
             "operation": "multiply_base",
-            "value": 1.1
+            "value": 0.1
         }
     },
     "faster_exhaustion": {
@@ -67,6 +59,14 @@
         "feet": {
             "type": "origins:constant",
             "value": true
+        }
+    },
+    "movement_speed": {
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.1
         }
     }
 }

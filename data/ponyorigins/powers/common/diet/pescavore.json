@@ -69,7 +69,7 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
+            "resource": "ponyorigins:common/00_nutrition",
             "change": 1,
             "operation": "add"
         },
@@ -118,7 +118,7 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
+            "resource": "ponyorigins:common/00_nutrition",
             "change": 1,
             "operation": "add"
         }
@@ -368,64 +368,12 @@
         "action_result": "success"
     },
     "edibles": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "tag": "ponyorigins:seafood"
-                                }
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:food"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "offhand",
-                    "item_condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "tag": "ponyorigins:seafood"
-                                }
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:food"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "type": "apugli:edible_item",
+        "type": "sync:edible_item",
         "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "inverted": true,
-                    "type": "origins:food"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "ponyorigins:seafood"
-                    }
-                }
-            ]
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ponyorigins:seafood"
+            }
         },
         "food_component": {
             "hunger": 1,
@@ -434,7 +382,8 @@
             "always_edible": false,
             "snack": false
         },
-        "use_action": "eat"
+        "consume_animation": "EAT",
+        "priority": 0
     },
     "land_meat_risk": {
         "type": "origins:modify_food",
@@ -740,7 +689,7 @@
             "actions": [
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_nutrition",
+                    "resource": "ponyorigins:common/00_nutrition",
                     "change": -1,
                     "operation": "add"
                 },
@@ -750,7 +699,7 @@
                         {
                             "condition": {
                                 "type": "origins:resource",
-                                "resource": "*:*_nutrition",
+                                "resource": "ponyorigins:common/00_nutrition",
                                 "comparison": "==",
                                 "compare_to": 0
                             },
@@ -904,9 +853,9 @@
                                     },
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_nutrition",
+                                        "resource": "ponyorigins:common/00_nutrition",
                                         "comparison": "<",
-                                        "compare_to": 5
+                                        "compare_to": 3
                                     }
                                 ]
                             },
@@ -985,11 +934,5 @@
                 }
             ]
         }
-    },
-    "nutrition": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 10,
-        "start_value": 10
     }
 }

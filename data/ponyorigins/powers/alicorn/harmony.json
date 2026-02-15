@@ -1,6 +1,6 @@
 {
     "name": "Friend of All",
-    "description": "Press to tame any tameable creature.\n\nAll mobs will ignore you.\n\nYOU CANNOT HARM ANOTHER LIVING CREATURE",
+    "description": "Press to tame any tameable creature.\n\nAll mobs will ignore you.\n\nYOU CANNOT HARM ANYCREATURE",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -80,7 +80,8 @@
                                             "x": 1,
                                             "y": 1,
                                             "z": 1
-                                        }
+                                        },
+                                        "offset_y": 0.5
                                     }
                                 }
                             ]
@@ -129,7 +130,8 @@
                                             "x": 1,
                                             "y": 1,
                                             "z": 1
-                                        }
+                                        },
+                                        "offset_y": 0.5
                                     }
                                 }
                             ]
@@ -186,7 +188,8 @@
                                             "x": 1,
                                             "y": 1,
                                             "z": 1
-                                        }
+                                        },
+                                        "offset_y": 0.5
                                     }
                                 }
                             ]
@@ -260,7 +263,15 @@
         "type": "apugli:energy_swirl",
         "texture_location": "textures/entity/creeper/creeper_armor.png",
         "size": 1,
-        "speed": 0.001
+        "speed": 0.001,
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:any_mod_loaded",
+                "values": [
+                    "apugli"
+                ]
+            }
+        ]
     },
     "defense": {
         "condition": {
@@ -306,7 +317,8 @@
                             "x": 0.1,
                             "y": 0.1,
                             "z": 0.1
-                        }
+                        },
+                        "offset_y": 0.5
                     }
                 ]
             }
@@ -331,7 +343,8 @@
             "type": "origins:advancement",
             "advancement": "ponyorigins:special/rejected"
         },
-        "type": "apugli:mobs_ignore"
+        "type": "sync:mobs_ignore",
+        "provokable": false
     },
     "anti_item_kill_check": {
         "condition": {
@@ -550,7 +563,8 @@
     },
     "entity_nearby_check": {
         "condition": {
-            "type": "apugli:entity_in_radius",
+            "type": "sync:entity_in_radius",
+            "shape": "sphere",
             "radius": 15,
             "comparison": ">",
             "compare_to": 0

@@ -12,49 +12,10 @@
     "level": {
         "type": "origins:resource",
         "min": 0,
-        "max": 100,
-        "start_value": 100,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
-            "bar_index": 19,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_supercharge",
-                "comparison": "==",
-                "compare_to": 0
-            }
-        }
+        "max": 1000,
+        "start_value": 100
     },
     "recharge": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_level",
-                    "comparison": "<",
-                    "compare_to": 100
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_supercharge",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_cd",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:food_level",
-                    "comparison": ">=",
-                    "compare_to": 6
-                }
-            ]
-        },
         "type": "origins:action_over_time",
         "interval": 4,
         "entity_action": {
@@ -63,41 +24,92 @@
                 {
                     "type": "origins:if_else",
                     "condition": {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:alicorn/celestial"
-                    },
-                    "if_action": {
                         "type": "origins:and",
-                        "actions": [
+                        "conditions": [
                             {
-                                "type": "origins:exhaust",
-                                "amount": 0.25
-                            },
-                            {
-                                "type": "origins:change_resource",
+                                "type": "origins:resource",
                                 "resource": "*:*_level",
-                                "change": 1,
-                                "operation": "add"
+                                "comparison": "<",
+                                "compare_to": 100
                             },
                             {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_odometer",
-                                "change": 1,
-                                "operation": "add"
+                                "type": "origins:resource",
+                                "resource": "*:*_cd",
+                                "comparison": "==",
+                                "compare_to": 0
                             },
                             {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_odometer_vis",
-                                "change": 5,
-                                "operation": "set"
+                                "type": "origins:food_level",
+                                "comparison": ">=",
+                                "compare_to": 6
                             }
                         ]
                     },
-                    "else_action": {
+                    "if_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:alicorn/celestial"
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:exhaust",
+                                    "amount": 0.25
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_level",
+                                    "change": 1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_odometer",
+                                    "change": 1,
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_odometer_vis",
+                                    "change": 5,
+                                    "operation": "set"
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_celestial_cd",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_supercharge",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_level",
+                                "comparison": ">",
+                                "compare_to": 100
+                            }
+                        ]
+                    },
+                    "if_action": {
                         "type": "origins:change_resource",
-                        "resource": "*:*_celestial_cd",
-                        "change": 1,
+                        "resource": "*:*_level",
+                        "change": -1,
                         "operation": "add"
                     }
                 }
@@ -140,159 +152,8 @@
     "supercharge": {
         "type": "origins:resource",
         "min": 0,
-        "max": 1000,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/resource_bar.png",
-            "bar_index": 2,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_supercharge",
-                "comparison": ">",
-                "compare_to": 0
-            }
-        }
-    },
-    "sc_recharge": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_supercharge",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_level",
-                        "comparison": "<",
-                        "compare_to": 50
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_supercharge",
-                                "change": -50,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_level",
-                                "change": 50,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_level",
-                        "comparison": "<",
-                        "compare_to": 75
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_supercharge",
-                                "change": -25,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_level",
-                                "change": 25,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_level",
-                        "comparison": "<",
-                        "compare_to": 90
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_supercharge",
-                                "change": -10,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_level",
-                                "change": 10,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_level",
-                        "comparison": "<",
-                        "compare_to": 95
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_supercharge",
-                                "change": -5,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_level",
-                                "change": 5,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_level",
-                        "comparison": "<",
-                        "compare_to": 100
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_supercharge",
-                                "change": -1,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_level",
-                                "change": 1,
-                                "operation": "add"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
+        "max": 1,
+        "start_value": 0
     },
     "sc_activate": {
         "type": "origins:action_on_item_use",
@@ -302,8 +163,8 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "*:*_supercharge",
-                    "change": 1000,
-                    "operation": "add"
+                    "change": 1,
+                    "operation": "set"
                 },
                 {
                     "type": "origins:play_sound",
@@ -333,7 +194,14 @@
                         "x": 0.1,
                         "y": 0.1,
                         "z": 0.1
-                    }
+                    },
+                    "offset_y": 0.5
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_level",
+                    "change": 1000,
+                    "operation": "set"
                 }
             ]
         },
@@ -350,8 +218,8 @@
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_supercharge",
-            "comparison": ">",
-            "compare_to": 0
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
         "interval": 40,
@@ -360,7 +228,7 @@
             "actions": [
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_supercharge",
+                    "resource": "*:*_level",
                     "change": -1,
                     "operation": "add"
                 },
@@ -390,6 +258,21 @@
                 {
                     "type": "origins:execute_command",
                     "command": "particle electric_spark ~ ~0.5 ~-0.25 0.2 0.2 0.2 1 8 force"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_level",
+                        "comparison": "<",
+                        "compare_to": 100
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_supercharge",
+                        "change": 0,
+                        "operation": "set"
+                    }
                 }
             ]
         },
@@ -417,8 +300,8 @@
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_supercharge",
-            "comparison": ">",
-            "compare_to": 0
+            "comparison": "==",
+            "compare_to": 1
         },
         "type": "origins:action_over_time",
         "interval": 8,
@@ -598,44 +481,49 @@
     "setup": {
         "type": "origins:action_on_callback",
         "entity_action_chosen": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:species/unicorn"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:origin",
+                                "origin": "ponyorigins:species/unicorn"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:advancement",
+                                "advancement": "ponyorigins:unicorn/energy"
+                            }
+                        ]
                     },
-                    {
-                        "inverted": true,
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/energy"
-                    }
-                ]
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_is_unicorn_training",
+                                "change": 1,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_odometer",
+                                "change": 0,
+                                "operation": "set"
+                            }
+                        ]
+                    },
+                    "else_action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_is_unicorn_training",
-                        "change": 1,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_odometer",
                         "change": 0,
                         "operation": "set"
                     }
-                ]
-            },
-            "else_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_is_unicorn_training",
-                "change": 0,
-                "operation": "set"
-            }
+                }
+            ]
         },
         "execute_chosen_when_orb": true,
         "entity_action_respawned": {
@@ -645,19 +533,19 @@
                 "actions": [
                     {
                         "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "change": 100,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_supercharge",
+                        "resource": "*:*_supercharge",
                         "change": 0,
                         "operation": "set"
                     },
                     {
                         "type": "origins:change_resource",
-                        "resource": "ponyorigins:common/energy_cd",
+                        "resource": "*:*_level",
+                        "change": 100,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_cd",
                         "change": 0,
                         "operation": "set"
                     }

@@ -1,0 +1,30 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "supercharge_bar": {
+        "type": "origins:resource",
+        "min": 100,
+        "max": 1000,
+        "start_value": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 2,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "ponyorigins:common/energy_supercharge",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        }
+    },
+    "bar_sync": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins-math:set_resource",
+            "resource": "*:*_supercharge_bar",
+            "value": "ponyorigins:common/energy_level"
+        }
+    }
+}

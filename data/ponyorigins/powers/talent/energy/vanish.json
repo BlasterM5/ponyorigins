@@ -65,12 +65,13 @@
                 }
             ]
         },
-        "type": "apugli:mobs_ignore",
+        "type": "sync:mobs_ignore",
         "mob_condition": {
             "inverted": true,
             "type": "origins:in_tag",
             "tag": "ponyorigins:blind_mobs"
-        }
+        },
+        "provokable": true
     },
     "invisible_energy_cost": {
         "condition": {

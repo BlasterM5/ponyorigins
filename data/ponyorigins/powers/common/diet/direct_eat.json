@@ -343,8 +343,8 @@
             ]
         },
         "block_action": {
-            "type": "apugli:destroy",
-            "drop_block": false
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ air destroy"
         },
         "action_result": "consume"
     }

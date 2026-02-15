@@ -1,0 +1,9 @@
+{
+    "name": "Webbed Arms",
+    "description": "Folds of skin connecting the digits, slightly improving swim speed.",
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 0.05
+    }
+}

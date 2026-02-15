@@ -268,7 +268,8 @@
                                             "entity": true,
                                             "shape_type": "collider",
                                             "fluid_handling": "any",
-                                            "command_along_ray": "particle heart ^ ^-0.25 ^ 0.1 0.1 0.1 0.1 64 force"
+                                            "command_at_hit": "particle heart ^ ^-0.25 ^ 0.1 0.1 0.1 0.1 1000 force",
+                                            "command_along_ray": "particle heart ^ ^-0.25 ^ 0.1 0.1 0.1 0.1 10 force"
                                         },
                                         {
                                             "type": "origins:execute_command",
@@ -297,10 +298,19 @@
                                     "type": "origins:and",
                                     "actions": [
                                         {
-                                            "type": "origins:change_resource",
+                                            "type": "origins-math:variable_change_resource",
                                             "resource": "*:*_love",
-                                            "change": 999,
+                                            "expression": "1000-taint",
+                                            "variables": {
+                                                "taint": "*:*_taint"
+                                            },
                                             "operation": "add"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_taint",
+                                            "change": 0,
+                                            "operation": "set"
                                         },
                                         {
                                             "type": "origins:execute_command",
@@ -403,16 +413,11 @@
                         }
                     },
                     "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:execute_command",
-                                    "command": "advancement grant @s until ponyorigins:changeling/full"
-                                }
-                            }
-                        ]
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "advancement grant @s until ponyorigins:changeling/full"
+                        }
                     }
                 },
                 {

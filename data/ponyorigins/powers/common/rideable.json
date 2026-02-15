@@ -4,7 +4,7 @@
     "badges": [
         {
             "type": "origins:tooltip",
-            "text": "When Ridden: +25 percent Exhaustion",
+            "text": "When Ridden: Increased Exhaustion by passenger weight",
             "sprite": "textures/item/saddle.png"
         }
     ],
@@ -17,7 +17,21 @@
         },
         "type": "origins:action_on_being_used",
         "bientity_action": {
-            "type": "origins:mount"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:invert",
+                    "action": {
+                        "type": "origins-math:copy_resource_value",
+                        "target_resource": "ponyorigins:common/00_combined_weight",
+                        "actor_resource": "ponyorigins:common/00_passenger_weight",
+                        "operation": "set"
+                    }
+                },
+                {
+                    "type": "origins:mount"
+                }
+            ]
         },
         "bientity_condition": {
             "type": "origins:and",
@@ -48,16 +62,19 @@
         "action_result": "success",
         "priority": 0
     },
-    "stamina_cost": {
+    "passenger_check": {
         "condition": {
             "type": "origins:passenger",
-            "comparison": ">",
+            "comparison": "==",
             "compare_to": 0
         },
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.25
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "ponyorigins:common/00_passenger_weight",
+            "change": 0,
+            "operation": "set"
         }
     }
 }

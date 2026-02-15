@@ -2,7 +2,7 @@
     "name": "Magicae Obice",
     "description": "Manifest an impervious barrier of protection.",
     "powers": [
-        "ponyorigins:alicorn/barrier"
+        "ponyorigins:talent/energy/barrier"
     ],
     "icon": {
         "item": "shield"

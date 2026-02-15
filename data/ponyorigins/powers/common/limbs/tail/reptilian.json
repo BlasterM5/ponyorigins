@@ -1,0 +1,12 @@
+{
+    "name": "Reptilian Tail",
+    "description": "Heavy, long tail that improves swimming speed when sprinting.",
+    "condition": {
+        "type": "origins:sprinting"
+    },
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 0.25
+    }
+}

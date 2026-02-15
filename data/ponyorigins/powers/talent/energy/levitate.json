@@ -25,21 +25,77 @@
         "max": 1,
         "start_value": 0
     },
-    "creative": {
+    "flight": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_active",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:common/flight"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/flight"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power_active",
+                                    "power": "ponyorigins:common/flight_active"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "ponyorigins:umbrum/shadow"
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:umbrum/shadow"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:power_active",
+                                    "power": "ponyorigins:umbrum/shadow_active"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         "type": "origins:creative_flight"
     },
     "exhaustion": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_active",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:power_active",
+            "power": "*:*_flight"
         },
         "type": "origins:action_over_time",
         "interval": 6,
@@ -80,10 +136,8 @@
                     "type": "origins:sneaking"
                 },
                 {
-                    "type": "origins:resource",
-                    "resource": "*:*_active",
-                    "comparison": "==",
-                    "compare_to": 1
+                    "type": "origins:power_active",
+                    "power": "*:*_flight"
                 }
             ]
         },
@@ -101,10 +155,8 @@
                     "type": "origins:creative_flying"
                 },
                 {
-                    "type": "origins:resource",
-                    "resource": "*:*_active",
-                    "comparison": "==",
-                    "compare_to": 1
+                    "type": "origins:power_active",
+                    "power": "*:*_flight"
                 }
             ]
         },
@@ -120,62 +172,51 @@
     },
     "toggle": {
         "condition": {
-            "type": "origins:or",
+            "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:and",
+                    "type": "origins:or",
                     "conditions": [
                         {
-                            "inverted": true,
-                            "type": "origins:gamemode",
-                            "gamemode": "creative"
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:talent/energy/levitate",
+                                    "layer": "ponyorigins:primary_talent"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_key_primary_active",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
                         },
                         {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/energy_level",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "type": "origins:origin",
-                            "origin": "ponyorigins:talent/energy/levitate",
-                            "layer": "ponyorigins:primary_talent"
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_key_primary_active",
-                            "comparison": ">",
-                            "compare_to": 0
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:origin",
+                                    "origin": "ponyorigins:talent/energy/levitate",
+                                    "layer": "ponyorigins:primary_talent"
+                                },
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "ponyorigins:common/00_key_secondary_active",
+                                    "comparison": ">",
+                                    "compare_to": 0
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:gamemode",
-                            "gamemode": "creative"
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/energy_level",
-                            "comparison": ">",
-                            "compare_to": 0
-                        },
-                        {
-                            "inverted": true,
-                            "type": "origins:origin",
-                            "origin": "ponyorigins:talent/energy/levitate",
-                            "layer": "ponyorigins:primary_talent"
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_key_secondary_active",
-                            "comparison": ">",
-                            "compare_to": 0
-                        }
-                    ]
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 0
                 }
             ]
         },
@@ -205,7 +246,16 @@
     },
     "spark": {
         "condition": {
-            "type": "origins:creative_flying"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_flight"
+                },
+                {
+                    "type": "origins:creative_flying"
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 1,

@@ -17,6 +17,7 @@ scoreboard objectives remove po.ppflight_live
 scoreboard objectives remove po.ppfight
 scoreboard objectives remove po.chlove
 scoreboard objectives remove po.chtaint
+scoreboard objectives remove po.love
 scoreboard objectives remove po.eporb
 scoreboard objectives remove po.uporb
 scoreboard objectives remove po.pporb
@@ -28,4 +29,5 @@ scoreboard objectives remove po.test1
 scoreboard objectives remove po.test2
 scoreboard objectives remove po.globalflags
 scoreboard objectives remove po.scoreboard
+scoreboard objectives remove po.rcd
 say Pony Origins Scoreboards Uninstalled!

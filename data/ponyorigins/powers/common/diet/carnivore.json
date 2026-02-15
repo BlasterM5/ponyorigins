@@ -66,7 +66,7 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
+            "resource": "ponyorigins:common/00_nutrition",
             "change": 1,
             "operation": "add"
         },
@@ -128,16 +128,10 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
+            "resource": "ponyorigins:common/00_nutrition",
             "change": 1,
             "operation": "add"
         }
-    },
-    "nutrition": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 8,
-        "start_value": 8
     },
     "off_diet_risk": {
         "type": "origins:modify_food",
@@ -194,7 +188,7 @@
             "actions": [
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_nutrition",
+                    "resource": "ponyorigins:common/00_nutrition",
                     "change": -1,
                     "operation": "add"
                 },
@@ -204,7 +198,7 @@
                         {
                             "condition": {
                                 "type": "origins:resource",
-                                "resource": "*:*_nutrition",
+                                "resource": "ponyorigins:common/00_nutrition",
                                 "comparison": "==",
                                 "compare_to": 0
                             },
@@ -358,9 +352,9 @@
                                     },
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_nutrition",
+                                        "resource": "ponyorigins:common/00_nutrition",
                                         "comparison": "<",
-                                        "compare_to": 4
+                                        "compare_to": 3
                                     }
                                 ]
                             },

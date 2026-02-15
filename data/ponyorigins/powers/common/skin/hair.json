@@ -18,34 +18,16 @@
         "type": "origins:modify_exhaustion",
         "modifier": {
             "operation": "multiply_base_additive",
-            "value": 0.05
-        }
-    },
-    "heat_exhaustion": {
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:biome",
-                    "condition": {
-                        "type": "origins:temperature",
-                        "comparison": ">",
-                        "compare_to": 1.5
-                    }
-                },
-                {
-                    "type": "origins:biome",
-                    "condition": {
-                        "type": "origins:category",
-                        "category": "nether"
-                    }
+            "value": 0.025,
+            "modifier": {
+                "operation": "origins-math:standard_multiply_base",
+                "value": 0,
+                "resource": "ponyorigins:common/00_temp",
+                "modifier": {
+                    "operation": "origins-math:standard_divide_base",
+                    "value": 25
                 }
-            ]
-        },
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.05
+            }
         }
     },
     "cold_defense": {

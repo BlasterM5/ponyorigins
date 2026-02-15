@@ -4,7 +4,7 @@
     "badges": [
         {
             "type": "origins:tooltip",
-            "text": "-25 percent Exhaustion",
+            "text": "-20 percent Exhaustion",
             "sprite": "textures/item/leather_boots.png"
         }
     ],

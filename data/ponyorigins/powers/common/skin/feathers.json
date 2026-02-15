@@ -1,6 +1,6 @@
 {
     "name": "Feathers",
-    "description": "An avian body covered in a layer of feathers. Lightweight, but maintenance heavy, it offers some cold resistance at the cost of extra endurance and longer drying time.",
+    "description": "An avian body covered in a layer of feathers. Lightweight, but maintenance heavy, it offers some cold resistance at the cost of some endurance and longer drying time.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -18,7 +18,16 @@
         "type": "origins:modify_exhaustion",
         "modifier": {
             "operation": "multiply_base_additive",
-            "value": 0.05
+            "value": 0.025,
+            "modifier": {
+                "operation": "origins-math:standard_multiply_base",
+                "value": 0,
+                "resource": "ponyorigins:common/00_temp",
+                "modifier": {
+                    "operation": "origins-math:standard_divide_base",
+                    "value": 25
+                }
+            }
         }
     },
     "cold_defense": {

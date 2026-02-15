@@ -138,8 +138,8 @@
                                 "type": "origins:and",
                                 "actions": [
                                     {
-                                        "type": "apugli:destroy",
-                                        "drop_block": true
+                                        "type": "origins:execute_command",
+                                        "command": "setblock ~ ~ ~ air destroy"
                                     },
                                     {
                                         "type": "origins:execute_command",
@@ -246,7 +246,8 @@
                                     "x": 0.2,
                                     "y": 0.2,
                                     "z": 0.2
-                                }
+                                },
+                                "offset_y": 0.5
                             },
                             {
                                 "type": "origins:play_sound",

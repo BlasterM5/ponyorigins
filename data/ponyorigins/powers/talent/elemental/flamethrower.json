@@ -47,7 +47,7 @@
                     "condition": {
                         "inverted": true,
                         "type": "origins:submerged_in",
-                        "fluid": "water"
+                        "fluid": "ponyorigins:all"
                     },
                     "if_action": {
                         "type": "origins:raycast",
@@ -64,7 +64,7 @@
                                     {
                                         "type": "origins:damage",
                                         "amount": 2,
-                                        "damage_type": "on_fire"
+                                        "damage_type": "fireball"
                                     },
                                     {
                                         "type": "origins:set_on_fire",
@@ -460,19 +460,9 @@
                             "else_action": {
                                 "type": "origins:if_else",
                                 "condition": {
-                                    "type": "origins:and",
-                                    "conditions": [
-                                        {
-                                            "inverted": true,
-                                            "type": "origins:submerged_in",
-                                            "fluid": "water"
-                                        },
-                                        {
-                                            "inverted": true,
-                                            "type": "origins:submerged_in",
-                                            "fluid": "flowing_water"
-                                        }
-                                    ]
+                                    "inverted": true,
+                                    "type": "origins:submerged_in",
+                                    "fluid": "ponyorigins:all"
                                 },
                                 "if_action": {
                                     "type": "origins:execute_command",

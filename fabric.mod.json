@@ -6,11 +6,12 @@
         "fabric": "*",
         "minecraft": ">=1.20.0 <=1.20.1",
         "origins": ">=1.10.0",
-		"apugli": ">=2.6.6"
+		"origins-math": ">=1.6.0",
+		"sync": ">=1.8.0"
     },
     "name": "Pony Origins",
     "id": "ponyorigins",
-    "version": "2.1.0",
+    "version": "2.9.0-a4",
     "description": "Origins Replacement Mod, designed to Ponify Origins.",
     "license": "0BSD",
     "icon": "pack.png",

@@ -1,0 +1,160 @@
+{
+    "hidden": true,
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/supercharge",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/energy",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/energy_night",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/energy_ch",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/energy_wind",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/energy_flora",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/energy_harmony",
+                        "source": "ponyorigins:common/00"
+                    },
+                    {
+                        "type": "origins:revoke_power",
+                        "power": "pogui:common/lithovore_heat",
+                        "source": "ponyorigins:common/00"
+                    }
+                ]
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/energy"
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:alicorn/harmony"
+                                    },
+                                    "action": {
+                                        "type": "origins:grant_power",
+                                        "power": "pogui:common/energy_harmony",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:origin",
+                                        "origin": "ponyorigins:species/changeling"
+                                    },
+                                    "action": {
+                                        "type": "origins:grant_power",
+                                        "power": "pogui:common/energy_ch",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/nightvision"
+                                    },
+                                    "action": {
+                                        "type": "origins:grant_power",
+                                        "power": "pogui:common/energy_night",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:earth_pony/flora"
+                                    },
+                                    "action": {
+                                        "type": "origins:grant_power",
+                                        "power": "pogui:common/energy_flora",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "ponyorigins:common/flight"
+                                    },
+                                    "action": {
+                                        "type": "origins:grant_power",
+                                        "power": "pogui:common/energy_wind",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                },
+                                {
+                                    "condition": {
+                                        "type": "origins:constant",
+                                        "value": true
+                                    },
+                                    "action": {
+                                        "type": "origins:grant_power",
+                                        "power": "pogui:common/energy",
+                                        "source": "ponyorigins:common/00"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:grant_power",
+                            "power": "pogui:common/supercharge",
+                            "source": "ponyorigins:common/00"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/diet/lithovore"
+                },
+                "if_action": {
+                    "type": "origins:grant_power",
+                    "power": "pogui:common/lithovore_heat",
+                    "source": "ponyorigins:common/00"
+                }
+            },
+            {
+                "type": "origins:revoke_power",
+                "power": "pogui:common/calc/ui",
+                "source": "ponyorigins:common/00"
+            }
+        ]
+    }
+}

@@ -1,6 +1,6 @@
 {
     "name": "Flight",
-    "description": "Jump while in the air to start flying. Be careful, hazard and injuries can cause temporary loss of flight.\n\nPress to manually disable/enable in order to fly with equipment.",
+    "description": "Jump while in the air to start flying. Be careful, hazards and injuries can cause temporary loss of flight.\n\nPress to manually disable/enable in order to fly with equipment.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -78,24 +78,36 @@
                     "conditions": [
                         {
                             "type": "origins:block_collision",
+                            "block_condition": {
+                                "type": "origins:movement_blocking"
+                            },
                             "offset_x": 0.5,
                             "offset_y": 0.5,
                             "offset_z": 0.5
                         },
                         {
                             "type": "origins:block_collision",
+                            "block_condition": {
+                                "type": "origins:movement_blocking"
+                            },
                             "offset_x": -0.5,
                             "offset_y": 0.5,
                             "offset_z": -0.5
                         },
                         {
                             "type": "origins:block_collision",
+                            "block_condition": {
+                                "type": "origins:movement_blocking"
+                            },
                             "offset_x": -0.5,
                             "offset_y": 0.5,
                             "offset_z": 0.5
                         },
                         {
                             "type": "origins:block_collision",
+                            "block_condition": {
+                                "type": "origins:movement_blocking"
+                            },
                             "offset_x": 0.5,
                             "offset_y": 0.5,
                             "offset_z": -0.5
@@ -390,6 +402,12 @@
                         },
                         {
                             "type": "origins:resource",
+                            "resource": "*:*_arrows",
+                            "comparison": ">",
+                            "compare_to": 3
+                        },
+                        {
+                            "type": "origins:resource",
                             "resource": "ponyorigins:common/hazard_wet_cd",
                             "comparison": "==",
                             "compare_to": 1
@@ -476,31 +494,22 @@
                         },
                         {
                             "type": "origins:fluid_height",
-                            "fluid": "flowing_water",
-                            "comparison": ">",
-                            "compare_to": 0.75
-                        },
-                        {
-                            "type": "origins:fluid_height",
                             "fluid": "lava",
                             "comparison": ">",
                             "compare_to": 0.2
                         },
                         {
-                            "type": "origins:fluid_height",
-                            "fluid": "flowing_lava",
-                            "comparison": ">",
-                            "compare_to": 0.2
-                        },
-                        {
-                            "type": "origins:in_block",
+                            "type": "origins:block_collision",
                             "block_condition": {
                                 "type": "origins:fluid",
                                 "fluid_condition": {
                                     "type": "origins:in_tag",
-                                    "tag": "ponyorigins:oil"
+                                    "tag": "ponyorigins:all"
                                 }
-                            }
+                            },
+                            "offset_x": 0,
+                            "offset_y": 0.25,
+                            "offset_z": 0
                         },
                         {
                             "type": "origins:block_collision",
@@ -563,6 +572,12 @@
                                     "compare_to": 0
                                 }
                             ]
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/00_combined_weight",
+                            "comparison": ">",
+                            "compare_to": 98
                         }
                     ]
                 },
@@ -756,7 +771,7 @@
             "modifier": {
                 "operation": "multiply_base_multiplicative",
                 "value": 0,
-                "resource": "ponyorigins:common/00_weight",
+                "resource": "ponyorigins:common/00_combined_weight",
                 "modifier": {
                     "operation": "add_base_early",
                     "value": 0,
@@ -807,7 +822,7 @@
             "modifier": {
                 "operation": "multiply_base_multiplicative",
                 "value": 0,
-                "resource": "ponyorigins:common/00_weight",
+                "resource": "ponyorigins:common/00_combined_weight",
                 "modifier": {
                     "operation": "add_base_early",
                     "value": 20,
@@ -1080,7 +1095,7 @@
                     "conditions": [
                         {
                             "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_weight",
+                            "resource": "ponyorigins:common/00_combined_weight",
                             "comparison": ">",
                             "compare_to": 0
                         },
@@ -1101,7 +1116,7 @@
             "modifier": {
                 "operation": "multiply_base_multiplicative",
                 "value": 0,
-                "resource": "ponyorigins:common/00_weight",
+                "resource": "ponyorigins:common/00_combined_weight",
                 "modifier": {
                     "operation": "add_base_early",
                     "value": 0,
@@ -1179,5 +1194,9 @@
                 }
             ]
         }
+    },
+    "arrows": {
+        "type": "origins-math:player_linked_resource",
+        "property": "STUCK_ARROWS"
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "Barrier",
-    "description": "Press to become invulnerable to damage. Barrier will deplete energy when it takes hits.",
+    "description": "Press to become invulnerable to attacks. Barrier will deplete energy when it takes hits.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -19,137 +19,6 @@
         }
     ],
     "type": "origins:multiple",
-    "shield": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 20
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_active",
-                    "comparison": "==",
-                    "compare_to": 1
-                }
-            ]
-        },
-        "type": "origins:modify_damage_taken",
-        "damage_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:amount",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:in_tag",
-                    "tag": "is_drowning"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:in_tag",
-                    "tag": "is_fall"
-                }
-            ]
-        },
-        "modifier": {
-            "operation": "set_total",
-            "value": 0
-        },
-        "self_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_hit_cd",
-                        "comparison": "==",
-                        "compare_to": 1
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "ponyorigins:common/energy_level",
-                                "change": -20,
-                                "operation": "add"
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_hit_cd",
-                                "change": 0,
-                                "operation": "set"
-                            },
-                            {
-                                "type": "origins:play_sound",
-                                "sound": "block.amethyst_block.break",
-                                "volume": 1,
-                                "pitch": 1
-                            },
-                            {
-                                "type": "origins:spawn_particles",
-                                "particle": "firework",
-                                "count": 8,
-                                "speed": 1,
-                                "force": true,
-                                "spread": {
-                                    "x": 0.1,
-                                    "y": 0.1,
-                                    "z": 0.1
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "ponyorigins:common/energy_level",
-                        "comparison": "<=",
-                        "compare_to": 20
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:play_sound",
-                                "sound": "block.glass.break",
-                                "volume": 1,
-                                "pitch": 1
-                            },
-                            {
-                                "type": "origins:spawn_particles",
-                                "particle": "firework",
-                                "count": 128,
-                                "speed": 1,
-                                "force": true,
-                                "spread": {
-                                    "x": 0.1,
-                                    "y": 0.1,
-                                    "z": 0.1
-                                }
-                            },
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:*_active",
-                                "change": 0,
-                                "operation": "set"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
     "passive_drain": {
         "condition": {
             "type": "origins:resource",
@@ -236,7 +105,13 @@
         "type": "origins:resource",
         "min": 0,
         "max": 1,
-        "start_value": 0
+        "start_value": 0,
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cd",
+            "change": 1,
+            "operation": "set"
+        }
     },
     "speed_limited": {
         "condition": {
@@ -249,6 +124,19 @@
         "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
+            "value": -0.5
+        }
+    },
+    "swim_speed_limited": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
             "value": -0.5
         }
     },
@@ -278,22 +166,16 @@
         "type": "origins:resource",
         "min": 0,
         "max": 1,
-        "start_value": 1
-    },
-    "hit_cd_timer": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_hit_cd",
-            "comparison": "==",
-            "compare_to": 0
-        },
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_hit_cd",
-            "change": 1,
-            "operation": "add"
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_hit_cd",
+                "change": 0,
+                "operation": "set"
+            },
+            "ticks": 10
         }
     },
     "trigger": {
@@ -303,8 +185,14 @@
                 {
                     "type": "origins:resource",
                     "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">=",
+                    "comparison": ">",
                     "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cd",
+                    "comparison": "==",
+                    "compare_to": 0
                 },
                 {
                     "type": "origins:or",
@@ -411,6 +299,226 @@
         "type": "apugli:energy_swirl",
         "texture_location": "textures/entity/creeper/creeper_armor.png",
         "size": 1,
-        "speed": 0.001
+        "speed": 0.001,
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:any_mod_loaded",
+                "values": [
+                    "apugli"
+                ]
+            }
+        ]
+    },
+    "cd": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cd",
+                "change": 0,
+                "operation": "set"
+            },
+            "ticks": 20
+        }
+    },
+    "no_knockback": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins-math:modify_knockback",
+        "x": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "y": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "z": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "shield": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/energy_level",
+                    "comparison": ">",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins-math:damage_taken_linked_resource",
+        "duration": 1,
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "is_drowning"
+        },
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_hit_cd",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins-math:variable_change_resource",
+                                    "resource": "ponyorigins:common/energy_level",
+                                    "expression": "-d*m",
+                                    "variables": {
+                                        "d": "*:*_shield",
+                                        "m": "*:*_multiplier"
+                                    },
+                                    "operation": "add"
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_hit_cd",
+                                    "change": 1,
+                                    "operation": "set"
+                                },
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.amethyst_block.break",
+                                    "volume": 1,
+                                    "pitch": 1
+                                },
+                                {
+                                    "type": "origins-math:spawn_particles",
+                                    "particle": "firework",
+                                    "count": "*:*_shield",
+                                    "speed": 1,
+                                    "force": true,
+                                    "spread": {
+                                        "x": 0.1,
+                                        "y": 0.1,
+                                        "z": 0.1
+                                    },
+                                    "offset_y": 0.5
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "ponyorigins:common/energy_level",
+                            "comparison": "<=",
+                            "compare_to": 20
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.glass.break",
+                                    "volume": 1,
+                                    "pitch": 1
+                                },
+                                {
+                                    "type": "origins:spawn_particles",
+                                    "particle": "firework",
+                                    "count": 128,
+                                    "speed": 1,
+                                    "force": true,
+                                    "spread": {
+                                        "x": 0.1,
+                                        "y": 0.1,
+                                        "z": 0.1
+                                    },
+                                    "offset_y": 0.5
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_active",
+                                    "change": 0,
+                                    "operation": "set"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "multiplier": {
+        "type": "origins:resource",
+        "min": 1,
+        "max": 4,
+        "start_value": 4
+    },
+    "alicorn_determinator": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_gained": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:origin",
+                "origin": "ponyorigins:talent/alicorn/barrier"
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_multiplier",
+                "change": 2,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_multiplier",
+                "change": 4,
+                "operation": "set"
+            }
+        }
+    },
+    "sound_dampener": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "apugli:prevent_sound",
+        "sounds": [
+            "entity.player.hurt"
+        ],
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:any_mod_loaded",
+                "values": [
+                    "apugli"
+                ]
+            }
+        ]
     }
 }

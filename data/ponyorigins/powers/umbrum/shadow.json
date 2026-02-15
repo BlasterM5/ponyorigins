@@ -306,7 +306,8 @@
             "comparison": "==",
             "compare_to": 1
         },
-        "type": "apugli:mobs_ignore"
+        "type": "sync:mobs_ignore",
+        "provokable": false
     },
     "water_phasing": {
         "condition": {

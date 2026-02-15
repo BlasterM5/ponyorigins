@@ -24,6 +24,13 @@
         }
     ],
     "type": "origins:multiple",
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 0.08
+        }
+    },
     "damage_reduction": {
         "type": "origins:modify_damage_taken",
         "damage_condition": {
@@ -43,7 +50,7 @@
         }
     },
     "ap_damage_noise": {
-        "type": "origins:modify_damage_taken",
+        "type": "origins:action_when_damage_taken",
         "damage_condition": {
             "type": "origins:and",
             "conditions": [
@@ -58,25 +65,13 @@
                 }
             ]
         },
-        "self_action": {
+        "entity_action": {
             "type": "origins:play_sound",
             "sound": "entity.player.hurt",
-            "volume": 1,
+            "volume": 0.5,
             "pitch": 1
-        }
-    },
-    "exhaustion": {
-        "type": "origins:modify_exhaustion",
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.08
-        }
-    },
-    "sound_muter": {
-        "type": "apugli:custom_hurt_sound",
-        "muted": true,
-        "sound": "entity.shulker.hurt_closed",
-        "volume": 0
+        },
+        "cooldown": 1
     },
     "cold_defense": {
         "condition": {
@@ -131,5 +126,17 @@
                 }
             }
         }
+    },
+    "hurt_sound_muter": {
+        "type": "apugli:prevent_sound",
+        "sound": "entity.player.hurt",
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:any_mod_loaded",
+                "values": [
+                    "apugli"
+                ]
+            }
+        ]
     }
 }

@@ -11,6 +11,7 @@
         "ponyorigins:common/limbs/biped",
         "ponyorigins:common/limbs/arms/feline_paws",
         "ponyorigins:common/limbs/hind/feline_paws",
+        "ponyorigins:common/limbs/tail/feline",
         "ponyorigins:common/skin/fur",
         "ponyorigins:common/sound/cat"
     ],

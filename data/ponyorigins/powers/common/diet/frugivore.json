@@ -535,27 +535,18 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
+            "resource": "ponyorigins:common/00_nutrition",
             "change": 1,
             "operation": "add"
         }
     },
     "glistering_melon_slice": {
-        "type": "apugli:edible_item",
+        "type": "sync:edible_item",
         "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "inverted": true,
-                    "type": "origins:food"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "item": "glistering_melon_slice"
-                    }
-                }
-            ]
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "glistering_melon_slice"
+            }
         },
         "food_component": {
             "hunger": 2,
@@ -564,13 +555,8 @@
             "always_edible": false,
             "snack": false
         },
-        "use_action": "eat"
-    },
-    "nutrition": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 12,
-        "start_value": 12
+        "consume_animation": "EAT",
+        "priority": 0
     },
     "off_diet_risk": {
         "type": "origins:modify_food",
@@ -602,7 +588,7 @@
             "actions": [
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:*_nutrition",
+                    "resource": "ponyorigins:common/00_nutrition",
                     "change": -1,
                     "operation": "add"
                 },
@@ -612,7 +598,7 @@
                         {
                             "condition": {
                                 "type": "origins:resource",
-                                "resource": "*:*_nutrition",
+                                "resource": "ponyorigins:common/00_nutrition",
                                 "comparison": "==",
                                 "compare_to": 0
                             },
@@ -766,9 +752,9 @@
                                     },
                                     {
                                         "type": "origins:resource",
-                                        "resource": "*:*_nutrition",
+                                        "resource": "ponyorigins:common/00_nutrition",
                                         "comparison": "<",
-                                        "compare_to": 2
+                                        "compare_to": 3
                                     }
                                 ]
                             },
@@ -858,27 +844,18 @@
         },
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "*:*_nutrition",
+            "resource": "ponyorigins:common/00_nutrition",
             "change": 1,
             "operation": "add"
         }
     },
     "fd_horse_feed": {
-        "type": "apugli:edible_item",
+        "type": "sync:edible_item",
         "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "inverted": true,
-                    "type": "origins:food"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "item": "farmersdelight:horse_feed"
-                    }
-                }
-            ]
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "farmersdelight:horse_feed"
+            }
         },
         "food_component": {
             "hunger": 14,
@@ -887,7 +864,8 @@
             "always_edible": false,
             "snack": false
         },
-        "use_action": "eat",
+        "consume_animation": "EAT",
+        "priority": 0,
         "fabric:load_conditions": [
             {
                 "condition": "fabric:all_mods_loaded",

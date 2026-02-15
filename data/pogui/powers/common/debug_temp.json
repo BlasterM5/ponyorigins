@@ -1,0 +1,26 @@
+{
+    "name": "Temperature Sensor",
+    "description": "Displays the Calculated Temperature",
+    "type": "origins:multiple",
+    "bar_sync": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins-math:change_resource",
+            "resource": "*:*_temp_bar",
+            "change": "ponyorigins:common/00_temp_r",
+            "operation": "set"
+        }
+    },
+    "temp_bar": {
+        "type": "origins:resource",
+        "min": -100,
+        "max": 300,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 3
+        }
+    }
+}
