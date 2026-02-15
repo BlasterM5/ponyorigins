@@ -7,11 +7,5 @@
     "icon": {
         "item": "shield"
     },
-    "upgrades": [
-        {
-            "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talent/alicorn/barrier"
-        }
-    ],
     "impact": 0
 }

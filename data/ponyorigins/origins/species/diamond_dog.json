@@ -8,6 +8,7 @@
         "ponyorigins:common/limbs/biped",
         "ponyorigins:common/limbs/arms/diggers",
         "ponyorigins:common/limbs/hind/canine_paws",
+        "ponyorigins:common/limbs/tail/canine",
         "ponyorigins:common/skin/fur",
         "ponyorigins:common/sound/dog"
     ],

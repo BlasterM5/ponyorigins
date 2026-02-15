@@ -114,22 +114,7 @@
                 {
                     "inverted": true,
                     "type": "origins:submerged_in",
-                    "fluid": "water"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "flowing_water"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "lava"
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:submerged_in",
-                    "fluid": "flowing_lava"
+                    "fluid": "ponyorigins:all"
                 },
                 {
                     "type": "origins:air",
@@ -312,8 +297,11 @@
                                     "actions": [
                                         {
                                             "condition": {
-                                                "type": "origins:block",
-                                                "block": "water"
+                                                "type": "origins:fluid",
+                                                "fluid_condition": {
+                                                    "type": "origins:in_tag",
+                                                    "tag": "ponyorigins:water"
+                                                }
                                             },
                                             "action": {
                                                 "type": "origins:set_block",
@@ -322,8 +310,11 @@
                                         },
                                         {
                                             "condition": {
-                                                "type": "origins:block",
-                                                "block": "lava"
+                                                "type": "origins:fluid",
+                                                "fluid_condition": {
+                                                    "type": "origins:fluid",
+                                                    "fluid": "lava"
+                                                }
                                             },
                                             "action": {
                                                 "type": "origins:and",
@@ -331,6 +322,28 @@
                                                     {
                                                         "type": "origins:set_block",
                                                         "block": "obsidian"
+                                                    },
+                                                    {
+                                                        "type": "origins:execute_command",
+                                                        "command": "playsound block.fire.extinguish block @a"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "condition": {
+                                                "type": "origins:fluid",
+                                                "fluid_condition": {
+                                                    "type": "origins:fluid",
+                                                    "fluid": "flowing_lava"
+                                                }
+                                            },
+                                            "action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:set_block",
+                                                        "block": "cobblestone"
                                                     },
                                                     {
                                                         "type": "origins:execute_command",
@@ -522,26 +535,29 @@
                                             "type": "origins:or",
                                             "conditions": [
                                                 {
-                                                    "type": "origins:fluid_height",
-                                                    "fluid": "water",
-                                                    "comparison": ">",
-                                                    "compare_to": 0
-                                                },
-                                                {
-                                                    "type": "origins:fluid_height",
-                                                    "fluid": "flowing_water",
-                                                    "comparison": ">",
-                                                    "compare_to": 0
+                                                    "type": "origins:block_collision",
+                                                    "block_condition": {
+                                                        "type": "origins:or",
+                                                        "conditions": [
+                                                            {
+                                                                "type": "origins:fluid",
+                                                                "fluid_condition": {
+                                                                    "type": "origins:in_tag",
+                                                                    "tag": "ponyorigins:water"
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "origins:in_tag",
+                                                                "tag": "ponyorigins:conductors"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "offset_x": 0,
+                                                    "offset_y": 0,
+                                                    "offset_z": 0
                                                 },
                                                 {
                                                     "type": "origins:in_rain"
-                                                },
-                                                {
-                                                    "type": "origins:on_block",
-                                                    "block_condition": {
-                                                        "type": "origins:in_tag",
-                                                        "tag": "ponyorigins:conductors"
-                                                    }
                                                 }
                                             ]
                                         },
@@ -555,26 +571,29 @@
                                                     "type": "origins:or",
                                                     "conditions": [
                                                         {
-                                                            "type": "origins:fluid_height",
-                                                            "fluid": "water",
-                                                            "comparison": ">",
-                                                            "compare_to": 0
-                                                        },
-                                                        {
-                                                            "type": "origins:fluid_height",
-                                                            "fluid": "flowing_water",
-                                                            "comparison": ">",
-                                                            "compare_to": 0
+                                                            "type": "origins:block_collision",
+                                                            "block_condition": {
+                                                                "type": "origins:or",
+                                                                "conditions": [
+                                                                    {
+                                                                        "type": "origins:fluid",
+                                                                        "fluid_condition": {
+                                                                            "type": "origins:in_tag",
+                                                                            "tag": "ponyorigins:water"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:in_tag",
+                                                                        "tag": "ponyorigins:conductors"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "offset_x": 0,
+                                                            "offset_y": 0,
+                                                            "offset_z": 0
                                                         },
                                                         {
                                                             "type": "origins:in_rain"
-                                                        },
-                                                        {
-                                                            "type": "origins:on_block",
-                                                            "block_condition": {
-                                                                "type": "origins:in_tag",
-                                                                "tag": "ponyorigins:conductors"
-                                                            }
                                                         }
                                                     ]
                                                 }

@@ -15,20 +15,10 @@
     ],
     "type": "origins:multiple",
     "cold_damage_immunity": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "ponyorigins:common/hazard_burned",
-            "comparison": "==",
-            "compare_to": 0
-        },
-        "type": "origins:modify_damage_taken",
+        "type": "origins:invulnerability",
         "damage_condition": {
             "type": "origins:in_tag",
             "tag": "is_freezing"
-        },
-        "modifier": {
-            "operation": "set_total",
-            "value": 0
         }
     },
     "exhaustion_base": {
@@ -128,32 +118,6 @@
         "modifier": {
             "operation": "multiply_base_additive",
             "value": 0.2
-        }
-    },
-    "cold_damage_burned_debuff": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "ponyorigins:common/hazard_burned",
-            "comparison": ">",
-            "compare_to": 0
-        },
-        "type": "origins:modify_damage_taken",
-        "damage_condition": {
-            "type": "origins:in_tag",
-            "tag": "is_freezing"
-        },
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": 0.01,
-            "modifier": {
-                "operation": "multiply_base_multiplicative",
-                "value": -100,
-                "modifier": {
-                    "operation": "add_base_early",
-                    "value": 0,
-                    "resource": "ponyorigins:common/hazard_burned"
-                }
-            }
         }
     }
 }

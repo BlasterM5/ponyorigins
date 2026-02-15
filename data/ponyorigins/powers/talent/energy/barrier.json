@@ -1,6 +1,6 @@
 {
     "name": "Barrier",
-    "description": "Press to become invulnerable to damage. Barrier will deplete energy when it takes hits.",
+    "description": "Press to become invulnerable to attacks. Barrier will deplete energy when it takes hits.",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -104,7 +104,8 @@
                                     "x": 0.1,
                                     "y": 0.1,
                                     "z": 0.1
-                                }
+                                },
+                                "offset_y": 0.5
                             }
                         ]
                     }
@@ -136,7 +137,8 @@
                                     "x": 0.1,
                                     "y": 0.1,
                                     "z": 0.1
-                                }
+                                },
+                                "offset_y": 0.5
                             },
                             {
                                 "type": "origins:change_resource",
@@ -400,17 +402,5 @@
                 }
             }
         }
-    },
-    "barrier_visual": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_active",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "apugli:energy_swirl",
-        "texture_location": "textures/entity/creeper/creeper_armor.png",
-        "size": 1,
-        "speed": 0.001
     }
 }

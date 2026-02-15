@@ -7,11 +7,5 @@
     "icon": {
         "item": "tnt"
     },
-    "upgrades": [
-        {
-            "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talent/alicorn/laser"
-        }
-    ],
     "impact": 0
 }

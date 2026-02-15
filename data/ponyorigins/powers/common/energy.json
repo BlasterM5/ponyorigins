@@ -312,18 +312,6 @@
                     "pitch": 1
                 },
                 {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "inverted": true,
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:special/gapple"
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "advancement grant @s until ponyorigins:special/gapple"
-                    }
-                },
-                {
                     "type": "origins:spawn_particles",
                     "particle": "firework",
                     "count": 64,
@@ -333,7 +321,8 @@
                         "x": 0.1,
                         "y": 0.1,
                         "z": 0.1
-                    }
+                    },
+                    "offset_y": 0.5
                 }
             ]
         },
@@ -555,88 +544,8 @@
             "operation": "add"
         }
     },
-    "odometer": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 10000,
-        "start_value": 0,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
-            "bar_index": 0,
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:*_is_unicorn_training",
-                        "comparison": "==",
-                        "compare_to": 1
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:*_odometer_vis",
-                        "comparison": ">",
-                        "compare_to": 0
-                    }
-                ]
-            }
-        }
-    },
-    "odometer_vis": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "start_value": 0
-    },
-    "is_unicorn_training": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 0
-    },
     "setup": {
         "type": "origins:action_on_callback",
-        "entity_action_chosen": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:origin",
-                        "origin": "ponyorigins:species/unicorn"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:unicorn/energy"
-                    }
-                ]
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_is_unicorn_training",
-                        "change": 1,
-                        "operation": "set"
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_odometer",
-                        "change": 0,
-                        "operation": "set"
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:change_resource",
-                "resource": "*:*_is_unicorn_training",
-                "change": 0,
-                "operation": "set"
-            }
-        },
         "execute_chosen_when_orb": true,
         "entity_action_respawned": {
             "type": "origins:delay",

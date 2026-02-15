@@ -4,6 +4,7 @@
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/diet/edible_food",
         "ponyorigins:talent/stamina/charge",
         "ponyorigins:common/health/minus_two",
         "ponyorigins:common/wallclimb",
@@ -11,6 +12,7 @@
         "ponyorigins:common/limbs/horn/ram",
         "ponyorigins:common/limbs/fore/cloven_hooves",
         "ponyorigins:common/limbs/hind/cloven_hooves",
+        "ponyorigins:common/limbs/tail/bob",
         "ponyorigins:common/rideable",
         "ponyorigins:common/skin/fur",
         "ponyorigins:common/sound/goat"

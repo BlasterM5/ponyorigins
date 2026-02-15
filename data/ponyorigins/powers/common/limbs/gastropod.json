@@ -41,7 +41,7 @@
         "type": "origins:modify_swim_speed",
         "modifier": {
             "operation": "multiply_base",
-            "value": 1.1
+            "value": 0.1
         }
     },
     "faster_exhaustion": {

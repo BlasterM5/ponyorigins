@@ -1,5 +1,22 @@
 {
     "name": "Canine Paws",
-    "description": "Sturdy canine paws.",
-    "type": "origins:simple"
+    "description": "Sturdy canine paws. Slight damage boost when unarmed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "When Unarmed: +100 Percent Attack Damage",
+            "sprite": "textures/item/stone_sword.png"
+        }
+    ],
+    "condition": {
+        "type": "origins:resource",
+        "resource": "ponyorigins:common/00_empty_mainhand",
+        "comparison": "==",
+        "compare_to": 1
+    },
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": 1
+    }
 }

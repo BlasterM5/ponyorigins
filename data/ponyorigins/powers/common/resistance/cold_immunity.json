@@ -8,13 +8,9 @@
             "sprite": "textures/item/leather.png"
         }
     ],
-    "type": "origins:modify_damage_taken",
+    "type": "origins:invulnerability",
     "damage_condition": {
         "type": "origins:in_tag",
         "tag": "is_freezing"
-    },
-    "modifier": {
-        "operation": "set_total",
-        "value": 0
     }
 }

@@ -383,8 +383,11 @@
                                             "type": "origins:or",
                                             "conditions": [
                                                 {
-                                                    "type": "origins:in_tag",
-                                                    "tag": "water"
+                                                    "type": "origins:fluid",
+                                                    "fluid_condition": {
+                                                        "type": "origins:in_tag",
+                                                        "tag": "ponyorigins:water"
+                                                    }
                                                 },
                                                 {
                                                     "type": "origins:in_tag",
@@ -398,13 +401,6 @@
                                     },
                                     {
                                         "type": "origins:in_rain"
-                                    },
-                                    {
-                                        "type": "origins:on_block",
-                                        "block_condition": {
-                                            "type": "origins:in_tag",
-                                            "tag": "ponyorigins:conductors"
-                                        }
                                     }
                                 ]
                             },
@@ -423,8 +419,11 @@
                                                     "type": "origins:or",
                                                     "conditions": [
                                                         {
-                                                            "type": "origins:in_tag",
-                                                            "tag": "water"
+                                                            "type": "origins:fluid",
+                                                            "fluid_condition": {
+                                                                "type": "origins:in_tag",
+                                                                "tag": "ponyorigins:water"
+                                                            }
                                                         },
                                                         {
                                                             "type": "origins:in_tag",
@@ -438,13 +437,6 @@
                                             },
                                             {
                                                 "type": "origins:in_rain"
-                                            },
-                                            {
-                                                "type": "origins:on_block",
-                                                "block_condition": {
-                                                    "type": "origins:in_tag",
-                                                    "tag": "ponyorigins:conductors"
-                                                }
                                             }
                                         ]
                                     }
@@ -637,8 +629,11 @@
                         "type": "origins:or",
                         "conditions": [
                             {
-                                "type": "origins:in_tag",
-                                "tag": "water"
+                                "type": "origins:fluid",
+                                "fluid_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "ponyorigins:water"
+                                }
                             },
                             {
                                 "type": "origins:in_tag",

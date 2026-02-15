@@ -1,45 +1,22 @@
 {
     "name": "Deer Sounds",
     "hidden": true,
-    "type": "origins:multiple",
-    "hurt": {
-        "condition": {
-            "inverted": true,
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/waterborn"
-                },
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "water"
-                }
-            ]
-        },
-        "type": "apugli:custom_hurt_sound",
+    "condition": {
+        "inverted": true,
+        "type": "origins:submerged_in",
+        "fluid": "ponyorigins:all"
+    },
+    "type": "origins:action_when_damage_taken",
+    "damage_condition": {
+        "inverted": true,
+        "type": "origins:in_tag",
+        "tag": "is_drowning"
+    },
+    "entity_action": {
+        "type": "origins:play_sound",
         "sound": "entity.camel.hurt",
         "volume": 0.5,
         "pitch": 2
     },
-    "death": {
-        "condition": {
-            "inverted": true,
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:power",
-                    "power": "ponyorigins:common/waterborn"
-                },
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "water"
-                }
-            ]
-        },
-        "type": "apugli:custom_death_sound",
-        "sound": "entity.camel.death",
-        "volume": 0.5,
-        "pitch": 2
-    }
+    "cooldown": 5
 }

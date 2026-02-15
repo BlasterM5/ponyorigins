@@ -133,30 +133,6 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:alicorn/ascension"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:advancement",
-                        "advancement": "ponyorigins:special/rejected"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:power",
-                        "power": "ponyorigins:common/none"
-                    }
-                ]
-            },
-            "origins": [
-                "ponyorigins:talent/alicorn/harmony"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
                         "type": "origins:power",
                         "power": "ponyorigins:common/energy"
                     },

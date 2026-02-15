@@ -81,86 +81,136 @@
                             "power": "ponyorigins:common/limbs/quadruped"
                         },
                         "if_action": {
-                            "type": "origins:choice",
+                            "type": "origins:and",
                             "actions": [
                                 {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/hooves",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/hooves",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/cloven_hooves",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/talons",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/feline_paws",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/diggers",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/canine_paws",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/hands",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/wings",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/stiction",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 2,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/flippers",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/arms/none",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        }
+                                    ]
                                 },
                                 {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/cloven_hooves",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/talons",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/feline_paws",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/diggers",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/canine_paws",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/hands",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/wings",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/stiction",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 1,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/arms/none",
-                                        "source": "ponyorigins:chaos/randomizer"
+                                    "type": "origins:chance",
+                                    "chance": 0.1,
+                                    "action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/canine_paws"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/diggers"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/feline_paws"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/hands"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/arms/talons"
+                                                }
+                                            ]
+                                        },
+                                        "if_action": {
+                                            "type": "origins:grant_power",
+                                            "power": "ponyorigins:common/limbs/arms/webbed",
+                                            "source": "ponyorigins:chaos/randomizer"
+                                        }
                                     }
                                 }
                             ]
@@ -169,82 +219,141 @@
                     {
                         "type": "origins:if_else",
                         "condition": {
-                            "type": "origins:power",
-                            "power": "ponyorigins:common/limbs/quadruped"
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/limbs/quadruped"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/limbs/taur"
+                                }
+                            ]
                         },
                         "if_action": {
-                            "type": "origins:choice",
+                            "type": "origins:and",
                             "actions": [
                                 {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/hooves",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/hooves",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/cloven_hooves",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/talons",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/feline_paws",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/diggers",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/canine_paws",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/stiction",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 2,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/hands",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 2,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/flippers",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/fore/feet",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        }
+                                    ]
                                 },
                                 {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/cloven_hooves",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/talons",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/feline_paws",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/diggers",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/canine_paws",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/stiction",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 2,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/hands",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 1,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/fore/feet",
-                                        "source": "ponyorigins:chaos/randomizer"
+                                    "type": "origins:chance",
+                                    "chance": 0.1,
+                                    "action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/canine_paws"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/diggers"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/feline_paws"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/hands"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/fore/talons"
+                                                }
+                                            ]
+                                        },
+                                        "if_action": {
+                                            "type": "origins:grant_power",
+                                            "power": "ponyorigins:common/limbs/fore/webbed",
+                                            "source": "ponyorigins:chaos/randomizer"
+                                        }
                                     }
                                 }
                             ]
@@ -258,78 +367,128 @@
                             "power": "ponyorigins:common/limbs/gastropod"
                         },
                         "if_action": {
-                            "type": "origins:choice",
+                            "type": "origins:and",
                             "actions": [
                                 {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/hooves",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/hooves",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/cloven_hooves",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/talons",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/diggers",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/feline_paws",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/canine_paws",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 3,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/stiction",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 2,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/feet",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/flippers",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:grant_power",
+                                                "power": "ponyorigins:common/limbs/hind/hands",
+                                                "source": "ponyorigins:chaos/randomizer"
+                                            }
+                                        }
+                                    ]
                                 },
                                 {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/cloven_hooves",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/talons",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/diggers",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/feline_paws",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/canine_paws",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 3,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/stiction",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 2,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/feet",
-                                        "source": "ponyorigins:chaos/randomizer"
-                                    }
-                                },
-                                {
-                                    "weight": 1,
-                                    "element": {
-                                        "type": "origins:grant_power",
-                                        "power": "ponyorigins:common/limbs/hind/hands",
-                                        "source": "ponyorigins:chaos/randomizer"
+                                    "type": "origins:chance",
+                                    "chance": 0.1,
+                                    "action": {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/canine_paws"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/diggers"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/feline_paws"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/hands"
+                                                },
+                                                {
+                                                    "type": "origins:power",
+                                                    "power": "ponyorigins:common/limbs/hind/talons"
+                                                }
+                                            ]
+                                        },
+                                        "if_action": {
+                                            "type": "origins:grant_power",
+                                            "power": "ponyorigins:common/limbs/hind/webbed",
+                                            "source": "ponyorigins:chaos/randomizer"
+                                        }
                                     }
                                 }
                             ]
@@ -435,6 +594,14 @@
                                 "weight": 1,
                                 "element": {
                                     "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/diet/grainivore",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:grant_power",
                                     "power": "ponyorigins:common/diet/lithovore",
                                     "source": "ponyorigins:chaos/randomizer"
                                 }
@@ -471,6 +638,43 @@
                         "action": {
                             "type": "origins:grant_power",
                             "power": "ponyorigins:common/diet/direct_eat",
+                            "source": "ponyorigins:chaos/randomizer"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/extreme_omnivore"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/frugivore"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/grainivore"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/herbivore"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/lithovore"
+                                },
+                                {
+                                    "type": "origins:power",
+                                    "power": "ponyorigins:common/diet/pescavore"
+                                }
+                            ]
+                        },
+                        "if_action": {
+                            "type": "origins:grant_power",
+                            "power": "ponyorigins:common/diet/edible_food",
                             "source": "ponyorigins:chaos/randomizer"
                         }
                     },
@@ -679,6 +883,113 @@
                                     "type": "origins:grant_power",
                                     "power": "ponyorigins:common/limbs/horn/unicorn_swept",
                                     "source": "ponyorigins:chaos/randomizer"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/bob",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/canine",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/feathers",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/feline",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/insectoid",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/leonine",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/pony",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/pony_hybrid",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/reptilian",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/thagomizer",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/fish",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:grant_power",
+                                    "power": "ponyorigins:common/limbs/tail/whale",
+                                    "source": "ponyorigins:chaos/randomizer"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:nothing"
                                 }
                             }
                         ]

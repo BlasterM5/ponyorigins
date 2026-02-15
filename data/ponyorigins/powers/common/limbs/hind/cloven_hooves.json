@@ -78,62 +78,6 @@
         }
     },
     "movement_buff": {
-        "condition": {
-            "inverted": true,
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_feet",
-                            "comparison": "==",
-                            "compare_to": 1
-                        },
-                        {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:in_rain"
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/hazard_wet",
-                                    "comparison": ">",
-                                    "compare_to": 20
-                                }
-                            ]
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                                "type": "origins:in_tag",
-                                "tag": "ponyorigins:slippery_when_wet"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_feet",
-                            "comparison": "==",
-                            "compare_to": 1
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                                "type": "origins:in_tag",
-                                "tag": "ponyorigins:ice"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
         "type": "origins:modify_attribute",
         "attribute": "generic.movement_speed",
         "modifier": {

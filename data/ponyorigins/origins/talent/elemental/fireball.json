@@ -7,11 +7,5 @@
     "icon": {
         "item": "blaze_powder"
     },
-    "upgrades": [
-        {
-            "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talent/alicorn/fireball"
-        }
-    ],
     "impact": 0
 }

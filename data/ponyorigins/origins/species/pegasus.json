@@ -4,6 +4,7 @@
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/diet/edible_food",
         "ponyorigins:common/health/minus_two",
         "ponyorigins:common/flight",
         "ponyorigins:common/energy",
@@ -12,6 +13,7 @@
         "ponyorigins:common/limbs/fore/hooves",
         "ponyorigins:common/limbs/wings/feathered",
         "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/limbs/tail/pony",
         "ponyorigins:common/rideable",
         "ponyorigins:common/skin/hair",
         "ponyorigins:common/sound/pony"
@@ -19,12 +21,6 @@
     "icon": {
         "item": "feather"
     },
-    "upgrades": [
-        {
-            "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:species/alicorn"
-        }
-    ],
     "order": 3,
     "impact": 0
 }

@@ -19,9 +19,75 @@
                 "ponyorigins:species/kirin",
                 "ponyorigins:species/thestral",
                 "ponyorigins:species/hippogriff",
-                "ponyorigins:species/griffon",
-                "ponyorigins:species/dragon",
-                "ponyorigins:species/changeling",
+                "ponyorigins:species/griffon"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:scoreboard",
+                "name": "po.globalflags",
+                "objective": "$dragon",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "origins": [
+                "ponyorigins:species/dragon"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:scoreboard",
+                "name": "po.globalflags",
+                "objective": "$changeling",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "origins": [
+                "ponyorigins:species/changeling"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:scoreboard",
+                "name": "po.globalflags",
+                "objective": "$changedling",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "origins": [
+                "ponyorigins:species/changedling"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:scoreboard",
+                "name": "po.globalflags",
+                "objective": "$alicorn",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "origins": [
+                "ponyorigins:species/alicorn"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:scoreboard",
+                "name": "po.globalflags",
+                "objective": "$chaos",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "origins": [
+                "ponyorigins:chaos/chaos"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": true
+            },
+            "origins": [
                 "ponyorigins:species/orinthian",
                 "ponyorigins:species/abyssinian",
                 "ponyorigins:species/minotaur",
@@ -30,35 +96,11 @@
         },
         {
             "condition": {
-                "type": "origins:advancement",
-                "advancement": "ponyorigins:changeling/love"
-            },
-            "origins": [
-                "ponyorigins:species/changedling"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:advancement",
-                "advancement": "ponyorigins:alicorn/ascension"
-            },
-            "origins": [
-                "ponyorigins:species/alicorn"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:advancement",
-                "advancement": "ponyorigins:ascension/chaos"
-            },
-            "origins": [
-                "ponyorigins:species/chaos"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:constant",
-                "value": true
+                "type": "origins:scoreboard",
+                "name": "po.globalflags",
+                "objective": "$human",
+                "comparison": "==",
+                "compare_to": 1
             },
             "origins": [
                 "ponyorigins:species/human"

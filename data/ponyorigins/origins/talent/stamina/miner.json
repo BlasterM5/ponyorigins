@@ -7,11 +7,5 @@
     "icon": {
         "item": "iron_pickaxe"
     },
-    "upgrades": [
-        {
-            "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:talent/alicorn/miner"
-        }
-    ],
     "impact": 0
 }

@@ -4,6 +4,7 @@
     "powers": [
         "ponyorigins:common/diet/herbivore",
         "ponyorigins:common/diet/direct_eat",
+        "ponyorigins:common/diet/edible_food",
         "ponyorigins:common/health/base",
         "ponyorigins:common/versatile",
         "ponyorigins:common/energy",
@@ -13,6 +14,7 @@
         "ponyorigins:common/limbs/horn/unicorn",
         "ponyorigins:common/limbs/fore/hooves",
         "ponyorigins:common/limbs/hind/hooves",
+        "ponyorigins:common/limbs/tail/pony",
         "ponyorigins:common/rideable",
         "ponyorigins:common/skin/hair",
         "ponyorigins:common/sound/pony"
@@ -20,12 +22,6 @@
     "icon": {
         "item": "diamond"
     },
-    "upgrades": [
-        {
-            "condition": "ponyorigins:alicorn/ascension",
-            "origin": "ponyorigins:species/alicorn"
-        }
-    ],
     "order": 2,
     "impact": 0
 }

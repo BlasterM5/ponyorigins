@@ -4,7 +4,7 @@
     "badges": [
         {
             "type": "origins:tooltip",
-            "text": "Movement Speed +20 percent",
+            "text": "Sprinting Speed +20 percent",
             "sprite": "textures/item/leather_boots.png"
         },
         {
@@ -15,6 +15,9 @@
     ],
     "type": "origins:multiple",
     "movement_speed_buff": {
+        "condition": {
+            "type": "origins:sprinting"
+        },
         "type": "origins:modify_attribute",
         "attribute": "generic.movement_speed",
         "modifier": {

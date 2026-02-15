@@ -6,66 +6,49 @@
             "type": "origins:tooltip",
             "text": "+2.5 Percent Movement Speed",
             "sprite": "textures/item/leather_boots.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "When Unarmed: +100 Percent Attack Damage",
+            "sprite": "textures/item/stone_sword.png"
         }
     ],
     "type": "origins:multiple",
     "movement_buff": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "inverted": true,
-                            "type": "origins:origin",
-                            "origin": "ponyorigins:common/limbs/quadruped"
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_empty_mainhand",
-                                    "comparison": "==",
-                                    "compare_to": 1
-                                },
-                                {
-                                    "type": "origins:resource",
-                                    "resource": "ponyorigins:common/00_empty_offhand",
-                                    "comparison": "==",
-                                    "compare_to": 1
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "inverted": true,
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:resource",
-                            "resource": "ponyorigins:common/00_empty_feet",
-                            "comparison": "==",
-                            "compare_to": 1
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                                "type": "origins:in_tag",
-                                "tag": "ponyorigins:ice"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
         "type": "origins:modify_attribute",
         "attribute": "generic.movement_speed",
         "modifier": {
             "operation": "multiply_base_additive",
             "value": 0.025
+        }
+    },
+    "damage_boost": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_mainhand",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "ponyorigins:common/00_empty_feet",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power",
+                    "power": "ponyorigins:common/limbs/taur"
+                }
+            ]
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": 1
         }
     }
 }

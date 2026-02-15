@@ -47,31 +47,6 @@
         "render_armor": false,
         "render_outline": true
     },
-    "invisible_to_mobs": {
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_active",
-                    "comparison": "==",
-                    "compare_to": 1
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "ponyorigins:common/energy_level",
-                    "comparison": ">",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "type": "apugli:mobs_ignore",
-        "mob_condition": {
-            "inverted": true,
-            "type": "origins:in_tag",
-            "tag": "ponyorigins:blind_mobs"
-        }
-    },
     "invisible_energy_cost": {
         "condition": {
             "type": "origins:and",

@@ -76,22 +76,22 @@
     },
     "in_water_hurt_sound": {
         "condition": {
+            "inverted": true,
             "type": "origins:submerged_in",
-            "fluid": "water"
+            "fluid": "ponyorigins:all"
         },
-        "type": "apugli:custom_hurt_sound",
-        "sound": "entity.dolphin.hurt",
-        "volume": 0.5,
-        "pitch": 1.3
-    },
-    "in_water_death_sound": {
-        "condition": {
-            "type": "origins:submerged_in",
-            "fluid": "water"
+        "type": "origins:action_when_damage_taken",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "is_drowning"
         },
-        "type": "apugli:custom_death_sound",
-        "sound": "entity.dolphin.death",
-        "volume": 0.5,
-        "pitch": 1.3
+        "entity_action": {
+            "type": "origins:play_sound",
+            "sound": "entity.dolphin.hurt",
+            "volume": 0.5,
+            "pitch": 1
+        },
+        "cooldown": 5
     }
 }

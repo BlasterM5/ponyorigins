@@ -8,6 +8,7 @@
         "ponyorigins:common/limbs/biped",
         "ponyorigins:common/limbs/arms/talons",
         "ponyorigins:common/limbs/hind/talons",
+        "ponyorigins:common/limbs/tail/feathers",
         "ponyorigins:common/skin/feathers",
         "ponyorigins:common/sound/avian"
     ],

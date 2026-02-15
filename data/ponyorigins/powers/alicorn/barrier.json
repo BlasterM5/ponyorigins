@@ -100,7 +100,8 @@
                                     "x": 0.1,
                                     "y": 0.1,
                                     "z": 0.1
-                                }
+                                },
+                                "offset_y": 0.5
                             }
                         ]
                     }
@@ -132,7 +133,8 @@
                                     "x": 0.1,
                                     "y": 0.1,
                                     "z": 0.1
-                                }
+                                },
+                                "offset_y": 0.5
                             },
                             {
                                 "type": "origins:change_resource",
@@ -358,18 +360,6 @@
             "change": 1,
             "operation": "add"
         }
-    },
-    "barrier_visual": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_active",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "type": "apugli:energy_swirl",
-        "texture_location": "textures/entity/creeper/creeper_armor.png",
-        "size": 1,
-        "speed": 0.001
     },
     "active": {
         "type": "origins:resource",

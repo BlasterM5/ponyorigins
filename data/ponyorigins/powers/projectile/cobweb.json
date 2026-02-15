@@ -120,15 +120,6 @@
                                             {
                                                 "type": "origins:target_action",
                                                 "action": {
-                                                    "type": "origins:change_resource",
-                                                    "resource": "ponyorigins:common/hazard_webbed",
-                                                    "change": 100,
-                                                    "operation": "add"
-                                                }
-                                            },
-                                            {
-                                                "type": "origins:target_action",
-                                                "action": {
                                                     "type": "origins:if_else",
                                                     "condition": {
                                                         "type": "origins:and",

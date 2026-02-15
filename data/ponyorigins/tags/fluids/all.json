@@ -1,15 +1,11 @@
 {
     "values": [
         {
-            "id": "#water",
+            "id": "#lava",
             "required": false
         },
         {
             "id": "#ponyorigins:water",
-            "required": false
-        },
-        {
-            "id": "#lava",
             "required": false
         },
         {

@@ -343,8 +343,8 @@
             ]
         },
         "block_action": {
-            "type": "apugli:destroy",
-            "drop_block": false
+            "type": "origins:set_block",
+            "block": "air"
         },
         "action_result": "consume"
     }

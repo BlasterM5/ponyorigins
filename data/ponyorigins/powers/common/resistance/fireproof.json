@@ -10,6 +10,7 @@
     ],
     "type": "origins:invulnerability",
     "damage_condition": {
-        "type": "origins:fire"
+        "type": "origins:in_tag",
+        "tag": "is_fire"
     }
 }

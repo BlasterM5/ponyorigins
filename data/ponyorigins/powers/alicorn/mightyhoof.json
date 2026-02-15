@@ -245,8 +245,8 @@
                         "type": "origins:and",
                         "actions": [
                             {
-                                "type": "apugli:destroy",
-                                "drop_block": true
+                                "type": "origins:execute_command",
+                                "command": "setblock ~ ~ ~ air destroy"
                             },
                             {
                                 "type": "origins:execute_command",

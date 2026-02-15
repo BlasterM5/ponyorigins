@@ -77,8 +77,11 @@
                 "actions": [
                     {
                         "condition": {
-                            "type": "origins:block",
-                            "block": "water"
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "ponyorigins:water"
+                            }
                         },
                         "action": {
                             "type": "origins:set_block",
@@ -87,8 +90,11 @@
                     },
                     {
                         "condition": {
-                            "type": "origins:block",
-                            "block": "lava"
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:fluid",
+                                "fluid": "lava"
+                            }
                         },
                         "action": {
                             "type": "origins:and",
@@ -96,6 +102,28 @@
                                 {
                                     "type": "origins:set_block",
                                     "block": "obsidian"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "playsound block.fire.extinguish block @a ~ ~ ~"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:fluid",
+                                "fluid": "flowing_lava"
+                            }
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:set_block",
+                                    "block": "cobblestone"
                                 },
                                 {
                                     "type": "origins:execute_command",

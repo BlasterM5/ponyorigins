@@ -1,0 +1,28 @@
+{
+    "name": "Tail Feathers",
+    "description": "A spread of long tail feathers. Improves vertical flight speed when sprinting.",
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:creative_flying"
+            },
+            {
+                "inverted": true,
+                "type": "origins:gamemode",
+                "gamemode": "creative"
+            },
+            {
+                "type": "origins:sprinting"
+            }
+        ]
+    },
+    "type": "origins:modify_velocity",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": 0.2
+    },
+    "axes": [
+        "z"
+    ]
+}

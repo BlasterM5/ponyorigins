@@ -1,0 +1,20 @@
+{
+    "name": "Hind Flippers",
+    "description": "Moderately stiff, weighty fins instead of legs that improve swimming speed, but significantly reduce movement speed on land.",
+    "type": "origins:multiple",
+    "swim_speed": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.25
+        }
+    },
+    "movement_speed": {
+        "type": "origins:modify_attribute",
+        "attribute": "generic.movement_speed",
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.3
+        }
+    }
+}
